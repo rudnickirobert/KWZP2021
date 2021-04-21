@@ -252,7 +252,12 @@ VALUES
 	(2,'15-03-2021'),
 	(8,'30-03-2021'),
 	(2,'03-04-2021'),
-	(8,'27-04-2021')
+	(8,'27-03-2021'),
+	(8,'31-03-2021'),
+	(2,'15-03-2021'),
+	(8,'05-04-2021'),
+	(2,'03-02-2021'),
+	(2,'12-12-2020')
 	;
 	INSERT INTO DZ_Status_zamowienia(Id_zamowienia, Id_rodzaj_statusu_zam)
 VALUES
@@ -291,24 +296,28 @@ VALUES
 	(4,7),
 	(10,8)
 	;
-    (1,1,1,3,1,'2020-10-10','2050-10-10'),
-	(2,2,1,1,1,'2020-10-10','2021-02-01'),
-	(3,3,2,1,1,'2020-10-10','2050-10-10'),
-	(4,3,2,1,1,'2020-10-10','2050-10-10'),
-	(5,4,3,1,1,'2020-10-10','2050-10-10'),
-	(6,4,3,2,2,'2020-10-10','2050-10-10'),
-	(7,4,3,1,1,'2020-10-10','2050-10-10'),
-	(8,2,1,1,1,'2020-10-11','2021-03-15'),
-	(9,5,3,1,3,'2020-10-11','2050-10-10'),
-	(10,6,3,1,2,'2020-10-11','2050-10-10')
-	;
 	INSERT INTO DZ_Szczegoly_zam_maszyn(Id_szczegoly_zam_maszyn, Id_zamowienia_zewn, Id_maszyny, koszt_jednostkowy_oferta, ilosc)
 VALUES	
 (1,1,1,21093.27,10),
 (2,2,2,13284.00,10),
 (3,3,3,24259.99,10),
 (4,4,4,12000,10);
-
+	INSERT INTO DZ_Szczegoly_zam_materialu(Id_zamowienia_zewn, Id_materialu, koszt_jednostkowy_oferta, Id_wlasciwosc, ilosc)
+VALUES
+	(5,2,45.00,3,15),
+	(8,6,36.50,3,40),
+	(9,4,27.80,3,26)
+	;
+	INSERT INTO DZ_Szczegoly_zam_czesci(Id_zamowienia_zewn, Id_czesci, koszt_jednostkowy_oferta, Id_wlasciwosc, ilosc)
+VALUES
+	(6,3,299.99,4,5),
+	(7,1,150.00,4,2)
+	;
+	INSERT INTO DZ_Szczegoly_zam_narzedzi(Id_zamowienia_zewn, Id_narzedzia, koszt_jednostkowy_oferta, Id_wlasciwosc, ilosc)
+VALUES
+	(10,3,1530.80,4,3),
+	(11,6,30.50,4,6)
+	;
 	INSERT INTO DM_Szczegoly_wydania_produktu(Id_wydania, Id_produkt, ilosc)
 VALUES	
 (1,1,15),
