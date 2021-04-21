@@ -1,10 +1,10 @@
 USE master
 GO
-DROP DATABASE Drukarnia_1
+DROP DATABASE Drukarnia
 GO
-CREATE DATABASE Drukarnia_1
+CREATE DATABASE Drukarnia
 GO
-USE Drukarnia_1
+USE Drukarnia
 GO
 CREATE TABLE DM_Rodzaj_materialu (
 	Id_rodzaj_materialu int identity(1,1) not null PRIMARY KEY,
@@ -38,7 +38,7 @@ CREATE TABLE DM_Narzedzie (
 CREATE TABLE DM_Dostawcy(
 	Id_dostawcy int identity(1,1) NOT NULL PRIMARY KEY, 
         nazwa nvarchar(40) NOT NULL,
-	NIP int NOT NULL, 
+	NIP nvarchar(15) NOT NULL, 
 	uwagi nvarchar(200) NOT NULL
 );
 CREATE TABLE DP_Produkt(
@@ -88,23 +88,23 @@ CREATE TABLE DZ_Pracownik(
 	email nvarchar(40) NOT NULL,
 	adres nvarchar(30) NOT NULL,
 	miasto nvarchar(40) NOT NULL,
-	kod_pocztowy int NOT NULL,
+	kod_pocztowy nvarchar(10) NOT NULL,
 	data_urodzenia date NOT NULL,
-	telefon int NOT NULL,
-	numer_rachunku int NOT NULL);
+	telefon nvarchar(12) NOT NULL,
+	numer_rachunku nvarchar(25) NOT NULL);
 
 CREATE TABLE DZ_Klient(
 	Id_klienta int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
 	nazwa_firmy nvarchar(30) NOT NULL, 
-	nip int NOT NULL,
+	nip nvarchar(15) NOT NULL,
 	imie nvarchar(20) NOT NULL,
 	nazwisko nvarchar(40) NOT NULL,
 	adres nvarchar(30) NOT NULL,
 	miasto nvarchar(40) NOT NULL,
-	kod_pocztowy int NOT NULL,
+	kod_pocztowy nvarchar(10) NOT NULL,
 	email nvarchar(40) NOT NULL,
-	telefon int NOT NULL,
-	numer_rachunku int NOT NULL);
+	telefon nvarchar(12) NOT NULL,
+	numer_rachunku nvarchar(25) NOT NULL);
 
 CREATE TABLE DZ_Rodzaj_nieobecnosci(
 	Id_rodzaj_nieobecnosci int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
