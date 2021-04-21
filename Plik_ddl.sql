@@ -209,7 +209,6 @@ CREATE TABLE DZ_Szczegoly_zam_maszyn(
 	Id_zamowienia_zewn int FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_zamowienia_zewn), 
 	Id_maszyny int FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny), 
 	koszt_jednostkowy_oferta float NOT NULL,
-	Id_wlasciwosc int FOREIGN KEY REFERENCES DM_Wlasciwosc(Id_wlasciwosc),
 	ilosc int NOT NULL
 	);
 
@@ -255,7 +254,7 @@ CREATE TABLE DM_Wydanie_produktow (
 );
 CREATE TABLE DM_Szczegoly_wydania_produktu (
 	Id_wydania int identity(1,1) not null FOREIGN KEY REFERENCES DM_Wydanie_produktow (Id_wydania),
-	Id_wlasciwosc int not null FOREIGN KEY REFERENCES DP_Produkt (Id_Produkt),
+	Id_produkt int not null FOREIGN KEY REFERENCES DP_Produkt (Id_Produkt),
 	ilosc int not null
 );
 CREATE TABLE DM_Wypozyczenie_narzedzia (
