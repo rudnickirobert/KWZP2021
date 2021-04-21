@@ -240,6 +240,11 @@ CREATE TABLE DZ_Szczegoly_zam_narzedzi(
 	ilosc int NOT NULL
 	);
 
+CREATE TABLE DZ_Po_szczegoly_zam_produkt(
+	Id_szczegoly_zam_klienta int FOREIGN KEY REFERENCES DZ_Szczegoly_zamowienia_klienta(Id_szczegoly_zam_klienta),
+	Id_produkt int FOREIGN KEY REFERENCES DP_Produkt(Id_produkt)
+);
+
 CREATE TABLE DM_Magazyn_gotowych_produktow(
 	Id_magazynu_gotowych_produktow int identity(1,1) NOT NULL PRIMARY KEY, 
         Id_zamowienie int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),

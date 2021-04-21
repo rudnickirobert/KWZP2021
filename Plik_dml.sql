@@ -211,5 +211,83 @@ VALUES
 	(9,5,3,1,3,'10-10-2020','10-10-2050'),
 	(10,6,3,1,2,'10-10-2020','10-10-2050')
 	;
-	
-
+	INSERT INTO DZ_Plik(nazwa_pliku, zalacznik)
+VALUES
+	('zabawka','pdf'),
+	('obudowa elektroniki','stl'),
+	('obudowa wkrêtarki','pdf'),
+	('gwizdek','step'),
+	('stojak','obj'),
+	('obudowa elektroniki','pdf'),
+	('opakowanie na soczewki','stl'),
+	('uchwyt','obj'),
+	('deska do krojenia','pdf'),
+	('uchwyt na telefon','obj')
+	;
+	INSERT INTO DZ_Rodzaj_statusu_zamowienia(status_zam)
+VALUES
+	('zrealizowane'),
+	('przyjête do realizacji'),
+	('oczekuje na zatwierdzenie'),
+	('w trakcie'),
+	('nie przyjete do realizacji')
+	;
+	INSERT INTO DZ_Zamowienie_klienta(Id_klienta, Id_pracownika, data_zamowienia, oczekiwany_termin_wykonania)
+VALUES
+	(3,2,'09-01-2021','26-10-2021'),
+	(1,2,'11-01-2021','01-05-2021'),
+	(3,8,'15-02-2021','16-04-2021'),
+	(1,2,'03-03-2021','30-09-2021'),
+	(4,8,'16-03-2021','22-08-2021'),
+	(3,2,'04-04-2021','30-10-2021'),
+	(2,8,'13-04-2021','30-04-2021'),
+	(1,8,'13-04-2021','05-05-2021'),
+	(4,2,'22-04-2021','10-05-2021'),
+	(3,8,'22-04-2021','16-07-2021')
+	;
+	INSERT INTO DZ_Zamowienie_zewn(Id_pracownika, data_zamowienia_zewn)
+VALUES
+	(8,'01-01-2021'),
+	(8,'02-02-2021'),
+	(2,'15-03-2021'),
+	(8,'30-03-2021'),
+	(2,'03-04-2021'),
+	(8,'27-04-2021')
+	;
+	INSERT INTO DZ_Status_zamowienia(Id_zamowienia, Id_rodzaj_statusu_zam)
+VALUES
+	(1,4),
+	(2,4),
+	(3,1),
+	(4,3),
+	(5,5),
+	(6,2),
+	(7,4),
+	(8,5),
+	(9,3),
+	(10,2)
+	;
+	INSERT INTO DZ_Szczegoly_zamowienia_klienta(Id_zamowienia, Id_pliku, ilosc_sztuk, Id_materialu)
+VALUES
+	(1,4,8,1),
+	(2,6,30,5),
+	(3,1,15,2),
+	(4,10,120,6),
+	(5,8,88,4),
+	(6,7,150,3),
+	(7,2,25,1),
+	(8,5,30,6),
+	(9,3,11,5),
+	(10,9,66,1)
+	;
+	INSERT INTO DZ_Po_szczegoly_zam_produkt(Id_szczegoly_zam_klienta,Id_produkt)
+VALUES
+	(7,1),
+	(3,2),
+	(9,3),
+	(8,4),
+	(5,5),
+	(2,6),
+	(4,7),
+	(10,8)
+	;
