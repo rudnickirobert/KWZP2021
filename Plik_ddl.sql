@@ -403,11 +403,12 @@ CREATE TABLE DP_Wydruk(
 	wypelnienie nvarchar(20) NOT NULL, 
 	estymowany_czas int,
 	estymowana_masa nvarchar(10),
-	nazwa_pliku nvarchar(20) NOT NULL
+	Id_pliku int FOREIGN KEY REFERENCES DZ_Plik(Id_pliku)
 );
+
 CREATE TABLE DP_Proces_technologiczny(
 	Id_proces_technologiczny int IDENTITY(1,1) PRIMARY KEY NOT NULL, 
-	nazwa nvarchar(20) NOT NULL
+	nazwa nvarchar(150) NOT NULL
 );
 
 CREATE TABLE DP_Po_wydr_proc(
@@ -425,7 +426,7 @@ CREATE TABLE DP_Po_material_wydruk(
 
 CREATE TABLE DP_Rodzaj_czynnosci(
 	Id_rodzaj_czynnosci int IDENTITY(1,1) PRIMARY KEY NOT NULL, 
-	nazwa varchar(50) NOT NULL
+	nazwa nvarchar(150) NOT NULL
 );
 
 CREATE TABLE DP_Po_proc_czynnosci(
@@ -453,6 +454,7 @@ CREATE TABLE DP_Po_prac_czynnosci(
 CREATE TABLE DP_Po_material_czynnosci(
 	Id_po_proc_czynnosci int FOREIGN KEY REFERENCES DP_Po_proc_czynnosci(Id_po_proc_czynnosci),
 	Id_materialu int FOREIGN KEY REFERENCES DM_Material(Id_materialu),
+	ilosc int
 );
 
 CREATE TABLE DP_Po_maszyna_wydruk(

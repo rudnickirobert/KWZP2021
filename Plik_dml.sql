@@ -329,3 +329,120 @@ VALUES
 (7,7,75),
 (8,8,65);
 
+
+INSERT INTO DP_Wydruk(wypelnienie,estymowany_czas,estymowana_masa,Id_pliku)
+VALUES
+('0,5',5,1000,1),
+('0,25',3,600,2),
+('0,45',7,2000,3),
+('0,35',5,1000,4),
+('0,15',1,500,5),
+('0,50',8,2500,6);
+
+INSERT INTO DP_Po_material_wydruk(Id_materialu, Id_po_wydr_proc, ilosc)
+VALUES
+(1,1,1000),
+(2,2,2000),
+(3,3,1800),
+(4,4,2200),
+(5,5,3000),
+(6,6,1200);
+
+INSERT INTO DP_Po_maszyna_wydruk(Id_po_wydr_proces, Id_maszyny)
+VALUES
+(1,1),
+(1,2),
+(1,3);
+
+INSERT INTO DP_Proces_technologiczny(nazwa) /***zrobione***/
+VALUES
+('proces technologiczny nr1'),
+('proces technologiczny nr2'),
+('proces technologiczny nr3'),
+('proces technologiczny nr4'),
+('proces technologiczny nr5'),
+('proces technologiczny nr6');
+
+INSERT INTO DP_Po_wydr_proc(Id_wydruk,Id_proces_technologiczny,czas_zamierzony)
+VALUES
+(1,1,5),
+(2,2,3),
+(3,3,7),
+(4,4,5),
+(5,5,1),
+(6,6,8);
+
+/***czynnosci***/
+
+INSERT INTO DP_Rodzaj_czynnosci(nazwa)
+VALUES
+('przygotowanie pliku'),
+('szlifowanie'),
+('klejenie'),
+('obróbka wykañczaj¹ca'),
+('obróbka kszta³tuj¹ca');
+
+INSERT INTO DP_Po_proc_czynnosci(Id_rodzaj_czynnosci, Id_proces_technologiczny, czas_zamierzony)
+VALUES
+(1,1,'2021-09-20T8:30:00'), 
+(2,1,'2021-09-20T12:30:00'), 
+(5,1,'2021-09-20T15:30:00'), 
+(2,1,'2021-09-21T8:15:00'), 
+(3,1,'2021-09-21T8:15:00'), 
+(4,1,'2021-09-21T9:15:00'), 
+(1,2,'2021-04-05T8:30:00'), 
+(2,2,'2021-04-05T12:30:00'), 
+(5,2,'2021-04-05T15:30:00'), 
+(2,2,'2021-04-06T8:15:00'), 
+(3,2,'2021-04-06T8:15:00'), 
+(4,2,'2021-04-06T9:15:00'), 
+(1,3,'2021-07-05T8:30:00'), 
+(2,3,'2021-07-05T12:30:00'), 
+(5,3,'2021-07-05T15:30:00'), 
+(2,3,'2021-07-06T8:15:00'), 
+(3,3,'2021-07-06T8:15:00'), 
+(4,3,'2021-07-06T9:15:00'); 
+
+INSERT INTO DP_Po_narzedzia_czynnosci(Id_po_proc_czynnosci, Id_narzedzia)
+VALUES
+(2,2),
+(5,6),
+(5,7),
+(6,7),
+(2,7),
+(6,4);
+
+INSERT INTO DP_Po_maszyna_czynnosci(Id_po_proc_czynnosci, Id_maszyny)
+VALUES
+(2,1),
+(5,1);
+
+INSERT INTO DP_Po_prac_czynnosci(Id_pracownika, Id_po_proc_czynnosci)
+VALUES
+(5,1),
+(6,2),
+(7,3),
+(7,4),
+(6,5),
+(5,6),
+(5,7),
+(6,8),
+(7,9),
+(7,10),
+(6,11),
+(5,12),
+(5,13),
+(6,14),
+(5,15),
+(5,16),
+(7,17),
+(7,18);
+
+INSERT INTO DP_Po_material_czynnosci(Id_po_proc_czynnosci, Id_materialu, ilosc)
+VALUES
+(3,3,200),
+(4,3,300),
+(5,4,200),
+(3,4,220),
+(4,3,300),
+(5,4,240);
