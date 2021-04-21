@@ -213,7 +213,7 @@ VALUES
 	;
 	INSERT INTO DZ_Szczegoly_zam_maszyn(Id_szczegoly_zam_maszyn, Id_zamowienia_zewn, Id_maszyny, koszt_jednostkowy_oferta, ilosc)
 VALUES	
-(1,1,1,21093.27,1),
+(1,1,1,21093.27,10),
 (2,2,2,13284.00,10),
 (3,3,3,24259.99,10),
 (4,4,4,12000,10);
