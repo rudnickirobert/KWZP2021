@@ -1,4 +1,4 @@
-USE Drukarnia
+USE Drukarnia_4
 
 INSERT INTO DM_Rodzaj_materialu (rodzaj_materialu)
 VALUES
@@ -200,16 +200,16 @@ VALUES
 	;
 	INSERT INTO DZ_Zatrudnienie(Id_pracownika, Id_stanowiska, Id_dzialu, Id_etatu, Id_rodzaj_umowy, data_zatrudnienia,data_zwolnienia)
 VALUES
-    (1,1,1,3,1,'10-10-2020','10-10-2050'),
-	(2,2,1,1,1,'10-10-2020','01-02-2021'),
-	(3,3,2,1,1,'10-10-2020','10-10-2050'),
-	(4,3,2,1,1,'10-10-2020','10-10-2050'),
-	(5,4,3,1,1,'10-10-2020','10-10-2050'),
-	(6,4,3,2,2,'10-10-2020','10-10-2050'),
-	(7,4,3,1,1,'10-10-2020','10-10-2050'),
-	(8,2,1,1,1,'10-10-2020','15-03-2021'),
-	(9,5,3,1,3,'10-10-2020','10-10-2050'),
-	(10,6,3,1,2,'10-10-2020','10-10-2050')
+      (1,1,1,3,1,'2020-10-10','2021-03-15'),
+	(2,2,1,1,1,'2020-10-10','2021-02-01'),
+	(3,3,2,1,1,'2020-10-10','2099-03-15'),
+	(4,3,2,1,1,'2020-10-10','2099-03-15'),
+	(5,4,3,1,1,'2020-10-10','2021-03-15'),
+	(6,4,3,2,2,'2020-10-10','2099-03-15'),
+	(7,4,3,1,1,'2020-10-10','2099-03-15'),
+	(8,2,1,1,1,'2020-10-10','2021-03-15'),
+	(9,5,3,1,3,'2020-10-10','2099-03-15'),
+	(10,6,3,1,2,'2020-10-10','2099-03-15')
 	;
 	INSERT INTO DZ_Plik(nazwa_pliku, zalacznik)
 VALUES
@@ -318,7 +318,7 @@ VALUES
 	(10,3,1530.80,4,3),
 	(11,6,30.50,4,6)
 	;
-	INSERT INTO DM_Szczegoly_wydania_produktu(Id_wydania, Id_produkt, ilosc)
+	INSERT INTO DM_Szczegoly_wydania_produktu(Id_wydania,Id_produkt, ilosc)
 VALUES	
 (1,1,15),
 (2,2,20),
@@ -327,7 +327,8 @@ VALUES
 (5,5,100),
 (6,6,80),
 (7,7,75),
-(8,8,65);
+(8,8,65)
+;
 
 
 INSERT INTO DP_Wydruk(wypelnienie,estymowany_czas,estymowana_masa,Id_pliku)
@@ -337,7 +338,8 @@ VALUES
 ('0,45',7,2000,3),
 ('0,35',5,1000,4),
 ('0,15',1,500,5),
-('0,50',8,2500,6);
+('0,50',8,2500,6)
+;
 
 INSERT INTO DP_Po_material_wydruk(Id_materialu, Id_po_wydr_proc, ilosc)
 VALUES
