@@ -449,6 +449,50 @@ VALUES
 (4,3,300),
 (5,4,240);
 
+INSERT INTO DP_Proces_produkt(Id_proces_technologiczny,Id_produkt)
+VALUES 
+(1,1),
+(2,2),
+(3,3),
+(4,4),
+(5,5),
+(6,6);
+
+INSERT INTO DP_Proces_produkcyjny(Id_proces_technologiczny, data_realizacji, czas_realizacji)
+VALUES 
+(1,'2021-06-12',10),
+(2,'2021-07-09',15),
+(3,'2021-06-05',12),
+(4,'2021-08-23',18),
+(5,'2021-07-15',11),
+(6,'2021-05-30',12);
+
+
+INSERT INTO DP_Proces_produkcyjny_wykorzystany_material(Id_proces_produkcyjny, Id_materialu, ilosc)
+VALUES 
+(1,2,10),
+(2,3,9),
+(3,1,12),
+(4,1,7),
+(5,6,5),
+(6,5,3);
+
+INSERT INTO DP_Proces_produkcyjny_czas_czynnosci_dodatkowych(Id_proces_produkcyjny, Id_rodzaj_czynnosci, wykorzystany_czas)
+VALUES 
+(1,2,2),
+(2,3,3),
+(3,3,1),
+(4,5,3),
+(5,4,1),
+(6,2,2);
+
+INSERT INTO DP_Zuzute_maszyny(Id_maszyny, data_zuzycia_maszyny, uwagi)
+VALUES 
+(1,'2021-01-06','niezdolna do pracy'),
+(2,'2021-02-12','niezdolna do pracy'),
+(3,'2021-03-16','wylaczona z uzytku'),
+(4,'2021-02-19','wylaczona z uzytku');
+
 INSERT INTO DP_Nazwa_obslugi(nazwa_obslugi)
 VALUES
 ('biezaca'),
