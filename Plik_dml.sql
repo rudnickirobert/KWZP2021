@@ -448,3 +448,68 @@ VALUES
 (3,4,220),
 (4,3,300),
 (5,4,240);
+
+INSERT INTO DP_Nazwa_obslugi(nazwa_obslugi)
+VALUES
+('biezaca'),
+('okresowa'),
+('profilaktyczny');
+
+INSERT INTO DP_Czynnosci(nazwa_czynnosci)
+VALUES
+('sprawdzenie'),
+('konserwacja'),
+('wyczyszczenie'),
+('przeglad');
+
+INSERT INTO DP_Czynnosci_w_ramach_obslugi_serw_wew(Id_nazwa_obslugi, Id_czynnosc)
+VALUES
+(1,1),
+(1,3),
+(2,2);
+
+INSERT INTO DP_Co_ile_obsluga(co_ile_obsluga)
+VALUES
+(7),
+(91),
+(365);
+
+INSERT INTO DP_Obsluga(Id_nazwa_obslugi, Id_rodzaj_maszyny, Id_co_ile_obsluga)
+VALUES
+(1,1,1),
+(2,1,2),
+(3,1,3),
+(1,2,1),
+(2,2,2),
+(3,2,3);
+
+INSERT INTO DP_Usluga_serwisu_zewnetrznego(nazwa_uslugi_serwisu_zewnetrznego)
+VALUES
+('naprawa'),
+('przeglad profilaktyczny');
+
+INSERT INTO DP_Firma_serwisowa(nazwa_firmy, adres, miasto, kod_pocztowy, nr_tel, e_mail)
+VALUES
+
+('Serwis3D','Klonowa 21','Warszawa','00-256','555874548','druk3d@o2.pl'),
+('2B3D','Nowa 21/3','Warszawa','01-316','678872148','2b3d@o2.pl'),
+('serwis 3D','Klonowa 21','Warszawa','00-256','555874548','druk3d@o2.pl'),
+('Omni3D','Wolska 4/2','Warszawa','01-100','736524199','omni3d@wp.pl'),
+('Cadxpert','Kolorowa 92','Warszawa','02-258','635986147','cadxpert@gmail.com'),
+('Centrum serwisowe','Spokojna 90','Warszawa','10-458','515456985','centrumserwisowe@o2.pl'),
+('Dobry serwis','Sportowa 34/2','Warszawa','14-654','754156874','dobryserwis@o2.pl'),
+('Serwisownia','Kolejowa 3/1','Warszawa','23-978','698745852','serwisownia@gmail.com'),
+('CADevent','Harcerska 86/2','Warszawa','10-122','835412588','cadevent@gmail.com'),
+('Drukarki 3D','Szkolna 43/2','Warszawa','11-200','659021458','drukarki3d@o2.pl');
+
+INSERT INTO DP_Serwis_zewnetrzny(Id_firma_serwisowa, Id_maszyny, Id_usluga_serwisu_zewnetrznego, koszt, data_rozpoczecia, data_zakonczenia, uwagi)
+VALUES
+
+(7,1,2,200,'2021-11-12','2021-11-13','zaplanowany'),
+(1,2,2,200,'2021-11-11','2021-11-13','zaplanowany'),
+(2,3,2,200,'2021-11-15','2021-11-13','zaplanowany'),
+(3,4,2,200,'2021-11-11','2021-11-13','zaplanowany'),
+(4,4,1,300,'2021-02-01','2021-02-01','uszkodzenie mechaniczne'),
+(6,1,1,100,'2021-01-20','2021-01-20','uszkodzenie mechaniczne'),
+(5,2,1,350,'2021-01-30','2021-01-30','uszkodzenie mechaniczne'),
+(8,3,1,400,'2021-02-12','2021-02-12','uszkodzenie mechaniczne');

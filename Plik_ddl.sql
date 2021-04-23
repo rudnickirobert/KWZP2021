@@ -494,7 +494,7 @@ CREATE TABLE DP_Zuzute_maszyny(
 
 CREATE TABLE DP_Nazwa_obslugi(
 	Id_nazwa_obslugi int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
-	nazwa_oblsugi nvarchar(30) NOT NULL
+	nazwa_obslugi nvarchar(30) NOT NULL
 );
 CREATE TABLE DP_Czynnosci(
 	Id_czynnosc int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
@@ -511,7 +511,7 @@ CREATE TABLE DP_Co_ile_obsluga(
 );
 CREATE TABLE DP_Obsluga(
 	Id_obslugi int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
-	Id_nazwa_oblsugi int FOREIGN KEY REFERENCES DP_Nazwa_obslugi(Id_nazwa_obslugi),
+	Id_nazwa_obslugi int FOREIGN KEY REFERENCES DP_Nazwa_obslugi(Id_nazwa_obslugi),
 	Id_rodzaj_maszyny int FOREIGN KEY REFERENCES DP_Rodzaj_maszyny(Id_rodzaj_maszyny),
 	Id_co_ile_obsluga int FOREIGN KEY REFERENCES DP_Co_ile_obsluga(Id_co_ile_obsluga)
 );
@@ -523,6 +523,8 @@ CREATE TABLE DP_Firma_serwisowa(
 	Id_firma_serwisowa int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
 	nazwa_firmy nvarchar(30) NOT NULL,
 	adres nvarchar(30) NOT NULL,
+	miasto nvarchar(40) NOT NULL,
+	kod_pocztowy nvarchar(10) NOT NULL,
 	nr_tel nvarchar(30) NOT NULL,
 	e_mail nvarchar(30) NOT NULL
 	);
