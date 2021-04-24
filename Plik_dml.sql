@@ -557,3 +557,33 @@ VALUES
 (6,1,1,100,'2021-01-20','2021-01-20','uszkodzenie mechaniczne'),
 (5,2,1,350,'2021-01-30','2021-01-30','uszkodzenie mechaniczne'),
 (8,3,1,400,'2021-02-12','2021-02-12','uszkodzenie mechaniczne');
+
+INSERT INTO DM_Wypozyczenie_narzedzia(Id_pracownika_wypozyczajacego, Id_pracownika_wydajacego, data_i_godzina_wypozyczenia, data_i_godzina_zwrotu, uwagi)
+VALUES
+(1, 2, '2021-02-12','2021-02-12', 'brak'),
+(7, 2, '2021-04-11','2021-04-11', 'uszkodzenie mechaniczne'),
+(8, 2, '2021-01-31','2021-01-31', 'brak'),
+(7, 3, '2021-03-03','2021-03-03', 'brak'),
+(7, 3, '2021-04-16','2021-04-17', 'brak'),
+(9, 3, '2021-03-01','2021-03-01', 'uszkodzona izolacja'),
+(5, 3, '2021-02-15','2021-02-15', 'porysowana obudowa');
+
+INSERT INTO DM_Dostawa_narzedzi(Id_pracownika, data_dostawy, uwagi)
+VALUES
+(6, '2021-03-23','brak'),
+(4, '2021-01-16','brak'),
+(5, '2021-03-07','brak'),
+(6, '2021-04-12','brak'),
+(8, '2021-04-22','brak'),
+(1, '2021-03-04','brak'),
+(9, '2021-04-03','brak');
+
+INSERT INTO DM_Sklad_dostawy_narzedzi(Id_dostawy, Id_dostawcy, Id_narzedzia, Id_zamowienie_zewn, ilosc, cena_jednostkowa_narzedzi)
+VALUES
+(2, 4, 7, 3, 3, 20),
+(5, 4, 4, 1, 1, 1700),
+(7, 3, 6, 2, 1, 15),
+(6, 4, 3, 6, 1, 900),
+(4, 3, 1, 4, 1, 1200),
+(5, 3, 2, 2, 1, 1900),
+(3, 4, 5, 9, 1, 1500);

@@ -266,8 +266,8 @@ CREATE TABLE DM_Wypozyczenie_narzedzia (
 	Id_wypozyczenia_narzedzia int identity(1,1) not null PRIMARY KEY,
 	Id_pracownika_wypozyczajacego int not null FOREIGN KEY REFERENCES DZ_Pracownik (Id_pracownika),
 	Id_pracownika_wydajacego int not null FOREIGN KEY REFERENCES DZ_Pracownik (Id_pracownika),
-	data_i_godzina_wypozyczenia DATETIME,
-	data_i_godzina_zwrotu DATETIME,
+	data_i_godzina_wypozyczenia DATE,
+	data_i_godzina_zwrotu DATE,
 	uwagi nvarchar (100)
 );
 CREATE TABLE DM_Zuzyte_narzedzia (
@@ -291,7 +291,7 @@ CREATE TABLE DM_Parametry_narzedzia (
 CREATE TABLE DM_Dostawa_materialu(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
         Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-	data_dostawy datetime NOT NULL, 
+	data_dostawy datetime NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
 
@@ -305,7 +305,7 @@ CREATE TABLE DM_Dostawa_czesci(
 CREATE TABLE DM_Dostawa_narzedzi(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
         Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-	data_dostawy datetime NOT NULL, 
+	data_dostawy DATE NOT NULL, 
 	uwagi nvarchar(200) NOT NULL
 );
 
@@ -316,7 +316,7 @@ CREATE TABLE DM_Dostawa_maszyn(
 	uwagi nvarchar(200) NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_maszyn(
-	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_materialu( Id_dostawy) , 
+	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_maszyn( Id_dostawy) , 
         Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
 	Id_maszyn int NOT NULL FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny), 
         Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
@@ -324,7 +324,7 @@ CREATE TABLE DM_Sklad_dostawy_maszyn(
 	cena_jednostkowa_maszyny int NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_narzedzi(
-	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_materialu(Id_dostawy) , 
+	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_narzedzi(Id_dostawy) , 
         Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
 	Id_narzedzia int NOT NULL FOREIGN KEY REFERENCES DM_Narzedzie(Id_narzedzia), 
         Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
@@ -332,7 +332,7 @@ CREATE TABLE DM_Sklad_dostawy_narzedzi(
 	cena_jednostkowa_narzedzi int NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_czesci(
-	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_materialu( Id_dostawy) , 
+	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_czesci( Id_dostawy) , 
         Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
 	Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesci(Id_czesci), 
         Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
