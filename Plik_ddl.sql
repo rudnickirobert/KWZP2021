@@ -50,11 +50,11 @@ CREATE TABLE DP_Model_maszyny(
 	Id_model_maszyny int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
 	nazwa_modelu_maszyny nvarchar(30) NOT NULL
 	);
-	CREATE TABLE DP_Rodzaj_maszyny(
+CREATE TABLE DP_Rodzaj_maszyny(
 	Id_rodzaj_maszyny int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
 	rodzaj_maszyny nvarchar(30) NOT NULL
 	);
-	CREATE TABLE DP_Maszyny(
+CREATE TABLE DP_Maszyny(
 	Id_maszyny int IDENTITY(1,1) NOT NULL  PRIMARY KEY,
 	Id_rodzaj_maszyny int FOREIGN KEY REFERENCES DP_Rodzaj_maszyny(Id_rodzaj_maszyny),
 	Id_model_maszyny int FOREIGN KEY REFERENCES DP_Model_maszyny(Id_model_maszyny),
@@ -64,10 +64,10 @@ CREATE TABLE DP_Model_maszyny(
 );
 
 CREATE TABLE DM_Czesci(
-        Id_czesci int identity(1,1) PRIMARY KEY,
-nazwa nvarchar(40) NOT NULL,
-Id_model_maszyny int NOT NULL FOREIGN KEY REFERENCES DP_Model_maszyny(id_model_maszyny),
-        ilosc_poczatkowa int NOT NULL, 
+    Id_czesci int identity(1,1) PRIMARY KEY,
+	nazwa nvarchar(40) NOT NULL,
+	Id_model_maszyny int NOT NULL FOREIGN KEY REFERENCES DP_Model_maszyny(id_model_maszyny),
+    ilosc_poczatkowa int NOT NULL, 
 );
 CREATE TABLE DZ_Rodzaj_rachunku(
 	Id_rodzaj_rachunku int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
@@ -246,8 +246,8 @@ CREATE TABLE DZ_Po_szczegoly_zam_produkt(
 
 CREATE TABLE DM_Magazyn_gotowych_produktow(
 	Id_magazynu_gotowych_produktow int identity(1,1) NOT NULL PRIMARY KEY, 
-        Id_zamowienie int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),
-data_i_godzina_przyjecia datetime NOT NULL,
+    Id_zamowienie int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),
+	data_i_godzina_przyjecia datetime NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
 CREATE TABLE DM_Wydanie_produktow (
@@ -285,117 +285,117 @@ CREATE TABLE DM_Szczegoly_wypozyczenia_narzedzia (
 );
 CREATE TABLE DM_Parametry_narzedzia (
 	Id_narzedzia int not null FOREIGN KEY REFERENCES DM_Narzedzie (Id_narzedzia),
-	Id__wlasciwosc int not null FOREIGN KEY REFERENCES DM_Wlasciwosc (Id_wlasciwosc),
+	Id_wlasciwosc int not null FOREIGN KEY REFERENCES DM_Wlasciwosc (Id_wlasciwosc),
 	wartosc nvarchar(10) not null
 );
 CREATE TABLE DM_Dostawa_materialu(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
-        Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+    Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
 	data_dostawy datetime NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
 
 CREATE TABLE DM_Dostawa_czesci(
 	Id_dostawy int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
-        Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+    Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
 	data_dostawy datetime NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
 
 CREATE TABLE DM_Dostawa_narzedzi(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
-        Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+    Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
 	data_dostawy DATE NOT NULL, 
 	uwagi nvarchar(200) NOT NULL
 );
 
 CREATE TABLE DM_Dostawa_maszyn(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
-        Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+    Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
 	data_dostawy datetime NOT NULL, 
 	uwagi nvarchar(200) NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_maszyn(
 	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_maszyn( Id_dostawy) , 
-        Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
+    Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
 	Id_maszyn int NOT NULL FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny), 
-        Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
-        ilosc int NOT NULL, 
+    Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
+    ilosc int NOT NULL, 
 	cena_jednostkowa_maszyny int NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_narzedzi(
 	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_narzedzi(Id_dostawy) , 
-        Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
+    Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
 	Id_narzedzia int NOT NULL FOREIGN KEY REFERENCES DM_Narzedzie(Id_narzedzia), 
-        Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
-        ilosc int NOT NULL, 
+    Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
+    ilosc int NOT NULL, 
 	cena_jednostkowa_narzedzi int NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_czesci(
 	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_czesci( Id_dostawy) , 
-        Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
+    Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
 	Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesci(Id_czesci), 
-        Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
-        ilosc int NOT NULL, 
+    Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
+    ilosc int NOT NULL, 
 	cena_jednostkowa_czesci int NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_materialu(
 	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_materialu( Id_dostawy) , 
-        Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
+    Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawcy(Id_dostawcy),
 	Id_materialu int NOT NULL FOREIGN KEY REFERENCES DM_Material(Id_materialu), 
-        Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
-        ilosc int NOT NULL, 
+    Id_zamowienie_zewn int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_Zamowienia_zewn),
+    ilosc int NOT NULL, 
 	cena_jednostkowa_materialu int NOT NULL
 );
 CREATE TABLE DM_Wydanie_czesci(
 	Id_wydania_czesci int identity(1,1) NOT NULL PRIMARY KEY, 
 	Id_pracownik_pobierajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika), 
-        Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-        data_i_godzina datetime NOT NULL,
-		uwagi nvarchar(200) NOT NULL
+    Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+    data_i_godzina datetime NOT NULL,
+	uwagi nvarchar(200) NOT NULL
 );
 
 CREATE TABLE DM_Szczegoly_wydania_czesci(
 	Id_wydania_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Wydanie_czesci(Id_wydania_czesci), 
-        Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesci(Id_czesci),
-        Ilosc int NOT NULL, 
+    Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesci(Id_czesci),
+    Ilosc int NOT NULL, 
 );
 CREATE TABLE DM_Parametry_czesci(
-        Id_czesci int FOREIGN KEY REFERENCES DM_czesci(id_czesci),
-Id_wlasciwosc int FOREIGN KEY REFERENCES DM_wlasciwosc(id_wlasciwosc),
-wartosc int NOT NULL
+    Id_czesci int FOREIGN KEY REFERENCES DM_czesci(id_czesci),
+	Id_wlasciwosc int FOREIGN KEY REFERENCES DM_wlasciwosc(id_wlasciwosc),
+	wartosc int NOT NULL
 );
 CREATE TABLE DM_Wybor_maszyny(
-        Id_model_maszyny int FOREIGN KEY REFERENCES DP_Model_maszyny(Id_model_maszyny),
-Id_maszyny int FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny),
+    Id_model_maszyny int FOREIGN KEY REFERENCES DP_Model_maszyny(Id_model_maszyny),
+	Id_maszyny int FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny),
 );
 
 CREATE TABLE DM_Wydanie_materialu_dla_produkcji(
 	Id_wydanie_materialu_dla_produkcji int identity(1,1) NOT NULL PRIMARY KEY, 
-        Id_zamowienia int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),
+    Id_zamowienia int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),
 	Id_pracownik_pobierajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika), 
-        Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-        data_i_godzina datetime NOT NULL      
+    Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+    data_i_godzina datetime NOT NULL      
 );
 
 CREATE TABLE DM_Szczegoly_wydania_materialu(
 	Id_wydanie_materialu_dla_produkcji int FOREIGN KEY REFERENCES DM_Wydanie_materialu_dla_produkcji(Id_wydanie_materialu_dla_produkcji), 
-        Id_materialu int NOT NULL FOREIGN KEY REFERENCES DM_Material(Id_materialu),
+    Id_materialu int NOT NULL FOREIGN KEY REFERENCES DM_Material(Id_materialu),
 	ilosc int NOT NULL
 );
 CREATE TABLE DM_Szczegoly_magazynu_gotowych_produktow(
 	Id_magazynu_gotowych_produktow int FOREIGN KEY REFERENCES DM_Magazyn_gotowych_produktow(Id_magazynu_gotowych_produktow), 
-        Id_produktu int NOT NULL FOREIGN KEY REFERENCES DP_Produkt(Id_produkt),
-        ilosc int NOT NULL
+    Id_produktu int NOT NULL FOREIGN KEY REFERENCES DP_Produkt(Id_produkt),
+    ilosc int NOT NULL
 );
 
 
 CREATE TABLE DM_Wydanie_czesci_dla_produkcji(
 	Id_wydania_czesci int identity(1,1) NOT NULL PRIMARY KEY, 
 	Id_pracownik_pobierajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika), 
-        Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-        data_i_godzina_wydania datetime NOT NULL,
-uwagi nvarchar(200) NOT NULL      
+    Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+    data_i_godzina_wydania datetime NOT NULL,
+	uwagi nvarchar(200) NOT NULL      
 );
 /****Dzia³ Produkcji***/
 CREATE TABLE DP_Wydruk(
