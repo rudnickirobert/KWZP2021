@@ -389,7 +389,6 @@ CREATE TABLE DM_Szczegoly_magazynu_gotowych_produktow(
     ilosc int NOT NULL
 );
 
-
 CREATE TABLE DM_Wydanie_czesci_dla_produkcji(
 	Id_wydania_czesci int identity(1,1) NOT NULL PRIMARY KEY, 
 	Id_pracownik_pobierajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika), 

@@ -81,12 +81,16 @@ VALUES
 VALUES
     ('Obudowa elektroniki','Kolor czerwony'),
 	('Zabawka','Kolor czarny'),
-	('Obudowa wkrêtarki','Kolor niebieski'),
+	('Obudowa wkretarki','Kolor niebieski'),
 	('Stojak ','Kolor czerwony'),
 	('Uchwyt','Kolor czarny'),
 	('Obudowa elektroniki','Kolor zielony'),
 	('Uchwyt na telefon','Rozne kolory'),
-	('Deska do krojenia','Kolor czarny')
+	('Kostka','Kolor czarny'),
+	('Obudowa kluczy','Kolor czarny'),
+	('Klamka','Kolor czarny'),
+	('Deska do krojenia','Kolor czarny'),
+	('Gwizdek','Kolor czarny')
 	;
 	INSERT INTO DP_Model_maszyny (nazwa_modelu_maszyny)
 VALUES
@@ -215,19 +219,22 @@ VALUES
 VALUES
 	('zabawka','pdf'),
 	('obudowa elektroniki','stl'),
-	('obudowa wkrêtarki','pdf'),
+	('obudowa wkretarki','pdf'),
 	('gwizdek','step'),
 	('stojak','obj'),
 	('obudowa elektroniki','pdf'),
 	('opakowanie na soczewki','stl'),
 	('uchwyt','obj'),
 	('deska do krojenia','pdf'),
-	('uchwyt na telefon','obj')
+	('uchwyt na telefon','obj'),
+	('kostka','stl'),
+	('obudowa kluczy','step'),
+	('klamka','pdf')
 	;
 	INSERT INTO DZ_Rodzaj_statusu_zamowienia(status_zam)
 VALUES
 	('zrealizowane'),
-	('przyjête do realizacji'),
+	('przyjete do realizacji'),
 	('oczekuje na zatwierdzenie'),
 	('w trakcie'),
 	('nie przyjete do realizacji')
@@ -243,7 +250,10 @@ VALUES
 	(2,8,'2021-04-13','2021-04-30'),
 	(1,8,'2021-04-13','2021-05-05'),
 	(4,2,'2021-04-22','2021-05-10'),
-	(3,8,'2021-04-22','2021-07-16')
+	(3,8,'2021-04-22','2021-07-16'),
+	(2,2,'2021-04-24','2021-07-18'),
+	(2,2,'2021-04-25','2021-07-19'),
+	(4,8,'2021-04-25','2021-06-30')
 	;
 	INSERT INTO DZ_Zamowienie_zewn(Id_pracownika, data_zamowienia_zewn)
 VALUES
@@ -257,7 +267,8 @@ VALUES
 	(2,'2021-03-15'),
 	(8,'2021-04-05'),
 	(2,'2021-02-03'),
-	(2,'2020-12-12')
+	(2,'2020-12-12'),
+	(2,'2020-11-08')
 	;
 	INSERT INTO DZ_Status_zamowienia(Id_zamowienia, Id_rodzaj_statusu_zam)
 VALUES
@@ -270,7 +281,10 @@ VALUES
 	(7,4),
 	(8,5),
 	(9,3),
-	(10,2)
+	(10,2),
+	(11,3),
+	(12,5),
+	(13,5)
 	;
 	INSERT INTO DZ_Szczegoly_zamowienia_klienta(Id_zamowienia, Id_pliku, ilosc_sztuk, Id_materialu)
 VALUES
@@ -283,7 +297,10 @@ VALUES
 	(7,2,25,1),
 	(8,5,30,6),
 	(9,3,11,5),
-	(10,9,66,1)
+	(10,9,66,1),
+	(11,12,10,2),
+	(12,11,8,3),
+	(13,13,3,4)
 	;
 	INSERT INTO DZ_Po_szczegoly_zam_produkt(Id_szczegoly_zam_klienta,Id_produkt)
 VALUES
@@ -294,24 +311,33 @@ VALUES
 	(5,5),
 	(2,6),
 	(4,7),
-	(10,8)
+	(10,8),
+	(1,12),
+	(11,9),
+	(12,8),
+	(13,10)
 	;
-	INSERT INTO DZ_Szczegoly_zam_maszyn(Id_szczegoly_zam_maszyn, Id_zamowienia_zewn, Id_maszyny, koszt_jednostkowy_oferta, ilosc)
+	INSERT INTO DZ_Szczegoly_zam_maszyn(Id_zamowienia_zewn, Id_maszyny, koszt_jednostkowy_oferta, ilosc)
 VALUES	
-(1,1,1,21093.27,10),
-(2,2,2,13284.00,10),
-(3,3,3,24259.99,10),
-(4,4,4,12000,10);
+	(1,1,21093.27,10),
+	(2,2,13284.00,10),
+	(3,3,24259.99,10),
+	(4,4,12000,10),
+	(1,2,13284.00,5);
 	INSERT INTO DZ_Szczegoly_zam_materialu(Id_zamowienia_zewn, Id_materialu, koszt_jednostkowy_oferta, Id_wlasciwosc, ilosc)
 VALUES
 	(5,2,45.00,3,15),
 	(8,6,36.50,3,40),
-	(9,4,27.80,3,26)
+	(9,4,27.80,3,26),
+	(1,6,36.50,3,10),
+	(3,2,45.00,3,5)
 	;
 	INSERT INTO DZ_Szczegoly_zam_czesci(Id_zamowienia_zewn, Id_czesci, koszt_jednostkowy_oferta, Id_wlasciwosc, ilosc)
 VALUES
 	(6,3,299.99,4,5),
-	(7,1,150.00,4,2)
+	(7,1,150.00,4,2),
+	(1,2,300.00,4,4),
+	(2,1,150.00,4,15)
 	;
 	INSERT INTO DZ_Szczegoly_zam_narzedzi(Id_zamowienia_zewn, Id_narzedzia, koszt_jednostkowy_oferta, Id_wlasciwosc, ilosc)
 VALUES
@@ -320,25 +346,24 @@ VALUES
 	;
 	INSERT INTO DM_Szczegoly_wydania_produktu(Id_wydania,Id_produkt, ilosc)
 VALUES	
-(1,1,15),
-(2,2,20),
-(3,3,50),
-(4,4,35),
-(5,5,100),
-(6,6,80),
-(7,7,75),
-(8,8,65)
+	(1,1,15),
+	(2,2,20),
+	(3,3,50),
+	(4,4,35),
+	(5,5,100),
+	(6,6,80),
+	(7,7,75),
+	(8,8,65)
 ;
-
 
 INSERT INTO DP_Wydruk(wypelnienie,estymowany_czas,estymowana_masa,Id_pliku)
 VALUES
-('0,5',5,1000,1),
-('0,25',3,600,2),
-('0,45',7,2000,3),
-('0,35',5,1000,4),
-('0,15',1,500,5),
-('0,50',8,2500,6)
+	('0,5',5,1000,1),
+	('0,25',3,600,2),
+	('0,45',7,2000,3),
+	('0,35',5,1000,4),
+	('0,15',1,500,5),
+	('0,50',8,2500,6)
 ;
 
 INSERT INTO DP_Po_material_wydruk(Id_materialu, Id_po_wydr_proc, ilosc)
