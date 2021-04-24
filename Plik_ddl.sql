@@ -1,10 +1,10 @@
 USE master
 GO
-DROP DATABASE Drukarnia_4
+DROP DATABASE Drukarnia
 GO
-CREATE DATABASE Drukarnia_4
+CREATE DATABASE Drukarnia
 GO
-USE Drukarnia_4
+USE Drukarnia
 GO
 CREATE TABLE DM_Rodzaj_materialu (
 	Id_rodzaj_materialu int identity(1,1) not null PRIMARY KEY,
@@ -258,7 +258,7 @@ CREATE TABLE DM_Wydanie_produktow (
 	uwagi nvarchar (100)
 );
 CREATE TABLE DM_Szczegoly_wydania_produktu (
-	Id_wydania int identity(1,1) not null FOREIGN KEY REFERENCES DM_Wydanie_produktow (Id_wydania),
+	Id_wydania int not null FOREIGN KEY REFERENCES DM_Wydanie_produktow (Id_wydania),
 	Id_produkt int not null FOREIGN KEY REFERENCES DP_Produkt (Id_Produkt),
 	ilosc int not null
 );
@@ -432,7 +432,7 @@ CREATE TABLE DP_Po_proc_czynnosci(
 	Id_po_proc_czynnosci int IDENTITY(1,1) PRIMARY KEY NOT NULL, 
 	Id_rodzaj_czynnosci int FOREIGN KEY REFERENCES DP_rodzaj_czynnosci(Id_rodzaj_czynnosci),
 	Id_proces_technologiczny int FOREIGN KEY REFERENCES DP_Proces_technologiczny(Id_proces_technologiczny),
-	czas_zamierzony smalldatetime NOT NULL
+	czas_zamierzony datetime NOT NULL
 );
 
 CREATE TABLE DP_Po_narzedzia_czynnosci(
