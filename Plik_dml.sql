@@ -407,7 +407,7 @@ VALUES
 	(12,8,7,'2021-04-16 15:30:00','brak'),
 	(13,8,7,'2021-04-19 15:30:00','brak')
 ;
-	INSERT INTO DM_Szczegoly_wydania_produktu(Id_wydania,Id_produkt, ilosc)
+	INSERT INTO DM_Szczegoly_wydania_produktu(Id_wydania,Id_produktu, ilosc)
 VALUES	
 	(1,1,15),
 	(2,2,20),
