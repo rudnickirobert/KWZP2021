@@ -114,11 +114,12 @@ VALUES
 	;
 			INSERT INTO DM_Czesci (nazwa,Id_model_maszyny,ilosc_poczatkowa)
 VALUES
-    ('Drukarka 3D Zortrax',1,3),
-	('Drukarka 3D Makerbot',2,3),
-	('Drukarka 3D Raise3D',3,3),
-	('Szlifierka sto³owa',4,2)
-	;
+    ('Sterownik drukarki',2,1),
+	('Ekstruder',2,3),
+	('Ekstruder',3,3),
+	('Ekstruder',4,3),
+	('Silnik',1,1),
+	('Zasilacz',3,2);
 	INSERT INTO DZ_Rodzaj_rachunku(rodzaj_rachunku)
 VALUES
     ('czynsz'),
@@ -617,6 +618,16 @@ VALUES
 (1, '2021-03-04','brak'),
 (9, '2021-04-03','brak');
 
+ INSERT INTO DM_Dostawa_maszyn (Id_pracownika, data_dostawy, uwagi)
+VALUES
+   (4, '2021-01-02','brak'),
+(6, '2021-01-03','brak'),
+(3, '2021-01-18','brak'),
+(2, '2021-01-18','brak'),
+(7, '2021-01-15','brak'),
+(3, '2021-03-16','brak'),
+(5, '2021-04-12','brak');
+
 INSERT INTO DM_Sklad_dostawy_narzedzi(Id_dostawy, Id_dostawcy, Id_narzedzia, Id_zamowienie_zewn, ilosc, cena_jednostkowa_narzedzi)
 VALUES
 (2, 4, 7, 3, 3, 20),
@@ -627,4 +638,45 @@ VALUES
 (5, 3, 2, 2, 1, 1900),
 (3, 4, 5, 9, 1, 1500);
 
-DELETE FROM DP_Po_proc_czynnosci
+INSERT INTO DM_Sklad_dostawy_czesci(Id_dostawy, Id_dostawcy, Id_czesci, Id_zamowienie_zewn, ilosc, cena_jednostkowa_czesci)
+VALUES
+(1, 5, 1, 2, 1, 500),
+(2, 4, 2, 1, 3, 200),
+(2, 4, 3, 1, 3, 200),
+(2, 4, 4, 1, 3, 200),
+(3, 3, 5, 4, 2, 100);
+
+INSERT INTO DM_Sklad_dostawy_materialu(Id_dostawy, Id_dostawcy, Id_materialu, Id_zamowienie_zewn, ilosc, cena_jednostkowa_materialu)
+VALUES
+(1, 3, 1, 3, 1, 256),
+(2, 7, 2, 3, 3, 459),
+(2, 7, 3, 2, 3, 380),
+(3, 6, 4, 1, 3, 499),
+(4, 2, 6, 4, 2, 500);
+
+INSERT INTO DM_Wydanie_czesci(Id_pracownik_pobierajacy, Id_pracownik_wydajacy, data_i_godzina, uwagi)
+VALUES
+(3, 6, '2021-01-20 8:30:00','wada powierzchniowa'),
+(3, 5, '2021-02-15 9:15:00','brak'),
+(4, 9, '2021-02-16 8:00:00','brak'),
+(4, 10, '2021-03-21 14:00:00','brak'),
+(4, 5, '2021-04-31 15:00:00','brak');
+	
+	INSERT INTO DM_Szczegoly_wydania_czesci(Id_wydania_czesci, Id_czesci, ilosc)
+VALUES
+(1, 3, 1),
+(1, 2, 1),
+(2, 1, 1),
+(3, 4, 2),
+(5, 4, 2),
+(6, 5, 2);
+
+CREATE TABLE DM_Szczegoly_wydania_czesci(
+	Id_wydania_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Wydanie_czesci(Id_wydania_czesci), 
+    Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesci(Id_czesci),
+    Ilosc int NOT NULL, 
+);
+CREATE TABLE DM_Parametry_czesci(
+    Id_czesci int FOREIGN KEY REFERENCES DM_czesci(id_czesci),
+	Id_wlasciwosc int FOREIGN KEY REFERENCES DM_wlasciwosc(id_wlasciwosc),
+	wartosc int NOT NULL
