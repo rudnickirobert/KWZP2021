@@ -250,11 +250,6 @@ CREATE TABLE DM_Magazyn_gotowych_produktow(
 	data_i_godzina_przyjecia datetime NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
-CREATE TABLE DM_Szczegoly_magazynu_gotowych_produktow(
-	Id_magazynu_gotowych_produktow int NOT NULL FOREIGN KEY REFERENCES DM_Magazyn_gotowych_produktow(Id_magazynu_gotowych_produktow),
-    Id_produktu int NOT NULL FOREIGN KEY REFERENCES DP_Produkt(Id_produkt),
-	ilosc int NOT NULL
-);
 CREATE TABLE DM_Wydanie_produktow (
 	Id_wydania int identity(1,1) not null PRIMARY KEY,
 	Id_magazyn_gotowych_produktow int not null FOREIGN KEY REFERENCES DM_Magazyn_gotowych_produktow (Id_magazynu_gotowych_produktow),
