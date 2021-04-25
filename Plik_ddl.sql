@@ -275,7 +275,7 @@ CREATE TABLE DM_Zuzyte_narzedzia (
 	Id_wypozyczenia_narzedzia int not null FOREIGN KEY REFERENCES DM_Wypozyczenie_narzedzia (Id_wypozyczenia_narzedzia),
 	Id_narzedzia int not null FOREIGN KEY REFERENCES DM_Narzedzie (Id_narzedzia),
 	data_zuzycia DATETIME,
-	Ilosc int not null,
+	ilosc int not null,
 	uwagi nvarchar (100)
 );
 CREATE TABLE DM_Szczegoly_wypozyczenia_narzedzia (
