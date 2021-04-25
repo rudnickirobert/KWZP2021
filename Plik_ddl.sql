@@ -312,7 +312,7 @@ CREATE TABLE DM_Dostawa_narzedzi(
 CREATE TABLE DM_Dostawa_maszyn(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
     Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-	data_dostawy date NOT NULL, 
+	data_dostawy DATE NOT NULL, 
 	uwagi nvarchar(200) NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_maszyn(

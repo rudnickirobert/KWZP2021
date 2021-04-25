@@ -493,13 +493,20 @@ VALUES
 
  INSERT INTO DM_Dostawa_maszyn (Id_pracownika, data_dostawy, uwagi)
 VALUES
-   (4, '2021-01-02','brak'),
+(4, '2021-01-02','brak'),
 (6, '2021-01-03','brak'),
 (3, '2021-01-18','brak'),
 (2, '2021-01-18','brak'),
 (7, '2021-01-15','brak'),
 (3, '2021-03-16','brak'),
 (5, '2021-04-12','brak');
+(1, '2021-04-15','brak jednej maszyny'),
+(3, '2021-04-17','brak'),
+(4, '2021-04-17','brak'),
+(1, '2021-04-22','brak'),
+(7, '2021-04-23','brak'),
+(3, '2021-04-23','brak'),
+(1, '2021-04-25','brak');
 
 INSERT INTO DM_Sklad_dostawy_narzedzi(Id_dostawy, Id_dostawcy, Id_narzedzia, Id_zamowienie_zewn, ilosc, cena_jednostkowa_narzedzi)
 VALUES
@@ -556,6 +563,16 @@ VALUES
 (4, 4, '8'),
 (5, 3, 'czarny'),
 (5, 4, '6');
+(6, 3, 'czarny'),
+(6, 4, '6'),
+(7, 3, 'czarny'),
+(7, 4, '2'),
+(8, 3, 'czarny'),
+(8, 4, '5'),
+(9, 3, 'czarny'),
+(9, 4, '20'),
+(10, 3, 'czarny'),
+(10, 4, '8');
 
 INSERT INTO DP_Wydruk(wypelnienie,estymowany_czas,estymowana_masa,Id_pliku)
 VALUES
