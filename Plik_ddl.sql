@@ -246,7 +246,7 @@ CREATE TABLE DZ_Po_szczegoly_zam_produkt(
 
 CREATE TABLE DM_Magazyn_gotowych_produktow(
 	Id_magazynu_gotowych_produktow int identity(1,1) NOT NULL PRIMARY KEY, 
-    Id_zamowienia int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_zamowienia),
+    Id_zamowienie int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),
 	data_i_godzina_przyjecia datetime NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
@@ -372,7 +372,7 @@ CREATE TABLE DM_Wybor_maszyny(
 
 CREATE TABLE DM_Wydanie_materialu_dla_produkcji(
 	Id_wydanie_materialu_dla_produkcji int identity(1,1) NOT NULL PRIMARY KEY, 
-    Id_zamowienia int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_zamowienia),
+    Id_zamowienia int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),
 	Id_pracownik_pobierajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika), 
     Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
     data_i_godzina datetime NOT NULL      

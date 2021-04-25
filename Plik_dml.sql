@@ -720,12 +720,15 @@ VALUES
 (5, 4, 2),
 (6, 5, 2);
 
-CREATE TABLE DM_Szczegoly_wydania_czesci(
-	Id_wydania_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Wydanie_czesci(Id_wydania_czesci), 
-    Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesci(Id_czesci),
-    Ilosc int NOT NULL, 
-);
-CREATE TABLE DM_Parametry_czesci(
-    Id_czesci int FOREIGN KEY REFERENCES DM_czesci(id_czesci),
-	Id_wlasciwosc int FOREIGN KEY REFERENCES DM_wlasciwosc(id_wlasciwosc),
-	wartosc int NOT NULL
+INSERT INTO DM_Parametry_czesci(Id_czesci, Id_wlasciwosc, wartosc)
+VALUES
+(1, 3, 'czarny'),
+(1, 4, '10'),
+(2, 3, 'czarny'),
+(2, 4, '11'),
+(3, 3, 'czarny'),
+(3, 4, '9'),
+(4, 3, 'czarny'),
+(4, 4, '8'),
+(5, 3, 'czarny'),
+(5, 4, '6'),
