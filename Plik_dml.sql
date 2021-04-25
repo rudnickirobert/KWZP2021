@@ -78,20 +78,20 @@ VALUES
 	('Akcesorium','2265748395','Dostawy kleju'),
 	('Chwytareks','5628495717','Dostawy uchwytow')
 	;
-	INSERT INTO DP_Produkt (nazwa_produktu,uwagi)
+	INSERT INTO DP_Produkt (Id_produkt,nazwa_produktu,uwagi)
 VALUES
-    ('Obudowa elektroniki','Kolor czerwony'),
-	('Zabawka','Kolor czarny'),
-	('Obudowa wkretarki','Kolor niebieski'),
-	('Stojak ','Kolor czerwony'),
-	('Uchwyt','Kolor czarny'),
-	('Obudowa elektroniki','Kolor zielony'),
-	('Uchwyt na telefon','Rozne kolory'),
-	('Kostka','Kolor czarny'),
-	('Obudowa kluczy','Kolor czarny'),
-	('Klamka','Kolor czarny'),
-	('Deska do krojenia','Kolor czarny'),
-	('Gwizdek','Kolor czarny')
+    (1,'Obudowa elektroniki','Kolor czerwony'),
+	(2,'Zabawka','Kolor czarny'),
+	(3,'Obudowa wkretarki','Kolor niebieski'),
+	(4,'Stojak ','Kolor czerwony'),
+	(5,'Uchwyt','Kolor czarny'),
+	(6,'Obudowa elektroniki','Kolor zielony'),
+	(7,'Uchwyt na telefon','Rozne kolory'),
+	(8,'Kostka','Kolor czarny'),
+	(9,'Obudowa kluczy','Kolor czarny'),
+	(10,'Klamka','Kolor czarny'),
+	(11,'Deska do krojenia','Kolor czarny'),
+	(12,'Gwizdek','Kolor czarny')
 	;
 	INSERT INTO DP_Model_maszyny (nazwa_modelu_maszyny)
 VALUES
@@ -300,23 +300,23 @@ VALUES
 	(12,5),
 	(13,5)
 	;
-	INSERT INTO DZ_Szczegoly_zamowienia_klienta(Id_zamowienia, Id_pliku, ilosc_sztuk, Id_materialu)
+	INSERT INTO DZ_Szczegoly_zamowienia_klienta(Id_szczegoly_zam_klienta, Id_zamowienia, Id_pliku, ilosc_sztuk, Id_materialu)
 VALUES
-	(1,4,8,1),
-	(2,6,30,5),
-	(3,1,15,2),
-	(4,10,120,6),
-	(5,8,88,4),
-	(6,7,150,3),
-	(7,2,25,1),
-	(8,5,30,6),
-	(9,3,11,5),
-	(10,9,66,1),
-	(11,12,10,2),
-	(12,11,8,3),
-	(13,13,3,4)
+	(1,1,4,8,1),
+	(2,2,6,30,5),
+	(3,3,1,15,2),
+	(4,4,10,120,6),
+	(5,5,8,88,4),
+	(6,6,7,150,3),
+	(7,7,2,25,1),
+	(8,8,5,30,6),
+	(9,9,3,11,5),
+	(10,10,9,66,1),
+	(11,11,12,10,2),
+	(12,12,11,8,3),
+	(13,13,13,3,4)
 	;
-	INSERT INTO DZ_Po_szczegoly_zam_produkt(Id_szczegoly_zam_klienta,Id_produkt)
+	INSERT INTO DZ_Po_szczegoly_zam_produkt(Id_szczegoly_zam_klienta,Id_produktu)
 VALUES
 	(7,1),
 	(3,2),
@@ -358,6 +358,55 @@ VALUES
 	(10,3,1530.80,4,3),
 	(11,6,30.50,4,6)
 	;
+
+	INSERT INTO DM_Magazyn_gotowych_produktow(Id_magazynu_gotowych_produktow, Id_zamowienia, data_i_godzina_przyjecia, uwagi)
+VALUES	
+	(1,1,'2021-04-01 10:30:00','brak'),
+	(2,1,'2021-04-02 11:00:00','brak'),
+	(3,3,'2021-04-05 11:30:00','brak'),
+	(4,4,'2021-04-06 12:10:00','brak'),
+	(5,5,'2021-04-07 12:15:00','brak'),
+	(6,6,'2021-04-08 12:20:00','brak'),
+	(7,7,'2021-04-09 12:25:00','brak'),
+	(8,8,'2021-04-12 12:30:00','brak'),
+	(9,9,'2021-04-13 12:35:00','brak'),
+	(10,10,'2021-04-14 12:40:00','brak'),
+	(11,11,'2021-04-15 13:00:00','brak'),
+	(12,12,'2021-04-16 14:00:00','brak'),
+	(13,13,'2021-04-19 14:30:00','brak')
+;
+INSERT INTO DM_Szczegoly_magazynu_gotowych_produktow(Id_magazynu_gotowych_produktow, Id_produktu, ilosc)
+VALUES	
+	(1,1,20),
+	(2,1,30),
+	(3,3,10),
+	(4,5,45),
+	(5,5,50),
+	(6,6,100),
+	(7,7,1100),
+	(8,8,200),
+	(9,9,25),
+	(10,10,500),
+	(11,11,60),
+	(12,12,80),
+	(13,13,5)
+;
+INSERT INTO DM_Wydanie_produktow (Id_wydania, Id_magazynu_gotowych_produktow, Id_pracownika, data_i_godzina, uwagi)
+VALUES	
+	(1,1,6,'2021-04-01 15:30:00','brak'),
+	(2,1,6,'2021-04-02 15:00:00','brak'),
+	(3,3,6,'2021-04-05 15:30:00','brak'),
+	(4,4,6,'2021-04-06 15:00:00','brak'),
+	(5,5,7,'2021-04-07 15:30:00','brak'),
+	(6,6,7,'2021-04-08 15:45:00','brak'),
+	(7,7,7,'2021-04-09 15:00:00','brak'),
+	(8,8,7,'2021-04-12 15:30:00','brak'),
+	(9,8,7,'2021-04-13 15:30:00','brak'),
+	(10,8,7,'2021-04-14 15:30:00','brak'),
+	(11,8,7,'2021-04-15 15:30:00','brak'),
+	(12,8,7,'2021-04-16 15:30:00','brak'),
+	(13,8,7,'2021-04-19 15:30:00','brak')
+;
 	INSERT INTO DM_Szczegoly_wydania_produktu(Id_wydania,Id_produkt, ilosc)
 VALUES	
 	(1,1,15),

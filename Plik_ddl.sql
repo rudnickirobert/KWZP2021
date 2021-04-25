@@ -246,7 +246,7 @@ CREATE TABLE DZ_Po_szczegoly_zam_produkt(
 
 CREATE TABLE DM_Magazyn_gotowych_produktow(
 	Id_magazynu_gotowych_produktow int identity(1,1) NOT NULL PRIMARY KEY, 
-    Id_zamowienie int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_Zamowienia),
+    Id_zamowienia int NOT NULL FOREIGN KEY REFERENCES DZ_Zamowienie_klienta(Id_zamowienia),
 	data_i_godzina_przyjecia datetime NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
