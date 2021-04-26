@@ -184,7 +184,7 @@ CREATE TABLE DZ_Wycena_sz_zamowienia(
 	Id_szczegoly_zam_klienta int FOREIGN KEY REFERENCES DZ_Szczegoly_zamowienia_klienta(Id_szczegoly_zam_klienta), 
 	Id_pliku int FOREIGN KEY REFERENCES DZ_Plik(Id_pliku), 
 	koszt float NOT NULL,
-	czas_wykonania time NOT NULL
+	czas_wykonania int NOT NULL
 	);
 
 CREATE TABLE DZ_Rodzaj_statusu_zamowienia(

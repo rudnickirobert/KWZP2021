@@ -302,21 +302,37 @@ VALUES
 	(12,5),
 	(13,5)
 	;
-	INSERT INTO DZ_Szczegoly_zamowienia_klienta(Id_szczegoly_zam_klienta, Id_zamowienia, Id_pliku, ilosc_sztuk, Id_materialu)
+	INSERT INTO DZ_Szczegoly_zamowienia_klienta(Id_zamowienia, Id_pliku, ilosc_sztuk, Id_materialu)
 VALUES
-	(1,1,4,8,1),
-	(2,2,6,30,5),
-	(3,3,1,15,2),
-	(4,4,10,120,6),
-	(5,5,8,88,4),
-	(6,6,7,150,3),
-	(7,7,2,25,1),
-	(8,8,5,30,6),
-	(9,9,3,11,5),
-	(10,10,9,66,1),
-	(11,11,12,10,2),
-	(12,12,11,8,3),
-	(13,13,13,3,4)
+	(1,4,8,1),
+	(2,6,30,5),
+	(3,1,15,2),
+	(4,10,120,6),
+	(5,8,88,4),
+	(6,7,150,3),
+	(7,2,25,1),
+	(8,5,30,6),
+	(9,3,11,5),
+	(10,9,66,1),
+	(11,12,10,2),
+	(12,11,8,3),
+	(13,13,3,4)
+	;
+	INSERT INTO DZ_Wycena_sz_zamowienia(Id_szczegoly_zam_klienta, Id_pliku, koszt, czas_wykonania)
+VALUES
+	(1,4,1230.99,150),
+	(2,6,4050.00,320),
+	(3,1,2200.50,200),
+	(4,10,8450.99,413),
+	(5,8,6888.80,360),
+	(6,7,9562.00,512),
+	(7,2,1400.50,160),
+	(8,5,1760.20,195),
+	(9,3,750.99,85),
+	(10,9,4890.00,375),
+	(11,12,520.23,66),
+	(12,11,356.00,58),
+	(13,13,160.00,38)
 	;
 	INSERT INTO DZ_Po_szczegoly_zam_produkt(Id_szczegoly_zam_klienta,Id_produktu)
 VALUES
