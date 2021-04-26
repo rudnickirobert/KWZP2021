@@ -1,4 +1,4 @@
-USE Drukarnia_1
+USE Drukarnia
 
 INSERT INTO DM_Rodzaj_materialu (rodzaj_materialu)
 VALUES
@@ -564,25 +564,11 @@ VALUES
 INSERT INTO DM_Parametry_czesci(Id_czesci, Id_wlasciwosc, wartosc)
 VALUES
 (1, 3, 'czarny'),
-(1, 4, '10'),
-(2, 3, 'czarny'),
-(2, 4, '11'),
+(2, 4, '10'),
 (3, 3, 'czarny'),
-(3, 4, '9'),
-(4, 3, 'czarny'),
-(4, 4, '8'),
+(4, 4, '11'),
 (5, 3, 'czarny'),
-(5, 4, '6'),
-(6, 3, 'czarny'),
-(6, 4, '6'),
-(7, 3, 'czarny'),
-(7, 4, '2'),
-(8, 3, 'czarny'),
-(8, 4, '5'),
-(9, 3, 'czarny'),
-(9, 4, '20'),
-(10, 3, 'czarny'),
-(10, 4, '8');
+(6, 4, '9');
 INSERT INTO DM_Szczegoly_magazynu_gotowych_produktow(Id_magazynu_gotowych_produktow, Id_produktu, ilosc)
 VALUES	
 	(1,1,20),
@@ -597,7 +583,7 @@ VALUES
 	(10,10,500),
 	(11,11,60),
 	(12,12,80),
-	(13,13,5)
+	(13,12,5)
 ;
 INSERT INTO DP_Wydruk(wypelnienie,estymowany_czas,estymowana_masa,Id_pliku)
 VALUES
@@ -735,7 +721,7 @@ VALUES
 (1,2,2),
 (2,3,3),
 (3,3,4),
-(4,5,3),
+(4,4,3),
 (5,4,5),
 (6,2,4);
 
