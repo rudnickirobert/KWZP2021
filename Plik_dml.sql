@@ -1,4 +1,4 @@
-USE Drukarnia
+USE Drukarnia_1
 
 INSERT INTO DM_Rodzaj_materialu (rodzaj_materialu)
 VALUES
