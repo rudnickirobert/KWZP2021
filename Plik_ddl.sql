@@ -4,7 +4,7 @@ DROP DATABASE Drukarnia_2
 GO
 CREATE DATABASE Drukarnia_2
 GO
-USE Drukarnia
+USE Drukarnia_2
 GO
 CREATE TABLE DM_Rodzaj_materialu (
 	Id_rodzaj_materialu int identity(1,1) not null PRIMARY KEY,
