@@ -1,10 +1,10 @@
 USE master
 GO
-DROP DATABASE Drukarnia
+DROP DATABASE Drukarnia_3
 GO
-CREATE DATABASE Drukarnia
+CREATE DATABASE Drukarnia_3
 GO
-USE Drukarnia
+USE Drukarnia_3
 GO
 CREATE TABLE DM_Rodzaj_materialu (
 	Id_rodzaj_materialu int identity(1,1) not null PRIMARY KEY,
@@ -351,7 +351,7 @@ CREATE TABLE DM_Wydanie_czesci(
 	Id_wydania_czesci int identity(1,1) NOT NULL PRIMARY KEY, 
 	Id_pracownik_pobierajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika), 
     Id_pracownik_wydajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-    data_i_godzina datetime NOT NULL,
+    data_i_godzina DATETIME NOT NULL,
 	uwagi nvarchar(200) NOT NULL
 );
 
@@ -363,7 +363,7 @@ CREATE TABLE DM_Szczegoly_wydania_czesci(
 CREATE TABLE DM_Parametry_czesci(
     Id_czesci int FOREIGN KEY REFERENCES DM_czesci(id_czesci),
 	Id_wlasciwosc int FOREIGN KEY REFERENCES DM_wlasciwosc(id_wlasciwosc),
-	wartosc int NOT NULL
+	wartosc varchar(60) NOT NULL
 );
 CREATE TABLE DM_Wybor_maszyny(
     Id_model_maszyny int FOREIGN KEY REFERENCES DP_Model_maszyny(Id_model_maszyny),
@@ -388,7 +388,6 @@ CREATE TABLE DM_Szczegoly_magazynu_gotowych_produktow(
     Id_produktu int NOT NULL FOREIGN KEY REFERENCES DP_Produkt(Id_produkt),
     ilosc int NOT NULL
 );
-
 CREATE TABLE DM_Wydanie_czesci_dla_produkcji(
 	Id_wydania_czesci int identity(1,1) NOT NULL PRIMARY KEY, 
 	Id_pracownik_pobierajacy int NOT NULL FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika), 
@@ -536,7 +535,7 @@ CREATE TABLE DP_Serwis_zewnetrzny(
 	koszt money NOT NULL,
 	data_rozpoczecia date NOT NULL,
 	data_zakonczenia date,
-	uwagi nvarchar(30)
+	uwagi nvarchar(300)
 );
 CREATE TABLE DP_Serwis_wewnetrzny_naprawa(
 	Id_serwis_wewnetrzny_naprawa int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
@@ -544,7 +543,7 @@ CREATE TABLE DP_Serwis_wewnetrzny_naprawa(
 	Id_pracownik int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
 	data_rozpoczecia date NOT NULL,
 	data_zakonczenia date,
-	uwagi nvarchar(30) NOT NULL
+	uwagi nvarchar(300) NOT NULL
 	);
 
 
@@ -573,3 +572,4 @@ CREATE TABLE DP_Czesci_wykorzystane(
 	Id_czesci int FOREIGN KEY REFERENCES DM_Czesci(Id_czesci),
     Id_serwis_wewnetrzny_naprawa int FOREIGN KEY REFERENCES DP_Serwis_wewnetrzny_obsluga(Id_serwis_wewnetrzny_obsluga)
 	);
+	
