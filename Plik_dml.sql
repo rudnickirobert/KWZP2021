@@ -348,19 +348,6 @@ VALUES
 	(2,'2021-02-03'),
 	(2,'2020-12-12'),
 	(2,'2020-11-08')
-	INSERT INTO DZ_Po_szczegoly_zam_produkt(Id_szczegoly_zam_klienta,Id_produktu)
-	(7,1),
-	(3,2),
-	(9,3),
-	(8,4),
-	(5,5),
-	(2,6),
-	(4,7),
-	(10,8),
-	(1,12),
-	(11,9),
-	(12,8),
-	(13,10)
 	;
 	INSERT INTO DZ_Szczegoly_zam_maszyn(Id_zamowienia_zewn, Id_maszyny, koszt_jednostkowy_oferta, ilosc)
 VALUES	
