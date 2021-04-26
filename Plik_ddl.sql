@@ -469,20 +469,38 @@ CREATE TABLE DP_Proces_produkcyjny(
 	Id_proces_produkcyjny int IDENTITY(1,1) PRIMARY KEY NOT NULL,  
 	Id_proces_technologiczny int FOREIGN KEY REFERENCES DP_Proces_technologiczny(Id_proces_technologiczny),
 	data_realizacji datetime,
-	czas_realizacji int
 );
 
-CREATE TABLE DP_Proces_produkcyjny_wykorzystany_material(
+CREATE TABLE DP_prod_material(
 	Id_proces_produkcyjny int FOREIGN KEY REFERENCES DP_Proces_produkcyjny(Id_proces_produkcyjny),  
 	Id_materialu int FOREIGN KEY REFERENCES DM_Material(Id_materialu),
-	ilosc float
+	ilosc_zuzytego_materialu float
 );
 
-CREATE TABLE DP_Proces_produkcyjny_czas_czynnosci_dodatkowych(
+CREATE TABLE DP_prod_wydruk(
+	Id_prod_wydruk int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+	Id_proces_produkcyjny int FOREIGN KEY REFERENCES DP_Proces_produkcyjny(Id_proces_produkcyjny),  
+	Id_maszyny int FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny),
+	czas_wydruku int
+);
+
+CREATE TABLE DP_prod_czynnosci_dodatkowe(
+	Id_prod_czynnosci_dodatkowe int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	Id_proces_produkcyjny int FOREIGN KEY REFERENCES DP_Proces_produkcyjny(Id_proces_produkcyjny),  
 	Id_rodzaj_czynnosci int FOREIGN KEY REFERENCES DP_Rodzaj_czynnosci(Id_rodzaj_czynnosci),
-	wykorzystany_czas int
+	czas_pracy int
 );
+
+CREATE TABLE DP_po_prod_czyn_dod_maszyna(
+	Id_prod_czynnosci_dodatkowe int FOREIGN KEY REFERENCES DP_prod_czynnosci_dodatkowe(Id_prod_czynnosci_dodatkowe),
+	Id_maszyna int FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny),
+);
+
+CREATE TABLE DP_po_prod_czyn_dod_pracownik(
+	Id_prod_czynnosci_dodatkowe int FOREIGN KEY REFERENCES DP_prod_czynnosci_dodatkowe(Id_prod_czynnosci_dodatkowe),
+	Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
+);
+
 CREATE TABLE DP_Zuzute_maszyny(
 	Id_zuzyte_maszyny int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
 	Id_maszyny  int FOREIGN KEY REFERENCES DP_Maszyny(Id_maszyny), 

@@ -712,17 +712,16 @@ VALUES
 (4,4),
 (5,5),
 (6,6);
-INSERT INTO DP_Proces_produkcyjny(Id_proces_technologiczny, data_realizacji, czas_realizacji)
+INSERT INTO DP_Proces_produkcyjny(Id_proces_technologiczny, data_realizacji)
 VALUES 
-(1,'2021-06-12',10),
-(2,'2021-07-09',15),
-(3,'2021-06-05',12),
-(4,'2021-08-23',18),
-(5,'2021-07-15',11),
-(6,'2021-05-30',12);
-
-
-INSERT INTO DP_Proces_produkcyjny_wykorzystany_material(Id_proces_produkcyjny, Id_materialu, ilosc)
+(1,'2021-06-12'),
+(2,'2021-07-09'),
+(3,'2021-06-05'),
+(4,'2021-08-23'),
+(5,'2021-07-15'),
+(6,'2021-05-30');
+ 
+INSERT INTO DP_prod_material(Id_proces_produkcyjny, Id_materialu, ilosc_zuzytego_materialu)
 VALUES 
 (1,2,10),
 (2,3,9),
@@ -731,14 +730,41 @@ VALUES
 (5,6,5),
 (6,5,3);
 
-INSERT INTO DP_Proces_produkcyjny_czas_czynnosci_dodatkowych(Id_proces_produkcyjny, Id_rodzaj_czynnosci, wykorzystany_czas)
+INSERT INTO DP_prod_wydruk(Id_proces_produkcyjny, Id_maszyny, czas_wydruku)
 VALUES 
 (1,2,2),
 (2,3,3),
-(3,3,1),
+(3,3,4),
 (4,5,3),
-(5,4,1),
-(6,2,2);
+(5,4,5),
+(6,2,4);
+
+INSERT INTO DP_prod_czynnosci_dodatkowe(Id_proces_produkcyjny, Id_rodzaj_czynnosci, czas_pracy)
+VALUES 
+(1,1,3),
+(2,1,1),
+(3,4,2),
+(4,3,3),
+(5,2,1),
+(6,3,2);
+
+INSERT INTO DP_po_prod_czyn_dod_maszyna(Id_prod_czynnosci_dodatkowe, Id_maszyna)
+VALUES 
+(1,2),
+(1,1),
+(2,1),
+(2,2),
+(3,1),
+(3,2);
+
+INSERT INTO DP_po_prod_czyn_dod_pracownik(Id_prod_czynnosci_dodatkowe, Id_pracownika)
+VALUES 
+(1,1),
+(1,2),
+(3,4),
+(3,5),
+(2,3),
+(2,1);
 
 INSERT INTO DP_Zuzute_maszyny(Id_maszyny, data_zuzycia_maszyny, uwagi)
 VALUES 
