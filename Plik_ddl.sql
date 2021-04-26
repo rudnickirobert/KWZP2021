@@ -1,8 +1,8 @@
 USE master
 GO
-DROP DATABASE Drukarnia
+DROP DATABASE Drukarnia_2
 GO
-CREATE DATABASE Drukarnia
+CREATE DATABASE Drukarnia_2
 GO
 USE Drukarnia
 GO
@@ -213,7 +213,7 @@ CREATE TABLE DZ_Szczegoly_zam_maszyn(
 	);
 
 CREATE TABLE DZ_Szczegoly_zam_materialu(
-	Id_szczegoly_zam_maszyn int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
+	Id_szczegoly_zam_materialu int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
 	Id_zamowienia_zewn int FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_zamowienia_zewn), 
 	Id_materialu int FOREIGN KEY REFERENCES DM_Material(Id_materialu), 
 	koszt_jednostkowy_oferta float NOT NULL,
@@ -222,7 +222,7 @@ CREATE TABLE DZ_Szczegoly_zam_materialu(
 	);
 
 CREATE TABLE DZ_Szczegoly_zam_czesci(
-	Id_szczegoly_zam_maszyn int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
+	Id_szczegoly_zam_czesci int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
 	Id_zamowienia_zewn int FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_zamowienia_zewn), 
 	Id_czesci int FOREIGN KEY REFERENCES DM_Czesci(Id_czesci), 
 	koszt_jednostkowy_oferta float NOT NULL,
@@ -231,7 +231,7 @@ CREATE TABLE DZ_Szczegoly_zam_czesci(
 	);
 
 CREATE TABLE DZ_Szczegoly_zam_narzedzi(
-	Id_szczegoly_zam_maszyn int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
+	Id_szczegoly_zam_narzedzi int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
 	Id_zamowienia_zewn int FOREIGN KEY REFERENCES DZ_Zamowienie_zewn(Id_zamowienia_zewn), 
 	Id_narzedzia int FOREIGN KEY REFERENCES DM_Narzedzie(Id_narzedzia), 
 	koszt_jednostkowy_oferta float NOT NULL,

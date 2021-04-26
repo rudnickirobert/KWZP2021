@@ -1,4 +1,4 @@
-USE Drukarnia_4
+USE Drukarnia_2
 GO
 
 CREATE VIEW vDM_Material
@@ -119,5 +119,78 @@ DZ_Dzial ON DZ_Zatrudnienie.Id_dzialu=DZ_Dzial.Id_dzialu INNER JOIN
 DZ_Etat ON DZ_Zatrudnienie.Id_etatu=DZ_Etat.Id_etatu INNER JOIN
 DZ_Rodzaj_umowy ON DZ_Zatrudnienie.Id_rodzaj_umowy=DZ_Rodzaj_umowy.Id_rodzaj_umowy
 GO
-
-
+CREATE VIEW vDZ_Szczegoly_zatrudnienia
+AS
+SELECT Id_szczegoly_zatrudnienia AS [Identyfikator szczegolow zatrudnienia], DZ_Zatrudnienie.Id_zatrudnienia AS [Identyfikator zatrudnienia], data_zmiany_wynagrodzenia AS [Data zmiany wynagrodzenia], podstawa_wynagrodzenia AS [Podstawa wynagrodzenia]
+FROM dbo.DZ_Szczegoly_zatrudnienia INNER JOIN 
+DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia
+GO
+CREATE VIEW vDZ_Zamowienie_klienta
+AS
+SELECT Id_zamowienia AS [Numer zamówienia], DZ_Klient.Id_klienta AS [Numer klienta], DZ_Pracownik.Id_pracownika AS [Numer pracownika], data_zamowienia AS [Data zamowienia], oczekiwany_termin_wykonania AS [Oczekiwany termin wykonania]
+FROM dbo.DZ_Zamowienie_klienta INNER JOIN
+DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta INNER JOIN
+DZ_Pracownik ON DZ_Zamowienie_klienta.Id_pracownika=DZ_Pracownik.Id_pracownika
+GO
+CREATE VIEW vDZ_Plik
+AS
+SELECT Id_pliku AS [Numer pliku], nazwa_pliku AS [Nazwa pliku], zalacznik
+FROM dbo.DZ_Plik
+GO
+CREATE VIEW vDZ_Szczegoly_zamowienia_klienta
+AS
+SELECT Id_szczegoly_zam_klienta AS [Identyfikator szczegolow zamowienia klienta], DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Plik.Id_pliku AS [Numer pliku], ilosc_sztuk AS [Ilosc sztuk], DM_Material.Id_materialu AS [Numer materialu]
+FROM dbo.DZ_Szczegoly_zamowienia_klienta INNER JOIN
+DZ_Zamowienie_klienta ON DZ_Szczegoly_zamowienia_klienta.Id_zamowienia=DZ_Zamowienie_klienta.Id_zamowienia INNER JOIN
+DZ_Plik ON DZ_Szczegoly_zamowienia_klienta.Id_pliku=DZ_Plik.Id_pliku INNER JOIN
+DM_Material ON DZ_Szczegoly_zamowienia_klienta.Id_materialu=DM_Material.Id_materialu
+GO
+CREATE VIEW vDZ_Wycena_sz_zamowienia
+AS
+SELECT Id_wycena_sz_zamowienia AS [Identyfikator wyceny zamowienia], DZ_Szczegoly_zamowienia_klienta.Id_szczegoly_zam_klienta AS [Identyfikator szczegolow zamowienia klienta], DZ_Plik.Id_pliku AS [Numer pliku], koszt, czas_wykonania AS [Czas wykonania]
+FROM dbo.DZ_Wycena_sz_zamowienia INNER JOIN
+DZ_Szczegoly_zamowienia_klienta ON DZ_Wycena_sz_zamowienia.Id_szczegoly_zam_klienta=DZ_Szczegoly_zamowienia_klienta.Id_szczegoly_zam_klienta INNER JOIN
+DZ_Plik ON DZ_Wycena_sz_zamowienia.Id_pliku=DZ_Plik.Id_pliku
+GO
+CREATE VIEW vDZ_Rodzaj_statusu_zamowienia
+AS
+SELECT Id_rodzaj_statusu_zam AS [Identyfikator rodzaju statusu zamowienia], status_zam AS [Status zamowienia]
+FROM dbo.DZ_Rodzaj_statusu_zamowienia
+GO
+CREATE VIEW vDZ_Zamowienie_zewn
+AS
+SELECT Id_zamowienia_zewn AS [Numer zamowienia], DZ_Pracownik.Id_pracownika AS [Numer pracownika], data_zamowienia_zewn AS [Data zamowienia]
+FROM DZ_Zamowienie_zewn INNER JOIN
+DZ_Pracownik ON DZ_Zamowienie_zewn.Id_pracownika=DZ_Pracownik.Id_pracownika
+GO
+CREATE VIEW vDZ_Szczegoly_zam_maszyn
+AS
+SELECT Id_szczegoly_zam_maszyn AS [Identyfikator szczegolow zamowienia maszyn], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DP_Maszyny.Id_maszyny AS [Numer maszyny], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], ilosc
+FROM dbo.DZ_Szczegoly_zam_maszyn INNER JOIN
+DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_maszyn.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
+DP_Maszyny ON DZ_Szczegoly_zam_maszyn.Id_maszyny=DP_Maszyny.Id_maszyny
+GO
+CREATE VIEW vDZ_Szczegoly_zam_materialu
+AS
+SELECT Id_szczegoly_zam_materialu AS [Identyfikator szczegolow zamowienia materialu], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Material.Id_materialu AS [Numer materialu], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Id_wlasciwosc AS [Numer wlasciwosci], ilosc
+FROM dbo.DZ_Szczegoly_zam_materialu INNER JOIN
+DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_materialu.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
+DM_Material ON DZ_Szczegoly_zam_materialu.Id_materialu=DM_Material.Id_materialu INNER JOIN
+DM_Wlasciwosc ON DZ_Szczegoly_zam_materialu.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
+GO
+CREATE VIEW vDZ_Szczegoly_zam_czesci
+AS
+SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesci.Id_czesci AS [Numer czesci], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Id_wlasciwosc AS [Numer wlasciwosci], ilosc
+FROM dbo.DZ_Szczegoly_zam_czesci INNER JOIN
+DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_czesci.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
+DM_Czesci ON DZ_Szczegoly_zam_czesci.Id_czesci=DM_Czesci.Id_czesci INNER JOIN
+DM_Wlasciwosc ON DZ_Szczegoly_zam_czesci.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
+GO
+CREATE VIEW vDZ_Szczegoly_zam_narzedzi
+AS
+SELECT Id_szczegoly_zam_narzedzi AS [Identyfikator szczegolow zamowienia narzedzi], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Narzedzie.Id_narzedzia AS [Numer narzedzia], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Id_wlasciwosc AS [Numer wlasciwosci], ilosc
+FROM dbo.DZ_Szczegoly_zam_narzedzi INNER JOIN
+DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_narzedzi.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
+DM_Narzedzie ON DZ_Szczegoly_zam_narzedzi.Id_narzedzia=DM_Narzedzie.Id_narzedzia INNER JOIN
+DM_Wlasciwosc ON DZ_Szczegoly_zam_narzedzi.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
+GO
