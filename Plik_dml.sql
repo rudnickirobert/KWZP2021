@@ -569,6 +569,29 @@ VALUES
 (4, 4, '11'),
 (5, 3, 'czarny'),
 (6, 4, '9');
+
+INSERT INTO DM_Wybor_maszyny(Id_model_maszyny, Id_maszyny)
+VALUES
+(1, 2),
+(2, 3),
+(3, 4),
+(4, 1)
+;
+
+INSERT INTO DM_Wydanie_materialu_dla_produkcji(Id_zamowienia, Id_pracownik_pobierajacy, Id_pracownik_wydajacy, data_i_godzina)
+VALUES
+(3, 1, 2,'2021-02-20 8:30:00'),
+(6, 3, 2,'2021-04-10 8:30:00'),
+(10, 1, 2,'2021-04-30 8:30:00')
+;
+
+INSERT INTO DM_Szczegoly_wydania_materialu(Id_wydanie_materialu_dla_produkcji, Id_materialu, ilosc)
+VALUES
+(1, 2, 2),
+(2, 4, 8),
+(3, 3, 4)
+;
+
 INSERT INTO DM_Szczegoly_magazynu_gotowych_produktow(Id_magazynu_gotowych_produktow, Id_produktu, ilosc)
 VALUES	
 	(1,1,20),
@@ -584,6 +607,13 @@ VALUES
 	(11,11,60),
 	(12,12,80),
 	(13,12,5)
+;
+
+INSERT INTO DM_Wydanie_czesci_dla_produkcji(Id_pracownik_pobierajacy, Id_pracownik_wydajacy, data_i_godzina_wydania, uwagi)
+VALUES	
+	(1,4,'2021-02-20 10:30:00','brak'),
+	(2,4,'2021-04-10 10:30:00','brak'),
+	(1,4,'2021-04-30 10:30:00','brak')
 ;
 INSERT INTO DP_Wydruk(wypelnienie,estymowany_czas,estymowana_masa,Id_pliku)
 VALUES
