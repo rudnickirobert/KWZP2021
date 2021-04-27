@@ -75,5 +75,10 @@ namespace KWZP2021
             this.database.SaveChanges();
             initDataGridView();
         }
+
+        private void Rodzaj_materialu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

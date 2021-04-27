@@ -23,5 +23,11 @@ namespace KWZP2021
         {
 
         }
+
+        private void btnRodzajCzynnosci_Click(object sender, EventArgs e)
+        {
+            Rodzaj_czynnosci rodzaj_czynnosci = new Rodzaj_czynnosci(this.database);
+            rodzaj_czynnosci.ShowDialog();
+        }
     }
 }
