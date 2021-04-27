@@ -23,5 +23,11 @@ namespace KWZP2021
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Stanowiska stanowiska = new Stanowiska(this.database);
+            stanowiska.ShowDialog();
+        }
     }
 }
