@@ -1,10 +1,10 @@
 USE master
 GO
-DROP DATABASE Drukarnia_2
+DROP DATABASE Drukarnia
 GO
-CREATE DATABASE Drukarnia_2
+CREATE DATABASE Drukarnia
 GO
-USE Drukarnia_2
+USE Drukarnia
 GO
 CREATE TABLE DM_Rodzaj_materialu (
 	Id_rodzaj_materialu int identity(1,1) not null PRIMARY KEY,
