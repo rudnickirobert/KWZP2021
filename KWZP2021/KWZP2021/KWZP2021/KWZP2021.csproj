@@ -310,6 +310,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rodzaj_materialu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rodzaj_materialu.Designer.cs">
+      <DependentUpon>Rodzaj_materialu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stanowiska.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,6 +456,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Rodzaj_materialu.resx">
+      <DependentUpon>Rodzaj_materialu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stanowiska.resx">
       <DependentUpon>Stanowiska.cs</DependentUpon>
     </EmbeddedResource>

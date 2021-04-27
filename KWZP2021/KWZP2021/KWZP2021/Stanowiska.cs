@@ -35,7 +35,7 @@ namespace KWZP2021
 
         private void initDataGridView()
         {
-            this.dataGridView1.DataSource = this.database.vDZ_Stanowisko.ToList();
+            this.dataGridView1.DataSource = this.database.DZ_Stanowisko.ToList();
 
         }
 
@@ -82,26 +82,6 @@ namespace KWZP2021
 
             this.database.SaveChanges();
             initDataGridView();
-        }
-
-        private void Stanowiska_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button4_Click(object sender, EventArgs e)

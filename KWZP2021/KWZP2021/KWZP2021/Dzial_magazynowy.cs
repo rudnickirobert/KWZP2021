@@ -23,5 +23,11 @@ namespace KWZP2021
         {
 
         }
+
+        private void btnRodzajMaterial_Click(object sender, EventArgs e)
+        {
+            Rodzaj_materialu rodzaj_materialu = new Rodzaj_materialu(this.database);
+            rodzaj_materialu.ShowDialog();
+        }
     }
 }
