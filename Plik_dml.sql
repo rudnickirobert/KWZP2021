@@ -4,7 +4,9 @@ INSERT INTO DM_Rodzaj_materialu (rodzaj_materialu)
 VALUES
     ('srodki adhezyjne'),
 	('filament'),
-	('klej')
+	('klej'),
+	('silikon'),
+	('srodek antystatyczny')
 	;
 INSERT INTO DM_Wlasciwosc (nazwa_wlasciwosci, jednostka_pomiarowa)
 VALUES
@@ -98,19 +100,24 @@ VALUES
     ('M300 Dual'),
 	('Replicator+'),
 	('Pro2Plus'),
-	('ASFSAR444')
+	('ASFSAR444'),
+	('HYPE200')
 	;
 INSERT INTO DP_Rodzaj_maszyny (rodzaj_maszyny)
 VALUES
     ('Szlifierka'),
-	('Drukarka')
+	('Drukarka'),
+	('Frezarka'),
+	('Planownica'),
+	('Tokarka')
 	;
 INSERT INTO DP_Maszyny (Id_rodzaj_maszyny,Id_model_maszyny,nr_seryjny,data_wprowadzenia,koszt_1rh)
 VALUES
     (1,4,'12567653211','2020-11-12',20),
 	(2,1,'87857493697','2020-11-11',10),
 	(2,2,'12746551735','2020-11-15',12),
-	(2,3,'68548376567','2020-11-11',9)
+	(2,3,'68548376567','2020-11-11',9),
+	(2,5,'78945612378','2020-11-14',25)
 	;
 INSERT INTO DM_Czesci (nazwa,Id_model_maszyny,ilosc_poczatkowa)
 VALUES
@@ -125,7 +132,8 @@ VALUES
     ('czynsz'),
 	('woda'),
 	('pr¹d'),
-	('internet')
+	('internet'),
+	('inne')
 	;
 INSERT INTO DZ_Rachunki(Id_rodzaj_rachunku, koszt, data_zaplaty)
 VALUES
@@ -157,7 +165,8 @@ VALUES
     ('Obudowix','1241295225','Jozef','Miedziany','Wawrzyszewska 10','Warszawa', '00-564','obudowix@gmail.com','665665665','1234432156788765'),
 	 ('Skrzyniers','1873788435','Andrzej','Trawczyk','Mi³osna 15','Warszawa', '00-318','skrzyniers@skrzyniers.com','948701956','8702978450697812'),
 	  ('Zelmix','0681956284','Bartosz','Brokul','Ulubiona 10','Warszawa', '00-426','zelmix@zelmix.com','176924587','7439587618539476'),
-	   ('Antylos','1872058241','Dariusz','Antylopa','Stara 11','Warszawa', '00-995','antylos@antylos.com','676502978','6473195279358642')
+	   ('Antylos','1872058241','Dariusz','Antylopa','Stara 11','Warszawa', '00-995','antylos@antylos.com','676502978','6473195279358642'),
+	   ('Plitox','1234568525','Jan','Niezbedny','Kozicka 12','Warszawa','00-460','jan.nzb@qrw.xxx','700884721','6473195279358852')
 	;
 INSERT INTO DZ_Rodzaj_nieobecnosci(rodzaj, procent_pensji)
 VALUES
@@ -190,7 +199,9 @@ INSERT INTO DZ_Etat(etat)
 VALUES
     (1),
 	(0.5),
-	(0.25)
+	(0.25),
+	(0.75),
+	(2)
 	;
 INSERT INTO DZ_Rodzaj_umowy(rodzaj_umowy)
 VALUES
@@ -354,12 +365,16 @@ VALUES
 	(6,3,299.99,4,5),
 	(7,1,150.00,4,2),
 	(1,2,300.00,4,4),
-	(2,1,150.00,4,15)
+	(2,1,150.00,4,15),
+	(3,4,199.00,3,4)
 	;
 INSERT INTO DZ_Szczegoly_zam_narzedzi(Id_zamowienia_zewn, Id_narzedzia, koszt_jednostkowy_oferta, Id_wlasciwosc, ilosc)
 VALUES
 	(10,3,1530.80,4,3),
-	(11,6,30.50,4,6)
+	(11,6,30.50,4,6),
+	(1,1,11.00,2,1),
+	(2,2,35.00,3,4),
+	(3,2,36.00,4,2)
 	;
 INSERT INTO DZ_Po_szczegoly_zam_produkt(Id_szczegoly_zam_klienta,Id_produkt)
 VALUES
@@ -562,19 +577,24 @@ VALUES
 	(1, 2),
 	(2, 3),
 	(3, 4),
-	(4, 1)
+	(4, 1),
+	(5, 5)
 	;
 INSERT INTO DM_Wydanie_materialu_dla_produkcji(Id_zamowienia, Id_pracownik_pobierajacy, Id_pracownik_wydajacy, data_i_godzina)
 VALUES
 	(3, 1, 2,'2021-02-20 8:30:00'),
 	(6, 3, 2,'2021-04-10 8:30:00'),
-	(10, 1, 2,'2021-04-30 8:30:00')
+	(10, 1, 2,'2021-04-30 8:30:00'),
+	(1, 2, 1,'2021-04-27 8:31:00'),
+	(2, 3, 1,'2021-04-26 8:35:15')
 	;
 INSERT INTO DM_Szczegoly_wydania_materialu(Id_wydanie_materialu_dla_produkcji, Id_materialu, ilosc)
 VALUES
 	(1, 2, 2),
 	(2, 4, 8),
-	(3, 3, 4)
+	(3, 3, 4),
+	(4, 1, 2),
+	(5, 2, 5)
 	;
 INSERT INTO DM_Szczegoly_magazynu_gotowych_produktow(Id_magazynu_gotowych_produktow, Id_produktu, ilosc)
 VALUES	
@@ -596,7 +616,9 @@ INSERT INTO DM_Wydanie_czesci_dla_produkcji(Id_pracownik_pobierajacy, Id_pracown
 VALUES	
 	(1,4,'2021-02-20 10:30:00','brak'),
 	(2,4,'2021-04-10 10:30:00','brak'),
-	(1,4,'2021-04-30 10:30:00','brak')
+	(1,4,'2021-04-30 10:30:00','brak'),
+	(1,3,'2021-04-27 10:15:00','naruszona powloka'),
+	(2,3,'2021-04-28 09:45:00','brak')
 	;
 INSERT INTO DP_Wydruk(wypelnienie,estymowany_czas,estymowana_masa,Id_pliku)
 VALUES
@@ -675,7 +697,10 @@ VALUES
 INSERT INTO DP_Po_maszyna_czynnosci(Id_po_proc_czynnosci, Id_maszyny)
 VALUES
 	(2,1),
-	(5,1)
+	(5,1),
+	(1,2),
+	(3,1),
+	(4,2)
 	;
 INSERT INTO DP_Po_prac_czynnosci(Id_pracownika, Id_po_proc_czynnosci)
 VALUES
@@ -711,7 +736,9 @@ INSERT INTO DP_Po_maszyna_wydruk(Id_po_wydr_proces, Id_maszyny)
 VALUES
 	(1,1),
 	(1,2),
-	(1,3)
+	(1,3),
+	(2,1),
+	(2,2)
 	;
 INSERT INTO DP_Proces_produkt(Id_proces_technologiczny,Id_produkt)
 VALUES 
@@ -781,31 +808,39 @@ VALUES
 	(1,'2021-01-06','niezdolna do pracy'),
 	(2,'2021-02-12','niezdolna do pracy'),
 	(3,'2021-03-16','wylaczona z uzytku'),
-	(4,'2021-02-19','wylaczona z uzytku')
+	(4,'2021-02-19','wylaczona z uzytku'),
+	(5,'2021-03-24','przekroczony resurs')
 	;
 INSERT INTO DP_Nazwa_obslugi(nazwa_obslugi)
 VALUES
 	('biezaca'),
 	('okresowa'),
-	('profilaktyczny')
+	('profilaktyczny'),
+	('blad maszyny'),
+	('uzupelnienie filamentu')
 	;
 INSERT INTO DP_Czynnosci(nazwa_czynnosci)
 VALUES
 	('sprawdzenie'),
 	('konserwacja'),
 	('wyczyszczenie'),
-	('przeglad')
+	('przeglad'),
+	('naprawa')
 	;
 INSERT INTO DP_Czynnosci_w_ramach_obslugi_serw_wew(Id_nazwa_obslugi, Id_czynnosc)
 VALUES
 	(1,1),
 	(1,3),
-	(2,2)
+	(2,2),
+	(1,2),
+	(1,4)
 	;
 INSERT INTO DP_Co_ile_obsluga(co_ile_obsluga)
 VALUES
 	(7),
+	(31),
 	(91),
+	(183),
 	(365)
 	;
 INSERT INTO DP_Obsluga(Id_nazwa_obslugi, Id_rodzaj_maszyny, Id_co_ile_obsluga)
@@ -820,7 +855,10 @@ VALUES
 INSERT INTO DP_Usluga_serwisu_zewnetrznego(nazwa_uslugi_serwisu_zewnetrznego)
 VALUES
 	('naprawa'),
-	('przeglad profilaktyczny')
+	('przeglad profilaktyczny'),
+	('czyszczenie'),
+	('wycena'),
+	('nieudana naprawa')
 	;
 INSERT INTO DP_Firma_serwisowa(nazwa_firmy, adres, miasto, kod_pocztowy, nr_tel, e_mail)
 VALUES
@@ -851,14 +889,16 @@ VALUES
 	(2,7,'2021-01-10','2021-01-11','wymiana ekstrudera'),
 	(1,6,'2021-01-16','2021-01-17','naprawa silnika'),
 	(3,8,'2021-01-21','2021-01-21','naprawa sto³u'),
-	(4,6,'2021-01-10','2021-01-11','wymiana zasilacza')
+	(4,6,'2021-01-10','2021-01-11','wymiana zasilacza'),
+	(5,5,'2021-01-15','2021-01-16','wykasowanie bledow')
 	;
 INSERT INTO DP_Serwis_wewnetrzny_obsluga(Id_maszyny, Id_pracownik,Id_czynnosc_w_ramach_obslugi_serw_wew, data_rozpoczecia, data_zakonczenia)
 VALUES
 	(1,6,1,'2021-01-10','2021-01-11'),
 	(2,6,2,'2021-01-16','2021-01-17'),
 	(3,6,1,'2021-01-21','2021-01-21'),
-	(4,6,1,'2021-01-10','2021-01-11')
+	(4,6,1,'2021-01-10','2021-01-11'),
+	(5,6,2,'2021-01-15','2021-01-16')
 	;
 INSERT INTO DP_Narzedzia_uzyte_obsluga(Id_narzedzia,Id_serwis_wewnetrzny_obsluga)
 VALUES
@@ -881,5 +921,8 @@ VALUES
 INSERT INTO DP_Czesci_wykorzystane(Id_czesci,Id_serwis_wewnetrzny_naprawa)
 VALUES
 	(2,1),
-	(6,4)
+	(6,4),
+	(3,2),
+	(1,5),
+	(5,3)
 	;
