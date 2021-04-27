@@ -36,6 +36,7 @@
             // 
             // DZ_Button
             // 
+            this.DZ_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DZ_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.DZ_Button.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.DZ_Button.Location = new System.Drawing.Point(23, 142);
@@ -48,6 +49,7 @@
             // 
             // DM_button
             // 
+            this.DM_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DM_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.DM_button.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.DM_button.Location = new System.Drawing.Point(236, 143);
@@ -60,6 +62,7 @@
             // 
             // DP_Button
             // 
+            this.DP_Button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DP_Button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.DP_Button.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.DP_Button.Location = new System.Drawing.Point(458, 142);
@@ -75,12 +78,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(635, 457);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(643, 417);
             this.Controls.Add(this.DP_Button);
             this.Controls.Add(this.DM_button);
             this.Controls.Add(this.DZ_Button);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Drukarnia 3D";
             this.ResumeLayout(false);
 
         }
