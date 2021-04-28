@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DrukarniaModelStoreContainer" CdmEntityContainer="DrukarniaEntities">
+    <EntitySetMapping Name="DM_Czesc">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Czesc">
+        <MappingFragment StoreEntitySet="DM_Czesc">
+          <ScalarProperty Name="Id_czesci" ColumnName="Id_czesci" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Id_model_maszyny" ColumnName="Id_model_maszyny" />
+          <ScalarProperty Name="Ilosc_poczatkowa" ColumnName="Ilosc_poczatkowa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Dostawa_czesci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Dostawa_czesci">
+        <MappingFragment StoreEntitySet="DM_Dostawa_czesci">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Data_dostawy" ColumnName="Data_dostawy" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Dostawa_maszyn">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Dostawa_maszyn">
+        <MappingFragment StoreEntitySet="DM_Dostawa_maszyn">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Data_dostawy" ColumnName="Data_dostawy" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Dostawa_materialu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Dostawa_materialu">
+        <MappingFragment StoreEntitySet="DM_Dostawa_materialu">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Data_dostawy" ColumnName="Data_dostawy" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Dostawa_narzedzi">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Dostawa_narzedzi">
+        <MappingFragment StoreEntitySet="DM_Dostawa_narzedzi">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Data_dostawy" ColumnName="Data_dostawy" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Dostawca">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Dostawca">
+        <MappingFragment StoreEntitySet="DM_Dostawca">
+          <ScalarProperty Name="Id_dostawcy" ColumnName="Id_dostawcy" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="NIP" ColumnName="NIP" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Magazyn_gotowych_produktow">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Magazyn_gotowych_produktow">
+        <MappingFragment StoreEntitySet="DM_Magazyn_gotowych_produktow">
+          <ScalarProperty Name="Id_magazynu_gotowych_produktow" ColumnName="Id_magazynu_gotowych_produktow" />
+          <ScalarProperty Name="Id_zamowienie" ColumnName="Id_zamowienie" />
+          <ScalarProperty Name="Data_i_godzina_przyjecia" ColumnName="Data_i_godzina_przyjecia" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Material">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Material">
+        <MappingFragment StoreEntitySet="DM_Material">
+          <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+          <ScalarProperty Name="Id_rodzaj_materialu" ColumnName="Id_rodzaj_materialu" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Narzedzie">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Narzedzie">
+        <MappingFragment StoreEntitySet="DM_Narzedzie">
+          <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+          <ScalarProperty Name="Id_rodzaj_narzedzia" ColumnName="Id_rodzaj_narzedzia" />
+          <ScalarProperty Name="Ilosc_poczatkowa" ColumnName="Ilosc_poczatkowa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Rodzaj_materialu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Rodzaj_materialu">
+        <MappingFragment StoreEntitySet="DM_Rodzaj_materialu">
+          <ScalarProperty Name="Id_rodzaj_materialu" ColumnName="Id_rodzaj_materialu" />
+          <ScalarProperty Name="Rodzaj_materialu" ColumnName="Rodzaj_materialu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Rodzaj_narzedzia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Rodzaj_narzedzia">
+        <MappingFragment StoreEntitySet="DM_Rodzaj_narzedzia">
+          <ScalarProperty Name="Id_rodzaj_narzedzia" ColumnName="Id_rodzaj_narzedzia" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Wlasciwosc">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Wlasciwosc">
+        <MappingFragment StoreEntitySet="DM_Wlasciwosc">
+          <ScalarProperty Name="Id_wlasciwosc" ColumnName="Id_wlasciwosc" />
+          <ScalarProperty Name="Nazwa_wlasciwosci" ColumnName="Nazwa_wlasciwosci" />
+          <ScalarProperty Name="Jednostka_pomiarowa" ColumnName="Jednostka_pomiarowa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Wydanie_czesci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Wydanie_czesci">
+        <MappingFragment StoreEntitySet="DM_Wydanie_czesci">
+          <ScalarProperty Name="Id_wydania_czesci" ColumnName="Id_wydania_czesci" />
+          <ScalarProperty Name="Id_pracownik_pobierajacy" ColumnName="Id_pracownik_pobierajacy" />
+          <ScalarProperty Name="Id_pracownik_wydajacy" ColumnName="Id_pracownik_wydajacy" />
+          <ScalarProperty Name="Data_i_godzina" ColumnName="Data_i_godzina" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Wydanie_czesci_dla_produkcji">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Wydanie_czesci_dla_produkcji">
+        <MappingFragment StoreEntitySet="DM_Wydanie_czesci_dla_produkcji">
+          <ScalarProperty Name="Id_wydania_czesci" ColumnName="Id_wydania_czesci" />
+          <ScalarProperty Name="Id_pracownik_pobierajacy" ColumnName="Id_pracownik_pobierajacy" />
+          <ScalarProperty Name="Id_pracownik_wydajacy" ColumnName="Id_pracownik_wydajacy" />
+          <ScalarProperty Name="Data_i_godzina_wydania" ColumnName="Data_i_godzina_wydania" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Wydanie_materialu_dla_produkcji">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Wydanie_materialu_dla_produkcji">
+        <MappingFragment StoreEntitySet="DM_Wydanie_materialu_dla_produkcji">
+          <ScalarProperty Name="Id_wydanie_materialu_dla_produkcji" ColumnName="Id_wydanie_materialu_dla_produkcji" />
+          <ScalarProperty Name="Id_zamowienia" ColumnName="Id_zamowienia" />
+          <ScalarProperty Name="Id_pracownik_pobierajacy" ColumnName="Id_pracownik_pobierajacy" />
+          <ScalarProperty Name="Id_pracownik_wydajacy" ColumnName="Id_pracownik_wydajacy" />
+          <ScalarProperty Name="Data_i_godzina" ColumnName="Data_i_godzina" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Wydanie_produktu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Wydanie_produktu">
+        <MappingFragment StoreEntitySet="DM_Wydanie_produktu">
+          <ScalarProperty Name="Id_wydania" ColumnName="Id_wydania" />
+          <ScalarProperty Name="Id_magazyn_gotowych_produktow" ColumnName="Id_magazyn_gotowych_produktow" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Data_i_godzina" ColumnName="Data_i_godzina" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Wypozyczenie_narzedzia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Wypozyczenie_narzedzia">
+        <MappingFragment StoreEntitySet="DM_Wypozyczenie_narzedzia">
+          <ScalarProperty Name="Id_wypozyczenia_narzedzia" ColumnName="Id_wypozyczenia_narzedzia" />
+          <ScalarProperty Name="Id_pracownika_wypozyczajacego" ColumnName="Id_pracownika_wypozyczajacego" />
+          <ScalarProperty Name="Id_pracownika_wydajacego" ColumnName="Id_pracownika_wydajacego" />
+          <ScalarProperty Name="Data_i_godzina_wypozyczenia" ColumnName="Data_i_godzina_wypozyczenia" />
+          <ScalarProperty Name="Data_i_godzina_zwrotu" ColumnName="Data_i_godzina_zwrotu" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Zuzyte_narzedzie">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Zuzyte_narzedzie">
+        <MappingFragment StoreEntitySet="DM_Zuzyte_narzedzie">
+          <ScalarProperty Name="Id_zuzycia" ColumnName="Id_zuzycia" />
+          <ScalarProperty Name="Id_wypozyczenia_narzedzia" ColumnName="Id_wypozyczenia_narzedzia" />
+          <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
+          <ScalarProperty Name="Data_zuzycia" ColumnName="Data_zuzycia" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Co_ile_obsluga">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Co_ile_obsluga">
+        <MappingFragment StoreEntitySet="DP_Co_ile_obsluga">
+          <ScalarProperty Name="Id_co_ile_obsluga" ColumnName="Id_co_ile_obsluga" />
+          <ScalarProperty Name="Co_ile_obsluga" ColumnName="Co_ile_obsluga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Czynnosc">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Czynnosc">
+        <MappingFragment StoreEntitySet="DP_Czynnosc">
+          <ScalarProperty Name="Id_czynnosc" ColumnName="Id_czynnosc" />
+          <ScalarProperty Name="Nazwa_czynnosci" ColumnName="Nazwa_czynnosci" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Czynnosc_w_ramach_obslugi_serw_wew">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew">
+        <MappingFragment StoreEntitySet="DP_Czynnosc_w_ramach_obslugi_serw_wew">
+          <ScalarProperty Name="Id_czynnosc_w_ramach_obslugi_serw_wew" ColumnName="Id_czynnosc_w_ramach_obslugi_serw_wew" />
+          <ScalarProperty Name="Id_nazwa_obslugi" ColumnName="Id_nazwa_obslugi" />
+          <ScalarProperty Name="Id_czynnosc" ColumnName="Id_czynnosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Firma_serwisowa">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Firma_serwisowa">
+        <MappingFragment StoreEntitySet="DP_Firma_serwisowa">
+          <ScalarProperty Name="Id_firma_serwisowa" ColumnName="Id_firma_serwisowa" />
+          <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa_firmy" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+          <ScalarProperty Name="Nr_tel" ColumnName="Nr_tel" />
+          <ScalarProperty Name="E_mail" ColumnName="E_mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Maszyna">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Maszyna">
+        <MappingFragment StoreEntitySet="DP_Maszyna">
+          <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+          <ScalarProperty Name="Id_rodzaj_maszyny" ColumnName="Id_rodzaj_maszyny" />
+          <ScalarProperty Name="Id_model_maszyny" ColumnName="Id_model_maszyny" />
+          <ScalarProperty Name="Nr_seryjny" ColumnName="Nr_seryjny" />
+          <ScalarProperty Name="Data_wprowadzenia" ColumnName="Data_wprowadzenia" />
+          <ScalarProperty Name="Koszt_1rh" ColumnName="Koszt_1rh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Model_maszyny">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Model_maszyny">
+        <MappingFragment StoreEntitySet="DP_Model_maszyny">
+          <ScalarProperty Name="Id_model_maszyny" ColumnName="Id_model_maszyny" />
+          <ScalarProperty Name="Nazwa_modelu_maszyny" ColumnName="Nazwa_modelu_maszyny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Nazwa_obslugi">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Nazwa_obslugi">
+        <MappingFragment StoreEntitySet="DP_Nazwa_obslugi">
+          <ScalarProperty Name="Id_nazwa_obslugi" ColumnName="Id_nazwa_obslugi" />
+          <ScalarProperty Name="Nazwa_obslugi" ColumnName="Nazwa_obslugi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Obsluga">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Obsluga">
+        <MappingFragment StoreEntitySet="DP_Obsluga">
+          <ScalarProperty Name="Id_obslugi" ColumnName="Id_obslugi" />
+          <ScalarProperty Name="Id_nazwa_obslugi" ColumnName="Id_nazwa_obslugi" />
+          <ScalarProperty Name="Id_rodzaj_maszyny" ColumnName="Id_rodzaj_maszyny" />
+          <ScalarProperty Name="Id_co_ile_obsluga" ColumnName="Id_co_ile_obsluga" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Po_proc_czynnosc">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Po_proc_czynnosc">
+        <MappingFragment StoreEntitySet="DP_Po_proc_czynnosc">
+          <ScalarProperty Name="Id_po_proc_czynnosci" ColumnName="Id_po_proc_czynnosci" />
+          <ScalarProperty Name="Id_rodzaj_czynnosci" ColumnName="Id_rodzaj_czynnosci" />
+          <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+          <ScalarProperty Name="Czas_zamierzony" ColumnName="Czas_zamierzony" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Po_wydr_proc">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Po_wydr_proc">
+        <MappingFragment StoreEntitySet="DP_Po_wydr_proc">
+          <ScalarProperty Name="Id_po_wydr_proces" ColumnName="Id_po_wydr_proces" />
+          <ScalarProperty Name="Id_wydruk" ColumnName="Id_wydruk" />
+          <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+          <ScalarProperty Name="Czas_zamierzony" ColumnName="Czas_zamierzony" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Proces_produkcyjny">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Proces_produkcyjny">
+        <MappingFragment StoreEntitySet="DP_Proces_produkcyjny">
+          <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+          <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+          <ScalarProperty Name="Data_realizacji" ColumnName="Data_realizacji" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Proces_technologiczny">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Proces_technologiczny">
+        <MappingFragment StoreEntitySet="DP_Proces_technologiczny">
+          <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_prod_czynnosc_dodatkowa">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_prod_czynnosc_dodatkowa">
+        <MappingFragment StoreEntitySet="DP_prod_czynnosc_dodatkowa">
+          <ScalarProperty Name="Id_prod_czynnosci_dodatkowe" ColumnName="Id_prod_czynnosci_dodatkowe" />
+          <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+          <ScalarProperty Name="Id_rodzaj_czynnosci" ColumnName="Id_rodzaj_czynnosci" />
+          <ScalarProperty Name="Czas_pracy" ColumnName="Czas_pracy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_prod_wydruk">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_prod_wydruk">
+        <MappingFragment StoreEntitySet="DP_prod_wydruk">
+          <ScalarProperty Name="Id_prod_wydruk" ColumnName="Id_prod_wydruk" />
+          <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+          <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+          <ScalarProperty Name="Czas_wydruku" ColumnName="Czas_wydruku" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Produkt">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Produkt">
+        <MappingFragment StoreEntitySet="DP_Produkt">
+          <ScalarProperty Name="Id_produkt" ColumnName="Id_produkt" />
+          <ScalarProperty Name="Nazwa_produktu" ColumnName="Nazwa_produktu" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Rodzaj_czynnosci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Rodzaj_czynnosci">
+        <MappingFragment StoreEntitySet="DP_Rodzaj_czynnosci">
+          <ScalarProperty Name="Id_rodzaj_czynnosci" ColumnName="Id_rodzaj_czynnosci" />
+          <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Rodzaj_maszyny">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Rodzaj_maszyny">
+        <MappingFragment StoreEntitySet="DP_Rodzaj_maszyny">
+          <ScalarProperty Name="Id_rodzaj_maszyny" ColumnName="Id_rodzaj_maszyny" />
+          <ScalarProperty Name="Rodzaj_maszyny" ColumnName="Rodzaj_maszyny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Serwis_wewnetrzny_naprawa">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Serwis_wewnetrzny_naprawa">
+        <MappingFragment StoreEntitySet="DP_Serwis_wewnetrzny_naprawa">
+          <ScalarProperty Name="Id_serwis_wewnetrzny_naprawa" ColumnName="Id_serwis_wewnetrzny_naprawa" />
+          <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+          <ScalarProperty Name="Id_pracownik" ColumnName="Id_pracownik" />
+          <ScalarProperty Name="Data_rozpoczecia" ColumnName="Data_rozpoczecia" />
+          <ScalarProperty Name="Data_zakonczenia" ColumnName="Data_zakonczenia" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Serwis_wewnetrzny_obsluga">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga">
+        <MappingFragment StoreEntitySet="DP_Serwis_wewnetrzny_obsluga">
+          <ScalarProperty Name="Id_serwis_wewnetrzny_obsluga" ColumnName="Id_serwis_wewnetrzny_obsluga" />
+          <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+          <ScalarProperty Name="Id_pracownik" ColumnName="Id_pracownik" />
+          <ScalarProperty Name="Id_czynnosc_w_ramach_obslugi_serw_wew" ColumnName="Id_czynnosc_w_ramach_obslugi_serw_wew" />
+          <ScalarProperty Name="Data_rozpoczecia" ColumnName="Data_rozpoczecia" />
+          <ScalarProperty Name="Data_zakonczenia" ColumnName="Data_zakonczenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Serwis_zewnetrzny">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Serwis_zewnetrzny">
+        <MappingFragment StoreEntitySet="DP_Serwis_zewnetrzny">
+          <ScalarProperty Name="Id_serwis_zewnetrzny" ColumnName="Id_serwis_zewnetrzny" />
+          <ScalarProperty Name="Id_firma_serwisowa" ColumnName="Id_firma_serwisowa" />
+          <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+          <ScalarProperty Name="Id_usluga_serwisu_zewnetrznego" ColumnName="Id_usluga_serwisu_zewnetrznego" />
+          <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+          <ScalarProperty Name="Data_rozpoczecia" ColumnName="Data_rozpoczecia" />
+          <ScalarProperty Name="Data_zakonczenia" ColumnName="Data_zakonczenia" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Usluga_serwisu_zewnetrznego">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Usluga_serwisu_zewnetrznego">
+        <MappingFragment StoreEntitySet="DP_Usluga_serwisu_zewnetrznego">
+          <ScalarProperty Name="Id_usluga_serwisu_zewnetrznego" ColumnName="Id_usluga_serwisu_zewnetrznego" />
+          <ScalarProperty Name="Nazwa_uslugi_serwisu_zewnetrznego" ColumnName="Nazwa_uslugi_serwisu_zewnetrznego" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Wydruk">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Wydruk">
+        <MappingFragment StoreEntitySet="DP_Wydruk">
+          <ScalarProperty Name="Id_wydruk" ColumnName="Id_wydruk" />
+          <ScalarProperty Name="Wypelnienie" ColumnName="Wypelnienie" />
+          <ScalarProperty Name="Estymowany_czas" ColumnName="Estymowany_czas" />
+          <ScalarProperty Name="Estymowana_masa" ColumnName="Estymowana_masa" />
+          <ScalarProperty Name="Id_pliku" ColumnName="Id_pliku" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Zuzyta_maszyna">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Zuzyta_maszyna">
+        <MappingFragment StoreEntitySet="DP_Zuzyta_maszyna">
+          <ScalarProperty Name="Id_zuzyte_maszyny" ColumnName="Id_zuzyte_maszyny" />
+          <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+          <ScalarProperty Name="Data_zuzycia_maszyny" ColumnName="Data_zuzycia_maszyny" />
+          <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Dzial">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Dzial">
+        <MappingFragment StoreEntitySet="DZ_Dzial">
+          <ScalarProperty Name="Id_dzialu" ColumnName="Id_dzialu" />
+          <ScalarProperty Name="Dzial" ColumnName="Dzial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Etat">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Etat">
+        <MappingFragment StoreEntitySet="DZ_Etat">
+          <ScalarProperty Name="Id_etatu" ColumnName="Id_etatu" />
+          <ScalarProperty Name="Etat" ColumnName="Etat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Klient">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Klient">
+        <MappingFragment StoreEntitySet="DZ_Klient">
+          <ScalarProperty Name="Id_klienta" ColumnName="Id_klienta" />
+          <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa_firmy" />
+          <ScalarProperty Name="Nip" ColumnName="Nip" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Numer_rachunku" ColumnName="Numer_rachunku" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Nieobecnosc">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Nieobecnosc">
+        <MappingFragment StoreEntitySet="DZ_Nieobecnosc">
+          <ScalarProperty Name="Id_nieobecnosci" ColumnName="Id_nieobecnosci" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Id_rodzaj_nieobecnosci" ColumnName="Id_rodzaj_nieobecnosci" />
+          <ScalarProperty Name="Data_rozpoczecia" ColumnName="Data_rozpoczecia" />
+          <ScalarProperty Name="Data_zakonczenia" ColumnName="Data_zakonczenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Plik">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Plik">
+        <MappingFragment StoreEntitySet="DZ_Plik">
+          <ScalarProperty Name="Id_pliku" ColumnName="Id_pliku" />
+          <ScalarProperty Name="Nazwa_pliku" ColumnName="Nazwa_pliku" />
+          <ScalarProperty Name="Zalacznik" ColumnName="Zalacznik" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Pracownik">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Pracownik">
+        <MappingFragment StoreEntitySet="DZ_Pracownik">
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Imie" ColumnName="Imie" />
+          <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Miasto" ColumnName="Miasto" />
+          <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod_pocztowy" />
+          <ScalarProperty Name="Data_urodzenia" ColumnName="Data_urodzenia" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Numer_rachunku" ColumnName="Numer_rachunku" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Rachunek">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Rachunek">
+        <MappingFragment StoreEntitySet="DZ_Rachunek">
+          <ScalarProperty Name="Id_rachunki" ColumnName="Id_rachunki" />
+          <ScalarProperty Name="Id_rodzaj_rachunku" ColumnName="Id_rodzaj_rachunku" />
+          <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+          <ScalarProperty Name="Data_zaplaty" ColumnName="Data_zaplaty" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Rodzaj_nieobecnosci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Rodzaj_nieobecnosci">
+        <MappingFragment StoreEntitySet="DZ_Rodzaj_nieobecnosci">
+          <ScalarProperty Name="Id_rodzaj_nieobecnosci" ColumnName="Id_rodzaj_nieobecnosci" />
+          <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
+          <ScalarProperty Name="Procent_pensji" ColumnName="Procent_pensji" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Rodzaj_rachunku">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Rodzaj_rachunku">
+        <MappingFragment StoreEntitySet="DZ_Rodzaj_rachunku">
+          <ScalarProperty Name="Id_rodzaj_rachunku" ColumnName="Id_rodzaj_rachunku" />
+          <ScalarProperty Name="Rodzaj_rachunku" ColumnName="Rodzaj_rachunku" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Rodzaj_statusu_zamowienia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Rodzaj_statusu_zamowienia">
+        <MappingFragment StoreEntitySet="DZ_Rodzaj_statusu_zamowienia">
+          <ScalarProperty Name="Id_rodzaj_statusu_zam" ColumnName="Id_rodzaj_statusu_zam" />
+          <ScalarProperty Name="Status_zam" ColumnName="Status_zam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Rodzaj_umowy">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Rodzaj_umowy">
+        <MappingFragment StoreEntitySet="DZ_Rodzaj_umowy">
+          <ScalarProperty Name="Id_rodzaj_umowy" ColumnName="Id_rodzaj_umowy" />
+          <ScalarProperty Name="Rodzaj_umowy" ColumnName="Rodzaj_umowy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Stanowisko">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Stanowisko">
+        <MappingFragment StoreEntitySet="DZ_Stanowisko">
+          <ScalarProperty Name="Id_stanowiska" ColumnName="Id_stanowiska" />
+          <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Status_zamowienia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Status_zamowienia">
+        <MappingFragment StoreEntitySet="DZ_Status_zamowienia">
+          <ScalarProperty Name="Id_status_zam" ColumnName="Id_status_zam" />
+          <ScalarProperty Name="Id_zamowienia" ColumnName="Id_zamowienia" />
+          <ScalarProperty Name="Id_rodzaj_statusu_zam" ColumnName="Id_rodzaj_statusu_zam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Szczegoly_zam_czesci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Szczegoly_zam_czesci">
+        <MappingFragment StoreEntitySet="DZ_Szczegoly_zam_czesci">
+          <ScalarProperty Name="Id_szczegoly_zam_czesci" ColumnName="Id_szczegoly_zam_czesci" />
+          <ScalarProperty Name="Id_zamowienia_zewn" ColumnName="Id_zamowienia_zewn" />
+          <ScalarProperty Name="Id_czesci" ColumnName="Id_czesci" />
+          <ScalarProperty Name="Koszt_jednostkowy_oferta" ColumnName="Koszt_jednostkowy_oferta" />
+          <ScalarProperty Name="Id_wlasciwosc" ColumnName="Id_wlasciwosc" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Szczegoly_zam_maszyn">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Szczegoly_zam_maszyn">
+        <MappingFragment StoreEntitySet="DZ_Szczegoly_zam_maszyn">
+          <ScalarProperty Name="Id_szczegoly_zam_maszyn" ColumnName="Id_szczegoly_zam_maszyn" />
+          <ScalarProperty Name="Id_zamowienia_zewn" ColumnName="Id_zamowienia_zewn" />
+          <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+          <ScalarProperty Name="Koszt_jednostkowy_oferta" ColumnName="Koszt_jednostkowy_oferta" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Szczegoly_zam_materialu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Szczegoly_zam_materialu">
+        <MappingFragment StoreEntitySet="DZ_Szczegoly_zam_materialu">
+          <ScalarProperty Name="Id_szczegoly_zam_materialu" ColumnName="Id_szczegoly_zam_materialu" />
+          <ScalarProperty Name="Id_zamowienia_zewn" ColumnName="Id_zamowienia_zewn" />
+          <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+          <ScalarProperty Name="Koszt_jednostkowy_oferta" ColumnName="Koszt_jednostkowy_oferta" />
+          <ScalarProperty Name="Id_wlasciwosc" ColumnName="Id_wlasciwosc" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Szczegoly_zam_narzedzi">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Szczegoly_zam_narzedzi">
+        <MappingFragment StoreEntitySet="DZ_Szczegoly_zam_narzedzi">
+          <ScalarProperty Name="Id_szczegoly_zam_narzedzi" ColumnName="Id_szczegoly_zam_narzedzi" />
+          <ScalarProperty Name="Id_zamowienia_zewn" ColumnName="Id_zamowienia_zewn" />
+          <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
+          <ScalarProperty Name="Koszt_jednostkowy_oferta" ColumnName="Koszt_jednostkowy_oferta" />
+          <ScalarProperty Name="Id_wlasciwosc" ColumnName="Id_wlasciwosc" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Szczegoly_zamowienia_klienta">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Szczegoly_zamowienia_klienta">
+        <MappingFragment StoreEntitySet="DZ_Szczegoly_zamowienia_klienta">
+          <ScalarProperty Name="Id_szczegoly_zam_klienta" ColumnName="Id_szczegoly_zam_klienta" />
+          <ScalarProperty Name="Id_zamowienia" ColumnName="Id_zamowienia" />
+          <ScalarProperty Name="Id_pliku" ColumnName="Id_pliku" />
+          <ScalarProperty Name="Ilosc_sztuk" ColumnName="Ilosc_sztuk" />
+          <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Szczegoly_zatrudnienia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Szczegoly_zatrudnienia">
+        <MappingFragment StoreEntitySet="DZ_Szczegoly_zatrudnienia">
+          <ScalarProperty Name="Id_szczegoly_zatrudnienia" ColumnName="Id_szczegoly_zatrudnienia" />
+          <ScalarProperty Name="Id_zatrudnienia" ColumnName="Id_zatrudnienia" />
+          <ScalarProperty Name="Data_zmiany_wynagrodzenia" ColumnName="Data_zmiany_wynagrodzenia" />
+          <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa_wynagrodzenia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Wycena_sz_zamowienia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Wycena_sz_zamowienia">
+        <MappingFragment StoreEntitySet="DZ_Wycena_sz_zamowienia">
+          <ScalarProperty Name="Id_wycena_sz_zamowienia" ColumnName="Id_wycena_sz_zamowienia" />
+          <ScalarProperty Name="Id_szczegoly_zam_klienta" ColumnName="Id_szczegoly_zam_klienta" />
+          <ScalarProperty Name="Id_pliku" ColumnName="Id_pliku" />
+          <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+          <ScalarProperty Name="Czas_wykonania" ColumnName="Czas_wykonania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Zamowienie_klienta">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Zamowienie_klienta">
+        <MappingFragment StoreEntitySet="DZ_Zamowienie_klienta">
+          <ScalarProperty Name="Id_zamowienia" ColumnName="Id_zamowienia" />
+          <ScalarProperty Name="Id_klienta" ColumnName="Id_klienta" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Data_zamowienia" ColumnName="Data_zamowienia" />
+          <ScalarProperty Name="Oczekiwany_termin_wykonania" ColumnName="Oczekiwany_termin_wykonania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Zamowienie_zewn">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Zamowienie_zewn">
+        <MappingFragment StoreEntitySet="DZ_Zamowienie_zewn">
+          <ScalarProperty Name="Id_zamowienia_zewn" ColumnName="Id_zamowienia_zewn" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Data_zamowienia_zewn" ColumnName="Data_zamowienia_zewn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DZ_Zatrudnienie">
+      <EntityTypeMapping TypeName="DrukarniaModel.DZ_Zatrudnienie">
+        <MappingFragment StoreEntitySet="DZ_Zatrudnienie">
+          <ScalarProperty Name="Id_zatrudnienia" ColumnName="Id_zatrudnienia" />
+          <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <ScalarProperty Name="Id_stanowiska" ColumnName="Id_stanowiska" />
+          <ScalarProperty Name="Id_dzialu" ColumnName="Id_dzialu" />
+          <ScalarProperty Name="Id_etatu" ColumnName="Id_etatu" />
+          <ScalarProperty Name="Id_rodzaj_umowy" ColumnName="Id_rodzaj_umowy" />
+          <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
+          <ScalarProperty Name="Data_zwolnienia" ColumnName="Data_zwolnienia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Parametr_czesci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Parametr_czesci">
+        <MappingFragment StoreEntitySet="DM_Parametr_czesci">
+          <ScalarProperty Name="Id_czesci" ColumnName="Id_czesci" />
+          <ScalarProperty Name="Id_wlasciwosc" ColumnName="Id_wlasciwosc" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Parametr_narzedzia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Parametr_narzedzia">
+        <MappingFragment StoreEntitySet="DM_Parametr_narzedzia">
+          <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
+          <ScalarProperty Name="Id_wlasciwosc" ColumnName="Id_wlasciwosc" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Sklad_dostawy_czesci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Sklad_dostawy_czesci">
+        <MappingFragment StoreEntitySet="DM_Sklad_dostawy_czesci">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_dostawcy" ColumnName="Id_dostawcy" />
+          <ScalarProperty Name="Id_czesci" ColumnName="Id_czesci" />
+          <ScalarProperty Name="Id_zamowienie_zewn" ColumnName="Id_zamowienie_zewn" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+          <ScalarProperty Name="Cena_jednostkowa_czesci" ColumnName="Cena_jednostkowa_czesci" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Sklad_dostawy_maszyn">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Sklad_dostawy_maszyn">
+        <MappingFragment StoreEntitySet="DM_Sklad_dostawy_maszyn">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_dostawcy" ColumnName="Id_dostawcy" />
+          <ScalarProperty Name="Id_maszyn" ColumnName="Id_maszyn" />
+          <ScalarProperty Name="Id_zamowienie_zewn" ColumnName="Id_zamowienie_zewn" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+          <ScalarProperty Name="Cena_jednostkowa_maszyny" ColumnName="Cena_jednostkowa_maszyny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Sklad_dostawy_materialu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Sklad_dostawy_materialu">
+        <MappingFragment StoreEntitySet="DM_Sklad_dostawy_materialu">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_dostawcy" ColumnName="Id_dostawcy" />
+          <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+          <ScalarProperty Name="Id_zamowienie_zewn" ColumnName="Id_zamowienie_zewn" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+          <ScalarProperty Name="Cena_jednostkowa_materialu" ColumnName="Cena_jednostkowa_materialu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Sklad_dostawy_narzedzi">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Sklad_dostawy_narzedzi">
+        <MappingFragment StoreEntitySet="DM_Sklad_dostawy_narzedzi">
+          <ScalarProperty Name="Id_dostawy" ColumnName="Id_dostawy" />
+          <ScalarProperty Name="Id_dostawcy" ColumnName="Id_dostawcy" />
+          <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
+          <ScalarProperty Name="Id_zamowienie_zewn" ColumnName="Id_zamowienie_zewn" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+          <ScalarProperty Name="Cena_jednostkowa_narzedzi" ColumnName="Cena_jednostkowa_narzedzi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Szczegoly_magazynu_gotowych_produktow">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Szczegoly_magazynu_gotowych_produktow">
+        <MappingFragment StoreEntitySet="DM_Szczegoly_magazynu_gotowych_produktow">
+          <ScalarProperty Name="Id_magazynu_gotowych_produktow" ColumnName="Id_magazynu_gotowych_produktow" />
+          <ScalarProperty Name="Id_produktu" ColumnName="Id_produktu" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Szczegoly_wydania_czesci">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Szczegoly_wydania_czesci">
+        <MappingFragment StoreEntitySet="DM_Szczegoly_wydania_czesci">
+          <ScalarProperty Name="Id_wydania_czesci" ColumnName="Id_wydania_czesci" />
+          <ScalarProperty Name="Id_czesci" ColumnName="Id_czesci" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Szczegoly_wydania_materialu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Szczegoly_wydania_materialu">
+        <MappingFragment StoreEntitySet="DM_Szczegoly_wydania_materialu">
+          <ScalarProperty Name="Id_wydanie_materialu_dla_produkcji" ColumnName="Id_wydanie_materialu_dla_produkcji" />
+          <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Szczegoly_wydania_produktu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Szczegoly_wydania_produktu">
+        <MappingFragment StoreEntitySet="DM_Szczegoly_wydania_produktu">
+          <ScalarProperty Name="Id_wydania" ColumnName="Id_wydania" />
+          <ScalarProperty Name="Id_produkt" ColumnName="Id_produkt" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Szczegoly_wypozyczenia_narzedzia">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia">
+        <MappingFragment StoreEntitySet="DM_Szczegoly_wypozyczenia_narzedzia">
+          <ScalarProperty Name="Id_wypozyczenia_narzedzia" ColumnName="Id_wypozyczenia_narzedzia" />
+          <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_Wlasciwosc_materialu">
+      <EntityTypeMapping TypeName="DrukarniaModel.DM_Wlasciwosc_materialu">
+        <MappingFragment StoreEntitySet="DM_Wlasciwosc_materialu">
+          <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+          <ScalarProperty Name="Id_wlasciwosc" ColumnName="Id_wlasciwosc" />
+          <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DP_Po_material_wydruk">
+      <EntityTypeMapping TypeName="DrukarniaModel.DP_Po_material_wydruk">
+        <MappingFragment StoreEntitySet="DP_Po_material_wydruk">
+          <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+          <ScalarProperty Name="Id_po_wydr_proc" ColumnName="Id_po_wydr_proc" />
+          <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
