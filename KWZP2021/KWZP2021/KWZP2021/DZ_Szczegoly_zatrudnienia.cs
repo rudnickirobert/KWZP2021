@@ -16,8 +16,8 @@ namespace KWZP2021
     {
         public int Id_szczegoly_zatrudnienia { get; set; }
         public Nullable<int> Id_zatrudnienia { get; set; }
-        public System.DateTime data_zmiany_wynagrodzenia { get; set; }
-        public double podstawa_wynagrodzenia { get; set; }
+        public System.DateTime Data_zmiany_wynagrodzenia { get; set; }
+        public double Podstawa_wynagrodzenia { get; set; }
     
         public virtual DZ_Zatrudnienie DZ_Zatrudnienie { get; set; }
     }

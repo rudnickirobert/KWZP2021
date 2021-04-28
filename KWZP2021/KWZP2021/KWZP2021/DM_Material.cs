@@ -19,15 +19,15 @@ namespace KWZP2021
         {
             this.DM_Sklad_dostawy_materialu = new HashSet<DM_Sklad_dostawy_materialu>();
             this.DM_Szczegoly_wydania_materialu = new HashSet<DM_Szczegoly_wydania_materialu>();
-            this.DM_Wlasciwosci_materialu = new HashSet<DM_Wlasciwosci_materialu>();
+            this.DM_Wlasciwosc_materialu = new HashSet<DM_Wlasciwosc_materialu>();
             this.DP_Po_material_wydruk = new HashSet<DP_Po_material_wydruk>();
-            this.DZ_Szczegoly_zamowienia_klienta = new HashSet<DZ_Szczegoly_zamowienia_klienta>();
             this.DZ_Szczegoly_zam_materialu = new HashSet<DZ_Szczegoly_zam_materialu>();
+            this.DZ_Szczegoly_zamowienia_klienta = new HashSet<DZ_Szczegoly_zamowienia_klienta>();
         }
     
         public int Id_materialu { get; set; }
         public int Id_rodzaj_materialu { get; set; }
-        public string nazwa { get; set; }
+        public string Nazwa { get; set; }
     
         public virtual DM_Rodzaj_materialu DM_Rodzaj_materialu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -35,12 +35,12 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_wydania_materialu> DM_Szczegoly_wydania_materialu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Wlasciwosci_materialu> DM_Wlasciwosci_materialu { get; set; }
+        public virtual ICollection<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DZ_Szczegoly_zamowienia_klienta> DZ_Szczegoly_zamowienia_klienta { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Szczegoly_zam_materialu> DZ_Szczegoly_zam_materialu { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DZ_Szczegoly_zamowienia_klienta> DZ_Szczegoly_zamowienia_klienta { get; set; }
     }
 }

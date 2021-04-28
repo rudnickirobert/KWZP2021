@@ -20,17 +20,15 @@ namespace KWZP2021
             InitializeComponent();
             this.database = database;
 
-            this.comboBox1.DataSource = this.database.DZ_Stanowisko.ToList();
-            this.comboBox1.DisplayMember = "Stanowisko";
-            this.comboBox1.ValueMember = "Id_stanowiska";
-
-            this.dataGridView1.DataSource = this.database.DZ_Stanowisko.ToList();
+            initCombobox();
+            initDataGridView();
         }
 
         private void initCombobox()
         {
             this.comboBox1.DataSource = this.database.DZ_Stanowisko.ToList();
             this.comboBox1.DisplayMember = "Stanowisko";
+            this.comboBox1.ValueMember = "Id_stanowiska";
         }
 
         private void initDataGridView()
@@ -42,7 +40,7 @@ namespace KWZP2021
         private void button2_Click(object sender, EventArgs e)
         {
             DZ_Stanowisko newStanowisko = new DZ_Stanowisko();
-            newStanowisko.stanowisko = this.textBox1.Text;
+            newStanowisko.Stanowisko = this.textBox1.Text;
 
             this.database.DZ_Stanowisko.Add(newStanowisko);
             this.database.SaveChanges();
@@ -60,7 +58,7 @@ namespace KWZP2021
 
             DZ_Stanowisko toRemove = this.database.DZ_Stanowisko.Where(stanowisko => stanowisko.Id_stanowiska == id).First();
 
-            toRemove.stanowisko = textBox1.Text; // UPDATE
+            toRemove.Stanowisko = textBox1.Text; // UPDATE
 
             //this.database.DZ_Stanowisko.Remove(toRemove); // DELETE
 

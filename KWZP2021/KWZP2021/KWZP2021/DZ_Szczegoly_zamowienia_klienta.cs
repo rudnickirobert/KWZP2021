@@ -23,7 +23,7 @@ namespace KWZP2021
         public int Id_szczegoly_zam_klienta { get; set; }
         public Nullable<int> Id_zamowienia { get; set; }
         public Nullable<int> Id_pliku { get; set; }
-        public int ilosc_sztuk { get; set; }
+        public int Ilosc_sztuk { get; set; }
         public Nullable<int> Id_materialu { get; set; }
     
         public virtual DM_Material DM_Material { get; set; }

@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public Nullable<int> Id_materialu { get; set; }
         public Nullable<int> Id_po_wydr_proc { get; set; }
-        public double ilosc { get; set; }
+        public double Ilosc { get; set; }
     
         public virtual DM_Material DM_Material { get; set; }
         public virtual DP_Po_wydr_proc DP_Po_wydr_proc { get; set; }

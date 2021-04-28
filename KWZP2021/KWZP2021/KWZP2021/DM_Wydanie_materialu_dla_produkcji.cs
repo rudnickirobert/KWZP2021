@@ -24,7 +24,7 @@ namespace KWZP2021
         public int Id_zamowienia { get; set; }
         public int Id_pracownik_pobierajacy { get; set; }
         public int Id_pracownik_wydajacy { get; set; }
-        public System.DateTime data_i_godzina { get; set; }
+        public System.DateTime Data_i_godzina { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_wydania_materialu> DM_Szczegoly_wydania_materialu { get; set; }

@@ -17,16 +17,16 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DP_Proces_technologiczny()
         {
-            this.DP_Po_proc_czynnosci = new HashSet<DP_Po_proc_czynnosci>();
+            this.DP_Po_proc_czynnosc = new HashSet<DP_Po_proc_czynnosc>();
             this.DP_Po_wydr_proc = new HashSet<DP_Po_wydr_proc>();
             this.DP_Proces_produkcyjny = new HashSet<DP_Proces_produkcyjny>();
         }
     
         public int Id_proces_technologiczny { get; set; }
-        public string nazwa { get; set; }
+        public string Nazwa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DP_Po_proc_czynnosci> DP_Po_proc_czynnosci { get; set; }
+        public virtual ICollection<DP_Po_proc_czynnosc> DP_Po_proc_czynnosc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Po_wydr_proc> DP_Po_wydr_proc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

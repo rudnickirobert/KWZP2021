@@ -22,8 +22,8 @@ namespace KWZP2021
     
         public int Id_dostawy { get; set; }
         public Nullable<int> Id_pracownika { get; set; }
-        public System.DateTime data_dostawy { get; set; }
-        public string uwagi { get; set; }
+        public System.DateTime Data_dostawy { get; set; }
+        public string Uwagi { get; set; }
     
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

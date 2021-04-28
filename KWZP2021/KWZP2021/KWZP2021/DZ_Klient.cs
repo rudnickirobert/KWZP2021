@@ -21,16 +21,16 @@ namespace KWZP2021
         }
     
         public int Id_klienta { get; set; }
-        public string nazwa_firmy { get; set; }
-        public string nip { get; set; }
-        public string imie { get; set; }
-        public string nazwisko { get; set; }
-        public string adres { get; set; }
-        public string miasto { get; set; }
-        public string kod_pocztowy { get; set; }
-        public string email { get; set; }
-        public string telefon { get; set; }
-        public string numer_rachunku { get; set; }
+        public string Nazwa_firmy { get; set; }
+        public string Nip { get; set; }
+        public string Imie { get; set; }
+        public string Nazwisko { get; set; }
+        public string Adres { get; set; }
+        public string Miasto { get; set; }
+        public string Kod_pocztowy { get; set; }
+        public string Email { get; set; }
+        public string Telefon { get; set; }
+        public string Numer_rachunku { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Zamowienie_klienta> DZ_Zamowienie_klienta { get; set; }

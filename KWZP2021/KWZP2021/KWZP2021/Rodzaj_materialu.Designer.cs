@@ -154,7 +154,6 @@ namespace KWZP2021
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Rodzaj_materialu";
             this.Text = "Rodzaj_materialu";
-            this.Load += new System.EventHandler(this.Rodzaj_materialu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRodzajMaterialu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

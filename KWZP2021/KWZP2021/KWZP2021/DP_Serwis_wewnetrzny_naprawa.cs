@@ -17,11 +17,11 @@ namespace KWZP2021
         public int Id_serwis_wewnetrzny_naprawa { get; set; }
         public Nullable<int> Id_maszyny { get; set; }
         public Nullable<int> Id_pracownik { get; set; }
-        public System.DateTime data_rozpoczecia { get; set; }
-        public Nullable<System.DateTime> data_zakonczenia { get; set; }
-        public string uwagi { get; set; }
+        public System.DateTime Data_rozpoczecia { get; set; }
+        public Nullable<System.DateTime> Data_zakonczenia { get; set; }
+        public string Uwagi { get; set; }
     
-        public virtual DP_Maszyny DP_Maszyny { get; set; }
+        public virtual DP_Maszyna DP_Maszyna { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
     }
 }

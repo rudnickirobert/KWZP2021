@@ -21,7 +21,7 @@ namespace KWZP2021
         }
     
         public int Id_rodzaj_statusu_zam { get; set; }
-        public string status_zam { get; set; }
+        public string Status_zam { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Status_zamowienia> DZ_Status_zamowienia { get; set; }

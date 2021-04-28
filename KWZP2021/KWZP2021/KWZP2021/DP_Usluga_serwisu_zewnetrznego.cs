@@ -21,7 +21,7 @@ namespace KWZP2021
         }
     
         public int Id_usluga_serwisu_zewnetrznego { get; set; }
-        public string nazwa_uslugi_serwisu_zewnetrznego { get; set; }
+        public string Nazwa_uslugi_serwisu_zewnetrznego { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Serwis_zewnetrzny> DP_Serwis_zewnetrzny { get; set; }
