@@ -35,5 +35,10 @@ namespace KWZP2021
             Dzial_produkcji Dzial_produkcji = new Dzial_produkcji (this.database);
             Dzial_produkcji.ShowDialog();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

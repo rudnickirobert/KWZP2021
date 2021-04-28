@@ -18,7 +18,7 @@ namespace KWZP2021
         public int Id_czesci { get; set; }
         public int Ilosc { get; set; }
     
-        public virtual DM_Czesc DM_Czesc { get; set; }
+        public virtual DM_Czesci DM_Czesci { get; set; }
         public virtual DM_Wydanie_czesci DM_Wydanie_czesci { get; set; }
     }
 }

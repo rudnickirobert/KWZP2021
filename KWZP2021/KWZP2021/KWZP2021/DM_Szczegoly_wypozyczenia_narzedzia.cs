@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public int Id_wypozyczenia_narzedzia { get; set; }
         public int Id_narzedzia { get; set; }
-        public int Ilosc { get; set; }
+        public int ilosc { get; set; }
     
         public virtual DM_Narzedzie DM_Narzedzie { get; set; }
         public virtual DM_Wypozyczenie_narzedzia DM_Wypozyczenie_narzedzia { get; set; }

@@ -18,11 +18,11 @@ namespace KWZP2021
         public Nullable<int> Id_dostawcy { get; set; }
         public int Id_materialu { get; set; }
         public int Id_zamowienie_zewn { get; set; }
-        public int Ilosc { get; set; }
-        public int Cena_jednostkowa_materialu { get; set; }
+        public int ilosc { get; set; }
+        public int cena_jednostkowa_materialu { get; set; }
     
         public virtual DM_Dostawa_materialu DM_Dostawa_materialu { get; set; }
-        public virtual DM_Dostawca DM_Dostawca { get; set; }
+        public virtual DM_Dostawcy DM_Dostawcy { get; set; }
         public virtual DM_Material DM_Material { get; set; }
         public virtual DZ_Zamowienie_zewn DZ_Zamowienie_zewn { get; set; }
     }

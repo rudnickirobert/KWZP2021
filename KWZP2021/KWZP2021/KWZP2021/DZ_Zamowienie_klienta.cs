@@ -26,8 +26,8 @@ namespace KWZP2021
         public int Id_zamowienia { get; set; }
         public Nullable<int> Id_klienta { get; set; }
         public Nullable<int> Id_pracownika { get; set; }
-        public System.DateTime Data_zamowienia { get; set; }
-        public System.DateTime Oczekiwany_termin_wykonania { get; set; }
+        public System.DateTime data_zamowienia { get; set; }
+        public System.DateTime oczekiwany_termin_wykonania { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Magazyn_gotowych_produktow> DM_Magazyn_gotowych_produktow { get; set; }

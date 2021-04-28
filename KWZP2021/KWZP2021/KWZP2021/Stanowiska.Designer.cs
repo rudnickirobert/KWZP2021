@@ -48,7 +48,6 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.Visible = false;
-
             // 
             // dataGridView1
             // 
@@ -57,7 +56,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(457, 199);
             this.dataGridView1.TabIndex = 1;
-
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
@@ -103,7 +102,6 @@
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Usuń stanowisko";
-
             // 
             // button3
             // 
@@ -141,7 +139,7 @@
             this.Controls.Add(this.comboBox1);
             this.Name = "Stanowiska";
             this.Text = "Stanowiska";
-
+            this.Load += new System.EventHandler(this.Stanowiska_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

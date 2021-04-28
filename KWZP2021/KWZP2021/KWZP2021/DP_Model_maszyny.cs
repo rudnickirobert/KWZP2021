@@ -17,16 +17,16 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DP_Model_maszyny()
         {
-            this.DM_Czesc = new HashSet<DM_Czesc>();
-            this.DP_Maszyna = new HashSet<DP_Maszyna>();
+            this.DM_Czesci = new HashSet<DM_Czesci>();
+            this.DP_Maszyny = new HashSet<DP_Maszyny>();
         }
     
         public int Id_model_maszyny { get; set; }
-        public string Nazwa_modelu_maszyny { get; set; }
+        public string nazwa_modelu_maszyny { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Czesc> DM_Czesc { get; set; }
+        public virtual ICollection<DM_Czesci> DM_Czesci { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DP_Maszyna> DP_Maszyna { get; set; }
+        public virtual ICollection<DP_Maszyny> DP_Maszyny { get; set; }
     }
 }

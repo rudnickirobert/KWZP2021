@@ -23,8 +23,8 @@ namespace KWZP2021
         }
     
         public int Id_pliku { get; set; }
-        public string Nazwa_pliku { get; set; }
-        public string Zalacznik { get; set; }
+        public string nazwa_pliku { get; set; }
+        public string zalacznik { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Wydruk> DP_Wydruk { get; set; }

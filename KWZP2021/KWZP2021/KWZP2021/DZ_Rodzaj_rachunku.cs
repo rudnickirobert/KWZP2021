@@ -17,13 +17,13 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DZ_Rodzaj_rachunku()
         {
-            this.DZ_Rachunek = new HashSet<DZ_Rachunek>();
+            this.DZ_Rachunki = new HashSet<DZ_Rachunki>();
         }
     
         public int Id_rodzaj_rachunku { get; set; }
-        public string Rodzaj_rachunku { get; set; }
+        public string rodzaj_rachunku { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DZ_Rachunek> DZ_Rachunek { get; set; }
+        public virtual ICollection<DZ_Rachunki> DZ_Rachunki { get; set; }
     }
 }

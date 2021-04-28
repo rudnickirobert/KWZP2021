@@ -21,8 +21,8 @@ namespace KWZP2021
         }
     
         public int Id_rodzaj_nieobecnosci { get; set; }
-        public string Rodzaj { get; set; }
-        public double Procent_pensji { get; set; }
+        public string rodzaj { get; set; }
+        public double procent_pensji { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Nieobecnosc> DZ_Nieobecnosc { get; set; }

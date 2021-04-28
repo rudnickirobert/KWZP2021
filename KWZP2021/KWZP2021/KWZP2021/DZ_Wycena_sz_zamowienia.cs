@@ -17,8 +17,8 @@ namespace KWZP2021
         public int Id_wycena_sz_zamowienia { get; set; }
         public Nullable<int> Id_szczegoly_zam_klienta { get; set; }
         public Nullable<int> Id_pliku { get; set; }
-        public double Koszt { get; set; }
-        public int Czas_wykonania { get; set; }
+        public double koszt { get; set; }
+        public int czas_wykonania { get; set; }
     
         public virtual DZ_Plik DZ_Plik { get; set; }
         public virtual DZ_Szczegoly_zamowienia_klienta DZ_Szczegoly_zamowienia_klienta { get; set; }

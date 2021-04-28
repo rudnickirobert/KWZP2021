@@ -21,7 +21,7 @@ namespace KWZP2021
         }
     
         public int Id_rodzaj_materialu { get; set; }
-        public string Rodzaj_materialu { get; set; }
+        public string rodzaj_materialu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Material> DM_Material { get; set; }

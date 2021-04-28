@@ -17,9 +17,9 @@ namespace KWZP2021
         public int Id_szczegoly_zam_materialu { get; set; }
         public Nullable<int> Id_zamowienia_zewn { get; set; }
         public Nullable<int> Id_materialu { get; set; }
-        public double Koszt_jednostkowy_oferta { get; set; }
+        public double koszt_jednostkowy_oferta { get; set; }
         public Nullable<int> Id_wlasciwosc { get; set; }
-        public int Ilosc { get; set; }
+        public int ilosc { get; set; }
     
         public virtual DM_Material DM_Material { get; set; }
         public virtual DM_Wlasciwosc DM_Wlasciwosc { get; set; }

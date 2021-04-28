@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public Nullable<int> Id_wydanie_materialu_dla_produkcji { get; set; }
         public int Id_materialu { get; set; }
-        public int Ilosc { get; set; }
+        public int ilosc { get; set; }
     
         public virtual DM_Material DM_Material { get; set; }
         public virtual DM_Wydanie_materialu_dla_produkcji DM_Wydanie_materialu_dla_produkcji { get; set; }
