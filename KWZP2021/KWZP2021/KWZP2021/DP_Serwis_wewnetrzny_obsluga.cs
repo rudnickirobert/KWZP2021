@@ -18,11 +18,11 @@ namespace KWZP2021
         public Nullable<int> Id_maszyny { get; set; }
         public Nullable<int> Id_pracownik { get; set; }
         public Nullable<int> Id_czynnosc_w_ramach_obslugi_serw_wew { get; set; }
-        public System.DateTime Data_rozpoczecia { get; set; }
-        public Nullable<System.DateTime> Data_zakonczenia { get; set; }
+        public System.DateTime data_rozpoczecia { get; set; }
+        public Nullable<System.DateTime> data_zakonczenia { get; set; }
     
-        public virtual DP_Czynnosc_w_ramach_obslugi_serw_wew DP_Czynnosc_w_ramach_obslugi_serw_wew { get; set; }
-        public virtual DP_Maszyna DP_Maszyna { get; set; }
+        public virtual DP_Czynnosci_w_ramach_obslugi_serw_wew DP_Czynnosci_w_ramach_obslugi_serw_wew { get; set; }
+        public virtual DP_Maszyny DP_Maszyny { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
     }
 }

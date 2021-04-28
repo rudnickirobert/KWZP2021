@@ -29,5 +29,11 @@ namespace KWZP2021
             Stanowiska stanowiska = new Stanowiska(this.database);
             stanowiska.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Klienci klienci = new Klienci (this.database);
+            klienci.ShowDialog();
+        }
     }
 }

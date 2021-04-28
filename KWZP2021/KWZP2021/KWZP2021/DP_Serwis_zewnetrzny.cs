@@ -18,13 +18,13 @@ namespace KWZP2021
         public Nullable<int> Id_firma_serwisowa { get; set; }
         public Nullable<int> Id_maszyny { get; set; }
         public Nullable<int> Id_usluga_serwisu_zewnetrznego { get; set; }
-        public decimal Koszt { get; set; }
-        public System.DateTime Data_rozpoczecia { get; set; }
-        public Nullable<System.DateTime> Data_zakonczenia { get; set; }
-        public string Uwagi { get; set; }
+        public decimal koszt { get; set; }
+        public System.DateTime data_rozpoczecia { get; set; }
+        public Nullable<System.DateTime> data_zakonczenia { get; set; }
+        public string uwagi { get; set; }
     
         public virtual DP_Firma_serwisowa DP_Firma_serwisowa { get; set; }
-        public virtual DP_Maszyna DP_Maszyna { get; set; }
+        public virtual DP_Maszyny DP_Maszyny { get; set; }
         public virtual DP_Usluga_serwisu_zewnetrznego DP_Usluga_serwisu_zewnetrznego { get; set; }
     }
 }

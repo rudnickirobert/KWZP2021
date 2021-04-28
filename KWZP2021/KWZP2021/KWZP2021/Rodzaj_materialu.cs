@@ -18,16 +18,20 @@ namespace KWZP2021
             InitializeComponent();
             this.database = database;
 
+              this.cmbRodzajMaterialu.DataSource = this.database.DM_Rodzaj_materialu.ToList();
+              this.cmbRodzajMaterialu.DisplayMember = "rodzaj_materialu";
+              this.cmbRodzajMaterialu.ValueMember = "Id_rodzaj_materialu";
 
-            initCombobox();
-            initDataGridView();
+              this.dgvRodzajMaterialu.DataSource = this.database.DM_Rodzaj_materialu.ToList();
+
+            //initCombobox();
+           // initDataGridView();
         }
 
         private void initCombobox()
         {
             this.cmbRodzajMaterialu.DataSource = this.database.DM_Rodzaj_materialu.ToList();
             this.cmbRodzajMaterialu.DisplayMember = "rodzaj_materialu";
-            this.cmbRodzajMaterialu.ValueMember = "Id_rodzaj_materialu";
         }
 
         private void initDataGridView()
@@ -39,7 +43,7 @@ namespace KWZP2021
         private void btnAddRodzajMaterialu_Click(object sender, EventArgs e)
         {
             DM_Rodzaj_materialu newRodzajMaterialu = new DM_Rodzaj_materialu();
-            newRodzajMaterialu.Rodzaj_materialu = this.txtNewRodzajMaterialu.Text;
+            newRodzajMaterialu.rodzaj_materialu = this.txtNewRodzajMaterialu.Text;
 
             this.database.DM_Rodzaj_materialu.Add(newRodzajMaterialu);
             this.database.SaveChanges();
@@ -66,10 +70,15 @@ namespace KWZP2021
 
             DM_Rodzaj_materialu toRemove = this.database.DM_Rodzaj_materialu.Where(rodzaj_materialu => rodzaj_materialu.Id_rodzaj_materialu == id).First();
 
-            toRemove.Rodzaj_materialu = txtNewRodzajMaterialu.Text; // UPDATE
+            toRemove.rodzaj_materialu = txtNewRodzajMaterialu.Text; // UPDATE
 
             this.database.SaveChanges();
             initDataGridView();
+        }
+
+        private void Rodzaj_materialu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

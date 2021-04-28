@@ -17,8 +17,8 @@ namespace KWZP2021
         public int Id_wydania_czesci { get; set; }
         public int Id_pracownik_pobierajacy { get; set; }
         public int Id_pracownik_wydajacy { get; set; }
-        public System.DateTime Data_i_godzina_wydania { get; set; }
-        public string Uwagi { get; set; }
+        public System.DateTime data_i_godzina_wydania { get; set; }
+        public string uwagi { get; set; }
     
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik1 { get; set; }

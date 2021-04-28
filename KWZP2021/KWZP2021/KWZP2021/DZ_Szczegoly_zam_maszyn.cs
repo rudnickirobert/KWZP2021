@@ -17,10 +17,10 @@ namespace KWZP2021
         public int Id_szczegoly_zam_maszyn { get; set; }
         public Nullable<int> Id_zamowienia_zewn { get; set; }
         public Nullable<int> Id_maszyny { get; set; }
-        public double Koszt_jednostkowy_oferta { get; set; }
-        public int Ilosc { get; set; }
+        public double koszt_jednostkowy_oferta { get; set; }
+        public int ilosc { get; set; }
     
-        public virtual DP_Maszyna DP_Maszyna { get; set; }
+        public virtual DP_Maszyny DP_Maszyny { get; set; }
         public virtual DZ_Zamowienie_zewn DZ_Zamowienie_zewn { get; set; }
     }
 }

@@ -18,18 +18,18 @@ namespace KWZP2021
         public DM_Magazyn_gotowych_produktow()
         {
             this.DM_Szczegoly_magazynu_gotowych_produktow = new HashSet<DM_Szczegoly_magazynu_gotowych_produktow>();
-            this.DM_Wydanie_produktu = new HashSet<DM_Wydanie_produktu>();
+            this.DM_Wydanie_produktow = new HashSet<DM_Wydanie_produktow>();
         }
     
         public int Id_magazynu_gotowych_produktow { get; set; }
         public int Id_zamowienie { get; set; }
-        public System.DateTime Data_i_godzina_przyjecia { get; set; }
-        public string Uwagi { get; set; }
+        public System.DateTime data_i_godzina_przyjecia { get; set; }
+        public string uwagi { get; set; }
     
         public virtual DZ_Zamowienie_klienta DZ_Zamowienie_klienta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_magazynu_gotowych_produktow> DM_Szczegoly_magazynu_gotowych_produktow { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Wydanie_produktu> DM_Wydanie_produktu { get; set; }
+        public virtual ICollection<DM_Wydanie_produktow> DM_Wydanie_produktow { get; set; }
     }
 }

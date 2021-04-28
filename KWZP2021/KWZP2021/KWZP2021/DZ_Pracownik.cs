@@ -27,27 +27,27 @@ namespace KWZP2021
             this.DM_Wydanie_czesci_dla_produkcji1 = new HashSet<DM_Wydanie_czesci_dla_produkcji>();
             this.DM_Wydanie_materialu_dla_produkcji = new HashSet<DM_Wydanie_materialu_dla_produkcji>();
             this.DM_Wydanie_materialu_dla_produkcji1 = new HashSet<DM_Wydanie_materialu_dla_produkcji>();
-            this.DM_Wydanie_produktu = new HashSet<DM_Wydanie_produktu>();
+            this.DM_Wydanie_produktow = new HashSet<DM_Wydanie_produktow>();
             this.DM_Wypozyczenie_narzedzia = new HashSet<DM_Wypozyczenie_narzedzia>();
             this.DM_Wypozyczenie_narzedzia1 = new HashSet<DM_Wypozyczenie_narzedzia>();
             this.DP_Serwis_wewnetrzny_naprawa = new HashSet<DP_Serwis_wewnetrzny_naprawa>();
             this.DP_Serwis_wewnetrzny_obsluga = new HashSet<DP_Serwis_wewnetrzny_obsluga>();
             this.DZ_Nieobecnosc = new HashSet<DZ_Nieobecnosc>();
-            this.DZ_Zamowienie_zewn = new HashSet<DZ_Zamowienie_zewn>();
             this.DZ_Zamowienie_klienta = new HashSet<DZ_Zamowienie_klienta>();
+            this.DZ_Zamowienie_zewn = new HashSet<DZ_Zamowienie_zewn>();
             this.DZ_Zatrudnienie = new HashSet<DZ_Zatrudnienie>();
         }
     
         public int Id_pracownika { get; set; }
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
-        public string Email { get; set; }
-        public string Adres { get; set; }
-        public string Miasto { get; set; }
-        public string Kod_pocztowy { get; set; }
-        public System.DateTime Data_urodzenia { get; set; }
-        public string Telefon { get; set; }
-        public string Numer_rachunku { get; set; }
+        public string imie { get; set; }
+        public string nazwisko { get; set; }
+        public string email { get; set; }
+        public string adres { get; set; }
+        public string miasto { get; set; }
+        public string kod_pocztowy { get; set; }
+        public System.DateTime data_urodzenia { get; set; }
+        public string telefon { get; set; }
+        public string numer_rachunku { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Dostawa_czesci> DM_Dostawa_czesci { get; set; }
@@ -70,7 +70,7 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Wydanie_materialu_dla_produkcji> DM_Wydanie_materialu_dla_produkcji1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Wydanie_produktu> DM_Wydanie_produktu { get; set; }
+        public virtual ICollection<DM_Wydanie_produktow> DM_Wydanie_produktow { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Wypozyczenie_narzedzia> DM_Wypozyczenie_narzedzia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -82,9 +82,9 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Nieobecnosc> DZ_Nieobecnosc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DZ_Zamowienie_zewn> DZ_Zamowienie_zewn { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Zamowienie_klienta> DZ_Zamowienie_klienta { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DZ_Zamowienie_zewn> DZ_Zamowienie_zewn { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Zatrudnienie> DZ_Zatrudnienie { get; set; }
     }

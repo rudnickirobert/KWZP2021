@@ -22,8 +22,8 @@ namespace KWZP2021
         }
     
         public int Id_produkt { get; set; }
-        public string Nazwa_produktu { get; set; }
-        public string Uwagi { get; set; }
+        public string nazwa_produktu { get; set; }
+        public string uwagi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_wydania_produktu> DM_Szczegoly_wydania_produktu { get; set; }

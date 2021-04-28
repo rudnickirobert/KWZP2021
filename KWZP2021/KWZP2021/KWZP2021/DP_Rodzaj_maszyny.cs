@@ -17,15 +17,15 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DP_Rodzaj_maszyny()
         {
-            this.DP_Maszyna = new HashSet<DP_Maszyna>();
+            this.DP_Maszyny = new HashSet<DP_Maszyny>();
             this.DP_Obsluga = new HashSet<DP_Obsluga>();
         }
     
         public int Id_rodzaj_maszyny { get; set; }
-        public string Rodzaj_maszyny { get; set; }
+        public string rodzaj_maszyny { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DP_Maszyna> DP_Maszyna { get; set; }
+        public virtual ICollection<DP_Maszyny> DP_Maszyny { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Obsluga> DP_Obsluga { get; set; }
     }

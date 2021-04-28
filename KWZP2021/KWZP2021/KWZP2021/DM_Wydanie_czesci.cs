@@ -23,8 +23,8 @@ namespace KWZP2021
         public int Id_wydania_czesci { get; set; }
         public int Id_pracownik_pobierajacy { get; set; }
         public int Id_pracownik_wydajacy { get; set; }
-        public System.DateTime Data_i_godzina { get; set; }
-        public string Uwagi { get; set; }
+        public System.DateTime data_i_godzina { get; set; }
+        public string uwagi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_wydania_czesci> DM_Szczegoly_wydania_czesci { get; set; }
