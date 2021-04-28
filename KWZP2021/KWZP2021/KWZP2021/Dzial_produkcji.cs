@@ -29,5 +29,11 @@ namespace KWZP2021
             Rodzaj_czynnosci rodzaj_czynnosci = new Rodzaj_czynnosci(this.database);
             rodzaj_czynnosci.ShowDialog();
         }
+
+        private void btnSerwisZewn_Click(object sender, EventArgs e)
+        {
+            FirmaSerwisowa fs = new FirmaSerwisowa(this.database);
+                fs.ShowDialog();
+        }
     }
 }
