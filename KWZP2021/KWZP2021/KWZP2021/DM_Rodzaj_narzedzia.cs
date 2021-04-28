@@ -21,7 +21,7 @@ namespace KWZP2021
         }
     
         public int Id_rodzaj_narzedzia { get; set; }
-        public string nazwa { get; set; }
+        public string Nazwa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Narzedzie> DM_Narzedzie { get; set; }

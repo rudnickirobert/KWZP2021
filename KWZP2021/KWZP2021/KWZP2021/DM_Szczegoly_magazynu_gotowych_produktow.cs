@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public Nullable<int> Id_magazynu_gotowych_produktow { get; set; }
         public int Id_produktu { get; set; }
-        public int ilosc { get; set; }
+        public int Ilosc { get; set; }
     
         public virtual DM_Magazyn_gotowych_produktow DM_Magazyn_gotowych_produktow { get; set; }
         public virtual DP_Produkt DP_Produkt { get; set; }

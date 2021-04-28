@@ -16,9 +16,9 @@ namespace KWZP2021
     {
         public int Id_wydania { get; set; }
         public int Id_produkt { get; set; }
-        public int ilosc { get; set; }
+        public int Ilosc { get; set; }
     
-        public virtual DM_Wydanie_produktow DM_Wydanie_produktow { get; set; }
+        public virtual DM_Wydanie_produktu DM_Wydanie_produktu { get; set; }
         public virtual DP_Produkt DP_Produkt { get; set; }
     }
 }

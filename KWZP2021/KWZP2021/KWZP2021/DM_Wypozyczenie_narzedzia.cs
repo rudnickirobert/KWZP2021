@@ -18,21 +18,21 @@ namespace KWZP2021
         public DM_Wypozyczenie_narzedzia()
         {
             this.DM_Szczegoly_wypozyczenia_narzedzia = new HashSet<DM_Szczegoly_wypozyczenia_narzedzia>();
-            this.DM_Zuzyte_narzedzia = new HashSet<DM_Zuzyte_narzedzia>();
+            this.DM_Zuzyte_narzedzie = new HashSet<DM_Zuzyte_narzedzie>();
         }
     
         public int Id_wypozyczenia_narzedzia { get; set; }
         public int Id_pracownika_wypozyczajacego { get; set; }
         public int Id_pracownika_wydajacego { get; set; }
-        public Nullable<System.DateTime> data_i_godzina_wypozyczenia { get; set; }
-        public Nullable<System.DateTime> data_i_godzina_zwrotu { get; set; }
-        public string uwagi { get; set; }
+        public Nullable<System.DateTime> Data_i_godzina_wypozyczenia { get; set; }
+        public Nullable<System.DateTime> Data_i_godzina_zwrotu { get; set; }
+        public string Uwagi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Zuzyte_narzedzia> DM_Zuzyte_narzedzia { get; set; }
+        public virtual ICollection<DM_Zuzyte_narzedzie> DM_Zuzyte_narzedzie { get; set; }
     }
 }

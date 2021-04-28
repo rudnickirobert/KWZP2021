@@ -21,7 +21,7 @@ namespace KWZP2021
         }
     
         public int Id_co_ile_obsluga { get; set; }
-        public Nullable<int> co_ile_obsluga { get; set; }
+        public Nullable<int> Co_ile_obsluga { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Obsluga> DP_Obsluga { get; set; }

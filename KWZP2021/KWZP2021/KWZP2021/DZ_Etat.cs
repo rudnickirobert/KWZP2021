@@ -21,7 +21,7 @@ namespace KWZP2021
         }
     
         public int Id_etatu { get; set; }
-        public double etat { get; set; }
+        public double Etat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Zatrudnienie> DZ_Zatrudnienie { get; set; }

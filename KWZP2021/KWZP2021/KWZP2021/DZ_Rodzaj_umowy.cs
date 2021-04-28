@@ -21,7 +21,7 @@ namespace KWZP2021
         }
     
         public int Id_rodzaj_umowy { get; set; }
-        public string rodzaj_umowy { get; set; }
+        public string Rodzaj_umowy { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Zatrudnienie> DZ_Zatrudnienie { get; set; }

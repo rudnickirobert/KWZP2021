@@ -26,8 +26,8 @@ namespace KWZP2021
         public Nullable<int> Id_dzialu { get; set; }
         public Nullable<int> Id_etatu { get; set; }
         public Nullable<int> Id_rodzaj_umowy { get; set; }
-        public System.DateTime data_zatrudnienia { get; set; }
-        public System.DateTime data_zwolnienia { get; set; }
+        public System.DateTime Data_zatrudnienia { get; set; }
+        public System.DateTime Data_zwolnienia { get; set; }
     
         public virtual DZ_Dzial DZ_Dzial { get; set; }
         public virtual DZ_Etat DZ_Etat { get; set; }

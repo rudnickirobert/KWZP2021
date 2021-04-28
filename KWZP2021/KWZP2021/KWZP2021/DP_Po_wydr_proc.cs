@@ -23,7 +23,7 @@ namespace KWZP2021
         public int Id_po_wydr_proces { get; set; }
         public Nullable<int> Id_wydruk { get; set; }
         public Nullable<int> Id_proces_technologiczny { get; set; }
-        public int czas_zamierzony { get; set; }
+        public int Czas_zamierzony { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
