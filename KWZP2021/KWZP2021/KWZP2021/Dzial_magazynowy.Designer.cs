@@ -31,12 +31,13 @@ namespace KWZP2021
         {
             this.btnRodzajMaterial = new System.Windows.Forms.Button();
             this.btnWlasciwosc = new System.Windows.Forms.Button();
+            this.btnMaterial = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRodzajMaterial
             // 
             this.btnRodzajMaterial.Location = new System.Drawing.Point(60, 41);
-            this.btnRodzajMaterial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRodzajMaterial.Margin = new System.Windows.Forms.Padding(4);
             this.btnRodzajMaterial.Name = "btnRodzajMaterial";
             this.btnRodzajMaterial.Size = new System.Drawing.Size(143, 62);
             this.btnRodzajMaterial.TabIndex = 0;
@@ -46,7 +47,7 @@ namespace KWZP2021
             // 
             // btnWlasciwosc
             // 
-            this.btnWlasciwosc.Location = new System.Drawing.Point(265, 41);
+            this.btnWlasciwosc.Location = new System.Drawing.Point(414, 41);
             this.btnWlasciwosc.Margin = new System.Windows.Forms.Padding(4);
             this.btnWlasciwosc.Name = "btnWlasciwosc";
             this.btnWlasciwosc.Size = new System.Drawing.Size(143, 62);
@@ -55,14 +56,26 @@ namespace KWZP2021
             this.btnWlasciwosc.UseVisualStyleBackColor = true;
             this.btnWlasciwosc.Click += new System.EventHandler(this.btnWlasciwosc_Click);
             // 
+            // btnMaterial
+            // 
+            this.btnMaterial.Location = new System.Drawing.Point(232, 41);
+            this.btnMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaterial.Name = "btnMaterial";
+            this.btnMaterial.Size = new System.Drawing.Size(143, 62);
+            this.btnMaterial.TabIndex = 2;
+            this.btnMaterial.Text = "Materiał";
+            this.btnMaterial.UseVisualStyleBackColor = true;
+            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
+            // 
             // Dzial_magazynowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnMaterial);
             this.Controls.Add(this.btnWlasciwosc);
             this.Controls.Add(this.btnRodzajMaterial);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dzial_magazynowy";
             this.Text = "Dzial_magazynowy";
             this.Load += new System.EventHandler(this.Dzial_magazynowy_Load);
@@ -74,5 +87,6 @@ namespace KWZP2021
 
         private System.Windows.Forms.Button btnRodzajMaterial;
         private System.Windows.Forms.Button btnWlasciwosc;
+        private System.Windows.Forms.Button btnMaterial;
     }
 }

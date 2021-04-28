@@ -35,5 +35,11 @@ namespace KWZP2021
             Wlasciwosc Wlasciwosc = new Wlasciwosc(this.database);
             Wlasciwosc.ShowDialog();
         }
+
+        private void btnMaterial_Click(object sender, EventArgs e)
+        {
+            Material Wlasciwosc = new Material(this.database);
+            Wlasciwosc.ShowDialog();
+        }
     }
 }
