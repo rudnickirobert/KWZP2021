@@ -825,7 +825,7 @@ VALUES
 	('konserwacja'),
 	('wyczyszczenie'),
 	('przeglad'),
-	('naprawa')
+	('ogledziny')
 	;
 INSERT INTO DP_Czynnosc_w_ramach_obslugi_serw_wew(Id_nazwa_obslugi, Id_czynnosc)
 VALUES
