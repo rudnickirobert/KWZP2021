@@ -63,9 +63,7 @@ namespace KWZP2021
             this.cmbRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRodzajMaterialu.Name = "cmbRodzajMaterialu";
             this.cmbRodzajMaterialu.Size = new System.Drawing.Size(160, 24);
-            this.cmbRodzajMaterialu.TabIndex = 5;
-            this.cmbRodzajMaterialu.SelectionChangeCommitted += new System.EventHandler(this.cmbRodzajMaterialu_SelectionChangeCommitted);
-            // 
+            this.cmbRodzajMaterialu.TabIndex = 5;            // 
             // txtNewMaterial
             // 
             this.txtNewMaterial.Location = new System.Drawing.Point(99, 124);

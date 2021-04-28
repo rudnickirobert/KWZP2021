@@ -29,18 +29,9 @@ namespace KWZP2021
 
             this.database.DM_Material.Add(newMaterial);
             this.database.SaveChanges();
-            //initCombobox();
+            initCombobox();
             this.txtNewMaterial.Text = "";
-            // initDataGridView();
-        }
-
-        private void cmbRodzajMaterialu_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(this.cmbRodzajMaterialu.SelectedItem.ToString());
-
-            this.cmbRodzajMaterialu.DataSource = database.DM_Rodzaj_materialu.Where(Rodzaj_materialu => Rodzaj_materialu.DM_Material. == (int)this.cmbRodzajMaterialu.SelectedValue);
-            this.cmbRodzajMaterialu.DataSource = database.DM_Rodzaj_materialu.Where(Rodzaj_materialu => Rodzaj_materialu.DM_Material.
-
+            initDataGridView();
         }
     }
     }
