@@ -429,7 +429,7 @@ CREATE TABLE DP_Rodzaj_czynnosci(
 
 CREATE TABLE DP_Po_proc_czynnosc(
 	Id_po_proc_czynnosci int IDENTITY(1,1) PRIMARY KEY NOT NULL, 
-	Id_rodzaj_czynnosci int FOREIGN KEY REFERENCES DP_rodzaj_czynnosci(Id_rodzaj_czynnosci),
+	Id_rodzaj_czynnosci int FOREIGN KEY REFERENCES DP_Rodzaj_czynnosci(Id_rodzaj_czynnosci),
 	Id_proces_technologiczny int FOREIGN KEY REFERENCES DP_Proces_technologiczny(Id_proces_technologiczny),
 	Czas_zamierzony datetime NOT NULL
 );
