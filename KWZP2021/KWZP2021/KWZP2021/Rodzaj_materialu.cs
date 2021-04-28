@@ -42,38 +42,56 @@ namespace KWZP2021
 
         private void btnAddRodzajMaterialu_Click(object sender, EventArgs e)
         {
-            DM_Rodzaj_materialu newRodzajMaterialu = new DM_Rodzaj_materialu();
-            newRodzajMaterialu.rodzaj_materialu = this.txtNewRodzajMaterialu.Text;
+       
+                DM_Rodzaj_materialu newRodzajMaterialu = new DM_Rodzaj_materialu();
+                newRodzajMaterialu.rodzaj_materialu = this.txtNewRodzajMaterialu.Text;
 
-            this.database.DM_Rodzaj_materialu.Add(newRodzajMaterialu);
-            this.database.SaveChanges();
-            initCombobox();
-            this.txtNewRodzajMaterialu.Text = "";
-            initDataGridView();
-        }
-
+                this.database.DM_Rodzaj_materialu.Add(newRodzajMaterialu);
+                this.database.SaveChanges();
+                initCombobox();
+                this.txtNewRodzajMaterialu.Text = "";
+                initDataGridView();
+            }
+           
         private void btnDeleteRodzajMaterialu_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(this.dgvRodzajMaterialu.CurrentRow.Cells[0].Value);
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć rodzaj materiału?", "Usuwanie rodzaju materiału", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(this.dgvRodzajMaterialu.CurrentRow.Cells[0].Value);
 
-            DM_Rodzaj_materialu toRemove = this.database.DM_Rodzaj_materialu.Where(rodzaj_materialu => rodzaj_materialu.Id_rodzaj_materialu == id).First();
+                DM_Rodzaj_materialu toRemove = this.database.DM_Rodzaj_materialu.Where(rodzaj_materialu => rodzaj_materialu.Id_rodzaj_materialu == id).First();
 
-            this.database.DM_Rodzaj_materialu.Remove(toRemove); // DELETE
+                this.database.DM_Rodzaj_materialu.Remove(toRemove); // DELETE
 
-            this.database.SaveChanges();
-            initDataGridView();
+                this.database.SaveChanges();
+                initDataGridView();
+                initCombobox();
+            }
+
+            else
+            {
+                DialogResult dialog1Result = MessageBox.Show("Rodzaj materiału nie został usunięty");
+            }
         }
-
         private void dgvRodzajMaterialu_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            int id = Convert.ToInt32(this.dgvRodzajMaterialu.CurrentRow.Cells[0].Value);
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz aktualizować rodzaj materiału?", "Aktualizowanie rodzaju materiału", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(this.dgvRodzajMaterialu.CurrentRow.Cells[0].Value);
 
-            DM_Rodzaj_materialu toRemove = this.database.DM_Rodzaj_materialu.Where(rodzaj_materialu => rodzaj_materialu.Id_rodzaj_materialu == id).First();
+                DM_Rodzaj_materialu toRemove = this.database.DM_Rodzaj_materialu.Where(rodzaj_materialu => rodzaj_materialu.Id_rodzaj_materialu == id).First();
 
-            toRemove.rodzaj_materialu = txtNewRodzajMaterialu.Text; // UPDATE
+                toRemove.rodzaj_materialu = txtAktualizuj.Text; // UPDATE
 
-            this.database.SaveChanges();
-            initDataGridView();
+                this.database.SaveChanges();
+                initDataGridView();
+                initCombobox();
+            }
+            else {
+                DialogResult dialog1Result = MessageBox.Show("Rodzaj materiału został zaktualizowany");
+            }
         }
 
         private void Rodzaj_materialu_Load(object sender, EventArgs e)
