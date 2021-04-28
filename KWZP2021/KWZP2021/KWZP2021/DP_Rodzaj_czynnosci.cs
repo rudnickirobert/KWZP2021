@@ -14,8 +14,6 @@ namespace KWZP2021
     
     public partial class DP_Rodzaj_czynnosci
     {
-        internal readonly object DP_Rodzaj_czynnosci;
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DP_Rodzaj_czynnosci()
         {

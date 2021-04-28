@@ -20,10 +20,6 @@ namespace KWZP2021
 
             initCombobox();
             initDataGridView();
-            this.cmbRodzajCzynnosci.DataSource = this.database.DP_Rodzaj_czynnosci.ToList();
-            this.cmbRodzajCzynnosci.DisplayMember = "Nazwa";
-            this.cmbRodzajCzynnosci.ValueMember = "Id_rodzaj_czynnosci";
-            this.dvgRodzajCzynnosci.DataSource = this.database.DP_Rodzaj_czynnosci.ToList();
         }
         private void initCombobox()
         {
@@ -52,11 +48,7 @@ namespace KWZP2021
 
         private void btnDeleteRodzajCzynnosci_Click(object sender, EventArgs e)
         {
-            DialogBoxDelete d = new DialogBoxDelete();
-            d.ShowDialog();
-            
-            if (d.DialogResult.Equals(DialogResult.Yes))
-            {
+          
                 int id = Convert.ToInt32(this.dvgRodzajCzynnosci.CurrentRow.Cells[0].Value);
 
                 DP_Rodzaj_czynnosci toRemove = this.database.DP_Rodzaj_czynnosci.Where(rodzaj_czynnosci => rodzaj_czynnosci.Id_rodzaj_czynnosci == id).First();
@@ -65,19 +57,19 @@ namespace KWZP2021
 
                 this.database.SaveChanges();
                 initDataGridView();
-                initCombobox();
-            }
-            else if (d.DialogResult.Equals(DialogResult.No))
-            {
-                d.Hide();
-            }
-
+          
         }
 
-        private void Rodzaj_czynnosci_Load(object sender, EventArgs e)
+        private void dvgRodzajCzynnosci_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            int id = Convert.ToInt32(this.dvgRodzajCzynnosci.CurrentRow.Cells[0].Value);
 
+            DP_Rodzaj_czynnosci toRemove = this.database.DP_Rodzaj_czynnosci.Where(rodzaj_czynnosci => rodzaj_czynnosci.Id_rodzaj_czynnosci == id).First();
+
+            toRemove.Nazwa = txtNewRodzajCzynnosci.Text; // UPDATE
+
+            this.database.SaveChanges();
+            initDataGridView();
         }
-
     }
 }
