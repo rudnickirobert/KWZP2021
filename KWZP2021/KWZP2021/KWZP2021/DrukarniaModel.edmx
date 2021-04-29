@@ -847,20 +847,20 @@ warning 6013: The table/view 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' does no
           <Property Name="Data_zwolnienia" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Czesci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Czesci">
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Czesc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Czesc">
           <Key>
             <PropertyRef Name="Numer czesci" />
             <PropertyRef Name="Nazwa" />
-            <PropertyRef Name="Ilosc początkowa" />
+            <PropertyRef Name="Ilosc pocz¹tkowa" />
           </Key>
           <Property Name="Numer czesci" Type="int" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="Ilosc początkowa" Type="int" Nullable="false" />
+          <Property Name="Ilosc pocz¹tkowa" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Dostawcy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Dostawcy">
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Dostawca' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Dostawca">
           <Key>
             <PropertyRef Name="Numer dostawcy" />
             <PropertyRef Name="Nazwa" />
@@ -876,13 +876,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Dostawcy' does not have a primar
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Material' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDM_Material">
           <Key>
-            <PropertyRef Name="Numer materiału" />
-            <PropertyRef Name="Rodzaj materiału" />
-            <PropertyRef Name="Nazwa materiału" />
+            <PropertyRef Name="Numer materia³u" />
+            <PropertyRef Name="Rodzaj materia³u" />
+            <PropertyRef Name="Nazwa materia³u" />
           </Key>
-          <Property Name="Numer materiału" Type="int" Nullable="false" />
-          <Property Name="Rodzaj materiału" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Nazwa materiału" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Numer materia³u" Type="int" Nullable="false" />
+          <Property Name="Rodzaj materia³u" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nazwa materia³u" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Narzedzie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -919,8 +919,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wlasciwosc' does not have a prim
           <Property Name="Jednostka pomiarowa" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyny' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Maszyny">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyna' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Maszyna">
           <Key>
             <PropertyRef Name="Numer maszyny" />
             <PropertyRef Name="Rodzaj maszyny" />
@@ -993,7 +993,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Klient' does not have a primary 
             <PropertyRef Name="Numer klienta" />
             <PropertyRef Name="Nazwa firmy" />
             <PropertyRef Name="NIP" />
-            <PropertyRef Name="Imię" />
+            <PropertyRef Name="Imiê" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="Adres" />
             <PropertyRef Name="Miasto" />
@@ -1005,7 +1005,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Klient' does not have a primary 
           <Property Name="Numer klienta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa firmy" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="NIP" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="Imię" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Imiê" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Adres" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="40" Nullable="false" />
@@ -1018,17 +1018,17 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Klient' does not have a primary 
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Nieobecnosc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Nieobecnosc">
           <Key>
-            <PropertyRef Name="Identyfikator nieobecności" />
+            <PropertyRef Name="Identyfikator nieobecnoœci" />
             <PropertyRef Name="Nazwisko pracownika" />
-            <PropertyRef Name="Rodzaj nieobecności" />
-            <PropertyRef Name="Data rozpoczęcia" />
-            <PropertyRef Name="Data zakończenia" />
+            <PropertyRef Name="Rodzaj nieobecnoœci" />
+            <PropertyRef Name="Data rozpoczêcia" />
+            <PropertyRef Name="Data zakoñczenia" />
           </Key>
-          <Property Name="Identyfikator nieobecności" Type="int" Nullable="false" />
+          <Property Name="Identyfikator nieobecnoœci" Type="int" Nullable="false" />
           <Property Name="Nazwisko pracownika" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Rodzaj nieobecności" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Data rozpoczęcia" Type="date" Nullable="false" />
-          <Property Name="Data zakończenia" Type="date" Nullable="false" />
+          <Property Name="Rodzaj nieobecnoœci" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Data rozpoczêcia" Type="date" Nullable="false" />
+          <Property Name="Data zakoñczenia" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Plik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1047,7 +1047,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Pracownik' does not have a prima
         <EntityType Name="vDZ_Pracownik">
           <Key>
             <PropertyRef Name="Numer pracownika" />
-            <PropertyRef Name="Imię" />
+            <PropertyRef Name="Imiê" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="E-mail" />
             <PropertyRef Name="Adres" />
@@ -1058,7 +1058,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Pracownik' does not have a prima
             <PropertyRef Name="Numer rachunku" />
           </Key>
           <Property Name="Numer pracownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Imię" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Imiê" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="E-mail" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Adres" Type="nvarchar" MaxLength="30" Nullable="false" />
@@ -1069,18 +1069,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Pracownik' does not have a prima
           <Property Name="Numer rachunku" Type="nvarchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rachunki' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDZ_Rachunki">
+warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rachunek' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDZ_Rachunek">
           <Key>
             <PropertyRef Name="Numer rachunku" />
             <PropertyRef Name="Rodzaj rachunku" />
             <PropertyRef Name="Koszt" />
-            <PropertyRef Name="Data zapłaty" />
+            <PropertyRef Name="Data zaplaty" />
           </Key>
           <Property Name="Numer rachunku" Type="int" Nullable="false" />
-          <Property Name="Rodzaj rachunku" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Rodzaj rachunku" Type="int" Nullable="false" />
           <Property Name="Koszt" Type="float" Nullable="false" />
-          <Property Name="Data zapłaty" Type="date" Nullable="false" />
+          <Property Name="Data zaplaty" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rodzaj_nieobecnosci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1142,15 +1142,15 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_czesci' does not h
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Koszt jednostkowy oferty" />
-            <PropertyRef Name="Nazwa właściwości" />
-            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Nazwa w³aœciwoœci" />
+            <PropertyRef Name="Iloœæ" />
           </Key>
           <Property Name="Identyfikator szczegolow zamowienia czesci" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Koszt jednostkowy oferty" Type="float" Nullable="false" />
-          <Property Name="Nazwa właściwości" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Ilość" Type="int" Nullable="false" />
+          <Property Name="Nazwa w³aœciwoœci" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Iloœæ" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_maszyn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1192,17 +1192,17 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_narzedzi' does not
           <Key>
             <PropertyRef Name="Identyfikator szczegolow zamowienia narzedzi" />
             <PropertyRef Name="Numer zamowienia" />
-            <PropertyRef Name="Nazwa narzędzia" />
+            <PropertyRef Name="Nazwa narzêdzia" />
             <PropertyRef Name="Koszt jednostkowy oferty" />
-            <PropertyRef Name="Nazwa  właściwości" />
-            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Nazwa  w³aœciwoœci" />
+            <PropertyRef Name="Iloœæ" />
           </Key>
           <Property Name="Identyfikator szczegolow zamowienia narzedzi" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
-          <Property Name="Nazwa narzędzia" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Nazwa narzêdzia" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Koszt jednostkowy oferty" Type="float" Nullable="false" />
-          <Property Name="Nazwa  właściwości" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Ilość" Type="int" Nullable="false" />
+          <Property Name="Nazwa  w³aœciwoœci" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Iloœæ" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zamowienia_klienta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1211,14 +1211,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zamowienia_klienta' do
             <PropertyRef Name="Identyfikator szczegolow zamowienia klienta" />
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Nazwa pliku" />
-            <PropertyRef Name="Ilość sztuk" />
-            <PropertyRef Name="Nazwa materiału" />
+            <PropertyRef Name="Iloœæ sztuk" />
+            <PropertyRef Name="Nazwa materia³u" />
           </Key>
           <Property Name="Identyfikator szczegolow zamowienia klienta" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Nazwa pliku" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Ilość sztuk" Type="int" Nullable="false" />
-          <Property Name="Nazwa materiału" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Iloœæ sztuk" Type="int" Nullable="false" />
+          <Property Name="Nazwa materia³u" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zatrudnienia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1255,13 +1255,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zamowienie_klienta' does not hav
           <Key>
             <PropertyRef Name="Numer zamówienia" />
             <PropertyRef Name="Nazwa firmy" />
-            <PropertyRef Name="Pracownik przyjmujący zamówienie" />
+            <PropertyRef Name="Pracownik przyjmuj¹cy zamówienie" />
             <PropertyRef Name="Data zamowienia" />
             <PropertyRef Name="Oczekiwany termin wykonania" />
           </Key>
           <Property Name="Numer zamówienia" Type="int" Nullable="false" />
           <Property Name="Nazwa firmy" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Pracownik przyjmujący zamówienie" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Pracownik przyjmuj¹cy zamówienie" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Data zamowienia" Type="date" Nullable="false" />
           <Property Name="Oczekiwany termin wykonania" Type="date" Nullable="false" />
         </EntityType>
@@ -1270,11 +1270,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zamowienie_zewn' does not have a
         <EntityType Name="vDZ_Zamowienie_zewn">
           <Key>
             <PropertyRef Name="Numer zamowienia" />
-            <PropertyRef Name="Pracownik składający zamówienie" />
+            <PropertyRef Name="Pracownik sk³adaj¹cy zamówienie" />
             <PropertyRef Name="Data zamowienia" />
           </Key>
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
-          <Property Name="Pracownik składający zamówienie" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Pracownik sk³adaj¹cy zamówienie" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Data zamowienia" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1284,7 +1284,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Identyfikator zatrudnienia" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="Stanowisko" />
-            <PropertyRef Name="Dział" />
+            <PropertyRef Name="Dzia³" />
             <PropertyRef Name="Etat" />
             <PropertyRef Name="Rodzaj umowy" />
             <PropertyRef Name="Data zatrudnienia" />
@@ -1293,7 +1293,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Identyfikator zatrudnienia" Type="int" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Stanowisko" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Dział" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Dzia³" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Etat" Type="float" Nullable="false" />
           <Property Name="Rodzaj umowy" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Data zatrudnienia" Type="date" Nullable="false" />
@@ -2883,26 +2883,26 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [DP_Po_material_wydruk].[Ilosc] AS [Ilosc]
     FROM [dbo].[DP_Po_material_wydruk] AS [DP_Po_material_wydruk]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDM_Czesci" EntityType="Self.vDM_Czesci" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDM_Czesc" EntityType="Self.vDM_Czesc" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDM_Czesci].[Numer czesci] AS [Numer czesci], 
-    [vDM_Czesci].[Nazwa] AS [Nazwa], 
-    [vDM_Czesci].[Ilosc początkowa] AS [Ilosc początkowa]
-    FROM [dbo].[vDM_Czesci] AS [vDM_Czesci]</DefiningQuery>
+    [vDM_Czesc].[Numer czesci] AS [Numer czesci], 
+    [vDM_Czesc].[Nazwa] AS [Nazwa], 
+    [vDM_Czesc].[Ilosc pocz¹tkowa] AS [Ilosc pocz¹tkowa]
+    FROM [dbo].[vDM_Czesc] AS [vDM_Czesc]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDM_Dostawcy" EntityType="Self.vDM_Dostawcy" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDM_Dostawca" EntityType="Self.vDM_Dostawca" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDM_Dostawcy].[Numer dostawcy] AS [Numer dostawcy], 
-    [vDM_Dostawcy].[Nazwa] AS [Nazwa], 
-    [vDM_Dostawcy].[NIP] AS [NIP], 
-    [vDM_Dostawcy].[Uwagi] AS [Uwagi]
-    FROM [dbo].[vDM_Dostawcy] AS [vDM_Dostawcy]</DefiningQuery>
+    [vDM_Dostawca].[Numer dostawcy] AS [Numer dostawcy], 
+    [vDM_Dostawca].[Nazwa] AS [Nazwa], 
+    [vDM_Dostawca].[NIP] AS [NIP], 
+    [vDM_Dostawca].[Uwagi] AS [Uwagi]
+    FROM [dbo].[vDM_Dostawca] AS [vDM_Dostawca]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Material" EntityType="Self.vDM_Material" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDM_Material].[Numer materiału] AS [Numer materiału], 
-    [vDM_Material].[Rodzaj materiału] AS [Rodzaj materiału], 
-    [vDM_Material].[Nazwa materiału] AS [Nazwa materiału]
+    [vDM_Material].[Numer materia³u] AS [Numer materia³u], 
+    [vDM_Material].[Rodzaj materia³u] AS [Rodzaj materia³u], 
+    [vDM_Material].[Nazwa materia³u] AS [Nazwa materia³u]
     FROM [dbo].[vDM_Material] AS [vDM_Material]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Narzedzie" EntityType="Self.vDM_Narzedzie" store:Type="Views" store:Schema="dbo">
@@ -2926,15 +2926,15 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDM_Wlasciwosc].[Jednostka pomiarowa] AS [Jednostka pomiarowa]
     FROM [dbo].[vDM_Wlasciwosc] AS [vDM_Wlasciwosc]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Maszyny" EntityType="Self.vDP_Maszyny" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Maszyna" EntityType="Self.vDP_Maszyna" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Maszyny].[Numer maszyny] AS [Numer maszyny], 
-    [vDP_Maszyny].[Rodzaj maszyny] AS [Rodzaj maszyny], 
-    [vDP_Maszyny].[Nazwa modelu] AS [Nazwa modelu], 
-    [vDP_Maszyny].[Numer seryjny] AS [Numer seryjny], 
-    [vDP_Maszyny].[Data wprowadzenia maszyny] AS [Data wprowadzenia maszyny], 
-    [vDP_Maszyny].[ Koszt 1 roboczo-godziny] AS [ Koszt 1 roboczo-godziny]
-    FROM [dbo].[vDP_Maszyny] AS [vDP_Maszyny]</DefiningQuery>
+    [vDP_Maszyna].[Numer maszyny] AS [Numer maszyny], 
+    [vDP_Maszyna].[Rodzaj maszyny] AS [Rodzaj maszyny], 
+    [vDP_Maszyna].[Nazwa modelu] AS [Nazwa modelu], 
+    [vDP_Maszyna].[Numer seryjny] AS [Numer seryjny], 
+    [vDP_Maszyna].[Data wprowadzenia maszyny] AS [Data wprowadzenia maszyny], 
+    [vDP_Maszyna].[ Koszt 1 roboczo-godziny] AS [ Koszt 1 roboczo-godziny]
+    FROM [dbo].[vDP_Maszyna] AS [vDP_Maszyna]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Model_maszyny" EntityType="Self.vDP_Model_maszyny" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2972,7 +2972,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDZ_Klient].[Numer klienta] AS [Numer klienta], 
     [vDZ_Klient].[Nazwa firmy] AS [Nazwa firmy], 
     [vDZ_Klient].[NIP] AS [NIP], 
-    [vDZ_Klient].[Imię] AS [Imię], 
+    [vDZ_Klient].[Imiê] AS [Imiê], 
     [vDZ_Klient].[Nazwisko] AS [Nazwisko], 
     [vDZ_Klient].[Adres] AS [Adres], 
     [vDZ_Klient].[Miasto] AS [Miasto], 
@@ -2984,11 +2984,11 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           </EntitySet>
           <EntitySet Name="vDZ_Nieobecnosc" EntityType="Self.vDZ_Nieobecnosc" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDZ_Nieobecnosc].[Identyfikator nieobecności] AS [Identyfikator nieobecności], 
+    [vDZ_Nieobecnosc].[Identyfikator nieobecnoœci] AS [Identyfikator nieobecnoœci], 
     [vDZ_Nieobecnosc].[Nazwisko pracownika] AS [Nazwisko pracownika], 
-    [vDZ_Nieobecnosc].[Rodzaj nieobecności] AS [Rodzaj nieobecności], 
-    [vDZ_Nieobecnosc].[Data rozpoczęcia] AS [Data rozpoczęcia], 
-    [vDZ_Nieobecnosc].[Data zakończenia] AS [Data zakończenia]
+    [vDZ_Nieobecnosc].[Rodzaj nieobecnoœci] AS [Rodzaj nieobecnoœci], 
+    [vDZ_Nieobecnosc].[Data rozpoczêcia] AS [Data rozpoczêcia], 
+    [vDZ_Nieobecnosc].[Data zakoñczenia] AS [Data zakoñczenia]
     FROM [dbo].[vDZ_Nieobecnosc] AS [vDZ_Nieobecnosc]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Plik" EntityType="Self.vDZ_Plik" store:Type="Views" store:Schema="dbo">
@@ -3001,7 +3001,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySet Name="vDZ_Pracownik" EntityType="Self.vDZ_Pracownik" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDZ_Pracownik].[Numer pracownika] AS [Numer pracownika], 
-    [vDZ_Pracownik].[Imię] AS [Imię], 
+    [vDZ_Pracownik].[Imiê] AS [Imiê], 
     [vDZ_Pracownik].[Nazwisko] AS [Nazwisko], 
     [vDZ_Pracownik].[E-mail] AS [E-mail], 
     [vDZ_Pracownik].[Adres] AS [Adres], 
@@ -3012,13 +3012,13 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDZ_Pracownik].[Numer rachunku] AS [Numer rachunku]
     FROM [dbo].[vDZ_Pracownik] AS [vDZ_Pracownik]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDZ_Rachunki" EntityType="Self.vDZ_Rachunki" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDZ_Rachunek" EntityType="Self.vDZ_Rachunek" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDZ_Rachunki].[Numer rachunku] AS [Numer rachunku], 
-    [vDZ_Rachunki].[Rodzaj rachunku] AS [Rodzaj rachunku], 
-    [vDZ_Rachunki].[Koszt] AS [Koszt], 
-    [vDZ_Rachunki].[Data zapłaty] AS [Data zapłaty]
-    FROM [dbo].[vDZ_Rachunki] AS [vDZ_Rachunki]</DefiningQuery>
+    [vDZ_Rachunek].[Numer rachunku] AS [Numer rachunku], 
+    [vDZ_Rachunek].[Rodzaj rachunku] AS [Rodzaj rachunku], 
+    [vDZ_Rachunek].[Koszt] AS [Koszt], 
+    [vDZ_Rachunek].[Data zaplaty] AS [Data zaplaty]
+    FROM [dbo].[vDZ_Rachunek] AS [vDZ_Rachunek]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Rodzaj_nieobecnosci" EntityType="Self.vDZ_Rodzaj_nieobecnosci" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3057,8 +3057,8 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDZ_Szczegoly_zam_czesci].[Numer zamowienia] AS [Numer zamowienia], 
     [vDZ_Szczegoly_zam_czesci].[Nazwa] AS [Nazwa], 
     [vDZ_Szczegoly_zam_czesci].[Koszt jednostkowy oferty] AS [Koszt jednostkowy oferty], 
-    [vDZ_Szczegoly_zam_czesci].[Nazwa właściwości] AS [Nazwa właściwości], 
-    [vDZ_Szczegoly_zam_czesci].[Ilość] AS [Ilość]
+    [vDZ_Szczegoly_zam_czesci].[Nazwa w³aœciwoœci] AS [Nazwa w³aœciwoœci], 
+    [vDZ_Szczegoly_zam_czesci].[Iloœæ] AS [Iloœæ]
     FROM [dbo].[vDZ_Szczegoly_zam_czesci] AS [vDZ_Szczegoly_zam_czesci]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Szczegoly_zam_maszyn" EntityType="Self.vDZ_Szczegoly_zam_maszyn" store:Type="Views" store:Schema="dbo">
@@ -3084,10 +3084,10 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
             <DefiningQuery>SELECT 
     [vDZ_Szczegoly_zam_narzedzi].[Identyfikator szczegolow zamowienia narzedzi] AS [Identyfikator szczegolow zamowienia narzedzi], 
     [vDZ_Szczegoly_zam_narzedzi].[Numer zamowienia] AS [Numer zamowienia], 
-    [vDZ_Szczegoly_zam_narzedzi].[Nazwa narzędzia] AS [Nazwa narzędzia], 
+    [vDZ_Szczegoly_zam_narzedzi].[Nazwa narzêdzia] AS [Nazwa narzêdzia], 
     [vDZ_Szczegoly_zam_narzedzi].[Koszt jednostkowy oferty] AS [Koszt jednostkowy oferty], 
-    [vDZ_Szczegoly_zam_narzedzi].[Nazwa  właściwości] AS [Nazwa  właściwości], 
-    [vDZ_Szczegoly_zam_narzedzi].[Ilość] AS [Ilość]
+    [vDZ_Szczegoly_zam_narzedzi].[Nazwa  w³aœciwoœci] AS [Nazwa  w³aœciwoœci], 
+    [vDZ_Szczegoly_zam_narzedzi].[Iloœæ] AS [Iloœæ]
     FROM [dbo].[vDZ_Szczegoly_zam_narzedzi] AS [vDZ_Szczegoly_zam_narzedzi]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Szczegoly_zamowienia_klienta" EntityType="Self.vDZ_Szczegoly_zamowienia_klienta" store:Type="Views" store:Schema="dbo">
@@ -3095,8 +3095,8 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDZ_Szczegoly_zamowienia_klienta].[Identyfikator szczegolow zamowienia klienta] AS [Identyfikator szczegolow zamowienia klienta], 
     [vDZ_Szczegoly_zamowienia_klienta].[Numer zamowienia] AS [Numer zamowienia], 
     [vDZ_Szczegoly_zamowienia_klienta].[Nazwa pliku] AS [Nazwa pliku], 
-    [vDZ_Szczegoly_zamowienia_klienta].[Ilość sztuk] AS [Ilość sztuk], 
-    [vDZ_Szczegoly_zamowienia_klienta].[Nazwa materiału] AS [Nazwa materiału]
+    [vDZ_Szczegoly_zamowienia_klienta].[Iloœæ sztuk] AS [Iloœæ sztuk], 
+    [vDZ_Szczegoly_zamowienia_klienta].[Nazwa materia³u] AS [Nazwa materia³u]
     FROM [dbo].[vDZ_Szczegoly_zamowienia_klienta] AS [vDZ_Szczegoly_zamowienia_klienta]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Szczegoly_zatrudnienia" EntityType="Self.vDZ_Szczegoly_zatrudnienia" store:Type="Views" store:Schema="dbo">
@@ -3120,7 +3120,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
             <DefiningQuery>SELECT 
     [vDZ_Zamowienie_klienta].[Numer zamówienia] AS [Numer zamówienia], 
     [vDZ_Zamowienie_klienta].[Nazwa firmy] AS [Nazwa firmy], 
-    [vDZ_Zamowienie_klienta].[Pracownik przyjmujący zamówienie] AS [Pracownik przyjmujący zamówienie], 
+    [vDZ_Zamowienie_klienta].[Pracownik przyjmuj¹cy zamówienie] AS [Pracownik przyjmuj¹cy zamówienie], 
     [vDZ_Zamowienie_klienta].[Data zamowienia] AS [Data zamowienia], 
     [vDZ_Zamowienie_klienta].[Oczekiwany termin wykonania] AS [Oczekiwany termin wykonania]
     FROM [dbo].[vDZ_Zamowienie_klienta] AS [vDZ_Zamowienie_klienta]</DefiningQuery>
@@ -3128,7 +3128,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySet Name="vDZ_Zamowienie_zewn" EntityType="Self.vDZ_Zamowienie_zewn" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDZ_Zamowienie_zewn].[Numer zamowienia] AS [Numer zamowienia], 
-    [vDZ_Zamowienie_zewn].[Pracownik składający zamówienie] AS [Pracownik składający zamówienie], 
+    [vDZ_Zamowienie_zewn].[Pracownik sk³adaj¹cy zamówienie] AS [Pracownik sk³adaj¹cy zamówienie], 
     [vDZ_Zamowienie_zewn].[Data zamowienia] AS [Data zamowienia]
     FROM [dbo].[vDZ_Zamowienie_zewn] AS [vDZ_Zamowienie_zewn]</DefiningQuery>
           </EntitySet>
@@ -3137,7 +3137,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDZ_Zatrudnienie].[Identyfikator zatrudnienia] AS [Identyfikator zatrudnienia], 
     [vDZ_Zatrudnienie].[Nazwisko] AS [Nazwisko], 
     [vDZ_Zatrudnienie].[Stanowisko] AS [Stanowisko], 
-    [vDZ_Zatrudnienie].[Dział] AS [Dział], 
+    [vDZ_Zatrudnienie].[Dzia³] AS [Dzia³], 
     [vDZ_Zatrudnienie].[Etat] AS [Etat], 
     [vDZ_Zatrudnienie].[Rodzaj umowy] AS [Rodzaj umowy], 
     [vDZ_Zatrudnienie].[Data zatrudnienia] AS [Data zatrudnienia], 
@@ -3671,13 +3671,13 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySet Name="DM_Szczegoly_wypozyczenia_narzedzia" EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" />
           <EntitySet Name="DM_Wlasciwosc_materialu" EntityType="DrukarniaModel.DM_Wlasciwosc_materialu" />
           <EntitySet Name="DP_Po_material_wydruk" EntityType="DrukarniaModel.DP_Po_material_wydruk" />
-          <EntitySet Name="vDM_Czesci" EntityType="DrukarniaModel.vDM_Czesci" />
-          <EntitySet Name="vDM_Dostawcy" EntityType="DrukarniaModel.vDM_Dostawcy" />
+          <EntitySet Name="vDM_Czesc" EntityType="DrukarniaModel.vDM_Czesc" />
+          <EntitySet Name="vDM_Dostawca" EntityType="DrukarniaModel.vDM_Dostawca" />
           <EntitySet Name="vDM_Material" EntityType="DrukarniaModel.vDM_Material" />
           <EntitySet Name="vDM_Narzedzie" EntityType="DrukarniaModel.vDM_Narzedzie" />
           <EntitySet Name="vDM_Rodzaj_narzedzia" EntityType="DrukarniaModel.vDM_Rodzaj_narzedzia" />
           <EntitySet Name="vDM_Wlasciwosc" EntityType="DrukarniaModel.vDM_Wlasciwosc" />
-          <EntitySet Name="vDP_Maszyny" EntityType="DrukarniaModel.vDP_Maszyny" />
+          <EntitySet Name="vDP_Maszyna" EntityType="DrukarniaModel.vDP_Maszyna" />
           <EntitySet Name="vDP_Model_maszyny" EntityType="DrukarniaModel.vDP_Model_maszyny" />
           <EntitySet Name="vDP_Produkt" EntityType="DrukarniaModel.vDP_Produkt" />
           <EntitySet Name="vDP_Rodzaj_maszyny" EntityType="DrukarniaModel.vDP_Rodzaj_maszyny" />
@@ -3687,7 +3687,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySet Name="vDZ_Nieobecnosc" EntityType="DrukarniaModel.vDZ_Nieobecnosc" />
           <EntitySet Name="vDZ_Plik" EntityType="DrukarniaModel.vDZ_Plik" />
           <EntitySet Name="vDZ_Pracownik" EntityType="DrukarniaModel.vDZ_Pracownik" />
-          <EntitySet Name="vDZ_Rachunki" EntityType="DrukarniaModel.vDZ_Rachunki" />
+          <EntitySet Name="vDZ_Rachunek" EntityType="DrukarniaModel.vDZ_Rachunek" />
           <EntitySet Name="vDZ_Rodzaj_nieobecnosci" EntityType="DrukarniaModel.vDZ_Rodzaj_nieobecnosci" />
           <EntitySet Name="vDZ_Rodzaj_rachunku" EntityType="DrukarniaModel.vDZ_Rodzaj_rachunku" />
           <EntitySet Name="vDZ_Rodzaj_statusu_zamowienia" EntityType="DrukarniaModel.vDZ_Rodzaj_statusu_zamowienia" />
@@ -5099,17 +5099,17 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <NavigationProperty Name="DM_Material" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_ma__6442E2C9" FromRole="DP_Po_material_wydruk" ToRole="DM_Material" />
           <NavigationProperty Name="DP_Po_wydr_proc" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_po__65370702" FromRole="DP_Po_material_wydruk" ToRole="DP_Po_wydr_proc" />
         </EntityType>
-        <EntityType Name="vDM_Czesci">
+        <EntityType Name="vDM_Czesc">
           <Key>
             <PropertyRef Name="Numer_czesci" />
             <PropertyRef Name="Nazwa" />
-            <PropertyRef Name="Ilosc_początkowa" />
+            <PropertyRef Name="Ilosc_pocz_tkowa" />
           </Key>
           <Property Name="Numer_czesci" Type="Int32" Nullable="false" />
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Ilosc_początkowa" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc_pocz_tkowa" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="vDM_Dostawcy">
+        <EntityType Name="vDM_Dostawca">
           <Key>
             <PropertyRef Name="Numer_dostawcy" />
             <PropertyRef Name="Nazwa" />
@@ -5123,13 +5123,13 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
         </EntityType>
         <EntityType Name="vDM_Material">
           <Key>
-            <PropertyRef Name="Numer_materiału" />
-            <PropertyRef Name="Rodzaj_materiału" />
-            <PropertyRef Name="Nazwa_materiału" />
+            <PropertyRef Name="Numer_materia_u" />
+            <PropertyRef Name="Rodzaj_materia_u" />
+            <PropertyRef Name="Nazwa_materia_u" />
           </Key>
-          <Property Name="Numer_materiału" Type="Int32" Nullable="false" />
-          <Property Name="Rodzaj_materiału" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Nazwa_materiału" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Numer_materia_u" Type="Int32" Nullable="false" />
+          <Property Name="Rodzaj_materia_u" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwa_materia_u" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDM_Narzedzie">
           <Key>
@@ -5159,7 +5159,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Jednostka_pomiarowa" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vDP_Maszyny">
+        <EntityType Name="vDP_Maszyna">
           <Key>
             <PropertyRef Name="Numer_maszyny" />
             <PropertyRef Name="Rodzaj_maszyny" />
@@ -5220,7 +5220,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
             <PropertyRef Name="Numer_klienta" />
             <PropertyRef Name="Nazwa_firmy" />
             <PropertyRef Name="NIP" />
-            <PropertyRef Name="Imię" />
+            <PropertyRef Name="Imiê" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="Adres" />
             <PropertyRef Name="Miasto" />
@@ -5232,7 +5232,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Property Name="Numer_klienta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_firmy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="NIP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
-          <Property Name="Imię" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Imiê" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Adres" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Miasto" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
@@ -5243,17 +5243,17 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
         </EntityType>
         <EntityType Name="vDZ_Nieobecnosc">
           <Key>
-            <PropertyRef Name="Identyfikator_nieobecności" />
+            <PropertyRef Name="Identyfikator_nieobecnoœci" />
             <PropertyRef Name="Nazwisko_pracownika" />
-            <PropertyRef Name="Rodzaj_nieobecności" />
-            <PropertyRef Name="Data_rozpoczęcia" />
-            <PropertyRef Name="Data_zakończenia" />
+            <PropertyRef Name="Rodzaj_nieobecnoœci" />
+            <PropertyRef Name="Data_rozpoczêcia" />
+            <PropertyRef Name="Data_zakoñczenia" />
           </Key>
-          <Property Name="Identyfikator_nieobecności" Type="Int32" Nullable="false" />
+          <Property Name="Identyfikator_nieobecnoœci" Type="Int32" Nullable="false" />
           <Property Name="Nazwisko_pracownika" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Rodzaj_nieobecności" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Data_rozpoczęcia" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Data_zakończenia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Rodzaj_nieobecnoœci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Data_rozpoczêcia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_zakoñczenia" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="vDZ_Plik">
           <Key>
@@ -5268,7 +5268,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
         <EntityType Name="vDZ_Pracownik">
           <Key>
             <PropertyRef Name="Numer_pracownika" />
-            <PropertyRef Name="Imię" />
+            <PropertyRef Name="Imiê" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="E_mail" />
             <PropertyRef Name="Adres" />
@@ -5279,7 +5279,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
             <PropertyRef Name="Numer_rachunku" />
           </Key>
           <Property Name="Numer_pracownika" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Imię" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Imiê" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="E_mail" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Adres" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
@@ -5289,17 +5289,17 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Property Name="Numer_telefonu" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="Numer_rachunku" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vDZ_Rachunki">
+        <EntityType Name="vDZ_Rachunek">
           <Key>
             <PropertyRef Name="Numer_rachunku" />
             <PropertyRef Name="Rodzaj_rachunku" />
             <PropertyRef Name="Koszt" />
-            <PropertyRef Name="Data_zapłaty" />
+            <PropertyRef Name="Data_zaplaty" />
           </Key>
           <Property Name="Numer_rachunku" Type="Int32" Nullable="false" />
-          <Property Name="Rodzaj_rachunku" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Rodzaj_rachunku" Type="Int32" Nullable="false" />
           <Property Name="Koszt" Type="Double" Nullable="false" />
-          <Property Name="Data_zapłaty" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_zaplaty" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="vDZ_Rodzaj_nieobecnosci">
           <Key>
@@ -5349,15 +5349,15 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Koszt_jednostkowy_oferty" />
-            <PropertyRef Name="Nazwa_właściwości" />
-            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Nazwa_w_aœciwoœci" />
+            <PropertyRef Name="Iloœæ" />
           </Key>
           <Property Name="Identyfikator_szczegolow_zamowienia_czesci" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Koszt_jednostkowy_oferty" Type="Double" Nullable="false" />
-          <Property Name="Nazwa_właściwości" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Ilość" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa_w_aœciwoœci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Iloœæ" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDZ_Szczegoly_zam_maszyn">
           <Key>
@@ -5393,31 +5393,31 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Key>
             <PropertyRef Name="Identyfikator_szczegolow_zamowienia_narzedzi" />
             <PropertyRef Name="Numer_zamowienia" />
-            <PropertyRef Name="Nazwa_narzędzia" />
+            <PropertyRef Name="Nazwa_narzêdzia" />
             <PropertyRef Name="Koszt_jednostkowy_oferty" />
-            <PropertyRef Name="Nazwa__właściwości" />
-            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Nazwa__w_aœciwoœci" />
+            <PropertyRef Name="Iloœæ" />
           </Key>
           <Property Name="Identyfikator_szczegolow_zamowienia_narzedzi" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
-          <Property Name="Nazwa_narzędzia" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwa_narzêdzia" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Koszt_jednostkowy_oferty" Type="Double" Nullable="false" />
-          <Property Name="Nazwa__właściwości" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Ilość" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa__w_aœciwoœci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Iloœæ" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDZ_Szczegoly_zamowienia_klienta">
           <Key>
             <PropertyRef Name="Identyfikator_szczegolow_zamowienia_klienta" />
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Nazwa_pliku" />
-            <PropertyRef Name="Ilość_sztuk" />
-            <PropertyRef Name="Nazwa_materiału" />
+            <PropertyRef Name="Iloœæ_sztuk" />
+            <PropertyRef Name="Nazwa_materia_u" />
           </Key>
           <Property Name="Identyfikator_szczegolow_zamowienia_klienta" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_pliku" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Ilość_sztuk" Type="Int32" Nullable="false" />
-          <Property Name="Nazwa_materiału" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Iloœæ_sztuk" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa_materia_u" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDZ_Szczegoly_zatrudnienia">
           <Key>
@@ -5448,24 +5448,24 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Key>
             <PropertyRef Name="Numer_zamówienia" />
             <PropertyRef Name="Nazwa_firmy" />
-            <PropertyRef Name="Pracownik_przyjmujący_zamówienie" />
+            <PropertyRef Name="Pracownik_przyjmuj_cy_zamówienie" />
             <PropertyRef Name="Data_zamowienia" />
             <PropertyRef Name="Oczekiwany_termin_wykonania" />
           </Key>
           <Property Name="Numer_zamówienia" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_firmy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Pracownik_przyjmujący_zamówienie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Pracownik_przyjmuj_cy_zamówienie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Data_zamowienia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Oczekiwany_termin_wykonania" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="vDZ_Zamowienie_zewn">
           <Key>
             <PropertyRef Name="Numer_zamowienia" />
-            <PropertyRef Name="Pracownik_składający_zamówienie" />
+            <PropertyRef Name="Pracownik_sk_adaj_cy_zamówienie" />
             <PropertyRef Name="Data_zamowienia" />
           </Key>
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
-          <Property Name="Pracownik_składający_zamówienie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Pracownik_sk_adaj_cy_zamówienie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Data_zamowienia" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="vDZ_Zatrudnienie">
@@ -5473,7 +5473,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
             <PropertyRef Name="Identyfikator_zatrudnienia" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="Stanowisko" />
-            <PropertyRef Name="Dział" />
+            <PropertyRef Name="Dzia_" />
             <PropertyRef Name="Etat" />
             <PropertyRef Name="Rodzaj_umowy" />
             <PropertyRef Name="Data_zatrudnienia" />
@@ -5482,7 +5482,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Property Name="Identyfikator_zatrudnienia" Type="Int32" Nullable="false" />
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Stanowisko" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Dział" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Dzia_" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Etat" Type="Double" Nullable="false" />
           <Property Name="Rodzaj_umowy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
@@ -7604,18 +7604,18 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Czesci">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Czesci">
-              <MappingFragment StoreEntitySet="vDM_Czesci">
-                <ScalarProperty Name="Ilosc_początkowa" ColumnName="Ilosc początkowa" />
+          <EntitySetMapping Name="vDM_Czesc">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Czesc">
+              <MappingFragment StoreEntitySet="vDM_Czesc">
+                <ScalarProperty Name="Ilosc_pocz_tkowa" ColumnName="Ilosc pocz¹tkowa" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Numer_czesci" ColumnName="Numer czesci" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Dostawcy">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Dostawcy">
-              <MappingFragment StoreEntitySet="vDM_Dostawcy">
+          <EntitySetMapping Name="vDM_Dostawca">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Dostawca">
+              <MappingFragment StoreEntitySet="vDM_Dostawca">
                 <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
                 <ScalarProperty Name="NIP" ColumnName="NIP" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
@@ -7626,9 +7626,9 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySetMapping Name="vDM_Material">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Material">
               <MappingFragment StoreEntitySet="vDM_Material">
-                <ScalarProperty Name="Nazwa_materiału" ColumnName="Nazwa materiału" />
-                <ScalarProperty Name="Rodzaj_materiału" ColumnName="Rodzaj materiału" />
-                <ScalarProperty Name="Numer_materiału" ColumnName="Numer materiału" />
+                <ScalarProperty Name="Nazwa_materia_u" ColumnName="Nazwa materia³u" />
+                <ScalarProperty Name="Rodzaj_materia_u" ColumnName="Rodzaj materia³u" />
+                <ScalarProperty Name="Numer_materia_u" ColumnName="Numer materia³u" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -7659,9 +7659,9 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Maszyny">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Maszyny">
-              <MappingFragment StoreEntitySet="vDP_Maszyny">
+          <EntitySetMapping Name="vDP_Maszyna">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Maszyna">
+              <MappingFragment StoreEntitySet="vDP_Maszyna">
                 <ScalarProperty Name="C_Koszt_1_roboczo_godziny" ColumnName=" Koszt 1 roboczo-godziny" />
                 <ScalarProperty Name="Data_wprowadzenia_maszyny" ColumnName="Data wprowadzenia maszyny" />
                 <ScalarProperty Name="Numer_seryjny" ColumnName="Numer seryjny" />
@@ -7722,7 +7722,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
                 <ScalarProperty Name="Miasto" ColumnName="Miasto" />
                 <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
-                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Imiê" ColumnName="Imiê" />
                 <ScalarProperty Name="NIP" ColumnName="NIP" />
                 <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa firmy" />
                 <ScalarProperty Name="Numer_klienta" ColumnName="Numer klienta" />
@@ -7732,11 +7732,11 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySetMapping Name="vDZ_Nieobecnosc">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Nieobecnosc">
               <MappingFragment StoreEntitySet="vDZ_Nieobecnosc">
-                <ScalarProperty Name="Data_zakończenia" ColumnName="Data zakończenia" />
-                <ScalarProperty Name="Data_rozpoczęcia" ColumnName="Data rozpoczęcia" />
-                <ScalarProperty Name="Rodzaj_nieobecności" ColumnName="Rodzaj nieobecności" />
+                <ScalarProperty Name="Data_zakoñczenia" ColumnName="Data zakoñczenia" />
+                <ScalarProperty Name="Data_rozpoczêcia" ColumnName="Data rozpoczêcia" />
+                <ScalarProperty Name="Rodzaj_nieobecnoœci" ColumnName="Rodzaj nieobecnoœci" />
                 <ScalarProperty Name="Nazwisko_pracownika" ColumnName="Nazwisko pracownika" />
-                <ScalarProperty Name="Identyfikator_nieobecności" ColumnName="Identyfikator nieobecności" />
+                <ScalarProperty Name="Identyfikator_nieobecnoœci" ColumnName="Identyfikator nieobecnoœci" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -7760,15 +7760,15 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
                 <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="E_mail" ColumnName="E-mail" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
-                <ScalarProperty Name="Imię" ColumnName="Imię" />
+                <ScalarProperty Name="Imiê" ColumnName="Imiê" />
                 <ScalarProperty Name="Numer_pracownika" ColumnName="Numer pracownika" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDZ_Rachunki">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Rachunki">
-              <MappingFragment StoreEntitySet="vDZ_Rachunki">
-                <ScalarProperty Name="Data_zapłaty" ColumnName="Data zapłaty" />
+          <EntitySetMapping Name="vDZ_Rachunek">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Rachunek">
+              <MappingFragment StoreEntitySet="vDZ_Rachunek">
+                <ScalarProperty Name="Data_zaplaty" ColumnName="Data zaplaty" />
                 <ScalarProperty Name="Koszt" ColumnName="Koszt" />
                 <ScalarProperty Name="Rodzaj_rachunku" ColumnName="Rodzaj rachunku" />
                 <ScalarProperty Name="Numer_rachunku" ColumnName="Numer rachunku" />
@@ -7819,8 +7819,8 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySetMapping Name="vDZ_Szczegoly_zam_czesci">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Szczegoly_zam_czesci">
               <MappingFragment StoreEntitySet="vDZ_Szczegoly_zam_czesci">
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
-                <ScalarProperty Name="Nazwa_właściwości" ColumnName="Nazwa właściwości" />
+                <ScalarProperty Name="Iloœæ" ColumnName="Iloœæ" />
+                <ScalarProperty Name="Nazwa_w_aœciwoœci" ColumnName="Nazwa w³aœciwoœci" />
                 <ScalarProperty Name="Koszt_jednostkowy_oferty" ColumnName="Koszt jednostkowy oferty" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
@@ -7854,10 +7854,10 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySetMapping Name="vDZ_Szczegoly_zam_narzedzi">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Szczegoly_zam_narzedzi">
               <MappingFragment StoreEntitySet="vDZ_Szczegoly_zam_narzedzi">
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
-                <ScalarProperty Name="Nazwa__właściwości" ColumnName="Nazwa  właściwości" />
+                <ScalarProperty Name="Iloœæ" ColumnName="Iloœæ" />
+                <ScalarProperty Name="Nazwa__w_aœciwoœci" ColumnName="Nazwa  w³aœciwoœci" />
                 <ScalarProperty Name="Koszt_jednostkowy_oferty" ColumnName="Koszt jednostkowy oferty" />
-                <ScalarProperty Name="Nazwa_narzędzia" ColumnName="Nazwa narzędzia" />
+                <ScalarProperty Name="Nazwa_narzêdzia" ColumnName="Nazwa narzêdzia" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Identyfikator_szczegolow_zamowienia_narzedzi" ColumnName="Identyfikator szczegolow zamowienia narzedzi" />
               </MappingFragment>
@@ -7866,8 +7866,8 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySetMapping Name="vDZ_Szczegoly_zamowienia_klienta">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Szczegoly_zamowienia_klienta">
               <MappingFragment StoreEntitySet="vDZ_Szczegoly_zamowienia_klienta">
-                <ScalarProperty Name="Nazwa_materiału" ColumnName="Nazwa materiału" />
-                <ScalarProperty Name="Ilość_sztuk" ColumnName="Ilość sztuk" />
+                <ScalarProperty Name="Nazwa_materia_u" ColumnName="Nazwa materia³u" />
+                <ScalarProperty Name="Iloœæ_sztuk" ColumnName="Iloœæ sztuk" />
                 <ScalarProperty Name="Nazwa_pliku" ColumnName="Nazwa pliku" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Identyfikator_szczegolow_zamowienia_klienta" ColumnName="Identyfikator szczegolow zamowienia klienta" />
@@ -7900,7 +7900,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
               <MappingFragment StoreEntitySet="vDZ_Zamowienie_klienta">
                 <ScalarProperty Name="Oczekiwany_termin_wykonania" ColumnName="Oczekiwany termin wykonania" />
                 <ScalarProperty Name="Data_zamowienia" ColumnName="Data zamowienia" />
-                <ScalarProperty Name="Pracownik_przyjmujący_zamówienie" ColumnName="Pracownik przyjmujący zamówienie" />
+                <ScalarProperty Name="Pracownik_przyjmuj_cy_zamówienie" ColumnName="Pracownik przyjmuj¹cy zamówienie" />
                 <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa firmy" />
                 <ScalarProperty Name="Numer_zamówienia" ColumnName="Numer zamówienia" />
               </MappingFragment>
@@ -7910,7 +7910,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Zamowienie_zewn">
               <MappingFragment StoreEntitySet="vDZ_Zamowienie_zewn">
                 <ScalarProperty Name="Data_zamowienia" ColumnName="Data zamowienia" />
-                <ScalarProperty Name="Pracownik_składający_zamówienie" ColumnName="Pracownik składający zamówienie" />
+                <ScalarProperty Name="Pracownik_sk_adaj_cy_zamówienie" ColumnName="Pracownik sk³adaj¹cy zamówienie" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -7922,7 +7922,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
                 <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data zatrudnienia" />
                 <ScalarProperty Name="Rodzaj_umowy" ColumnName="Rodzaj umowy" />
                 <ScalarProperty Name="Etat" ColumnName="Etat" />
-                <ScalarProperty Name="Dział" ColumnName="Dział" />
+                <ScalarProperty Name="Dzia_" ColumnName="Dzia³" />
                 <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Identyfikator_zatrudnienia" ColumnName="Identyfikator zatrudnienia" />

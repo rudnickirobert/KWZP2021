@@ -17,7 +17,7 @@ namespace KWZP2021
         public int Identyfikator_zatrudnienia { get; set; }
         public string Nazwisko { get; set; }
         public string Stanowisko { get; set; }
-        public string Dział { get; set; }
+        public string Dzia_ { get; set; }
         public double Etat { get; set; }
         public string Rodzaj_umowy { get; set; }
         public System.DateTime Data_zatrudnienia { get; set; }

@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public int Numer_zamówienia { get; set; }
         public string Nazwa_firmy { get; set; }
-        public string Pracownik_przyjmujący_zamówienie { get; set; }
+        public string Pracownik_przyjmuj_cy_zamówienie { get; set; }
         public System.DateTime Data_zamowienia { get; set; }
         public System.DateTime Oczekiwany_termin_wykonania { get; set; }
     }

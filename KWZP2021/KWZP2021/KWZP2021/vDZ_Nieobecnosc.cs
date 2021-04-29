@@ -14,10 +14,10 @@ namespace KWZP2021
     
     public partial class vDZ_Nieobecnosc
     {
-        public int Identyfikator_nieobecności { get; set; }
+        public int Identyfikator_nieobecnoœci { get; set; }
         public string Nazwisko_pracownika { get; set; }
-        public string Rodzaj_nieobecności { get; set; }
-        public System.DateTime Data_rozpoczęcia { get; set; }
-        public System.DateTime Data_zakończenia { get; set; }
+        public string Rodzaj_nieobecnoœci { get; set; }
+        public System.DateTime Data_rozpoczêcia { get; set; }
+        public System.DateTime Data_zakoñczenia { get; set; }
     }
 }

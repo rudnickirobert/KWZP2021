@@ -102,13 +102,13 @@ namespace KWZP2021
         public virtual DbSet<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DbSet<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         public virtual DbSet<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
-        public virtual DbSet<vDM_Czesci> vDM_Czesci { get; set; }
-        public virtual DbSet<vDM_Dostawcy> vDM_Dostawcy { get; set; }
+        public virtual DbSet<vDM_Czesc> vDM_Czesc { get; set; }
+        public virtual DbSet<vDM_Dostawca> vDM_Dostawca { get; set; }
         public virtual DbSet<vDM_Material> vDM_Material { get; set; }
         public virtual DbSet<vDM_Narzedzie> vDM_Narzedzie { get; set; }
         public virtual DbSet<vDM_Rodzaj_narzedzia> vDM_Rodzaj_narzedzia { get; set; }
         public virtual DbSet<vDM_Wlasciwosc> vDM_Wlasciwosc { get; set; }
-        public virtual DbSet<vDP_Maszyny> vDP_Maszyny { get; set; }
+        public virtual DbSet<vDP_Maszyna> vDP_Maszyna { get; set; }
         public virtual DbSet<vDP_Model_maszyny> vDP_Model_maszyny { get; set; }
         public virtual DbSet<vDP_Produkt> vDP_Produkt { get; set; }
         public virtual DbSet<vDP_Rodzaj_maszyny> vDP_Rodzaj_maszyny { get; set; }
@@ -118,7 +118,7 @@ namespace KWZP2021
         public virtual DbSet<vDZ_Nieobecnosc> vDZ_Nieobecnosc { get; set; }
         public virtual DbSet<vDZ_Plik> vDZ_Plik { get; set; }
         public virtual DbSet<vDZ_Pracownik> vDZ_Pracownik { get; set; }
-        public virtual DbSet<vDZ_Rachunki> vDZ_Rachunki { get; set; }
+        public virtual DbSet<vDZ_Rachunek> vDZ_Rachunek { get; set; }
         public virtual DbSet<vDZ_Rodzaj_nieobecnosci> vDZ_Rodzaj_nieobecnosci { get; set; }
         public virtual DbSet<vDZ_Rodzaj_rachunku> vDZ_Rodzaj_rachunku { get; set; }
         public virtual DbSet<vDZ_Rodzaj_statusu_zamowienia> vDZ_Rodzaj_statusu_zamowienia { get; set; }

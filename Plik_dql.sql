@@ -1,9 +1,9 @@
-USE Drukarnia
+ï»¿USE Drukarnia
 GO
 
 CREATE VIEW vDM_Material
 AS
-SELECT Id_materialu AS [Numer materia³u], DM_Rodzaj_materialu.Rodzaj_materialu AS [Rodzaj materia³u], DM_Material.Nazwa AS [Nazwa materia³u]
+SELECT Id_materialu AS [Numer materiaÂ³u], DM_Rodzaj_materialu.Rodzaj_materialu AS [Rodzaj materiaÂ³u], DM_Material.Nazwa AS [Nazwa materiaÂ³u]
 FROM     dbo.DM_Material INNER JOIN
 DM_Rodzaj_materialu ON DM_Material.Id_rodzaj_materialu=DM_Rodzaj_materialu.Id_rodzaj_materialu
 GO
@@ -30,7 +30,7 @@ FROM     dbo.DM_Dostawca
 GO
 CREATE VIEW vDZ_Klient
 AS
-SELECT ID_Klienta AS [Numer klienta], nazwa_firmy AS [Nazwa firmy], NIP, imie AS [Imiê], nazwisko AS [Nazwisko], adres AS [Adres], miasto AS [Miasto] , kod_pocztowy AS [Kod pocztowy], email AS [E-mail], telefon, numer_rachunku AS [Numer rachunku]
+SELECT ID_Klienta AS [Numer klienta], nazwa_firmy AS [Nazwa firmy], NIP, imie AS [ImiÃª], nazwisko AS [Nazwisko], adres AS [Adres], miasto AS [Miasto] , kod_pocztowy AS [Kod pocztowy], email AS [E-mail], telefon, numer_rachunku AS [Numer rachunku]
 FROM     dbo.DZ_Klient
 GO
 CREATE VIEW vDP_Produkt
@@ -57,7 +57,7 @@ DP_Model_maszyny ON DP_Maszyna.Id_model_maszyny=DP_Model_maszyny.Id_model_maszyn
 GO
 CREATE VIEW vDM_Czesc
 AS
-SELECT Id_czesci AS [Numer czesci], DM_Czesc.nazwa AS [Nazwa], DM_Czesc.ilosc_poczatkowa AS [Ilosc pocz¹tkowa]
+SELECT Id_czesci AS [Numer czesci], DM_Czesc.nazwa AS [Nazwa], DM_Czesc.ilosc_poczatkowa AS [Ilosc poczÂ¹tkowa]
 FROM     dbo.DM_Czesc INNER JOIN
 DP_Model_maszyny ON DM_Czesc.Id_model_maszyny=DP_Model_maszyny.id_model_maszyny
 GO
@@ -74,7 +74,7 @@ DZ_Rodzaj_rachunku ON DZ_Rachunek.Id_rodzaj_rachunku=DZ_Rodzaj_rachunku.Id_rodza
 GO
 CREATE VIEW vDZ_Pracownik
 AS
-SELECT Id_pracownika AS [Numer pracownika],imie AS [Imiê], nazwisko AS [Nazwisko], email AS[E-mail],adres AS [Adres],miasto AS [Miasto],kod_pocztowy AS [Kod pocztowy],data_urodzenia AS [Data urodzenia],telefon AS[Numer telefonu], numer_rachunku AS[Numer rachunku]
+SELECT Id_pracownika AS [Numer pracownika],imie AS [ImiÃª], nazwisko AS [Nazwisko], email AS[E-mail],adres AS [Adres],miasto AS [Miasto],kod_pocztowy AS [Kod pocztowy],data_urodzenia AS [Data urodzenia],telefon AS[Numer telefonu], numer_rachunku AS[Numer rachunku]
 FROM     dbo.DZ_Pracownik
 GO
 CREATE VIEW vDZ_Rodzaj_nieobecnosci
@@ -84,7 +84,7 @@ FROM     dbo.DZ_Rodzaj_nieobecnosci
 GO
 CREATE VIEW vDZ_Nieobecnosc
 AS
-SELECT Id_nieobecnosci AS [Identyfikator nieobecnoœci], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika], DZ_Rodzaj_nieobecnosci.Rodzaj AS [Rodzaj nieobecnoœci],DZ_Nieobecnosc.data_rozpoczecia AS [Data rozpoczêcia], DZ_Nieobecnosc.data_zakonczenia AS [Data zakoñczenia]
+SELECT Id_nieobecnosci AS [Identyfikator nieobecnoÅ“ci], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika], DZ_Rodzaj_nieobecnosci.Rodzaj AS [Rodzaj nieobecnoÅ“ci],DZ_Nieobecnosc.data_rozpoczecia AS [Data rozpoczÃªcia], DZ_Nieobecnosc.data_zakonczenia AS [Data zakoÃ±czenia]
 FROM     dbo.DZ_Nieobecnosc INNER JOIN
 DZ_Pracownik ON DZ_Nieobecnosc.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
 DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci
@@ -111,7 +111,7 @@ FROM     dbo.DZ_Dzial
 GO
 CREATE VIEW vDZ_Zatrudnienie
 AS
-SELECT Id_zatrudnienia AS [Identyfikator zatrudnienia], DZ_Pracownik.Nazwisko AS [Nazwisko], DZ_Stanowisko.Stanowisko AS [Stanowisko],DZ_Dzial.Dzial AS [Dzia³], DZ_Etat.Etat AS [Etat], DZ_Rodzaj_umowy.Rodzaj_umowy AS[Rodzaj umowy],DZ_Zatrudnienie.Data_zatrudnienia AS[Data zatrudnienia], DZ_Zatrudnienie.Data_zwolnienia AS [Data zwolnienia]
+SELECT Id_zatrudnienia AS [Identyfikator zatrudnienia], DZ_Pracownik.Nazwisko AS [Nazwisko], DZ_Stanowisko.Stanowisko AS [Stanowisko],DZ_Dzial.Dzial AS [DziaÂ³], DZ_Etat.Etat AS [Etat], DZ_Rodzaj_umowy.Rodzaj_umowy AS[Rodzaj umowy],DZ_Zatrudnienie.Data_zatrudnienia AS[Data zatrudnienia], DZ_Zatrudnienie.Data_zwolnienia AS [Data zwolnienia]
 FROM     dbo.DZ_Zatrudnienie INNER JOIN
 DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
 DZ_Stanowisko ON DZ_Zatrudnienie.Id_stanowiska=DZ_Stanowisko.Id_stanowiska INNER JOIN
@@ -127,7 +127,7 @@ DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_
 GO
 CREATE VIEW vDZ_Zamowienie_klienta
 AS
-SELECT Id_zamowienia AS [Numer zamówienia], DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Pracownik.Nazwisko AS [Pracownik przyjmuj¹cy zamówienie], data_zamowienia AS [Data zamowienia], oczekiwany_termin_wykonania AS [Oczekiwany termin wykonania]
+SELECT Id_zamowienia AS [Numer zamÃ³wienia], DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Pracownik.Nazwisko AS [Pracownik przyjmujÂ¹cy zamÃ³wienie], data_zamowienia AS [Data zamowienia], oczekiwany_termin_wykonania AS [Oczekiwany termin wykonania]
 FROM dbo.DZ_Zamowienie_klienta INNER JOIN
 DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta INNER JOIN
 DZ_Pracownik ON DZ_Zamowienie_klienta.Id_pracownika=DZ_Pracownik.Id_pracownika
@@ -139,7 +139,7 @@ FROM dbo.DZ_Plik
 GO
 CREATE VIEW vDZ_Szczegoly_zamowienia_klienta
 AS
-SELECT Id_szczegoly_zam_klienta AS [Identyfikator szczegolow zamowienia klienta], DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], ilosc_sztuk AS [Iloœæ sztuk], DM_Material.Nazwa AS [Nazwa materia³u]
+SELECT Id_szczegoly_zam_klienta AS [Identyfikator szczegolow zamowienia klienta], DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], ilosc_sztuk AS [IloÅ“Ã¦ sztuk], DM_Material.Nazwa AS [Nazwa materiaÂ³u]
 FROM dbo.DZ_Szczegoly_zamowienia_klienta INNER JOIN
 DZ_Zamowienie_klienta ON DZ_Szczegoly_zamowienia_klienta.Id_zamowienia=DZ_Zamowienie_klienta.Id_zamowienia INNER JOIN
 DZ_Plik ON DZ_Szczegoly_zamowienia_klienta.Id_pliku=DZ_Plik.Id_pliku INNER JOIN
@@ -159,24 +159,20 @@ FROM dbo.DZ_Rodzaj_statusu_zamowienia
 GO
 CREATE VIEW vDZ_Zamowienie_zewn
 AS
-SELECT Id_zamowienia_zewn AS [Numer zamowienia], DZ_Pracownik.Nazwisko AS [Pracownik sk³adaj¹cy zamówienie], data_zamowienia_zewn AS [Data zamowienia]
+SELECT Id_zamowienia_zewn AS [Numer zamowienia], DZ_Pracownik.Nazwisko AS [Pracownik skÂ³adajÂ¹cy zamÃ³wienie], data_zamowienia_zewn AS [Data zamowienia]
 FROM DZ_Zamowienie_zewn INNER JOIN
 DZ_Pracownik ON DZ_Zamowienie_zewn.Id_pracownika=DZ_Pracownik.Id_pracownika
 GO
 CREATE VIEW vDZ_Szczegoly_zam_maszyn
 AS
-<<<<<<< HEAD
-SELECT Id_szczegoly_zam_maszyn AS [Identyfikator szczegolow zamowienia maszyn], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DP_Maszyna.Id_maszyny AS [Numer maszyny], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], ilosc
-=======
-SELECT Id_szczegoly_zam_maszyn AS [Identyfikator szczegolow zamowienia maszyn], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamówienia], DP_Maszyna.Nr_seryjny AS [Numer seryjny], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], ilosc AS [Iloœæ]
->>>>>>> 786ed837411e2737a4a15e027c9491be1fdd523e
+SELECT Id_szczegoly_zam_maszyn AS [Identyfikator szczegolow zamowienia maszyn], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamÃ³wienia], DP_Maszyna.Nr_seryjny AS [Numer seryjny], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], ilosc AS [IloÅ›Ä‡]
 FROM dbo.DZ_Szczegoly_zam_maszyn INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_maszyn.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DP_Maszyna ON DZ_Szczegoly_zam_maszyn.Id_maszyny=DP_Maszyna.Id_maszyny
 GO
 CREATE VIEW vDZ_Szczegoly_zam_materialu
 AS
-SELECT Id_szczegoly_zam_materialu AS [Identyfikator szczegolow zamowienia materialu], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Material.Nazwa AS [Nazwa materia³u], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa w³aœciwoœci], ilosc AS [Iloœæ]
+SELECT Id_szczegoly_zam_materialu AS [Identyfikator szczegolow zamowienia materialu], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Material.Nazwa AS [Nazwa materiaÅ‚u], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wÅ‚aÅ›ciwoÅ›ci], ilosc AS [IloÅ›Ä‡]
 FROM dbo.DZ_Szczegoly_zam_materialu INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_materialu.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DM_Material ON DZ_Szczegoly_zam_materialu.Id_materialu=DM_Material.Id_materialu INNER JOIN
@@ -184,11 +180,7 @@ DM_Wlasciwosc ON DZ_Szczegoly_zam_materialu.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasc
 GO
 CREATE VIEW vDZ_Szczegoly_zam_czesci
 AS
-<<<<<<< HEAD
-SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesc.Id_czesci AS [Numer czesci], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Id_wlasciwosc AS [Numer wlasciwosci], ilosc
-=======
-SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesc.Nazwa AS [Nazwa], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa w³aœciwoœci], ilosc AS [Iloœæ]
->>>>>>> 786ed837411e2737a4a15e027c9491be1fdd523e
+SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesc.Nazwa AS [Nazwa], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wÂ³aÅ“ciwoÅ“ci], ilosc AS [IloÅ“Ã¦]
 FROM dbo.DZ_Szczegoly_zam_czesci INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_czesci.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DM_Czesc ON DZ_Szczegoly_zam_czesci.Id_czesci=DM_Czesc.Id_czesci INNER JOIN
@@ -196,7 +188,7 @@ DM_Wlasciwosc ON DZ_Szczegoly_zam_czesci.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwo
 GO
 CREATE VIEW vDZ_Szczegoly_zam_narzedzi
 AS
-SELECT Id_szczegoly_zam_narzedzi AS [Identyfikator szczegolow zamowienia narzedzi], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Narzedzie.Nazwa AS [Nazwa narzêdzia], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa  w³aœciwoœci], ilosc AS [Iloœæ]
+SELECT Id_szczegoly_zam_narzedzi AS [Identyfikator szczegolow zamowienia narzedzi], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Narzedzie.Nazwa AS [Nazwa narzÃªdzia], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa  wÂ³aÅ“ciwoÅ“ci], ilosc AS [IloÅ“Ã¦]
 FROM dbo.DZ_Szczegoly_zam_narzedzi INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_narzedzi.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DM_Narzedzie ON DZ_Szczegoly_zam_narzedzi.Id_narzedzia=DM_Narzedzie.Id_narzedzia INNER JOIN

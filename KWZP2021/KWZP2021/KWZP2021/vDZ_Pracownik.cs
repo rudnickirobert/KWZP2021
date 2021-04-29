@@ -15,7 +15,7 @@ namespace KWZP2021
     public partial class vDZ_Pracownik
     {
         public int Numer_pracownika { get; set; }
-        public string Imię { get; set; }
+        public string Imiê { get; set; }
         public string Nazwisko { get; set; }
         public string E_mail { get; set; }
         public string Adres { get; set; }

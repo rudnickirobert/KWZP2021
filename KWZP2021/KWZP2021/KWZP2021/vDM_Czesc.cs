@@ -12,10 +12,10 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Czesci
+    public partial class vDM_Czesc
     {
         public int Numer_czesci { get; set; }
         public string Nazwa { get; set; }
-        public int Ilosc_początkowa { get; set; }
+        public int Ilosc_pocz_tkowa { get; set; }
     }
 }

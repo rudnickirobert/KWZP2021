@@ -57,7 +57,7 @@ namespace KWZP2021
             klient.Email = txtEmail.Text;
             klient.Telefon = txtTelefon.Text;
             klient.Numer_rachunku = txtNumer_Rachunku.Text;
-            //database.DZ_Klient.(klient);
+            database.DZ_Klient.Add(klient);
             database.SaveChanges();
             this.Close();
         }
