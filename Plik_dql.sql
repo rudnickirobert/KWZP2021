@@ -25,8 +25,8 @@ DM_Rodzaj_narzedzia ON DM_Narzedzie.Id_rodzaj_narzedzia=DM_Rodzaj_narzedzia.Id_r
 GO
 CREATE VIEW vDM_Dostawcy
 AS
-SELECT Id_dostawcy AS [Numer dostawcy], DM_Dostawcy.nazwa AS [Nazwa], DM_Dostawcy.NIP AS [NIP],uwagi AS [Uwagi]
-FROM     dbo.DM_Dostawcy
+SELECT Id_dostawcy AS [Numer dostawcy], DM_Dostawca.nazwa AS [Nazwa], DM_Dostawca.NIP AS [NIP],uwagi AS [Uwagi]
+FROM     dbo.DM_Dostawca
 GO
 CREATE VIEW vDZ_Klient
 AS
@@ -51,15 +51,15 @@ GO
 CREATE VIEW vDP_Maszyny
 AS
 SELECT Id_maszyny AS [Numer maszyny], DP_Rodzaj_maszyny.Id_rodzaj_maszyny AS [Rodzaj maszyny], DP_Model_maszyny.Id_model_maszyny AS [Numer modelu],nr_seryjny AS [Numer seryjny], data_wprowadzenia AS [Data wprowadzenia maszyny], koszt_1rh AS [ Koszt 1 roboczo-godziny]
-FROM     dbo.DP_Maszyny INNER JOIN
-DP_Rodzaj_maszyny ON DP_Maszyny.Id_rodzaj_maszyny=DP_Rodzaj_maszyny.Id_rodzaj_maszyny INNER JOIN
-DP_Model_maszyny ON DP_Maszyny.Id_model_maszyny=DP_Model_maszyny.Id_model_maszyny
+FROM     dbo.DP_Maszyna INNER JOIN
+DP_Rodzaj_maszyny ON DP_Maszyna.Id_rodzaj_maszyny=DP_Rodzaj_maszyny.Id_rodzaj_maszyny INNER JOIN
+DP_Model_maszyny ON DP_Maszyna.Id_model_maszyny=DP_Model_maszyny.Id_model_maszyny
 GO
 CREATE VIEW vDM_Czesci
 AS
-SELECT Id_czesci AS [Numer czesci], DM_Czesci.nazwa AS [Nazwa], DM_Czesci.ilosc_poczatkowa AS [Ilosc pocz¹tkowa]
-FROM     dbo.DM_Czesci INNER JOIN
-DP_Model_maszyny ON DM_Czesci.Id_model_maszyny=DP_Model_maszyny.id_model_maszyny
+SELECT Id_czesci AS [Numer czesci], DM_Czesc.nazwa AS [Nazwa], DM_Czesc.ilosc_poczatkowa AS [Ilosc pocz¹tkowa]
+FROM     dbo.DM_Czesc INNER JOIN
+DP_Model_maszyny ON DM_Czesc.Id_model_maszyny=DP_Model_maszyny.id_model_maszyny
 GO
 CREATE VIEW vDZ_Rodzaj_rachunku
 AS
@@ -69,8 +69,8 @@ GO
 CREATE VIEW vDZ_Rachunki
 AS
 SELECT Id_rachunki AS [Numer rachunku], DZ_Rodzaj_rachunku.Id_rodzaj_rachunku AS [Rodzaj rachunku], DZ_Rachunki.koszt AS [Koszt], data_zaplaty AS [Data zaplaty]
-FROM     dbo.DZ_Rachunki INNER JOIN
-DZ_Rodzaj_rachunku ON DZ_Rachunki.Id_rodzaj_rachunku=DZ_Rodzaj_rachunku.Id_rodzaj_rachunku
+FROM     dbo.DZ_Rachunek INNER JOIN
+DZ_Rodzaj_rachunku ON DZ_Rachunek.Id_rodzaj_rachunku=DZ_Rodzaj_rachunku.Id_rodzaj_rachunku
 GO
 CREATE VIEW vDZ_Pracownik
 AS
@@ -168,7 +168,7 @@ AS
 SELECT Id_szczegoly_zam_maszyn AS [Identyfikator szczegolow zamowienia maszyn], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DP_Maszyny.Id_maszyny AS [Numer maszyny], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], ilosc
 FROM dbo.DZ_Szczegoly_zam_maszyn INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_maszyn.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
-DP_Maszyny ON DZ_Szczegoly_zam_maszyn.Id_maszyny=DP_Maszyny.Id_maszyny
+DP_Maszyna ON DZ_Szczegoly_zam_maszyn.Id_maszyny=DP_Maszyna.Id_maszyny
 GO
 CREATE VIEW vDZ_Szczegoly_zam_materialu
 AS
@@ -183,7 +183,7 @@ AS
 SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesci.Id_czesci AS [Numer czesci], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Id_wlasciwosc AS [Numer wlasciwosci], ilosc
 FROM dbo.DZ_Szczegoly_zam_czesci INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_czesci.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
-DM_Czesci ON DZ_Szczegoly_zam_czesci.Id_czesci=DM_Czesci.Id_czesci INNER JOIN
+DM_Czesc ON DZ_Szczegoly_zam_czesci.Id_czesci=DM_Czesc.Id_czesci INNER JOIN
 DM_Wlasciwosc ON DZ_Szczegoly_zam_czesci.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
 GO
 CREATE VIEW vDZ_Szczegoly_zam_narzedzi
