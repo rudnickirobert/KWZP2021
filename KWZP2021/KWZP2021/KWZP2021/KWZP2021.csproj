@@ -55,6 +55,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddFirmaSerwisowa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddFirmaSerwisowa.Designer.cs">
+      <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Czynnosci_do_Procesu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Czynnosci_do_Procesu.Designer.cs">
+      <DependentUpon>Czynnosci_do_Procesu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogBoxDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogBoxDelete.Designer.cs">
+      <DependentUpon>DialogBoxDelete.cs</DependentUpon>
+    </Compile>
     <Compile Include="DM_Czesc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -363,6 +381,15 @@
     <Compile Include="Wlasciwosc.Designer.cs">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddFirmaSerwisowa.resx">
+      <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Czynnosci_do_Procesu.resx">
+      <DependentUpon>Czynnosci_do_Procesu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogBoxDelete.resx">
+      <DependentUpon>DialogBoxDelete.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajMaterial.resx">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
     </EmbeddedResource>
