@@ -46,7 +46,7 @@ namespace KWZP2021
             // 
             this.dgvRodzajMaterialu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRodzajMaterialu.Location = new System.Drawing.Point(56, 112);
-            this.dgvRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
             this.dgvRodzajMaterialu.Name = "dgvRodzajMaterialu";
             this.dgvRodzajMaterialu.RowHeadersWidth = 51;
             this.dgvRodzajMaterialu.Size = new System.Drawing.Size(661, 427);
@@ -56,7 +56,7 @@ namespace KWZP2021
             // btnAddRodzajMaterialu
             // 
             this.btnAddRodzajMaterialu.Location = new System.Drawing.Point(831, 77);
-            this.btnAddRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddRodzajMaterialu.Name = "btnAddRodzajMaterialu";
             this.btnAddRodzajMaterialu.Size = new System.Drawing.Size(100, 28);
             this.btnAddRodzajMaterialu.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace KWZP2021
             // btnDeleteRodzajMaterialu
             // 
             this.btnDeleteRodzajMaterialu.Location = new System.Drawing.Point(831, 172);
-            this.btnDeleteRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteRodzajMaterialu.Name = "btnDeleteRodzajMaterialu";
             this.btnDeleteRodzajMaterialu.Size = new System.Drawing.Size(100, 28);
             this.btnDeleteRodzajMaterialu.TabIndex = 3;
@@ -78,7 +78,7 @@ namespace KWZP2021
             // txtNewRodzajMaterialu
             // 
             this.txtNewRodzajMaterialu.Location = new System.Drawing.Point(811, 52);
-            this.txtNewRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNewRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
             this.txtNewRodzajMaterialu.Name = "txtNewRodzajMaterialu";
             this.txtNewRodzajMaterialu.Size = new System.Drawing.Size(132, 22);
             this.txtNewRodzajMaterialu.TabIndex = 5;
@@ -87,7 +87,7 @@ namespace KWZP2021
             // 
             this.cmbRodzajMaterialu.FormattingEnabled = true;
             this.cmbRodzajMaterialu.Location = new System.Drawing.Point(56, 52);
-            this.cmbRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRodzajMaterialu.Name = "cmbRodzajMaterialu";
             this.cmbRodzajMaterialu.Size = new System.Drawing.Size(160, 24);
             this.cmbRodzajMaterialu.TabIndex = 6;
@@ -151,7 +151,7 @@ namespace KWZP2021
             this.Controls.Add(this.btnDeleteRodzajMaterialu);
             this.Controls.Add(this.btnAddRodzajMaterialu);
             this.Controls.Add(this.dgvRodzajMaterialu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Rodzaj_materialu";
             this.Text = "Rodzaj_materialu";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRodzajMaterialu)).EndInit();

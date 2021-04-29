@@ -120,8 +120,7 @@ namespace KWZP2021
             this.dgvMaterial.Name = "dgvMaterial";
             this.dgvMaterial.RowHeadersWidth = 51;
             this.dgvMaterial.Size = new System.Drawing.Size(1035, 415);
-            this.dgvMaterial.TabIndex = 11;
-            // 
+            this.dgvMaterial.TabIndex = 11;            // 
             // txtFindMaterial
             // 
             this.txtFindMaterial.Location = new System.Drawing.Point(900, 54);

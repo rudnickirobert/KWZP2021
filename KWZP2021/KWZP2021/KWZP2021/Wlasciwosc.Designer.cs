@@ -29,10 +29,6 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,47 +36,16 @@ namespace KWZP2021
             this.txtAktualizuj = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.cmbWlasciwosc = new System.Windows.Forms.ComboBox();
             this.btnDeleteRodzajMaterialu = new System.Windows.Forms.Button();
             this.btnAddMaterial = new System.Windows.Forms.Button();
             this.dgvWlasciwosc = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWlasciwosc)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(709, 69);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 17);
-            this.label7.TabIndex = 44;
-            this.label7.Text = "Jednostka";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(686, 46);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(125, 17);
-            this.label8.TabIndex = 43;
-            this.label8.Text = "Nazwa właściwości";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(818, 66);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 42;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(818, 43);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 22);
-            this.textBox3.TabIndex = 41;
             // 
             // label6
             // 
@@ -144,15 +109,6 @@ namespace KWZP2021
             this.label2.TabIndex = 34;
             this.label2.Text = "Wybierz wiersz do usunięcia \r\ni wciśnij przycisk";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(773, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(252, 34);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Wpisz rodzaj materiału oraz jednostkę \r\ni wciśnij przycisk";
-            // 
             // cmbWlasciwosc
             // 
             this.cmbWlasciwosc.FormattingEnabled = true;
@@ -171,10 +127,11 @@ namespace KWZP2021
             this.btnDeleteRodzajMaterialu.TabIndex = 31;
             this.btnDeleteRodzajMaterialu.Text = "Usun";
             this.btnDeleteRodzajMaterialu.UseVisualStyleBackColor = true;
+            this.btnDeleteRodzajMaterialu.Click += new System.EventHandler(this.btnDeleteRodzajMaterialu_Click);
             // 
             // btnAddMaterial
             // 
-            this.btnAddMaterial.Location = new System.Drawing.Point(788, 91);
+            this.btnAddMaterial.Location = new System.Drawing.Point(840, 99);
             this.btnAddMaterial.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMaterial.Name = "btnAddMaterial";
             this.btnAddMaterial.Size = new System.Drawing.Size(100, 28);
@@ -192,6 +149,41 @@ namespace KWZP2021
             this.dgvWlasciwosc.RowHeadersWidth = 51;
             this.dgvWlasciwosc.Size = new System.Drawing.Size(661, 427);
             this.dgvWlasciwosc.TabIndex = 29;
+            this.dgvWlasciwosc.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvWlasciwosc_CellMouseDoubleClick);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(717, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 17);
+            this.label7.TabIndex = 52;
+            this.label7.Text = "Jednostka";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(694, 49);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 17);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Nazwa właściwości";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(826, 69);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(132, 22);
+            this.textBox2.TabIndex = 50;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(826, 46);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(132, 22);
+            this.textBox3.TabIndex = 49;
             // 
             // Wlasciwosc
             // 
@@ -209,7 +201,6 @@ namespace KWZP2021
             this.Controls.Add(this.txtAktualizuj);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbWlasciwosc);
             this.Controls.Add(this.btnDeleteRodzajMaterialu);
             this.Controls.Add(this.btnAddMaterial);
@@ -223,11 +214,6 @@ namespace KWZP2021
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
@@ -235,10 +221,13 @@ namespace KWZP2021
         private System.Windows.Forms.TextBox txtAktualizuj;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbWlasciwosc;
         private System.Windows.Forms.Button btnDeleteRodzajMaterialu;
         private System.Windows.Forms.Button btnAddMaterial;
         private System.Windows.Forms.DataGridView dgvWlasciwosc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

@@ -151,6 +151,12 @@
     <Compile Include="DodajMaterial.Designer.cs">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dodaj_wlasciwosc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_wlasciwosc.Designer.cs">
+      <DependentUpon>Dodaj_wlasciwosc.cs</DependentUpon>
+    </Compile>
     <Compile Include="DP_Co_ile_obsluga.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -331,6 +337,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -357,6 +369,102 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="vDM_Czesci.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDM_Dostawcy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDM_Material.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDM_Narzedzie.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDM_Rodzaj_narzedzia.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDM_Wlasciwosc.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Maszyny.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Model_maszyny.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Produkt.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Rodzaj_maszyny.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Dzial.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Etat.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Klient.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Nieobecnosc.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Plik.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Pracownik.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Rachunki.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Rodzaj_nieobecnosci.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Rodzaj_rachunku.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Rodzaj_statusu_zamowienia.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Rodzaj_umowy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Stanowisko.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Szczegoly_zamowienia_klienta.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Szczegoly_zam_czesci.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Szczegoly_zam_maszyn.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Szczegoly_zam_materialu.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Szczegoly_zam_narzedzi.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Szczegoly_zatrudnienia.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Wycena_sz_zamowienia.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Zamowienie_klienta.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Zamowienie_zewn.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Zatrudnienie.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Wlasciwosc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +473,9 @@
     </Compile>
     <EmbeddedResource Include="DodajMaterial.resx">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_wlasciwosc.resx">
+      <DependentUpon>Dodaj_wlasciwosc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dzial_magazynowy.resx">
       <DependentUpon>Dzial_magazynowy.cs</DependentUpon>

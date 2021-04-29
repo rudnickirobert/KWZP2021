@@ -16,11 +16,15 @@ namespace KWZP2021
         public Material(DrukarniaEntities database)
         {
             InitializeComponent();
-            InitializeComponent();
             this.database = database;
             this.dgvMaterial.DataSource = this.database.DM_Material.ToList();
+            initDataGridView();
         }
+        private void initDataGridView()
+        {
+            this.dgvMaterial.DataSource = this.database.DM_Material.ToList();
 
+        }
         private void btnAddNewMaterial_Click(object sender, EventArgs e)
         {
             DodajMaterial dodajmaterial = new DodajMaterial(this.database);

@@ -21,17 +21,15 @@ namespace KWZP2021
             this.cmbRodzajMaterialu.DisplayMember = "Rodzaj_materialu";
             this.cmbRodzajMaterialu.ValueMember = "Id_rodzaj_materialu";
         }
-
         private void btnAddNewMaterial_Click(object sender, EventArgs e)
         {
             DM_Material newMaterial = new DM_Material();
             newMaterial.Nazwa = this.txtNewMaterial.Text;
+            newMaterial.Id_rodzaj_materialu = Convert.ToInt32(txt_ID);
 
             this.database.DM_Material.Add(newMaterial);
             this.database.SaveChanges();
-            initCombobox();
-            this.txtNewMaterial.Text = "";
-            initDataGridView();
+            this.Close();
         }
     }
     }

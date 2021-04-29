@@ -33,6 +33,7 @@ namespace KWZP2021
             this.btnAddNewMaterial = new System.Windows.Forms.Button();
             this.cmbRodzajMaterialu = new System.Windows.Forms.ComboBox();
             this.txtNewMaterial = new System.Windows.Forms.TextBox();
+            this.txt_ID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCancelOperation
@@ -59,11 +60,12 @@ namespace KWZP2021
             // cmbRodzajMaterialu
             // 
             this.cmbRodzajMaterialu.FormattingEnabled = true;
-            this.cmbRodzajMaterialu.Location = new System.Drawing.Point(270, 124);
+            this.cmbRodzajMaterialu.Location = new System.Drawing.Point(580, 279);
             this.cmbRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
             this.cmbRodzajMaterialu.Name = "cmbRodzajMaterialu";
             this.cmbRodzajMaterialu.Size = new System.Drawing.Size(160, 24);
-            this.cmbRodzajMaterialu.TabIndex = 5;            // 
+            this.cmbRodzajMaterialu.TabIndex = 5;
+            // 
             // txtNewMaterial
             // 
             this.txtNewMaterial.Location = new System.Drawing.Point(99, 124);
@@ -73,11 +75,21 @@ namespace KWZP2021
             this.txtNewMaterial.TabIndex = 4;
             this.txtNewMaterial.Text = "Nowy materiał...";
             // 
+            // txt_ID
+            // 
+            this.txt_ID.Location = new System.Drawing.Point(266, 124);
+            this.txt_ID.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_ID.Name = "txt_ID";
+            this.txt_ID.Size = new System.Drawing.Size(132, 22);
+            this.txt_ID.TabIndex = 8;
+            this.txt_ID.Text = "Nowy materiał...";
+            // 
             // DodajMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txt_ID);
             this.Controls.Add(this.btnCancelOperation);
             this.Controls.Add(this.btnAddNewMaterial);
             this.Controls.Add(this.cmbRodzajMaterialu);
@@ -95,5 +107,6 @@ namespace KWZP2021
         private System.Windows.Forms.Button btnAddNewMaterial;
         private System.Windows.Forms.ComboBox cmbRodzajMaterialu;
         private System.Windows.Forms.TextBox txtNewMaterial;
+        private System.Windows.Forms.TextBox txt_ID;
     }
 }
