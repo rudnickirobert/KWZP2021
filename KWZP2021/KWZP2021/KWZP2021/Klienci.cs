@@ -22,7 +22,7 @@ namespace KWZP2021
             this.comboBox1.DisplayMember = "Stanowisko";
             this.comboBox1.ValueMember = "Id_stanowiska";*/
 
-            this.dvgKlient.DataSource = this.database.DZ_Klient.ToList();
+            this.dvgKlient.DataSource = this.database.vDZ_Klient.ToList();
             
 
         }
@@ -42,14 +42,14 @@ namespace KWZP2021
 
         private void dvgKlient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dvgKlient.DataSource = this.database.DZ_Klient.ToList();
+            this.dvgKlient.DataSource = this.database.vDZ_Klient.ToList();
         }
       
         private void buttonNowyKlient_Click(object sender, EventArgs e)
         {
-            Nowy_klient nowy_klient = new Nowy_klient(this.database);
+            /*Nowy_klient nowy_klient = new Nowy_klient(this.database);
             nowy_klient.ShowDialog();
-            initdvgKlient();
+            initdvgKlient();*/
         }
 
         private void buttonWyszukajKlienta_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace KWZP2021
 
             DZ_Klient toUpgrade = this.database.DZ_Klient.Where(nazwa_firmy => nazwa_firmy.Id_klienta == firma).First();
 
-            toUpgrade.nazwa_firmy = textBox1.Text;
+            toUpgrade.Nazwa_firmy = textBox1.Text;
 
             this.database.SaveChanges();
         }
@@ -74,9 +74,9 @@ namespace KWZP2021
 
         private void dvgKlient_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            Nowy_klient nowy_klient = new Nowy_klient(this.database);
-            nowy_klient.ShowDialog();
-            initdvgKlient();
+            /*Konkretny_klient konkretny_klient = new Konkretny_klient(this.database);
+            konkretny_klient.ShowDialog();
+            initdvgKlient();*/
         }
 
         private void buttonUsunKlienta_Click(object sender, EventArgs e)
