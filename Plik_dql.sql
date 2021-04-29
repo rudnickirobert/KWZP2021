@@ -68,7 +68,7 @@ FROM     dbo.DZ_Rodzaj_rachunku
 GO
 CREATE VIEW vDZ_Rachunki
 AS
-SELECT Id_rachunki AS [Numer rachunku], DZ_Rodzaj_rachunku.Id_rodzaj_rachunku AS [Rodzaj rachunku], DZ_Rachunki.koszt AS [Koszt], data_zaplaty AS [Data zaplaty]
+SELECT Id_rachunki AS [Numer rachunku], DZ_Rodzaj_rachunku.Id_rodzaj_rachunku AS [Rodzaj rachunku], DZ_Rachunek.koszt AS [Koszt], data_zaplaty AS [Data zaplaty]
 FROM     dbo.DZ_Rachunek INNER JOIN
 DZ_Rodzaj_rachunku ON DZ_Rachunek.Id_rodzaj_rachunku=DZ_Rodzaj_rachunku.Id_rodzaj_rachunku
 GO
@@ -165,7 +165,7 @@ DZ_Pracownik ON DZ_Zamowienie_zewn.Id_pracownika=DZ_Pracownik.Id_pracownika
 GO
 CREATE VIEW vDZ_Szczegoly_zam_maszyn
 AS
-SELECT Id_szczegoly_zam_maszyn AS [Identyfikator szczegolow zamowienia maszyn], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DP_Maszyny.Id_maszyny AS [Numer maszyny], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], ilosc
+SELECT Id_szczegoly_zam_maszyn AS [Identyfikator szczegolow zamowienia maszyn], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DP_Maszyna.Id_maszyny AS [Numer maszyny], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], ilosc
 FROM dbo.DZ_Szczegoly_zam_maszyn INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_maszyn.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DP_Maszyna ON DZ_Szczegoly_zam_maszyn.Id_maszyny=DP_Maszyna.Id_maszyny
@@ -180,7 +180,7 @@ DM_Wlasciwosc ON DZ_Szczegoly_zam_materialu.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasc
 GO
 CREATE VIEW vDZ_Szczegoly_zam_czesci
 AS
-SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesci.Id_czesci AS [Numer czesci], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Id_wlasciwosc AS [Numer wlasciwosci], ilosc
+SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesc.Id_czesci AS [Numer czesci], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Id_wlasciwosc AS [Numer wlasciwosci], ilosc
 FROM dbo.DZ_Szczegoly_zam_czesci INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_czesci.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DM_Czesc ON DZ_Szczegoly_zam_czesci.Id_czesci=DM_Czesc.Id_czesci INNER JOIN
