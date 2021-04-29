@@ -21,14 +21,14 @@ namespace KWZP2021
 
         private void initCombobox()
         {
-            this.comboBox1.DataSource = this.database.DZ_Stanowisko.ToList();
+            /*this.comboBox1.DataSource = this.database.DZ_Stanowisko.ToList();
             this.comboBox1.DisplayMember = "Stanowisko";
-            this.comboBox1.ValueMember = "Id_stanowiska";
+            this.comboBox1.ValueMember = "Id_stanowiska";*/
         }
 
         private void initDataGridView()
         {
-            this.dataGridView1.DataSource = this.database.DZ_Stanowisko.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Stanowisko.ToList();
 
         }
 
@@ -39,8 +39,10 @@ namespace KWZP2021
 
             this.database.DZ_Stanowisko.Add(newStanowisko);
             this.database.SaveChanges();
-            initCombobox();
+            /*initCombobox();*/
+            
             this.textBox1.Text = "";
+            initDataGridView();
         }
         private void button3_Click(object sender, EventArgs e)
         {
@@ -59,7 +61,7 @@ namespace KWZP2021
 
             this.database.SaveChanges();
             initDataGridView();
-
+            
 
         }
 
@@ -83,6 +85,11 @@ namespace KWZP2021
             this.Close();
             Stanowiska stanowiska = new Stanowiska(this.database);
             stanowiska.ShowDialog();
+        }
+
+        private void Stanowiska_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

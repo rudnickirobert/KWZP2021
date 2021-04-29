@@ -61,7 +61,7 @@ namespace KWZP2021
             this.dvgKlient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgKlient.Location = new System.Drawing.Point(22, 90);
             this.dvgKlient.Name = "dvgKlient";
-            this.dvgKlient.Size = new System.Drawing.Size(767, 346);
+            this.dvgKlient.Size = new System.Drawing.Size(1224, 423);
             this.dvgKlient.TabIndex = 3;
             this.dvgKlient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellContentClick);
             this.dvgKlient.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellContentDoubleClick);
@@ -110,7 +110,7 @@ namespace KWZP2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1258, 525);
             this.Controls.Add(this.buttonUsunKlienta);
             this.Controls.Add(this.buttonWyszukajKlienta);
             this.Controls.Add(this.buttonNowyKlient);

@@ -64,7 +64,7 @@ namespace KWZP2021
         }
         private void initdvgKlient()
         {
-            this.dvgKlient.DataSource = this.database.DZ_Klient.ToList();
+            this.dvgKlient.DataSource = this.database.vDZ_Klient.ToList();
 
         }
         private void dvgKlient_DoubleClick(object sender, EventArgs e)
