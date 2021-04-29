@@ -203,7 +203,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnZapisz;
-        private System.Windows.Forms.Button btnZamknij;
         private System.Windows.Forms.Button button1;
     }
 }

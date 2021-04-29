@@ -169,12 +169,6 @@
     <Compile Include="DodajMaterial.Designer.cs">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dodaj_wlasciwosc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dodaj_wlasciwosc.Designer.cs">
-      <DependentUpon>Dodaj_wlasciwosc.cs</DependentUpon>
-    </Compile>
     <Compile Include="DP_Co_ile_obsluga.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -355,12 +349,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Material.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,10 +375,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="vDM_Czesci.cs">
+    <Compile Include="vDM_Czesc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDM_Dostawcy.cs">
+    <Compile Include="vDM_Dostawca.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDM_Material.cs">
@@ -405,7 +393,7 @@
     <Compile Include="vDM_Wlasciwosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Maszyny.cs">
+    <Compile Include="vDP_Maszyna.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Model_maszyny.cs">
@@ -435,7 +423,7 @@
     <Compile Include="vDZ_Pracownik.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDZ_Rachunki.cs">
+    <Compile Include="vDZ_Rachunek.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Rodzaj_nieobecnosci.cs">
@@ -500,9 +488,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DodajMaterial.resx">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dodaj_wlasciwosc.resx">
-      <DependentUpon>Dodaj_wlasciwosc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dzial_magazynowy.resx">
       <DependentUpon>Dzial_magazynowy.cs</DependentUpon>

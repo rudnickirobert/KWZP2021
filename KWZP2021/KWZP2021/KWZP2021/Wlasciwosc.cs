@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KWZP2021
@@ -40,16 +35,16 @@ namespace KWZP2021
 
         private void btnAddMaterial_Click(object sender, EventArgs e)
         {
-            
+
             DM_Wlasciwosc newWlasciwosc = new DM_Wlasciwosc();
-                newWlasciwosc.Nazwa_wlasciwosci = this.textBox3.Text;
-                newWlasciwosc.Jednostka_pomiarowa = this.textBox2.Text;
+            newWlasciwosc.Nazwa_wlasciwosci = this.textBox3.Text;
+            newWlasciwosc.Jednostka_pomiarowa = this.textBox2.Text;
             this.database.DM_Wlasciwosc.Add(newWlasciwosc);
             this.database.SaveChanges();
-            
-                initDataGridView();
-                InitCombobox();
-            }
+
+            initDataGridView();
+            InitCombobox();
+        }
 
         private void btnDeleteRodzajMaterialu_Click(object sender, EventArgs e)
         {
@@ -94,5 +89,5 @@ namespace KWZP2021
             }
         }
     }
-    }
+}
 

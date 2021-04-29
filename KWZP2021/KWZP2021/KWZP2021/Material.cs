@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KWZP2021
@@ -17,12 +11,12 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
-            this.dgvMaterial.DataSource = this.database.DM_Material.ToList();
+            this.dgvMaterial.DataSource = this.database.vDM_Material.ToList();
             initDataGridView();
         }
         private void initDataGridView()
         {
-            this.dgvMaterial.DataSource = this.database.DM_Material.ToList();
+            this.dgvMaterial.DataSource = this.database.vDM_Material.ToList();
 
         }
         private void btnAddNewMaterial_Click(object sender, EventArgs e)

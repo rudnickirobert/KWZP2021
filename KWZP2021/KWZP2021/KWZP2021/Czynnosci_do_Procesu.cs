@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KWZP2021
@@ -23,7 +18,7 @@ namespace KWZP2021
             this.comboBox1.DisplayMember = "Nazwa";
             this.comboBox1.ValueMember = "Id_rodzaj_czynnosci";
 
-           this.GDV_czynnosci.DataSource = this.database.DP_Rodzaj_czynnosci.ToList();
+            this.GDV_czynnosci.DataSource = this.database.DP_Rodzaj_czynnosci.ToList();
 
         }
 
@@ -32,7 +27,7 @@ namespace KWZP2021
         private void btn_add_czynnosc_Click(object sender, EventArgs e)
         {
             DP_Rodzaj_czynnosci newCzynnosc = new DP_Rodzaj_czynnosci();
-            newCzynnosc.nazwa = this.textBox1.Text;
+            newCzynnosc.Nazwa = this.textBox1.Text;
 
             this.database.DP_Rodzaj_czynnosci.Add(newCzynnosc); // CREATE
             this.database.SaveChanges();
@@ -42,15 +37,15 @@ namespace KWZP2021
         private void initCombobox()
         {
             this.comboBox1.DataSource = this.database.DP_Rodzaj_czynnosci.ToList();
-             this.comboBox1.DisplayMember = "Nazwa";
+            this.comboBox1.DisplayMember = "Nazwa";
             this.comboBox1.ValueMember = "Id_rodzaj_czynnosci";
         }
 
         private void initDataGridView()
         {
-        this.GDV_czynnosci.DataSource = this.database.DP_Rodzaj_czynnosci;
-    }
- 
+            this.GDV_czynnosci.DataSource = this.database.DP_Rodzaj_czynnosci;
+        }
+
 
         private void btn_akt_Click(object sender, EventArgs e)
         {
@@ -58,7 +53,7 @@ namespace KWZP2021
 
             DP_Rodzaj_czynnosci toRemove = this.database.DP_Rodzaj_czynnosci.Where(nazwa => nazwa.Id_rodzaj_czynnosci == id).First();
 
-            toRemove.nazwa = textBox1.Text; // UPDATE
+            toRemove.Nazwa = textBox1.Text; // UPDATE
 
             //this.database.DZ_Stanowisko.Remove(toRemove); // DELETE
 

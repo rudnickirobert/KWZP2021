@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KWZP2021
@@ -25,19 +19,12 @@ namespace KWZP2021
         {
             DM_Material newMaterial = new DM_Material();
             newMaterial.Nazwa = this.txtNewMaterial.Text;
-            newMaterial.Id_rodzaj_materialu = Convert.ToInt32(txt_ID);
 
             this.database.DM_Material.Add(newMaterial);
             this.database.SaveChanges();
-<<<<<<< HEAD
             this.Close();
-=======
-            //initCombobox();
-            this.txtNewMaterial.Text = "";
-            //initDataGridView();
->>>>>>> 786ed837411e2737a4a15e027c9491be1fdd523e
         }
     }
-    }
-    
+}
+
 

@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace KWZP2021
@@ -26,7 +21,7 @@ namespace KWZP2021
         private void initCombobox()
         {
             this.cmbRodzajMaterialu.DataSource = this.database.DM_Rodzaj_materialu.ToList();
-            this.cmbRodzajMaterialu.DisplayMember = "rodzaj_materialu";
+            this.cmbRodzajMaterialu.DisplayMember = "Rodzaj_materialu";
             this.cmbRodzajMaterialu.ValueMember = "Id_rodzaj_materialu";
         }
 
