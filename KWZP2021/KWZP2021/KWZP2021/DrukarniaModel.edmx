@@ -847,8 +847,8 @@ warning 6013: The table/view 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' does no
           <Property Name="Data_zwolnienia" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Czesc' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Czesc">
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Czesci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Czesci">
           <Key>
             <PropertyRef Name="Numer czesci" />
             <PropertyRef Name="Nazwa" />
@@ -859,8 +859,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Czesc' does not have a primary k
           <Property Name="Ilosc początkowa" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Dostawca' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Dostawca">
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Dostawcy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Dostawcy">
           <Key>
             <PropertyRef Name="Numer dostawcy" />
             <PropertyRef Name="Nazwa" />
@@ -919,8 +919,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wlasciwosc' does not have a prim
           <Property Name="Jednostka pomiarowa" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyna' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Maszyna">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyny' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Maszyny">
           <Key>
             <PropertyRef Name="Numer maszyny" />
             <PropertyRef Name="Rodzaj maszyny" />
@@ -1069,8 +1069,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Pracownik' does not have a prima
           <Property Name="Numer rachunku" Type="nvarchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rachunek' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDZ_Rachunek">
+warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rachunki' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDZ_Rachunki">
           <Key>
             <PropertyRef Name="Numer rachunku" />
             <PropertyRef Name="Rodzaj rachunku" />
@@ -2883,20 +2883,20 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [DP_Po_material_wydruk].[Ilosc] AS [Ilosc]
     FROM [dbo].[DP_Po_material_wydruk] AS [DP_Po_material_wydruk]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDM_Czesc" EntityType="Self.vDM_Czesc" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDM_Czesci" EntityType="Self.vDM_Czesci" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDM_Czesc].[Numer czesci] AS [Numer czesci], 
-    [vDM_Czesc].[Nazwa] AS [Nazwa], 
-    [vDM_Czesc].[Ilosc początkowa] AS [Ilosc początkowa]
-    FROM [dbo].[vDM_Czesc] AS [vDM_Czesc]</DefiningQuery>
+    [vDM_Czesci].[Numer czesci] AS [Numer czesci], 
+    [vDM_Czesci].[Nazwa] AS [Nazwa], 
+    [vDM_Czesci].[Ilosc początkowa] AS [Ilosc początkowa]
+    FROM [dbo].[vDM_Czesci] AS [vDM_Czesci]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDM_Dostawca" EntityType="Self.vDM_Dostawca" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDM_Dostawcy" EntityType="Self.vDM_Dostawcy" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDM_Dostawca].[Numer dostawcy] AS [Numer dostawcy], 
-    [vDM_Dostawca].[Nazwa] AS [Nazwa], 
-    [vDM_Dostawca].[NIP] AS [NIP], 
-    [vDM_Dostawca].[Uwagi] AS [Uwagi]
-    FROM [dbo].[vDM_Dostawca] AS [vDM_Dostawca]</DefiningQuery>
+    [vDM_Dostawcy].[Numer dostawcy] AS [Numer dostawcy], 
+    [vDM_Dostawcy].[Nazwa] AS [Nazwa], 
+    [vDM_Dostawcy].[NIP] AS [NIP], 
+    [vDM_Dostawcy].[Uwagi] AS [Uwagi]
+    FROM [dbo].[vDM_Dostawcy] AS [vDM_Dostawcy]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Material" EntityType="Self.vDM_Material" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2926,15 +2926,15 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDM_Wlasciwosc].[Jednostka pomiarowa] AS [Jednostka pomiarowa]
     FROM [dbo].[vDM_Wlasciwosc] AS [vDM_Wlasciwosc]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Maszyna" EntityType="Self.vDP_Maszyna" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Maszyny" EntityType="Self.vDP_Maszyny" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Maszyna].[Numer maszyny] AS [Numer maszyny], 
-    [vDP_Maszyna].[Rodzaj maszyny] AS [Rodzaj maszyny], 
-    [vDP_Maszyna].[Nazwa modelu] AS [Nazwa modelu], 
-    [vDP_Maszyna].[Numer seryjny] AS [Numer seryjny], 
-    [vDP_Maszyna].[Data wprowadzenia maszyny] AS [Data wprowadzenia maszyny], 
-    [vDP_Maszyna].[ Koszt 1 roboczo-godziny] AS [ Koszt 1 roboczo-godziny]
-    FROM [dbo].[vDP_Maszyna] AS [vDP_Maszyna]</DefiningQuery>
+    [vDP_Maszyny].[Numer maszyny] AS [Numer maszyny], 
+    [vDP_Maszyny].[Rodzaj maszyny] AS [Rodzaj maszyny], 
+    [vDP_Maszyny].[Nazwa modelu] AS [Nazwa modelu], 
+    [vDP_Maszyny].[Numer seryjny] AS [Numer seryjny], 
+    [vDP_Maszyny].[Data wprowadzenia maszyny] AS [Data wprowadzenia maszyny], 
+    [vDP_Maszyny].[ Koszt 1 roboczo-godziny] AS [ Koszt 1 roboczo-godziny]
+    FROM [dbo].[vDP_Maszyny] AS [vDP_Maszyny]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Model_maszyny" EntityType="Self.vDP_Model_maszyny" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3012,13 +3012,13 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
     [vDZ_Pracownik].[Numer rachunku] AS [Numer rachunku]
     FROM [dbo].[vDZ_Pracownik] AS [vDZ_Pracownik]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDZ_Rachunek" EntityType="Self.vDZ_Rachunek" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDZ_Rachunki" EntityType="Self.vDZ_Rachunki" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDZ_Rachunek].[Numer rachunku] AS [Numer rachunku], 
-    [vDZ_Rachunek].[Rodzaj rachunku] AS [Rodzaj rachunku], 
-    [vDZ_Rachunek].[Koszt] AS [Koszt], 
-    [vDZ_Rachunek].[Data zapłaty] AS [Data zapłaty]
-    FROM [dbo].[vDZ_Rachunek] AS [vDZ_Rachunek]</DefiningQuery>
+    [vDZ_Rachunki].[Numer rachunku] AS [Numer rachunku], 
+    [vDZ_Rachunki].[Rodzaj rachunku] AS [Rodzaj rachunku], 
+    [vDZ_Rachunki].[Koszt] AS [Koszt], 
+    [vDZ_Rachunki].[Data zapłaty] AS [Data zapłaty]
+    FROM [dbo].[vDZ_Rachunki] AS [vDZ_Rachunki]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Rodzaj_nieobecnosci" EntityType="Self.vDZ_Rodzaj_nieobecnosci" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -3671,13 +3671,13 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySet Name="DM_Szczegoly_wypozyczenia_narzedzia" EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" />
           <EntitySet Name="DM_Wlasciwosc_materialu" EntityType="DrukarniaModel.DM_Wlasciwosc_materialu" />
           <EntitySet Name="DP_Po_material_wydruk" EntityType="DrukarniaModel.DP_Po_material_wydruk" />
-          <EntitySet Name="vDM_Czesc" EntityType="DrukarniaModel.vDM_Czesc" />
-          <EntitySet Name="vDM_Dostawca" EntityType="DrukarniaModel.vDM_Dostawca" />
+          <EntitySet Name="vDM_Czesci" EntityType="DrukarniaModel.vDM_Czesci" />
+          <EntitySet Name="vDM_Dostawcy" EntityType="DrukarniaModel.vDM_Dostawcy" />
           <EntitySet Name="vDM_Material" EntityType="DrukarniaModel.vDM_Material" />
           <EntitySet Name="vDM_Narzedzie" EntityType="DrukarniaModel.vDM_Narzedzie" />
           <EntitySet Name="vDM_Rodzaj_narzedzia" EntityType="DrukarniaModel.vDM_Rodzaj_narzedzia" />
           <EntitySet Name="vDM_Wlasciwosc" EntityType="DrukarniaModel.vDM_Wlasciwosc" />
-          <EntitySet Name="vDP_Maszyna" EntityType="DrukarniaModel.vDP_Maszyna" />
+          <EntitySet Name="vDP_Maszyny" EntityType="DrukarniaModel.vDP_Maszyny" />
           <EntitySet Name="vDP_Model_maszyny" EntityType="DrukarniaModel.vDP_Model_maszyny" />
           <EntitySet Name="vDP_Produkt" EntityType="DrukarniaModel.vDP_Produkt" />
           <EntitySet Name="vDP_Rodzaj_maszyny" EntityType="DrukarniaModel.vDP_Rodzaj_maszyny" />
@@ -3687,7 +3687,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <EntitySet Name="vDZ_Nieobecnosc" EntityType="DrukarniaModel.vDZ_Nieobecnosc" />
           <EntitySet Name="vDZ_Plik" EntityType="DrukarniaModel.vDZ_Plik" />
           <EntitySet Name="vDZ_Pracownik" EntityType="DrukarniaModel.vDZ_Pracownik" />
-          <EntitySet Name="vDZ_Rachunek" EntityType="DrukarniaModel.vDZ_Rachunek" />
+          <EntitySet Name="vDZ_Rachunki" EntityType="DrukarniaModel.vDZ_Rachunki" />
           <EntitySet Name="vDZ_Rodzaj_nieobecnosci" EntityType="DrukarniaModel.vDZ_Rodzaj_nieobecnosci" />
           <EntitySet Name="vDZ_Rodzaj_rachunku" EntityType="DrukarniaModel.vDZ_Rodzaj_rachunku" />
           <EntitySet Name="vDZ_Rodzaj_statusu_zamowienia" EntityType="DrukarniaModel.vDZ_Rodzaj_statusu_zamowienia" />
@@ -5099,7 +5099,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <NavigationProperty Name="DM_Material" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_ma__6442E2C9" FromRole="DP_Po_material_wydruk" ToRole="DM_Material" />
           <NavigationProperty Name="DP_Po_wydr_proc" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_po__65370702" FromRole="DP_Po_material_wydruk" ToRole="DP_Po_wydr_proc" />
         </EntityType>
-        <EntityType Name="vDM_Czesc">
+        <EntityType Name="vDM_Czesci">
           <Key>
             <PropertyRef Name="Numer_czesci" />
             <PropertyRef Name="Nazwa" />
@@ -5109,7 +5109,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc_początkowa" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="vDM_Dostawca">
+        <EntityType Name="vDM_Dostawcy">
           <Key>
             <PropertyRef Name="Numer_dostawcy" />
             <PropertyRef Name="Nazwa" />
@@ -5159,7 +5159,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Jednostka_pomiarowa" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vDP_Maszyna">
+        <EntityType Name="vDP_Maszyny">
           <Key>
             <PropertyRef Name="Numer_maszyny" />
             <PropertyRef Name="Rodzaj_maszyny" />
@@ -5289,7 +5289,7 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
           <Property Name="Numer_telefonu" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
           <Property Name="Numer_rachunku" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vDZ_Rachunek">
+        <EntityType Name="vDZ_Rachunki">
           <Key>
             <PropertyRef Name="Numer_rachunku" />
             <PropertyRef Name="Rodzaj_rachunku" />
@@ -7604,18 +7604,18 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Czesc">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Czesc">
-              <MappingFragment StoreEntitySet="vDM_Czesc">
+          <EntitySetMapping Name="vDM_Czesci">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Czesci">
+              <MappingFragment StoreEntitySet="vDM_Czesci">
                 <ScalarProperty Name="Ilosc_początkowa" ColumnName="Ilosc początkowa" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Numer_czesci" ColumnName="Numer czesci" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Dostawca">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Dostawca">
-              <MappingFragment StoreEntitySet="vDM_Dostawca">
+          <EntitySetMapping Name="vDM_Dostawcy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Dostawcy">
+              <MappingFragment StoreEntitySet="vDM_Dostawcy">
                 <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
                 <ScalarProperty Name="NIP" ColumnName="NIP" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
@@ -7659,9 +7659,9 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Maszyna">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Maszyna">
-              <MappingFragment StoreEntitySet="vDP_Maszyna">
+          <EntitySetMapping Name="vDP_Maszyny">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Maszyny">
+              <MappingFragment StoreEntitySet="vDP_Maszyny">
                 <ScalarProperty Name="C_Koszt_1_roboczo_godziny" ColumnName=" Koszt 1 roboczo-godziny" />
                 <ScalarProperty Name="Data_wprowadzenia_maszyny" ColumnName="Data wprowadzenia maszyny" />
                 <ScalarProperty Name="Numer_seryjny" ColumnName="Numer seryjny" />
@@ -7765,9 +7765,9 @@ error 6004: The table 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' is referenced 
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDZ_Rachunek">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Rachunek">
-              <MappingFragment StoreEntitySet="vDZ_Rachunek">
+          <EntitySetMapping Name="vDZ_Rachunki">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Rachunki">
+              <MappingFragment StoreEntitySet="vDZ_Rachunki">
                 <ScalarProperty Name="Data_zapłaty" ColumnName="Data zapłaty" />
                 <ScalarProperty Name="Koszt" ColumnName="Koszt" />
                 <ScalarProperty Name="Rodzaj_rachunku" ColumnName="Rodzaj rachunku" />

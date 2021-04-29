@@ -47,9 +47,9 @@ namespace KWZP2021
       
         private void buttonNowyKlient_Click(object sender, EventArgs e)
         {
-            /*Nowy_klient nowy_klient = new Nowy_klient(this.database);
+            Nowy_klient nowy_klient = new Nowy_klient(this.database);
             nowy_klient.ShowDialog();
-            initdvgKlient();*/
+            initdvgKlient();
         }
 
         private void buttonWyszukajKlienta_Click(object sender, EventArgs e)
@@ -74,9 +74,9 @@ namespace KWZP2021
 
         private void dvgKlient_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*Konkretny_klient konkretny_klient = new Konkretny_klient(this.database);
+            Konkretny_klient konkretny_klient = new Konkretny_klient(this.database);
             konkretny_klient.ShowDialog();
-            initdvgKlient();*/
+            initdvgKlient();
         }
 
         private void buttonUsunKlienta_Click(object sender, EventArgs e)

@@ -12,7 +12,7 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Rachunek
+    public partial class vDZ_Rachunki
     {
         public int Numer_rachunku { get; set; }
         public string Rodzaj_rachunku { get; set; }
