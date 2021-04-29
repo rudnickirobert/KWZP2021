@@ -38,5 +38,11 @@ namespace KWZP2021
             Zatrudnienie zatrudnienie = new Zatrudnienie(this.database);
             zatrudnienie.ShowDialog();
         }
+
+        private void button4_zam_klienta_Click(object sender, EventArgs e)
+        {
+            Zamowienie_klienta zamowienie_klienta = new Zamowienie_klienta(this.database);
+            zamowienie_klienta.ShowDialog();
+        }
     }
 }
