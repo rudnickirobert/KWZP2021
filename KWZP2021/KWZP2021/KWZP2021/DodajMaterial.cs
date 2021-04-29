@@ -29,9 +29,9 @@ namespace KWZP2021
 
             this.database.DM_Material.Add(newMaterial);
             this.database.SaveChanges();
-            initCombobox();
+            //initCombobox();
             this.txtNewMaterial.Text = "";
-            initDataGridView();
+            //initDataGridView();
         }
     }
     }
