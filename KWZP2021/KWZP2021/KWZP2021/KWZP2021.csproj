@@ -355,11 +355,23 @@
     <Compile Include="Klienci.Designer.cs">
       <DependentUpon>Klienci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Konkretny_klient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konkretny_klient.Designer.cs">
+      <DependentUpon>Konkretny_klient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Material.Designer.cs">
       <DependentUpon>Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nowy_klient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nowy_klient.Designer.cs">
+      <DependentUpon>Nowy_klient.cs</DependentUpon>
     </Compile>
     <Compile Include="Rodzaj_czynnosci.cs">
       <SubType>Form</SubType>
@@ -381,10 +393,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="vDM_Czesc.cs">
+    <Compile Include="vDM_Czesci.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDM_Dostawca.cs">
+    <Compile Include="vDM_Dostawcy.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDM_Material.cs">
@@ -399,7 +411,7 @@
     <Compile Include="vDM_Wlasciwosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Maszyna.cs">
+    <Compile Include="vDP_Maszyny.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Model_maszyny.cs">
@@ -429,7 +441,7 @@
     <Compile Include="vDZ_Pracownik.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDZ_Rachunek.cs">
+    <Compile Include="vDZ_Rachunki.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Rodzaj_nieobecnosci.cs">
@@ -510,8 +522,14 @@
     <EmbeddedResource Include="Klienci.resx">
       <DependentUpon>Klienci.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Konkretny_klient.resx">
+      <DependentUpon>Konkretny_klient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nowy_klient.resx">
+      <DependentUpon>Nowy_klient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

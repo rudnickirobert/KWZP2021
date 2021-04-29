@@ -18,15 +18,12 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
-            /*dvgNowyKlient.DataSource = this.database.DZ_Klient.ToList();*/
+           
            
         }
        
-        private void initdvgNowyKlient()
-        {
-            /* this.dvgNowyKlient.DataSource = this.database.DZ_Klient.ToList();*/
-
-        }
+     
+      
         private void Nowy_klient_Load(object sender, EventArgs e)
         {
 
@@ -50,19 +47,19 @@ namespace KWZP2021
         private void buttonZapiszNowegoKlienta_Click(object sender, EventArgs e)
         {
             DZ_Klient klient = new DZ_Klient();
-            klient.nazwa_firmy = txtNazwa_Firmy.Text;
-            klient.nip = txtNip.Text;
-            klient.imie = txtImie.Text;
-            klient.nazwisko = txtNazwisko.Text;
-            klient.adres = txtAdres.Text;
-            klient.miasto = txtMiasto.Text;
-            klient.kod_pocztowy = txtKod_Pocztowy.Text;
-            klient.email = txtEmail.Text;
-            klient.telefon = txtTelefon.Text;
-            klient.numer_rachunku = txtNumer_Rachunku.Text;
+            klient.Nazwa_firmy = txtNazwa_Firmy.Text;
+            klient.Nip = txtNip.Text;
+            klient.Imie = txtImie.Text;
+            klient.Nazwisko = txtNazwisko.Text;
+            klient.Adres = txtAdres.Text;
+            klient.Miasto = txtMiasto.Text;
+            klient.Kod_pocztowy = txtKod_Pocztowy.Text;
+            klient.Email = txtEmail.Text;
+            klient.Telefon = txtTelefon.Text;
+            klient.Numer_rachunku = txtNumer_Rachunku.Text;
             database.DZ_Klient.Add(klient);
             database.SaveChanges();
-            initdvgNowyKlient();
+           
             MessageBox.Show("Dodano nowego klienta");
             this.Close();
         }
@@ -80,6 +77,12 @@ namespace KWZP2021
             txtTelefon.Text = "";
             txtNumer_Rachunku.Text = "";
        
+        }
+
+        private void buttonPowrot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }

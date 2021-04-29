@@ -12,11 +12,13 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Dostawca
+    public partial class vDP_Maszyny
     {
-        public int Numer_dostawcy { get; set; }
-        public string Nazwa { get; set; }
-        public string NIP { get; set; }
-        public string Uwagi { get; set; }
+        public int Numer_maszyny { get; set; }
+        public string Rodzaj_maszyny { get; set; }
+        public string Nazwa_modelu { get; set; }
+        public string Numer_seryjny { get; set; }
+        public System.DateTime Data_wprowadzenia_maszyny { get; set; }
+        public decimal C_Koszt_1_roboczo_godziny { get; set; }
     }
 }

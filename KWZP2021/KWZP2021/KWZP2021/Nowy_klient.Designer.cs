@@ -52,6 +52,7 @@ namespace KWZP2021
             this.lblNowyKlient = new System.Windows.Forms.Label();
             this.buttonZapiszNowegoKlienta = new System.Windows.Forms.Button();
             this.buttonWyczyscPola = new System.Windows.Forms.Button();
+            this.buttonPowrot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -228,9 +229,9 @@ namespace KWZP2021
             // 
             // buttonZapiszNowegoKlienta
             // 
-            this.buttonZapiszNowegoKlienta.Location = new System.Drawing.Point(192, 326);
+            this.buttonZapiszNowegoKlienta.Location = new System.Drawing.Point(29, 372);
             this.buttonZapiszNowegoKlienta.Name = "buttonZapiszNowegoKlienta";
-            this.buttonZapiszNowegoKlienta.Size = new System.Drawing.Size(122, 30);
+            this.buttonZapiszNowegoKlienta.Size = new System.Drawing.Size(285, 45);
             this.buttonZapiszNowegoKlienta.TabIndex = 22;
             this.buttonZapiszNowegoKlienta.Text = "Zapisz";
             this.buttonZapiszNowegoKlienta.UseVisualStyleBackColor = true;
@@ -246,11 +247,22 @@ namespace KWZP2021
             this.buttonWyczyscPola.UseVisualStyleBackColor = true;
             this.buttonWyczyscPola.Click += new System.EventHandler(this.buttonWyczyscPola_Click);
             // 
+            // buttonPowrot
+            // 
+            this.buttonPowrot.Location = new System.Drawing.Point(183, 326);
+            this.buttonPowrot.Name = "buttonPowrot";
+            this.buttonPowrot.Size = new System.Drawing.Size(131, 30);
+            this.buttonPowrot.TabIndex = 24;
+            this.buttonPowrot.Text = "Powrót";
+            this.buttonPowrot.UseVisualStyleBackColor = true;
+            this.buttonPowrot.Click += new System.EventHandler(this.buttonPowrot_Click);
+            // 
             // Nowy_klient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(380, 450);
+            this.Controls.Add(this.buttonPowrot);
             this.Controls.Add(this.buttonWyczyscPola);
             this.Controls.Add(this.buttonZapiszNowegoKlienta);
             this.Controls.Add(this.lblNowyKlient);
@@ -307,5 +319,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label lblNowyKlient;
         private System.Windows.Forms.Button buttonZapiszNowegoKlienta;
         private System.Windows.Forms.Button buttonWyczyscPola;
+        private System.Windows.Forms.Button buttonPowrot;
     }
 }
