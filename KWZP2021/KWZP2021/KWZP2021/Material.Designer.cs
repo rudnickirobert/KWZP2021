@@ -38,6 +38,7 @@ namespace KWZP2021
             this.btnAddNewMaterial = new System.Windows.Forms.Button();
             this.dgvMaterial = new System.Windows.Forms.DataGridView();
             this.txtFindMaterial = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +121,8 @@ namespace KWZP2021
             this.dgvMaterial.Name = "dgvMaterial";
             this.dgvMaterial.RowHeadersWidth = 51;
             this.dgvMaterial.Size = new System.Drawing.Size(1035, 415);
-            this.dgvMaterial.TabIndex = 11;            // 
+            this.dgvMaterial.TabIndex = 11;
+            // 
             // txtFindMaterial
             // 
             this.txtFindMaterial.Location = new System.Drawing.Point(900, 54);
@@ -129,11 +131,23 @@ namespace KWZP2021
             this.txtFindMaterial.Size = new System.Drawing.Size(132, 22);
             this.txtFindMaterial.TabIndex = 10;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(762, 54);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(100, 28);
+            this.btnSearch.TabIndex = 19;
+            this.btnSearch.Text = "Wyszukaj";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            // 
             // Material
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1078, 552);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -162,5 +176,6 @@ namespace KWZP2021
         private System.Windows.Forms.Button btnAddNewMaterial;
         private System.Windows.Forms.DataGridView dgvMaterial;
         private System.Windows.Forms.TextBox txtFindMaterial;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

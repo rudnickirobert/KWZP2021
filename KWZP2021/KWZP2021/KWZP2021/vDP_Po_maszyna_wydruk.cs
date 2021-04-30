@@ -12,11 +12,9 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Rachunki
+    public partial class vDP_Po_maszyna_wydruk
     {
-        public int Numer_rachunku { get; set; }
-        public string Rodzaj_rachunku { get; set; }
-        public double Koszt { get; set; }
-        public System.DateTime Data_zapłaty { get; set; }
+        public int Identyfikator { get; set; }
+        public string Numer_seryjny_maszyny { get; set; }
     }
 }

@@ -24,5 +24,31 @@ namespace KWZP2021
             DodajMaterial dodajmaterial = new DodajMaterial(this.database);
             dodajmaterial.ShowDialog();
         }
+        
+
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            string searchValue = txtFindMaterial.Text;
+
+            dgvMaterial.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dgvMaterial.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Equals(searchValue))
+                    {
+                        row.Selected = true;
+                        
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
+                
+            }
+        }
     }
 }
+    

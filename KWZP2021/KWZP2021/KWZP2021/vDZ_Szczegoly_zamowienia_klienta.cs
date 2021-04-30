@@ -17,7 +17,7 @@ namespace KWZP2021
         public int Identyfikator_szczegolow_zamowienia_klienta { get; set; }
         public int Numer_zamowienia { get; set; }
         public string Nazwa_pliku { get; set; }
-        public int Ilość_sztuk { get; set; }
-        public string Nazwa_materiału { get; set; }
+        public int Ilosc_sztuk { get; set; }
+        public string Nazwa_materialu { get; set; }
     }
 }

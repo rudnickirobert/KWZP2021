@@ -17,19 +17,19 @@ namespace KWZP2021
             this.cmbWlasciwosc.DisplayMember = "Nazwa_wlasciwosci";
             this.cmbWlasciwosc.ValueMember = "Id_wlasciwosc";
 
-            this.dgvWlasciwosc.DataSource = this.database.DM_Wlasciwosc.ToList();
+            this.dgvWlasciwosc.DataSource = this.database.vDM_Wlasciwosc.ToList();
             InitCombobox();
             initDataGridView();
         }
         private void InitCombobox()
         {
-            this.cmbWlasciwosc.DataSource = this.database.DM_Wlasciwosc.ToList();
+            this.cmbWlasciwosc.DataSource = this.database.vDM_Wlasciwosc.ToList();
             this.cmbWlasciwosc.DisplayMember = "Nazwa";
         }
 
         private void initDataGridView()
         {
-            this.dgvWlasciwosc.DataSource = this.database.DM_Wlasciwosc.ToList();
+            this.dgvWlasciwosc.DataSource = this.database.vDM_Wlasciwosc.ToList();
 
         }
 

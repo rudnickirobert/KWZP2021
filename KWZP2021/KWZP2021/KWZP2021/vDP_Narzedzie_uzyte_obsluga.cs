@@ -12,11 +12,9 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Dostawcy
+    public partial class vDP_Narzedzie_uzyte_obsluga
     {
-        public int Numer_dostawcy { get; set; }
-        public string Nazwa { get; set; }
-        public string NIP { get; set; }
-        public string Uwagi { get; set; }
+        public string Nazwa_narzedzia { get; set; }
+        public int Identyfikator_serwisu { get; set; }
     }
 }

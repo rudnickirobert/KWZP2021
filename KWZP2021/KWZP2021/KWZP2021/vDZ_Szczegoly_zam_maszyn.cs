@@ -18,6 +18,6 @@ namespace KWZP2021
         public int Numer_zamówienia { get; set; }
         public string Numer_seryjny { get; set; }
         public double Koszt_jednostkowy_oferty { get; set; }
-        public int Ilość { get; set; }
+        public int Ilosc { get; set; }
     }
 }
