@@ -242,14 +242,14 @@ DM_Narzedzie ON DM_Zuzyte_narzedzie.Id_narzedzia=DM_Narzedzie.Id_narzedzia
 GO
 CREATE VIEW vDM_Szczegoly_wypozyczenia_narzedzia
 AS
-SELECT DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia AS [Identyfikator wypożyczenia], DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Szczegoly_wypozyczenia_narzedzia.Ilosc AS [Ilo??
+SELECT DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia AS [Identyfikator wypożyczenia], DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Szczegoly_wypozyczenia_narzedzia.Ilosc AS [Ilość]
 FROM dbo.DM_Szczegoly_wypozyczenia_narzedzia INNER JOIN
 DM_Wypozyczenie_narzedzia  ON DM_Szczegoly_wypozyczenia_narzedzia.Id_wypozyczenia_narzedzia=DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia INNER JOiN
 DM_Narzedzie ON DM_Szczegoly_wypozyczenia_narzedzia.Id_narzedzia=DM_Narzedzie.Id_narzedzia
 GO
 CREATE VIEW vDM_Parametr_narzedzia
 AS
-SELECT DM_Narzedzie.Nazwa AS [Nazwa narz?zia], DM_Wlasciwosc.Nazwa_wlasciwosci AS [W?a?ciwo??, DM_Parametr_narzedzia.Wartosc AS [Warto??
+SELECT DM_Narzedzie.Nazwa AS [Nazwa narzędzia], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Właściwość], DM_Parametr_narzedzia.Wartosc AS [Wartość]
 FROM dbo.DM_Parametr_narzedzia INNER JOIN
 DM_Narzedzie  ON DM_Parametr_narzedzia.Id_narzedzia=DM_Narzedzie.Id_narzedzia INNER JOiN
 DM_Wlasciwosc ON DM_Parametr_narzedzia.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
@@ -295,5 +295,36 @@ DM_Dostawa_maszyn  ON DM_Sklad_dostawy_narzedzi.Id_dostawy=DM_Dostawa_maszyn.Id_
 DM_Dostawca ON DM_Sklad_dostawy_narzedzi.Id_dostawcy=DM_Dostawca.Id_dostawcy INNER JOIN
 DM_Narzedzie  ON DM_Sklad_dostawy_narzedzi.Id_narzedzia=DM_Narzedzie.Id_narzedzia INNER JOIN
 DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_narzedzi.Id_zamowienie_zewn=DZ_Zamowienie_zewn.Id_Zamowienia_zewn
+GO
+CREATE VIEW vDZ_Wyplata
+AS
+SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia AS [Numer wypłaty], DZ_Pracownik.Imie AS [Imię],DZ_Pracownik.Nazwisko, DZ_Pracownik.Adres, DZ_Pracownik.Miasto, DZ_Pracownik.Kod_pocztowy AS [Kod pocztowy], DZ_Pracownik.Numer_rachunku AS [Numer rachunku], DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia AS Podstawa_wynagrodzenia,DZ_Zatrudnienie.Data_zatrudnienia AS [Data zatrudnienia] ,DZ_Rodzaj_nieobecnosci.Rodzaj AS [Rodzaj nieobecności],DZ_Nieobecnosc.Data_rozpoczecia AS [Data rozpoczęcia], DZ_Nieobecnosc.Data_zakonczenia AS [Data zakończona], DATEDIFF(YEAR,Data_zatrudnienia,GETDATE()) AS '123',
+CASE WHEN Rodzaj='L4' AND Podstawa_wynagrodzenia>0 AND '123'>=1 THEN ((Podstawa_wynagrodzenia*0.8)+((Podstawa_wynagrodzenia*0.8*0.5)*0.34)+(Podstawa_wynagrodzenia*0.01)) 
+	 WHEN Rodzaj='L4' AND Podstawa_wynagrodzenia>0 AND '123'>20 THEN ((Podstawa_wynagrodzenia*0.8)+((Podstawa_wynagrodzenia*0.8*0.5)*0.34)+(Podstawa_wynagrodzenia*0.2)) 
+	 WHEN ((Rodzaj='Urlop płatny') OR (Rodzaj='Szpitalne') OR (Rodzaj='Szkolenie') OR (Rodzaj='Badania')) AND Podstawa_wynagrodzenia>0 AND '123'>=1 THEN (podstawa_wynagrodzenia +((Podstawa_wynagrodzenia*0.5)*0.34)+(Podstawa_wynagrodzenia*0.01)) 
+	 WHEN ((Rodzaj='Urlop płatny') OR (Rodzaj='Szpitalne') OR (Rodzaj='Szkolenie') OR (Rodzaj='Badania')) AND Podstawa_wynagrodzenia>0 AND '123'>20 THEN (podstawa_wynagrodzenia +((Podstawa_wynagrodzenia*0.5)*0.34)+(Podstawa_wynagrodzenia*0.2)) END AS 'Wypłata'
+FROM DZ_Szczegoly_zatrudnienia  INNER JOIN
+DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
+DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
+DZ_Nieobecnosc ON DZ_Pracownik.Id_pracownika=DZ_Nieobecnosc.Id_pracownika INNER JOIN
+DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci
+GROUP BY DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Pracownik.Adres, DZ_Pracownik.Miasto, DZ_Pracownik.Kod_pocztowy,DZ_Pracownik.Numer_rachunku,DZ_Nieobecnosc.Data_zakonczenia,DZ_Nieobecnosc.Data_rozpoczecia,DZ_Rodzaj_nieobecnosci.Rodzaj, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Zatrudnienie.Data_zatrudnienia;
+GO
+CREATE VIEW vDZ_Oplaty_stale
+AS
+SELECT DZ_Rachunek.Id_rachunki AS [Numer rachunku], DZ_Rodzaj_rachunku.Rodzaj_rachunku AS [Rodzaj rachunku], DZ_Rachunek.Koszt, DZ_Rachunek.Data_zaplaty AS [Data zapłaty]
+FROM DZ_Rachunek INNER JOIN
+DZ_Rodzaj_rachunku ON DZ_Rachunek.Id_rodzaj_rachunku=DZ_Rodzaj_rachunku.Id_rodzaj_rachunku
+GROUP BY DZ_Rachunek.Id_rachunki, DZ_Rodzaj_rachunku.Rodzaj_rachunku, DZ_Rachunek.Koszt, DZ_Rachunek.Data_zaplaty
+GO
+CREATE VIEW vDZ_Wydanie_faktury
+AS
+SELECT DZ_Status_zamowienia.Id_zamowienia AS [Numer faktury], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilość sztuk], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamówienia], DZ_Klient.Nip AS [NIP],DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Klient.Imie AS [Imię], DZ_Klient.Nazwisko, DZ_Klient.Adres, DZ_Klient.Kod_pocztowy AS [Kod pocztowy], DZ_Klient.Miasto, DZ_Klient.Numer_rachunku AS [Numer rachunku]
+FROM DZ_Status_zamowienia INNER JOIN
+DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
+DZ_Szczegoly_zamowienia_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Szczegoly_zamowienia_klienta.Id_zamowienia INNER JOIN
+DZ_Zamowienie_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Zamowienie_klienta.Id_zamowienia INNER JOIN
+DZ_Plik ON DZ_Szczegoly_zamowienia_klienta.Id_pliku=DZ_Plik.Id_pliku INNER JOIN
+DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta 
 GO
 
