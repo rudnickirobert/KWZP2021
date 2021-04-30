@@ -172,7 +172,7 @@ INSERT INTO DZ_Rodzaj_nieobecnosci(Rodzaj, Procent_pensji)
 VALUES
     ('L4', 80),
 	('Urlop p³atny', 100),
-	('Urlop bezplatny', 0),
+	('Szpitalne', 0),
 	('Szkolenie', 100),
 	('Badania', 100)
 	;
