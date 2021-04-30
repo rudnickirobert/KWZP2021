@@ -220,7 +220,7 @@ GO
 
 CREATE VIEW vDM_Szczegoly_wydania_produktu
 AS
-SELECT DM_Wydanie_produktu.Id_wydania AS [Identyfikator wydania], DP_Produkt.Nazwa_produktu AS [Nazwa produktu], DM_Szczegoly_wydania_produktu.Ilosc AS [Ilo??
+SELECT DM_Wydanie_produktu.Id_wydania AS [Identyfikator wydania], DP_Produkt.Nazwa_produktu AS [Nazwa produktu], DM_Szczegoly_wydania_produktu.Ilosc AS [Ilość]
 FROM dbo.DM_Szczegoly_wydania_produktu INNER JOIN
 DM_Wydanie_produktu ON DM_Szczegoly_wydania_produktu.Id_wydania=DM_Wydanie_produktu.Id_wydania INNER JOIN
 DP_Produkt ON DM_Szczegoly_wydania_produktu.Id_produkt=DP_Produkt.Id_Produkt
@@ -242,7 +242,7 @@ DM_Narzedzie ON DM_Zuzyte_narzedzie.Id_narzedzia=DM_Narzedzie.Id_narzedzia
 GO
 CREATE VIEW vDM_Szczegoly_wypozyczenia_narzedzia
 AS
-SELECT DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia AS [Identyfikator wypo?yczenia], DM_Narzedzie.Nazwa AS [Nazwa narz?zia], DM_Szczegoly_wypozyczenia_narzedzia.Ilosc AS [Ilo??
+SELECT DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia AS [Identyfikator wypożyczenia], DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Szczegoly_wypozyczenia_narzedzia.Ilosc AS [Ilo??
 FROM dbo.DM_Szczegoly_wypozyczenia_narzedzia INNER JOIN
 DM_Wypozyczenie_narzedzia  ON DM_Szczegoly_wypozyczenia_narzedzia.Id_wypozyczenia_narzedzia=DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia INNER JOiN
 DM_Narzedzie ON DM_Szczegoly_wypozyczenia_narzedzia.Id_narzedzia=DM_Narzedzie.Id_narzedzia
