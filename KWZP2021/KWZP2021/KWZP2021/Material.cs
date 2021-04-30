@@ -49,6 +49,16 @@ namespace KWZP2021
                 
             }
         }
+
+        private void txtFindMaterial_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Material_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

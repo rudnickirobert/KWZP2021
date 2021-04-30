@@ -63,6 +63,7 @@ namespace KWZP2021
             this.buttonPowrot.TabIndex = 48;
             this.buttonPowrot.Text = "Powrót";
             this.buttonPowrot.UseVisualStyleBackColor = true;
+            this.buttonPowrot.Click += new System.EventHandler(this.buttonPowrot_Click);
             // 
             // buttonWyczyscPola
             // 
@@ -72,6 +73,7 @@ namespace KWZP2021
             this.buttonWyczyscPola.TabIndex = 47;
             this.buttonWyczyscPola.Text = "Wyczyść pola";
             this.buttonWyczyscPola.UseVisualStyleBackColor = true;
+            this.buttonWyczyscPola.Click += new System.EventHandler(this.buttonWyczyscPola_Click);
             // 
             // buttonZapiszKonkretnegoKlienta
             // 
@@ -81,7 +83,7 @@ namespace KWZP2021
             this.buttonZapiszKonkretnegoKlienta.TabIndex = 46;
             this.buttonZapiszKonkretnegoKlienta.Text = "Zapisz";
             this.buttonZapiszKonkretnegoKlienta.UseVisualStyleBackColor = true;
-            //this.buttonZapiszKonkretnegoKlienta.Click += new System.EventHandler(this.buttonZapiszNowegoKlienta_Click);
+            this.buttonZapiszKonkretnegoKlienta.Click += new System.EventHandler(this.buttonZapiszKonkretnegoKlienta_Click);
             // 
             // lblNowyKlient
             // 

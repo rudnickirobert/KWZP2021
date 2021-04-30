@@ -34,6 +34,48 @@ namespace KWZP2021
 
         }
 
-     
+        private void buttonPowrot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonWyczyscPola_Click(object sender, EventArgs e)
+        {
+            {
+                txtNazwa_Firmy1.Text = "";
+                txtNip1.Text = "";
+                txtImie1.Text = "";
+                txtNazwisko1.Text = "";
+                txtAdres1.Text = "";
+                txtMiasto1.Text = "";
+                txtKod_Pocztowy1.Text = "";
+                txtEmail1.Text = "";
+                txtTelefon1.Text = "";
+                txtNumer_Rachunku1.Text = "";
+
+            }
+        }
+
+        private void buttonZapiszKonkretnegoKlienta_Click(object sender, EventArgs e)
+        {
+
+            /*string nazwa_firmy = txtNazwa_Firmy1.Text;
+
+            DZ_Klient toUpdate = this.database.DZ_Klient.Where(Nazwa_firmy => Nazwa_firmy.Id_klienta = nazwa_firmy).First();
+
+            toUpdate.Nazwa_firmy = txtNazwa_Firmy1.Text; // UPDATE
+
+            //this.database.DZ_Stanowisko.Remove(toRemove); // DELETE
+
+            this.database.SaveChanges();
+    
+           
+           this.Close();*/
+
+
+        }
+
+
+
     }
 }

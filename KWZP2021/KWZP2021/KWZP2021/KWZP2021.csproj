@@ -373,6 +373,12 @@
     <Compile Include="Nowy_klient.Designer.cs">
       <DependentUpon>Nowy_klient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pracownicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pracownicy.Designer.cs">
+      <DependentUpon>Pracownicy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rodzaj_czynnosci.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -663,6 +669,12 @@
     <Compile Include="Wlasciwosc.Designer.cs">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zatrudnienie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zatrudnienie.Designer.cs">
+      <DependentUpon>Zatrudnienie.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddFirmaSerwisowa.resx">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </EmbeddedResource>
@@ -699,6 +711,9 @@
     <EmbeddedResource Include="Nowy_klient.resx">
       <DependentUpon>Nowy_klient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pracownicy.resx">
+      <DependentUpon>Pracownicy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -719,6 +734,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wlasciwosc.resx">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zatrudnienie.resx">
+      <DependentUpon>Zatrudnienie.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DrukarniaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
