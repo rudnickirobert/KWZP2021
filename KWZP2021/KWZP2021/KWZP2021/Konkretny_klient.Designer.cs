@@ -53,6 +53,8 @@ namespace KWZP2021
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataKonkretnyKlient = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataKonkretnyKlient)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPowrot
@@ -255,11 +257,21 @@ namespace KWZP2021
             this.label1.TabIndex = 25;
             this.label1.Text = "Nazwa firmy";
             // 
+            // dataKonkretnyKlient
+            // 
+            this.dataKonkretnyKlient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataKonkretnyKlient.Location = new System.Drawing.Point(0, 0);
+            this.dataKonkretnyKlient.Name = "dataKonkretnyKlient";
+            this.dataKonkretnyKlient.Size = new System.Drawing.Size(46, 39);
+            this.dataKonkretnyKlient.TabIndex = 49;
+            this.dataKonkretnyKlient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataKonkretnyKlient_CellContentClick);
+            // 
             // Konkretny_klient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 450);
+            this.Controls.Add(this.dataKonkretnyKlient);
             this.Controls.Add(this.buttonPowrot);
             this.Controls.Add(this.buttonWyczyscPola);
             this.Controls.Add(this.buttonZapiszKonkretnegoKlienta);
@@ -287,6 +299,7 @@ namespace KWZP2021
             this.Name = "Konkretny_klient";
             this.Text = "Konkretny_klient";
             this.Load += new System.EventHandler(this.Konkretny_klient_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataKonkretnyKlient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +331,6 @@ namespace KWZP2021
         public System.Windows.Forms.TextBox txtImie1;
         public System.Windows.Forms.TextBox txtNip1;
         public System.Windows.Forms.TextBox txtNazwa_Firmy1;
+        private System.Windows.Forms.DataGridView dataKonkretnyKlient;
     }
 }
