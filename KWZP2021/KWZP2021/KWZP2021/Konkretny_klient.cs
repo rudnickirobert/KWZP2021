@@ -23,5 +23,17 @@ namespace KWZP2021
         {
 
         }
+
+        private void dgvKonkretny_klient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblNowyKlient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+     
     }
 }

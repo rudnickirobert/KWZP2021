@@ -64,7 +64,7 @@ namespace KWZP2021
             this.dvgKlient.Size = new System.Drawing.Size(1224, 423);
             this.dvgKlient.TabIndex = 3;
             this.dvgKlient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellContentClick);
-            this.dvgKlient.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellContentDoubleClick);
+            this.dvgKlient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellDoubleClick_1);
             this.dvgKlient.DoubleClick += new System.EventHandler(this.dvgKlient_DoubleClick);
             // 
             // label2

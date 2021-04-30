@@ -69,15 +69,10 @@ namespace KWZP2021
         }
         private void dvgKlient_DoubleClick(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void dvgKlient_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Konkretny_klient konkretny_klient = new Konkretny_klient(this.database);
-            konkretny_klient.ShowDialog();
-            initdvgKlient();
-        }
+       
 
         private void buttonUsunKlienta_Click(object sender, EventArgs e)
         {
@@ -94,6 +89,26 @@ namespace KWZP2021
             this.database.SaveChanges();
             initdvgKlient();
             }
+        }
+
+        private void dvgKlient_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Konkretny_klient konkretny_klient = new Konkretny_klient(this.database);
+            konkretny_klient.txtNazwa_Firmy1.Text = dvgKlient.CurrentRow.Cells[0].Value.ToString();
+            konkretny_klient.txtNip1.Text = dvgKlient.CurrentRow.Cells[1].Value.ToString();
+            konkretny_klient.txtImie1.Text = dvgKlient.CurrentRow.Cells[2].Value.ToString();
+            konkretny_klient.txtNazwisko1.Text = dvgKlient.CurrentRow.Cells[3].Value.ToString();
+            konkretny_klient.txtAdres1.Text = dvgKlient.CurrentRow.Cells[4].Value.ToString();
+            konkretny_klient.txtMiasto1.Text = dvgKlient.CurrentRow.Cells[5].Value.ToString();
+            konkretny_klient.txtKod_Pocztowy1.Text = dvgKlient.CurrentRow.Cells[6].Value.ToString();
+            konkretny_klient.txtEmail1.Text = dvgKlient.CurrentRow.Cells[7].Value.ToString();
+            konkretny_klient.txtTelefon1.Text = dvgKlient.CurrentRow.Cells[8].Value.ToString();
+            konkretny_klient.txtNumer_Rachunku1.Text = dvgKlient.CurrentRow.Cells[9].Value.ToString();
+            //database.DZ_Klient.Add(konkretny_klient);
+            //database.SaveChanges();
+            //this.Close();
+            konkretny_klient.ShowDialog();
+            //initdvgKlient();
         }
     }
 }
