@@ -102,23 +102,82 @@ namespace KWZP2021
         public virtual DbSet<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DbSet<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         public virtual DbSet<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
-        public virtual DbSet<vDM_Czesci> vDM_Czesci { get; set; }
-        public virtual DbSet<vDM_Dostawcy> vDM_Dostawcy { get; set; }
+        public virtual DbSet<vDM_Czesc> vDM_Czesc { get; set; }
+        public virtual DbSet<vDM_Dostawa_czesci> vDM_Dostawa_czesci { get; set; }
+        public virtual DbSet<vDM_Dostawa_maszyn> vDM_Dostawa_maszyn { get; set; }
+        public virtual DbSet<vDM_Dostawa_materialu> vDM_Dostawa_materialu { get; set; }
+        public virtual DbSet<vDM_Dostawa_narzedzi> vDM_Dostawa_narzedzi { get; set; }
+        public virtual DbSet<vDM_Dostawca> vDM_Dostawca { get; set; }
+        public virtual DbSet<vDM_Magazyn_gotowych_produktow> vDM_Magazyn_gotowych_produktow { get; set; }
         public virtual DbSet<vDM_Material> vDM_Material { get; set; }
         public virtual DbSet<vDM_Narzedzie> vDM_Narzedzie { get; set; }
+        public virtual DbSet<vDM_Parametr_czesci> vDM_Parametr_czesci { get; set; }
+        public virtual DbSet<vDM_Parametr_narzedzia> vDM_Parametr_narzedzia { get; set; }
         public virtual DbSet<vDM_Rodzaj_narzedzia> vDM_Rodzaj_narzedzia { get; set; }
+        public virtual DbSet<vDM_Sklad_dostawy_czesci> vDM_Sklad_dostawy_czesci { get; set; }
+        public virtual DbSet<vDM_Sklad_dostawy_maszyn> vDM_Sklad_dostawy_maszyn { get; set; }
+        public virtual DbSet<vDM_Sklad_dostawy_materialu> vDM_Sklad_dostawy_materialu { get; set; }
+        public virtual DbSet<vDM_Sklad_dostawy_narzedzi> vDM_Sklad_dostawy_narzedzi { get; set; }
+        public virtual DbSet<vDM_Szczegoly_magazynu_gotowych_produktow> vDM_Szczegoly_magazynu_gotowych_produktow { get; set; }
+        public virtual DbSet<vDM_Szczegoly_wydania_czesci> vDM_Szczegoly_wydania_czesci { get; set; }
+        public virtual DbSet<vDM_Szczegoly_wydania_materialu> vDM_Szczegoly_wydania_materialu { get; set; }
+        public virtual DbSet<vDM_Szczegoly_wydania_produktu> vDM_Szczegoly_wydania_produktu { get; set; }
+        public virtual DbSet<vDM_Szczegoly_wypozyczenia_narzedzia> vDM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DbSet<vDM_Wlasciwosc> vDM_Wlasciwosc { get; set; }
-        public virtual DbSet<vDP_Maszyny> vDP_Maszyny { get; set; }
+        public virtual DbSet<vDM_Wybor_maszyny> vDM_Wybor_maszyny { get; set; }
+        public virtual DbSet<vDM_Wydanie_czesci> vDM_Wydanie_czesci { get; set; }
+        public virtual DbSet<vDM_Wydanie_czesci_dla_produkcji> vDM_Wydanie_czesci_dla_produkcji { get; set; }
+        public virtual DbSet<vDM_Wydanie_materialu_dla_produkcji> vDM_Wydanie_materialu_dla_produkcji { get; set; }
+        public virtual DbSet<vDM_Wydanie_produktu> vDM_Wydanie_produktu { get; set; }
+        public virtual DbSet<vDM_Wypozyczenie_narzedzia> vDM_Wypozyczenie_narzedzia { get; set; }
+        public virtual DbSet<vDM_Zuzyte_narzedzie> vDM_Zuzyte_narzedzie { get; set; }
+        public virtual DbSet<vDP_Co_ile_obsluga> vDP_Co_ile_obsluga { get; set; }
+        public virtual DbSet<vDP_Czesc_wykorzystana> vDP_Czesc_wykorzystana { get; set; }
+        public virtual DbSet<vDP_Czynnosc> vDP_Czynnosc { get; set; }
+        public virtual DbSet<vDP_Czynnosc_w_ramach_obslugi_serw_wew> vDP_Czynnosc_w_ramach_obslugi_serw_wew { get; set; }
+        public virtual DbSet<vDP_Firma_serwisowa> vDP_Firma_serwisowa { get; set; }
+        public virtual DbSet<vDP_Maszyna> vDP_Maszyna { get; set; }
         public virtual DbSet<vDP_Model_maszyny> vDP_Model_maszyny { get; set; }
+        public virtual DbSet<vDP_Narzedzie_uzyte_naprawa> vDP_Narzedzie_uzyte_naprawa { get; set; }
+        public virtual DbSet<vDP_Narzedzie_uzyte_obsluga> vDP_Narzedzie_uzyte_obsluga { get; set; }
+        public virtual DbSet<vDP_Nazwa_obslugi> vDP_Nazwa_obslugi { get; set; }
+        public virtual DbSet<vDP_Obsluga> vDP_Obsluga { get; set; }
+        public virtual DbSet<vDP_Po_maszyna_czynnosc> vDP_Po_maszyna_czynnosc { get; set; }
+        public virtual DbSet<vDP_Po_maszyna_wydruk> vDP_Po_maszyna_wydruk { get; set; }
+        public virtual DbSet<vDP_Po_material_czynnosc> vDP_Po_material_czynnosc { get; set; }
+        public virtual DbSet<vDP_Po_material_wydruk> vDP_Po_material_wydruk { get; set; }
+        public virtual DbSet<vDP_Po_narzedzia_czynnosc> vDP_Po_narzedzia_czynnosc { get; set; }
+        public virtual DbSet<vDP_Po_prac_czynnosc> vDP_Po_prac_czynnosc { get; set; }
+        public virtual DbSet<vDP_Po_proc_czynnosc> vDP_Po_proc_czynnosc { get; set; }
+        public virtual DbSet<vDP_po_prod_czyn_dod_maszyna> vDP_po_prod_czyn_dod_maszyna { get; set; }
+        public virtual DbSet<vDP_po_prod_czyn_dod_pracownik> vDP_po_prod_czyn_dod_pracownik { get; set; }
+        public virtual DbSet<vDP_Po_wydr_proc> vDP_Po_wydr_proc { get; set; }
+        public virtual DbSet<vDP_Proces_produkcyjny> vDP_Proces_produkcyjny { get; set; }
+        public virtual DbSet<vDP_Proces_produkt> vDP_Proces_produkt { get; set; }
+        public virtual DbSet<vDP_Proces_technologiczny> vDP_Proces_technologiczny { get; set; }
+        public virtual DbSet<vDP_prod_czynnosc_dodatkowa> vDP_prod_czynnosc_dodatkowa { get; set; }
+        public virtual DbSet<vDP_prod_material> vDP_prod_material { get; set; }
+        public virtual DbSet<vDP_prod_wydruk> vDP_prod_wydruk { get; set; }
         public virtual DbSet<vDP_Produkt> vDP_Produkt { get; set; }
+        public virtual DbSet<vDP_Rodzaj_czynnosci> vDP_Rodzaj_czynnosci { get; set; }
         public virtual DbSet<vDP_Rodzaj_maszyny> vDP_Rodzaj_maszyny { get; set; }
+        public virtual DbSet<vDP_Serwis_wewnetrzny_naprawa> vDP_Serwis_wewnetrzny_naprawa { get; set; }
+        public virtual DbSet<vDP_Serwis_wewnetrzny_obsluga> vDP_Serwis_wewnetrzny_obsluga { get; set; }
+        public virtual DbSet<vDP_Serwis_zewnetrzny> vDP_Serwis_zewnetrzny { get; set; }
+        public virtual DbSet<vDP_Usluga_serwisu_zewnetrznego> vDP_Usluga_serwisu_zewnetrznego { get; set; }
+        public virtual DbSet<vDP_Wydruk> vDP_Wydruk { get; set; }
+        public virtual DbSet<vDP_Zuzyta_maszyna> vDP_Zuzyta_maszyna { get; set; }
         public virtual DbSet<vDZ_Dzial> vDZ_Dzial { get; set; }
         public virtual DbSet<vDZ_Etat> vDZ_Etat { get; set; }
         public virtual DbSet<vDZ_Klient> vDZ_Klient { get; set; }
+        //public virtual DbSet<vDZ_Koszty_zewnetrzne> vDZ_Koszty_zewnetrzne { get; set; }
         public virtual DbSet<vDZ_Nieobecnosc> vDZ_Nieobecnosc { get; set; }
+        //public virtual DbSet<vDZ_Oferta_dla_klienta> vDZ_Oferta_dla_klienta { get; set; }
+        //public virtual DbSet<vDZ_Oplaty_stale> vDZ_Oplaty_stale { get; set; }
         public virtual DbSet<vDZ_Plik> vDZ_Plik { get; set; }
+        public virtual DbSet<vDZ_Po_szczegoly_zam_produkt> vDZ_Po_szczegoly_zam_produkt { get; set; }
         public virtual DbSet<vDZ_Pracownik> vDZ_Pracownik { get; set; }
-        public virtual DbSet<vDZ_Rachunki> vDZ_Rachunki { get; set; }
+        public virtual DbSet<vDZ_Rachunek> vDZ_Rachunek { get; set; }
         public virtual DbSet<vDZ_Rodzaj_nieobecnosci> vDZ_Rodzaj_nieobecnosci { get; set; }
         public virtual DbSet<vDZ_Rodzaj_rachunku> vDZ_Rodzaj_rachunku { get; set; }
         public virtual DbSet<vDZ_Rodzaj_statusu_zamowienia> vDZ_Rodzaj_statusu_zamowienia { get; set; }
@@ -130,7 +189,10 @@ namespace KWZP2021
         public virtual DbSet<vDZ_Szczegoly_zam_narzedzi> vDZ_Szczegoly_zam_narzedzi { get; set; }
         public virtual DbSet<vDZ_Szczegoly_zamowienia_klienta> vDZ_Szczegoly_zamowienia_klienta { get; set; }
         public virtual DbSet<vDZ_Szczegoly_zatrudnienia> vDZ_Szczegoly_zatrudnienia { get; set; }
+        //public virtual DbSet<vDZ_Wplyw> vDZ_Wplyw { get; set; }
         public virtual DbSet<vDZ_Wycena_sz_zamowienia> vDZ_Wycena_sz_zamowienia { get; set; }
+        //public virtual DbSet<vDZ_Wydanie_faktury> vDZ_Wydanie_faktury { get; set; }
+        //public virtual DbSet<vDZ_Wyplata> vDZ_Wyplata { get; set; }
         public virtual DbSet<vDZ_Zamowienie_klienta> vDZ_Zamowienie_klienta { get; set; }
         public virtual DbSet<vDZ_Zamowienie_zewn> vDZ_Zamowienie_zewn { get; set; }
         public virtual DbSet<vDZ_Zatrudnienie> vDZ_Zatrudnienie { get; set; }

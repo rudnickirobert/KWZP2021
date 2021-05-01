@@ -291,28 +291,28 @@ CREATE TABLE DM_Parametr_narzedzia (
 CREATE TABLE DM_Dostawa_materialu(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
     Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-	Data_dostawy datetime NOT NULL,
+	Data_dostawy date NOT NULL,
 	Uwagi nvarchar(200) NOT NULL
 );
 
 CREATE TABLE DM_Dostawa_czesci(
 	Id_dostawy int IDENTITY(1,1) NOT NULL PRIMARY KEY, 
     Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-	Data_dostawy datetime NOT NULL,
+	Data_dostawy date NOT NULL,
 	Uwagi nvarchar(200) NOT NULL
 );
 
 CREATE TABLE DM_Dostawa_narzedzi(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
     Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-	Data_dostawy DATE NOT NULL, 
+	Data_dostawy date NOT NULL, 
 	Uwagi nvarchar(200) NOT NULL
 );
 
 CREATE TABLE DM_Dostawa_maszyn(
 	Id_dostawy int identity(1,1) NOT NULL PRIMARY KEY, 
     Id_pracownika int FOREIGN KEY REFERENCES DZ_Pracownik(Id_pracownika),
-	Data_dostawy DATE NOT NULL, 
+	Data_dostawy date NOT NULL, 
 	Uwagi nvarchar(200) NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_maszyn(
@@ -553,6 +553,7 @@ CREATE TABLE DP_Serwis_zewnetrzny(
 	Koszt money NOT NULL,
 	Data_rozpoczecia date NOT NULL,
 	Data_zakonczenia date,
+	Ilosc int NOT NULL,
 	Uwagi nvarchar(300)
 );
 CREATE TABLE DP_Serwis_wewnetrzny_naprawa(

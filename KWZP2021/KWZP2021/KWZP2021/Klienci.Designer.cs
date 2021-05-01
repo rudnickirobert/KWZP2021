@@ -64,7 +64,7 @@ namespace KWZP2021
             this.dvgKlient.Size = new System.Drawing.Size(1224, 423);
             this.dvgKlient.TabIndex = 3;
             this.dvgKlient.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellContentClick);
-            this.dvgKlient.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellContentDoubleClick);
+            this.dvgKlient.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgKlient_CellDoubleClick_1);
             this.dvgKlient.DoubleClick += new System.EventHandler(this.dvgKlient_DoubleClick);
             // 
             // label2
@@ -130,10 +130,10 @@ namespace KWZP2021
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dvgKlient;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonNowyKlient;
         private System.Windows.Forms.Button buttonWyszukajKlienta;
         private System.Windows.Forms.Button buttonUsunKlienta;
+        public System.Windows.Forms.DataGridView dvgKlient;
     }
 }

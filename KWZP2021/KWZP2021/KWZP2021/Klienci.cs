@@ -34,9 +34,11 @@ namespace KWZP2021
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
-            
          
+                dvgKlient.DataSource = database.vDZ_Klient.Where(x => x.Nazwa_firmy.Contains(textBox1.Text) || x.Nazwisko.Contains(textBox1.Text)).ToList();
+            
+
+
         }
 
 
@@ -54,13 +56,26 @@ namespace KWZP2021
 
         private void buttonWyszukajKlienta_Click(object sender, EventArgs e)
         {
-            int firma = Convert.ToInt32(this.dvgKlient.CurrentRow.Cells[0].Value);
+            string searchValue = textBox1.Text;
 
-            DZ_Klient toUpgrade = this.database.DZ_Klient.Where(nazwa_firmy => nazwa_firmy.Id_klienta == firma).First();
+            dvgKlient.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            try
+            {
+                foreach (DataGridViewRow row in dvgKlient.Rows)
+                {
+                    if (row.Cells[1].Value.ToString().Equals(searchValue))
+                    {
+                        row.Selected = true;
 
-            toUpgrade.Nazwa_firmy = textBox1.Text;
+                        break;
+                    }
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message);
 
-            this.database.SaveChanges();
+            }
         }
         private void initdvgKlient()
         {
@@ -69,15 +84,10 @@ namespace KWZP2021
         }
         private void dvgKlient_DoubleClick(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void dvgKlient_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Konkretny_klient konkretny_klient = new Konkretny_klient(this.database);
-            konkretny_klient.ShowDialog();
-            initdvgKlient();
-        }
+       
 
         private void buttonUsunKlienta_Click(object sender, EventArgs e)
         {
@@ -94,6 +104,26 @@ namespace KWZP2021
             this.database.SaveChanges();
             initdvgKlient();
             }
+        }
+
+        private void dvgKlient_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Konkretny_klient konkretny_klient = new Konkretny_klient(this.database);
+            konkretny_klient.txtNazwa_Firmy1.Text = dvgKlient.CurrentRow.Cells[1].Value.ToString();
+            konkretny_klient.txtNip1.Text = dvgKlient.CurrentRow.Cells[2].Value.ToString();
+            konkretny_klient.txtImie1.Text = dvgKlient.CurrentRow.Cells[3].Value.ToString();
+            konkretny_klient.txtNazwisko1.Text = dvgKlient.CurrentRow.Cells[4].Value.ToString();
+            konkretny_klient.txtAdres1.Text = dvgKlient.CurrentRow.Cells[5].Value.ToString();
+            konkretny_klient.txtMiasto1.Text = dvgKlient.CurrentRow.Cells[6].Value.ToString();
+            konkretny_klient.txtKod_Pocztowy1.Text = dvgKlient.CurrentRow.Cells[7].Value.ToString();
+            konkretny_klient.txtEmail1.Text = dvgKlient.CurrentRow.Cells[8].Value.ToString();
+            konkretny_klient.txtTelefon1.Text = dvgKlient.CurrentRow.Cells[9].Value.ToString();
+            konkretny_klient.txtNumer_Rachunku1.Text = dvgKlient.CurrentRow.Cells[10].Value.ToString();
+            //database.DZ_Klient.Add(konkretny_klient);
+            //database.SaveChanges();
+            //this.Close();
+            konkretny_klient.ShowDialog();
+            //initdvgKlient();
         }
     }
 }

@@ -373,11 +373,23 @@
     <Compile Include="Material.Designer.cs">
       <DependentUpon>Material.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nowe_zatrudnienie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nowe_zatrudnienie.Designer.cs">
+      <DependentUpon>Nowe_zatrudnienie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nowy_klient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Nowy_klient.Designer.cs">
       <DependentUpon>Nowy_klient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pracownicy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pracownicy.Designer.cs">
+      <DependentUpon>Pracownicy.cs</DependentUpon>
     </Compile>
     <Compile Include="Rodzaj_czynnosci.cs">
       <SubType>Form</SubType>
@@ -399,6 +411,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Szczegoly_zatrudnienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Szczegoly_zatrudnienia.Designer.cs">
+      <DependentUpon>Szczegoly_zatrudnienia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Szcz_zatrudnienia_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Szcz_zatrudnienia_2.Designer.cs">
+      <DependentUpon>Szcz_zatrudnienia_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="vDM_Czesc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -669,6 +693,12 @@
     <Compile Include="Wlasciwosc.Designer.cs">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zatrudnienie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zatrudnienie.Designer.cs">
+      <DependentUpon>Zatrudnienie.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddFirmaSerwisowa.resx">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </EmbeddedResource>
@@ -705,8 +735,14 @@
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nowe_zatrudnienie.resx">
+      <DependentUpon>Nowe_zatrudnienie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nowy_klient.resx">
       <DependentUpon>Nowy_klient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pracownicy.resx">
+      <DependentUpon>Pracownicy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -726,8 +762,17 @@
     <EmbeddedResource Include="Stanowiska.resx">
       <DependentUpon>Stanowiska.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Szczegoly_zatrudnienia.resx">
+      <DependentUpon>Szczegoly_zatrudnienia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Szcz_zatrudnienia_2.resx">
+      <DependentUpon>Szcz_zatrudnienia_2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Wlasciwosc.resx">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zatrudnienie.resx">
+      <DependentUpon>Zatrudnienie.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DrukarniaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

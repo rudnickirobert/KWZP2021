@@ -32,5 +32,17 @@ namespace KWZP2021
             Klienci klienci = new Klienci(this.database);
             klienci.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Zatrudnienie zatrudnienie = new Zatrudnienie(this.database);
+            zatrudnienie.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Pracownicy pracownicy = new Pracownicy(this.database);
+            pracownicy.ShowDialog();
+        }
     }
 }
