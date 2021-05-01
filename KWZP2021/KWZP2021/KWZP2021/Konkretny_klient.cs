@@ -81,10 +81,10 @@ namespace KWZP2021
                toUpdate.Email = txtEmail1.Text; // UPDATE
                toUpdate.Telefon= txtTelefon1.Text; // UPDATE
                toUpdate.Numer_rachunku = txtNumer_Rachunku1.Text; // UPDATE
-
-                this.database.SaveChanges();
+            initdataKonkretnyKlient();
+            this.database.SaveChanges();
                 this.Close();
-                initdataKonkretnyKlient();
+                
 
 
         }
