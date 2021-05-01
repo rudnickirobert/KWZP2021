@@ -583,21 +583,6 @@ FROM dbo.DP_Czesc_wykorzystana INNER JOIN
 DM_Czesc ON DP_Czesc_wykorzystana.Id_czesci=DM_Czesc.Id_czesci INNER JOIN
 DP_Serwis_wewnetrzny_naprawa ON DP_Czesc_wykorzystana.Id_serwis_wewnetrzny_naprawa=DP_Serwis_wewnetrzny_naprawa.Id_serwis_wewnetrzny_naprawa
 GO
-CREATE VIEW vDZ_Wyplata
-AS
-SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia AS [Numer wypłaty], DZ_Pracownik.Imie AS [Imię],DZ_Pracownik.Nazwisko, DZ_Pracownik.Adres, DZ_Pracownik.Miasto, DZ_Pracownik.Kod_pocztowy AS [Kod pocztowy], DZ_Pracownik.Numer_rachunku AS [Numer rachunku], DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia AS Podstawa_wynagrodzenia,DZ_Zatrudnienie.Data_zatrudnienia AS [Data zatrudnienia] ,DZ_Rodzaj_nieobecnosci.Rodzaj AS [Rodzaj nieobecności],DZ_Nieobecnosc.Data_rozpoczecia AS [Data rozpoczęcia], DZ_Nieobecnosc.Data_zakonczenia AS [Data zakończona], vDZ_Zatrudnienie.Staz,
-CASE WHEN (Rodzaj='L4') AND (Podstawa_wynagrodzenia>0) AND (Staz>0) THEN ((Podstawa_wynagrodzenia*0.8)+((Podstawa_wynagrodzenia*0.8*0.5)*0.34)+(Podstawa_wynagrodzenia*0.01)) 
-	 WHEN (Rodzaj='L4') AND (Podstawa_wynagrodzenia>0) AND (Staz>20) THEN ((Podstawa_wynagrodzenia*0.8)+((Podstawa_wynagrodzenia*0.8*0.5)*0.34)+(Podstawa_wynagrodzenia*0.2)) 
-	 WHEN ((Rodzaj='Urlop płatny') OR (Rodzaj='Szpitalne') OR (Rodzaj='Szkolenie') OR (Rodzaj='Badania')) AND (Podstawa_wynagrodzenia>0) AND (Staz>0) THEN (Podstawa_wynagrodzenia +((Podstawa_wynagrodzenia*0.5)*0.34)+(Podstawa_wynagrodzenia*0.01))
-	 WHEN ((Rodzaj='Urlop płatny') OR (Rodzaj='Szpitalne') OR (Rodzaj='Szkolenie') OR (Rodzaj='Badania')) AND (Podstawa_wynagrodzenia>0) AND (Staz>20) THEN (Podstawa_wynagrodzenia +((Podstawa_wynagrodzenia*0.5)*0.34)+(Podstawa_wynagrodzenia*0.2)) END AS Wyplata
-FROM DZ_Szczegoly_zatrudnienia  INNER JOIN
-DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
-DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
-DZ_Nieobecnosc ON DZ_Pracownik.Id_pracownika=DZ_Nieobecnosc.Id_pracownika INNER JOIN
-DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci INNER join
-vDZ_Zatrudnienie ON DZ_Zatrudnienie.Id_zatrudnienia=vDZ_Zatrudnienie.[Identyfikator zatrudnienia]
-GROUP BY DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Pracownik.Adres, DZ_Pracownik.Miasto, DZ_Pracownik.Kod_pocztowy,DZ_Pracownik.Numer_rachunku,DZ_Nieobecnosc.Data_zakonczenia,DZ_Nieobecnosc.Data_rozpoczecia,DZ_Rodzaj_nieobecnosci.Rodzaj, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Zatrudnienie.Staz;
-GO
 CREATE VIEW vDZ_Oplaty_stale
 AS
 SELECT DZ_Rachunek.Id_rachunki AS [Numer rachunku], DZ_Rodzaj_rachunku.Rodzaj_rachunku AS [Rodzaj rachunku], DZ_Rachunek.Koszt, DZ_Rachunek.Data_zaplaty AS [Data zapłaty]
@@ -678,5 +663,58 @@ FROM DP_Serwis_zewnetrzny
 WHERE (MONTH(Data_zakonczenia)=MONTH(GETDATE())) 
 AND (YEAR(Data_zakonczenia)=YEAR(GETDATE()))
 GROUP BY DP_Serwis_zewnetrzny.Data_zakonczenia, DP_Serwis_zewnetrzny.Koszt, DP_Serwis_zewnetrzny.Ilosc 
+GO
+CREATE VIEW vDZ_Premia
+AS
+SELECT DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Zatrudnienie.Staz, 
+CASE WHEN Staz>=1 AND Staz<2 THEN ((Podstawa_wynagrodzenia*0.01))
+	 WHEN Staz>=2 AND Staz<3 THEN ((Podstawa_wynagrodzenia*0.02))
+	 WHEN Staz>=3 AND Staz<4 THEN ((Podstawa_wynagrodzenia*0.03))
+	 WHEN Staz>=4 AND Staz<5 THEN ((Podstawa_wynagrodzenia*0.04))
+	 WHEN Staz>=5 AND Staz<6 THEN ((Podstawa_wynagrodzenia*0.05))
+	 WHEN Staz>=6 AND Staz<7 THEN ((Podstawa_wynagrodzenia*0.06))
+	 WHEN Staz>=7 AND Staz<8 THEN ((Podstawa_wynagrodzenia*0.07))
+	 WHEN Staz>=8 AND Staz<9 THEN ((Podstawa_wynagrodzenia*0.08))
+	 WHEN Staz>=9 AND Staz<10 THEN ((Podstawa_wynagrodzenia*0.09))
+	 WHEN Staz>=10 AND Staz<11 THEN ((Podstawa_wynagrodzenia*0.1))
+	 WHEN Staz>=11 AND Staz<12 THEN ((Podstawa_wynagrodzenia*0.11))
+	 WHEN Staz>=12 AND Staz<13 THEN ((Podstawa_wynagrodzenia*0.12))
+	 WHEN Staz>=13 AND Staz<14 THEN ((Podstawa_wynagrodzenia*0.13))
+	 WHEN Staz>=14 AND Staz<15 THEN ((Podstawa_wynagrodzenia*0.14))
+	 WHEN Staz>=15 AND Staz<16 THEN ((Podstawa_wynagrodzenia*0.15))
+	 WHEN Staz>=16 AND Staz<17 THEN ((Podstawa_wynagrodzenia*0.16))
+	 WHEN Staz>=17 AND Staz<18 THEN ((Podstawa_wynagrodzenia*0.17))
+	 WHEN Staz>=18 AND Staz<19 THEN ((Podstawa_wynagrodzenia*0.18))
+	 WHEN Staz>=19 AND Staz<20 THEN ((Podstawa_wynagrodzenia*0.19))
+	 WHEN Staz>=20 THEN ((Podstawa_wynagrodzenia*0.2)) END AS Premia
+FROM DZ_Szczegoly_zatrudnienia inner join
+DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia inner join
+DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika inner join
+vDZ_Zatrudnienie ON DZ_Zatrudnienie.Id_zatrudnienia=vDZ_Zatrudnienie.[Identyfikator zatrudnienia] 
+GROUP BY DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Zatrudnienie.Staz
+GO
+CREATE VIEW vDZ_Nieobecnosc_pensja
+AS
+SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Nieobecnosc.Data_rozpoczecia, DZ_Nieobecnosc.Data_zakonczenia, DZ_Rodzaj_nieobecnosci.Rodzaj, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
+CASE WHEN Rodzaj='L4' THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.8)+((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) END AS 'Pensja_nieobecnych'
+FROM DZ_Szczegoly_zatrudnienia INNER JOIN
+DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
+DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
+DZ_Nieobecnosc ON DZ_Pracownik.Id_pracownika=DZ_Nieobecnosc.Id_pracownika INNER JOIN
+DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci INNER JOIN
+vDZ_Premia on DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia=vDZ_Premia.Id_pracownika
+WHERE (MONTH(Data_rozpoczecia)=MONTH(GETDATE())) 
+AND (YEAR(Data_rozpoczecia)=YEAR(GETDATE())) 
+OR (MONTH(Data_zakonczenia)=MONTH(GETDATE())) 
+AND (YEAR(Data_zakonczenia)=YEAR(GETDATE()))
+GO
+CREATE VIEW vDZ_Pensja
+AS
+SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia,DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
+CASE WHEN DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia>=0 THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia)+((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) END AS 'Pensja'
+FROM DZ_Szczegoly_zatrudnienia INNER JOIN
+DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
+DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
+vDZ_Premia on DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia=vDZ_Premia.Id_pracownika
 GO
 
