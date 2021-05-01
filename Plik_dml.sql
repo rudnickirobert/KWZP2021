@@ -873,16 +873,16 @@ VALUES
 	('CADevent','Harcerska 86/2','Warszawa','10-122','835412588','cadevent@gmail.com'),
 	('Drukarki 3D','Szkolna 43/2','Warszawa','11-200','659021458','drukarki3d@o2.pl')
 	;
-INSERT INTO DP_Serwis_zewnetrzny(Id_firma_serwisowa, Id_maszyny, Id_usluga_serwisu_zewnetrznego, Koszt, Data_rozpoczecia, Data_zakonczenia, Uwagi)
+INSERT INTO DP_Serwis_zewnetrzny(Id_firma_serwisowa, Id_maszyny, Id_usluga_serwisu_zewnetrznego, Koszt, Data_rozpoczecia, Data_zakonczenia, Ilosc, Uwagi)
 VALUES
-	(7,1,2,200,'2021-11-12','2021-11-13','zaplanowany'),
-	(1,2,2,200,'2021-11-11','2021-11-13','zaplanowany'),
-	(2,3,2,200,'2021-11-15','2021-11-13','zaplanowany'),
-	(3,4,2,200,'2021-11-11','2021-11-13','zaplanowany'),
-	(4,4,1,300,'2021-02-01','2021-02-01','uszkodzenie mechaniczne'),
-	(6,1,1,100,'2021-01-20','2021-01-20','uszkodzenie mechaniczne'),
-	(5,2,1,350,'2021-01-30','2021-01-30','uszkodzenie mechaniczne'),
-	(8,3,1,400,'2021-02-12','2021-02-12','uszkodzenie mechaniczne')
+	(7,1,2,200,'2021-11-12','2021-11-13',1,'zaplanowany'),
+	(1,2,2,200,'2021-11-11','2021-11-13',1,'zaplanowany'),
+	(2,3,2,200,'2021-11-15','2021-11-13',1,'zaplanowany'),
+	(3,4,2,200,'2021-11-11','2021-11-13',1,'zaplanowany'),
+	(4,4,1,300,'2021-02-01','2021-02-01',1,'uszkodzenie mechaniczne'),
+	(6,1,1,100,'2021-01-20','2021-01-20',1,'uszkodzenie mechaniczne'),
+	(5,2,1,350,'2021-01-30','2021-01-30',1,'uszkodzenie mechaniczne'),
+	(8,3,1,400,'2021-02-12','2021-02-12',1,'uszkodzenie mechaniczne')
 	;
 INSERT INTO DP_Serwis_wewnetrzny_naprawa(Id_maszyny, Id_pracownik, Data_rozpoczecia, Data_zakonczenia, Uwagi)
 VALUES
