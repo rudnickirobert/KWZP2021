@@ -12,16 +12,21 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Zatrudnienie
+    public partial class vDZ_Wyplata
     {
-        public int Identyfikator_zatrudnienia { get; set; }
+        public int Numer_wypłaty { get; set; }
+        public string Imię { get; set; }
         public string Nazwisko { get; set; }
-        public string Stanowisko { get; set; }
-        public string Dział { get; set; }
-        public double Etat { get; set; }
-        public string Rodzaj_umowy { get; set; }
+        public string Adres { get; set; }
+        public string Miasto { get; set; }
+        public string Kod_pocztowy { get; set; }
+        public string Numer_rachunku { get; set; }
+        public double Podstawa_wynagrodzenia { get; set; }
         public System.DateTime Data_zatrudnienia { get; set; }
-        public System.DateTime Data_zwolnienia { get; set; }
+        public string Rodzaj_nieobecności { get; set; }
+        public System.DateTime Data_rozpoczęcia { get; set; }
+        public System.DateTime Data_zakończona { get; set; }
         public Nullable<int> Staz { get; set; }
+        public Nullable<double> Wyplata { get; set; }
     }
 }

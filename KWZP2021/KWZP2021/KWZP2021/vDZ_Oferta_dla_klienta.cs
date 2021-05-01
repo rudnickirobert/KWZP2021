@@ -12,11 +12,12 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Szczegoly_zatrudnienia
+    public partial class vDZ_Oferta_dla_klienta
     {
-        public int Identyfikator_szczegolow_zatrudnienia { get; set; }
-        public string Nazwisko_pracownika { get; set; }
-        public System.DateTime Data_zmiany_wynagrodzenia { get; set; }
-        public double Podstawa_wynagrodzenia { get; set; }
+        public int Id_zamowienia { get; set; }
+        public string Status_zam { get; set; }
+        public string Nip { get; set; }
+        public string Nazwa_firmy { get; set; }
+        public int Ilosc_sztuk { get; set; }
     }
 }

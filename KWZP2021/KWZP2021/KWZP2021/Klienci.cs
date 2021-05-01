@@ -34,9 +34,11 @@ namespace KWZP2021
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
-            
          
+                dvgKlient.DataSource = database.vDZ_Klient.Where(x => x.Nazwa_firmy.Contains(textBox1.Text) || x.Nazwisko.Contains(textBox1.Text)).ToList();
+            
+
+
         }
 
 
