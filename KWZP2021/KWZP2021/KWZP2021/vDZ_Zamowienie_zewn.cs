@@ -15,7 +15,7 @@ namespace KWZP2021
     public partial class vDZ_Zamowienie_zewn
     {
         public int Numer_zamowienia { get; set; }
-        public string Pracownik_składający_zamówienie { get; set; }
+        public string Pracownik_skladajacy_zamówienie { get; set; }
         public System.DateTime Data_zamowienia { get; set; }
     }
 }

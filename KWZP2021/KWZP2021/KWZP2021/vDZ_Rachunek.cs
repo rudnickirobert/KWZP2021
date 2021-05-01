@@ -12,12 +12,11 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Nieobecnosc
+    public partial class vDZ_Rachunek
     {
-        public int Identyfikator_nieobecnoœci { get; set; }
-        public string Nazwisko_pracownika { get; set; }
-        public string Rodzaj_nieobecnosci { get; set; }
-        public System.DateTime Data_rozpoczecia { get; set; }
-        public System.DateTime Data_zakonczenia { get; set; }
+        public int Numer_rachunku { get; set; }
+        public int Rodzaj_rachunku { get; set; }
+        public double Koszt { get; set; }
+        public System.DateTime Data_zaplaty { get; set; }
     }
 }

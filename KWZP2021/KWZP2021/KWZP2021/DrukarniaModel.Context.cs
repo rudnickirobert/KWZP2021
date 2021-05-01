@@ -109,7 +109,7 @@ namespace KWZP2021
         public virtual DbSet<vDM_Dostawa_narzedzi> vDM_Dostawa_narzedzi { get; set; }
         public virtual DbSet<vDM_Dostawca> vDM_Dostawca { get; set; }
         public virtual DbSet<vDM_Magazyn_gotowych_produktow> vDM_Magazyn_gotowych_produktow { get; set; }
-        public virtual DbSet<vDM_Material> vDM_Material { get; set; }
+        public virtual DbSet<vDM_Materialu> vDM_Materialu { get; set; }
         public virtual DbSet<vDM_Narzedzie> vDM_Narzedzie { get; set; }
         public virtual DbSet<vDM_Parametr_czesci> vDM_Parametr_czesci { get; set; }
         public virtual DbSet<vDM_Parametr_narzedzia> vDM_Parametr_narzedzia { get; set; }
@@ -170,10 +170,7 @@ namespace KWZP2021
         public virtual DbSet<vDZ_Dzial> vDZ_Dzial { get; set; }
         public virtual DbSet<vDZ_Etat> vDZ_Etat { get; set; }
         public virtual DbSet<vDZ_Klient> vDZ_Klient { get; set; }
-        //public virtual DbSet<vDZ_Koszty_zewnetrzne> vDZ_Koszty_zewnetrzne { get; set; }
         public virtual DbSet<vDZ_Nieobecnosc> vDZ_Nieobecnosc { get; set; }
-        //public virtual DbSet<vDZ_Oferta_dla_klienta> vDZ_Oferta_dla_klienta { get; set; }
-        //public virtual DbSet<vDZ_Oplaty_stale> vDZ_Oplaty_stale { get; set; }
         public virtual DbSet<vDZ_Plik> vDZ_Plik { get; set; }
         public virtual DbSet<vDZ_Po_szczegoly_zam_produkt> vDZ_Po_szczegoly_zam_produkt { get; set; }
         public virtual DbSet<vDZ_Pracownik> vDZ_Pracownik { get; set; }
@@ -189,10 +186,7 @@ namespace KWZP2021
         public virtual DbSet<vDZ_Szczegoly_zam_narzedzi> vDZ_Szczegoly_zam_narzedzi { get; set; }
         public virtual DbSet<vDZ_Szczegoly_zamowienia_klienta> vDZ_Szczegoly_zamowienia_klienta { get; set; }
         public virtual DbSet<vDZ_Szczegoly_zatrudnienia> vDZ_Szczegoly_zatrudnienia { get; set; }
-        //public virtual DbSet<vDZ_Wplyw> vDZ_Wplyw { get; set; }
         public virtual DbSet<vDZ_Wycena_sz_zamowienia> vDZ_Wycena_sz_zamowienia { get; set; }
-        //public virtual DbSet<vDZ_Wydanie_faktury> vDZ_Wydanie_faktury { get; set; }
-        //public virtual DbSet<vDZ_Wyplata> vDZ_Wyplata { get; set; }
         public virtual DbSet<vDZ_Zamowienie_klienta> vDZ_Zamowienie_klienta { get; set; }
         public virtual DbSet<vDZ_Zamowienie_zewn> vDZ_Zamowienie_zewn { get; set; }
         public virtual DbSet<vDZ_Zatrudnienie> vDZ_Zatrudnienie { get; set; }

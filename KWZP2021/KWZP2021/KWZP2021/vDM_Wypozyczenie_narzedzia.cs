@@ -12,12 +12,13 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Nieobecnosc
+    public partial class vDM_Wypozyczenie_narzedzia
     {
-        public int Identyfikator_nieobecnoœci { get; set; }
-        public string Nazwisko_pracownika { get; set; }
-        public string Rodzaj_nieobecnosci { get; set; }
-        public System.DateTime Data_rozpoczecia { get; set; }
-        public System.DateTime Data_zakonczenia { get; set; }
+        public int Identyfikator_wypozyczenia { get; set; }
+        public string Nazwisko_pracownika_wypozyczajacego { get; set; }
+        public string Nazwisko_pracownika_wydajacego { get; set; }
+        public Nullable<System.DateTime> Data_i_godzina_wypozyczenia { get; set; }
+        public Nullable<System.DateTime> C_Data_i_godzina_zwrotu { get; set; }
+        public string C_Uwagi { get; set; }
     }
 }

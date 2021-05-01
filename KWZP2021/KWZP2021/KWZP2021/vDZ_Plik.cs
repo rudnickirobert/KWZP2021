@@ -16,6 +16,6 @@ namespace KWZP2021
     {
         public int Numer_pliku { get; set; }
         public string Nazwa_pliku { get; set; }
-        public string zalacznik { get; set; }
+        public string Zalacznik { get; set; }
     }
 }

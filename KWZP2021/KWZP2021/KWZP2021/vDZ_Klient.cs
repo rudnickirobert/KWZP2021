@@ -17,13 +17,13 @@ namespace KWZP2021
         public int Numer_klienta { get; set; }
         public string Nazwa_firmy { get; set; }
         public string NIP { get; set; }
-        public string Imię { get; set; }
+        public string Imiê { get; set; }
         public string Nazwisko { get; set; }
         public string Adres { get; set; }
         public string Miasto { get; set; }
         public string Kod_pocztowy { get; set; }
         public string E_mail { get; set; }
-        public string telefon { get; set; }
+        public string Telefon { get; set; }
         public string Numer_rachunku { get; set; }
     }
 }

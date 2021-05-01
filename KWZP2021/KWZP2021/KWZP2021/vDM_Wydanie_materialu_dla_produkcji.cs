@@ -12,12 +12,12 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Nieobecnosc
+    public partial class vDM_Wydanie_materialu_dla_produkcji
     {
-        public int Identyfikator_nieobecnoœci { get; set; }
-        public string Nazwisko_pracownika { get; set; }
-        public string Rodzaj_nieobecnosci { get; set; }
-        public System.DateTime Data_rozpoczecia { get; set; }
-        public System.DateTime Data_zakonczenia { get; set; }
+        public int Identyfikator_wydania_materialu { get; set; }
+        public int Numer_zamówienia { get; set; }
+        public string C_Nazwisko_pracownika_pobierajacego { get; set; }
+        public string C_Nazwisko_pracownika_wydajacego { get; set; }
+        public System.DateTime C_Data_i_godzina { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace KWZP2021
     public partial class vDZ_Rodzaj_nieobecnosci
     {
         public int Numer_rodzaju { get; set; }
-        public string rodzaj { get; set; }
+        public string Rodzaj { get; set; }
         public double Procent_pensji { get; set; }
     }
 }

@@ -12,12 +12,13 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Nieobecnosc
+    public partial class vDP_Maszyna
     {
-        public int Identyfikator_nieobecnoœci { get; set; }
-        public string Nazwisko_pracownika { get; set; }
-        public string Rodzaj_nieobecnosci { get; set; }
-        public System.DateTime Data_rozpoczecia { get; set; }
-        public System.DateTime Data_zakonczenia { get; set; }
+        public int Numer_maszyny { get; set; }
+        public string Rodzaj_maszyny { get; set; }
+        public string Nazwa_modelu { get; set; }
+        public string Numer_seryjny { get; set; }
+        public System.DateTime Data_wprowadzenia_maszyny { get; set; }
+        public decimal C_Koszt_1_roboczo_godziny { get; set; }
     }
 }
