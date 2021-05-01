@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -33,9 +34,7 @@ namespace KWZP2021
 
         private void btnAddRodzajMaterialu_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć rodzaj materiału?", "Usuwanie rodzaju materiału", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
+
                 DM_Rodzaj_materialu newRodzajMaterialu = new DM_Rodzaj_materialu();
                 newRodzajMaterialu.Rodzaj_materialu = this.txtNewRodzajMaterialu.Text;
 
@@ -44,11 +43,7 @@ namespace KWZP2021
                 initCombobox();
                 this.txtNewRodzajMaterialu.Text = "";
                 initDataGridView();
-            }
-            else
-            {
-                DialogResult dialog1Result = MessageBox.Show("Nie udalo sie dodać materiału?");
-            }
+ 
         }
 
         private void btnDeleteRodzajMaterialu_Click(object sender, EventArgs e)
@@ -91,5 +86,6 @@ namespace KWZP2021
                 DialogResult dialog1Result = MessageBox.Show("Czy chcesz zaktualizować rodzaj materiału?");
             }
         }
+
     }
 }

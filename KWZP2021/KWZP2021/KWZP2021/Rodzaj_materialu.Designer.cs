@@ -39,26 +39,25 @@ namespace KWZP2021
             this.label3 = new System.Windows.Forms.Label();
             this.txtAktualizuj = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRodzajMaterialu)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvRodzajMaterialu
             // 
             this.dgvRodzajMaterialu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRodzajMaterialu.Location = new System.Drawing.Point(56, 112);
-            this.dgvRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvRodzajMaterialu.Location = new System.Drawing.Point(42, 91);
             this.dgvRodzajMaterialu.Name = "dgvRodzajMaterialu";
             this.dgvRodzajMaterialu.RowHeadersWidth = 51;
-            this.dgvRodzajMaterialu.Size = new System.Drawing.Size(661, 427);
+            this.dgvRodzajMaterialu.Size = new System.Drawing.Size(496, 347);
             this.dgvRodzajMaterialu.TabIndex = 0;
             this.dgvRodzajMaterialu.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRodzajMaterialu_CellMouseDoubleClick);
             // 
             // btnAddRodzajMaterialu
             // 
-            this.btnAddRodzajMaterialu.Location = new System.Drawing.Point(831, 77);
-            this.btnAddRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddRodzajMaterialu.Location = new System.Drawing.Point(623, 63);
             this.btnAddRodzajMaterialu.Name = "btnAddRodzajMaterialu";
-            this.btnAddRodzajMaterialu.Size = new System.Drawing.Size(100, 28);
+            this.btnAddRodzajMaterialu.Size = new System.Drawing.Size(75, 23);
             this.btnAddRodzajMaterialu.TabIndex = 1;
             this.btnAddRodzajMaterialu.Text = "Dodaj";
             this.btnAddRodzajMaterialu.UseVisualStyleBackColor = true;
@@ -66,10 +65,9 @@ namespace KWZP2021
             // 
             // btnDeleteRodzajMaterialu
             // 
-            this.btnDeleteRodzajMaterialu.Location = new System.Drawing.Point(831, 172);
-            this.btnDeleteRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeleteRodzajMaterialu.Location = new System.Drawing.Point(623, 140);
             this.btnDeleteRodzajMaterialu.Name = "btnDeleteRodzajMaterialu";
-            this.btnDeleteRodzajMaterialu.Size = new System.Drawing.Size(100, 28);
+            this.btnDeleteRodzajMaterialu.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteRodzajMaterialu.TabIndex = 3;
             this.btnDeleteRodzajMaterialu.Text = "Usun";
             this.btnDeleteRodzajMaterialu.UseVisualStyleBackColor = true;
@@ -77,70 +75,79 @@ namespace KWZP2021
             // 
             // txtNewRodzajMaterialu
             // 
-            this.txtNewRodzajMaterialu.Location = new System.Drawing.Point(811, 52);
-            this.txtNewRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNewRodzajMaterialu.Location = new System.Drawing.Point(608, 42);
             this.txtNewRodzajMaterialu.Name = "txtNewRodzajMaterialu";
-            this.txtNewRodzajMaterialu.Size = new System.Drawing.Size(132, 22);
+            this.txtNewRodzajMaterialu.Size = new System.Drawing.Size(100, 20);
             this.txtNewRodzajMaterialu.TabIndex = 5;
             // 
             // cmbRodzajMaterialu
             // 
             this.cmbRodzajMaterialu.FormattingEnabled = true;
-            this.cmbRodzajMaterialu.Location = new System.Drawing.Point(56, 52);
-            this.cmbRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbRodzajMaterialu.Location = new System.Drawing.Point(42, 42);
             this.cmbRodzajMaterialu.Name = "cmbRodzajMaterialu";
-            this.cmbRodzajMaterialu.Size = new System.Drawing.Size(160, 24);
+            this.cmbRodzajMaterialu.Size = new System.Drawing.Size(121, 21);
             this.cmbRodzajMaterialu.TabIndex = 6;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(756, 31);
+            this.label1.Location = new System.Drawing.Point(567, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 17);
+            this.label1.Size = new System.Drawing.Size(194, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Wpisz rodzaj materiału i wciśnij przycisk";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(761, 134);
+            this.label2.Location = new System.Drawing.Point(571, 109);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(252, 34);
+            this.label2.Size = new System.Drawing.Size(189, 26);
             this.label2.TabIndex = 8;
             this.label2.Text = "Wybierz rodzaj materiału do usunięcia \r\ni wciśnij przycisk";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(52, 31);
+            this.label3.Location = new System.Drawing.Point(39, 25);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(164, 17);
+            this.label3.Size = new System.Drawing.Size(123, 13);
             this.label3.TabIndex = 9;
             this.label3.Text = "Wybierz rodzaj materiału";
             // 
             // txtAktualizuj
             // 
-            this.txtAktualizuj.Location = new System.Drawing.Point(420, 52);
-            this.txtAktualizuj.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAktualizuj.Location = new System.Drawing.Point(315, 42);
             this.txtAktualizuj.Name = "txtAktualizuj";
-            this.txtAktualizuj.Size = new System.Drawing.Size(132, 22);
+            this.txtAktualizuj.Size = new System.Drawing.Size(100, 20);
             this.txtAktualizuj.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(365, 14);
+            this.label4.Location = new System.Drawing.Point(274, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(229, 34);
+            this.label4.Size = new System.Drawing.Size(174, 26);
             this.label4.TabIndex = 11;
             this.label4.Text = "Wpisz rodzaj materiału i dwuklikiem\r\n wybierz pole do atualizacji";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(623, 196);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 12;
+            // 
             // Rodzaj_materialu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtAktualizuj);
             this.Controls.Add(this.label3);
@@ -151,9 +158,9 @@ namespace KWZP2021
             this.Controls.Add(this.btnDeleteRodzajMaterialu);
             this.Controls.Add(this.btnAddRodzajMaterialu);
             this.Controls.Add(this.dgvRodzajMaterialu);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Rodzaj_materialu";
             this.Text = "Rodzaj_materialu";
+
             ((System.ComponentModel.ISupportInitialize)(this.dgvRodzajMaterialu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -172,5 +179,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtAktualizuj;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

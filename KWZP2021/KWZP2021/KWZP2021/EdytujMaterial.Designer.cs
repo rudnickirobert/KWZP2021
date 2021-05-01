@@ -1,7 +1,7 @@
 ﻿
 namespace KWZP2021
 {
-    partial class DodajMaterial
+    partial class EdytujMaterial
     {
         /// <summary>
         /// Required designer variable.
@@ -33,20 +33,22 @@ namespace KWZP2021
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelOperation = new System.Windows.Forms.Button();
-            this.btnAddNewMaterial = new System.Windows.Forms.Button();
-            this.cmbRodzajMaterialu = new System.Windows.Forms.ComboBox();
-            this.txtNewMaterial = new System.Windows.Forms.TextBox();
+            this.btnSaveChanges = new System.Windows.Forms.Button();
+            this.cmbEdytujRodzajMaterialu = new System.Windows.Forms.ComboBox();
+            this.txtEdytujMaterial = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(34, 23);
+            this.label3.Location = new System.Drawing.Point(75, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(215, 16);
+            this.label3.Size = new System.Drawing.Size(127, 16);
             this.label3.TabIndex = 17;
-            this.label3.Text = "Dodawanie nowego materiału";
+            this.label3.Text = "Edycja materiału";
             // 
             // label2
             // 
@@ -68,7 +70,7 @@ namespace KWZP2021
             // 
             // btnCancelOperation
             // 
-            this.btnCancelOperation.Location = new System.Drawing.Point(160, 172);
+            this.btnCancelOperation.Location = new System.Drawing.Point(158, 238);
             this.btnCancelOperation.Name = "btnCancelOperation";
             this.btnCancelOperation.Size = new System.Drawing.Size(75, 25);
             this.btnCancelOperation.TabIndex = 14;
@@ -76,46 +78,55 @@ namespace KWZP2021
             this.btnCancelOperation.UseVisualStyleBackColor = true;
             this.btnCancelOperation.Click += new System.EventHandler(this.btnCancelOperation_Click);
             // 
-            // btnAddNewMaterial
+            // btnSaveChanges
             // 
-            this.btnAddNewMaterial.Location = new System.Drawing.Point(37, 172);
-            this.btnAddNewMaterial.Name = "btnAddNewMaterial";
-            this.btnAddNewMaterial.Size = new System.Drawing.Size(75, 25);
-            this.btnAddNewMaterial.TabIndex = 13;
-            this.btnAddNewMaterial.Text = "Dodaj";
-            this.btnAddNewMaterial.UseVisualStyleBackColor = true;
-            this.btnAddNewMaterial.Click += new System.EventHandler(this.btnAddNewMaterial_Click);
+            this.btnSaveChanges.Location = new System.Drawing.Point(28, 238);
+            this.btnSaveChanges.Name = "btnSaveChanges";
+            this.btnSaveChanges.Size = new System.Drawing.Size(75, 25);
+            this.btnSaveChanges.TabIndex = 13;
+            this.btnSaveChanges.Text = "Zapisz";
+            this.btnSaveChanges.UseVisualStyleBackColor = true;
+
             // 
-            // cmbRodzajMaterialu
+            // cmbEdytujRodzajMaterialu
             // 
-            this.cmbRodzajMaterialu.FormattingEnabled = true;
-            this.cmbRodzajMaterialu.Location = new System.Drawing.Point(128, 99);
-            this.cmbRodzajMaterialu.Name = "cmbRodzajMaterialu";
-            this.cmbRodzajMaterialu.Size = new System.Drawing.Size(121, 21);
-            this.cmbRodzajMaterialu.TabIndex = 12;
+            this.cmbEdytujRodzajMaterialu.FormattingEnabled = true;
+            this.cmbEdytujRodzajMaterialu.Location = new System.Drawing.Point(128, 99);
+            this.cmbEdytujRodzajMaterialu.Name = "cmbEdytujRodzajMaterialu";
+            this.cmbEdytujRodzajMaterialu.Size = new System.Drawing.Size(121, 21);
+            this.cmbEdytujRodzajMaterialu.TabIndex = 12;
             // 
-            // txtNewMaterial
+            // txtEdytujMaterial
             // 
-            this.txtNewMaterial.Location = new System.Drawing.Point(128, 60);
-            this.txtNewMaterial.Name = "txtNewMaterial";
-            this.txtNewMaterial.Size = new System.Drawing.Size(121, 20);
-            this.txtNewMaterial.TabIndex = 11;
+            this.txtEdytujMaterial.Location = new System.Drawing.Point(128, 60);
+            this.txtEdytujMaterial.Name = "txtEdytujMaterial";
+            this.txtEdytujMaterial.Size = new System.Drawing.Size(121, 20);
+            this.txtEdytujMaterial.TabIndex = 11;
             // 
-            // DodajMaterial
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(276, 45);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 75);
+            this.dataGridView1.TabIndex = 18;
+            // 
+            // EdytujMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(264, 221);
+            this.ClientSize = new System.Drawing.Size(528, 397);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelOperation);
-            this.Controls.Add(this.btnAddNewMaterial);
-            this.Controls.Add(this.cmbRodzajMaterialu);
-            this.Controls.Add(this.txtNewMaterial);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "DodajMaterial";
-            this.Text = "DodajMaterial";
+            this.Controls.Add(this.btnSaveChanges);
+            this.Controls.Add(this.cmbEdytujRodzajMaterialu);
+            this.Controls.Add(this.txtEdytujMaterial);
+            this.Name = "EdytujMaterial";
+            this.Text = "EdytujMaterial";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,8 +138,9 @@ namespace KWZP2021
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelOperation;
-        private System.Windows.Forms.Button btnAddNewMaterial;
-        private System.Windows.Forms.ComboBox cmbRodzajMaterialu;
-        private System.Windows.Forms.TextBox txtNewMaterial;
+        private System.Windows.Forms.Button btnSaveChanges;
+        public System.Windows.Forms.TextBox txtEdytujMaterial;
+        public System.Windows.Forms.ComboBox cmbEdytujRodzajMaterialu;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
