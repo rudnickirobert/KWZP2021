@@ -14,12 +14,12 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
-            this.dgvMaterial.DataSource = this.database.vDM_Material.ToList();
+            this.dgvMaterial.DataSource = this.database.vDM_Materialu.ToList();
             initDataGridView();
         }
         public void initDataGridView()
         {
-            this.dgvMaterial.DataSource = this.database.vDM_Material.ToList();
+            this.dgvMaterial.DataSource = this.database.vDM_Materialu.ToList();
 
         }
         private void btnAddNewMaterial_Click(object sender, EventArgs e)
@@ -55,7 +55,7 @@ namespace KWZP2021
 
         private void txtFindMaterial_TextChanged(object sender, EventArgs e)
         {
-            dgvMaterial.DataSource = database.vDM_Material.Where(x => x.Nazwa_materialu.Contains(txtFindMaterial.Text) || x.Rodzaj_materialu.Contains(txtFindMaterial.Text)).ToList();
+            dgvMaterial.DataSource = database.vDM_Materialu.Where(x => x.Nazwa_materialu.Contains(txtFindMaterial.Text) || x.Rodzaj_materialu.Contains(txtFindMaterial.Text)).ToList();
         }
 
         private void dgvMaterial_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
@@ -68,4 +68,3 @@ namespace KWZP2021
         }
     }
 }
-    

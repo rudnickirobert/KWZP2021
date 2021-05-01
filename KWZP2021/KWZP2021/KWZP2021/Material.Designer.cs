@@ -36,6 +36,16 @@ namespace KWZP2021
             this.dgvMaterial = new System.Windows.Forms.DataGridView();
             this.txtFindMaterial = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 47);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Wyszukaj";
             // 
@@ -122,7 +132,6 @@ namespace KWZP2021
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Material";
             this.Text = "Material";
-            this.Load += new System.EventHandler(this.Material_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

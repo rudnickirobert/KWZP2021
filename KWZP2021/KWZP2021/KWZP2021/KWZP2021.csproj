@@ -444,7 +444,7 @@
     <Compile Include="vDM_Magazyn_gotowych_produktow.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDM_Material.cs">
+    <Compile Include="vDM_Materialu.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDM_Narzedzie.cs">
