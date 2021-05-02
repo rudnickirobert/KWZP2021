@@ -1,4 +1,4 @@
-USE Drukarnia4
+USE Drukarnia
 GO
 
 CREATE VIEW vDM_Material
