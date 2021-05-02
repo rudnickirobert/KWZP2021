@@ -22,5 +22,11 @@ namespace KWZP2021
             Rodzaj_czynnosci rodzaj_czynnosci = new Rodzaj_czynnosci(this.database);
             rodzaj_czynnosci.ShowDialog();
         }
+
+        private void btnMaszyna_Click(object sender, EventArgs e)
+        {
+            Maszyna_glowny maszyna = new Maszyna_glowny(this.database);
+            maszyna.ShowDialog();
+        }
     }
 }

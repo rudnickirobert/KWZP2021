@@ -30,6 +30,7 @@ namespace KWZP2021
         private void InitializeComponent()
         {
             this.btnRodzajCzynnosci = new System.Windows.Forms.Button();
+            this.btnMaszyna = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRodzajCzynnosci
@@ -42,11 +43,22 @@ namespace KWZP2021
             this.btnRodzajCzynnosci.UseVisualStyleBackColor = true;
             this.btnRodzajCzynnosci.Click += new System.EventHandler(this.btnRodzajCzynnosci_Click);
             // 
+            // btnMaszyna
+            // 
+            this.btnMaszyna.Location = new System.Drawing.Point(137, 169);
+            this.btnMaszyna.Name = "btnMaszyna";
+            this.btnMaszyna.Size = new System.Drawing.Size(83, 29);
+            this.btnMaszyna.TabIndex = 1;
+            this.btnMaszyna.Text = "Maszyna";
+            this.btnMaszyna.UseVisualStyleBackColor = true;
+            this.btnMaszyna.Click += new System.EventHandler(this.btnMaszyna_Click);
+            // 
             // Dzial_produkcji
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnMaszyna);
             this.Controls.Add(this.btnRodzajCzynnosci);
             this.Name = "Dzial_produkcji";
             this.Text = "Dzial_produkcji";
@@ -58,5 +70,6 @@ namespace KWZP2021
         #endregion
 
         private System.Windows.Forms.Button btnRodzajCzynnosci;
+        private System.Windows.Forms.Button btnMaszyna;
     }
 }

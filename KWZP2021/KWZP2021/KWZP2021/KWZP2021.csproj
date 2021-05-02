@@ -445,6 +445,18 @@
     <Compile Include="Koszty_zewnetrzne.Designer.cs">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maszyna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maszyna.Designer.cs">
+      <DependentUpon>Maszyna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maszyna_glowny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maszyna_glowny.Designer.cs">
+      <DependentUpon>Maszyna_glowny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -944,6 +956,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Koszty_zewnetrzne.resx">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maszyna.resx">
+      <DependentUpon>Maszyna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maszyna_glowny.resx">
+      <DependentUpon>Maszyna_glowny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
