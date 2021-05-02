@@ -12,13 +12,10 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Zuzyte_narzedzie
+    public partial class vDM_Wlasciwosc_materialu
     {
-        public int Identyfikator_zuzycia_narzedzia { get; set; }
-        public int Identyfikator_wypozyczenia { get; set; }
-        public string Nazwa_narzedzia { get; set; }
-        public System.DateTime Data_zuzycia { get; set; }
-        public int Ilosc { get; set; }
-        public string C_Uwagi { get; set; }
+        public string Nazwa_materialu { get; set; }
+        public string Nazwa_wlasciwosci { get; set; }
+        public string Wartosc { get; set; }
     }
 }

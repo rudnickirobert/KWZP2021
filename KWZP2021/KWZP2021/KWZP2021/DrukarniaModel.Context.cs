@@ -126,13 +126,13 @@ namespace KWZP2021
         public virtual DbSet<vDM_Szczegoly_wydania_produktu> vDM_Szczegoly_wydania_produktu { get; set; }
         public virtual DbSet<vDM_Szczegoly_wypozyczenia_narzedzia> vDM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DbSet<vDM_Wlasciwosc> vDM_Wlasciwosc { get; set; }
+        public virtual DbSet<vDM_Wlasciwosc_materialu> vDM_Wlasciwosc_materialu { get; set; }
         public virtual DbSet<vDM_Wybor_maszyny> vDM_Wybor_maszyny { get; set; }
         public virtual DbSet<vDM_Wydanie_czesci> vDM_Wydanie_czesci { get; set; }
         public virtual DbSet<vDM_Wydanie_czesci_dla_produkcji> vDM_Wydanie_czesci_dla_produkcji { get; set; }
         public virtual DbSet<vDM_Wydanie_materialu_dla_produkcji> vDM_Wydanie_materialu_dla_produkcji { get; set; }
         public virtual DbSet<vDM_Wydanie_produktu> vDM_Wydanie_produktu { get; set; }
         public virtual DbSet<vDM_Wypozyczenie_narzedzia> vDM_Wypozyczenie_narzedzia { get; set; }
-        public virtual DbSet<vDM_Zuzyte_narzedzie> vDM_Zuzyte_narzedzie { get; set; }
         public virtual DbSet<vDP_Co_ile_obsluga> vDP_Co_ile_obsluga { get; set; }
         public virtual DbSet<vDP_Czesc_wykorzystana> vDP_Czesc_wykorzystana { get; set; }
         public virtual DbSet<vDP_Czynnosc> vDP_Czynnosc { get; set; }

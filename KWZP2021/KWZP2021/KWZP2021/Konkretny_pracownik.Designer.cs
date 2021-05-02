@@ -56,9 +56,10 @@ namespace KWZP2021
             // 
             // buttonPowrot
             // 
-            this.buttonPowrot.Location = new System.Drawing.Point(183, 339);
+            this.buttonPowrot.Location = new System.Drawing.Point(244, 417);
+            this.buttonPowrot.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonPowrot.Name = "buttonPowrot";
-            this.buttonPowrot.Size = new System.Drawing.Size(131, 30);
+            this.buttonPowrot.Size = new System.Drawing.Size(175, 37);
             this.buttonPowrot.TabIndex = 73;
             this.buttonPowrot.Text = "Powrót";
             this.buttonPowrot.UseVisualStyleBackColor = true;
@@ -66,9 +67,10 @@ namespace KWZP2021
             // 
             // buttonWyczyscPola
             // 
-            this.buttonWyczyscPola.Location = new System.Drawing.Point(29, 339);
+            this.buttonWyczyscPola.Location = new System.Drawing.Point(39, 417);
+            this.buttonWyczyscPola.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonWyczyscPola.Name = "buttonWyczyscPola";
-            this.buttonWyczyscPola.Size = new System.Drawing.Size(116, 30);
+            this.buttonWyczyscPola.Size = new System.Drawing.Size(155, 37);
             this.buttonWyczyscPola.TabIndex = 72;
             this.buttonWyczyscPola.Text = "Wyczyść pola";
             this.buttonWyczyscPola.UseVisualStyleBackColor = true;
@@ -76,9 +78,10 @@ namespace KWZP2021
             // 
             // buttonZapiszKonkretnegoKlienta
             // 
-            this.buttonZapiszKonkretnegoKlienta.Location = new System.Drawing.Point(29, 385);
+            this.buttonZapiszKonkretnegoKlienta.Location = new System.Drawing.Point(39, 474);
+            this.buttonZapiszKonkretnegoKlienta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonZapiszKonkretnegoKlienta.Name = "buttonZapiszKonkretnegoKlienta";
-            this.buttonZapiszKonkretnegoKlienta.Size = new System.Drawing.Size(285, 45);
+            this.buttonZapiszKonkretnegoKlienta.Size = new System.Drawing.Size(380, 55);
             this.buttonZapiszKonkretnegoKlienta.TabIndex = 71;
             this.buttonZapiszKonkretnegoKlienta.Text = "Zapisz";
             this.buttonZapiszKonkretnegoKlienta.UseVisualStyleBackColor = true;
@@ -87,169 +90,189 @@ namespace KWZP2021
             // lblNowyKlient
             // 
             this.lblNowyKlient.AutoSize = true;
-            this.lblNowyKlient.Location = new System.Drawing.Point(166, 18);
+            this.lblNowyKlient.Location = new System.Drawing.Point(221, 22);
+            this.lblNowyKlient.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNowyKlient.Name = "lblNowyKlient";
-            this.lblNowyKlient.Size = new System.Drawing.Size(121, 13);
+            this.lblNowyKlient.Size = new System.Drawing.Size(158, 17);
             this.lblNowyKlient.TabIndex = 70;
             this.lblNowyKlient.Text = "Edytuj dane pracownika";
             // 
             // txtNumer_Rachunku2
             // 
-            this.txtNumer_Rachunku2.Location = new System.Drawing.Point(153, 233);
+            this.txtNumer_Rachunku2.Location = new System.Drawing.Point(204, 287);
+            this.txtNumer_Rachunku2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNumer_Rachunku2.Name = "txtNumer_Rachunku2";
-            this.txtNumer_Rachunku2.Size = new System.Drawing.Size(151, 20);
+            this.txtNumer_Rachunku2.Size = new System.Drawing.Size(200, 22);
             this.txtNumer_Rachunku2.TabIndex = 69;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(26, 233);
+            this.label10.Location = new System.Drawing.Point(35, 287);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 13);
+            this.label10.Size = new System.Drawing.Size(113, 17);
             this.label10.TabIndex = 68;
             this.label10.Text = "Numer rachunku";
             // 
             // txtTelefon2
             // 
-            this.txtTelefon2.Location = new System.Drawing.Point(153, 207);
+            this.txtTelefon2.Location = new System.Drawing.Point(204, 255);
+            this.txtTelefon2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefon2.Name = "txtTelefon2";
-            this.txtTelefon2.Size = new System.Drawing.Size(151, 20);
+            this.txtTelefon2.Size = new System.Drawing.Size(200, 22);
             this.txtTelefon2.TabIndex = 67;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(26, 207);
+            this.label9.Location = new System.Drawing.Point(35, 255);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
+            this.label9.Size = new System.Drawing.Size(56, 17);
             this.label9.TabIndex = 66;
             this.label9.Text = "Telefon";
             // 
             // txtEmail2
             // 
-            this.txtEmail2.Location = new System.Drawing.Point(153, 181);
+            this.txtEmail2.Location = new System.Drawing.Point(204, 223);
+            this.txtEmail2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail2.Name = "txtEmail2";
-            this.txtEmail2.Size = new System.Drawing.Size(151, 20);
+            this.txtEmail2.Size = new System.Drawing.Size(200, 22);
             this.txtEmail2.TabIndex = 65;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 181);
+            this.label8.Location = new System.Drawing.Point(35, 223);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(32, 13);
+            this.label8.Size = new System.Drawing.Size(42, 17);
             this.label8.TabIndex = 64;
             this.label8.Text = "Email";
             // 
             // txtKod_Pocztowy2
             // 
-            this.txtKod_Pocztowy2.Location = new System.Drawing.Point(153, 155);
+            this.txtKod_Pocztowy2.Location = new System.Drawing.Point(204, 191);
+            this.txtKod_Pocztowy2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKod_Pocztowy2.Name = "txtKod_Pocztowy2";
-            this.txtKod_Pocztowy2.Size = new System.Drawing.Size(151, 20);
+            this.txtKod_Pocztowy2.Size = new System.Drawing.Size(200, 22);
             this.txtKod_Pocztowy2.TabIndex = 63;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 155);
+            this.label7.Location = new System.Drawing.Point(35, 191);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.Size = new System.Drawing.Size(95, 17);
             this.label7.TabIndex = 62;
             this.label7.Text = "Kod pocztowy";
             // 
             // txtMiasto2
             // 
-            this.txtMiasto2.Location = new System.Drawing.Point(153, 129);
+            this.txtMiasto2.Location = new System.Drawing.Point(204, 159);
+            this.txtMiasto2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMiasto2.Name = "txtMiasto2";
-            this.txtMiasto2.Size = new System.Drawing.Size(151, 20);
+            this.txtMiasto2.Size = new System.Drawing.Size(200, 22);
             this.txtMiasto2.TabIndex = 61;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 129);
+            this.label6.Location = new System.Drawing.Point(35, 159);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.Size = new System.Drawing.Size(49, 17);
             this.label6.TabIndex = 60;
             this.label6.Text = "Miasto";
             // 
             // txtAdres2
             // 
-            this.txtAdres2.Location = new System.Drawing.Point(153, 103);
+            this.txtAdres2.Location = new System.Drawing.Point(204, 127);
+            this.txtAdres2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAdres2.Name = "txtAdres2";
-            this.txtAdres2.Size = new System.Drawing.Size(151, 20);
+            this.txtAdres2.Size = new System.Drawing.Size(200, 22);
             this.txtAdres2.TabIndex = 59;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 103);
+            this.label5.Location = new System.Drawing.Point(35, 127);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.Size = new System.Drawing.Size(45, 17);
             this.label5.TabIndex = 58;
             this.label5.Text = "Adres";
             // 
             // txtNazwisko2
             // 
-            this.txtNazwisko2.Location = new System.Drawing.Point(153, 77);
+            this.txtNazwisko2.Location = new System.Drawing.Point(204, 95);
+            this.txtNazwisko2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNazwisko2.Name = "txtNazwisko2";
-            this.txtNazwisko2.Size = new System.Drawing.Size(151, 20);
+            this.txtNazwisko2.Size = new System.Drawing.Size(200, 22);
             this.txtNazwisko2.TabIndex = 57;
             // 
             // txtImie2
             // 
-            this.txtImie2.Location = new System.Drawing.Point(153, 51);
+            this.txtImie2.Location = new System.Drawing.Point(204, 63);
+            this.txtImie2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtImie2.Name = "txtImie2";
-            this.txtImie2.Size = new System.Drawing.Size(151, 20);
+            this.txtImie2.Size = new System.Drawing.Size(200, 22);
             this.txtImie2.TabIndex = 56;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(26, 77);
+            this.label4.Location = new System.Drawing.Point(35, 95);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.Size = new System.Drawing.Size(67, 17);
             this.label4.TabIndex = 53;
             this.label4.Text = "Nazwisko";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 51);
+            this.label3.Location = new System.Drawing.Point(35, 63);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(33, 17);
             this.label3.TabIndex = 52;
             this.label3.Text = "Imię";
             // 
             // txtData2
             // 
-            this.txtData2.Location = new System.Drawing.Point(153, 261);
+            this.txtData2.Location = new System.Drawing.Point(204, 321);
+            this.txtData2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtData2.Name = "txtData2";
-            this.txtData2.Size = new System.Drawing.Size(151, 20);
+            this.txtData2.Size = new System.Drawing.Size(200, 22);
             this.txtData2.TabIndex = 76;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 261);
+            this.label1.Location = new System.Drawing.Point(35, 321);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 13);
+            this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 75;
             this.label1.Text = "Data urodzenia";
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "";
-            this.dateTimePicker1.Location = new System.Drawing.Point(155, 292);
+            this.dateTimePicker1.Location = new System.Drawing.Point(207, 359);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(148, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(196, 22);
             this.dateTimePicker1.TabIndex = 77;
             // 
             // Konkretny_pracownik
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 450);
+            this.ClientSize = new System.Drawing.Size(473, 554);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtData2);
             this.Controls.Add(this.label1);
@@ -273,6 +296,7 @@ namespace KWZP2021
             this.Controls.Add(this.txtImie2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Konkretny_pracownik";
             this.Text = "Edytuj dane pracownika";
             this.Load += new System.EventHandler(this.Konkretny_pracownik_Load);
@@ -304,6 +328,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtData2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

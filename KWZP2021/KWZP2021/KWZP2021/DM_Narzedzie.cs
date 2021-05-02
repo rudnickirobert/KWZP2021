@@ -30,7 +30,8 @@ namespace KWZP2021
         public int Id_narzedzia { get; set; }
         public string Nazwa { get; set; }
         public int Id_rodzaj_narzedzia { get; set; }
-        public int Ilosc_poczatkowa { get; set; }
+        public string Nr_seryjny { get; set; }
+        public Nullable<System.DateTime> Data_zuzycia { get; set; }
     
         public virtual DM_Rodzaj_narzedzia DM_Rodzaj_narzedzia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

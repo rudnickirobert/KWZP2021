@@ -17,6 +17,7 @@ namespace KWZP2021
         public int Numer_narzedzia { get; set; }
         public string Nazwa { get; set; }
         public string Rodzaj_narzedzia { get; set; }
-        public int Ilosc_poczatkowa { get; set; }
+        public string Numer_seryjny { get; set; }
+        public Nullable<System.DateTime> Data_zuzycia { get; set; }
     }
 }

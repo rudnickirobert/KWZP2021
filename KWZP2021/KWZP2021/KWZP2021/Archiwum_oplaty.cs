@@ -42,7 +42,7 @@ namespace KWZP2021
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = database.vDZ_Rachunek.Where(x => x.Rodzaj_rachunku.Contains(textBox1.Text)).ToList();
+           dataGridView1.DataSource = database.vDZ_Rachunek.Where(x => x.Rodzaj_rachunku.Contains(textBox1.Text)).ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)

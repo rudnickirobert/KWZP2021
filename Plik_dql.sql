@@ -68,7 +68,7 @@ FROM     dbo.DZ_Rodzaj_rachunku
 GO
 CREATE VIEW vDZ_Rachunek
 AS
-SELECT Id_rachunki AS [Numer rachunku], DZ_Rodzaj_rachunku.Id_rodzaj_rachunku AS [Rodzaj rachunku], DZ_Rachunek.koszt AS [Koszt], data_zaplaty AS [Data zaplaty]
+SELECT Id_rachunki AS [Numer rachunku], DZ_Rodzaj_rachunku.Rodzaj_rachunku AS [Rodzaj rachunku], DZ_Rachunek.koszt AS [Koszt], data_zaplaty AS [Data zaplaty]
 FROM     dbo.DZ_Rachunek INNER JOIN
 DZ_Rodzaj_rachunku ON DZ_Rachunek.Id_rodzaj_rachunku=DZ_Rodzaj_rachunku.Id_rodzaj_rachunku
 GO
@@ -598,7 +598,7 @@ DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta
 GO
 CREATE VIEW vDZ_Oferta_dla_klienta
 AS
-SELECT DZ_Zamowienie_klienta.Id_zamowienia, DZ_Rodzaj_statusu_zamowienia.Status_zam, DZ_Klient.Nip, DZ_Klient.Nazwa_firmy, DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk
+SELECT DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamowienia], DZ_Klient.Nip, DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilosc sztuk]
 FROM DZ_Zamowienie_klienta INNER JOIN
 DZ_Status_zamowienia ON DZ_Zamowienie_klienta.Id_zamowienia=DZ_Status_zamowienia.Id_zamowienia INNER JOIN
 DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
@@ -619,16 +619,16 @@ GROUP BY vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamów
 GO
 CREATE VIEW vDZ_Koszty_zewnetrzne
 AS
-SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc AS [Ilość],
-sum (CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_czesci * Ilosc) as decimal) END) AS Koszt
-FROM DM_Dostawa_czesci inner join
+SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc,
+SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_czesci * Ilosc) AS DECIMAL) END) AS Koszt
+FROM DM_Dostawa_czesci INNER JOIN
 DM_Sklad_dostawy_czesci ON DM_Dostawa_czesci.Id_dostawy=DM_Sklad_dostawy_czesci.Id_dostawy
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_czesci.Data_dostawy,DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci, DM_Sklad_dostawy_czesci.Ilosc 
 UNION ALL
 SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, 
-sum(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_maszyny * Ilosc) as decimal) END) AS Koszt
+SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_maszyny * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_maszyn INNER JOIN
 DM_Sklad_dostawy_maszyn ON DM_Dostawa_maszyn.Id_dostawy=DM_Sklad_dostawy_maszyn.Id_dostawy
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
@@ -636,7 +636,7 @@ AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_maszyn.Data_dostawy,DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny,DM_Sklad_dostawy_maszyn.Ilosc 
 UNION ALL
 SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc,
-sum(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_materialu * Ilosc) as decimal) END) AS Koszt
+SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_materialu * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_materialu INNER JOIN
 DM_Sklad_dostawy_materialu ON DM_Dostawa_materialu.Id_dostawy=DM_Sklad_dostawy_materialu.Id_dostawy
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
@@ -644,7 +644,7 @@ AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_materialu.Data_dostawy,DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu, DM_Sklad_dostawy_materialu.Ilosc 
 UNION ALL
 SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc,
-sum(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_narzedzi * Ilosc) as decimal) END) AS Koszt
+SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_narzedzi * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_narzedzi INNER JOIN
 DM_Sklad_dostawy_narzedzi ON DM_Dostawa_narzedzi.Id_dostawy=DM_Sklad_dostawy_narzedzi.Id_dostawy
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
@@ -652,7 +652,7 @@ AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_narzedzi.Data_dostawy, DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi,DM_Sklad_dostawy_narzedzi.Ilosc 
 UNION ALL
 SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], DP_Serwis_zewnetrzny.Koszt AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc,
-sum(case when Ilosc>=1 then TRY_CAST((Koszt * Ilosc) as decimal) end) as Koszt
+SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Koszt * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DP_Serwis_zewnetrzny
 WHERE (MONTH(Data_zakonczenia)=MONTH(GETDATE())) 
 AND (YEAR(Data_zakonczenia)=YEAR(GETDATE()))
@@ -660,7 +660,7 @@ GROUP BY DP_Serwis_zewnetrzny.Data_zakonczenia, DP_Serwis_zewnetrzny.Koszt, DP_S
 GO
 CREATE VIEW vDZ_Premia
 AS
-SELECT DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Zatrudnienie.Staz, 
+SELECT DZ_Pracownik.Id_pracownika AS [Identyfikator pracownika], DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia AS [Podstawa wynagrodzenia], DZ_Zatrudnienie.Data_zatrudnienia AS [Data zatrudnienia], vDZ_Zatrudnienie.Staz, 
 CASE WHEN Staz>=1 AND Staz<2 THEN ((Podstawa_wynagrodzenia*0.01))
 	 WHEN Staz>=2 AND Staz<3 THEN ((Podstawa_wynagrodzenia*0.02))
 	 WHEN Staz>=3 AND Staz<4 THEN ((Podstawa_wynagrodzenia*0.03))
@@ -681,36 +681,86 @@ CASE WHEN Staz>=1 AND Staz<2 THEN ((Podstawa_wynagrodzenia*0.01))
 	 WHEN Staz>=18 AND Staz<19 THEN ((Podstawa_wynagrodzenia*0.18))
 	 WHEN Staz>=19 AND Staz<20 THEN ((Podstawa_wynagrodzenia*0.19))
 	 WHEN Staz>=20 THEN ((Podstawa_wynagrodzenia*0.2)) END AS Premia
-FROM DZ_Szczegoly_zatrudnienia inner join
-DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia inner join
-DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika inner join
+FROM DZ_Szczegoly_zatrudnienia INNER JOIN
+DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
+DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
 vDZ_Zatrudnienie ON DZ_Zatrudnienie.Id_zatrudnienia=vDZ_Zatrudnienie.[Identyfikator zatrudnienia] 
 GROUP BY DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Zatrudnienie.Staz
 GO
 CREATE VIEW vDZ_Nieobecnosc_pensja
 AS
-SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Nieobecnosc.Data_rozpoczecia, DZ_Nieobecnosc.Data_zakonczenia, DZ_Rodzaj_nieobecnosci.Rodzaj, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
-CASE WHEN Rodzaj='L4' THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.8)+((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) END AS 'Pensja_nieobecnych'
+SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Id_pracownika,DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Nieobecnosc.Data_rozpoczecia, DZ_Nieobecnosc.Data_zakonczenia, DZ_Rodzaj_nieobecnosci.Rodzaj, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
+CASE WHEN Rodzaj='L4' THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.8)-((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) 
+ELSE ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia)-((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34))END AS 'Pensja'
 FROM DZ_Szczegoly_zatrudnienia INNER JOIN
 DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
 DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
 DZ_Nieobecnosc ON DZ_Pracownik.Id_pracownika=DZ_Nieobecnosc.Id_pracownika INNER JOIN
 DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci INNER JOIN
-vDZ_Premia on DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia=vDZ_Premia.Id_pracownika
+vDZ_Premia ON DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia=vDZ_Premia.[Identyfikator pracownika]
 WHERE (MONTH(Data_rozpoczecia)=MONTH(GETDATE())) 
 AND (YEAR(Data_rozpoczecia)=YEAR(GETDATE())) 
 OR (MONTH(Data_zakonczenia)=MONTH(GETDATE())) 
 AND (YEAR(Data_zakonczenia)=YEAR(GETDATE()))
 GO
-CREATE VIEW vDZ_Pensja
+CREATE VIEW vDZ_Obecnosc_pensja
 AS
-SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia,DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
-CASE WHEN DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia>=0 THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia)+((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) END AS 'Pensja'
+SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia,DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
+CASE WHEN DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia>0 THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia)-((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) END AS 'Pensja'
 FROM DZ_Szczegoly_zatrudnienia INNER JOIN
 DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
 DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
-vDZ_Premia on DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia=vDZ_Premia.Id_pracownika
+vDZ_Premia ON DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia=vDZ_Premia.[Identyfikator pracownika]
+WHERE DZ_Pracownik.Id_pracownika not in (SELECT Id_pracownika FROM DZ_Nieobecnosc WHERE (MONTH(Data_rozpoczecia)=MONTH(GETDATE())) 
+AND (YEAR(Data_rozpoczecia)=YEAR(GETDATE())) 
+OR (MONTH(Data_zakonczenia)=MONTH(GETDATE())) 
+AND (YEAR(Data_zakonczenia)=YEAR(GETDATE())))
 GO
+CREATE VIEW vDZ_Wyplata
+AS 
+SELECT vDZ_Nieobecnosc_pensja.Id_pracownika AS [Identyfikator pracownika], vDZ_Nieobecnosc_pensja.Imie, vDZ_Nieobecnosc_pensja.Nazwisko, vDZ_Nieobecnosc_pensja.Podstawa_wynagrodzenia AS [Podstawa wynagrodzenia], vDZ_Nieobecnosc_pensja.Premia, vDZ_Nieobecnosc_pensja.Pensja,
+SUM(Premia+Pensja) AS 'Wypłata'
+FROM vDZ_Nieobecnosc_pensja
+GROUP BY vDZ_Nieobecnosc_pensja.Id_pracownika, vDZ_Nieobecnosc_pensja.Imie, vDZ_Nieobecnosc_pensja.Nazwisko, vDZ_Nieobecnosc_pensja.Podstawa_wynagrodzenia, vDZ_Nieobecnosc_pensja.Premia, vDZ_Nieobecnosc_pensja.Pensja
+UNION
+SELECT vDZ_Obecnosc_pensja.Id_pracownika, vDZ_Obecnosc_pensja.Imie, vDZ_Obecnosc_pensja.Nazwisko, vDZ_Obecnosc_pensja.Podstawa_wynagrodzenia, vDZ_Obecnosc_pensja.Premia, vDZ_Obecnosc_pensja.Pensja,
+SUM(Premia+Pensja) AS 'Wypłata'
+FROM vDZ_Obecnosc_pensja
+GROUP BY vDZ_Obecnosc_pensja.Id_pracownika, vDZ_Obecnosc_pensja.Imie, vDZ_Obecnosc_pensja.Nazwisko, vDZ_Obecnosc_pensja.Podstawa_wynagrodzenia, vDZ_Obecnosc_pensja.Premia, vDZ_Obecnosc_pensja.Pensja
+GO
+CREATE VIEW vDZ_Archiwum_Koszty_zewnetrzne
+AS
+SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc,
+SUM (CASE WHEN Ilosc>=1 THEN TRY_CAST((Cena_jednostkowa_czesci * Ilosc) AS DECIMAL) END) AS Koszt
+FROM DM_Dostawa_czesci inner join
+DM_Sklad_dostawy_czesci ON DM_Dostawa_czesci.Id_dostawy=DM_Sklad_dostawy_czesci.Id_dostawy
+GROUP BY DM_Dostawa_czesci.Data_dostawy,DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci, DM_Sklad_dostawy_czesci.Ilosc 
+UNION ALL
+SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, 
+SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Cena_jednostkowa_maszyny * Ilosc) AS DECIMAL )END) AS Koszt
+FROM DM_Dostawa_maszyn INNER JOIN
+DM_Sklad_dostawy_maszyn ON DM_Dostawa_maszyn.Id_dostawy=DM_Sklad_dostawy_maszyn.Id_dostawy
+GROUP BY DM_Dostawa_maszyn.Data_dostawy,DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny,DM_Sklad_dostawy_maszyn.Ilosc 
+UNION ALL
+SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc,
+SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Cena_jednostkowa_materialu * Ilosc) AS DECIMAL) END) AS Koszt
+FROM DM_Dostawa_materialu INNER JOIN
+DM_Sklad_dostawy_materialu ON DM_Dostawa_materialu.Id_dostawy=DM_Sklad_dostawy_materialu.Id_dostawy
+GROUP BY DM_Dostawa_materialu.Data_dostawy,DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu, DM_Sklad_dostawy_materialu.Ilosc 
+UNION ALL
+SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc,
+SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Cena_jednostkowa_narzedzi * Ilosc) AS DECIMAL) END) AS Koszt
+FROM DM_Dostawa_narzedzi INNER JOIN
+DM_Sklad_dostawy_narzedzi ON DM_Dostawa_narzedzi.Id_dostawy=DM_Sklad_dostawy_narzedzi.Id_dostawy
+GROUP BY DM_Dostawa_narzedzi.Data_dostawy, DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi,DM_Sklad_dostawy_narzedzi.Ilosc 
+UNION ALL
+SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], DP_Serwis_zewnetrzny.Koszt AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc,
+SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Koszt * Ilosc) AS DECIMAL) END) AS Koszt
+FROM DP_Serwis_zewnetrzny
+GROUP BY DP_Serwis_zewnetrzny.Data_zakonczenia, DP_Serwis_zewnetrzny.Koszt, DP_Serwis_zewnetrzny.Ilosc 
+GO
+
+
 
 CREATE VIEW vDM_Wlasciwosc_materialu
 AS

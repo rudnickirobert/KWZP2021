@@ -30,12 +30,12 @@ namespace KWZP2021
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.btnUsuwanieNarzedzia = new System.Windows.Forms.Button();
-            this.btnAddRodzajMaterialu = new System.Windows.Forms.Button();
+            this.btnAddnarzedzie = new System.Windows.Forms.Button();
             this.dgvNarzedzie = new System.Windows.Forms.DataGridView();
             this.btnNarzedziePowrot = new System.Windows.Forms.Button();
-            this.btnEdycjaCzesc = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnDeletenarzedzie = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNarzedzie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,26 +48,16 @@ namespace KWZP2021
             this.label3.TabIndex = 19;
             this.label3.Text = "Wyszukaj narzędzie po nazwie\r\n";
             // 
-            // btnUsuwanieNarzedzia
+            // btnAddnarzedzie
             // 
-            this.btnUsuwanieNarzedzia.Location = new System.Drawing.Point(814, 11);
-            this.btnUsuwanieNarzedzia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUsuwanieNarzedzia.Name = "btnUsuwanieNarzedzia";
-            this.btnUsuwanieNarzedzia.Size = new System.Drawing.Size(143, 60);
-            this.btnUsuwanieNarzedzia.TabIndex = 14;
-            this.btnUsuwanieNarzedzia.Text = "Zużyte narzędzia";
-            this.btnUsuwanieNarzedzia.UseVisualStyleBackColor = true;
-            this.btnUsuwanieNarzedzia.Click += new System.EventHandler(this.btnUsuwanieNarzedzia_Click);
-            // 
-            // btnAddRodzajMaterialu
-            // 
-            this.btnAddRodzajMaterialu.Location = new System.Drawing.Point(491, 11);
-            this.btnAddRodzajMaterialu.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddRodzajMaterialu.Name = "btnAddRodzajMaterialu";
-            this.btnAddRodzajMaterialu.Size = new System.Drawing.Size(138, 60);
-            this.btnAddRodzajMaterialu.TabIndex = 13;
-            this.btnAddRodzajMaterialu.Text = "Dodaj";
-            this.btnAddRodzajMaterialu.UseVisualStyleBackColor = true;
+            this.btnAddnarzedzie.Location = new System.Drawing.Point(323, 11);
+            this.btnAddnarzedzie.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddnarzedzie.Name = "btnAddnarzedzie";
+            this.btnAddnarzedzie.Size = new System.Drawing.Size(138, 60);
+            this.btnAddnarzedzie.TabIndex = 13;
+            this.btnAddnarzedzie.Text = "Dodaj";
+            this.btnAddnarzedzie.UseVisualStyleBackColor = true;
+            this.btnAddnarzedzie.Click += new System.EventHandler(this.btnAddnarzedzie_Click);
             // 
             // dgvNarzedzie
             // 
@@ -78,6 +68,7 @@ namespace KWZP2021
             this.dgvNarzedzie.RowHeadersWidth = 51;
             this.dgvNarzedzie.Size = new System.Drawing.Size(780, 284);
             this.dgvNarzedzie.TabIndex = 12;
+            this.dgvNarzedzie.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNarzedzie_CellDoubleClick);
             // 
             // btnNarzedziePowrot
             // 
@@ -89,15 +80,6 @@ namespace KWZP2021
             this.btnNarzedziePowrot.UseVisualStyleBackColor = true;
             this.btnNarzedziePowrot.Click += new System.EventHandler(this.btnNarzedziePowrot_Click);
             // 
-            // btnEdycjaCzesc
-            // 
-            this.btnEdycjaCzesc.Location = new System.Drawing.Point(646, 11);
-            this.btnEdycjaCzesc.Name = "btnEdycjaCzesc";
-            this.btnEdycjaCzesc.Size = new System.Drawing.Size(147, 60);
-            this.btnEdycjaCzesc.TabIndex = 23;
-            this.btnEdycjaCzesc.Text = "Edycja";
-            this.btnEdycjaCzesc.UseVisualStyleBackColor = true;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(31, 49);
@@ -106,17 +88,39 @@ namespace KWZP2021
             this.textBox1.TabIndex = 24;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // btnDeletenarzedzie
+            // 
+            this.btnDeletenarzedzie.Location = new System.Drawing.Point(469, 11);
+            this.btnDeletenarzedzie.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDeletenarzedzie.Name = "btnDeletenarzedzie";
+            this.btnDeletenarzedzie.Size = new System.Drawing.Size(138, 60);
+            this.btnDeletenarzedzie.TabIndex = 25;
+            this.btnDeletenarzedzie.Text = "Usuń";
+            this.btnDeletenarzedzie.UseVisualStyleBackColor = true;
+            this.btnDeletenarzedzie.Click += new System.EventHandler(this.btnDeletenarzedzie_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(615, 11);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 60);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Usuń";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Narzedzie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(962, 377);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDeletenarzedzie);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnEdycjaCzesc);
             this.Controls.Add(this.btnNarzedziePowrot);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnUsuwanieNarzedzia);
-            this.Controls.Add(this.btnAddRodzajMaterialu);
+            this.Controls.Add(this.btnAddnarzedzie);
             this.Controls.Add(this.dgvNarzedzie);
             this.Name = "Narzedzie";
             this.Text = "Narzedzie";
@@ -128,11 +132,11 @@ namespace KWZP2021
 
         #endregion
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnUsuwanieNarzedzia;
-        private System.Windows.Forms.Button btnAddRodzajMaterialu;
         private System.Windows.Forms.Button btnNarzedziePowrot;
-        private System.Windows.Forms.Button btnEdycjaCzesc;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.DataGridView dgvNarzedzie;
+        public System.Windows.Forms.Button btnAddnarzedzie;
+        public System.Windows.Forms.Button btnDeletenarzedzie;
+        public System.Windows.Forms.Button button1;
     }
 }

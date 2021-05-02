@@ -27,5 +27,11 @@ namespace KWZP2021
             Narzedzie narzedzie = new Narzedzie(this.database);
             narzedzie.ShowDialog();
         }
+
+        private void btn_Rodzaje_Click(object sender, EventArgs e)
+        {
+            Rodzaj_narzedzia rodzaj = new Rodzaj_narzedzia(this.database);
+            rodzaj.ShowDialog();
+        }
     }
 }
