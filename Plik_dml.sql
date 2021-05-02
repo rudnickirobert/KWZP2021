@@ -137,14 +137,14 @@ VALUES
 	;
 INSERT INTO DZ_Rachunek(Id_rodzaj_rachunku, Koszt, Data_zaplaty)
 VALUES
-    ('1',1500,'2020-12-10'),
-	('2',300,'2020-12-11'),
-	('3',15000,'2020-12-1'),
+    ('1',1500,'2021-05-10'),
+	('2',300,'2021-05-11'),
+	('3',15000,'2021-05-1'),
 	('4',1000,'2020-12-12'),
 	('1',1800,'2021-01-10'),
 	('1',900,'2021-01-11'),
 	('2',10000,'2021-01-11'),
-	('4',1000,'2021-01-12')
+	('4',1000,'2021-05-12')
 	;
 INSERT INTO DZ_Pracownik(Imie, Nazwisko, Email, Adres, Miasto, Kod_pocztowy, Data_urodzenia,Telefon, Numer_rachunku)
 VALUES
@@ -479,26 +479,26 @@ VALUES
 INSERT INTO DM_Dostawa_materialu(Id_pracownika, Data_dostawy, Uwagi)
 VALUES
 	(5, '2021-02-27', 'brak'),
-	(6, '2021-04-06', 'brak'),
+	(6, '2021-05-06', 'brak'),
 	(6, '2021-01-23', 'brak'),
 	(5, '2021-02-22', 'brak'),
 	(4, '2021-03-12', 'brak'),
-	(1, '2021-04-02', 'brak')
+	(1, '2021-05-02', 'brak')
 	;
 INSERT INTO DM_Dostawa_czesci(Id_pracownika, Data_dostawy, Uwagi)
 VALUES
 	(7, '2021-04-10', 'brak'),
-	(4, '2021-02-01', 'brak'),
+	(4, '2021-05-01', 'brak'),
 	(5, '2021-01-09', 'brak'),
 	(5, '2021-04-13', 'brak'),
-	(4, '2021-04-17', 'brak'),
+	(4, '2021-05-17', 'brak'),
 	(1, '2021-01-11', 'brak')
 	;
 INSERT INTO DM_Dostawa_narzedzi(Id_pracownika, Data_dostawy, Uwagi)
 VALUES
 	(6, '2021-03-23','brak'),
 	(4, '2021-01-16','brak'),
-	(5, '2021-03-07','brak'),
+	(5, '2021-05-07','brak'),
 	(6, '2021-04-12','brak'),
 	(8, '2021-04-22','brak'),
 	(1, '2021-03-04','brak'),
@@ -507,8 +507,8 @@ VALUES
 INSERT INTO DM_Dostawa_maszyn(Id_pracownika, Data_dostawy, Uwagi)
 VALUES
 	(4, '2021-01-02','brak'),
-	(6, '2021-01-03','brak'),
-	(3, '2021-01-18','brak'),
+	(6, '2021-05-03','brak'),
+	(3, '2021-05-18','brak'),
 	(2, '2021-01-18','brak'),
 	(7, '2021-01-15','brak')
 	;
@@ -875,12 +875,12 @@ VALUES
 	;
 INSERT INTO DP_Serwis_zewnetrzny(Id_firma_serwisowa, Id_maszyny, Id_usluga_serwisu_zewnetrznego, Koszt, Data_rozpoczecia, Data_zakonczenia, Ilosc, Uwagi)
 VALUES
-	(7,1,2,200,'2021-11-12','2021-11-13',1,'zaplanowany'),
+	(7,1,2,200,'2021-05-12','2021-11-13',1,'zaplanowany'),
 	(1,2,2,200,'2021-11-11','2021-11-13',1,'zaplanowany'),
 	(2,3,2,200,'2021-11-15','2021-11-13',1,'zaplanowany'),
 	(3,4,2,200,'2021-11-11','2021-11-13',1,'zaplanowany'),
 	(4,4,1,300,'2021-02-01','2021-02-01',1,'uszkodzenie mechaniczne'),
-	(6,1,1,100,'2021-01-20','2021-01-20',1,'uszkodzenie mechaniczne'),
+	(6,1,1,100,'2021-05-20','2021-01-20',1,'uszkodzenie mechaniczne'),
 	(5,2,1,350,'2021-01-30','2021-01-30',1,'uszkodzenie mechaniczne'),
 	(8,3,1,400,'2021-02-12','',1,'uszkodzenie mechaniczne')
 	;

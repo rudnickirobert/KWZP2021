@@ -53,5 +53,17 @@ namespace KWZP2021
             Close();
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Oplaty_firmy oplaty_firmy = new Oplaty_firmy(this.database);
+            oplaty_firmy.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Obsluga_klienta obsluga_klienta = new Obsluga_klienta(this.database);
+            obsluga_klienta.ShowDialog();
+        }
     }
 }

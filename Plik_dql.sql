@@ -594,7 +594,9 @@ GROUP BY DZ_Rachunek.Id_rachunki, DZ_Rodzaj_rachunku.Rodzaj_rachunku, DZ_Rachune
 GO
 CREATE VIEW vDZ_Wydanie_faktury
 AS
-SELECT DZ_Status_zamowienia.Id_zamowienia AS [Numer faktury], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilość sztuk], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamówienia], DZ_Klient.Nip AS [NIP],DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Klient.Imie AS [Imię], DZ_Klient.Nazwisko, DZ_Klient.Adres, DZ_Klient.Kod_pocztowy AS [Kod pocztowy], DZ_Klient.Miasto, DZ_Klient.Numer_rachunku AS [Numer rachunku]
+SELECT DZ_Status_zamowienia.Id_zamowienia AS [Numer faktury], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilość sztuk], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamówienia], DZ_Klient.Nip AS [NIP],DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Klient.Imie AS [Imię], DZ_Klient.Nazwisko, DZ_Klient.Adres, DZ_Klient.Kod_pocztowy AS [Kod pocztowy], DZ_Klient.Miasto, DZ_Klient.Numer_rachunku AS [Numer rachunku],
+CASE WHEN (DZ_Rodzaj_statusu_zamowienia.Status_zam='zrealizowane') OR (DZ_Rodzaj_statusu_zamowienia.Status_zam='opłacone') THEN 'Wystawiono fakture' 
+	 ELSE 'Nie wystawiono faktury' END AS 'Wydanie faktury'
 FROM DZ_Status_zamowienia INNER JOIN
 DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
 DZ_Szczegoly_zamowienia_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Szczegoly_zamowienia_klienta.Id_zamowienia INNER JOIN
