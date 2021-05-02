@@ -184,7 +184,7 @@ VALUES
 	 (3,5,'2021-01-17','2021-01-18'),
 	 (4,4,'2021-01-21','2021-01-22'),
 	 (6,5,'2021-03-01','2021-03-02'),
-	 (2,2,'2021-03-15','2021-03-20')
+	 (2,2,'2021-03-15','')
 	;
 INSERT INTO DZ_Stanowisko(Stanowisko)
 VALUES
@@ -217,16 +217,16 @@ VALUES
 	;
 INSERT INTO DZ_Zatrudnienie(Id_pracownika, Id_stanowiska, Id_dzialu, Id_etatu, Id_rodzaj_umowy, Data_zatrudnienia,Data_zwolnienia)
 VALUES
-      (1,1,1,3,1,'2020-10-10','2099-03-15'),
+      (1,1,1,3,1,'2020-10-10',''),
 	(2,2,1,1,1,'2020-10-10','2021-02-01'),
-	(3,3,2,1,1,'2020-10-10','2099-03-15'),
-	(4,3,2,1,1,'2020-10-10','2099-03-15'),
+	(3,3,2,1,1,'2020-10-10',''),
+	(4,3,2,1,1,'2020-10-10',''),
 	(5,4,3,1,1,'2020-10-10','2021-03-15'),
-	(6,4,3,2,2,'2020-10-10','2099-03-15'),
-	(7,4,3,1,1,'2020-10-11','2099-03-15'),
+	(6,4,3,2,2,'2020-10-10',''),
+	(7,4,3,1,1,'2020-10-11',''),
 	(8,2,1,1,1,'2020-10-11','2021-03-15'),
-	(9,5,3,1,3,'2020-10-12','2099-03-15'),
-	(10,6,3,1,2,'2020-10-13','2099-03-15')
+	(9,5,3,1,3,'2020-10-12',''),
+	(10,6,3,1,2,'2020-10-13','')
 	;
 INSERT INTO DZ_Szczegoly_Zatrudnienia(Id_zatrudnienia, Data_zmiany_wynagrodzenia, Podstawa_wynagrodzenia)
 VALUES
@@ -882,7 +882,7 @@ VALUES
 	(4,4,1,300,'2021-02-01','2021-02-01',1,'uszkodzenie mechaniczne'),
 	(6,1,1,100,'2021-01-20','2021-01-20',1,'uszkodzenie mechaniczne'),
 	(5,2,1,350,'2021-01-30','2021-01-30',1,'uszkodzenie mechaniczne'),
-	(8,3,1,400,'2021-02-12','2021-02-12',1,'uszkodzenie mechaniczne')
+	(8,3,1,400,'2021-02-12','',1,'uszkodzenie mechaniczne')
 	;
 INSERT INTO DP_Serwis_wewnetrzny_naprawa(Id_maszyny, Id_pracownik, Data_rozpoczecia, Data_zakonczenia, Uwagi)
 VALUES
@@ -890,13 +890,13 @@ VALUES
 	(1,6,'2021-01-16','2021-01-17','naprawa silnika'),
 	(3,8,'2021-01-21','2021-01-21','naprawa sto³u'),
 	(4,6,'2021-01-10','2021-01-11','wymiana zasilacza'),
-	(5,5,'2021-01-15','2021-01-16','wykasowanie bledow')
+	(5,5,'2021-01-15','','wykasowanie bledow')
 	;
 INSERT INTO DP_Serwis_wewnetrzny_obsluga(Id_maszyny, Id_pracownik,Id_czynnosc_w_ramach_obslugi_serw_wew, Data_rozpoczecia, Data_zakonczenia)
 VALUES
 	(1,6,1,'2021-01-10','2021-01-11'),
 	(2,6,2,'2021-01-16','2021-01-17'),
-	(3,6,1,'2021-01-21','2021-01-21'),
+	(3,6,1,'2021-01-21',''),
 	(4,6,1,'2021-01-10','2021-01-11'),
 	(5,6,2,'2021-01-15','2021-01-16')
 	;

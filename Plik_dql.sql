@@ -10,7 +10,7 @@ GO
 CREATE VIEW vDM_Wlasciwosc
 AS
 SELECT Id_wlasciwosc AS [Numer wlasciwosci], nazwa_wlasciwosci AS [Nazwa], jednostka_pomiarowa AS[Jednostka pomiarowa]
-FROM     dbo.DM_Wlasciwosc 
+FROM     dbo.DM_Wlasciwosc
 GO
 CREATE VIEW vDM_Rodzaj_narzedzia
 AS
