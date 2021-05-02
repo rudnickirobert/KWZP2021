@@ -24,6 +24,10 @@ namespace KWZP2021
             this.DP_Serwis_wewnetrzny_obsluga = new HashSet<DP_Serwis_wewnetrzny_obsluga>();
             this.DP_Zuzyta_maszyna = new HashSet<DP_Zuzyta_maszyna>();
             this.DZ_Szczegoly_zam_maszyn = new HashSet<DZ_Szczegoly_zam_maszyn>();
+            this.DP_Model_maszyny1 = new HashSet<DP_Model_maszyny>();
+            this.DP_Po_proc_czynnosc = new HashSet<DP_Po_proc_czynnosc>();
+            this.DP_Po_wydr_proc = new HashSet<DP_Po_wydr_proc>();
+            this.DP_prod_czynnosc_dodatkowa = new HashSet<DP_prod_czynnosc_dodatkowa>();
         }
     
         public int Id_maszyny { get; set; }
@@ -49,5 +53,13 @@ namespace KWZP2021
         public virtual ICollection<DP_Zuzyta_maszyna> DP_Zuzyta_maszyna { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Szczegoly_zam_maszyn> DZ_Szczegoly_zam_maszyn { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Model_maszyny> DP_Model_maszyny1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Po_proc_czynnosc> DP_Po_proc_czynnosc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Po_wydr_proc> DP_Po_wydr_proc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_prod_czynnosc_dodatkowa> DP_prod_czynnosc_dodatkowa { get; set; }
     }
 }

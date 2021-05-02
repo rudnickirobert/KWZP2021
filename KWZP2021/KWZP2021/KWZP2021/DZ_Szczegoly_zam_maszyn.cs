@@ -15,8 +15,8 @@ namespace KWZP2021
     public partial class DZ_Szczegoly_zam_maszyn
     {
         public int Id_szczegoly_zam_maszyn { get; set; }
-        public Nullable<int> Id_zamowienia_zewn { get; set; }
-        public Nullable<int> Id_maszyny { get; set; }
+        public int Id_zamowienia_zewn { get; set; }
+        public int Id_maszyny { get; set; }
         public double Koszt_jednostkowy_oferta { get; set; }
         public int Ilosc { get; set; }
     

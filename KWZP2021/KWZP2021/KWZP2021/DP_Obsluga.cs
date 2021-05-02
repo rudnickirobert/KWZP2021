@@ -15,9 +15,9 @@ namespace KWZP2021
     public partial class DP_Obsluga
     {
         public int Id_obslugi { get; set; }
-        public Nullable<int> Id_nazwa_obslugi { get; set; }
-        public Nullable<int> Id_rodzaj_maszyny { get; set; }
-        public Nullable<int> Id_co_ile_obsluga { get; set; }
+        public int Id_nazwa_obslugi { get; set; }
+        public int Id_rodzaj_maszyny { get; set; }
+        public int Id_co_ile_obsluga { get; set; }
     
         public virtual DP_Co_ile_obsluga DP_Co_ile_obsluga { get; set; }
         public virtual DP_Nazwa_obslugi DP_Nazwa_obslugi { get; set; }

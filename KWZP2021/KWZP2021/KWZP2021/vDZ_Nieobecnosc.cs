@@ -18,6 +18,6 @@ namespace KWZP2021
         public string Nazwisko_pracownika { get; set; }
         public string Rodzaj_nieobecnosci { get; set; }
         public System.DateTime Data_rozpoczecia { get; set; }
-        public System.DateTime Data_zakonczenia { get; set; }
+        public Nullable<System.DateTime> Data_zakonczenia { get; set; }
     }
 }

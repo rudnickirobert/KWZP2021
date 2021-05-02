@@ -18,6 +18,7 @@ namespace KWZP2021
         public DZ_Szczegoly_zamowienia_klienta()
         {
             this.DZ_Wycena_sz_zamowienia = new HashSet<DZ_Wycena_sz_zamowienia>();
+            this.DP_Produkt = new HashSet<DP_Produkt>();
         }
     
         public int Id_szczegoly_zam_klienta { get; set; }
@@ -31,5 +32,7 @@ namespace KWZP2021
         public virtual DZ_Zamowienie_klienta DZ_Zamowienie_klienta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Wycena_sz_zamowienia> DZ_Wycena_sz_zamowienia { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Produkt> DP_Produkt { get; set; }
     }
 }

@@ -14,8 +14,8 @@ namespace KWZP2021
     
     public partial class DP_Po_material_wydruk
     {
-        public Nullable<int> Id_materialu { get; set; }
-        public Nullable<int> Id_po_wydr_proc { get; set; }
+        public int Id_materialu { get; set; }
+        public int Id_po_wydr_proc { get; set; }
         public double Ilosc { get; set; }
     
         public virtual DM_Material DM_Material { get; set; }

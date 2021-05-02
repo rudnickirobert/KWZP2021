@@ -22,9 +22,9 @@ namespace KWZP2021
     
         public int Id_wydruk { get; set; }
         public string Wypelnienie { get; set; }
-        public Nullable<int> Estymowany_czas { get; set; }
+        public int Estymowany_czas { get; set; }
         public string Estymowana_masa { get; set; }
-        public Nullable<int> Id_pliku { get; set; }
+        public int Id_pliku { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Po_wydr_proc> DP_Po_wydr_proc { get; set; }

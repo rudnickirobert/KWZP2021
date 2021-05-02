@@ -15,10 +15,10 @@ namespace KWZP2021
     public partial class DZ_Szczegoly_zam_czesci
     {
         public int Id_szczegoly_zam_czesci { get; set; }
-        public Nullable<int> Id_zamowienia_zewn { get; set; }
-        public Nullable<int> Id_czesci { get; set; }
+        public int Id_zamowienia_zewn { get; set; }
+        public int Id_czesci { get; set; }
         public double Koszt_jednostkowy_oferta { get; set; }
-        public Nullable<int> Id_wlasciwosc { get; set; }
+        public int Id_wlasciwosc { get; set; }
         public int Ilosc { get; set; }
     
         public virtual DM_Czesc DM_Czesc { get; set; }

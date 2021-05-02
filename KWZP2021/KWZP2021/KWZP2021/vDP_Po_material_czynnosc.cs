@@ -16,6 +16,6 @@ namespace KWZP2021
     {
         public int Identyfikator { get; set; }
         public string Nazwa_materialu { get; set; }
-        public Nullable<int> Ilosc_materialu { get; set; }
+        public int Ilosc_materialu { get; set; }
     }
 }

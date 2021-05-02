@@ -17,6 +17,6 @@ namespace KWZP2021
         public int Identyfikator_obslugi { get; set; }
         public string Nazwa_obslugi { get; set; }
         public string Rodzaj_maszyny { get; set; }
-        public Nullable<int> Czas_miedzy_obslugami { get; set; }
+        public int Czas_miedzy_obslugami { get; set; }
     }
 }

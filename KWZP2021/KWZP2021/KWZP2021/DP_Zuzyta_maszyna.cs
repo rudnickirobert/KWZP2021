@@ -15,8 +15,8 @@ namespace KWZP2021
     public partial class DP_Zuzyta_maszyna
     {
         public int Id_zuzyte_maszyny { get; set; }
-        public Nullable<int> Id_maszyny { get; set; }
-        public Nullable<System.DateTime> Data_zuzycia_maszyny { get; set; }
+        public int Id_maszyny { get; set; }
+        public System.DateTime Data_zuzycia_maszyny { get; set; }
         public string Uwagi { get; set; }
     
         public virtual DP_Maszyna DP_Maszyna { get; set; }

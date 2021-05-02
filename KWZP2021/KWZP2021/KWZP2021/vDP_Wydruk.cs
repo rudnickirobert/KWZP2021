@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public int Identyfikator_wydruku { get; set; }
         public string Wypelnienie { get; set; }
-        public Nullable<int> Estymowany_czas_wydruku { get; set; }
+        public int Estymowany_czas_wydruku { get; set; }
         public string Estymowana_masa_wydruku { get; set; }
         public string Nazwa_pliku { get; set; }
     }

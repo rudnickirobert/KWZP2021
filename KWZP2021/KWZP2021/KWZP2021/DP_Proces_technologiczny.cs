@@ -20,6 +20,7 @@ namespace KWZP2021
             this.DP_Po_proc_czynnosc = new HashSet<DP_Po_proc_czynnosc>();
             this.DP_Po_wydr_proc = new HashSet<DP_Po_wydr_proc>();
             this.DP_Proces_produkcyjny = new HashSet<DP_Proces_produkcyjny>();
+            this.DP_Produkt = new HashSet<DP_Produkt>();
         }
     
         public int Id_proces_technologiczny { get; set; }
@@ -31,5 +32,7 @@ namespace KWZP2021
         public virtual ICollection<DP_Po_wydr_proc> DP_Po_wydr_proc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Proces_produkcyjny> DP_Proces_produkcyjny { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Produkt> DP_Produkt { get; set; }
     }
 }

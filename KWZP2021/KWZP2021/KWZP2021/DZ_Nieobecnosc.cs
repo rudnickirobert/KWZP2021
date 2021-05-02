@@ -18,7 +18,7 @@ namespace KWZP2021
         public Nullable<int> Id_pracownika { get; set; }
         public Nullable<int> Id_rodzaj_nieobecnosci { get; set; }
         public System.DateTime Data_rozpoczecia { get; set; }
-        public System.DateTime Data_zakonczenia { get; set; }
+        public Nullable<System.DateTime> Data_zakonczenia { get; set; }
     
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
         public virtual DZ_Rodzaj_nieobecnosci DZ_Rodzaj_nieobecnosci { get; set; }

@@ -193,6 +193,9 @@
     <Compile Include="DP_Obsluga.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_Po_material_czynnosc.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DP_Po_material_wydruk.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -212,6 +215,9 @@
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DP_prod_czynnosc_dodatkowa.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DP_prod_material.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DP_prod_wydruk.cs">

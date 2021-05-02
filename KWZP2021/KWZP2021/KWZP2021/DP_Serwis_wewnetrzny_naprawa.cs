@@ -14,14 +14,25 @@ namespace KWZP2021
     
     public partial class DP_Serwis_wewnetrzny_naprawa
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DP_Serwis_wewnetrzny_naprawa()
+        {
+            this.DM_Czesc = new HashSet<DM_Czesc>();
+            this.DM_Narzedzie = new HashSet<DM_Narzedzie>();
+        }
+    
         public int Id_serwis_wewnetrzny_naprawa { get; set; }
-        public Nullable<int> Id_maszyny { get; set; }
-        public Nullable<int> Id_pracownik { get; set; }
+        public int Id_maszyny { get; set; }
+        public int Id_pracownik { get; set; }
         public System.DateTime Data_rozpoczecia { get; set; }
         public Nullable<System.DateTime> Data_zakonczenia { get; set; }
         public string Uwagi { get; set; }
     
         public virtual DP_Maszyna DP_Maszyna { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DM_Czesc> DM_Czesc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DM_Narzedzie> DM_Narzedzie { get; set; }
     }
 }

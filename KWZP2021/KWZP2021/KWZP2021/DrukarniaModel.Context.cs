@@ -101,7 +101,9 @@ namespace KWZP2021
         public virtual DbSet<DM_Szczegoly_wydania_produktu> DM_Szczegoly_wydania_produktu { get; set; }
         public virtual DbSet<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DbSet<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
+        public virtual DbSet<DP_Po_material_czynnosc> DP_Po_material_czynnosc { get; set; }
         public virtual DbSet<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
+        public virtual DbSet<DP_prod_material> DP_prod_material { get; set; }
         public virtual DbSet<vDM_Czesc> vDM_Czesc { get; set; }
         public virtual DbSet<vDM_Dostawa_czesci> vDM_Dostawa_czesci { get; set; }
         public virtual DbSet<vDM_Dostawa_maszyn> vDM_Dostawa_maszyn { get; set; }

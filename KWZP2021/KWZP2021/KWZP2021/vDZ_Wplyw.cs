@@ -14,7 +14,7 @@ namespace KWZP2021
     
     public partial class vDZ_Wplyw
     {
-        public Nullable<int> Numer_faktury { get; set; }
+        public int Numer_faktury { get; set; }
         public string Status_zamówienia { get; set; }
         public string NIP { get; set; }
         public string Imię { get; set; }

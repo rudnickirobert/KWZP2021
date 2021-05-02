@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public int Identyfikator_zuzycia_maszyny { get; set; }
         public string Numer_seryjny_maszyny { get; set; }
-        public Nullable<System.DateTime> Data_zuzycia { get; set; }
+        public System.DateTime Data_zuzycia { get; set; }
         public string Uwagi { get; set; }
     }
 }

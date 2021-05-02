@@ -21,6 +21,8 @@ namespace KWZP2021
             this.DM_Szczegoly_wydania_materialu = new HashSet<DM_Szczegoly_wydania_materialu>();
             this.DM_Wlasciwosc_materialu = new HashSet<DM_Wlasciwosc_materialu>();
             this.DP_Po_material_wydruk = new HashSet<DP_Po_material_wydruk>();
+            this.DP_Po_material_czynnosc = new HashSet<DP_Po_material_czynnosc>();
+            this.DP_prod_material = new HashSet<DP_prod_material>();
             this.DZ_Szczegoly_zamowienia_klienta = new HashSet<DZ_Szczegoly_zamowienia_klienta>();
             this.DZ_Szczegoly_zam_materialu = new HashSet<DZ_Szczegoly_zam_materialu>();
         }
@@ -38,6 +40,10 @@ namespace KWZP2021
         public virtual ICollection<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Po_material_czynnosc> DP_Po_material_czynnosc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_prod_material> DP_prod_material { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Szczegoly_zamowienia_klienta> DZ_Szczegoly_zamowienia_klienta { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

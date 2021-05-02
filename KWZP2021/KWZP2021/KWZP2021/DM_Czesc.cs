@@ -21,6 +21,7 @@ namespace KWZP2021
             this.DM_Sklad_dostawy_czesci = new HashSet<DM_Sklad_dostawy_czesci>();
             this.DM_Szczegoly_wydania_czesci = new HashSet<DM_Szczegoly_wydania_czesci>();
             this.DZ_Szczegoly_zam_czesci = new HashSet<DZ_Szczegoly_zam_czesci>();
+            this.DP_Serwis_wewnetrzny_naprawa = new HashSet<DP_Serwis_wewnetrzny_naprawa>();
         }
     
         public int Id_czesci { get; set; }
@@ -37,5 +38,7 @@ namespace KWZP2021
         public virtual ICollection<DM_Szczegoly_wydania_czesci> DM_Szczegoly_wydania_czesci { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Szczegoly_zam_czesci> DZ_Szczegoly_zam_czesci { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Serwis_wewnetrzny_naprawa> DP_Serwis_wewnetrzny_naprawa { get; set; }
     }
 }

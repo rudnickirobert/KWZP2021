@@ -15,9 +15,9 @@ namespace KWZP2021
     public partial class DP_Serwis_zewnetrzny
     {
         public int Id_serwis_zewnetrzny { get; set; }
-        public Nullable<int> Id_firma_serwisowa { get; set; }
-        public Nullable<int> Id_maszyny { get; set; }
-        public Nullable<int> Id_usluga_serwisu_zewnetrznego { get; set; }
+        public int Id_firma_serwisowa { get; set; }
+        public int Id_maszyny { get; set; }
+        public int Id_usluga_serwisu_zewnetrznego { get; set; }
         public decimal Koszt { get; set; }
         public System.DateTime Data_rozpoczecia { get; set; }
         public Nullable<System.DateTime> Data_zakonczenia { get; set; }

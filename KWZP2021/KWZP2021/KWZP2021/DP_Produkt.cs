@@ -19,6 +19,8 @@ namespace KWZP2021
         {
             this.DM_Szczegoly_wydania_produktu = new HashSet<DM_Szczegoly_wydania_produktu>();
             this.DM_Szczegoly_magazynu_gotowych_produktow = new HashSet<DM_Szczegoly_magazynu_gotowych_produktow>();
+            this.DP_Proces_technologiczny = new HashSet<DP_Proces_technologiczny>();
+            this.DZ_Szczegoly_zamowienia_klienta = new HashSet<DZ_Szczegoly_zamowienia_klienta>();
         }
     
         public int Id_produkt { get; set; }
@@ -29,5 +31,9 @@ namespace KWZP2021
         public virtual ICollection<DM_Szczegoly_wydania_produktu> DM_Szczegoly_wydania_produktu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_magazynu_gotowych_produktow> DM_Szczegoly_magazynu_gotowych_produktow { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Proces_technologiczny> DP_Proces_technologiczny { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DZ_Szczegoly_zamowienia_klienta> DZ_Szczegoly_zamowienia_klienta { get; set; }
     }
 }

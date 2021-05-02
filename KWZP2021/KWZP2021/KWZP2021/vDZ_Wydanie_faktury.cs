@@ -14,7 +14,7 @@ namespace KWZP2021
     
     public partial class vDZ_Wydanie_faktury
     {
-        public Nullable<int> Numer_faktury { get; set; }
+        public int Numer_faktury { get; set; }
         public int Ilość_sztuk { get; set; }
         public string Nazwa_pliku { get; set; }
         public string Status_zamówienia { get; set; }

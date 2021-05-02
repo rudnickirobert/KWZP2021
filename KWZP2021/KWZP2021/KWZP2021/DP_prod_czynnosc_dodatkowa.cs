@@ -14,12 +14,23 @@ namespace KWZP2021
     
     public partial class DP_prod_czynnosc_dodatkowa
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DP_prod_czynnosc_dodatkowa()
+        {
+            this.DP_Maszyna = new HashSet<DP_Maszyna>();
+            this.DZ_Pracownik = new HashSet<DZ_Pracownik>();
+        }
+    
         public int Id_prod_czynnosci_dodatkowe { get; set; }
-        public Nullable<int> Id_proces_produkcyjny { get; set; }
-        public Nullable<int> Id_rodzaj_czynnosci { get; set; }
-        public Nullable<int> Czas_pracy { get; set; }
+        public int Id_proces_produkcyjny { get; set; }
+        public int Id_rodzaj_czynnosci { get; set; }
+        public int Czas_pracy { get; set; }
     
         public virtual DP_Proces_produkcyjny DP_Proces_produkcyjny { get; set; }
         public virtual DP_Rodzaj_czynnosci DP_Rodzaj_czynnosci { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Maszyna> DP_Maszyna { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DZ_Pracownik> DZ_Pracownik { get; set; }
     }
 }

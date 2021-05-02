@@ -17,6 +17,6 @@ namespace KWZP2021
         public int Identyfikator_czynnosci_dodatkowej { get; set; }
         public int Identyfikator_procesu_produkcyjnego { get; set; }
         public string Nazwa_czynnosci { get; set; }
-        public Nullable<int> Czas_pracy { get; set; }
+        public int Czas_pracy { get; set; }
     }
 }

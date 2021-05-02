@@ -17,7 +17,7 @@ namespace KWZP2021
         public int Identyfikator_zuzycia_narzedzia { get; set; }
         public int Identyfikator_wypozyczenia { get; set; }
         public string Nazwa_narzedzia { get; set; }
-        public Nullable<System.DateTime> Data_zuzycia { get; set; }
+        public System.DateTime Data_zuzycia { get; set; }
         public int Ilosc { get; set; }
         public string C_Uwagi { get; set; }
     }

@@ -23,7 +23,7 @@ namespace KWZP2021
         public int Id_wydania { get; set; }
         public int Id_magazyn_gotowych_produktow { get; set; }
         public Nullable<int> Id_pracownika { get; set; }
-        public Nullable<System.DateTime> Data_i_godzina { get; set; }
+        public System.DateTime Data_i_godzina { get; set; }
         public string Uwagi { get; set; }
     
         public virtual DM_Magazyn_gotowych_produktow DM_Magazyn_gotowych_produktow { get; set; }

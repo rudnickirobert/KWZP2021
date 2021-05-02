@@ -15,9 +15,9 @@ namespace KWZP2021
     public partial class DP_prod_wydruk
     {
         public int Id_prod_wydruk { get; set; }
-        public Nullable<int> Id_proces_produkcyjny { get; set; }
-        public Nullable<int> Id_maszyny { get; set; }
-        public Nullable<int> Czas_wydruku { get; set; }
+        public int Id_proces_produkcyjny { get; set; }
+        public int Id_maszyny { get; set; }
+        public int Czas_wydruku { get; set; }
     
         public virtual DP_Maszyna DP_Maszyna { get; set; }
         public virtual DP_Proces_produkcyjny DP_Proces_produkcyjny { get; set; }

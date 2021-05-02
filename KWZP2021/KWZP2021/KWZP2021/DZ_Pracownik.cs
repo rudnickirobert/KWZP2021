@@ -36,6 +36,8 @@ namespace KWZP2021
             this.DZ_Zamowienie_klienta = new HashSet<DZ_Zamowienie_klienta>();
             this.DZ_Zamowienie_zewn = new HashSet<DZ_Zamowienie_zewn>();
             this.DZ_Zatrudnienie = new HashSet<DZ_Zatrudnienie>();
+            this.DP_Po_proc_czynnosc = new HashSet<DP_Po_proc_czynnosc>();
+            this.DP_prod_czynnosc_dodatkowa = new HashSet<DP_prod_czynnosc_dodatkowa>();
         }
     
         public int Id_pracownika { get; set; }
@@ -87,5 +89,9 @@ namespace KWZP2021
         public virtual ICollection<DZ_Zamowienie_zewn> DZ_Zamowienie_zewn { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Zatrudnienie> DZ_Zatrudnienie { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Po_proc_czynnosc> DP_Po_proc_czynnosc { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_prod_czynnosc_dodatkowa> DP_prod_czynnosc_dodatkowa { get; set; }
     }
 }

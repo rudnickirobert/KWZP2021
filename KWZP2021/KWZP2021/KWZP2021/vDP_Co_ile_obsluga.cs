@@ -15,6 +15,6 @@ namespace KWZP2021
     public partial class vDP_Co_ile_obsluga
     {
         public int Identyfikator { get; set; }
-        public Nullable<int> Czas_miedzy_obslugami { get; set; }
+        public int Czas_miedzy_obslugami { get; set; }
     }
 }

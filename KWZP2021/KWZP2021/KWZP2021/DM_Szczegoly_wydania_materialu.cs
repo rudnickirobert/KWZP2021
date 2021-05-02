@@ -14,7 +14,7 @@ namespace KWZP2021
     
     public partial class DM_Szczegoly_wydania_materialu
     {
-        public Nullable<int> Id_wydanie_materialu_dla_produkcji { get; set; }
+        public int Id_wydanie_materialu_dla_produkcji { get; set; }
         public int Id_materialu { get; set; }
         public int Ilosc { get; set; }
     

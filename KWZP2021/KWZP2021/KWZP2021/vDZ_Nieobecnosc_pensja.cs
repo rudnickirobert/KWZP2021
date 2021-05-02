@@ -19,7 +19,7 @@ namespace KWZP2021
         public string Nazwisko { get; set; }
         public double Podstawa_wynagrodzenia { get; set; }
         public System.DateTime Data_rozpoczecia { get; set; }
-        public System.DateTime Data_zakonczenia { get; set; }
+        public Nullable<System.DateTime> Data_zakonczenia { get; set; }
         public string Rodzaj { get; set; }
         public System.DateTime Data_zatrudnienia { get; set; }
         public Nullable<double> Premia { get; set; }

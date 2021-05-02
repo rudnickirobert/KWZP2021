@@ -19,6 +19,7 @@ namespace KWZP2021
         {
             this.DM_Czesc = new HashSet<DM_Czesc>();
             this.DP_Maszyna = new HashSet<DP_Maszyna>();
+            this.DP_Maszyna1 = new HashSet<DP_Maszyna>();
         }
     
         public int Id_model_maszyny { get; set; }
@@ -28,5 +29,7 @@ namespace KWZP2021
         public virtual ICollection<DM_Czesc> DM_Czesc { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Maszyna> DP_Maszyna { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Maszyna> DP_Maszyna1 { get; set; }
     }
 }

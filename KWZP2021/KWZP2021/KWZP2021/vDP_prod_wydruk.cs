@@ -17,6 +17,6 @@ namespace KWZP2021
         public int Identyfikator_procesu_wydruku { get; set; }
         public int Identyfikator_procesu_produkcyjnego { get; set; }
         public string Numer_seryjny_maszyny { get; set; }
-        public Nullable<int> Czas_wydruku { get; set; }
+        public int Czas_wydruku { get; set; }
     }
 }

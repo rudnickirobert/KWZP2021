@@ -14,7 +14,7 @@ namespace KWZP2021
     
     public partial class DM_Szczegoly_magazynu_gotowych_produktow
     {
-        public Nullable<int> Id_magazynu_gotowych_produktow { get; set; }
+        public int Id_magazynu_gotowych_produktow { get; set; }
         public int Id_produktu { get; set; }
         public int Ilosc { get; set; }
     

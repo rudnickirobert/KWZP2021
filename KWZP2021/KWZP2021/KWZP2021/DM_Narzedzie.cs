@@ -22,6 +22,9 @@ namespace KWZP2021
             this.DM_Szczegoly_wypozyczenia_narzedzia = new HashSet<DM_Szczegoly_wypozyczenia_narzedzia>();
             this.DM_Zuzyte_narzedzie = new HashSet<DM_Zuzyte_narzedzie>();
             this.DZ_Szczegoly_zam_narzedzi = new HashSet<DZ_Szczegoly_zam_narzedzi>();
+            this.DP_Serwis_wewnetrzny_naprawa = new HashSet<DP_Serwis_wewnetrzny_naprawa>();
+            this.DP_Serwis_wewnetrzny_obsluga = new HashSet<DP_Serwis_wewnetrzny_obsluga>();
+            this.DP_Po_proc_czynnosc = new HashSet<DP_Po_proc_czynnosc>();
         }
     
         public int Id_narzedzia { get; set; }
@@ -40,5 +43,11 @@ namespace KWZP2021
         public virtual ICollection<DM_Zuzyte_narzedzie> DM_Zuzyte_narzedzie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DZ_Szczegoly_zam_narzedzi> DZ_Szczegoly_zam_narzedzi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Serwis_wewnetrzny_naprawa> DP_Serwis_wewnetrzny_naprawa { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Serwis_wewnetrzny_obsluga> DP_Serwis_wewnetrzny_obsluga { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Po_proc_czynnosc> DP_Po_proc_czynnosc { get; set; }
     }
 }

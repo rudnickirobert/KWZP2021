@@ -21,8 +21,8 @@ namespace KWZP2021
         }
     
         public int Id_czynnosc_w_ramach_obslugi_serw_wew { get; set; }
-        public Nullable<int> Id_nazwa_obslugi { get; set; }
-        public Nullable<int> Id_czynnosc { get; set; }
+        public int Id_nazwa_obslugi { get; set; }
+        public int Id_czynnosc { get; set; }
     
         public virtual DP_Czynnosc DP_Czynnosc { get; set; }
         public virtual DP_Nazwa_obslugi DP_Nazwa_obslugi { get; set; }

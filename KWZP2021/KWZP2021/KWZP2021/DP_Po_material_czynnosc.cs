@@ -12,13 +12,13 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class DM_Parametr_czesci
+    public partial class DP_Po_material_czynnosc
     {
-        public int Id_czesci { get; set; }
-        public int Id_wlasciwosc { get; set; }
-        public string Wartosc { get; set; }
+        public int Id_po_proc_czynnosci { get; set; }
+        public int Id_materialu { get; set; }
+        public int Ilosc { get; set; }
     
-        public virtual DM_Czesc DM_Czesc { get; set; }
-        public virtual DM_Wlasciwosc DM_Wlasciwosc { get; set; }
+        public virtual DM_Material DM_Material { get; set; }
+        public virtual DP_Po_proc_czynnosc DP_Po_proc_czynnosc { get; set; }
     }
 }
