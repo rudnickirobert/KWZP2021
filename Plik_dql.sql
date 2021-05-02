@@ -1,4 +1,4 @@
-USE Drukarnia
+USE Drukarnia4
 GO
 
 CREATE VIEW vDM_Material
@@ -614,8 +614,8 @@ GO
 CREATE VIEW vDZ_Wplyw
 AS
 SELECT vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamówienia], vDZ_Wydanie_faktury.NIP, vDZ_Wydanie_faktury.Imię, vDZ_Wydanie_faktury.Nazwisko,
-CASE WHEN 'Status zamówienia'='opłacone' THEN  ('Wpływ')
-	 WHEN 'Status zamówienia'='zrealizowane' OR 'Status zamówienia'='przyjete do realizacji' OR 'Status zamówienia'='oczekuje na zatwierdzenie' OR 'Status zamówienia'='nie przyjete do realizacji' THEN  ('NIE OPŁACONO') END AS 'Status wpływu'
+CASE WHEN vDZ_Wydanie_faktury.[Status zamówienia]='opłacone' THEN 'OPŁACONE'
+	 ELSE 'NIE OPŁACONO' END AS 'Status wpływu'
 FROM vDZ_Wydanie_faktury CROSS JOIN DZ_Szczegoly_zatrudnienia  INNER JOIN
 DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
 DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
