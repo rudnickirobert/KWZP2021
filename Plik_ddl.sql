@@ -33,7 +33,8 @@ CREATE TABLE DM_Narzedzie (
 	Id_narzedzia int identity(1,1) not null PRIMARY KEY,
 	Nazwa nvarchar(30) not null,
 	Id_rodzaj_narzedzia int not null FOREIGN KEY REFERENCES DM_Rodzaj_narzedzia (Id_rodzaj_narzedzia),
-	Ilosc_poczatkowa int not null
+	Nr_seryjny varchar(30) not null,
+	Data_zuzycia date NULL default GETDATE()
 );
 CREATE TABLE DM_Dostawca(
 	Id_dostawcy int identity(1,1) NOT NULL PRIMARY KEY, 

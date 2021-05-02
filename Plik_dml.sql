@@ -55,19 +55,19 @@ VALUES
 	('pedzel'),
 	('uchwyt')
 	;
-INSERT INTO DM_Narzedzie (Nazwa,Id_rodzaj_narzedzia, Ilosc_poczatkowa)
+INSERT INTO DM_Narzedzie (Nazwa,Id_rodzaj_narzedzia, Nr_seryjny, Data_zuzycia)
 VALUES
-    ('Makita HF25',1,3),
-	('MAKITA HF20',1,1),
-	('MAKITA WI1',2,2),
-	('MAKITA WI2',2,1),
-	('MAKITA WK456',3,3),
-	('Super',4,2),
-	('Twardy',5,3),
-	('Ostra',6,1),
-	('Maly',7,10),
-	('Duzy',7,5),
-	('Uchwyt',8,25)
+    ('Makita HF25',1,'124545123',''),
+	('MAKITA HF20',2,'675433654',''),
+	('MAKITA WI1',3,'354655235',''),
+	('MAKITA WI2',3,'234676543',''),
+	('MAKITA WK456',2,'432654463',''),
+	('Super',4,'gh324',''),
+	('Twardy',5,'adg343',''),
+	('Ostra',6,'asf213',''),
+	('Maly',7,'asjku54',''),
+	('Duzy',7,'asgf3',''),
+	('Chwyter',8,'asgr445','')
 	;
 INSERT INTO DM_Dostawca (Nazwa, NIP, Uwagi)
 VALUES
@@ -179,11 +179,11 @@ VALUES
 INSERT INTO DZ_Nieobecnosc(Id_pracownika,Id_Rodzaj_nieobecnosci,Data_rozpoczecia, Data_zakonczenia)
 VALUES
     (1,1,'2020-11-10','2020-11-15'),
-	 (1,3,'2020-05-01','2020-05-21'),
+	 (1,3,'2020-01-01','2020-01-21'),
 	 (4,2,'2020-01-15','2020-01-17'),
 	 (3,5,'2021-01-17','2021-01-18'),
 	 (4,4,'2021-01-21','2021-01-22'),
-	 (6,5,'2021-05-01','2021-05-02'),
+	 (6,5,'2021-03-01','2021-03-02'),
 	 (2,2,'2021-03-15','')
 	;
 INSERT INTO DZ_Stanowisko(Stanowisko)
