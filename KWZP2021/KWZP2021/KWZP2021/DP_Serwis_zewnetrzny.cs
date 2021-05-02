@@ -21,6 +21,7 @@ namespace KWZP2021
         public decimal Koszt { get; set; }
         public System.DateTime Data_rozpoczecia { get; set; }
         public Nullable<System.DateTime> Data_zakonczenia { get; set; }
+        public int Ilosc { get; set; }
         public string Uwagi { get; set; }
     
         public virtual DP_Firma_serwisowa DP_Firma_serwisowa { get; set; }

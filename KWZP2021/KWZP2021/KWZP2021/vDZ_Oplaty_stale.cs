@@ -12,10 +12,11 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Rodzaj_nieobecnosci
+    public partial class vDZ_Oplaty_stale
     {
-        public int Numer_rodzaju { get; set; }
-        public string rodzaj { get; set; }
-        public double Procent_pensji { get; set; }
+        public int Numer_rachunku { get; set; }
+        public string Rodzaj_rachunku { get; set; }
+        public double Koszt { get; set; }
+        public System.DateTime Data_zapłaty { get; set; }
     }
 }

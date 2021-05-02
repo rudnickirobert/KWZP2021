@@ -12,18 +12,19 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Klient
+    public partial class vDZ_Wydanie_faktury
     {
-        public int Numer_klienta { get; set; }
-        public string Nazwa_firmy { get; set; }
+        public Nullable<int> Numer_faktury { get; set; }
+        public int Ilość_sztuk { get; set; }
+        public string Nazwa_pliku { get; set; }
+        public string Status_zamówienia { get; set; }
         public string NIP { get; set; }
-        public string Imiê { get; set; }
+        public string Nazwa_firmy { get; set; }
+        public string Imię { get; set; }
         public string Nazwisko { get; set; }
         public string Adres { get; set; }
-        public string Miasto { get; set; }
         public string Kod_pocztowy { get; set; }
-        public string E_mail { get; set; }
-        public string telefon { get; set; }
+        public string Miasto { get; set; }
         public string Numer_rachunku { get; set; }
     }
 }

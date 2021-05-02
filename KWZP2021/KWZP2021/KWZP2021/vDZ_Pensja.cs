@@ -12,10 +12,14 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Materialu
+    public partial class vDZ_Pensja
     {
-        public int Numer_materialu { get; set; }
-        public string Rodzaj_materialu { get; set; }
-        public string Nazwa_materialu { get; set; }
+        public int Id_szczegoly_zatrudnienia { get; set; }
+        public string Imie { get; set; }
+        public string Nazwisko { get; set; }
+        public double Podstawa_wynagrodzenia { get; set; }
+        public System.DateTime Data_zatrudnienia { get; set; }
+        public Nullable<double> Premia { get; set; }
+        public Nullable<double> Pensja { get; set; }
     }
 }

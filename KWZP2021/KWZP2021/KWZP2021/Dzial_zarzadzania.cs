@@ -14,6 +14,7 @@ namespace KWZP2021
 
          
         }
+    
         private void Dzial_zarzadzania_Load(object sender, EventArgs e)
         {
 
@@ -43,6 +44,14 @@ namespace KWZP2021
         {
             Pracownicy pracownicy = new Pracownicy(this.database);
             pracownicy.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+            Close();
+
         }
     }
 }

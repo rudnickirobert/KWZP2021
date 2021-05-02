@@ -62,7 +62,7 @@ namespace KWZP2021
             this.Controls.Add(this.dataSzczegoly);
             this.Controls.Add(this.lblNowyKlient);
             this.Name = "Szczegoly_zatrudnienia";
-            this.Text = "Szczegoly_zatrudnienia";
+            this.Text = "Szczegóły zatrudnienia";
             this.Load += new System.EventHandler(this.Szczegoly_zatrudnienia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSzczegoly)).EndInit();
             this.ResumeLayout(false);

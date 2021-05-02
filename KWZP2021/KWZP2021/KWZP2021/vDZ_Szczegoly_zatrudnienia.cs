@@ -15,7 +15,7 @@ namespace KWZP2021
     public partial class vDZ_Szczegoly_zatrudnienia
     {
         public int Identyfikator_szczegolow_zatrudnienia { get; set; }
-        public Nullable<int> Nazwisko_pracownika { get; set; }
+        public string Nazwisko_pracownika { get; set; }
         public System.DateTime Data_zmiany_wynagrodzenia { get; set; }
         public double Podstawa_wynagrodzenia { get; set; }
     }

@@ -22,5 +22,6 @@ namespace KWZP2021
         public string Rodzaj_umowy { get; set; }
         public System.DateTime Data_zatrudnienia { get; set; }
         public System.DateTime Data_zwolnienia { get; set; }
+        public Nullable<int> Staz { get; set; }
     }
 }

@@ -297,7 +297,7 @@ namespace KWZP2021
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Konkretny_klient";
-            this.Text = "Konkretny_klient";
+            this.Text = "Edytuj dane klienta";
             this.Load += new System.EventHandler(this.Konkretny_klient_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataKonkretnyKlient)).EndInit();
             this.ResumeLayout(false);

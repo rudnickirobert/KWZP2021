@@ -287,7 +287,7 @@ namespace KWZP2021
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Nowy_klient";
-            this.Text = "Nowy_klient";
+            this.Text = "Dodaj nowego klienta";
             this.Load += new System.EventHandler(this.Nowy_klient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

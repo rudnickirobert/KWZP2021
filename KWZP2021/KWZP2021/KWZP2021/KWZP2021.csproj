@@ -367,6 +367,12 @@
     <Compile Include="Konkretny_klient.Designer.cs">
       <DependentUpon>Konkretny_klient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Konkretny_pracownik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konkretny_pracownik.Designer.cs">
+      <DependentUpon>Konkretny_pracownik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -384,6 +390,12 @@
     </Compile>
     <Compile Include="Nowy_klient.Designer.cs">
       <DependentUpon>Nowy_klient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nowy_pracownik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nowy_pracownik.Designer.cs">
+      <DependentUpon>Nowy_pracownik.cs</DependentUpon>
     </Compile>
     <Compile Include="Pracownicy.cs">
       <SubType>Form</SubType>
@@ -444,7 +456,7 @@
     <Compile Include="vDM_Magazyn_gotowych_produktow.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDM_Materialu.cs">
+    <Compile Include="vDM_Material.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDM_Narzedzie.cs">
@@ -627,7 +639,22 @@
     <Compile Include="vDZ_Klient.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDZ_Koszty_zewnetrzne.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDZ_Nieobecnosc.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Nieobecnosc_pensja.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Oferta_dla_klienta.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Oplaty_stale.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Pensja.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Plik.cs">
@@ -637,6 +664,9 @@
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Pracownik.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Premia.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Rachunek.cs">
@@ -675,7 +705,13 @@
     <Compile Include="vDZ_Szczegoly_zatrudnienia.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDZ_Wplyw.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDZ_Wycena_sz_zamowienia.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Wydanie_faktury.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Zamowienie_klienta.cs">
@@ -732,6 +768,9 @@
     <EmbeddedResource Include="Konkretny_klient.resx">
       <DependentUpon>Konkretny_klient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Konkretny_pracownik.resx">
+      <DependentUpon>Konkretny_pracownik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
     </EmbeddedResource>
@@ -740,6 +779,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nowy_klient.resx">
       <DependentUpon>Nowy_klient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nowy_pracownik.resx">
+      <DependentUpon>Nowy_pracownik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pracownicy.resx">
       <DependentUpon>Pracownicy.cs</DependentUpon>

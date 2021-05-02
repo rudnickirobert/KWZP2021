@@ -85,6 +85,7 @@
             this.Controls.Add(this.DZ_Button);
             this.Name = "Form1";
             this.Text = "Drukarnia 3D";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
