@@ -96,6 +96,8 @@ namespace KWZP2021
             this.txtFindMaterial.Size = new System.Drawing.Size(100, 20);
             this.txtFindMaterial.TabIndex = 10;
             this.txtFindMaterial.TextChanged += new System.EventHandler(this.txtFindMaterial_TextChanged);
+            this.txtFindMaterial.Enter += new System.EventHandler(this.txtFindMaterial_Enter);
+            this.txtFindMaterial.Leave += new System.EventHandler(this.txtFindMaterial_Leave);
             // 
             // btnSearch
             // 
@@ -143,9 +145,9 @@ namespace KWZP2021
         private System.Windows.Forms.Button btnDeleteMaterial;
         private System.Windows.Forms.Button btnUpdateMaterial;
         private System.Windows.Forms.Button btnAddNewMaterial;
-        private System.Windows.Forms.TextBox txtFindMaterial;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.DataGridView dgvMaterial;
+        private System.Windows.Forms.TextBox txtFindMaterial;
     }
 }

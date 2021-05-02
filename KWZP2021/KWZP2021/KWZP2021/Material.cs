@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Threading.Tasks;
+using System.Text;
+using System.Drawing;
+using System.Collections.Generic;
 
 namespace KWZP2021
 {
@@ -65,6 +69,26 @@ namespace KWZP2021
             edytujmaterial.cmbEdytujRodzajMaterialu.Text = dgvMaterial.CurrentRow.Cells[1].Value.ToString();
             // asd = Convert.(this.dgvMaterial.CurrentRow.Cells[0].Value);
             edytujmaterial.ShowDialog();
+        }
+
+        private void txtFindMaterial_Enter(object sender, EventArgs e)
+        {
+            if (txtFindMaterial.Text == "Wyszukaj...")
+            {
+                txtFindMaterial.Text = "";
+                initDataGridView();
+            }
+        }
+
+        private void txtFindMaterial_Leave(object sender, EventArgs e)
+        {
+            if (txtFindMaterial.Text.Length == 0)
+            {
+                txtFindMaterial.ForeColor = Color.Gray;
+                txtFindMaterial.Font = new Font("Microsoft Sans Serif", 8, FontStyle.Italic);
+                txtFindMaterial.Text = "Wyszukaj...";
+                initDataGridView();
+            }
         }
     }
 }
