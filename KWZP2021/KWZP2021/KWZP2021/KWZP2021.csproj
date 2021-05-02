@@ -379,6 +379,12 @@
     <Compile Include="Konkretny_pracownik.Designer.cs">
       <DependentUpon>Konkretny_pracownik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Koszty_zewnetrzne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Koszty_zewnetrzne.Designer.cs">
+      <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
+    </Compile>
     <Compile Include="Material.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +408,24 @@
     </Compile>
     <Compile Include="Nowy_pracownik.Designer.cs">
       <DependentUpon>Nowy_pracownik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obsluga_klienta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsluga_klienta.Designer.cs">
+      <DependentUpon>Obsluga_klienta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oplaty_firmy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oplaty_firmy.Designer.cs">
+      <DependentUpon>Oplaty_firmy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oplaty_stale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oplaty_stale.Designer.cs">
+      <DependentUpon>Oplaty_stale.cs</DependentUpon>
     </Compile>
     <Compile Include="Pracownicy.cs">
       <SubType>Form</SubType>
@@ -735,6 +759,12 @@
     <Compile Include="Wlasciwosc.Designer.cs">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wplywy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wplywy.Designer.cs">
+      <DependentUpon>Wplywy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zatrudnienie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -777,6 +807,9 @@
     <EmbeddedResource Include="Konkretny_pracownik.resx">
       <DependentUpon>Konkretny_pracownik.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Koszty_zewnetrzne.resx">
+      <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
     </EmbeddedResource>
@@ -788,6 +821,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nowy_pracownik.resx">
       <DependentUpon>Nowy_pracownik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obsluga_klienta.resx">
+      <DependentUpon>Obsluga_klienta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oplaty_firmy.resx">
+      <DependentUpon>Oplaty_firmy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oplaty_stale.resx">
+      <DependentUpon>Oplaty_stale.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pracownicy.resx">
       <DependentUpon>Pracownicy.cs</DependentUpon>
@@ -818,6 +860,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wlasciwosc.resx">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wplywy.resx">
+      <DependentUpon>Wplywy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Zatrudnienie.resx">
       <DependentUpon>Zatrudnienie.cs</DependentUpon>
