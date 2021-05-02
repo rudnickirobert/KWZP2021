@@ -137,14 +137,14 @@ VALUES
 	;
 INSERT INTO DZ_Rachunek(Id_rodzaj_rachunku, Koszt, Data_zaplaty)
 VALUES
-    ('1',1500,'2020-12-10'),
-	('2',300,'2020-12-11'),
-	('3',15000,'2020-12-1'),
+    ('1',1500,'2021-05-10'),
+	('2',300,'2021-05-11'),
+	('3',15000,'2021-05-1'),
 	('4',1000,'2020-12-12'),
 	('1',1800,'2021-01-10'),
 	('1',900,'2021-01-11'),
 	('2',10000,'2021-01-11'),
-	('4',1000,'2021-01-12')
+	('4',1000,'2021-05-12')
 	;
 INSERT INTO DZ_Pracownik(Imie, Nazwisko, Email, Adres, Miasto, Kod_pocztowy, Data_urodzenia,Telefon, Numer_rachunku)
 VALUES
