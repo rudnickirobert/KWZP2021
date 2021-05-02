@@ -29,76 +29,67 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnRodzajMaterial = new System.Windows.Forms.Button();
-            this.btnWlasciwosc = new System.Windows.Forms.Button();
-            this.btnMaterial = new System.Windows.Forms.Button();
-            this.btnNarzedzie = new System.Windows.Forms.Button();
-            this.btnCzesc = new System.Windows.Forms.Button();
+            this.btnPrzejdzmaterial = new System.Windows.Forms.Button();
+            this.btnPrzejdzczesc = new System.Windows.Forms.Button();
+            this.btnPrzejdzdostawa = new System.Windows.Forms.Button();
+            this.btnPrzejdznarzedzie = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnRodzajMaterial
+            // btnPrzejdzmaterial
             // 
-            this.btnRodzajMaterial.Location = new System.Drawing.Point(45, 33);
-            this.btnRodzajMaterial.Name = "btnRodzajMaterial";
-            this.btnRodzajMaterial.Size = new System.Drawing.Size(110, 50);
-            this.btnRodzajMaterial.TabIndex = 0;
-            this.btnRodzajMaterial.Text = "Rodzaj materialu";
-            this.btnRodzajMaterial.UseVisualStyleBackColor = true;
-            this.btnRodzajMaterial.Click += new System.EventHandler(this.btnRodzajMaterial_Click);
+            this.btnPrzejdzmaterial.Location = new System.Drawing.Point(26, 32);
+            this.btnPrzejdzmaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdzmaterial.Name = "btnPrzejdzmaterial";
+            this.btnPrzejdzmaterial.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdzmaterial.TabIndex = 5;
+            this.btnPrzejdzmaterial.Text = "Materiał";
+            this.btnPrzejdzmaterial.UseVisualStyleBackColor = true;
+            this.btnPrzejdzmaterial.Click += new System.EventHandler(this.btnPrzejdzmaterial_Click);
             // 
-            // btnWlasciwosc
+            // btnPrzejdzczesc
             // 
-            this.btnWlasciwosc.Location = new System.Drawing.Point(310, 33);
-            this.btnWlasciwosc.Name = "btnWlasciwosc";
-            this.btnWlasciwosc.Size = new System.Drawing.Size(110, 50);
-            this.btnWlasciwosc.TabIndex = 1;
-            this.btnWlasciwosc.Text = "Wlasciwosc";
-            this.btnWlasciwosc.UseVisualStyleBackColor = true;
-            this.btnWlasciwosc.Click += new System.EventHandler(this.btnWlasciwosc_Click);
+            this.btnPrzejdzczesc.Location = new System.Drawing.Point(200, 32);
+            this.btnPrzejdzczesc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdzczesc.Name = "btnPrzejdzczesc";
+            this.btnPrzejdzczesc.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdzczesc.TabIndex = 6;
+            this.btnPrzejdzczesc.Text = "Część";
+            this.btnPrzejdzczesc.UseVisualStyleBackColor = true;
+            this.btnPrzejdzczesc.Click += new System.EventHandler(this.btnPrzejdzczesc_Click);
             // 
-            // btnMaterial
+            // btnPrzejdzdostawa
             // 
-            this.btnMaterial.Location = new System.Drawing.Point(174, 33);
-            this.btnMaterial.Name = "btnMaterial";
-            this.btnMaterial.Size = new System.Drawing.Size(110, 50);
-            this.btnMaterial.TabIndex = 2;
-            this.btnMaterial.Text = "Materiał";
-            this.btnMaterial.UseVisualStyleBackColor = true;
-            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
+            this.btnPrzejdzdostawa.Location = new System.Drawing.Point(26, 115);
+            this.btnPrzejdzdostawa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdzdostawa.Name = "btnPrzejdzdostawa";
+            this.btnPrzejdzdostawa.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdzdostawa.TabIndex = 7;
+            this.btnPrzejdzdostawa.Text = "Dostawa";
+            this.btnPrzejdzdostawa.UseVisualStyleBackColor = true;
+            this.btnPrzejdzdostawa.Click += new System.EventHandler(this.btnPrzejdzdostawa_Click);
             // 
-            // btnNarzedzie
+            // btnPrzejdznarzedzie
             // 
-            this.btnNarzedzie.Location = new System.Drawing.Point(45, 134);
-            this.btnNarzedzie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnNarzedzie.Name = "btnNarzedzie";
-            this.btnNarzedzie.Size = new System.Drawing.Size(110, 50);
-            this.btnNarzedzie.TabIndex = 3;
-            this.btnNarzedzie.Text = "Narzędzie";
-            this.btnNarzedzie.UseVisualStyleBackColor = true;
-            this.btnNarzedzie.Click += new System.EventHandler(this.btnNarzedzie_Click);
-            // 
-            // btnCzesc
-            // 
-            this.btnCzesc.Location = new System.Drawing.Point(174, 134);
-            this.btnCzesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnCzesc.Name = "btnCzesc";
-            this.btnCzesc.Size = new System.Drawing.Size(110, 50);
-            this.btnCzesc.TabIndex = 4;
-            this.btnCzesc.Text = "Część";
-            this.btnCzesc.UseVisualStyleBackColor = true;
-            this.btnCzesc.Click += new System.EventHandler(this.btnCzesc_Click);
+            this.btnPrzejdznarzedzie.Location = new System.Drawing.Point(200, 115);
+            this.btnPrzejdznarzedzie.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdznarzedzie.Name = "btnPrzejdznarzedzie";
+            this.btnPrzejdznarzedzie.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdznarzedzie.TabIndex = 8;
+            this.btnPrzejdznarzedzie.Text = "Narzędzie";
+            this.btnPrzejdznarzedzie.UseVisualStyleBackColor = true;
+            this.btnPrzejdznarzedzie.Click += new System.EventHandler(this.btnPrzejdznarzedzie_Click);
             // 
             // Dzial_magazynowy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCzesc);
-            this.Controls.Add(this.btnNarzedzie);
-            this.Controls.Add(this.btnMaterial);
-            this.Controls.Add(this.btnWlasciwosc);
-            this.Controls.Add(this.btnRodzajMaterial);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnPrzejdznarzedzie);
+            this.Controls.Add(this.btnPrzejdzdostawa);
+            this.Controls.Add(this.btnPrzejdzczesc);
+            this.Controls.Add(this.btnPrzejdzmaterial);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Dzial_magazynowy";
             this.Text = "Dzial_magazynowy";
             this.Load += new System.EventHandler(this.Dzial_magazynowy_Load);
@@ -107,11 +98,9 @@ namespace KWZP2021
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnRodzajMaterial;
-        private System.Windows.Forms.Button btnWlasciwosc;
-        private System.Windows.Forms.Button btnMaterial;
-        private System.Windows.Forms.Button btnNarzedzie;
-        private System.Windows.Forms.Button btnCzesc;
+        private System.Windows.Forms.Button btnPrzejdzmaterial;
+        private System.Windows.Forms.Button btnPrzejdzczesc;
+        private System.Windows.Forms.Button btnPrzejdzdostawa;
+        private System.Windows.Forms.Button btnPrzejdznarzedzie;
     }
 }

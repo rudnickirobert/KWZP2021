@@ -67,6 +67,12 @@
     <Compile Include="Czesc.Designer.cs">
       <DependentUpon>Czesc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Czesc_glowna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Czesc_glowna.Designer.cs">
+      <DependentUpon>Czesc_glowna.cs</DependentUpon>
+    </Compile>
     <Compile Include="Czynnosci_do_Procesu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,6 +186,18 @@
     </Compile>
     <Compile Include="Dodaj_czesc.Designer.cs">
       <DependentUpon>Dodaj_czesc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_zuzyte_narzedzie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_zuzyte_narzedzie.Designer.cs">
+      <DependentUpon>Dodaj_zuzyte_narzedzie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dostawa_glowny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dostawa_glowny.Designer.cs">
+      <DependentUpon>Dostawa_glowny.cs</DependentUpon>
     </Compile>
     <Compile Include="DP_Co_ile_obsluga.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
@@ -403,11 +421,23 @@
     <Compile Include="Material.Designer.cs">
       <DependentUpon>Material.cs</DependentUpon>
     </Compile>
+    <Compile Include="Material_glowny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Material_glowny.Designer.cs">
+      <DependentUpon>Material_glowny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Narzedzie.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Narzedzie.Designer.cs">
       <DependentUpon>Narzedzie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Narzedzie_glowny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Narzedzie_glowny.Designer.cs">
+      <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
     </Compile>
     <Compile Include="Nowe_zatrudnienie.cs">
       <SubType>Form</SubType>
@@ -801,6 +831,9 @@
     <EmbeddedResource Include="Czesc.resx">
       <DependentUpon>Czesc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Czesc_glowna.resx">
+      <DependentUpon>Czesc_glowna.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Czynnosci_do_Procesu.resx">
       <DependentUpon>Czynnosci_do_Procesu.cs</DependentUpon>
     </EmbeddedResource>
@@ -812,6 +845,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dodaj_czesc.resx">
       <DependentUpon>Dodaj_czesc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_zuzyte_narzedzie.resx">
+      <DependentUpon>Dodaj_zuzyte_narzedzie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dzial_magazynowy.resx">
       <DependentUpon>Dzial_magazynowy.cs</DependentUpon>
@@ -843,8 +879,14 @@
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Material_glowny.resx">
+      <DependentUpon>Material_glowny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Narzedzie.resx">
       <DependentUpon>Narzedzie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Narzedzie_glowny.resx">
+      <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nowe_zatrudnienie.resx">
       <DependentUpon>Nowe_zatrudnienie.cs</DependentUpon>
