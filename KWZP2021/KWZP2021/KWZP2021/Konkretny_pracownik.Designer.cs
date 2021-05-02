@@ -29,7 +29,6 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataKonkretnyKlient = new System.Windows.Forms.DataGridView();
             this.buttonPowrot = new System.Windows.Forms.Button();
             this.buttonWyczyscPola = new System.Windows.Forms.Button();
             this.buttonZapiszKonkretnegoKlienta = new System.Windows.Forms.Button();
@@ -52,17 +51,8 @@ namespace KWZP2021
             this.label3 = new System.Windows.Forms.Label();
             this.txtData2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataKonkretnyKlient)).BeginInit();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
-            // 
-            // dataKonkretnyKlient
-            // 
-            this.dataKonkretnyKlient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataKonkretnyKlient.Location = new System.Drawing.Point(3, 9);
-            this.dataKonkretnyKlient.Name = "dataKonkretnyKlient";
-            this.dataKonkretnyKlient.Size = new System.Drawing.Size(46, 39);
-            this.dataKonkretnyKlient.TabIndex = 74;
-            this.dataKonkretnyKlient.Visible = false;
             // 
             // buttonPowrot
             // 
@@ -92,6 +82,7 @@ namespace KWZP2021
             this.buttonZapiszKonkretnegoKlienta.TabIndex = 71;
             this.buttonZapiszKonkretnegoKlienta.Text = "Zapisz";
             this.buttonZapiszKonkretnegoKlienta.UseVisualStyleBackColor = true;
+            this.buttonZapiszKonkretnegoKlienta.Click += new System.EventHandler(this.buttonZapiszKonkretnegoKlienta_Click);
             // 
             // lblNowyKlient
             // 
@@ -246,14 +237,22 @@ namespace KWZP2021
             this.label1.TabIndex = 75;
             this.label1.Text = "Data urodzenia";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Location = new System.Drawing.Point(155, 292);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(148, 20);
+            this.dateTimePicker1.TabIndex = 77;
+            // 
             // Konkretny_pracownik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(355, 450);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtData2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataKonkretnyKlient);
             this.Controls.Add(this.buttonPowrot);
             this.Controls.Add(this.buttonWyczyscPola);
             this.Controls.Add(this.buttonZapiszKonkretnegoKlienta);
@@ -277,15 +276,12 @@ namespace KWZP2021
             this.Name = "Konkretny_pracownik";
             this.Text = "Edytuj dane pracownika";
             this.Load += new System.EventHandler(this.Konkretny_pracownik_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataKonkretnyKlient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataKonkretnyKlient;
         private System.Windows.Forms.Button buttonPowrot;
         private System.Windows.Forms.Button buttonWyczyscPola;
         private System.Windows.Forms.Button buttonZapiszKonkretnegoKlienta;
@@ -308,5 +304,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtData2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

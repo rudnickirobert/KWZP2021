@@ -36,13 +36,33 @@ namespace KWZP2021
                 txtEmail2.Text = "";
                 txtTelefon2.Text = "";
                 txtNumer_Rachunku2.Text = "";
-            txtData2.Text = "";
+                txtData2.Text = "";
 
 
         }
 
         private void buttonPowrot_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void buttonZapiszKonkretnegoKlienta_Click(object sender, EventArgs e)
+        {
+            Pracownicy frm = (Pracownicy)Application.OpenForms["Pracownicy"];
+            int row = (frm.dvgPracownik.CurrentRow.Index) + 1;
+            DZ_Pracownik toUpdate = this.database.DZ_Pracownik.Where(pracownik => pracownik.Id_pracownika == row).First();
+
+            toUpdate.Imie = txtImie2.Text; // UPDATE
+            toUpdate.Nazwisko = txtNazwisko2.Text; // UPDATE
+            toUpdate.Adres = txtAdres2.Text; // UPDATE
+            toUpdate.Miasto = txtMiasto2.Text; // UPDATE
+            toUpdate.Kod_pocztowy = txtKod_Pocztowy2.Text; // UPDATE
+            toUpdate.Email = txtEmail2.Text; // UPDATE
+            toUpdate.Telefon = txtTelefon2.Text; // UPDATE
+            toUpdate.Numer_rachunku = txtNumer_Rachunku2.Text; // UPDATE
+            toUpdate.Data_urodzenia = dateTimePicker1.Value;
+            frm.dvgPracownik.DataSource = this.database.vDZ_Pracownik.ToList();
+            this.database.SaveChanges();
             this.Close();
         }
     }

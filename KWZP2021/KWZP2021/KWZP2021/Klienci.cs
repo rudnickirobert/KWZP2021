@@ -22,8 +22,9 @@ namespace KWZP2021
             this.comboBox1.DisplayMember = "Stanowisko";
             this.comboBox1.ValueMember = "Id_stanowiska";*/
 
-            this.dvgKlient.DataSource = this.database.vDZ_Klient.ToList();
-            
+            initdvgKlient();
+
+
 
         }
 
@@ -42,7 +43,7 @@ namespace KWZP2021
         }
 
 
-        private void dvgKlient_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dvgKlient_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             this.dvgKlient.DataSource = this.database.vDZ_Klient.ToList();
         }
@@ -77,7 +78,7 @@ namespace KWZP2021
 
             }
         }
-        private void initdvgKlient()
+        public void initdvgKlient()
         {
             this.dvgKlient.DataSource = this.database.vDZ_Klient.ToList();
 
@@ -123,7 +124,7 @@ namespace KWZP2021
             //database.SaveChanges();
             //this.Close();
             konkretny_klient.ShowDialog();
-            //initdvgKlient();
+            initdvgKlient();
         }
     }
 }

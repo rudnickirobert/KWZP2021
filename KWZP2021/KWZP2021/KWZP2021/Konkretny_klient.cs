@@ -17,13 +17,13 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
-            initdataKonkretnyKlient();
+            //initdataKonkretnyKlient();
 
 
         }
         private void initdataKonkretnyKlient()
         {
-            this.dataKonkretnyKlient.DataSource = this.database.vDZ_Klient.ToList();
+            //this.dataKonkretnyKlient.DataSource = this.database.vDZ_Klient.ToList();
 
         }
         private void Konkretny_klient_Load(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace KWZP2021
 
         private void buttonPowrot_Click(object sender, EventArgs e)
         {
-            initdataKonkretnyKlient();
+            //initdataKonkretnyKlient();
             this.Close();
         }
 
@@ -67,24 +67,25 @@ namespace KWZP2021
         private void buttonZapiszKonkretnegoKlienta_Click(object sender, EventArgs e)
         {
 
-           int id = Convert.ToInt32(this.dataKonkretnyKlient.CurrentRow.Cells[0].Value);
+            Klienci frm = (Klienci)Application.OpenForms["Klienci"];
+            int row = (frm.dvgKlient.CurrentRow.Index) + 1;
+            DZ_Klient toUpdate = this.database.DZ_Klient.Where(klient => klient.Id_klienta == row).First();
 
-            DZ_Klient toUpdate = this.database.DZ_Klient.Where(Nazwa_firmy => Nazwa_firmy.Id_klienta == id).First();
+            toUpdate.Nazwa_firmy = txtNazwa_Firmy1.Text; // UPDATE
+            toUpdate.Nip = txtNip1.Text; // UPDATE
+            toUpdate.Imie = txtImie1.Text; // UPDATE
+            toUpdate.Nazwisko = txtNazwisko1.Text; // UPDATE
+            toUpdate.Adres = txtAdres1.Text; // UPDATE
+            toUpdate.Miasto = txtMiasto1.Text; // UPDATE
+            toUpdate.Kod_pocztowy = txtKod_Pocztowy1.Text; // UPDATE
+            toUpdate.Email = txtEmail1.Text; // UPDATE
+            toUpdate.Telefon = txtTelefon1.Text; // UPDATE
+            toUpdate.Numer_rachunku = txtNumer_Rachunku1.Text; // UPDATE
+            frm.dvgKlient.DataSource = this.database.vDZ_Klient.ToList();
 
-               toUpdate.Nazwa_firmy = txtNazwa_Firmy1.Text; // UPDATE
-               toUpdate.Nip = txtNip1.Text; // UPDATE
-               toUpdate.Imie = txtImie1.Text; // UPDATE
-               toUpdate.Nazwisko = txtNazwisko1.Text; // UPDATE
-               toUpdate.Adres = txtAdres1.Text; // UPDATE
-               toUpdate.Miasto = txtMiasto1.Text; // UPDATE
-               toUpdate.Kod_pocztowy = txtKod_Pocztowy1.Text; // UPDATE
-               toUpdate.Email = txtEmail1.Text; // UPDATE
-               toUpdate.Telefon= txtTelefon1.Text; // UPDATE
-               toUpdate.Numer_rachunku = txtNumer_Rachunku1.Text; // UPDATE
-            initdataKonkretnyKlient();
             this.database.SaveChanges();
-                this.Close();
-                
+            this.Close();
+
 
 
         }

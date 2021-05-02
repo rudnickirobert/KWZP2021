@@ -29,7 +29,7 @@ namespace KWZP2021
         {
 
         }
-        private void initdvgPracownik()
+       public void initdvgPracownik()
         {
             this.dvgPracownik.DataSource = this.database.vDZ_Pracownik.ToList();
 
@@ -50,10 +50,10 @@ namespace KWZP2021
             Konkretny_pracownik konkretny_pracownik = new Konkretny_pracownik(this.database);
             konkretny_pracownik.txtImie2.Text = dvgPracownik.CurrentRow.Cells[1].Value.ToString();
             konkretny_pracownik.txtNazwisko2.Text = dvgPracownik.CurrentRow.Cells[2].Value.ToString();
-            konkretny_pracownik.txtAdres2.Text = dvgPracownik.CurrentRow.Cells[3].Value.ToString();
-            konkretny_pracownik.txtMiasto2.Text = dvgPracownik.CurrentRow.Cells[4].Value.ToString();
-            konkretny_pracownik.txtKod_Pocztowy2.Text = dvgPracownik.CurrentRow.Cells[5].Value.ToString();
-            konkretny_pracownik.txtEmail2.Text = dvgPracownik.CurrentRow.Cells[6].Value.ToString();
+            konkretny_pracownik.txtAdres2.Text = dvgPracownik.CurrentRow.Cells[4].Value.ToString();
+            konkretny_pracownik.txtMiasto2.Text = dvgPracownik.CurrentRow.Cells[5].Value.ToString();
+            konkretny_pracownik.txtKod_Pocztowy2.Text = dvgPracownik.CurrentRow.Cells[6].Value.ToString();
+            konkretny_pracownik.txtEmail2.Text = dvgPracownik.CurrentRow.Cells[3].Value.ToString();
             konkretny_pracownik.txtTelefon2.Text = dvgPracownik.CurrentRow.Cells[8].Value.ToString();
             konkretny_pracownik.txtNumer_Rachunku2.Text = dvgPracownik.CurrentRow.Cells[9].Value.ToString();
             konkretny_pracownik.txtData2.Text = dvgPracownik.CurrentRow.Cells[7].Value.ToString();
@@ -62,7 +62,7 @@ namespace KWZP2021
             //database.SaveChanges();
             //this.Close();
             konkretny_pracownik.ShowDialog();
-            //initdvgKlient();
+            initdvgPracownik();
         }
 
         private void buttonWyszukajPracownika_Click(object sender, EventArgs e)
