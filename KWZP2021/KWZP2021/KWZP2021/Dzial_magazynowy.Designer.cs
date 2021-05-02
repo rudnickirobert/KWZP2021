@@ -32,6 +32,8 @@ namespace KWZP2021
             this.btnRodzajMaterial = new System.Windows.Forms.Button();
             this.btnWlasciwosc = new System.Windows.Forms.Button();
             this.btnMaterial = new System.Windows.Forms.Button();
+            this.btnNarzedzie = new System.Windows.Forms.Button();
+            this.btnCzesc = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRodzajMaterial
@@ -64,11 +66,36 @@ namespace KWZP2021
             this.btnMaterial.UseVisualStyleBackColor = true;
             this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
             // 
+            // btnNarzedzie
+            // 
+            this.btnNarzedzie.Location = new System.Drawing.Point(45, 134);
+            this.btnNarzedzie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNarzedzie.Name = "btnNarzedzie";
+            this.btnNarzedzie.Size = new System.Drawing.Size(110, 50);
+            this.btnNarzedzie.TabIndex = 3;
+            this.btnNarzedzie.Text = "Narzędzie";
+            this.btnNarzedzie.UseVisualStyleBackColor = true;
+            this.btnNarzedzie.Click += new System.EventHandler(this.btnNarzedzie_Click);
+            // 
+            // btnCzesc
+            // 
+            this.btnCzesc.Location = new System.Drawing.Point(174, 134);
+            this.btnCzesc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCzesc.Name = "btnCzesc";
+            this.btnCzesc.Size = new System.Drawing.Size(110, 50);
+            this.btnCzesc.TabIndex = 4;
+            this.btnCzesc.Text = "Część";
+            this.btnCzesc.UseVisualStyleBackColor = true;
+            this.btnCzesc.Click += new System.EventHandler(this.btnCzesc_Click);
+            // 
             // Dzial_magazynowy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Highlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCzesc);
+            this.Controls.Add(this.btnNarzedzie);
             this.Controls.Add(this.btnMaterial);
             this.Controls.Add(this.btnWlasciwosc);
             this.Controls.Add(this.btnRodzajMaterial);
@@ -84,5 +111,7 @@ namespace KWZP2021
         private System.Windows.Forms.Button btnRodzajMaterial;
         private System.Windows.Forms.Button btnWlasciwosc;
         private System.Windows.Forms.Button btnMaterial;
+        private System.Windows.Forms.Button btnNarzedzie;
+        private System.Windows.Forms.Button btnCzesc;
     }
 }

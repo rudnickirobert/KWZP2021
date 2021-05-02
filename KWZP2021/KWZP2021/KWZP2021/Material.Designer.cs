@@ -29,29 +29,18 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
             this.btnDeleteMaterial = new System.Windows.Forms.Button();
             this.btnUpdateMaterial = new System.Windows.Forms.Button();
             this.btnAddNewMaterial = new System.Windows.Forms.Button();
             this.dgvMaterial = new System.Windows.Forms.DataGridView();
             this.txtFindMaterial = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).BeginInit();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Wyszukaj";
-            // 
             // btnDeleteMaterial
             // 
-            this.btnDeleteMaterial.Location = new System.Drawing.Point(721, 42);
+            this.btnDeleteMaterial.Location = new System.Drawing.Point(720, 51);
             this.btnDeleteMaterial.Name = "btnDeleteMaterial";
             this.btnDeleteMaterial.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteMaterial.TabIndex = 15;
@@ -61,7 +50,7 @@ namespace KWZP2021
             // 
             // btnUpdateMaterial
             // 
-            this.btnUpdateMaterial.Location = new System.Drawing.Point(640, 42);
+            this.btnUpdateMaterial.Location = new System.Drawing.Point(639, 51);
             this.btnUpdateMaterial.Name = "btnUpdateMaterial";
             this.btnUpdateMaterial.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateMaterial.TabIndex = 14;
@@ -71,7 +60,7 @@ namespace KWZP2021
             // 
             // btnAddNewMaterial
             // 
-            this.btnAddNewMaterial.Location = new System.Drawing.Point(559, 42);
+            this.btnAddNewMaterial.Location = new System.Drawing.Point(558, 50);
             this.btnAddNewMaterial.Name = "btnAddNewMaterial";
             this.btnAddNewMaterial.Size = new System.Drawing.Size(75, 23);
             this.btnAddNewMaterial.TabIndex = 12;
@@ -91,22 +80,13 @@ namespace KWZP2021
             // 
             // txtFindMaterial
             // 
-            this.txtFindMaterial.Location = new System.Drawing.Point(71, 44);
+            this.txtFindMaterial.Location = new System.Drawing.Point(9, 53);
             this.txtFindMaterial.Name = "txtFindMaterial";
-            this.txtFindMaterial.Size = new System.Drawing.Size(100, 20);
+            this.txtFindMaterial.Size = new System.Drawing.Size(120, 20);
             this.txtFindMaterial.TabIndex = 10;
             this.txtFindMaterial.TextChanged += new System.EventHandler(this.txtFindMaterial_TextChanged);
             this.txtFindMaterial.Enter += new System.EventHandler(this.txtFindMaterial_Enter);
             this.txtFindMaterial.Leave += new System.EventHandler(this.txtFindMaterial_Leave);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(189, 42);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 19;
-            this.btnSearch.Text = "Szukaj";
-            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -124,8 +104,6 @@ namespace KWZP2021
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(808, 448);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDeleteMaterial);
             this.Controls.Add(this.btnUpdateMaterial);
             this.Controls.Add(this.btnAddNewMaterial);
@@ -141,11 +119,9 @@ namespace KWZP2021
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDeleteMaterial;
         private System.Windows.Forms.Button btnUpdateMaterial;
         private System.Windows.Forms.Button btnAddNewMaterial;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.DataGridView dgvMaterial;
         private System.Windows.Forms.TextBox txtFindMaterial;

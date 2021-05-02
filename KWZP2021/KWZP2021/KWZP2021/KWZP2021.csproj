@@ -61,6 +61,12 @@
     <Compile Include="AddFirmaSerwisowa.Designer.cs">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Czesc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Czesc.Designer.cs">
+      <DependentUpon>Czesc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Czynnosci_do_Procesu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="DodajMaterial.Designer.cs">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_czesc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_czesc.Designer.cs">
+      <DependentUpon>Dodaj_czesc.cs</DependentUpon>
     </Compile>
     <Compile Include="DP_Co_ile_obsluga.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
@@ -390,6 +402,12 @@
     </Compile>
     <Compile Include="Material.Designer.cs">
       <DependentUpon>Material.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Narzedzie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Narzedzie.Designer.cs">
+      <DependentUpon>Narzedzie.cs</DependentUpon>
     </Compile>
     <Compile Include="Nowe_zatrudnienie.cs">
       <SubType>Form</SubType>
@@ -771,8 +789,17 @@
     <Compile Include="Zatrudnienie.Designer.cs">
       <DependentUpon>Zatrudnienie.cs</DependentUpon>
     </Compile>
+    <Compile Include="Zuzyte_narzedzie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Zuzyte_narzedzie.Designer.cs">
+      <DependentUpon>Zuzyte_narzedzie.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddFirmaSerwisowa.resx">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Czesc.resx">
+      <DependentUpon>Czesc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Czynnosci_do_Procesu.resx">
       <DependentUpon>Czynnosci_do_Procesu.cs</DependentUpon>
@@ -782,6 +809,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DodajMaterial.resx">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_czesc.resx">
+      <DependentUpon>Dodaj_czesc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dzial_magazynowy.resx">
       <DependentUpon>Dzial_magazynowy.cs</DependentUpon>
@@ -812,6 +842,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Material.resx">
       <DependentUpon>Material.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Narzedzie.resx">
+      <DependentUpon>Narzedzie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nowe_zatrudnienie.resx">
       <DependentUpon>Nowe_zatrudnienie.cs</DependentUpon>
@@ -866,6 +899,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Zatrudnienie.resx">
       <DependentUpon>Zatrudnienie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Zuzyte_narzedzie.resx">
+      <DependentUpon>Zuzyte_narzedzie.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DrukarniaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
