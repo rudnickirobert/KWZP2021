@@ -14,7 +14,7 @@ namespace KWZP2021
     
     public partial class vDZ_Premia
     {
-        public int Id_pracownika { get; set; }
+        public int Identyfikator_pracownika { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public double Podstawa_wynagrodzenia { get; set; }

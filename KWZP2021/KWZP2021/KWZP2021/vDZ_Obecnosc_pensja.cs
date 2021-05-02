@@ -12,11 +12,15 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Koszty_zewnetrzne
+    public partial class vDZ_Obecnosc_pensja
     {
-        public Nullable<System.DateTime> Data { get; set; }
-        public decimal Cena_jednostkowa { get; set; }
-        public int Ilosc { get; set; }
-        public Nullable<decimal> Koszt { get; set; }
+        public int Id_szczegoly_zatrudnienia { get; set; }
+        public int Id_pracownika { get; set; }
+        public string Imie { get; set; }
+        public string Nazwisko { get; set; }
+        public double Podstawa_wynagrodzenia { get; set; }
+        public System.DateTime Data_zatrudnienia { get; set; }
+        public Nullable<double> Premia { get; set; }
+        public Nullable<double> Pensja { get; set; }
     }
 }

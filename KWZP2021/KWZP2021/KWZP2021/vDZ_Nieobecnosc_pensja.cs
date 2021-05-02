@@ -15,6 +15,7 @@ namespace KWZP2021
     public partial class vDZ_Nieobecnosc_pensja
     {
         public int Id_szczegoly_zatrudnienia { get; set; }
+        public int Id_pracownika { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public double Podstawa_wynagrodzenia { get; set; }
@@ -23,6 +24,6 @@ namespace KWZP2021
         public string Rodzaj { get; set; }
         public System.DateTime Data_zatrudnienia { get; set; }
         public Nullable<double> Premia { get; set; }
-        public Nullable<double> Pensja_nieobecnych { get; set; }
+        public Nullable<double> Pensja { get; set; }
     }
 }

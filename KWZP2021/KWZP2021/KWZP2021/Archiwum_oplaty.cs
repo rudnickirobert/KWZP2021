@@ -10,34 +10,39 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Koszty_zewnetrzne : Form
+    public partial class Archiwum_oplaty : Form
     {
         DrukarniaEntities database;
-        public Koszty_zewnetrzne(DrukarniaEntities database)
+        public Archiwum_oplaty(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
 
-            this.dataGridView1.DataSource = this.database.vDZ_Koszty_zewnetrzne.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Rachunek.ToList();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dataGridView1.DataSource = this.database.vDZ_Koszty_zewnetrzne.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Rachunek.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = "0";
+            label2.Text = "0";
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                label1.Text = Convert.ToString(double.Parse(label1.Text) + double.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()));
+                label2.Text = Convert.ToString(double.Parse(label2.Text) + double.Parse(dataGridView1.Rows[i].Cells[2].Value.ToString()));
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = database.vDZ_Koszty_zewnetrzne.Where(x => x.Data.ToString().Contains(textBox1.Text)).ToList();
+            dataGridView1.DataSource = database.vDZ_Rachunek.Where(x => x.Rodzaj_rachunku.Contains(textBox1.Text)).ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,4 +69,5 @@ namespace KWZP2021
             }
         }
     }
+    
 }

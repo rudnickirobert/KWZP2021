@@ -10,37 +10,28 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Koszty_zewnetrzne : Form
+    public partial class Oferta_dla_klienta : Form
     {
         DrukarniaEntities database;
-        public Koszty_zewnetrzne(DrukarniaEntities database)
+        public Oferta_dla_klienta(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
 
-            this.dataGridView1.DataSource = this.database.vDZ_Koszty_zewnetrzne.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Oferta_dla_klienta.ToList();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dataGridView1.DataSource = this.database.vDZ_Koszty_zewnetrzne.ToList();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            label1.Text = "0";
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                label1.Text = Convert.ToString(double.Parse(label1.Text) + double.Parse(dataGridView1.Rows[i].Cells[3].Value.ToString()));
-            }
+            this.dataGridView1.DataSource = this.database.vDZ_Oferta_dla_klienta.ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = database.vDZ_Koszty_zewnetrzne.Where(x => x.Data.ToString().Contains(textBox1.Text)).ToList();
+            dataGridView1.DataSource = database.vDZ_Oferta_dla_klienta.Where(x => x.Nazwa_firmy.Contains(textBox1.Text)|| x.Nip.Contains(textBox1.Text)).ToList();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             string searchValue = textBox1.Text;
 

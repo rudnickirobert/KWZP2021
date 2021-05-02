@@ -61,6 +61,24 @@
     <Compile Include="AddFirmaSerwisowa.Designer.cs">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Archiwum.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archiwum.Designer.cs">
+      <DependentUpon>Archiwum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archiwum_koszty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archiwum_koszty.Designer.cs">
+      <DependentUpon>Archiwum_koszty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Archiwum_oplaty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Archiwum_oplaty.Designer.cs">
+      <DependentUpon>Archiwum_oplaty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Czesc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -397,6 +415,18 @@
     <Compile Include="Klienci.Designer.cs">
       <DependentUpon>Klienci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Konkretna_faktura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konkretna_faktura.Designer.cs">
+      <DependentUpon>Konkretna_faktura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Konkretna_wyplata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konkretna_wyplata.Designer.cs">
+      <DependentUpon>Konkretna_wyplata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Konkretny_klient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -462,6 +492,12 @@
     </Compile>
     <Compile Include="Obsluga_klienta.Designer.cs">
       <DependentUpon>Obsluga_klienta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Oferta_dla_klienta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oferta_dla_klienta.Designer.cs">
+      <DependentUpon>Oferta_dla_klienta.cs</DependentUpon>
     </Compile>
     <Compile Include="Oplaty_firmy.cs">
       <SubType>Form</SubType>
@@ -708,6 +744,9 @@
     <Compile Include="vDP_Zuzyta_maszyna.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDZ_Archiwum_Koszty_zewnetrzne.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDZ_Dzial.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -726,13 +765,13 @@
     <Compile Include="vDZ_Nieobecnosc_pensja.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDZ_Obecnosc_pensja.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDZ_Oferta_dla_klienta.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Oplaty_stale.cs">
-      <DependentUpon>DrukarniaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vDZ_Pensja.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Plik.cs">
@@ -792,6 +831,9 @@
     <Compile Include="vDZ_Wydanie_faktury.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDZ_Wyplata.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDZ_Zamowienie_klienta.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -813,6 +855,18 @@
     <Compile Include="Wplywy.Designer.cs">
       <DependentUpon>Wplywy.cs</DependentUpon>
     </Compile>
+    <Compile Include="Wydanie_faktury.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wydanie_faktury.Designer.cs">
+      <DependentUpon>Wydanie_faktury.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wyplata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wyplata.Designer.cs">
+      <DependentUpon>Wyplata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zatrudnienie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -827,6 +881,15 @@
     </Compile>
     <EmbeddedResource Include="AddFirmaSerwisowa.resx">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archiwum.resx">
+      <DependentUpon>Archiwum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archiwum_koszty.resx">
+      <DependentUpon>Archiwum_koszty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Archiwum_oplaty.resx">
+      <DependentUpon>Archiwum_oplaty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Czesc.resx">
       <DependentUpon>Czesc.cs</DependentUpon>
@@ -867,6 +930,12 @@
     <EmbeddedResource Include="Klienci.resx">
       <DependentUpon>Klienci.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Konkretna_faktura.resx">
+      <DependentUpon>Konkretna_faktura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Konkretna_wyplata.resx">
+      <DependentUpon>Konkretna_wyplata.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Konkretny_klient.resx">
       <DependentUpon>Konkretny_klient.cs</DependentUpon>
     </EmbeddedResource>
@@ -899,6 +968,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obsluga_klienta.resx">
       <DependentUpon>Obsluga_klienta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oferta_dla_klienta.resx">
+      <DependentUpon>Oferta_dla_klienta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Oplaty_firmy.resx">
       <DependentUpon>Oplaty_firmy.cs</DependentUpon>
@@ -938,6 +1010,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wplywy.resx">
       <DependentUpon>Wplywy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wydanie_faktury.resx">
+      <DependentUpon>Wydanie_faktury.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wyplata.resx">
+      <DependentUpon>Wyplata.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Zatrudnienie.resx">
       <DependentUpon>Zatrudnienie.cs</DependentUpon>

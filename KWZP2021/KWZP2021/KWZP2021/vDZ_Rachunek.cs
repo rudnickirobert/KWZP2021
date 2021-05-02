@@ -15,7 +15,7 @@ namespace KWZP2021
     public partial class vDZ_Rachunek
     {
         public int Numer_rachunku { get; set; }
-        public int Rodzaj_rachunku { get; set; }
+        public string Rodzaj_rachunku { get; set; }
         public double Koszt { get; set; }
         public System.DateTime Data_zaplaty { get; set; }
     }

@@ -26,5 +26,6 @@ namespace KWZP2021
         public string Kod_pocztowy { get; set; }
         public string Miasto { get; set; }
         public string Numer_rachunku { get; set; }
+        public string Wydanie_faktury { get; set; }
     }
 }

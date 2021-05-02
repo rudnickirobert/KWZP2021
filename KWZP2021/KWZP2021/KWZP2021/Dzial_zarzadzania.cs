@@ -65,5 +65,17 @@ namespace KWZP2021
             Obsluga_klienta obsluga_klienta = new Obsluga_klienta(this.database);
             obsluga_klienta.ShowDialog();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Brak bilansu do wyświetlenia", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Archiwum archiwum = new Archiwum(this.database);
+            archiwum.ShowDialog();
+
+        }
     }
 }

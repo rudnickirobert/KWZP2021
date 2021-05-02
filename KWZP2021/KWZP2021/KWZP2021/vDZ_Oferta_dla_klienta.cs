@@ -14,8 +14,8 @@ namespace KWZP2021
     
     public partial class vDZ_Oferta_dla_klienta
     {
-        public int Id_zamowienia { get; set; }
-        public string Status_zam { get; set; }
+        public int Numer_zamowienia { get; set; }
+        public string Status_zamowienia { get; set; }
         public string Nip { get; set; }
         public string Nazwa_firmy { get; set; }
         public int Ilosc_sztuk { get; set; }

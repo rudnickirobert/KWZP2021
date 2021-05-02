@@ -1751,6 +1751,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Zuzyta_maszyna' does not have a 
           <Property Name="Uwagi" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDZ_Archiwum_Koszty_zewnetrzne' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDZ_Archiwum_Koszty_zewnetrzne">
+          <Key>
+            <PropertyRef Name="Cena jednostkowa" />
+            <PropertyRef Name="Ilosc" />
+          </Key>
+          <Property Name="Data" Type="date" />
+          <Property Name="Cena jednostkowa" Type="money" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
+          <Property Name="Koszt" Type="decimal" Precision="38" Scale="0" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Dzial' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Dzial">
           <Key>
@@ -1803,11 +1815,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Koszty_zewnetrzne' does not have
         <EntityType Name="vDZ_Koszty_zewnetrzne">
           <Key>
             <PropertyRef Name="Cena jednostkowa" />
-            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Data" Type="date" />
           <Property Name="Cena jednostkowa" Type="money" Nullable="false" />
-          <Property Name="Ilość" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
           <Property Name="Koszt" Type="decimal" Precision="38" Scale="0" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1830,6 +1842,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Nieobecnosc_pensja' does not hav
         <EntityType Name="vDZ_Nieobecnosc_pensja">
           <Key>
             <PropertyRef Name="Id_szczegoly_zatrudnienia" />
+            <PropertyRef Name="Id_pracownika" />
             <PropertyRef Name="Imie" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="Podstawa_wynagrodzenia" />
@@ -1838,6 +1851,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Nieobecnosc_pensja' does not hav
             <PropertyRef Name="Data_zatrudnienia" />
           </Key>
           <Property Name="Id_szczegoly_zatrudnienia" Type="int" Nullable="false" />
+          <Property Name="Id_pracownika" Type="int" Nullable="false" />
           <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Podstawa_wynagrodzenia" Type="float" Nullable="false" />
@@ -1846,23 +1860,43 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Nieobecnosc_pensja' does not hav
           <Property Name="Rodzaj" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Data_zatrudnienia" Type="date" Nullable="false" />
           <Property Name="Premia" Type="float" />
-          <Property Name="Pensja_nieobecnych" Type="float" />
+          <Property Name="Pensja" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDZ_Obecnosc_pensja' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDZ_Obecnosc_pensja">
+          <Key>
+            <PropertyRef Name="Id_szczegoly_zatrudnienia" />
+            <PropertyRef Name="Id_pracownika" />
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+            <PropertyRef Name="Podstawa_wynagrodzenia" />
+            <PropertyRef Name="Data_zatrudnienia" />
+          </Key>
+          <Property Name="Id_szczegoly_zatrudnienia" Type="int" Nullable="false" />
+          <Property Name="Id_pracownika" Type="int" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Podstawa_wynagrodzenia" Type="float" Nullable="false" />
+          <Property Name="Data_zatrudnienia" Type="date" Nullable="false" />
+          <Property Name="Premia" Type="float" />
+          <Property Name="Pensja" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Oferta_dla_klienta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Oferta_dla_klienta">
           <Key>
-            <PropertyRef Name="Id_zamowienia" />
-            <PropertyRef Name="Status_zam" />
+            <PropertyRef Name="Numer zamowienia" />
+            <PropertyRef Name="Status zamowienia" />
             <PropertyRef Name="Nip" />
-            <PropertyRef Name="Nazwa_firmy" />
-            <PropertyRef Name="Ilosc_sztuk" />
+            <PropertyRef Name="Nazwa firmy" />
+            <PropertyRef Name="Ilosc sztuk" />
           </Key>
-          <Property Name="Id_zamowienia" Type="int" Nullable="false" />
-          <Property Name="Status_zam" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Numer zamowienia" Type="int" Nullable="false" />
+          <Property Name="Status zamowienia" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Nip" Type="nvarchar" MaxLength="15" Nullable="false" />
-          <Property Name="Nazwa_firmy" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Ilosc_sztuk" Type="int" Nullable="false" />
+          <Property Name="Nazwa firmy" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilosc sztuk" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Oplaty_stale' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1877,24 +1911,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Oplaty_stale' does not have a pr
           <Property Name="Rodzaj rachunku" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Koszt" Type="float" Nullable="false" />
           <Property Name="Data zapłaty" Type="date" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDZ_Pensja' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDZ_Pensja">
-          <Key>
-            <PropertyRef Name="Id_szczegoly_zatrudnienia" />
-            <PropertyRef Name="Imie" />
-            <PropertyRef Name="Nazwisko" />
-            <PropertyRef Name="Podstawa_wynagrodzenia" />
-            <PropertyRef Name="Data_zatrudnienia" />
-          </Key>
-          <Property Name="Id_szczegoly_zatrudnienia" Type="int" Nullable="false" />
-          <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Podstawa_wynagrodzenia" Type="float" Nullable="false" />
-          <Property Name="Data_zatrudnienia" Type="date" Nullable="false" />
-          <Property Name="Premia" Type="float" />
-          <Property Name="Pensja" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Plik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1948,17 +1964,17 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Pracownik' does not have a prima
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Premia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Premia">
           <Key>
-            <PropertyRef Name="Id_pracownika" />
+            <PropertyRef Name="Identyfikator pracownika" />
             <PropertyRef Name="Imie" />
             <PropertyRef Name="Nazwisko" />
-            <PropertyRef Name="Podstawa_wynagrodzenia" />
-            <PropertyRef Name="Data_zatrudnienia" />
+            <PropertyRef Name="Podstawa wynagrodzenia" />
+            <PropertyRef Name="Data zatrudnienia" />
           </Key>
-          <Property Name="Id_pracownika" Type="int" Nullable="false" />
+          <Property Name="Identyfikator pracownika" Type="int" Nullable="false" />
           <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Podstawa_wynagrodzenia" Type="float" Nullable="false" />
-          <Property Name="Data_zatrudnienia" Type="date" Nullable="false" />
+          <Property Name="Podstawa wynagrodzenia" Type="float" Nullable="false" />
+          <Property Name="Data zatrudnienia" Type="date" Nullable="false" />
           <Property Name="Staz" Type="int" />
           <Property Name="Premia" Type="float" />
         </EntityType>
@@ -1972,7 +1988,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rachunek' does not have a primar
             <PropertyRef Name="Data zaplaty" />
           </Key>
           <Property Name="Numer rachunku" Type="int" Nullable="false" />
-          <Property Name="Rodzaj rachunku" Type="int" Nullable="false" />
+          <Property Name="Rodzaj rachunku" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Koszt" Type="float" Nullable="false" />
           <Property Name="Data zaplaty" Type="date" Nullable="false" />
         </EntityType>
@@ -2178,6 +2194,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Wydanie_faktury' does not have a
             <PropertyRef Name="Kod pocztowy" />
             <PropertyRef Name="Miasto" />
             <PropertyRef Name="Numer rachunku" />
+            <PropertyRef Name="Wydanie faktury" />
           </Key>
           <Property Name="Numer faktury" Type="int" Nullable="false" />
           <Property Name="Ilość sztuk" Type="int" Nullable="false" />
@@ -2191,6 +2208,24 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Wydanie_faktury' does not have a
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Numer rachunku" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Wydanie faktury" Type="varchar" MaxLength="22" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDZ_Wyplata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDZ_Wyplata">
+          <Key>
+            <PropertyRef Name="Identyfikator pracownika" />
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+            <PropertyRef Name="Podstawa wynagrodzenia" />
+          </Key>
+          <Property Name="Identyfikator pracownika" Type="int" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Podstawa wynagrodzenia" Type="float" Nullable="false" />
+          <Property Name="Premia" Type="float" />
+          <Property Name="Pensja" Type="float" />
+          <Property Name="Wypłata" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zamowienie_klienta' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -4654,6 +4689,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDP_Zuzyta_maszyna].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDP_Zuzyta_maszyna] AS [vDP_Zuzyta_maszyna]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vDZ_Archiwum_Koszty_zewnetrzne" EntityType="Self.vDZ_Archiwum_Koszty_zewnetrzne" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDZ_Archiwum_Koszty_zewnetrzne].[Data] AS [Data], 
+    [vDZ_Archiwum_Koszty_zewnetrzne].[Cena jednostkowa] AS [Cena jednostkowa], 
+    [vDZ_Archiwum_Koszty_zewnetrzne].[Ilosc] AS [Ilosc], 
+    [vDZ_Archiwum_Koszty_zewnetrzne].[Koszt] AS [Koszt]
+    FROM [dbo].[vDZ_Archiwum_Koszty_zewnetrzne] AS [vDZ_Archiwum_Koszty_zewnetrzne]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vDZ_Dzial" EntityType="Self.vDZ_Dzial" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDZ_Dzial].[Identyfikator dzialu] AS [Identyfikator dzialu], 
@@ -4685,7 +4728,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <DefiningQuery>SELECT 
     [vDZ_Koszty_zewnetrzne].[Data] AS [Data], 
     [vDZ_Koszty_zewnetrzne].[Cena jednostkowa] AS [Cena jednostkowa], 
-    [vDZ_Koszty_zewnetrzne].[Ilość] AS [Ilość], 
+    [vDZ_Koszty_zewnetrzne].[Ilosc] AS [Ilosc], 
     [vDZ_Koszty_zewnetrzne].[Koszt] AS [Koszt]
     FROM [dbo].[vDZ_Koszty_zewnetrzne] AS [vDZ_Koszty_zewnetrzne]</DefiningQuery>
           </EntitySet>
@@ -4701,6 +4744,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDZ_Nieobecnosc_pensja" EntityType="Self.vDZ_Nieobecnosc_pensja" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDZ_Nieobecnosc_pensja].[Id_szczegoly_zatrudnienia] AS [Id_szczegoly_zatrudnienia], 
+    [vDZ_Nieobecnosc_pensja].[Id_pracownika] AS [Id_pracownika], 
     [vDZ_Nieobecnosc_pensja].[Imie] AS [Imie], 
     [vDZ_Nieobecnosc_pensja].[Nazwisko] AS [Nazwisko], 
     [vDZ_Nieobecnosc_pensja].[Podstawa_wynagrodzenia] AS [Podstawa_wynagrodzenia], 
@@ -4709,16 +4753,28 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Nieobecnosc_pensja].[Rodzaj] AS [Rodzaj], 
     [vDZ_Nieobecnosc_pensja].[Data_zatrudnienia] AS [Data_zatrudnienia], 
     [vDZ_Nieobecnosc_pensja].[Premia] AS [Premia], 
-    [vDZ_Nieobecnosc_pensja].[Pensja_nieobecnych] AS [Pensja_nieobecnych]
+    [vDZ_Nieobecnosc_pensja].[Pensja] AS [Pensja]
     FROM [dbo].[vDZ_Nieobecnosc_pensja] AS [vDZ_Nieobecnosc_pensja]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDZ_Obecnosc_pensja" EntityType="Self.vDZ_Obecnosc_pensja" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDZ_Obecnosc_pensja].[Id_szczegoly_zatrudnienia] AS [Id_szczegoly_zatrudnienia], 
+    [vDZ_Obecnosc_pensja].[Id_pracownika] AS [Id_pracownika], 
+    [vDZ_Obecnosc_pensja].[Imie] AS [Imie], 
+    [vDZ_Obecnosc_pensja].[Nazwisko] AS [Nazwisko], 
+    [vDZ_Obecnosc_pensja].[Podstawa_wynagrodzenia] AS [Podstawa_wynagrodzenia], 
+    [vDZ_Obecnosc_pensja].[Data_zatrudnienia] AS [Data_zatrudnienia], 
+    [vDZ_Obecnosc_pensja].[Premia] AS [Premia], 
+    [vDZ_Obecnosc_pensja].[Pensja] AS [Pensja]
+    FROM [dbo].[vDZ_Obecnosc_pensja] AS [vDZ_Obecnosc_pensja]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Oferta_dla_klienta" EntityType="Self.vDZ_Oferta_dla_klienta" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDZ_Oferta_dla_klienta].[Id_zamowienia] AS [Id_zamowienia], 
-    [vDZ_Oferta_dla_klienta].[Status_zam] AS [Status_zam], 
+    [vDZ_Oferta_dla_klienta].[Numer zamowienia] AS [Numer zamowienia], 
+    [vDZ_Oferta_dla_klienta].[Status zamowienia] AS [Status zamowienia], 
     [vDZ_Oferta_dla_klienta].[Nip] AS [Nip], 
-    [vDZ_Oferta_dla_klienta].[Nazwa_firmy] AS [Nazwa_firmy], 
-    [vDZ_Oferta_dla_klienta].[Ilosc_sztuk] AS [Ilosc_sztuk]
+    [vDZ_Oferta_dla_klienta].[Nazwa firmy] AS [Nazwa firmy], 
+    [vDZ_Oferta_dla_klienta].[Ilosc sztuk] AS [Ilosc sztuk]
     FROM [dbo].[vDZ_Oferta_dla_klienta] AS [vDZ_Oferta_dla_klienta]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Oplaty_stale" EntityType="Self.vDZ_Oplaty_stale" store:Type="Views" store:Schema="dbo">
@@ -4728,17 +4784,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Oplaty_stale].[Koszt] AS [Koszt], 
     [vDZ_Oplaty_stale].[Data zapłaty] AS [Data zapłaty]
     FROM [dbo].[vDZ_Oplaty_stale] AS [vDZ_Oplaty_stale]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vDZ_Pensja" EntityType="Self.vDZ_Pensja" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vDZ_Pensja].[Id_szczegoly_zatrudnienia] AS [Id_szczegoly_zatrudnienia], 
-    [vDZ_Pensja].[Imie] AS [Imie], 
-    [vDZ_Pensja].[Nazwisko] AS [Nazwisko], 
-    [vDZ_Pensja].[Podstawa_wynagrodzenia] AS [Podstawa_wynagrodzenia], 
-    [vDZ_Pensja].[Data_zatrudnienia] AS [Data_zatrudnienia], 
-    [vDZ_Pensja].[Premia] AS [Premia], 
-    [vDZ_Pensja].[Pensja] AS [Pensja]
-    FROM [dbo].[vDZ_Pensja] AS [vDZ_Pensja]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Plik" EntityType="Self.vDZ_Plik" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -4769,11 +4814,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </EntitySet>
           <EntitySet Name="vDZ_Premia" EntityType="Self.vDZ_Premia" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDZ_Premia].[Id_pracownika] AS [Id_pracownika], 
+    [vDZ_Premia].[Identyfikator pracownika] AS [Identyfikator pracownika], 
     [vDZ_Premia].[Imie] AS [Imie], 
     [vDZ_Premia].[Nazwisko] AS [Nazwisko], 
-    [vDZ_Premia].[Podstawa_wynagrodzenia] AS [Podstawa_wynagrodzenia], 
-    [vDZ_Premia].[Data_zatrudnienia] AS [Data_zatrudnienia], 
+    [vDZ_Premia].[Podstawa wynagrodzenia] AS [Podstawa wynagrodzenia], 
+    [vDZ_Premia].[Data zatrudnienia] AS [Data zatrudnienia], 
     [vDZ_Premia].[Staz] AS [Staz], 
     [vDZ_Premia].[Premia] AS [Premia]
     FROM [dbo].[vDZ_Premia] AS [vDZ_Premia]</DefiningQuery>
@@ -4905,8 +4950,20 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Wydanie_faktury].[Adres] AS [Adres], 
     [vDZ_Wydanie_faktury].[Kod pocztowy] AS [Kod pocztowy], 
     [vDZ_Wydanie_faktury].[Miasto] AS [Miasto], 
-    [vDZ_Wydanie_faktury].[Numer rachunku] AS [Numer rachunku]
+    [vDZ_Wydanie_faktury].[Numer rachunku] AS [Numer rachunku], 
+    [vDZ_Wydanie_faktury].[Wydanie faktury] AS [Wydanie faktury]
     FROM [dbo].[vDZ_Wydanie_faktury] AS [vDZ_Wydanie_faktury]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDZ_Wyplata" EntityType="Self.vDZ_Wyplata" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDZ_Wyplata].[Identyfikator pracownika] AS [Identyfikator pracownika], 
+    [vDZ_Wyplata].[Imie] AS [Imie], 
+    [vDZ_Wyplata].[Nazwisko] AS [Nazwisko], 
+    [vDZ_Wyplata].[Podstawa wynagrodzenia] AS [Podstawa wynagrodzenia], 
+    [vDZ_Wyplata].[Premia] AS [Premia], 
+    [vDZ_Wyplata].[Pensja] AS [Pensja], 
+    [vDZ_Wyplata].[Wypłata] AS [Wypłata]
+    FROM [dbo].[vDZ_Wyplata] AS [vDZ_Wyplata]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Zamowienie_klienta" EntityType="Self.vDZ_Zamowienie_klienta" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -5643,15 +5700,16 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDP_Usluga_serwisu_zewnetrznego" EntityType="DrukarniaModel.vDP_Usluga_serwisu_zewnetrznego" />
           <EntitySet Name="vDP_Wydruk" EntityType="DrukarniaModel.vDP_Wydruk" />
           <EntitySet Name="vDP_Zuzyta_maszyna" EntityType="DrukarniaModel.vDP_Zuzyta_maszyna" />
+          <EntitySet Name="vDZ_Archiwum_Koszty_zewnetrzne" EntityType="DrukarniaModel.vDZ_Archiwum_Koszty_zewnetrzne" />
           <EntitySet Name="vDZ_Dzial" EntityType="DrukarniaModel.vDZ_Dzial" />
           <EntitySet Name="vDZ_Etat" EntityType="DrukarniaModel.vDZ_Etat" />
           <EntitySet Name="vDZ_Klient" EntityType="DrukarniaModel.vDZ_Klient" />
           <EntitySet Name="vDZ_Koszty_zewnetrzne" EntityType="DrukarniaModel.vDZ_Koszty_zewnetrzne" />
           <EntitySet Name="vDZ_Nieobecnosc" EntityType="DrukarniaModel.vDZ_Nieobecnosc" />
           <EntitySet Name="vDZ_Nieobecnosc_pensja" EntityType="DrukarniaModel.vDZ_Nieobecnosc_pensja" />
+          <EntitySet Name="vDZ_Obecnosc_pensja" EntityType="DrukarniaModel.vDZ_Obecnosc_pensja" />
           <EntitySet Name="vDZ_Oferta_dla_klienta" EntityType="DrukarniaModel.vDZ_Oferta_dla_klienta" />
           <EntitySet Name="vDZ_Oplaty_stale" EntityType="DrukarniaModel.vDZ_Oplaty_stale" />
-          <EntitySet Name="vDZ_Pensja" EntityType="DrukarniaModel.vDZ_Pensja" />
           <EntitySet Name="vDZ_Plik" EntityType="DrukarniaModel.vDZ_Plik" />
           <EntitySet Name="vDZ_Po_szczegoly_zam_produkt" EntityType="DrukarniaModel.vDZ_Po_szczegoly_zam_produkt" />
           <EntitySet Name="vDZ_Pracownik" EntityType="DrukarniaModel.vDZ_Pracownik" />
@@ -5671,6 +5729,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDZ_Wplyw" EntityType="DrukarniaModel.vDZ_Wplyw" />
           <EntitySet Name="vDZ_Wycena_sz_zamowienia" EntityType="DrukarniaModel.vDZ_Wycena_sz_zamowienia" />
           <EntitySet Name="vDZ_Wydanie_faktury" EntityType="DrukarniaModel.vDZ_Wydanie_faktury" />
+          <EntitySet Name="vDZ_Wyplata" EntityType="DrukarniaModel.vDZ_Wyplata" />
           <EntitySet Name="vDZ_Zamowienie_klienta" EntityType="DrukarniaModel.vDZ_Zamowienie_klienta" />
           <EntitySet Name="vDZ_Zamowienie_zewn" EntityType="DrukarniaModel.vDZ_Zamowienie_zewn" />
           <EntitySet Name="vDZ_Zatrudnienie" EntityType="DrukarniaModel.vDZ_Zatrudnienie" />
@@ -7902,6 +7961,16 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_zuzycia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Uwagi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="vDZ_Archiwum_Koszty_zewnetrzne">
+          <Key>
+            <PropertyRef Name="Cena_jednostkowa" />
+            <PropertyRef Name="Ilosc" />
+          </Key>
+          <Property Name="Data" Type="DateTime" Precision="0" />
+          <Property Name="Cena_jednostkowa" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <Property Name="Koszt" Type="Decimal" Precision="38" Scale="0" />
+        </EntityType>
         <EntityType Name="vDZ_Dzial">
           <Key>
             <PropertyRef Name="Identyfikator_dzialu" />
@@ -7947,11 +8016,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         <EntityType Name="vDZ_Koszty_zewnetrzne">
           <Key>
             <PropertyRef Name="Cena_jednostkowa" />
-            <PropertyRef Name="Ilość" />
+            <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Data" Type="DateTime" Precision="0" />
           <Property Name="Cena_jednostkowa" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Ilość" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
           <Property Name="Koszt" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="vDZ_Nieobecnosc">
@@ -7970,6 +8039,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         <EntityType Name="vDZ_Nieobecnosc_pensja">
           <Key>
             <PropertyRef Name="Id_szczegoly_zatrudnienia" />
+            <PropertyRef Name="Id_pracownika" />
             <PropertyRef Name="Imie" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="Podstawa_wynagrodzenia" />
@@ -7978,6 +8048,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Data_zatrudnienia" />
           </Key>
           <Property Name="Id_szczegoly_zatrudnienia" Type="Int32" Nullable="false" />
+          <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
           <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Podstawa_wynagrodzenia" Type="Double" Nullable="false" />
@@ -7986,18 +8057,36 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Rodzaj" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Premia" Type="Double" />
-          <Property Name="Pensja_nieobecnych" Type="Double" />
+          <Property Name="Pensja" Type="Double" />
+        </EntityType>
+        <EntityType Name="vDZ_Obecnosc_pensja">
+          <Key>
+            <PropertyRef Name="Id_szczegoly_zatrudnienia" />
+            <PropertyRef Name="Id_pracownika" />
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+            <PropertyRef Name="Podstawa_wynagrodzenia" />
+            <PropertyRef Name="Data_zatrudnienia" />
+          </Key>
+          <Property Name="Id_szczegoly_zatrudnienia" Type="Int32" Nullable="false" />
+          <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Podstawa_wynagrodzenia" Type="Double" Nullable="false" />
+          <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Premia" Type="Double" />
+          <Property Name="Pensja" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Oferta_dla_klienta">
           <Key>
-            <PropertyRef Name="Id_zamowienia" />
-            <PropertyRef Name="Status_zam" />
+            <PropertyRef Name="Numer_zamowienia" />
+            <PropertyRef Name="Status_zamowienia" />
             <PropertyRef Name="Nip" />
             <PropertyRef Name="Nazwa_firmy" />
             <PropertyRef Name="Ilosc_sztuk" />
           </Key>
-          <Property Name="Id_zamowienia" Type="Int32" Nullable="false" />
-          <Property Name="Status_zam" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
+          <Property Name="Status_zamowienia" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Nip" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Nazwa_firmy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc_sztuk" Type="Int32" Nullable="false" />
@@ -8013,22 +8102,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Rodzaj_rachunku" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Koszt" Type="Double" Nullable="false" />
           <Property Name="Data_zapłaty" Type="DateTime" Nullable="false" Precision="0" />
-        </EntityType>
-        <EntityType Name="vDZ_Pensja">
-          <Key>
-            <PropertyRef Name="Id_szczegoly_zatrudnienia" />
-            <PropertyRef Name="Imie" />
-            <PropertyRef Name="Nazwisko" />
-            <PropertyRef Name="Podstawa_wynagrodzenia" />
-            <PropertyRef Name="Data_zatrudnienia" />
-          </Key>
-          <Property Name="Id_szczegoly_zatrudnienia" Type="Int32" Nullable="false" />
-          <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Podstawa_wynagrodzenia" Type="Double" Nullable="false" />
-          <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Premia" Type="Double" />
-          <Property Name="Pensja" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Plik">
           <Key>
@@ -8074,13 +8147,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         </EntityType>
         <EntityType Name="vDZ_Premia">
           <Key>
-            <PropertyRef Name="Id_pracownika" />
+            <PropertyRef Name="Identyfikator_pracownika" />
             <PropertyRef Name="Imie" />
             <PropertyRef Name="Nazwisko" />
             <PropertyRef Name="Podstawa_wynagrodzenia" />
             <PropertyRef Name="Data_zatrudnienia" />
           </Key>
-          <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="Identyfikator_pracownika" Type="Int32" Nullable="false" />
           <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Podstawa_wynagrodzenia" Type="Double" Nullable="false" />
@@ -8096,7 +8169,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Data_zaplaty" />
           </Key>
           <Property Name="Numer_rachunku" Type="Int32" Nullable="false" />
-          <Property Name="Rodzaj_rachunku" Type="Int32" Nullable="false" />
+          <Property Name="Rodzaj_rachunku" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Koszt" Type="Double" Nullable="false" />
           <Property Name="Data_zaplaty" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
@@ -8274,6 +8347,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Kod_pocztowy" />
             <PropertyRef Name="Miasto" />
             <PropertyRef Name="Numer_rachunku" />
+            <PropertyRef Name="Wydanie_faktury" />
           </Key>
           <Property Name="Numer_faktury" Type="Int32" Nullable="false" />
           <Property Name="Ilość_sztuk" Type="Int32" Nullable="false" />
@@ -8287,6 +8361,22 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Miasto" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Numer_rachunku" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Wydanie_faktury" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vDZ_Wyplata">
+          <Key>
+            <PropertyRef Name="Identyfikator_pracownika" />
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+            <PropertyRef Name="Podstawa_wynagrodzenia" />
+          </Key>
+          <Property Name="Identyfikator_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Podstawa_wynagrodzenia" Type="Double" Nullable="false" />
+          <Property Name="Premia" Type="Double" />
+          <Property Name="Pensja" Type="Double" />
+          <Property Name="Wypłata" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Zamowienie_klienta">
           <Key>
@@ -11183,6 +11273,16 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vDZ_Archiwum_Koszty_zewnetrzne">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Archiwum_Koszty_zewnetrzne">
+              <MappingFragment StoreEntitySet="vDZ_Archiwum_Koszty_zewnetrzne">
+                <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+                <ScalarProperty Name="Cena_jednostkowa" ColumnName="Cena jednostkowa" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vDZ_Dzial">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Dzial">
               <MappingFragment StoreEntitySet="vDZ_Dzial">
@@ -11220,7 +11320,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Koszty_zewnetrzne">
               <MappingFragment StoreEntitySet="vDZ_Koszty_zewnetrzne">
                 <ScalarProperty Name="Koszt" ColumnName="Koszt" />
-                <ScalarProperty Name="Ilość" ColumnName="Ilość" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Cena_jednostkowa" ColumnName="Cena jednostkowa" />
                 <ScalarProperty Name="Data" ColumnName="Data" />
               </MappingFragment>
@@ -11240,7 +11340,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Nieobecnosc_pensja">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Nieobecnosc_pensja">
               <MappingFragment StoreEntitySet="vDZ_Nieobecnosc_pensja">
-                <ScalarProperty Name="Pensja_nieobecnych" ColumnName="Pensja_nieobecnych" />
+                <ScalarProperty Name="Pensja" ColumnName="Pensja" />
                 <ScalarProperty Name="Premia" ColumnName="Premia" />
                 <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
                 <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
@@ -11249,6 +11349,21 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa_wynagrodzenia" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+                <ScalarProperty Name="Id_szczegoly_zatrudnienia" ColumnName="Id_szczegoly_zatrudnienia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDZ_Obecnosc_pensja">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Obecnosc_pensja">
+              <MappingFragment StoreEntitySet="vDZ_Obecnosc_pensja">
+                <ScalarProperty Name="Pensja" ColumnName="Pensja" />
+                <ScalarProperty Name="Premia" ColumnName="Premia" />
+                <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
+                <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa_wynagrodzenia" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
                 <ScalarProperty Name="Id_szczegoly_zatrudnienia" ColumnName="Id_szczegoly_zatrudnienia" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -11256,11 +11371,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Oferta_dla_klienta">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Oferta_dla_klienta">
               <MappingFragment StoreEntitySet="vDZ_Oferta_dla_klienta">
-                <ScalarProperty Name="Ilosc_sztuk" ColumnName="Ilosc_sztuk" />
-                <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa_firmy" />
+                <ScalarProperty Name="Ilosc_sztuk" ColumnName="Ilosc sztuk" />
+                <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa firmy" />
                 <ScalarProperty Name="Nip" ColumnName="Nip" />
-                <ScalarProperty Name="Status_zam" ColumnName="Status_zam" />
-                <ScalarProperty Name="Id_zamowienia" ColumnName="Id_zamowienia" />
+                <ScalarProperty Name="Status_zamowienia" ColumnName="Status zamowienia" />
+                <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -11271,19 +11386,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Koszt" ColumnName="Koszt" />
                 <ScalarProperty Name="Rodzaj_rachunku" ColumnName="Rodzaj rachunku" />
                 <ScalarProperty Name="Numer_rachunku" ColumnName="Numer rachunku" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vDZ_Pensja">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Pensja">
-              <MappingFragment StoreEntitySet="vDZ_Pensja">
-                <ScalarProperty Name="Pensja" ColumnName="Pensja" />
-                <ScalarProperty Name="Premia" ColumnName="Premia" />
-                <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
-                <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa_wynagrodzenia" />
-                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
-                <ScalarProperty Name="Imie" ColumnName="Imie" />
-                <ScalarProperty Name="Id_szczegoly_zatrudnienia" ColumnName="Id_szczegoly_zatrudnienia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -11325,11 +11427,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               <MappingFragment StoreEntitySet="vDZ_Premia">
                 <ScalarProperty Name="Premia" ColumnName="Premia" />
                 <ScalarProperty Name="Staz" ColumnName="Staz" />
-                <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
-                <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa_wynagrodzenia" />
+                <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data zatrudnienia" />
+                <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa wynagrodzenia" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Imie" ColumnName="Imie" />
-                <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+                <ScalarProperty Name="Identyfikator_pracownika" ColumnName="Identyfikator pracownika" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -11478,6 +11580,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Wydanie_faktury">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Wydanie_faktury">
               <MappingFragment StoreEntitySet="vDZ_Wydanie_faktury">
+                <ScalarProperty Name="Wydanie_faktury" ColumnName="Wydanie faktury" />
                 <ScalarProperty Name="Numer_rachunku" ColumnName="Numer rachunku" />
                 <ScalarProperty Name="Miasto" ColumnName="Miasto" />
                 <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />
@@ -11490,6 +11593,19 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Nazwa_pliku" ColumnName="Nazwa pliku" />
                 <ScalarProperty Name="Ilość_sztuk" ColumnName="Ilość sztuk" />
                 <ScalarProperty Name="Numer_faktury" ColumnName="Numer faktury" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDZ_Wyplata">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Wyplata">
+              <MappingFragment StoreEntitySet="vDZ_Wyplata">
+                <ScalarProperty Name="Wypłata" ColumnName="Wypłata" />
+                <ScalarProperty Name="Pensja" ColumnName="Pensja" />
+                <ScalarProperty Name="Premia" ColumnName="Premia" />
+                <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa wynagrodzenia" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Identyfikator_pracownika" ColumnName="Identyfikator pracownika" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

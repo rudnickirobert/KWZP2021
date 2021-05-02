@@ -169,15 +169,16 @@ namespace KWZP2021
         public virtual DbSet<vDP_Usluga_serwisu_zewnetrznego> vDP_Usluga_serwisu_zewnetrznego { get; set; }
         public virtual DbSet<vDP_Wydruk> vDP_Wydruk { get; set; }
         public virtual DbSet<vDP_Zuzyta_maszyna> vDP_Zuzyta_maszyna { get; set; }
+        public virtual DbSet<vDZ_Archiwum_Koszty_zewnetrzne> vDZ_Archiwum_Koszty_zewnetrzne { get; set; }
         public virtual DbSet<vDZ_Dzial> vDZ_Dzial { get; set; }
         public virtual DbSet<vDZ_Etat> vDZ_Etat { get; set; }
         public virtual DbSet<vDZ_Klient> vDZ_Klient { get; set; }
         public virtual DbSet<vDZ_Koszty_zewnetrzne> vDZ_Koszty_zewnetrzne { get; set; }
         public virtual DbSet<vDZ_Nieobecnosc> vDZ_Nieobecnosc { get; set; }
         public virtual DbSet<vDZ_Nieobecnosc_pensja> vDZ_Nieobecnosc_pensja { get; set; }
+        public virtual DbSet<vDZ_Obecnosc_pensja> vDZ_Obecnosc_pensja { get; set; }
         public virtual DbSet<vDZ_Oferta_dla_klienta> vDZ_Oferta_dla_klienta { get; set; }
         public virtual DbSet<vDZ_Oplaty_stale> vDZ_Oplaty_stale { get; set; }
-        public virtual DbSet<vDZ_Pensja> vDZ_Pensja { get; set; }
         public virtual DbSet<vDZ_Plik> vDZ_Plik { get; set; }
         public virtual DbSet<vDZ_Po_szczegoly_zam_produkt> vDZ_Po_szczegoly_zam_produkt { get; set; }
         public virtual DbSet<vDZ_Pracownik> vDZ_Pracownik { get; set; }
@@ -197,6 +198,7 @@ namespace KWZP2021
         public virtual DbSet<vDZ_Wplyw> vDZ_Wplyw { get; set; }
         public virtual DbSet<vDZ_Wycena_sz_zamowienia> vDZ_Wycena_sz_zamowienia { get; set; }
         public virtual DbSet<vDZ_Wydanie_faktury> vDZ_Wydanie_faktury { get; set; }
+        public virtual DbSet<vDZ_Wyplata> vDZ_Wyplata { get; set; }
         public virtual DbSet<vDZ_Zamowienie_klienta> vDZ_Zamowienie_klienta { get; set; }
         public virtual DbSet<vDZ_Zamowienie_zewn> vDZ_Zamowienie_zewn { get; set; }
         public virtual DbSet<vDZ_Zatrudnienie> vDZ_Zatrudnienie { get; set; }

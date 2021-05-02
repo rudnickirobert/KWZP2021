@@ -10,20 +10,20 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Koszty_zewnetrzne : Form
+    public partial class Archiwum_koszty : Form
     {
         DrukarniaEntities database;
-        public Koszty_zewnetrzne(DrukarniaEntities database)
+        public Archiwum_koszty(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
 
-            this.dataGridView1.DataSource = this.database.vDZ_Koszty_zewnetrzne.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Archiwum_Koszty_zewnetrzne.ToList();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            this.dataGridView1.DataSource = this.database.vDZ_Koszty_zewnetrzne.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Archiwum_Koszty_zewnetrzne.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace KWZP2021
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = database.vDZ_Koszty_zewnetrzne.Where(x => x.Data.ToString().Contains(textBox1.Text)).ToList();
+            dataGridView1.DataSource = database.vDZ_Archiwum_Koszty_zewnetrzne.Where(x => x.Data.ToString().Contains(textBox1.Text)).ToList();
         }
 
         private void button2_Click(object sender, EventArgs e)

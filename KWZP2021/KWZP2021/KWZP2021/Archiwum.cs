@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Oplaty_firmy : Form
+    public partial class Archiwum : Form
     {
         DrukarniaEntities database;
-        public Oplaty_firmy(DrukarniaEntities database)
+        public Archiwum(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
@@ -21,21 +21,14 @@ namespace KWZP2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Oplaty_stale oplaty_stale = new Oplaty_stale(this.database);
-            oplaty_stale.ShowDialog();
+           Archiwum_oplaty archiwum_oplaty = new Archiwum_oplaty(this.database);
+            archiwum_oplaty.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Koszty_zewnetrzne koszty_zewnetrzne = new Koszty_zewnetrzne(this.database);
-            koszty_zewnetrzne.ShowDialog();
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Wyplata wyplata = new Wyplata(this.database);
-            wyplata.ShowDialog();
+            Archiwum_koszty archiwum_koszty = new Archiwum_koszty(this.database);
+            archiwum_koszty.ShowDialog();
         }
     }
 }

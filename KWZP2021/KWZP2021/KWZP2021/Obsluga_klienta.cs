@@ -24,5 +24,18 @@ namespace KWZP2021
             Wplywy wplywy = new Wplywy(this.database);
             wplywy.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Wydanie_faktury wydanie_faktury = new Wydanie_faktury(this.database);
+            wydanie_faktury.ShowDialog();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Oferta_dla_klienta oferta_dla_klienta = new Oferta_dla_klienta(this.database);
+            oferta_dla_klienta.ShowDialog();
+        }
     }
 }
