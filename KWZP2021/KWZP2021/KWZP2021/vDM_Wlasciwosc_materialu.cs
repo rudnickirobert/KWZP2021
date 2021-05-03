@@ -14,6 +14,7 @@ namespace KWZP2021
     
     public partial class vDM_Wlasciwosc_materialu
     {
+        public int id_wlasciwosc_materialu { get; set; }
         public string Nazwa_materialu { get; set; }
         public string Nazwa_wlasciwosci { get; set; }
         public string Wartosc { get; set; }

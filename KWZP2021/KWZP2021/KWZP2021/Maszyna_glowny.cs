@@ -35,5 +35,17 @@ namespace KWZP2021
             FirmaSerwisowa firma = new FirmaSerwisowa(this.database);
             firma.ShowDialog();
         }
+
+        private void btn_Rodzaje_Click(object sender, EventArgs e)
+        {
+            Rodzaj_maszyny rodzaj = new Rodzaj_maszyny(this.database);
+            rodzaj.ShowDialog();
+        }
+
+        private void btn_Modele_Click(object sender, EventArgs e)
+        {
+            Model_maszyny model = new Model_maszyny(this.database);
+            model.ShowDialog();
+        }
     }
 }

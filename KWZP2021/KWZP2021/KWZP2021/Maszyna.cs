@@ -46,5 +46,35 @@ namespace KWZP2021
             Dzial_produkcji dzialProdukcji = new Dzial_produkcji(this.database);
             dzialProdukcji.ShowDialog();
         }
+
+        private void btnUsunMasz_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć maszynę?", "Usuwanie maszyn", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(this.dgvMaszyna.CurrentRow.Cells[0].Value);
+
+                DP_Maszyna toRemove = this.database.DP_Maszyna.Where(maszyna => maszyna.Id_maszyny == id).First();
+
+
+                this.database.DP_Maszyna.Remove(toRemove); // DELETE
+
+                this.database.SaveChanges();
+                initdgvMaszyna();
+            }
+        }
+
+        public void initdgvMaszyna()
+        {
+            this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
+
+        }
+
+        private void btnAddMaszyna_Click(object sender, EventArgs e)
+        {
+            Nowa_maszyna nowa_Maszyna = new Nowa_maszyna(this.database);
+            nowa_Maszyna.ShowDialog();
+            initdgvMaszyna();
+        }
     }
 }

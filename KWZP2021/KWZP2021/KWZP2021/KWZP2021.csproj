@@ -199,6 +199,18 @@
     <Compile Include="DodajMaterial.Designer.cs">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajModelMaszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajModelMaszyny.Designer.cs">
+      <DependentUpon>DodajModelMaszyny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DodajRodzajMaszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajRodzajMaszyny.Designer.cs">
+      <DependentUpon>DodajRodzajMaszyny.cs</DependentUpon>
+    </Compile>
     <Compile Include="DodajRodzajNarzedzia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -403,11 +415,23 @@
     <Compile Include="EdytujMaterial.Designer.cs">
       <DependentUpon>EdytujMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="EdytujModelMaszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdytujModelMaszyny.Designer.cs">
+      <DependentUpon>EdytujModelMaszyny.cs</DependentUpon>
+    </Compile>
     <Compile Include="EdytujNarzedzie.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EdytujNarzedzie.Designer.cs">
       <DependentUpon>EdytujNarzedzie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EdytujRodzajMaszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdytujRodzajMaszyny.Designer.cs">
+      <DependentUpon>EdytujRodzajMaszyny.cs</DependentUpon>
     </Compile>
     <Compile Include="EdytujRodzajNarzedzia.cs">
       <SubType>Form</SubType>
@@ -487,6 +511,12 @@
     <Compile Include="Material_glowny.Designer.cs">
       <DependentUpon>Material_glowny.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model_maszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model_maszyny.Designer.cs">
+      <DependentUpon>Model_maszyny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Narzedzie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -498,6 +528,12 @@
     </Compile>
     <Compile Include="Narzedzie_glowny.Designer.cs">
       <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nowa_maszyna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nowa_maszyna.Designer.cs">
+      <DependentUpon>Nowa_maszyna.cs</DependentUpon>
     </Compile>
     <Compile Include="Nowe_narzedzie.cs">
       <SubType>Form</SubType>
@@ -558,6 +594,12 @@
     </Compile>
     <Compile Include="Rodzaj_czynnosci.Designer.cs">
       <DependentUpon>Rodzaj_czynnosci.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rodzaj_maszyny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rodzaj_maszyny.Designer.cs">
+      <DependentUpon>Rodzaj_maszyny.cs</DependentUpon>
     </Compile>
     <Compile Include="Rodzaj_materialu.cs">
       <SubType>Form</SubType>
@@ -942,6 +984,12 @@
     <EmbeddedResource Include="DodajMaterial.resx">
       <DependentUpon>DodajMaterial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodajModelMaszyny.resx">
+      <DependentUpon>DodajModelMaszyny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DodajRodzajMaszyny.resx">
+      <DependentUpon>DodajRodzajMaszyny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DodajRodzajNarzedzia.resx">
       <DependentUpon>DodajRodzajNarzedzia.cs</DependentUpon>
     </EmbeddedResource>
@@ -960,8 +1008,14 @@
     <EmbeddedResource Include="EdytujMaterial.resx">
       <DependentUpon>EdytujMaterial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EdytujModelMaszyny.resx">
+      <DependentUpon>EdytujModelMaszyny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EdytujNarzedzie.resx">
       <DependentUpon>EdytujNarzedzie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdytujRodzajMaszyny.resx">
+      <DependentUpon>EdytujRodzajMaszyny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EdytujRodzajNarzedzia.resx">
       <DependentUpon>EdytujRodzajNarzedzia.cs</DependentUpon>
@@ -1002,11 +1056,17 @@
     <EmbeddedResource Include="Material_glowny.resx">
       <DependentUpon>Material_glowny.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Model_maszyny.resx">
+      <DependentUpon>Model_maszyny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Narzedzie.resx">
       <DependentUpon>Narzedzie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Narzedzie_glowny.resx">
       <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nowa_maszyna.resx">
+      <DependentUpon>Nowa_maszyna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nowe_narzedzie.resx">
       <DependentUpon>Nowe_narzedzie.cs</DependentUpon>
@@ -1046,6 +1106,9 @@
     </Compile>
     <EmbeddedResource Include="Rodzaj_czynnosci.resx">
       <DependentUpon>Rodzaj_czynnosci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rodzaj_maszyny.resx">
+      <DependentUpon>Rodzaj_maszyny.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Rodzaj_materialu.resx">
       <DependentUpon>Rodzaj_materialu.cs</DependentUpon>

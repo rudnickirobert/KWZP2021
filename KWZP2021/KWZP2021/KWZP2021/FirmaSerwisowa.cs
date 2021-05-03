@@ -39,5 +39,28 @@ namespace KWZP2021
             Dzial_produkcji dzialProdukcji = new Dzial_produkcji(this.database);
             dzialProdukcji.ShowDialog();
         }
+
+        private void btnUsunFirma_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć firmę?", "Usuwanie firmy", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(this.dgvFirma.CurrentRow.Cells[0].Value);
+
+                DP_Firma_serwisowa toRemove = this.database.DP_Firma_serwisowa.Where(firma => firma.Id_firma_serwisowa == id).First();
+
+
+                this.database.DP_Firma_serwisowa.Remove(toRemove); // DELETE
+
+                this.database.SaveChanges();
+                initdgvFirma();
+            }
+        }
+
+        public void initdgvFirma()
+        {
+            this.dgvFirma.DataSource = this.database.vDP_Firma_serwisowa.ToList();
+
+        }
     }
 }

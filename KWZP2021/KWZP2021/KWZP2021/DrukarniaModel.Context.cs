@@ -34,9 +34,11 @@ namespace KWZP2021
         public virtual DbSet<DM_Magazyn_gotowych_produktow> DM_Magazyn_gotowych_produktow { get; set; }
         public virtual DbSet<DM_Material> DM_Material { get; set; }
         public virtual DbSet<DM_Narzedzie> DM_Narzedzie { get; set; }
+        public virtual DbSet<DM_Parametr_narzedzia> DM_Parametr_narzedzia { get; set; }
         public virtual DbSet<DM_Rodzaj_materialu> DM_Rodzaj_materialu { get; set; }
         public virtual DbSet<DM_Rodzaj_narzedzia> DM_Rodzaj_narzedzia { get; set; }
         public virtual DbSet<DM_Wlasciwosc> DM_Wlasciwosc { get; set; }
+        public virtual DbSet<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         public virtual DbSet<DM_Wydanie_czesci> DM_Wydanie_czesci { get; set; }
         public virtual DbSet<DM_Wydanie_czesci_dla_produkcji> DM_Wydanie_czesci_dla_produkcji { get; set; }
         public virtual DbSet<DM_Wydanie_materialu_dla_produkcji> DM_Wydanie_materialu_dla_produkcji { get; set; }
@@ -90,7 +92,6 @@ namespace KWZP2021
         public virtual DbSet<DZ_Zamowienie_zewn> DZ_Zamowienie_zewn { get; set; }
         public virtual DbSet<DZ_Zatrudnienie> DZ_Zatrudnienie { get; set; }
         public virtual DbSet<DM_Parametr_czesci> DM_Parametr_czesci { get; set; }
-        public virtual DbSet<DM_Parametr_narzedzia> DM_Parametr_narzedzia { get; set; }
         public virtual DbSet<DM_Sklad_dostawy_czesci> DM_Sklad_dostawy_czesci { get; set; }
         public virtual DbSet<DM_Sklad_dostawy_maszyn> DM_Sklad_dostawy_maszyn { get; set; }
         public virtual DbSet<DM_Sklad_dostawy_materialu> DM_Sklad_dostawy_materialu { get; set; }
@@ -100,7 +101,6 @@ namespace KWZP2021
         public virtual DbSet<DM_Szczegoly_wydania_materialu> DM_Szczegoly_wydania_materialu { get; set; }
         public virtual DbSet<DM_Szczegoly_wydania_produktu> DM_Szczegoly_wydania_produktu { get; set; }
         public virtual DbSet<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
-        public virtual DbSet<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         public virtual DbSet<DP_Po_material_czynnosc> DP_Po_material_czynnosc { get; set; }
         public virtual DbSet<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
         public virtual DbSet<DP_prod_material> DP_prod_material { get; set; }

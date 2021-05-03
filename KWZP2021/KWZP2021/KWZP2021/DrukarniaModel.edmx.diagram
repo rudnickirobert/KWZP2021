@@ -5,85 +5,85 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="54e1ef802d06489a89607bbe013ebac4" Name="Diagram1">
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Czesc" Width="1.5" PointX="13.25" PointY="24.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_czesci" Width="1.5" PointX="12.5" PointY="81.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_maszyn" Width="1.5" PointX="12.5" PointY="46.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_materialu" Width="1.5" PointX="12.5" PointY="75.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_narzedzi" Width="1.5" PointX="12.5" PointY="84.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawca" Width="1.5" PointX="12.5" PointY="67.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Magazyn_gotowych_produktow" Width="1.5" PointX="19.75" PointY="61.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Material" Width="1.5" PointX="3" PointY="32.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Narzedzie" Width="1.5" PointX="5.75" PointY="61.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Rodzaj_materialu" Width="1.5" PointX="0.75" PointY="33.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Rodzaj_narzedzia" Width="1.5" PointX="3.5" PointY="62.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc" Width="1.5" PointX="12.5" PointY="91.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci" Width="1.5" PointX="12.5" PointY="61.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci_dla_produkcji" Width="1.5" PointX="12.5" PointY="78.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_materialu_dla_produkcji" Width="1.5" PointX="19.75" PointY="52" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_produktu" Width="1.5" PointX="12.5" PointY="50" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wypozyczenie_narzedzia" Width="1.5" PointX="12.5" PointY="54.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Zuzyte_narzedzie" Width="1.5" PointX="14.75" PointY="57.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Co_ile_obsluga" Width="1.5" PointX="14" PointY="21.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc" Width="1.5" PointX="14" PointY="31.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew" Width="1.5" PointX="16.25" PointY="30.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Firma_serwisowa" Width="1.5" PointX="5.75" PointY="37" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Maszyna" Width="1.5" PointX="0.75" PointY="43.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Model_maszyny" Width="1.5" PointX="1.5" PointY="36.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Nazwa_obslugi" Width="1.5" PointX="14" PointY="29.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Obsluga" Width="1.5" PointX="16.25" PointY="34.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_proc_czynnosc" Width="1.5" PointX="8" PointY="48.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_wydr_proc" Width="1.5" PointX="3" PointY="46.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Proces_produkcyjny" Width="1.5" PointX="3" PointY="50.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Czesc" Width="1.5" PointX="8.5" PointY="41.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_czesci" Width="1.5" PointX="9.75" PointY="84.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_maszyn" Width="1.5" PointX="9.75" PointY="87.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_materialu" Width="1.5" PointX="9.75" PointY="94.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_narzedzi" Width="1.5" PointX="9.75" PointY="45.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawca" Width="1.5" PointX="9.75" PointY="67.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Magazyn_gotowych_produktow" Width="1.5" PointX="15" PointY="68" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Material" Width="1.5" PointX="6" PointY="36.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Narzedzie" Width="1.5" PointX="0.75" PointY="54.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_narzedzia" Width="1.5" PointX="18" PointY="69.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Rodzaj_materialu" Width="1.5" PointX="3.75" PointY="37.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Rodzaj_narzedzia" Width="1.5" PointX="1.5" PointY="61.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc" Width="1.5" PointX="12.75" PointY="84" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc_materialu" Width="1.5" PointX="21" PointY="60.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci" Width="1.5" PointX="9.75" PointY="57.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci_dla_produkcji" Width="1.5" PointX="9.75" PointY="78" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_materialu_dla_produkcji" Width="1.5" PointX="15" PointY="58.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_produktu" Width="1.5" PointX="14.75" PointY="53.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wypozyczenie_narzedzia" Width="1.5" PointX="9.75" PointY="71.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Zuzyte_narzedzie" Width="1.5" PointX="15" PointY="71.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Co_ile_obsluga" Width="1.5" PointX="11.25" PointY="41.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc" Width="1.5" PointX="8.25" PointY="34.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew" Width="1.5" PointX="10.5" PointY="32.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Firma_serwisowa" Width="1.5" PointX="3.75" PointY="30.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Maszyna" Width="1.5" PointX="3.75" PointY="41.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Model_maszyny" Width="1.5" PointX="1.5" PointY="43.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Nazwa_obslugi" Width="1.5" PointX="8.25" PointY="31.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Obsluga" Width="1.5" PointX="13.5" PointY="36.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_proc_czynnosc" Width="1.5" PointX="3" PointY="50.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_wydr_proc" Width="1.5" PointX="6" PointY="48.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Proces_produkcyjny" Width="1.5" PointX="3" PointY="57.375" />
         <EntityTypeShape EntityType="DrukarniaModel.DP_Proces_technologiczny" Width="1.5" PointX="0.75" PointY="49" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_czynnosc_dodatkowa" Width="1.5" PointX="5.25" PointY="53.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_wydruk" Width="1.5" PointX="5.25" PointY="47.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Produkt" Width="1.5" PointX="3" PointY="53.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_czynnosci" Width="1.5" PointX="5.75" PointY="40.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_maszyny" Width="1.5" PointX="1.5" PointY="40.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_naprawa" Width="1.5" PointX="15.5" PointY="50.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga" Width="1.5" PointX="18.5" PointY="47.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_zewnetrzny" Width="1.5" PointX="8" PointY="43.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Usluga_serwisu_zewnetrznego" Width="1.5" PointX="5.75" PointY="57.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Wydruk" Width="1.5" PointX="0.75" PointY="52.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Zuzyta_maszyna" Width="1.5" PointX="3" PointY="43.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Dzial" Width="1.5" PointX="13.25" PointY="35" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Etat" Width="1.5" PointX="13.25" PointY="43" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Klient" Width="1.5" PointX="15.25" PointY="71.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Nieobecnosc" Width="1.5" PointX="12.5" PointY="58.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Plik" Width="1.5" PointX="1.5" PointY="57.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Pracownik" Width="1.5" PointX="10.25" PointY="48.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_czynnosc_dodatkowa" Width="1.5" PointX="5.25" PointY="60.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_wydruk" Width="1.5" PointX="5.25" PointY="54.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Produkt" Width="1.5" PointX="3" PointY="47.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_czynnosci" Width="1.5" PointX="0.75" PointY="51.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_maszyny" Width="1.5" PointX="1.5" PointY="41.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_naprawa" Width="1.5" PointX="10.75" PointY="50.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga" Width="1.5" PointX="12.75" PointY="57.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_zewnetrzny" Width="1.5" PointX="6" PointY="40.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Usluga_serwisu_zewnetrznego" Width="1.5" PointX="3.75" PointY="34" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Wydruk" Width="1.5" PointX="3.75" PointY="64.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Zuzyta_maszyna" Width="1.5" PointX="6" PointY="45.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Dzial" Width="1.5" PointX="7.5" PointY="70.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Etat" Width="1.5" PointX="7.5" PointY="65.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Klient" Width="1.5" PointX="10.5" PointY="37.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Nieobecnosc" Width="1.5" PointX="15.75" PointY="62.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Plik" Width="1.5" PointX="1.5" PointY="64.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Pracownik" Width="1.5" PointX="7.5" PointY="55.25" />
         <EntityTypeShape EntityType="DrukarniaModel.DZ_Rachunek" Width="1.5" PointX="3" PointY="0.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_nieobecnosci" Width="1.5" PointX="10.25" PointY="58.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_nieobecnosci" Width="1.5" PointX="13.5" PointY="50.875" />
         <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_rachunku" Width="1.5" PointX="0.75" PointY="1.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_statusu_zamowienia" Width="1.5" PointX="20.5" PointY="65.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_umowy" Width="1.5" PointX="13.25" PointY="37.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Stanowisko" Width="1.5" PointX="13.25" PointY="40.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Status_zamowienia" Width="1.5" PointX="22.75" PointY="55.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_czesci" Width="1.5" PointX="17.75" PointY="90.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_maszyn" Width="1.5" PointX="17.75" PointY="82.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_materialu" Width="1.5" PointX="14.75" PointY="93.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_narzedzi" Width="1.5" PointX="14.75" PointY="89.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zamowienia_klienta" Width="1.5" PointX="22.75" PointY="58.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zatrudnienia" Width="1.5" PointX="17.75" PointY="44.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Wycena_sz_zamowienia" Width="1.5" PointX="25" PointY="60.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_klienta" Width="1.5" PointX="17.5" PointY="54.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_zewn" Width="1.5" PointX="12.5" PointY="87.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zatrudnienie" Width="1.5" PointX="15.5" PointY="45.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_czesci" Width="1.5" PointX="17.5" PointY="59.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_narzedzia" Width="1.5" PointX="14.75" PointY="76.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_czesci" Width="1.5" PointX="14.75" PointY="85.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_maszyn" Width="1.5" PointX="14.75" PointY="67.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_materialu" Width="1.5" PointX="14.75" PointY="81.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_narzedzi" Width="1.5" PointX="17.75" PointY="86" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_magazynu_gotowych_produktow" Width="1.5" PointX="25" PointY="57.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_czesci" Width="1.5" PointX="14.75" PointY="62" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_materialu" Width="1.5" PointX="22" PointY="52.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_produktu" Width="1.5" PointX="19.75" PointY="56.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" Width="1.5" PointX="14.75" PointY="54.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc_materialu" Width="1.5" PointX="17.75" PointY="65.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_material_czynnosc" Width="1.5" PointX="10.25" PointY="46.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_material_wydruk" Width="1.5" PointX="5.25" PointY="44.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_material" Width="1.5" PointX="5.25" PointY="50.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_statusu_zamowienia" Width="1.5" PointX="15.75" PointY="74.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_umowy" Width="1.5" PointX="7.5" PointY="68.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Stanowisko" Width="1.5" PointX="7.5" PointY="63.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Status_zamowienia" Width="1.5" PointX="18" PointY="61.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_czesci" Width="1.5" PointX="12" PointY="97" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_maszyn" Width="1.5" PointX="15" PointY="95.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_materialu" Width="1.5" PointX="15" PointY="91" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_narzedzi" Width="1.5" PointX="15" PointY="87" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zamowienia_klienta" Width="1.5" PointX="17" PointY="54.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zatrudnienia" Width="1.5" PointX="12" PointY="75.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Wycena_sz_zamowienia" Width="1.5" PointX="19.25" PointY="52.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_klienta" Width="1.5" PointX="12.75" PointY="61.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_zewn" Width="1.5" PointX="9.75" PointY="90.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zatrudnienie" Width="1.5" PointX="9.75" PointY="60.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_czesci" Width="1.5" PointX="18" PointY="65" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_czesci" Width="1.5" PointX="12" PointY="88" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_maszyn" Width="1.5" PointX="12" PointY="92.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_materialu" Width="1.5" PointX="15" PointY="98.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_narzedzi" Width="1.5" PointX="12" PointY="68.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_magazynu_gotowych_produktow" Width="1.5" PointX="19.25" PointY="55.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_czesci" Width="1.5" PointX="12" PointY="54.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_materialu" Width="1.5" PointX="17.25" PointY="58.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_produktu" Width="1.5" PointX="17" PointY="50.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" Width="1.5" PointX="12" PointY="72.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_material_czynnosc" Width="1.5" PointX="8.25" PointY="52.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_material_wydruk" Width="1.5" PointX="8.25" PointY="49.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_material" Width="1.5" PointX="5.25" PointY="57.625" />
         <EntityTypeShape EntityType="DrukarniaModel.vDM_Czesc" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDM_Dostawa_czesci" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDM_Dostawa_maszyn" Width="1.5" PointX="4.75" PointY="3.75" />
@@ -148,155 +148,155 @@
         <EntityTypeShape EntityType="DrukarniaModel.vDP_Serwis_zewnetrzny" Width="1.5" PointX="18.75" PointY="15.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDP_Usluga_serwisu_zewnetrznego" Width="1.5" PointX="19.75" PointY="0.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDP_Wydruk" Width="1.5" PointX="10.75" PointY="19.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDP_Zuzyta_maszyna" Width="1.5" PointX="16.75" PointY="19.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Archiwum_Koszty_zewnetrzne" Width="1.5" PointX="18.75" PointY="19.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Dzial" Width="1.5" PointX="20.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Etat" Width="1.5" PointX="20.75" PointY="6.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Klient" Width="1.5" PointX="20.75" PointY="9.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Koszty_zewnetrzne" Width="1.5" PointX="20.75" PointY="13.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Nieobecnosc" Width="1.5" PointX="20.75" PointY="16.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Nieobecnosc_pensja" Width="1.5" PointX="20.75" PointY="19.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Obecnosc_pensja" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDP_Zuzyta_maszyna" Width="1.5" PointX="12.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Archiwum_Koszty_zewnetrzne" Width="1.5" PointX="14.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Dzial" Width="1.5" PointX="16.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Etat" Width="1.5" PointX="18.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Klient" Width="1.5" PointX="20.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Koszty_zewnetrzne" Width="1.5" PointX="20.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Nieobecnosc" Width="1.5" PointX="20.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Nieobecnosc_pensja" Width="1.5" PointX="20.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Obecnosc_pensja" Width="1.5" PointX="20.75" PointY="17.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDZ_Oferta_dla_klienta" Width="1.5" PointX="21.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Oplaty_stale" Width="1.5" PointX="2.75" PointY="21.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Plik" Width="1.5" PointX="4.75" PointY="21.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Po_szczegoly_zam_produkt" Width="1.5" PointX="6.75" PointY="21.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Pracownik" Width="1.5" PointX="22.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Premia" Width="1.5" PointX="22.75" PointY="7.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rachunek" Width="1.5" PointX="8.75" PointY="22.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_nieobecnosci" Width="1.5" PointX="22.75" PointY="11.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_rachunku" Width="1.5" PointX="22.75" PointY="14.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_statusu_zamowienia" Width="1.5" PointX="16.75" PointY="22.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_umowy" Width="1.5" PointX="22.75" PointY="17.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Stanowisko" Width="1.5" PointX="22.75" PointY="20.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_czesci" Width="1.5" PointX="23.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_maszyn" Width="1.5" PointX="18.75" PointY="23.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_materialu" Width="1.5" PointX="20.75" PointY="23.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_narzedzi" Width="1.5" PointX="22.75" PointY="23.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zamowienia_klienta" Width="1.5" PointX="2.75" PointY="24.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zatrudnienia" Width="1.5" PointX="24.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wplyw" Width="1.5" PointX="4.75" PointY="24.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wycena_sz_zamowienia" Width="1.5" PointX="24.75" PointY="6.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wydanie_faktury" Width="1.5" PointX="24.75" PointY="9.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wyplata" Width="1.5" PointX="24.75" PointY="14.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Zamowienie_klienta" Width="1.5" PointX="24.75" PointY="18.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Zamowienie_zewn" Width="1.5" PointX="24.75" PointY="21.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Zatrudnienie" Width="1.5" PointX="24.75" PointY="24.75" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Czesc__Id_mod__3F466844" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_cz__489AC854" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_cz__3A4CA8FD" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_cz__46B27FE2" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_cz__02084FDA" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__2739D489" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3864608B" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__2CF2ADDF" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__2EDAF651" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__245D67DE" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3D2915A8" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__2A164134" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__339FAB6E" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__2FCF1A8A" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3493CFA7" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__395884C4" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3E1D39E1" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Magazy__Id_za__0D7A0286" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_ma__55F4C372" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_ma__10566F31" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Oplaty_stale" Width="1.5" PointX="0.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Plik" Width="1.5" PointX="2.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Po_szczegoly_zam_produkt" Width="1.5" PointX="4.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Pracownik" Width="1.5" PointX="6.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Premia" Width="1.5" PointX="20.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rachunek" Width="1.5" PointX="22.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_nieobecnosci" Width="1.5" PointX="22.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_rachunku" Width="1.5" PointX="8.75" PointY="22.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_statusu_zamowienia" Width="1.5" PointX="22.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_umowy" Width="1.5" PointX="10.75" PointY="22.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Stanowisko" Width="1.5" PointX="22.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_czesci" Width="1.5" PointX="12.75" PointY="22.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_maszyn" Width="1.5" PointX="14.75" PointY="22.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_materialu" Width="1.5" PointX="22.75" PointY="15.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_narzedzi" Width="1.5" PointX="16.75" PointY="22.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zamowienia_klienta" Width="1.5" PointX="22.75" PointY="18.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zatrudnienia" Width="1.5" PointX="22.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wplyw" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wycena_sz_zamowienia" Width="1.5" PointX="0.75" PointY="24.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wydanie_faktury" Width="1.5" PointX="2.75" PointY="24.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Wyplata" Width="1.5" PointX="24.75" PointY="3.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Zamowienie_klienta" Width="1.5" PointX="24.75" PointY="7.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Zamowienie_zewn" Width="1.5" PointX="24.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Zatrudnienie" Width="1.5" PointX="24.75" PointY="13.75" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Czesc__Id_mod__403A8C7D" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_cz__4A8310C6" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_cz__3C34F16F" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_cz__489AC854" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_cz__02FC7413" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__29221CFB" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3A4CA8FD" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__2EDAF651" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__30C33EC3" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__2645B050" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3F115E1A" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Dostaw__Id_pr__2BFE89A6" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3587F3E0" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__31B762FC" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__367C1819" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__3B40CD36" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_do__40058253" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Magazy__Id_za__0E6E26BF" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_ma__57DD0BE4" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_ma__114A936A" />
         <AssociationConnector Association="DrukarniaModel.FK__DM_Materi__Id_ro__286302EC" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_ma__3F115E1A" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_ma__540C7B00" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wlasci__Id_ma__2A4B4B5E" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_ma__65370702" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_ma__7755B73D" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_m__Id_ma__02C769E9" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_ma__693CA210" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_ma__7D439ABD" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Narzed__Id_ro__300424B4" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_na__208CD6FA" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_na__3587F3E0" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_na__1EA48E88" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Zuzyte__Id_na__1BC821DD" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_na__06CD04F7" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_wl__2180FB33" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_wl__498EEC8D" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wlasci__Id_wl__2B3F6F97" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_wl__02FC7413" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_wl__07C12930" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_wl__7E37BEF6" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__45BE5BA9" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__42E1EEFE" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__43D61337" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__59C55456" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__5AB9788F" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__531856C7" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__503BEA1C" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__51300E55" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_za__4F47C5E3" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__1332DBDC" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__114A936A" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__1DB06A4F" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Wypozy__Id_pr__17036CC0" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_ma__40F9A68C" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_ma__55F4C372" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wlasci__Id_ma__2B3F6F97" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_ma__671F4F74" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_ma__793DFFAF" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_m__Id_ma__04AFB25B" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_ma__6A30C649" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_ma__7E37BEF6" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Narzed__Id_ro__30F848ED" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_na__22751F6C" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_na__37703C52" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_na__1F98B2C1" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Zuzyte__Id_na__1CBC4616" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_na__07C12930" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_wl__236943A5" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Parame__Id_wl__4B7734FF" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wlasci__Id_wl__2C3393D0" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_wl__03F0984C" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_wl__08B54D69" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_wl__7F2BE32F" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__47A6A41B" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__44CA3770" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__45BE5BA9" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__5BAD9CC8" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__5CA1C101" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__55009F39" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__5224328E" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__531856C7" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_za__51300E55" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__14270015" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wydani__Id_pr__123EB7A3" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__1EA48E88" />
         <AssociationConnector Association="DrukarniaModel.FK__DM_Wypozy__Id_pr__17F790F9" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1AD3FDA4" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Obslug__Id_co__214BF109" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Czynno__Id_cz__1A9EF37A" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Czynno__Id_na__19AACF41" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_cz__32767D0B" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_fi__27F8EE98" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_ma__30C33EC3" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Maszyn__Id_mo__3C69FB99" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Maszyn__Id_ro__3B75D760" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_w__Id_ma__0697FACD" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_ma__28ED12D1" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_ma__2CBDA3B5" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_ma__308E3499" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Zuzyta__Id_ma__12FDD1B2" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_ma__797309D9" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Obslug__Id_na__1F63A897" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Obslug__Id_ro__2057CCD0" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_po__76619304" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_pro__Id_pr__6BE40491" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_pro__Id_ro__6AEFE058" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_po__662B2B3B" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_wyd__Id_pr__634EBE90" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_wyd__Id_wy__625A9A57" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Proces__Id_pr__7FEAFD3E" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_c__Id_pr__09746778" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_m__Id_pr__01D345B0" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_w__Id_pr__05A3D694" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_c__Id_ro__0A688BB1" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_pr__14270015" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_pr__56E8E7AB" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_pr__2DB1C7EE" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_pr__318258D2" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_us__29E1370A" />
-        <AssociationConnector Association="DrukarniaModel.FK__DP_Wydruk__Id_pl__5D95E53A" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_dz__59FA5E80" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_et__5AEE82B9" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zamowi__Id_kl__619B8048" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Nieobe__Id_pr__4CA06362" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Nieobe__Id_ro__4D94879B" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_pl__68487DD7" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Wycena__Id_pl__6D0D32F4" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zamowi__Id_pr__628FA481" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zamowi__Id_pr__75A278F5" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_pr__5812160E" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Rachun__Id_ro__440B1D61" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Status__Id_ro__72C60C4A" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_ro__5BE2A6F2" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_st__59063A47" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Status__Id_za__71D1E811" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__01142BA1" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__787EE5A0" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__7C4F7684" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__05D8E0BE" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__6754599E" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Wycena__Id_sz__6C190EBB" />
-        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__5EBF139D" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__31B762FC" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__367C1819" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__3B40CD36" />
-        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__40058253" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Wypozy__Id_pr__18EBB532" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1BC821DD" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Obslug__Id_co__2334397B" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Czynno__Id_cz__1C873BEC" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Czynno__Id_na__1B9317B3" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_cz__345EC57D" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_fi__29E1370A" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_ma__32AB8735" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Maszyn__Id_mo__3D5E1FD2" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Maszyn__Id_ro__3C69FB99" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_w__Id_ma__0880433F" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_ma__2AD55B43" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_ma__2EA5EC27" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_ma__32767D0B" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Zuzyta__Id_ma__14E61A24" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_ma__7A672E12" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Obslug__Id_na__214BF109" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Obslug__Id_ro__22401542" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_po__7849DB76" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_pro__Id_pr__6DCC4D03" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_pro__Id_ro__6CD828CA" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_mat__Id_po__681373AD" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_wyd__Id_pr__65370702" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Po_wyd__Id_wy__6442E2C9" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Proces__Id_pr__01D345B0" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_c__Id_pr__0B5CAFEA" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_m__Id_pr__03BB8E22" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_w__Id_pr__078C1F06" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_prod_c__Id_ro__0C50D423" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_pr__151B244E" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Szczeg__Id_pr__58D1301D" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_pr__2F9A1060" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_pr__336AA144" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Serwis__Id_us__2BC97F7C" />
+        <AssociationConnector Association="DrukarniaModel.FK__DP_Wydruk__Id_pl__5F7E2DAC" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_dz__5AEE82B9" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_et__5BE2A6F2" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zamowi__Id_kl__628FA481" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Nieobe__Id_pr__4D94879B" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Nieobe__Id_ro__4E88ABD4" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_pl__693CA210" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Wycena__Id_pl__6E01572D" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zamowi__Id_pr__6383C8BA" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zamowi__Id_pr__76969D2E" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_pr__59063A47" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Rachun__Id_ro__44FF419A" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Status__Id_ro__73BA3083" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_ro__5CD6CB2B" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Zatrud__Id_st__59FA5E80" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Status__Id_za__72C60C4A" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__02084FDA" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__797309D9" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__7D439ABD" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__06CD04F7" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__68487DD7" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Wycena__Id_sz__6D0D32F4" />
+        <AssociationConnector Association="DrukarniaModel.FK__DZ_Szczeg__Id_za__5FB337D6" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__339FAB6E" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__3864608B" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__3D2915A8" />
+        <AssociationConnector Association="DrukarniaModel.FK__DM_Sklad___Id_za__41EDCAC5" />
         <AssociationConnector Association="DrukarniaModel.DM_Wybor_maszyny" />
         <AssociationConnector Association="DrukarniaModel.DP_Czesc_wykorzystana" />
         <AssociationConnector Association="DrukarniaModel.DP_Narzedzie_uzyte_naprawa" />

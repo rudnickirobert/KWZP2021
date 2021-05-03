@@ -14,6 +14,7 @@ namespace KWZP2021
     
     public partial class vDM_Parametr_narzedzia
     {
+        public int Id_parametru { get; set; }
         public string Nazwa_narzedzia { get; set; }
         public string Wlasciwosc { get; set; }
         public string Wartosc { get; set; }
