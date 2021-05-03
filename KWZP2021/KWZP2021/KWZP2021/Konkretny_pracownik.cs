@@ -49,7 +49,7 @@ namespace KWZP2021
         private void buttonZapiszKonkretnegoKlienta_Click(object sender, EventArgs e)
         {
             Pracownicy frm = (Pracownicy)Application.OpenForms["Pracownicy"];
-            int row = (frm.dvgPracownik.CurrentRow.Index) + 1;
+            int row = Convert.ToInt32(frm.dvgPracownik.CurrentRow.Cells[0].Value);
             DZ_Pracownik toUpdate = this.database.DZ_Pracownik.Where(pracownik => pracownik.Id_pracownika == row).First();
 
             toUpdate.Imie = txtImie2.Text; // UPDATE

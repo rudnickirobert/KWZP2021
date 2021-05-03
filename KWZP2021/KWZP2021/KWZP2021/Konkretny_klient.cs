@@ -68,7 +68,7 @@ namespace KWZP2021
         {
 
             Klienci frm = (Klienci)Application.OpenForms["Klienci"];
-            int row = (frm.dvgKlient.CurrentRow.Index) + 1;
+            int row = Convert.ToInt32(frm.dvgKlient.CurrentRow.Cells[0].Value);
             DZ_Klient toUpdate = this.database.DZ_Klient.Where(klient => klient.Id_klienta == row).First();
 
             toUpdate.Nazwa_firmy = txtNazwa_Firmy1.Text; // UPDATE
