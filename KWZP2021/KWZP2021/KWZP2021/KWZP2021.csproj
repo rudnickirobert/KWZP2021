@@ -469,6 +469,12 @@
     <Compile Include="Konkretna_wyplata.Designer.cs">
       <DependentUpon>Konkretna_wyplata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Konkretne_zatrudnienie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Konkretne_zatrudnienie.Designer.cs">
+      <DependentUpon>Konkretne_zatrudnienie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Konkretny_klient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1034,6 +1040,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Konkretna_wyplata.resx">
       <DependentUpon>Konkretna_wyplata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Konkretne_zatrudnienie.resx">
+      <DependentUpon>Konkretne_zatrudnienie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Konkretny_klient.resx">
       <DependentUpon>Konkretny_klient.cs</DependentUpon>

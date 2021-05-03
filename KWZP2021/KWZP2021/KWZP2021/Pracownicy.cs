@@ -58,6 +58,7 @@ namespace KWZP2021
             konkretny_pracownik.txtNumer_Rachunku2.Text = dvgPracownik.CurrentRow.Cells[9].Value.ToString();
             konkretny_pracownik.txtData2.Text = dvgPracownik.CurrentRow.Cells[7].Value.ToString();
             konkretny_pracownik.dateTimePicker1.Value = Convert.ToDateTime(dvgPracownik.CurrentRow.Cells[7].Value);
+            
 
             //database.DZ_Klient.Add(konkretny_klient);
             //database.SaveChanges();

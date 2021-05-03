@@ -39,6 +39,7 @@ namespace KWZP2021
             database.DZ_Pracownik.Add(pracownik);
             database.SaveChanges();
             this.Close();
+            
         }
 
         private void Nowy_pracownik_Load(object sender, EventArgs e)

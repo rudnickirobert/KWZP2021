@@ -78,5 +78,10 @@ namespace KWZP2021
             edytujnarzedzie.ShowDialog();
             initDataGridView();
         }
+
+        private void Narzedzie_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

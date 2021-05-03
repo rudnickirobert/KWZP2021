@@ -38,5 +38,10 @@ namespace KWZP2021
             frm.dgvNarzedzie.DataSource = this.database.vDM_Narzedzie.ToList();
             this.Close();
         }
+
+        private void EdytujNarzedzie_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace KWZP2021
             this.cmbRodzaj_umowy.DisplayMember = "Rodzaj_umowy";
             this.cmbRodzaj_umowy.ValueMember = "Id_rodzaj_umowy";
 
+            
 
 
 
@@ -52,6 +53,7 @@ namespace KWZP2021
         {
 
         }
+      
 
         private void cmbPracownik_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -75,6 +77,33 @@ namespace KWZP2021
             zatrudnienie.Id_rodzaj_umowy = Convert.ToInt32(cmbRodzaj_umowy.SelectedValue);
             database.DZ_Zatrudnienie.Add(zatrudnienie);
             database.SaveChanges();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Nowy_pracownik pracownik = new Nowy_pracownik(this.database);
+            pracownik.ShowDialog();
+                    }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonWyczyscPola_Click(object sender, EventArgs e)
+        {
+            cmbPracownik.Text = "";
+            cmbStanowisko.Text = "";
+            cmbDzial.Text = "";
+            cmbEtat.Text = "";
+            cmbRodzaj_umowy.Text = "";
+            
+            
+        }
+
+        private void buttonPowrot_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
