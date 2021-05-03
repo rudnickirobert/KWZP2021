@@ -49,7 +49,7 @@ namespace KWZP2021
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(212, 77);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Archiwum Kosztów zewnętrznych";
+            this.button2.Text = "Archiwum Kosztów Zewnętrznych";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

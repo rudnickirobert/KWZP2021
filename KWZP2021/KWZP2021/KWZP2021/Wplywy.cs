@@ -54,5 +54,20 @@ namespace KWZP2021
 
             }
         }
+        Bitmap bmp;
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int height = dataGridView1.Height;
+            dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height * 2;
+            bmp = new Bitmap(dataGridView1.Width, dataGridView1.Height);
+            dataGridView1.DrawToBitmap(bmp, new Rectangle(0, 0, dataGridView1.Width, dataGridView1.Height));
+            dataGridView1.Height = height;
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bmp, 0, 0);
+        }
     }
 }

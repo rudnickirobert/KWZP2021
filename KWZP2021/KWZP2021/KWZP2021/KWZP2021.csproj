@@ -1085,6 +1085,12 @@
       <DependentUpon>DrukarniaModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\vDZ_Archiwum_Koszty_zewnetrzne.datasource" />
+    <None Include="Properties\DataSources\vDZ_Koszty_zewnetrzne.datasource" />
+    <None Include="Properties\DataSources\vDZ_Oplaty_stale.datasource" />
+    <None Include="Properties\DataSources\vDZ_Rachunek.datasource" />
+    <None Include="Properties\DataSources\vDZ_Wplyw.datasource" />
+    <None Include="Properties\DataSources\vDZ_Wydanie_faktury.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
