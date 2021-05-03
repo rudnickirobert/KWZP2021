@@ -23,7 +23,6 @@ namespace KWZP2021
     
         public int Id_wypozyczenia_narzedzia { get; set; }
         public int Id_pracownika_wypozyczajacego { get; set; }
-        public int Id_pracownika_wydajacego { get; set; }
         public System.DateTime Data_i_godzina_wypozyczenia { get; set; }
         public Nullable<System.DateTime> Data_i_godzina_zwrotu { get; set; }
         public string Uwagi { get; set; }
@@ -31,7 +30,6 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
-        public virtual DZ_Pracownik DZ_Pracownik1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Zuzyte_narzedzie> DM_Zuzyte_narzedzie { get; set; }
     }

@@ -36,7 +36,7 @@ namespace KWZP2021
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć materiał?", "Usuwanie materiał", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć rodzaj narzędzia?", "Usuwanie rodzaju narzędzia", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(this.dgvRodzaj.CurrentRow.Cells[0].Value);
@@ -50,7 +50,7 @@ namespace KWZP2021
             }
             else
             {
-                DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć materiału?");
+                DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć!");
             }
         }
         private void txtFind_TextChanged(object sender, EventArgs e)
@@ -63,6 +63,25 @@ namespace KWZP2021
             EdytujRodzajNarzedzia rodzaj1 = new EdytujRodzajNarzedzia(this.database);
             rodzaj1.txtRodzaj.Text = dgvRodzaj.CurrentRow.Cells[1].Value.ToString();
             rodzaj1.ShowDialog();
+        }
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvRodzaj_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnPowrot_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

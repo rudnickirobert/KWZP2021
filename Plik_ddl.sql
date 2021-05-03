@@ -244,7 +244,6 @@ CREATE TABLE DM_Szczegoly_wydania_produktu (
 CREATE TABLE DM_Wypozyczenie_narzedzia (
 	Id_wypozyczenia_narzedzia int identity(1,1) not null PRIMARY KEY,
 	Id_pracownika_wypozyczajacego int not null FOREIGN KEY REFERENCES DZ_Pracownik (Id_pracownika),
-	Id_pracownika_wydajacego int not null FOREIGN KEY REFERENCES DZ_Pracownik (Id_pracownika),
 	Data_i_godzina_wypozyczenia DATE NOT NULL,
 	Data_i_godzina_zwrotu DATE NULL,
 	Uwagi nvarchar (100)
@@ -258,6 +257,7 @@ CREATE TABLE DM_Zuzyte_narzedzie (
 	Uwagi nvarchar (100)
 );
 CREATE TABLE DM_Szczegoly_wypozyczenia_narzedzia (
+    Id_wypozyczenia_narz int identity(1,1) not null PRIMARY KEY,
 	Id_wypozyczenia_narzedzia int not null FOREIGN KEY REFERENCES DM_Wypozyczenie_narzedzia (Id_wypozyczenia_narzedzia),
 	Id_narzedzia int not null FOREIGN KEY REFERENCES DM_Narzedzie (Id_narzedzia),
 	Ilosc int not null

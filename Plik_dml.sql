@@ -434,15 +434,15 @@ VALUES
 	(7,7,75),
 	(8,8,65)
 ;
-INSERT INTO DM_Wypozyczenie_narzedzia(Id_pracownika_wypozyczajacego, Id_pracownika_wydajacego, Data_i_godzina_wypozyczenia, Data_i_godzina_zwrotu, Uwagi)
+INSERT INTO DM_Wypozyczenie_narzedzia(Id_pracownika_wypozyczajacego, Data_i_godzina_wypozyczenia, Data_i_godzina_zwrotu, Uwagi)
 VALUES
-	(1, 2, '2021-02-12','2021-02-12', 'brak'),
-	(7, 2, '2021-04-11','2021-04-11', 'uszkodzenie mechaniczne'),
-	(8, 2, '2021-01-31','2021-01-31', 'brak'),
-	(7, 3, '2021-03-03','2021-03-03', 'brak'),
-	(7, 3, '2021-04-16','2021-04-17', 'brak'),
-	(9, 3, '2021-03-01','2021-03-01', 'uszkodzona izolacja'),
-	(5, 3, '2021-02-15','2021-02-15', 'porysowana obudowa')
+	(1,  '2021-02-12','2021-02-12', 'brak'),
+	(7,  '2021-04-11','2021-04-11', 'uszkodzenie mechaniczne'),
+	(8,  '2021-01-31','2021-01-31', 'brak'),
+	(7,  '2021-03-03','2021-03-03', 'brak'),
+	(7,  '2021-04-16','2021-04-17', 'brak'),
+	(9,  '2021-03-01','2021-03-01', 'uszkodzona izolacja'),
+	(5,  '2021-02-15','2021-02-15', 'porysowana obudowa')
 	;
 INSERT INTO DM_Zuzyte_narzedzie(Id_wypozyczenia_narzedzia,Id_narzedzia, Data_zuzycia, Ilosc, Uwagi)
 VALUES

@@ -37,6 +37,7 @@ namespace KWZP2021
         public virtual DbSet<DM_Parametr_narzedzia> DM_Parametr_narzedzia { get; set; }
         public virtual DbSet<DM_Rodzaj_materialu> DM_Rodzaj_materialu { get; set; }
         public virtual DbSet<DM_Rodzaj_narzedzia> DM_Rodzaj_narzedzia { get; set; }
+        public virtual DbSet<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DbSet<DM_Wlasciwosc> DM_Wlasciwosc { get; set; }
         public virtual DbSet<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         public virtual DbSet<DM_Wydanie_czesci> DM_Wydanie_czesci { get; set; }
@@ -100,7 +101,6 @@ namespace KWZP2021
         public virtual DbSet<DM_Szczegoly_wydania_czesci> DM_Szczegoly_wydania_czesci { get; set; }
         public virtual DbSet<DM_Szczegoly_wydania_materialu> DM_Szczegoly_wydania_materialu { get; set; }
         public virtual DbSet<DM_Szczegoly_wydania_produktu> DM_Szczegoly_wydania_produktu { get; set; }
-        public virtual DbSet<DM_Szczegoly_wypozyczenia_narzedzia> DM_Szczegoly_wypozyczenia_narzedzia { get; set; }
         public virtual DbSet<DP_Po_material_czynnosc> DP_Po_material_czynnosc { get; set; }
         public virtual DbSet<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
         public virtual DbSet<DP_prod_material> DP_prod_material { get; set; }

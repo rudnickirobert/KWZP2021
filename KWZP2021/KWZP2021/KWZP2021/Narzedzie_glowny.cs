@@ -33,5 +33,19 @@ namespace KWZP2021
             Rodzaj_narzedzia rodzaj = new Rodzaj_narzedzia(this.database);
             rodzaj.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WlasciwoscNarzedzia nowa = new WlasciwoscNarzedzia(this.database);
+                nowa.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            WypozyczenieNarzedzia wypozyczenie = new WypozyczenieNarzedzia(this.database);
+                wypozyczenie.ShowDialog();
+            this.Close();
+        }
     }
 }

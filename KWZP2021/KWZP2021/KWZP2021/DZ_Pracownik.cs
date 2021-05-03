@@ -29,7 +29,6 @@ namespace KWZP2021
             this.DM_Wydanie_materialu_dla_produkcji1 = new HashSet<DM_Wydanie_materialu_dla_produkcji>();
             this.DM_Wydanie_produktu = new HashSet<DM_Wydanie_produktu>();
             this.DM_Wypozyczenie_narzedzia = new HashSet<DM_Wypozyczenie_narzedzia>();
-            this.DM_Wypozyczenie_narzedzia1 = new HashSet<DM_Wypozyczenie_narzedzia>();
             this.DP_Serwis_wewnetrzny_naprawa = new HashSet<DP_Serwis_wewnetrzny_naprawa>();
             this.DP_Serwis_wewnetrzny_obsluga = new HashSet<DP_Serwis_wewnetrzny_obsluga>();
             this.DZ_Nieobecnosc = new HashSet<DZ_Nieobecnosc>();
@@ -75,8 +74,6 @@ namespace KWZP2021
         public virtual ICollection<DM_Wydanie_produktu> DM_Wydanie_produktu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Wypozyczenie_narzedzia> DM_Wypozyczenie_narzedzia { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Wypozyczenie_narzedzia> DM_Wypozyczenie_narzedzia1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Serwis_wewnetrzny_naprawa> DP_Serwis_wewnetrzny_naprawa { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

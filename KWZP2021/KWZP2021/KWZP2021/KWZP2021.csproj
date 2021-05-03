@@ -217,6 +217,12 @@
     <Compile Include="DodajRodzajNarzedzia.Designer.cs">
       <DependentUpon>DodajRodzajNarzedzia.cs</DependentUpon>
     </Compile>
+    <Compile Include="DodajWlasciwoscNarzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DodajWlasciwoscNarzedzia.Designer.cs">
+      <DependentUpon>DodajWlasciwoscNarzedzia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dodaj_czesc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -439,6 +445,12 @@
     <Compile Include="EdytujRodzajNarzedzia.Designer.cs">
       <DependentUpon>EdytujRodzajNarzedzia.cs</DependentUpon>
     </Compile>
+    <Compile Include="EdytujWlasciwoscNarzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdytujWlasciwoscNarzedzia.Designer.cs">
+      <DependentUpon>EdytujWlasciwoscNarzedzia.cs</DependentUpon>
+    </Compile>
     <Compile Include="FirmaSerwisowa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -541,6 +553,18 @@
     <Compile Include="Nowa_maszyna.Designer.cs">
       <DependentUpon>Nowa_maszyna.cs</DependentUpon>
     </Compile>
+    <Compile Include="NoweSzczegolyWypozyczeniaNarzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoweSzczegolyWypozyczeniaNarzedzia.Designer.cs">
+      <DependentUpon>NoweSzczegolyWypozyczeniaNarzedzia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoweWypozyczenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoweWypozyczenie.Designer.cs">
+      <DependentUpon>NoweWypozyczenie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nowe_narzedzie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -627,6 +651,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SzczegolyWypozyczenia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SzczegolyWypozyczenia.Designer.cs">
+      <DependentUpon>SzczegolyWypozyczenia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Szczegoly_zatrudnienia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -939,6 +969,12 @@
     <Compile Include="Wlasciwosc.Designer.cs">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
     </Compile>
+    <Compile Include="WlasciwoscNarzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WlasciwoscNarzedzia.Designer.cs">
+      <DependentUpon>WlasciwoscNarzedzia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Wplywy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -957,11 +993,23 @@
     <Compile Include="Wyplata.Designer.cs">
       <DependentUpon>Wyplata.cs</DependentUpon>
     </Compile>
+    <Compile Include="WypozyczenieNarzedzia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WypozyczenieNarzedzia.Designer.cs">
+      <DependentUpon>WypozyczenieNarzedzia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Zatrudnienie.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Zatrudnienie.Designer.cs">
       <DependentUpon>Zatrudnienie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZwrotNarzedzi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZwrotNarzedzi.Designer.cs">
+      <DependentUpon>ZwrotNarzedzi.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AddFirmaSerwisowa.resx">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
@@ -999,6 +1047,9 @@
     <EmbeddedResource Include="DodajRodzajNarzedzia.resx">
       <DependentUpon>DodajRodzajNarzedzia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DodajWlasciwoscNarzedzia.resx">
+      <DependentUpon>DodajWlasciwoscNarzedzia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dodaj_czesc.resx">
       <DependentUpon>Dodaj_czesc.cs</DependentUpon>
     </EmbeddedResource>
@@ -1025,6 +1076,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EdytujRodzajNarzedzia.resx">
       <DependentUpon>EdytujRodzajNarzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdytujWlasciwoscNarzedzia.resx">
+      <DependentUpon>EdytujWlasciwoscNarzedzia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FirmaSerwisowa.resx">
       <DependentUpon>FirmaSerwisowa.cs</DependentUpon>
@@ -1077,6 +1131,12 @@
     <EmbeddedResource Include="Nowa_maszyna.resx">
       <DependentUpon>Nowa_maszyna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NoweSzczegolyWypozyczeniaNarzedzia.resx">
+      <DependentUpon>NoweSzczegolyWypozyczeniaNarzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoweWypozyczenie.resx">
+      <DependentUpon>NoweWypozyczenie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nowe_narzedzie.resx">
       <DependentUpon>Nowe_narzedzie.cs</DependentUpon>
     </EmbeddedResource>
@@ -1128,6 +1188,9 @@
     <EmbeddedResource Include="Stanowiska.resx">
       <DependentUpon>Stanowiska.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SzczegolyWypozyczenia.resx">
+      <DependentUpon>SzczegolyWypozyczenia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Szczegoly_zatrudnienia.resx">
       <DependentUpon>Szczegoly_zatrudnienia.cs</DependentUpon>
     </EmbeddedResource>
@@ -1136,6 +1199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Wlasciwosc.resx">
       <DependentUpon>Wlasciwosc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WlasciwoscNarzedzia.resx">
+      <DependentUpon>WlasciwoscNarzedzia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Wplywy.resx">
       <DependentUpon>Wplywy.cs</DependentUpon>
@@ -1146,8 +1212,14 @@
     <EmbeddedResource Include="Wyplata.resx">
       <DependentUpon>Wyplata.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WypozyczenieNarzedzia.resx">
+      <DependentUpon>WypozyczenieNarzedzia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Zatrudnienie.resx">
       <DependentUpon>Zatrudnienie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZwrotNarzedzi.resx">
+      <DependentUpon>ZwrotNarzedzi.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="DrukarniaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -23,6 +23,7 @@ namespace KWZP2021
         public Nullable<System.DateTime> Data_zakonczenia { get; set; }
         public string Rodzaj { get; set; }
         public System.DateTime Data_zatrudnienia { get; set; }
+        public Nullable<System.DateTime> Data_zwolnienia { get; set; }
         public Nullable<double> Premia { get; set; }
         public Nullable<double> Pensja { get; set; }
     }

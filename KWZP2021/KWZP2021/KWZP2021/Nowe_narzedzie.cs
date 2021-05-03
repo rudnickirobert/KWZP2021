@@ -28,7 +28,7 @@ namespace KWZP2021
             narzedzie.Nazwa = txtNazwa.Text;
             narzedzie.Id_rodzaj_narzedzia = Convert.ToInt32(comboBox1.SelectedValue); ;
             narzedzie.Nr_seryjny = txtNumer.Text;
-            narzedzie.Data_zuzycia = dateTimePicker1.Value;
+            narzedzie.Data_zuzycia = Convert.ToDateTime(dateTimePicker1.Value);
             this.database.DM_Narzedzie.Add(narzedzie);
             database.SaveChanges();
             this.Close();

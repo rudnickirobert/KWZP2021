@@ -237,14 +237,11 @@ warning 6002: The table/view 'Drukarnia.dbo.DM_Szczegoly_wydania_produktu' does 
           <Property Name="Id_produkt" Type="int" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.DM_Szczegoly_wypozyczenia_narzedzia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DM_Szczegoly_wypozyczenia_narzedzia">
           <Key>
-            <PropertyRef Name="Id_wypozyczenia_narzedzia" />
-            <PropertyRef Name="Id_narzedzia" />
-            <PropertyRef Name="Ilosc" />
+            <PropertyRef Name="Id_wypozyczenia_narz" />
           </Key>
+          <Property Name="Id_wypozyczenia_narz" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_wypozyczenia_narzedzia" Type="int" Nullable="false" />
           <Property Name="Id_narzedzia" Type="int" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
@@ -322,7 +319,6 @@ warning 6002: The table/view 'Drukarnia.dbo.DM_Wybor_maszyny' does not have a pr
           </Key>
           <Property Name="Id_wypozyczenia_narzedzia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_pracownika_wypozyczajacego" Type="int" Nullable="false" />
-          <Property Name="Id_pracownika_wydajacego" Type="int" Nullable="false" />
           <Property Name="Data_i_godzina_wypozyczenia" Type="date" Nullable="false" />
           <Property Name="Data_i_godzina_zwrotu" Type="date" />
           <Property Name="Uwagi" Type="nvarchar" MaxLength="100" />
@@ -1185,10 +1181,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Szczegoly_wydania_produktu' does
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Szczegoly_wypozyczenia_narzedzia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDM_Szczegoly_wypozyczenia_narzedzia">
           <Key>
+            <PropertyRef Name="Id_wypozyczenia_narzedzia" />
             <PropertyRef Name="Identyfikator wypozyczenia" />
             <PropertyRef Name="Nazwa narzedzia" />
             <PropertyRef Name="Ilosc" />
           </Key>
+          <Property Name="Id_wypozyczenia_narzedzia" Type="int" Nullable="false" />
           <Property Name="Identyfikator wypozyczenia" Type="int" Nullable="false" />
           <Property Name="Nazwa narzedzia" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
@@ -1298,12 +1296,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wypozyczenie_narzedzia' does not
           <Key>
             <PropertyRef Name="Identyfikator wypozyczenia" />
             <PropertyRef Name="Nazwisko pracownika wypozyczajacego" />
-            <PropertyRef Name="Nazwisko pracownika wydajacego" />
             <PropertyRef Name="Data i godzina wypozyczenia" />
           </Key>
           <Property Name="Identyfikator wypozyczenia" Type="int" Nullable="false" />
           <Property Name="Nazwisko pracownika wypozyczajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Nazwisko pracownika wydajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Data i godzina wypozyczenia" Type="date" Nullable="false" />
           <Property Name=" Data i godzina zwrotu" Type="date" />
           <Property Name=" Uwagi" Type="nvarchar" MaxLength="100" />
@@ -1854,6 +1850,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Nieobecnosc_pensja' does not hav
           <Property Name="Data_zakonczenia" Type="date" />
           <Property Name="Rodzaj" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Data_zatrudnienia" Type="date" Nullable="false" />
+          <Property Name="Data_zwolnienia" Type="date" />
           <Property Name="Premia" Type="float" />
           <Property Name="Pensja" Type="float" />
         </EntityType>
@@ -2896,19 +2893,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DM_Wypozy__Id_pr__18EBB532">
-          <End Role="DZ_Pracownik" Type="Self.DZ_Pracownik" Multiplicity="1" />
-          <End Role="DM_Wypozyczenie_narzedzia" Type="Self.DM_Wypozyczenie_narzedzia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DZ_Pracownik">
-              <PropertyRef Name="Id_pracownika" />
-            </Principal>
-            <Dependent Role="DM_Wypozyczenie_narzedzia">
-              <PropertyRef Name="Id_pracownika_wydajacego" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DM_Zuzyte__Id_na__1CBC4616">
+        <Association Name="FK__DM_Zuzyte__Id_na__1BC821DD">
           <End Role="DM_Narzedzie" Type="Self.DM_Narzedzie" Multiplicity="1" />
           <End Role="DM_Zuzyte_narzedzie" Type="Self.DM_Zuzyte_narzedzie" Multiplicity="*" />
           <ReferentialConstraint>
@@ -2920,7 +2905,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DM_Zuzyte__Id_wy__1BC821DD">
+        <Association Name="FK__DM_Zuzyte__Id_wy__1AD3FDA4">
           <End Role="DM_Wypozyczenie_narzedzia" Type="Self.DM_Wypozyczenie_narzedzia" Multiplicity="1" />
           <End Role="DM_Zuzyte_narzedzie" Type="Self.DM_Zuzyte_narzedzie" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3953,6 +3938,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="DM_Parametr_narzedzia" EntityType="Self.DM_Parametr_narzedzia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DM_Rodzaj_materialu" EntityType="Self.DM_Rodzaj_materialu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DM_Rodzaj_narzedzia" EntityType="Self.DM_Rodzaj_narzedzia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DM_Szczegoly_wypozyczenia_narzedzia" EntityType="Self.DM_Szczegoly_wypozyczenia_narzedzia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DM_Wlasciwosc" EntityType="Self.DM_Wlasciwosc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DM_Wlasciwosc_materialu" EntityType="Self.DM_Wlasciwosc_materialu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DM_Wydanie_czesci" EntityType="Self.DM_Wydanie_czesci" Schema="dbo" store:Type="Tables" />
@@ -4081,13 +4067,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [DM_Szczegoly_wydania_produktu].[Id_produkt] AS [Id_produkt], 
     [DM_Szczegoly_wydania_produktu].[Ilosc] AS [Ilosc]
     FROM [dbo].[DM_Szczegoly_wydania_produktu] AS [DM_Szczegoly_wydania_produktu]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="DM_Szczegoly_wypozyczenia_narzedzia" EntityType="Self.DM_Szczegoly_wypozyczenia_narzedzia" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [DM_Szczegoly_wypozyczenia_narzedzia].[Id_wypozyczenia_narzedzia] AS [Id_wypozyczenia_narzedzia], 
-    [DM_Szczegoly_wypozyczenia_narzedzia].[Id_narzedzia] AS [Id_narzedzia], 
-    [DM_Szczegoly_wypozyczenia_narzedzia].[Ilosc] AS [Ilosc]
-    FROM [dbo].[DM_Szczegoly_wypozyczenia_narzedzia] AS [DM_Szczegoly_wypozyczenia_narzedzia]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="DM_Wybor_maszyny" EntityType="Self.DM_Wybor_maszyny" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -4342,6 +4321,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </EntitySet>
           <EntitySet Name="vDM_Szczegoly_wypozyczenia_narzedzia" EntityType="Self.vDM_Szczegoly_wypozyczenia_narzedzia" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
+    [vDM_Szczegoly_wypozyczenia_narzedzia].[Id_wypozyczenia_narzedzia] AS [Id_wypozyczenia_narzedzia], 
     [vDM_Szczegoly_wypozyczenia_narzedzia].[Identyfikator wypozyczenia] AS [Identyfikator wypozyczenia], 
     [vDM_Szczegoly_wypozyczenia_narzedzia].[Nazwa narzedzia] AS [Nazwa narzedzia], 
     [vDM_Szczegoly_wypozyczenia_narzedzia].[Ilosc] AS [Ilosc]
@@ -4408,7 +4388,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <DefiningQuery>SELECT 
     [vDM_Wypozyczenie_narzedzia].[Identyfikator wypozyczenia] AS [Identyfikator wypozyczenia], 
     [vDM_Wypozyczenie_narzedzia].[Nazwisko pracownika wypozyczajacego] AS [Nazwisko pracownika wypozyczajacego], 
-    [vDM_Wypozyczenie_narzedzia].[Nazwisko pracownika wydajacego] AS [Nazwisko pracownika wydajacego], 
     [vDM_Wypozyczenie_narzedzia].[Data i godzina wypozyczenia] AS [Data i godzina wypozyczenia], 
     [vDM_Wypozyczenie_narzedzia].[ Data i godzina zwrotu] AS [ Data i godzina zwrotu], 
     [vDM_Wypozyczenie_narzedzia].[ Uwagi] AS [ Uwagi]
@@ -4735,6 +4714,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Nieobecnosc_pensja].[Data_zakonczenia] AS [Data_zakonczenia], 
     [vDZ_Nieobecnosc_pensja].[Rodzaj] AS [Rodzaj], 
     [vDZ_Nieobecnosc_pensja].[Data_zatrudnienia] AS [Data_zatrudnienia], 
+    [vDZ_Nieobecnosc_pensja].[Data_zwolnienia] AS [Data_zwolnienia], 
     [vDZ_Nieobecnosc_pensja].[Premia] AS [Premia], 
     [vDZ_Nieobecnosc_pensja].[Pensja] AS [Pensja]
     FROM [dbo].[vDZ_Nieobecnosc_pensja] AS [vDZ_Nieobecnosc_pensja]</DefiningQuery>
@@ -5185,15 +5165,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
           </AssociationSet>
-          <AssociationSet Name="FK__DM_Wypozy__Id_pr__18EBB532" Association="Self.FK__DM_Wypozy__Id_pr__18EBB532">
-            <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
-            <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DM_Zuzyte__Id_na__1CBC4616" Association="Self.FK__DM_Zuzyte__Id_na__1CBC4616">
+          <AssociationSet Name="FK__DM_Zuzyte__Id_na__1BC821DD" Association="Self.FK__DM_Zuzyte__Id_na__1BC821DD">
             <End Role="DM_Narzedzie" EntitySet="DM_Narzedzie" />
             <End Role="DM_Zuzyte_narzedzie" EntitySet="DM_Zuzyte_narzedzie" />
           </AssociationSet>
-          <AssociationSet Name="FK__DM_Zuzyte__Id_wy__1BC821DD" Association="Self.FK__DM_Zuzyte__Id_wy__1BC821DD">
+          <AssociationSet Name="FK__DM_Zuzyte__Id_wy__1AD3FDA4" Association="Self.FK__DM_Zuzyte__Id_wy__1AD3FDA4">
             <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
             <End Role="DM_Zuzyte_narzedzie" EntitySet="DM_Zuzyte_narzedzie" />
           </AssociationSet>
@@ -5551,6 +5527,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="DM_Parametr_narzedzia" EntityType="DrukarniaModel.DM_Parametr_narzedzia" />
           <EntitySet Name="DM_Rodzaj_materialu" EntityType="DrukarniaModel.DM_Rodzaj_materialu" />
           <EntitySet Name="DM_Rodzaj_narzedzia" EntityType="DrukarniaModel.DM_Rodzaj_narzedzia" />
+          <EntitySet Name="DM_Szczegoly_wypozyczenia_narzedzia" EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" />
           <EntitySet Name="DM_Wlasciwosc" EntityType="DrukarniaModel.DM_Wlasciwosc" />
           <EntitySet Name="DM_Wlasciwosc_materialu" EntityType="DrukarniaModel.DM_Wlasciwosc_materialu" />
           <EntitySet Name="DM_Wydanie_czesci" EntityType="DrukarniaModel.DM_Wydanie_czesci" />
@@ -5614,7 +5591,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="DM_Szczegoly_wydania_czesci" EntityType="DrukarniaModel.DM_Szczegoly_wydania_czesci" />
           <EntitySet Name="DM_Szczegoly_wydania_materialu" EntityType="DrukarniaModel.DM_Szczegoly_wydania_materialu" />
           <EntitySet Name="DM_Szczegoly_wydania_produktu" EntityType="DrukarniaModel.DM_Szczegoly_wydania_produktu" />
-          <EntitySet Name="DM_Szczegoly_wypozyczenia_narzedzia" EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" />
           <EntitySet Name="DP_Po_material_czynnosc" EntityType="DrukarniaModel.DP_Po_material_czynnosc" />
           <EntitySet Name="DP_Po_material_wydruk" EntityType="DrukarniaModel.DP_Po_material_wydruk" />
           <EntitySet Name="DP_prod_material" EntityType="DrukarniaModel.DP_prod_material" />
@@ -5848,7 +5824,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DM_Narzedzie" EntitySet="DM_Narzedzie" />
             <End Role="DM_Szczegoly_wypozyczenia_narzedzia" EntitySet="DM_Szczegoly_wypozyczenia_narzedzia" />
           </AssociationSet>
-          <AssociationSet Name="FK__DM_Zuzyte__Id_na__1CBC4616" Association="DrukarniaModel.FK__DM_Zuzyte__Id_na__1CBC4616">
+          <AssociationSet Name="FK__DM_Zuzyte__Id_na__1BC821DD" Association="DrukarniaModel.FK__DM_Zuzyte__Id_na__1BC821DD">
             <End Role="DM_Narzedzie" EntitySet="DM_Narzedzie" />
             <End Role="DM_Zuzyte_narzedzie" EntitySet="DM_Zuzyte_narzedzie" />
           </AssociationSet>
@@ -5859,6 +5835,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <AssociationSet Name="FK__DM_Parame__Id_wl__236943A5" Association="DrukarniaModel.FK__DM_Parame__Id_wl__236943A5">
             <End Role="DM_Wlasciwosc" EntitySet="DM_Wlasciwosc" />
             <End Role="DM_Parametr_narzedzia" EntitySet="DM_Parametr_narzedzia" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DM_Szczeg__Id_wy__1EA48E88" Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__1EA48E88">
+            <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
+            <End Role="DM_Szczegoly_wypozyczenia_narzedzia" EntitySet="DM_Szczegoly_wypozyczenia_narzedzia" />
           </AssociationSet>
           <AssociationSet Name="FK__DM_Parame__Id_wl__4B7734FF" Association="DrukarniaModel.FK__DM_Parame__Id_wl__4B7734FF">
             <End Role="DM_Wlasciwosc" EntitySet="DM_Wlasciwosc" />
@@ -5924,19 +5904,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DM_Wydanie_produktu" EntitySet="DM_Wydanie_produktu" />
           </AssociationSet>
-          <AssociationSet Name="FK__DM_Szczeg__Id_wy__1EA48E88" Association="DrukarniaModel.FK__DM_Szczeg__Id_wy__1EA48E88">
-            <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
-            <End Role="DM_Szczegoly_wypozyczenia_narzedzia" EntitySet="DM_Szczegoly_wypozyczenia_narzedzia" />
-          </AssociationSet>
           <AssociationSet Name="FK__DM_Wypozy__Id_pr__17F790F9" Association="DrukarniaModel.FK__DM_Wypozy__Id_pr__17F790F9">
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
           </AssociationSet>
-          <AssociationSet Name="FK__DM_Wypozy__Id_pr__18EBB532" Association="DrukarniaModel.FK__DM_Wypozy__Id_pr__18EBB532">
-            <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
-            <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DM_Zuzyte__Id_wy__1BC821DD" Association="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1BC821DD">
+          <AssociationSet Name="FK__DM_Zuzyte__Id_wy__1AD3FDA4" Association="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1AD3FDA4">
             <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
             <End Role="DM_Zuzyte_narzedzie" EntitySet="DM_Zuzyte_narzedzie" />
           </AssociationSet>
@@ -6339,7 +6311,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <NavigationProperty Name="DM_Parametr_narzedzia" Relationship="DrukarniaModel.FK__DM_Parame__Id_na__22751F6C" FromRole="DM_Narzedzie" ToRole="DM_Parametr_narzedzia" />
           <NavigationProperty Name="DM_Sklad_dostawy_narzedzi" Relationship="DrukarniaModel.FK__DM_Sklad___Id_na__37703C52" FromRole="DM_Narzedzie" ToRole="DM_Sklad_dostawy_narzedzi" />
           <NavigationProperty Name="DM_Szczegoly_wypozyczenia_narzedzia" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_na__1F98B2C1" FromRole="DM_Narzedzie" ToRole="DM_Szczegoly_wypozyczenia_narzedzia" />
-          <NavigationProperty Name="DM_Zuzyte_narzedzie" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_na__1CBC4616" FromRole="DM_Narzedzie" ToRole="DM_Zuzyte_narzedzie" />
+          <NavigationProperty Name="DM_Zuzyte_narzedzie" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_na__1BC821DD" FromRole="DM_Narzedzie" ToRole="DM_Zuzyte_narzedzie" />
           <NavigationProperty Name="DZ_Szczegoly_zam_narzedzi" Relationship="DrukarniaModel.FK__DZ_Szczeg__Id_na__07C12930" FromRole="DM_Narzedzie" ToRole="DZ_Szczegoly_zam_narzedzi" />
           <NavigationProperty Name="DP_Serwis_wewnetrzny_naprawa" Relationship="DrukarniaModel.DP_Narzedzie_uzyte_naprawa" FromRole="DM_Narzedzie" ToRole="DP_Serwis_wewnetrzny_naprawa" />
           <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.DP_Narzedzie_uzyte_obsluga" FromRole="DM_Narzedzie" ToRole="DP_Serwis_wewnetrzny_obsluga" />
@@ -6371,6 +6343,17 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_rodzaj_narzedzia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DM_Narzedzie" Relationship="DrukarniaModel.FK__DM_Narzed__Id_ro__30F848ED" FromRole="DM_Rodzaj_narzedzia" ToRole="DM_Narzedzie" />
+        </EntityType>
+        <EntityType Name="DM_Szczegoly_wypozyczenia_narzedzia">
+          <Key>
+            <PropertyRef Name="Id_wypozyczenia_narz" />
+          </Key>
+          <Property Name="Id_wypozyczenia_narz" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_wypozyczenia_narzedzia" Type="Int32" Nullable="false" />
+          <Property Name="Id_narzedzia" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DM_Narzedzie" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_na__1F98B2C1" FromRole="DM_Szczegoly_wypozyczenia_narzedzia" ToRole="DM_Narzedzie" />
+          <NavigationProperty Name="DM_Wypozyczenie_narzedzia" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_wy__1EA48E88" FromRole="DM_Szczegoly_wypozyczenia_narzedzia" ToRole="DM_Wypozyczenie_narzedzia" />
         </EntityType>
         <EntityType Name="DM_Wlasciwosc">
           <Key>
@@ -6455,14 +6438,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </Key>
           <Property Name="Id_wypozyczenia_narzedzia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_pracownika_wypozyczajacego" Type="Int32" Nullable="false" />
-          <Property Name="Id_pracownika_wydajacego" Type="Int32" Nullable="false" />
           <Property Name="Data_i_godzina_wypozyczenia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_i_godzina_zwrotu" Type="DateTime" Precision="0" />
           <Property Name="Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DM_Szczegoly_wypozyczenia_narzedzia" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_wy__1EA48E88" FromRole="DM_Wypozyczenie_narzedzia" ToRole="DM_Szczegoly_wypozyczenia_narzedzia" />
           <NavigationProperty Name="DZ_Pracownik" Relationship="DrukarniaModel.FK__DM_Wypozy__Id_pr__17F790F9" FromRole="DM_Wypozyczenie_narzedzia" ToRole="DZ_Pracownik" />
-          <NavigationProperty Name="DZ_Pracownik1" Relationship="DrukarniaModel.FK__DM_Wypozy__Id_pr__18EBB532" FromRole="DM_Wypozyczenie_narzedzia" ToRole="DZ_Pracownik" />
-          <NavigationProperty Name="DM_Zuzyte_narzedzie" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1BC821DD" FromRole="DM_Wypozyczenie_narzedzia" ToRole="DM_Zuzyte_narzedzie" />
+          <NavigationProperty Name="DM_Zuzyte_narzedzie" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1AD3FDA4" FromRole="DM_Wypozyczenie_narzedzia" ToRole="DM_Zuzyte_narzedzie" />
         </EntityType>
         <EntityType Name="DM_Zuzyte_narzedzie">
           <Key>
@@ -6474,8 +6455,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_zuzycia" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
           <Property Name="Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DM_Narzedzie" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_na__1CBC4616" FromRole="DM_Zuzyte_narzedzie" ToRole="DM_Narzedzie" />
-          <NavigationProperty Name="DM_Wypozyczenie_narzedzia" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1BC821DD" FromRole="DM_Zuzyte_narzedzie" ToRole="DM_Wypozyczenie_narzedzia" />
+          <NavigationProperty Name="DM_Narzedzie" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_na__1BC821DD" FromRole="DM_Zuzyte_narzedzie" ToRole="DM_Narzedzie" />
+          <NavigationProperty Name="DM_Wypozyczenie_narzedzia" Relationship="DrukarniaModel.FK__DM_Zuzyte__Id_wy__1AD3FDA4" FromRole="DM_Zuzyte_narzedzie" ToRole="DM_Wypozyczenie_narzedzia" />
         </EntityType>
         <EntityType Name="DP_Co_ile_obsluga">
           <Key>
@@ -6836,7 +6817,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <NavigationProperty Name="DM_Wydanie_materialu_dla_produkcji1" Relationship="DrukarniaModel.FK__DM_Wydani__Id_pr__531856C7" FromRole="DZ_Pracownik" ToRole="DM_Wydanie_materialu_dla_produkcji" />
           <NavigationProperty Name="DM_Wydanie_produktu" Relationship="DrukarniaModel.FK__DM_Wydani__Id_pr__123EB7A3" FromRole="DZ_Pracownik" ToRole="DM_Wydanie_produktu" />
           <NavigationProperty Name="DM_Wypozyczenie_narzedzia" Relationship="DrukarniaModel.FK__DM_Wypozy__Id_pr__17F790F9" FromRole="DZ_Pracownik" ToRole="DM_Wypozyczenie_narzedzia" />
-          <NavigationProperty Name="DM_Wypozyczenie_narzedzia1" Relationship="DrukarniaModel.FK__DM_Wypozy__Id_pr__18EBB532" FromRole="DZ_Pracownik" ToRole="DM_Wypozyczenie_narzedzia" />
           <NavigationProperty Name="DP_Serwis_wewnetrzny_naprawa" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__2F9A1060" FromRole="DZ_Pracownik" ToRole="DP_Serwis_wewnetrzny_naprawa" />
           <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__336AA144" FromRole="DZ_Pracownik" ToRole="DP_Serwis_wewnetrzny_obsluga" />
           <NavigationProperty Name="DZ_Nieobecnosc" Relationship="DrukarniaModel.FK__DZ_Nieobe__Id_pr__4D94879B" FromRole="DZ_Pracownik" ToRole="DZ_Nieobecnosc" />
@@ -7186,18 +7166,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <NavigationProperty Name="DM_Wydanie_produktu" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_wy__14270015" FromRole="DM_Szczegoly_wydania_produktu" ToRole="DM_Wydanie_produktu" />
           <NavigationProperty Name="DP_Produkt" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_pr__151B244E" FromRole="DM_Szczegoly_wydania_produktu" ToRole="DP_Produkt" />
         </EntityType>
-        <EntityType Name="DM_Szczegoly_wypozyczenia_narzedzia">
-          <Key>
-            <PropertyRef Name="Id_wypozyczenia_narzedzia" />
-            <PropertyRef Name="Id_narzedzia" />
-            <PropertyRef Name="Ilosc" />
-          </Key>
-          <Property Name="Id_wypozyczenia_narzedzia" Type="Int32" Nullable="false" />
-          <Property Name="Id_narzedzia" Type="Int32" Nullable="false" />
-          <Property Name="Ilosc" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DM_Narzedzie" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_na__1F98B2C1" FromRole="DM_Szczegoly_wypozyczenia_narzedzia" ToRole="DM_Narzedzie" />
-          <NavigationProperty Name="DM_Wypozyczenie_narzedzia" Relationship="DrukarniaModel.FK__DM_Szczeg__Id_wy__1EA48E88" FromRole="DM_Szczegoly_wypozyczenia_narzedzia" ToRole="DM_Wypozyczenie_narzedzia" />
-        </EntityType>
         <EntityType Name="DP_Po_material_czynnosc">
           <Key>
             <PropertyRef Name="Id_po_proc_czynnosci" />
@@ -7471,10 +7439,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         </EntityType>
         <EntityType Name="vDM_Szczegoly_wypozyczenia_narzedzia">
           <Key>
+            <PropertyRef Name="Id_wypozyczenia_narzedzia" />
             <PropertyRef Name="Identyfikator_wypozyczenia" />
             <PropertyRef Name="Nazwa_narzedzia" />
             <PropertyRef Name="Ilosc" />
           </Key>
+          <Property Name="Id_wypozyczenia_narzedzia" Type="Int32" Nullable="false" />
           <Property Name="Identyfikator_wypozyczenia" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_narzedzia" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
@@ -7568,12 +7538,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Key>
             <PropertyRef Name="Identyfikator_wypozyczenia" />
             <PropertyRef Name="Nazwisko_pracownika_wypozyczajacego" />
-            <PropertyRef Name="Nazwisko_pracownika_wydajacego" />
             <PropertyRef Name="Data_i_godzina_wypozyczenia" />
           </Key>
           <Property Name="Identyfikator_wypozyczenia" Type="Int32" Nullable="false" />
           <Property Name="Nazwisko_pracownika_wypozyczajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Nazwisko_pracownika_wydajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Data_i_godzina_wypozyczenia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="C_Data_i_godzina_zwrotu" Type="DateTime" Precision="0" />
           <Property Name="C_Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -8038,6 +8006,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_zakonczenia" Type="DateTime" Precision="0" />
           <Property Name="Rodzaj" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_zwolnienia" Type="DateTime" Precision="0" />
           <Property Name="Premia" Type="Double" />
           <Property Name="Pensja" Type="Double" />
         </EntityType>
@@ -8800,7 +8769,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DM_Zuzyte__Id_na__1CBC4616">
+        <Association Name="FK__DM_Zuzyte__Id_na__1BC821DD">
           <End Type="DrukarniaModel.DM_Narzedzie" Role="DM_Narzedzie" Multiplicity="1" />
           <End Type="DrukarniaModel.DM_Zuzyte_narzedzie" Role="DM_Zuzyte_narzedzie" Multiplicity="*" />
           <ReferentialConstraint>
@@ -8833,6 +8802,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Principal>
             <Dependent Role="DM_Parametr_narzedzia">
               <PropertyRef Name="Id_wlasciwosc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DM_Szczeg__Id_wy__1EA48E88">
+          <End Type="DrukarniaModel.DM_Wypozyczenie_narzedzia" Role="DM_Wypozyczenie_narzedzia" Multiplicity="1" />
+          <End Type="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" Role="DM_Szczegoly_wypozyczenia_narzedzia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_Wypozyczenie_narzedzia">
+              <PropertyRef Name="Id_wypozyczenia_narzedzia" />
+            </Principal>
+            <Dependent Role="DM_Szczegoly_wypozyczenia_narzedzia">
+              <PropertyRef Name="Id_wypozyczenia_narzedzia" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -9028,18 +9009,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DM_Szczeg__Id_wy__1EA48E88">
-          <End Type="DrukarniaModel.DM_Wypozyczenie_narzedzia" Role="DM_Wypozyczenie_narzedzia" Multiplicity="1" />
-          <End Type="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" Role="DM_Szczegoly_wypozyczenia_narzedzia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DM_Wypozyczenie_narzedzia">
-              <PropertyRef Name="Id_wypozyczenia_narzedzia" />
-            </Principal>
-            <Dependent Role="DM_Szczegoly_wypozyczenia_narzedzia">
-              <PropertyRef Name="Id_wypozyczenia_narzedzia" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__DM_Wypozy__Id_pr__17F790F9">
           <End Type="DrukarniaModel.DZ_Pracownik" Role="DZ_Pracownik" Multiplicity="1" />
           <End Type="DrukarniaModel.DM_Wypozyczenie_narzedzia" Role="DM_Wypozyczenie_narzedzia" Multiplicity="*" />
@@ -9052,19 +9021,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DM_Wypozy__Id_pr__18EBB532">
-          <End Type="DrukarniaModel.DZ_Pracownik" Role="DZ_Pracownik" Multiplicity="1" />
-          <End Type="DrukarniaModel.DM_Wypozyczenie_narzedzia" Role="DM_Wypozyczenie_narzedzia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="DZ_Pracownik">
-              <PropertyRef Name="Id_pracownika" />
-            </Principal>
-            <Dependent Role="DM_Wypozyczenie_narzedzia">
-              <PropertyRef Name="Id_pracownika_wydajacego" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DM_Zuzyte__Id_wy__1BC821DD">
+        <Association Name="FK__DM_Zuzyte__Id_wy__1AD3FDA4">
           <End Type="DrukarniaModel.DM_Wypozyczenie_narzedzia" Role="DM_Wypozyczenie_narzedzia" Multiplicity="1" />
           <End Type="DrukarniaModel.DM_Zuzyte_narzedzie" Role="DM_Zuzyte_narzedzie" Multiplicity="*" />
           <ReferentialConstraint>
@@ -9954,6 +9911,16 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DM_Szczegoly_wypozyczenia_narzedzia">
+            <EntityTypeMapping TypeName="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia">
+              <MappingFragment StoreEntitySet="DM_Szczegoly_wypozyczenia_narzedzia">
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+                <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
+                <ScalarProperty Name="Id_wypozyczenia_narzedzia" ColumnName="Id_wypozyczenia_narzedzia" />
+                <ScalarProperty Name="Id_wypozyczenia_narz" ColumnName="Id_wypozyczenia_narz" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DM_Wlasciwosc">
             <EntityTypeMapping TypeName="DrukarniaModel.DM_Wlasciwosc">
               <MappingFragment StoreEntitySet="DM_Wlasciwosc">
@@ -10023,7 +9990,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
                 <ScalarProperty Name="Data_i_godzina_zwrotu" ColumnName="Data_i_godzina_zwrotu" />
                 <ScalarProperty Name="Data_i_godzina_wypozyczenia" ColumnName="Data_i_godzina_wypozyczenia" />
-                <ScalarProperty Name="Id_pracownika_wydajacego" ColumnName="Id_pracownika_wydajacego" />
                 <ScalarProperty Name="Id_pracownika_wypozyczajacego" ColumnName="Id_pracownika_wypozyczajacego" />
                 <ScalarProperty Name="Id_wypozyczenia_narzedzia" ColumnName="Id_wypozyczenia_narzedzia" />
               </MappingFragment>
@@ -10602,15 +10568,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="DM_Szczegoly_wypozyczenia_narzedzia">
-            <EntityTypeMapping TypeName="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia">
-              <MappingFragment StoreEntitySet="DM_Szczegoly_wypozyczenia_narzedzia">
-                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
-                <ScalarProperty Name="Id_narzedzia" ColumnName="Id_narzedzia" />
-                <ScalarProperty Name="Id_wypozyczenia_narzedzia" ColumnName="Id_wypozyczenia_narzedzia" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="DP_Po_material_czynnosc">
             <EntityTypeMapping TypeName="DrukarniaModel.DP_Po_material_czynnosc">
               <MappingFragment StoreEntitySet="DP_Po_material_czynnosc">
@@ -10842,6 +10799,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Nazwa_narzedzia" ColumnName="Nazwa narzedzia" />
                 <ScalarProperty Name="Identyfikator_wypozyczenia" ColumnName="Identyfikator wypozyczenia" />
+                <ScalarProperty Name="Id_wypozyczenia_narzedzia" ColumnName="Id_wypozyczenia_narzedzia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -10922,7 +10880,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="C_Uwagi" ColumnName=" Uwagi" />
                 <ScalarProperty Name="C_Data_i_godzina_zwrotu" ColumnName=" Data i godzina zwrotu" />
                 <ScalarProperty Name="Data_i_godzina_wypozyczenia" ColumnName="Data i godzina wypozyczenia" />
-                <ScalarProperty Name="Nazwisko_pracownika_wydajacego" ColumnName="Nazwisko pracownika wydajacego" />
                 <ScalarProperty Name="Nazwisko_pracownika_wypozyczajacego" ColumnName="Nazwisko pracownika wypozyczajacego" />
                 <ScalarProperty Name="Identyfikator_wypozyczenia" ColumnName="Identyfikator wypozyczenia" />
               </MappingFragment>
@@ -11327,6 +11284,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               <MappingFragment StoreEntitySet="vDZ_Nieobecnosc_pensja">
                 <ScalarProperty Name="Pensja" ColumnName="Pensja" />
                 <ScalarProperty Name="Premia" ColumnName="Premia" />
+                <ScalarProperty Name="Data_zwolnienia" ColumnName="Data_zwolnienia" />
                 <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
                 <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
                 <ScalarProperty Name="Data_zakonczenia" ColumnName="Data_zakonczenia" />

@@ -230,13 +230,13 @@ GO
 
 CREATE VIEW vDM_Wypozyczenie_narzedzia
 AS
-SELECT Id_wypozyczenia_narzedzia AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wydajacego],Data_i_godzina_wypozyczenia AS [Data i godzina wypozyczenia], Data_i_godzina_zwrotu AS [ Data i godzina zwrotu], DM_Wypozyczenie_narzedzia.Uwagi AS [ Uwagi]
+SELECT Id_wypozyczenia_narzedzia AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego],Data_i_godzina_wypozyczenia AS [Data i godzina wypozyczenia], Data_i_godzina_zwrotu AS [ Data i godzina zwrotu], DM_Wypozyczenie_narzedzia.Uwagi AS [ Uwagi]
 FROM dbo.DM_Wypozyczenie_narzedzia INNER JOIN
-DZ_Pracownik  ON DM_Wypozyczenie_narzedzia.Id_pracownika_wypozyczajacego&DM_Wypozyczenie_narzedzia.Id_pracownika_wydajacego=DZ_Pracownik.Id_pracownika
+DZ_Pracownik  ON DM_Wypozyczenie_narzedzia.Id_pracownika_wypozyczajacego=DZ_Pracownik.Id_pracownika
 GO
 CREATE VIEW vDM_Szczegoly_wypozyczenia_narzedzia
 AS
-SELECT DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia AS [Identyfikator wypozyczenia], DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Szczegoly_wypozyczenia_narzedzia.Ilosc AS [Ilosc]
+SELECT DM_Szczegoly_wypozyczenia_narzedzia.Id_wypozyczenia_narzedzia, DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia AS [Identyfikator wypozyczenia], DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Szczegoly_wypozyczenia_narzedzia.Ilosc AS [Ilosc]
 FROM dbo.DM_Szczegoly_wypozyczenia_narzedzia INNER JOIN
 DM_Wypozyczenie_narzedzia  ON DM_Szczegoly_wypozyczenia_narzedzia.Id_wypozyczenia_narzedzia=DM_Wypozyczenie_narzedzia.Id_wypozyczenia_narzedzia INNER JOiN
 DM_Narzedzie ON DM_Szczegoly_wypozyczenia_narzedzia.Id_narzedzia=DM_Narzedzie.Id_narzedzia

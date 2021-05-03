@@ -23,7 +23,7 @@ namespace KWZP2021
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Rodzaj_narzedzia frm = (Rodzaj_narzedzia)Application.OpenForms["Rodzaj_narzedzia"];
-            int row = (frm.dgvRodzaj.CurrentRow.Index) + 1;
+            int row = Convert.ToInt32(frm.dgvRodzaj.CurrentRow.Cells[0].Value); ;
             DM_Rodzaj_narzedzia toUpdate = this.database.DM_Rodzaj_narzedzia.Where(narzedzie => narzedzie.Id_rodzaj_narzedzia == row).First();
             toUpdate.Nazwa = txtRodzaj.Text;
             

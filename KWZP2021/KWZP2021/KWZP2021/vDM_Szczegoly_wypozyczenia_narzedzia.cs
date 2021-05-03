@@ -14,6 +14,7 @@ namespace KWZP2021
     
     public partial class vDM_Szczegoly_wypozyczenia_narzedzia
     {
+        public int Id_wypozyczenia_narzedzia { get; set; }
         public int Identyfikator_wypozyczenia { get; set; }
         public string Nazwa_narzedzia { get; set; }
         public int Ilosc { get; set; }

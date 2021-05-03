@@ -1,7 +1,7 @@
 ﻿
 namespace KWZP2021
 {
-    partial class Rodzaj_narzedzia
+    partial class WlasciwoscNarzedzia
     {
         /// <summary>
         /// Required designer variable.
@@ -29,108 +29,105 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.dgvRodzaj = new System.Windows.Forms.DataGridView();
+            this.dgvWlasciwosc = new System.Windows.Forms.DataGridView();
             this.txtFind = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnPowrot = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRodzaj)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWlasciwosc)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 17);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Wyszukaj właściwość narzędzia";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(55, 17);
+            this.label3.Location = new System.Drawing.Point(44, 23);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 20);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Rodzaje narzędzi";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label3.Size = new System.Drawing.Size(192, 20);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Właściwości narzędzi";
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(277, 44);
+            this.btnDelete.Location = new System.Drawing.Point(407, 33);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 28);
-            this.btnDelete.TabIndex = 25;
+            this.btnDelete.TabIndex = 32;
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(277, 5);
+            this.btnAdd.Location = new System.Drawing.Point(299, 33);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 28);
-            this.btnAdd.TabIndex = 23;
+            this.btnAdd.TabIndex = 30;
             this.btnAdd.Text = "Dodaj";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // dgvRodzaj
+            // dgvWlasciwosc
             // 
-            this.dgvRodzaj.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRodzaj.Location = new System.Drawing.Point(13, 110);
-            this.dgvRodzaj.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvRodzaj.Name = "dgvRodzaj";
-            this.dgvRodzaj.RowHeadersWidth = 51;
-            this.dgvRodzaj.Size = new System.Drawing.Size(364, 282);
-            this.dgvRodzaj.TabIndex = 22;
-            this.dgvRodzaj.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRodzaj_CellContentClick);
-            this.dgvRodzaj.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRodzaj_CellDoubleClick);
+            this.dgvWlasciwosc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWlasciwosc.Location = new System.Drawing.Point(13, 119);
+            this.dgvWlasciwosc.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvWlasciwosc.Name = "dgvWlasciwosc";
+            this.dgvWlasciwosc.RowHeadersWidth = 51;
+            this.dgvWlasciwosc.Size = new System.Drawing.Size(496, 319);
+            this.dgvWlasciwosc.TabIndex = 29;
+            this.dgvWlasciwosc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvWlasciwosc_CellDoubleClick);
             // 
             // txtFind
             // 
-            this.txtFind.Location = new System.Drawing.Point(36, 76);
+            this.txtFind.Location = new System.Drawing.Point(44, 75);
             this.txtFind.Margin = new System.Windows.Forms.Padding(4);
             this.txtFind.Name = "txtFind";
             this.txtFind.Size = new System.Drawing.Size(193, 22);
-            this.txtFind.TabIndex = 21;
+            this.txtFind.TabIndex = 28;
             this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(44, 55);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 17);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "Wyszukaj rodzaj narzędzia";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnPowrot
             // 
-            this.btnPowrot.Location = new System.Drawing.Point(277, 80);
+            this.btnPowrot.Location = new System.Drawing.Point(355, 69);
             this.btnPowrot.Margin = new System.Windows.Forms.Padding(4);
             this.btnPowrot.Name = "btnPowrot";
             this.btnPowrot.Size = new System.Drawing.Size(100, 28);
-            this.btnPowrot.TabIndex = 28;
+            this.btnPowrot.TabIndex = 35;
             this.btnPowrot.Text = "Powrót";
             this.btnPowrot.UseVisualStyleBackColor = true;
             this.btnPowrot.Click += new System.EventHandler(this.btnPowrot_Click);
             // 
-            // Rodzaj_narzedzia
+            // WlasciwoscNarzedzia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 401);
+            this.ClientSize = new System.Drawing.Size(522, 451);
             this.Controls.Add(this.btnPowrot);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.dgvRodzaj);
+            this.Controls.Add(this.dgvWlasciwosc);
             this.Controls.Add(this.txtFind);
-            this.Name = "Rodzaj_narzedzia";
-            this.Text = "Rodzaj_narzędzia";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRodzaj)).EndInit();
+            this.Name = "WlasciwoscNarzedzia";
+            this.Text = "WlasciwoscNarzedzia";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWlasciwosc)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,12 +135,12 @@ namespace KWZP2021
 
         #endregion
 
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        public System.Windows.Forms.DataGridView dgvRodzaj;
+        public System.Windows.Forms.DataGridView dgvWlasciwosc;
         private System.Windows.Forms.TextBox txtFind;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPowrot;
     }
 }
