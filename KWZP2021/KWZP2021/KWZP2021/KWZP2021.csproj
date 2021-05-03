@@ -415,6 +415,12 @@
     <Compile Include="EdytujRodzajNarzedzia.Designer.cs">
       <DependentUpon>EdytujRodzajNarzedzia.cs</DependentUpon>
     </Compile>
+    <Compile Include="FirmaSerwisowa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FirmaSerwisowa.Designer.cs">
+      <DependentUpon>FirmaSerwisowa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -959,6 +965,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EdytujRodzajNarzedzia.resx">
       <DependentUpon>EdytujRodzajNarzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FirmaSerwisowa.resx">
+      <DependentUpon>FirmaSerwisowa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

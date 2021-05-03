@@ -30,23 +30,35 @@ namespace KWZP2021
         private void InitializeComponent()
         {
             this.btn2maszyna = new System.Windows.Forms.Button();
+            this.btnFirma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn2maszyna
             // 
             this.btn2maszyna.Location = new System.Drawing.Point(96, 68);
             this.btn2maszyna.Name = "btn2maszyna";
-            this.btn2maszyna.Size = new System.Drawing.Size(75, 23);
+            this.btn2maszyna.Size = new System.Drawing.Size(87, 34);
             this.btn2maszyna.TabIndex = 0;
             this.btn2maszyna.Text = "Maszyna";
             this.btn2maszyna.UseVisualStyleBackColor = true;
             this.btn2maszyna.Click += new System.EventHandler(this.btn2maszyna_Click);
+            // 
+            // btnFirma
+            // 
+            this.btnFirma.Location = new System.Drawing.Point(203, 68);
+            this.btnFirma.Name = "btnFirma";
+            this.btnFirma.Size = new System.Drawing.Size(117, 34);
+            this.btnFirma.TabIndex = 1;
+            this.btnFirma.Text = "Firma serwisowa";
+            this.btnFirma.UseVisualStyleBackColor = true;
+            this.btnFirma.Click += new System.EventHandler(this.btnFirma_Click);
             // 
             // Maszyna_glowny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnFirma);
             this.Controls.Add(this.btn2maszyna);
             this.Name = "Maszyna_glowny";
             this.Text = "Maszyna_glowny";
@@ -57,5 +69,6 @@ namespace KWZP2021
         #endregion
 
         private System.Windows.Forms.Button btn2maszyna;
+        private System.Windows.Forms.Button btnFirma;
     }
 }

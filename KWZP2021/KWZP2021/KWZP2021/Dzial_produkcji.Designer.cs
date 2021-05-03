@@ -47,9 +47,9 @@ namespace KWZP2021
             // 
             this.btnMaszyna.Location = new System.Drawing.Point(137, 169);
             this.btnMaszyna.Name = "btnMaszyna";
-            this.btnMaszyna.Size = new System.Drawing.Size(83, 29);
+            this.btnMaszyna.Size = new System.Drawing.Size(120, 51);
             this.btnMaszyna.TabIndex = 1;
-            this.btnMaszyna.Text = "Maszyna";
+            this.btnMaszyna.Text = "Utrzymanie ruchu";
             this.btnMaszyna.UseVisualStyleBackColor = true;
             this.btnMaszyna.Click += new System.EventHandler(this.btnMaszyna_Click);
             // 

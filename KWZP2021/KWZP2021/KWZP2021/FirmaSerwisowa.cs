@@ -10,33 +10,26 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Maszyna : Form
+    public partial class FirmaSerwisowa : Form
     {
         DrukarniaEntities database;
         public DataGridViewRow dataGridView;
-        public Maszyna(DrukarniaEntities database)
+        public FirmaSerwisowa(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
-            this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
-            dataGridView1_CellContentClick();
+            this.dgvFirma.DataSource = this.database.vDP_Firma_serwisowa.ToList();
+            dgvFirma_CellContentClick();
         }
 
-    
-        //private void dataGridView1_CellContentClick()
-        //{
-        //    this.dgv_Maszyna.DataSource = this.database.vDP_Maszyna.ToList();
-        //}
-
-        private void dataGridView1_CellContentClick()
+        private void dgvFirma_CellContentClick()
         {
-            this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
-
+            this.dgvFirma.DataSource = this.database.vDP_Firma_serwisowa.ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dgvMaszyna.DataSource = database.vDP_Maszyna.Where(x => x.Rodzaj_maszyny.Contains(textBox1.Text)).ToList();
+            dgvFirma.DataSource = database.vDP_Firma_serwisowa.Where(x => x.Nazwa_firmy.Contains(textBox1.Text)).ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
