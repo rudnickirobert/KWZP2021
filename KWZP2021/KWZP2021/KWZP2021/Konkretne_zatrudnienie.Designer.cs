@@ -30,9 +30,6 @@ namespace KWZP2021
         private void InitializeComponent()
         {
             this.cmbPracownik1 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataZwolnienia1 = new System.Windows.Forms.DateTimePicker();
             this.dataZatrudnienia1 = new System.Windows.Forms.DateTimePicker();
             this.cmbRodzaj_umowy1 = new System.Windows.Forms.ComboBox();
@@ -55,37 +52,14 @@ namespace KWZP2021
             // cmbPracownik1
             // 
             this.cmbPracownik1.FormattingEnabled = true;
-            this.cmbPracownik1.Location = new System.Drawing.Point(366, 45);
+            this.cmbPracownik1.Location = new System.Drawing.Point(153, 43);
             this.cmbPracownik1.Name = "cmbPracownik1";
-            this.cmbPracownik1.Size = new System.Drawing.Size(206, 21);
+            this.cmbPracownik1.Size = new System.Drawing.Size(177, 21);
             this.cmbPracownik1.TabIndex = 80;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(154, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 79;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(154, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 78;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(152, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 29);
-            this.button1.TabIndex = 77;
-            this.button1.Text = "Dodaj pracownika";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // dataZwolnienia1
             // 
-            this.dataZwolnienia1.Location = new System.Drawing.Point(153, 261);
+            this.dataZwolnienia1.Location = new System.Drawing.Point(153, 212);
             this.dataZwolnienia1.Name = "dataZwolnienia1";
             this.dataZwolnienia1.Size = new System.Drawing.Size(175, 20);
             this.dataZwolnienia1.TabIndex = 76;
@@ -93,7 +67,7 @@ namespace KWZP2021
             // 
             // dataZatrudnienia1
             // 
-            this.dataZatrudnienia1.Location = new System.Drawing.Point(153, 232);
+            this.dataZatrudnienia1.Location = new System.Drawing.Point(153, 183);
             this.dataZatrudnienia1.Name = "dataZatrudnienia1";
             this.dataZatrudnienia1.Size = new System.Drawing.Size(176, 20);
             this.dataZatrudnienia1.TabIndex = 75;
@@ -101,7 +75,7 @@ namespace KWZP2021
             // cmbRodzaj_umowy1
             // 
             this.cmbRodzaj_umowy1.FormattingEnabled = true;
-            this.cmbRodzaj_umowy1.Location = new System.Drawing.Point(153, 205);
+            this.cmbRodzaj_umowy1.Location = new System.Drawing.Point(153, 156);
             this.cmbRodzaj_umowy1.Name = "cmbRodzaj_umowy1";
             this.cmbRodzaj_umowy1.Size = new System.Drawing.Size(177, 21);
             this.cmbRodzaj_umowy1.TabIndex = 74;
@@ -109,7 +83,7 @@ namespace KWZP2021
             // cmbEtat1
             // 
             this.cmbEtat1.FormattingEnabled = true;
-            this.cmbEtat1.Location = new System.Drawing.Point(153, 178);
+            this.cmbEtat1.Location = new System.Drawing.Point(153, 129);
             this.cmbEtat1.Name = "cmbEtat1";
             this.cmbEtat1.Size = new System.Drawing.Size(177, 21);
             this.cmbEtat1.TabIndex = 73;
@@ -117,7 +91,7 @@ namespace KWZP2021
             // cmbDzial1
             // 
             this.cmbDzial1.FormattingEnabled = true;
-            this.cmbDzial1.Location = new System.Drawing.Point(153, 151);
+            this.cmbDzial1.Location = new System.Drawing.Point(153, 102);
             this.cmbDzial1.Name = "cmbDzial1";
             this.cmbDzial1.Size = new System.Drawing.Size(177, 21);
             this.cmbDzial1.TabIndex = 72;
@@ -125,7 +99,7 @@ namespace KWZP2021
             // cmbStanowisko1
             // 
             this.cmbStanowisko1.FormattingEnabled = true;
-            this.cmbStanowisko1.Location = new System.Drawing.Point(153, 122);
+            this.cmbStanowisko1.Location = new System.Drawing.Point(153, 73);
             this.cmbStanowisko1.Name = "cmbStanowisko1";
             this.cmbStanowisko1.Size = new System.Drawing.Size(177, 21);
             this.cmbStanowisko1.TabIndex = 71;
@@ -157,6 +131,7 @@ namespace KWZP2021
             this.buttonZapiszNowegoKlienta.TabIndex = 68;
             this.buttonZapiszNowegoKlienta.Text = "Zapisz";
             this.buttonZapiszNowegoKlienta.UseVisualStyleBackColor = true;
+            this.buttonZapiszNowegoKlienta.Click += new System.EventHandler(this.buttonZapiszNowegoKlienta_Click);
             // 
             // lblNowyKlient
             // 
@@ -171,7 +146,7 @@ namespace KWZP2021
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 261);
+            this.label7.Location = new System.Drawing.Point(20, 212);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(82, 13);
             this.label7.TabIndex = 66;
@@ -180,7 +155,7 @@ namespace KWZP2021
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(20, 235);
+            this.label6.Location = new System.Drawing.Point(20, 186);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 65;
@@ -189,7 +164,7 @@ namespace KWZP2021
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 209);
+            this.label5.Location = new System.Drawing.Point(20, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 13);
             this.label5.TabIndex = 64;
@@ -198,7 +173,7 @@ namespace KWZP2021
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 183);
+            this.label4.Location = new System.Drawing.Point(20, 134);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 63;
@@ -207,7 +182,7 @@ namespace KWZP2021
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 157);
+            this.label3.Location = new System.Drawing.Point(20, 108);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 62;
@@ -216,7 +191,7 @@ namespace KWZP2021
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 131);
+            this.label2.Location = new System.Drawing.Point(20, 82);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 13);
             this.label2.TabIndex = 61;
@@ -227,19 +202,17 @@ namespace KWZP2021
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(20, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 60;
-            this.label1.Text = "Dodaj pracownika";
+            this.label1.Text = "Pracownik";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Konkretne_zatrudnienie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(349, 450);
             this.Controls.Add(this.cmbPracownik1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataZwolnienia1);
             this.Controls.Add(this.dataZatrudnienia1);
             this.Controls.Add(this.cmbRodzaj_umowy1);
@@ -266,9 +239,6 @@ namespace KWZP2021
         }
 
         #endregion
-        public System.Windows.Forms.TextBox textBox2;
-        public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DateTimePicker dataZwolnienia1;
         public System.Windows.Forms.DateTimePicker dataZatrudnienia1;
         public System.Windows.Forms.ComboBox cmbRodzaj_umowy1;

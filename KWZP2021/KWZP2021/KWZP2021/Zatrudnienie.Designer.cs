@@ -94,10 +94,9 @@ namespace KWZP2021
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvZatrudnienie;
         private System.Windows.Forms.Button buttonNoweZatrudnienie;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.DataGridView dgvZatrudnienie;
     }
 }

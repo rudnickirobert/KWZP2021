@@ -17,6 +17,8 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
+            dateTimePicker1.CustomFormat = " ";
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
         }
 
         private void Konkretny_pracownik_Load(object sender, EventArgs e)
