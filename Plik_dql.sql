@@ -111,7 +111,8 @@ FROM     dbo.DZ_Dzial
 GO
 CREATE VIEW vDZ_Zatrudnienie
 AS
-SELECT Id_zatrudnienia AS [Identyfikator zatrudnienia], DZ_Pracownik.Nazwisko AS [Nazwisko], DZ_Stanowisko.Stanowisko AS [Stanowisko],DZ_Dzial.Dzial AS [Dział], DZ_Etat.Etat AS [Etat], DZ_Rodzaj_umowy.Rodzaj_umowy AS[Rodzaj umowy],DZ_Zatrudnienie.Data_zatrudnienia AS[Data zatrudnienia], DZ_Zatrudnienie.Data_zwolnienia AS [Data zwolnienia], (DATEDIFF(YEAR,Data_zatrudnienia,GETDATE())) AS Staz
+SELECT Id_zatrudnienia AS [Identyfikator zatrudnienia], DZ_Pracownik.Nazwisko AS [Nazwisko], DZ_Stanowisko.Stanowisko AS [Stanowisko],DZ_Dzial.Dzial AS [Dział], DZ_Etat.Etat AS [Etat], DZ_Rodzaj_umowy.Rodzaj_umowy AS[Rodzaj umowy],DZ_Zatrudnienie.Data_zatrudnienia AS[Data zatrudnienia], DZ_Zatrudnienie.Data_zwolnienia AS [Data zwolnienia],
+(DATEDIFF(YEAR,Data_zatrudnienia,GETDATE())- CASE WHEN DATEPART(DAYOFYEAR, GETDATE())<DATEPART(DAYOFYEAR, Data_zatrudnienia) THEN 1 ELSE 0 END ) AS Staz
 FROM     dbo.DZ_Zatrudnienie INNER JOIN
 DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
 DZ_Stanowisko ON DZ_Zatrudnienie.Id_stanowiska=DZ_Stanowisko.Id_stanowiska INNER JOIN
@@ -689,7 +690,7 @@ GROUP BY DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, D
 GO
 CREATE VIEW vDZ_Nieobecnosc_pensja
 AS
-SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Id_pracownika,DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Nieobecnosc.Data_rozpoczecia, DZ_Nieobecnosc.Data_zakonczenia, DZ_Rodzaj_nieobecnosci.Rodzaj, DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
+SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Id_pracownika,DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia, DZ_Nieobecnosc.Data_rozpoczecia, DZ_Nieobecnosc.Data_zakonczenia, DZ_Rodzaj_nieobecnosci.Rodzaj, DZ_Zatrudnienie.Data_zatrudnienia, DZ_Zatrudnienie.Data_zwolnienia,vDZ_Premia.Premia,
 CASE WHEN Rodzaj='L4' THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.8)-((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) 
 ELSE ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia)-((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34))END AS 'Pensja'
 FROM DZ_Szczegoly_zatrudnienia INNER JOIN
@@ -706,7 +707,7 @@ GO
 CREATE VIEW vDZ_Obecnosc_pensja
 AS
 SELECT DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia, DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia,DZ_Zatrudnienie.Data_zatrudnienia, vDZ_Premia.Premia,
-CASE WHEN DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia>0 THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia)-((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34)) END AS 'Pensja'
+CASE WHEN DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia>0 THEN ((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia)-((DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia*0.5)*0.34))  END AS 'Pensja'
 FROM DZ_Szczegoly_zatrudnienia INNER JOIN
 DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
 DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
@@ -714,17 +715,20 @@ vDZ_Premia ON DZ_Szczegoly_zatrudnienia.Id_szczegoly_zatrudnienia=vDZ_Premia.[Id
 WHERE DZ_Pracownik.Id_pracownika not in (SELECT Id_pracownika FROM DZ_Nieobecnosc WHERE (MONTH(Data_rozpoczecia)=MONTH(GETDATE())) 
 AND (YEAR(Data_rozpoczecia)=YEAR(GETDATE())) 
 OR (MONTH(Data_zakonczenia)=MONTH(GETDATE())) 
-AND (YEAR(Data_zakonczenia)=YEAR(GETDATE())))
+AND (YEAR(Data_zakonczenia)=YEAR(GETDATE()))) 
 GO
 CREATE VIEW vDZ_Wyplata
 AS 
 SELECT vDZ_Nieobecnosc_pensja.Id_pracownika AS [Identyfikator pracownika], vDZ_Nieobecnosc_pensja.Imie, vDZ_Nieobecnosc_pensja.Nazwisko, vDZ_Nieobecnosc_pensja.Podstawa_wynagrodzenia AS [Podstawa wynagrodzenia], vDZ_Nieobecnosc_pensja.Premia, vDZ_Nieobecnosc_pensja.Pensja,
-SUM(Premia+Pensja) AS 'Wypłata'
+CASE WHEN Premia IS null THEN Pensja
+	 ELSE (Premia+Pensja) END AS 'Wypłata'
 FROM vDZ_Nieobecnosc_pensja
+WHERE Premia>0
 GROUP BY vDZ_Nieobecnosc_pensja.Id_pracownika, vDZ_Nieobecnosc_pensja.Imie, vDZ_Nieobecnosc_pensja.Nazwisko, vDZ_Nieobecnosc_pensja.Podstawa_wynagrodzenia, vDZ_Nieobecnosc_pensja.Premia, vDZ_Nieobecnosc_pensja.Pensja
 UNION
 SELECT vDZ_Obecnosc_pensja.Id_pracownika, vDZ_Obecnosc_pensja.Imie, vDZ_Obecnosc_pensja.Nazwisko, vDZ_Obecnosc_pensja.Podstawa_wynagrodzenia, vDZ_Obecnosc_pensja.Premia, vDZ_Obecnosc_pensja.Pensja,
-SUM(Premia+Pensja) AS 'Wypłata'
+CASE WHEN Premia IS NULL THEN Pensja
+	 ELSE (Premia+Pensja) END AS 'Wypłata'
 FROM vDZ_Obecnosc_pensja
 GROUP BY vDZ_Obecnosc_pensja.Id_pracownika, vDZ_Obecnosc_pensja.Imie, vDZ_Obecnosc_pensja.Nazwisko, vDZ_Obecnosc_pensja.Podstawa_wynagrodzenia, vDZ_Obecnosc_pensja.Premia, vDZ_Obecnosc_pensja.Pensja
 GO
