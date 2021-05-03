@@ -242,7 +242,7 @@ DM_Narzedzie ON DM_Szczegoly_wypozyczenia_narzedzia.Id_narzedzia=DM_Narzedzie.Id
 GO
 CREATE VIEW vDM_Parametr_narzedzia
 AS
-SELECT DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Wlasciwosc], DM_Parametr_narzedzia.Wartosc AS [Wartosc]
+SELECT Id_parametru, DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Wlasciwosc], DM_Parametr_narzedzia.Wartosc AS [Wartosc]
 FROM dbo.DM_Parametr_narzedzia INNER JOIN
 DM_Narzedzie  ON DM_Parametr_narzedzia.Id_narzedzia=DM_Narzedzie.Id_narzedzia INNER JOiN
 DM_Wlasciwosc ON DM_Parametr_narzedzia.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
@@ -764,7 +764,7 @@ GO
 
 CREATE VIEW vDM_Wlasciwosc_materialu
 AS
-SELECT DM_Material.Nazwa AS [Nazwa materialu], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wlasciwosci],Wartosc AS [Wartosc]
+SELECT id_wlasciwosc_materialu ,DM_Material.Nazwa AS [Nazwa materialu], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wlasciwosci],Wartosc AS [Wartosc]
 FROM dbo.DM_Wlasciwosc_materialu INNER JOIN
 DM_Material ON DM_Wlasciwosc_materialu.Id_materialu=DM_Material .Id_materialu INNER JOIN
 DM_Wlasciwosc ON DM_Wlasciwosc_materialu.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
