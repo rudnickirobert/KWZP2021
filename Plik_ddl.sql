@@ -21,6 +21,7 @@ CREATE TABLE DM_Material(
 	Nazwa nvarchar(30) not null,
 );
 CREATE TABLE DM_Wlasciwosc_materialu (
+id_wlasciwosc_materialu int identity(1,1) not null PRIMARY KEY,
 	Id_materialu int not null FOREIGN KEY REFERENCES DM_Material (Id_materialu),
 	Id_wlasciwosc int not null FOREIGN KEY REFERENCES DM_Wlasciwosc (Id_wlasciwosc),
 	Wartosc nvarchar(20) not null
@@ -262,6 +263,7 @@ CREATE TABLE DM_Szczegoly_wypozyczenia_narzedzia (
 	Ilosc int not null
 );
 CREATE TABLE DM_Parametr_narzedzia (
+    Id_parametru int identity(1,1) not null PRIMARY KEY,
 	Id_narzedzia int not null FOREIGN KEY REFERENCES DM_Narzedzie (Id_narzedzia),
 	Id_wlasciwosc int not null FOREIGN KEY REFERENCES DM_Wlasciwosc (Id_wlasciwosc),
 	Wartosc nvarchar(10) not null
