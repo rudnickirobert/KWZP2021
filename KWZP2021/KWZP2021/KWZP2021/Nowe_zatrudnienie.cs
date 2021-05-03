@@ -17,6 +17,8 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
+            dataZwolnienia.CustomFormat = " ";
+            dataZwolnienia.Format = DateTimePickerFormat.Custom;
 
             this.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
             this.cmbPracownik.DisplayMember = "Nazwisko";

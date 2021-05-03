@@ -122,6 +122,7 @@ namespace KWZP2021
             this.buttonWyczyscPola.TabIndex = 69;
             this.buttonWyczyscPola.Text = "Wyczyść pola";
             this.buttonWyczyscPola.UseVisualStyleBackColor = true;
+            this.buttonWyczyscPola.Click += new System.EventHandler(this.buttonWyczyscPola_Click);
             // 
             // buttonZapiszNowegoKlienta
             // 
@@ -231,7 +232,7 @@ namespace KWZP2021
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Konkretne_zatrudnienie";
-            this.Text = "Konkretne_zatrudnienie";
+            this.Text = "Edytuj dane o zatrudnieniu pracownika";
             this.Load += new System.EventHandler(this.Konkretne_zatrudnienie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -61,7 +61,7 @@ namespace KWZP2021
             int row = Convert.ToInt32(zat.dgvZatrudnienie.CurrentRow.Cells[0].Value);
             DZ_Zatrudnienie toUpdate = this.database.DZ_Zatrudnienie.Where(zatrudnienie => zatrudnienie.Id_zatrudnienia == row).First();
 
-            toUpdate.Id_pracownika = Convert.ToInt32(cmbPracownik1.SelectedValue); // UPDATE
+           //toUpdate.Id_pracownika = Convert.ToInt32(cmbPracownik1.SelectedValue); // UPDATE
             toUpdate.Id_stanowiska = Convert.ToInt32(cmbStanowisko1.SelectedValue); // UPDATE
             toUpdate.Id_dzialu = Convert.ToInt32(cmbDzial1.SelectedValue); // UPDATE
             toUpdate.Id_etatu = Convert.ToInt32(cmbEtat1.SelectedValue); // UPDATE
@@ -76,6 +76,19 @@ namespace KWZP2021
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonWyczyscPola_Click(object sender, EventArgs e)
+        {
+            
+            cmbStanowisko1.Text = "";
+            cmbDzial1.Text = "";
+            cmbEtat1.Text = "";
+            cmbRodzaj_umowy1.Text = "";
+            dataZatrudnienia1.CustomFormat = " ";
+            dataZatrudnienia1.Format = DateTimePickerFormat.Custom;
+            dataZwolnienia1.CustomFormat = " ";
+            dataZwolnienia1.Format = DateTimePickerFormat.Custom;
         }
     }
 }

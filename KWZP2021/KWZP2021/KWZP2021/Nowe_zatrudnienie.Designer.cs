@@ -263,7 +263,7 @@ namespace KWZP2021
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Nowe_zatrudnienie";
-            this.Text = "Nowe_zatrudnienie";
+            this.Text = "Dodaj nowe zatrudnienie";
             this.Load += new System.EventHandler(this.Nowe_zatrudnienie_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

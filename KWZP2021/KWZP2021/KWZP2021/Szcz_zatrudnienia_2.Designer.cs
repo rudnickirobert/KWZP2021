@@ -37,6 +37,9 @@ namespace KWZP2021
             this.label1 = new System.Windows.Forms.Label();
             this.txtPracownik = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonPowrot = new System.Windows.Forms.Button();
+            this.buttonWyczyscPola = new System.Windows.Forms.Button();
+            this.buttonZapiszKonkretnegoKlienta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtWynagrodzenie
@@ -104,11 +107,42 @@ namespace KWZP2021
             this.label4.TabIndex = 58;
             this.label4.Text = "Nazwisko pracownika";
             // 
+            // buttonPowrot
+            // 
+            this.buttonPowrot.Location = new System.Drawing.Point(169, 153);
+            this.buttonPowrot.Name = "buttonPowrot";
+            this.buttonPowrot.Size = new System.Drawing.Size(144, 30);
+            this.buttonPowrot.TabIndex = 76;
+            this.buttonPowrot.Text = "Powrót";
+            this.buttonPowrot.UseVisualStyleBackColor = true;
+            this.buttonPowrot.Click += new System.EventHandler(this.buttonPowrot_Click);
+            // 
+            // buttonWyczyscPola
+            // 
+            this.buttonWyczyscPola.Location = new System.Drawing.Point(15, 153);
+            this.buttonWyczyscPola.Name = "buttonWyczyscPola";
+            this.buttonWyczyscPola.Size = new System.Drawing.Size(129, 30);
+            this.buttonWyczyscPola.TabIndex = 75;
+            this.buttonWyczyscPola.Text = "Wyczyść pola";
+            this.buttonWyczyscPola.UseVisualStyleBackColor = true;
+            // 
+            // buttonZapiszKonkretnegoKlienta
+            // 
+            this.buttonZapiszKonkretnegoKlienta.Location = new System.Drawing.Point(15, 199);
+            this.buttonZapiszKonkretnegoKlienta.Name = "buttonZapiszKonkretnegoKlienta";
+            this.buttonZapiszKonkretnegoKlienta.Size = new System.Drawing.Size(298, 45);
+            this.buttonZapiszKonkretnegoKlienta.TabIndex = 74;
+            this.buttonZapiszKonkretnegoKlienta.Text = "Zapisz";
+            this.buttonZapiszKonkretnegoKlienta.UseVisualStyleBackColor = true;
+            // 
             // Szcz_zatrudnienia_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 160);
+            this.ClientSize = new System.Drawing.Size(342, 272);
+            this.Controls.Add(this.buttonPowrot);
+            this.Controls.Add(this.buttonWyczyscPola);
+            this.Controls.Add(this.buttonZapiszKonkretnegoKlienta);
             this.Controls.Add(this.txtPracownik);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtWynagrodzenie);
@@ -118,7 +152,7 @@ namespace KWZP2021
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Szcz_zatrudnienia_2";
-            this.Text = "Szczegóły zatrudnienia";
+            this.Text = "`";
             this.Load += new System.EventHandler(this.Szcz_zatrudnienia_2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -135,5 +169,8 @@ namespace KWZP2021
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtPracownik;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonPowrot;
+        private System.Windows.Forms.Button buttonWyczyscPola;
+        private System.Windows.Forms.Button buttonZapiszKonkretnegoKlienta;
     }
 }

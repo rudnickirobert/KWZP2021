@@ -28,5 +28,10 @@ namespace KWZP2021
         {
 
         }
+
+        private void buttonPowrot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
