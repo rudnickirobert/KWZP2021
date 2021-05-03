@@ -1839,7 +1839,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Nieobecnosc_pensja' does not hav
             <PropertyRef Name="Podstawa_wynagrodzenia" />
             <PropertyRef Name="Data_rozpoczecia" />
             <PropertyRef Name="Rodzaj" />
-            <PropertyRef Name="Data_zatrudnienia" />
           </Key>
           <Property Name="Id_szczegoly_zatrudnienia" Type="int" Nullable="false" />
           <Property Name="Id_pracownika" Type="int" Nullable="false" />
@@ -1849,9 +1848,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Nieobecnosc_pensja' does not hav
           <Property Name="Data_rozpoczecia" Type="date" Nullable="false" />
           <Property Name="Data_zakonczenia" Type="date" />
           <Property Name="Rodzaj" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Data_zatrudnienia" Type="date" Nullable="false" />
-          <Property Name="Data_zwolnienia" Type="date" />
           <Property Name="Premia" Type="float" />
+          <Property Name="Zwolnienie" Type="varchar" MaxLength="9" />
           <Property Name="Pensja" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1871,7 +1869,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Obecnosc_pensja' does not have a
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Podstawa_wynagrodzenia" Type="float" Nullable="false" />
           <Property Name="Data_zatrudnienia" Type="date" Nullable="false" />
+          <Property Name="Data_zwolnienia" Type="date" />
           <Property Name="Premia" Type="float" />
+          <Property Name="Zwolnienie" Type="varchar" MaxLength="9" />
           <Property Name="Pensja" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -2268,6 +2268,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data zatrudnienia" Type="date" Nullable="false" />
           <Property Name="Data zwolnienia" Type="date" />
           <Property Name="Staz" Type="int" />
+          <Property Name="Zwolnienie" Type="varchar" MaxLength="9" />
         </EntityType>
         <Association Name="FK__DM_Czesc__Id_mod__403A8C7D">
           <End Role="DP_Model_maszyny" Type="Self.DP_Model_maszyny" Multiplicity="1" />
@@ -4713,9 +4714,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Nieobecnosc_pensja].[Data_rozpoczecia] AS [Data_rozpoczecia], 
     [vDZ_Nieobecnosc_pensja].[Data_zakonczenia] AS [Data_zakonczenia], 
     [vDZ_Nieobecnosc_pensja].[Rodzaj] AS [Rodzaj], 
-    [vDZ_Nieobecnosc_pensja].[Data_zatrudnienia] AS [Data_zatrudnienia], 
-    [vDZ_Nieobecnosc_pensja].[Data_zwolnienia] AS [Data_zwolnienia], 
     [vDZ_Nieobecnosc_pensja].[Premia] AS [Premia], 
+    [vDZ_Nieobecnosc_pensja].[Zwolnienie] AS [Zwolnienie], 
     [vDZ_Nieobecnosc_pensja].[Pensja] AS [Pensja]
     FROM [dbo].[vDZ_Nieobecnosc_pensja] AS [vDZ_Nieobecnosc_pensja]</DefiningQuery>
           </EntitySet>
@@ -4727,7 +4727,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Obecnosc_pensja].[Nazwisko] AS [Nazwisko], 
     [vDZ_Obecnosc_pensja].[Podstawa_wynagrodzenia] AS [Podstawa_wynagrodzenia], 
     [vDZ_Obecnosc_pensja].[Data_zatrudnienia] AS [Data_zatrudnienia], 
+    [vDZ_Obecnosc_pensja].[Data_zwolnienia] AS [Data_zwolnienia], 
     [vDZ_Obecnosc_pensja].[Premia] AS [Premia], 
+    [vDZ_Obecnosc_pensja].[Zwolnienie] AS [Zwolnienie], 
     [vDZ_Obecnosc_pensja].[Pensja] AS [Pensja]
     FROM [dbo].[vDZ_Obecnosc_pensja] AS [vDZ_Obecnosc_pensja]</DefiningQuery>
           </EntitySet>
@@ -4954,7 +4956,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Zatrudnienie].[Rodzaj umowy] AS [Rodzaj umowy], 
     [vDZ_Zatrudnienie].[Data zatrudnienia] AS [Data zatrudnienia], 
     [vDZ_Zatrudnienie].[Data zwolnienia] AS [Data zwolnienia], 
-    [vDZ_Zatrudnienie].[Staz] AS [Staz]
+    [vDZ_Zatrudnienie].[Staz] AS [Staz], 
+    [vDZ_Zatrudnienie].[Zwolnienie] AS [Zwolnienie]
     FROM [dbo].[vDZ_Zatrudnienie] AS [vDZ_Zatrudnienie]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__DM_Czesc__Id_mod__403A8C7D" Association="Self.FK__DM_Czesc__Id_mod__403A8C7D">
@@ -7995,7 +7998,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Podstawa_wynagrodzenia" />
             <PropertyRef Name="Data_rozpoczecia" />
             <PropertyRef Name="Rodzaj" />
-            <PropertyRef Name="Data_zatrudnienia" />
           </Key>
           <Property Name="Id_szczegoly_zatrudnienia" Type="Int32" Nullable="false" />
           <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
@@ -8005,9 +8007,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_rozpoczecia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_zakonczenia" Type="DateTime" Precision="0" />
           <Property Name="Rodzaj" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="Data_zwolnienia" Type="DateTime" Precision="0" />
           <Property Name="Premia" Type="Double" />
+          <Property Name="Zwolnienie" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
           <Property Name="Pensja" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Obecnosc_pensja">
@@ -8025,7 +8026,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Podstawa_wynagrodzenia" Type="Double" Nullable="false" />
           <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Data_zwolnienia" Type="DateTime" Precision="0" />
           <Property Name="Premia" Type="Double" />
+          <Property Name="Zwolnienie" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
           <Property Name="Pensja" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Oferta_dla_klienta">
@@ -8372,6 +8375,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_zatrudnienia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_zwolnienia" Type="DateTime" Precision="0" />
           <Property Name="Staz" Type="Int32" />
+          <Property Name="Zwolnienie" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__DM_Czesc__Id_mod__403A8C7D">
           <End Type="DrukarniaModel.DP_Model_maszyny" Role="DP_Model_maszyny" Multiplicity="1" />
@@ -11283,9 +11287,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Nieobecnosc_pensja">
               <MappingFragment StoreEntitySet="vDZ_Nieobecnosc_pensja">
                 <ScalarProperty Name="Pensja" ColumnName="Pensja" />
+                <ScalarProperty Name="Zwolnienie" ColumnName="Zwolnienie" />
                 <ScalarProperty Name="Premia" ColumnName="Premia" />
-                <ScalarProperty Name="Data_zwolnienia" ColumnName="Data_zwolnienia" />
-                <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
                 <ScalarProperty Name="Rodzaj" ColumnName="Rodzaj" />
                 <ScalarProperty Name="Data_zakonczenia" ColumnName="Data_zakonczenia" />
                 <ScalarProperty Name="Data_rozpoczecia" ColumnName="Data_rozpoczecia" />
@@ -11301,7 +11304,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Obecnosc_pensja">
               <MappingFragment StoreEntitySet="vDZ_Obecnosc_pensja">
                 <ScalarProperty Name="Pensja" ColumnName="Pensja" />
+                <ScalarProperty Name="Zwolnienie" ColumnName="Zwolnienie" />
                 <ScalarProperty Name="Premia" ColumnName="Premia" />
+                <ScalarProperty Name="Data_zwolnienia" ColumnName="Data_zwolnienia" />
                 <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data_zatrudnienia" />
                 <ScalarProperty Name="Podstawa_wynagrodzenia" ColumnName="Podstawa_wynagrodzenia" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
@@ -11575,6 +11580,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Zatrudnienie">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Zatrudnienie">
               <MappingFragment StoreEntitySet="vDZ_Zatrudnienie">
+                <ScalarProperty Name="Zwolnienie" ColumnName="Zwolnienie" />
                 <ScalarProperty Name="Staz" ColumnName="Staz" />
                 <ScalarProperty Name="Data_zwolnienia" ColumnName="Data zwolnienia" />
                 <ScalarProperty Name="Data_zatrudnienia" ColumnName="Data zatrudnienia" />
