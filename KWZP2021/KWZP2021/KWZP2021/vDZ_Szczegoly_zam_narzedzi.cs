@@ -18,7 +18,7 @@ namespace KWZP2021
         public int Numer_zamowienia { get; set; }
         public string Nazwa_narzedzia { get; set; }
         public double Koszt_jednostkowy_oferty { get; set; }
-        public string Nazwa__wlasciwosci { get; set; }
+        public string Jednostka_pomiarowa { get; set; }
         public int Ilosc { get; set; }
     }
 }

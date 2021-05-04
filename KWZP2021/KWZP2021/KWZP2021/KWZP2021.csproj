@@ -472,6 +472,12 @@
     <Compile Include="EdytujDostawce.Designer.cs">
       <DependentUpon>EdytujDostawce.cs</DependentUpon>
     </Compile>
+    <Compile Include="EdytujMaszyne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdytujMaszyne.Designer.cs">
+      <DependentUpon>EdytujMaszyne.cs</DependentUpon>
+    </Compile>
     <Compile Include="EdytujMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1385,6 +1391,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EdytujDostawce.resx">
       <DependentUpon>EdytujDostawce.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdytujMaszyne.resx">
+      <DependentUpon>EdytujMaszyne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EdytujMaterial.resx">
       <DependentUpon>EdytujMaterial.cs</DependentUpon>

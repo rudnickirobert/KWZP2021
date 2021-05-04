@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Nowa_maszyna : Form
+    public partial class EdytujMaszyne : Form
     {
+        internal object textBox1;
         DrukarniaEntities database;
-        public Nowa_maszyna(DrukarniaEntities database)
+
+        public EdytujMaszyne(DrukarniaEntities database)
         {
-           this.database = database;
+            this.database = database;
             InitializeComponent();
             dateTimePicker1.CustomFormat = "";
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
@@ -25,41 +27,28 @@ namespace KWZP2021
             this.comboBox1.ValueMember = "Id_rodzaj_maszyny";
             this.comboBox2.DisplayMember = "Nazwa_modelu_maszyny";
             this.comboBox2.ValueMember = "Id_model_maszyny";
-
         }
 
         private void buttonWyczyscPola_Click(object sender, EventArgs e)
         {
-
-            
-                txtNumer_seryjny.Text = "";
-                txtKoszt_1rh.Text = "";
-               
-
-            
+            txtNumer_seryjny.Text = "";
+            txtKoszt_1rh.Text = "";
         }
 
         private void buttonZapiszNowaMaszyna_Click(object sender, EventArgs e)
-        {
+        {            
             Maszyna frm = (Maszyna)Application.OpenForms["Maszyna"];
+            int row = Convert.ToInt32(frm.dgvMaszyna.CurrentRow.Cells[0].Value);
 
-            DP_Maszyna maszyna = new DP_Maszyna();
-            
-            maszyna.Id_rodzaj_maszyny = Convert.ToInt32(comboBox1.SelectedValue);
-            maszyna.Id_model_maszyny = Convert.ToInt32(comboBox2.SelectedValue);
-            maszyna.Nr_seryjny = txtNumer_seryjny.Text;
-            maszyna.Data_wprowadzenia = Convert.ToDateTime(dateTimePicker1.Value); 
-            maszyna.Koszt_1rh = Convert.ToInt32(txtKoszt_1rh.Text);
+            DP_Maszyna toUpdate = this.database.DP_Maszyna.Where(maszyna => maszyna.Id_maszyny == row).First();
 
-            this.database.DP_Maszyna.Add(maszyna);
+            toUpdate.Id_rodzaj_maszyny = Convert.ToInt32(comboBox1.SelectedValue);
+            toUpdate.Id_model_maszyny = Convert.ToInt32(comboBox2.SelectedValue);
+            toUpdate.Nr_seryjny = txtNumer_seryjny.Text;
+            toUpdate.Data_wprowadzenia = Convert.ToDateTime(dateTimePicker1.Value);
+            toUpdate.Koszt_1rh = Convert.ToInt32(txtKoszt_1rh.Text);
             database.SaveChanges();
-
             frm.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
-            this.Close();
-        }
-
-        private void buttonPowrot_Click(object sender, EventArgs e)
-        {
             this.Close();
         }
     }
