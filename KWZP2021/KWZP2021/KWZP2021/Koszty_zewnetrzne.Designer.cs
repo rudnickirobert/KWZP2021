@@ -52,7 +52,7 @@ namespace KWZP2021
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(627, 221);
+            this.dataGridView1.Size = new System.Drawing.Size(728, 221);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -78,7 +78,7 @@ namespace KWZP2021
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(134, 9);
+            this.label2.Location = new System.Drawing.Point(158, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(426, 32);
             this.label2.TabIndex = 5;
@@ -104,7 +104,7 @@ namespace KWZP2021
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(503, 63);
+            this.button3.Location = new System.Drawing.Point(604, 63);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(128, 35);
             this.button3.TabIndex = 8;
@@ -135,7 +135,7 @@ namespace KWZP2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 377);
+            this.ClientSize = new System.Drawing.Size(736, 377);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);

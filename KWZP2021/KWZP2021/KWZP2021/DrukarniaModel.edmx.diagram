@@ -5,86 +5,86 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="54e1ef802d06489a89607bbe013ebac4" Name="Diagram1">
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Czesc" Width="1.5" PointX="15" PointY="46" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_czesci" Width="1.5" PointX="15" PointY="95.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_maszyn" Width="1.5" PointX="15" PointY="92.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_materialu" Width="1.5" PointX="15" PointY="90" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_narzedzi" Width="1.5" PointX="15" PointY="87" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawca" Width="1.5" PointX="18" PointY="96.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Magazyn_gotowych_produktow" Width="1.5" PointX="20.25" PointY="68.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Material" Width="1.5" PointX="8.25" PointY="49.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Czesc" Width="1.5" PointX="15.75" PointY="47.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_czesci" Width="1.5" PointX="12" PointY="100" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_maszyn" Width="1.5" PointX="12" PointY="67.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_materialu" Width="1.5" PointX="12" PointY="60.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawa_narzedzi" Width="1.5" PointX="12" PointY="50.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Dostawca" Width="1.5" PointX="12" PointY="74.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Magazyn_gotowych_produktow" Width="1.5" PointX="17.25" PointY="70.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Material" Width="1.5" PointX="5.25" PointY="44.5" />
         <EntityTypeShape EntityType="DrukarniaModel.DM_Narzedzie" Width="1.5" PointX="3" PointY="60.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_narzedzia" Width="1.5" PointX="23.25" PointY="72.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Rodzaj_materialu" Width="1.5" PointX="6" PointY="50.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_narzedzia" Width="1.5" PointX="17.25" PointY="77" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Rodzaj_materialu" Width="1.5" PointX="3" PointY="45.375" />
         <EntityTypeShape EntityType="DrukarniaModel.DM_Rodzaj_narzedzia" Width="1.5" PointX="0.75" PointY="61.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" Width="1.5" PointX="17.25" PointY="72.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc" Width="1.5" PointX="15" PointY="76.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc_materialu" Width="1.5" PointX="23.25" PointY="69.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci" Width="1.5" PointX="15" PointY="54.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci_dla_produkcji" Width="1.5" PointX="15" PointY="83.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_materialu_dla_produkcji" Width="1.5" PointX="18" PointY="58.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_produktu" Width="1.5" PointX="21" PointY="58.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Wypozyczenie_narzedzia" Width="1.5" PointX="15" PointY="72.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Zuzyte_narzedzie" Width="1.5" PointX="20.25" PointY="72.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Co_ile_obsluga" Width="1.5" PointX="10.5" PointY="70.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc" Width="1.5" PointX="10.5" PointY="64.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew" Width="1.5" PointX="12.75" PointY="65.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Firma_serwisowa" Width="1.5" PointX="6" PointY="69.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Maszyna" Width="1.5" PointX="3" PointY="64.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wypozyczenia_narzedzia" Width="1.5" PointX="14.25" PointY="63.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc" Width="1.5" PointX="15" PointY="89.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wlasciwosc_materialu" Width="1.5" PointX="22.25" PointY="67.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci" Width="1.5" PointX="12" PointY="92.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_czesci_dla_produkcji" Width="1.5" PointX="12" PointY="79" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_materialu_dla_produkcji" Width="1.5" PointX="17.25" PointY="67.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wydanie_produktu" Width="1.5" PointX="18" PointY="59.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Wypozyczenie_narzedzia" Width="1.5" PointX="12" PointY="63.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Zuzyte_narzedzie" Width="1.5" PointX="17.25" PointY="63.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Co_ile_obsluga" Width="1.5" PointX="7.5" PointY="76.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc" Width="1.5" PointX="7.5" PointY="71" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew" Width="1.5" PointX="9.75" PointY="72" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Firma_serwisowa" Width="1.5" PointX="3" PointY="73.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Maszyna" Width="1.5" PointX="3" PointY="67.375" />
         <EntityTypeShape EntityType="DrukarniaModel.DP_Model_maszyny" Width="1.5" PointX="0.75" PointY="67.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Nazwa_obslugi" Width="1.5" PointX="10.5" PointY="67.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Obsluga" Width="1.5" PointX="12.75" PointY="68.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_maszyna_wydruk" Width="1.5" PointX="10.5" PointY="51.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Nazwa_obslugi" Width="1.5" PointX="7.5" PointY="73.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Obsluga" Width="1.5" PointX="9.75" PointY="68.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_maszyna_wydruk" Width="1.5" PointX="10.5" PointY="57.25" />
         <EntityTypeShape EntityType="DrukarniaModel.DP_Po_material_wydruk" Width="1.5" PointX="10.5" PointY="54.125" />
         <EntityTypeShape EntityType="DrukarniaModel.DP_Po_proc_czynnosc" Width="1.5" PointX="5.25" PointY="56.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_wydr_proc" Width="1.5" PointX="8.25" PointY="53.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Proces_produkcyjny" Width="1.5" PointX="5.25" PointY="60.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_wydr_proc" Width="1.5" PointX="8.25" PointY="56.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Proces_produkcyjny" Width="1.5" PointX="5.25" PointY="64" />
         <EntityTypeShape EntityType="DrukarniaModel.DP_Proces_technologiczny" Width="1.5" PointX="3" PointY="57.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_czynnosc_dodatkowa" Width="1.5" PointX="7.5" PointY="60.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_wydruk" Width="1.5" PointX="10.5" PointY="60.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_czynnosc_dodatkowa" Width="1.5" PointX="7.5" PointY="66.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_wydruk" Width="1.5" PointX="7.5" PointY="61.125" />
         <EntityTypeShape EntityType="DrukarniaModel.DP_Produkt" Width="1.5" PointX="0.75" PointY="51.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_czynnosci" Width="1.5" PointX="3" PointY="70.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_maszyny" Width="1.5" PointX="0.75" PointY="64.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_naprawa" Width="1.5" PointX="20" PointY="54.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga" Width="1.5" PointX="15" PointY="62.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_zewnetrzny" Width="1.5" PointX="8.25" PointY="65.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Usluga_serwisu_zewnetrznego" Width="1.5" PointX="6" PointY="73" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Wydruk" Width="1.5" PointX="6" PointY="45" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Zuzyta_maszyna" Width="1.5" PointX="5.25" PointY="66.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Dzial" Width="1.5" PointX="18.75" PointY="51.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Etat" Width="1.5" PointX="18.75" PointY="43.625" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Klient" Width="1.5" PointX="15.75" PointY="50.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Nieobecnosc" Width="1.5" PointX="15" PointY="58.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Plik" Width="1.5" PointX="3.75" PointY="45.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Pracownik" Width="1.5" PointX="12.75" PointY="56.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_czynnosci" Width="1.5" PointX="3" PointY="64.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Rodzaj_maszyny" Width="1.5" PointX="0.75" PointY="70.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_naprawa" Width="1.5" PointX="18" PointY="55.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga" Width="1.5" PointX="12" PointY="70.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Serwis_zewnetrzny" Width="1.5" PointX="5.25" PointY="68" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Usluga_serwisu_zewnetrznego" Width="1.5" PointX="3" PointY="76.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Wydruk" Width="1.5" PointX="6" PointY="51" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Zuzyta_maszyna" Width="1.5" PointX="5.25" PointY="72.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Dzial" Width="1.5" PointX="12.75" PointY="86.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Etat" Width="1.5" PointX="12.75" PointY="40.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Klient" Width="1.5" PointX="12.75" PointY="46.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Nieobecnosc" Width="1.5" PointX="13" PointY="55.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Plik" Width="1.5" PointX="18" PointY="49" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Pracownik" Width="1.5" PointX="9.75" PointY="60.75" />
         <EntityTypeShape EntityType="DrukarniaModel.DZ_Rachunek" Width="1.5" PointX="3" PointY="0.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_nieobecnosci" Width="1.5" PointX="12.75" PointY="53" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_nieobecnosci" Width="1.5" PointX="10.75" PointY="43.25" />
         <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_rachunku" Width="1.5" PointX="0.75" PointY="1.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_statusu_zamowienia" Width="1.5" PointX="21" PointY="76.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_umowy" Width="1.5" PointX="18.75" PointY="49" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Stanowisko" Width="1.5" PointX="18.75" PointY="46.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Status_zamowienia" Width="1.5" PointX="23.25" PointY="66" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_czesci" Width="1.5" PointX="17.25" PointY="84.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_maszyn" Width="1.5" PointX="17.25" PointY="76.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_materialu" Width="1.5" PointX="17.25" PointY="80.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_narzedzi" Width="1.5" PointX="20.25" PointY="80.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zamowienia_klienta" Width="1.5" PointX="22.25" PointY="54.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zatrudnienia" Width="1.5" PointX="23.25" PointY="63" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Wycena_sz_zamowienia" Width="1.5" PointX="24.5" PointY="54.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_klienta" Width="1.5" PointX="18" PointY="62.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_zewn" Width="1.5" PointX="15" PointY="79.875" />
-        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zatrudnienie" Width="1.5" PointX="21" PointY="62.125" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_czesci" Width="1.5" PointX="17.25" PointY="66.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_czesci" Width="1.5" PointX="17.25" PointY="92.375" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_maszyn" Width="1.5" PointX="20.25" PointY="88" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_materialu" Width="1.5" PointX="17.25" PointY="88.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_narzedzi" Width="1.5" PointX="20.25" PointY="84" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_magazynu_gotowych_produktow" Width="1.5" PointX="3" PointY="51.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_czesci" Width="1.5" PointX="17.25" PointY="54.5" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_materialu" Width="1.5" PointX="23.25" PointY="59" />
-        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_produktu" Width="1.5" PointX="3" PointY="48.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_material_czynnosc" Width="1.5" PointX="10.5" PointY="57.25" />
-        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_material" Width="1.5" PointX="7.5" PointY="57.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_statusu_zamowienia" Width="1.5" PointX="18" PointY="74.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Rodzaj_umowy" Width="1.5" PointX="12.75" PointY="38.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Stanowisko" Width="1.5" PointX="12.75" PointY="35.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Status_zamowienia" Width="1.5" PointX="20.25" PointY="71.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_czesci" Width="1.5" PointX="14.25" PointY="100.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_maszyn" Width="1.5" PointX="17.25" PointY="96.375" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_materialu" Width="1.5" PointX="14.25" PointY="96.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zam_narzedzi" Width="1.5" PointX="17.25" PointY="92.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zamowienia_klienta" Width="1.5" PointX="20.25" PointY="59.625" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Szczegoly_zatrudnienia" Width="1.5" PointX="17.25" PointY="52.125" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Wycena_sz_zamowienia" Width="1.5" PointX="22.5" PointY="59.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_klienta" Width="1.5" PointX="15" PointY="67.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zamowienie_zewn" Width="1.5" PointX="12" PointY="95.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DZ_Zatrudnienie" Width="1.5" PointX="15" PointY="59.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Parametr_czesci" Width="1.5" PointX="20" PointY="64.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_czesci" Width="1.5" PointX="17.25" PointY="99.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_maszyn" Width="1.5" PointX="14.25" PointY="82.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_materialu" Width="1.5" PointX="14.25" PointY="78.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Sklad_dostawy_narzedzi" Width="1.5" PointX="14.25" PointY="73.5" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_magazynu_gotowych_produktow" Width="1.5" PointX="3" PointY="48.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_czesci" Width="1.5" PointX="14.25" PointY="92.875" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_materialu" Width="1.5" PointX="19.5" PointY="67.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DM_Szczegoly_wydania_produktu" Width="1.5" PointX="3" PointY="51.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_Po_material_czynnosc" Width="1.5" PointX="7.5" PointY="54.25" />
+        <EntityTypeShape EntityType="DrukarniaModel.DP_prod_material" Width="1.5" PointX="7.5" PointY="64.25" />
         <EntityTypeShape EntityType="DrukarniaModel.vDM_Czesc" Width="1.5" PointX="0.75" PointY="3.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDM_Dostawa_czesci" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDM_Dostawa_maszyn" Width="1.5" PointX="4.75" PointY="3.75" />

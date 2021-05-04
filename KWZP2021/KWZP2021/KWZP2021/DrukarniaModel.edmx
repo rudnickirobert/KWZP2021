@@ -1977,10 +1977,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Koszty_zewnetrzne' does not have
           <Key>
             <PropertyRef Name="Cena jednostkowa" />
             <PropertyRef Name="Ilosc" />
+            <PropertyRef Name="Nazwa" />
           </Key>
           <Property Name="Data" Type="date" />
           <Property Name="Cena jednostkowa" Type="money" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Koszt" Type="decimal" Precision="38" Scale="0" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -4951,6 +4953,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Koszty_zewnetrzne].[Data] AS [Data], 
     [vDZ_Koszty_zewnetrzne].[Cena jednostkowa] AS [Cena jednostkowa], 
     [vDZ_Koszty_zewnetrzne].[Ilosc] AS [Ilosc], 
+    [vDZ_Koszty_zewnetrzne].[Nazwa] AS [Nazwa], 
     [vDZ_Koszty_zewnetrzne].[Koszt] AS [Koszt]
     FROM [dbo].[vDZ_Koszty_zewnetrzne] AS [vDZ_Koszty_zewnetrzne]</DefiningQuery>
           </EntitySet>
@@ -8407,10 +8410,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Key>
             <PropertyRef Name="Cena_jednostkowa" />
             <PropertyRef Name="Ilosc" />
+            <PropertyRef Name="Nazwa" />
           </Key>
           <Property Name="Data" Type="DateTime" Precision="0" />
           <Property Name="Cena_jednostkowa" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Koszt" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
         <EntityType Name="vDZ_Nieobecnosc">
@@ -11855,6 +11860,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Koszty_zewnetrzne">
               <MappingFragment StoreEntitySet="vDZ_Koszty_zewnetrzne">
                 <ScalarProperty Name="Koszt" ColumnName="Koszt" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Cena_jednostkowa" ColumnName="Cena jednostkowa" />
                 <ScalarProperty Name="Data" ColumnName="Data" />

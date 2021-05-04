@@ -621,44 +621,49 @@ GROUP BY vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamów
 GO
 CREATE VIEW vDZ_Koszty_zewnetrzne
 AS
-SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc,
+SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_czesci * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_czesci INNER JOIN
-DM_Sklad_dostawy_czesci ON DM_Dostawa_czesci.Id_dostawy=DM_Sklad_dostawy_czesci.Id_dostawy
+DM_Sklad_dostawy_czesci ON DM_Dostawa_czesci.Id_dostawy=DM_Sklad_dostawy_czesci.Id_dostawy INNER JOIN
+vDM_Czesc ON DM_Sklad_dostawy_czesci.Id_czesci=vDM_Czesc.[Numer czesci]
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
-GROUP BY DM_Dostawa_czesci.Data_dostawy,DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci, DM_Sklad_dostawy_czesci.Ilosc 
+GROUP BY DM_Dostawa_czesci.Data_dostawy,DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci, DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa 
 UNION ALL
-SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, 
+SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_maszyny * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_maszyn INNER JOIN
-DM_Sklad_dostawy_maszyn ON DM_Dostawa_maszyn.Id_dostawy=DM_Sklad_dostawy_maszyn.Id_dostawy
+DM_Sklad_dostawy_maszyn ON DM_Dostawa_maszyn.Id_dostawy=DM_Sklad_dostawy_maszyn.Id_dostawy INNER JOIN
+vDP_Maszyna ON DM_Sklad_dostawy_maszyn.Id_maszyn=vDP_Maszyna.[Numer maszyny]
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
-GROUP BY DM_Dostawa_maszyn.Data_dostawy,DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny,DM_Sklad_dostawy_maszyn.Ilosc 
+GROUP BY DM_Dostawa_maszyn.Data_dostawy,DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny,DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu]
 UNION ALL
-SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc,
+SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_materialu * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_materialu INNER JOIN
-DM_Sklad_dostawy_materialu ON DM_Dostawa_materialu.Id_dostawy=DM_Sklad_dostawy_materialu.Id_dostawy
+DM_Sklad_dostawy_materialu ON DM_Dostawa_materialu.Id_dostawy=DM_Sklad_dostawy_materialu.Id_dostawy INNER JOIN
+vDM_Material ON DM_Sklad_dostawy_materialu.Id_materialu=vDM_Material.[Numer materialu]
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
-GROUP BY DM_Dostawa_materialu.Data_dostawy,DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu, DM_Sklad_dostawy_materialu.Ilosc 
+GROUP BY DM_Dostawa_materialu.Data_dostawy,DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu, DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu]
 UNION ALL
-SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc,
+SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_narzedzi * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_narzedzi INNER JOIN
-DM_Sklad_dostawy_narzedzi ON DM_Dostawa_narzedzi.Id_dostawy=DM_Sklad_dostawy_narzedzi.Id_dostawy
+DM_Sklad_dostawy_narzedzi ON DM_Dostawa_narzedzi.Id_dostawy=DM_Sklad_dostawy_narzedzi.Id_dostawy INNER JOIN
+vDM_Narzedzie ON DM_Sklad_dostawy_narzedzi.Id_narzedzia=vDM_Narzedzie.[Numer narzedzia]
 WHERE (MONTH(Data_dostawy)=MONTH(GETDATE())) 
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
-GROUP BY DM_Dostawa_narzedzi.Data_dostawy, DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi,DM_Sklad_dostawy_narzedzi.Ilosc 
+GROUP BY DM_Dostawa_narzedzi.Data_dostawy, DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi,DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa
 UNION ALL
-SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], DP_Serwis_zewnetrzny.Koszt AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc,
+SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], DP_Serwis_zewnetrzny.Koszt AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Koszt * Ilosc) AS DECIMAL) END) AS Koszt
-FROM DP_Serwis_zewnetrzny
+FROM DP_Serwis_zewnetrzny INNER JOIN
+vDP_Maszyna ON DP_Serwis_zewnetrzny.Id_maszyny=vDP_Maszyna.[Numer maszyny]
 WHERE (MONTH(Data_zakonczenia)=MONTH(GETDATE())) 
 AND (YEAR(Data_zakonczenia)=YEAR(GETDATE()))
-GROUP BY DP_Serwis_zewnetrzny.Data_zakonczenia, DP_Serwis_zewnetrzny.Koszt, DP_Serwis_zewnetrzny.Ilosc 
+GROUP BY DP_Serwis_zewnetrzny.Data_zakonczenia, DP_Serwis_zewnetrzny.Koszt, DP_Serwis_zewnetrzny.Ilosc, vDP_Maszyna.[Nazwa modelu] 
 GO
 CREATE VIEW vDZ_Premia
 AS
