@@ -17,7 +17,7 @@ namespace KWZP2021
         public EdytujMaterial(DrukarniaEntities database)
         {
             InitializeComponent();
-
+            this.database = database;
             this.cmbEdytujRodzajMaterialu.DataSource = database.DM_Rodzaj_materialu.ToList();
             this.cmbEdytujRodzajMaterialu.DisplayMember = "Rodzaj_materialu";
             this.cmbEdytujRodzajMaterialu.ValueMember = "Id_rodzaj_materialu";
@@ -29,42 +29,40 @@ namespace KWZP2021
             this.Close();
         }
 
-    /*    private void btnSaveChanges_Click(object sender, EventArgs e)
+        private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            Material f = new Material(this.database);
-            f.dgvMaterial = ;
+            Material frm = (Material)Application.OpenForms["Material"];
+            int row = (frm.dgvMaterial.CurrentRow.Index)+1;
+            DM_Material toUpdate = this.database.DM_Material.Where(id_materialu => id_materialu.Id_materialu == row).First();
 
-            int id = Convert.ToInt32(Material.CurrentRow.Cells[0].Value);
-            DM_Material toUpdate = this.database.DM_Material.Where(mat => mat.Id_materialu == id).First();
-            toUpdate.Nazwa = txtEdytujMaterial.Text; // UPDATE
             toUpdate.Id_rodzaj_materialu = Convert.ToInt32(cmbEdytujRodzajMaterialu.SelectedValue); // UPDATE
+            toUpdate.Nazwa = txtEdytujMaterial.Text; // UPDATE
+
+            frm.dgvMaterial.DataSource = this.database.vDM_Material.ToList();
             this.database.SaveChanges();
 
-            var MaterialForm = Application.OpenForms.OfType<Material>().Single();
-            MaterialForm.initDataGridView();
+           // var MaterialForm = Application.OpenForms.OfType<Material>().Single();
+           // MaterialForm.initDataGridView();
 
             this.Close();
-        }*/
+        }
 
-
-        /*    private void btnAddNewMaterial_Click(object sender, EventArgs e)
+        /*    private void btnSaveChanges_Click(object sender, EventArgs e)
             {
-                DialogResult dialogResult = MessageBox.Show("Czy chcesz zaktualizować materiał?", "Aktualizacja materiału", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    int id = Convert.ToInt32(this.dgvMaterial.CurrentRow.Cells[0].Value);
-                    DM_Material toRemove = this.database.DM_Material.Where(id_materialu => id_materialu.Id_materialu == id).First();
-                    toRemove.Nazwa = txtEdytujMaterial.Text; // UPDATE
-                    toRemove.Id_rodzaj_materialu = Convert.ToInt32(cmbEdytujRodzajMaterialu.SelectedValue); // UPDATE
+                Material f = new Material(this.database);
+                f.dgvMaterial = ;
 
-                    this.database.SaveChanges();
-                    var MaterialForm = Application.OpenForms.OfType<Material>().Single();
-                    MaterialForm.initDataGridView();
-                }
-                else
-                {
-                    DialogResult dialog1Result = MessageBox.Show("Czy chcesz zaktualizować materiał?");
-                }
+                int id = Convert.ToInt32(Material.CurrentRow.Cells[0].Value);
+                DM_Material toUpdate = this.database.DM_Material.Where(mat => mat.Id_materialu == id).First();
+                toUpdate.Nazwa = txtEdytujMaterial.Text; // UPDATE
+                toUpdate.Id_rodzaj_materialu = Convert.ToInt32(cmbEdytujRodzajMaterialu.SelectedValue); // UPDATE
+                this.database.SaveChanges();
+
+                var MaterialForm = Application.OpenForms.OfType<Material>().Single();
+                MaterialForm.initDataGridView();
+
+                this.Close();
             }*/
+
     }
 }

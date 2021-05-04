@@ -18,5 +18,6 @@ namespace KWZP2021
         public string Nazwa_narzedzia { get; set; }
         public string Wlasciwosc { get; set; }
         public string Wartosc { get; set; }
+        public string Jednostka_pomiarowa { get; set; }
     }
 }

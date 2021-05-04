@@ -112,6 +112,7 @@ namespace KWZP2021
             this.btnCancelOperation.TabIndex = 81;
             this.btnCancelOperation.Text = "Anuluj";
             this.btnCancelOperation.UseVisualStyleBackColor = true;
+            this.btnCancelOperation.Click += new System.EventHandler(this.btnCancelOperation_Click);
             // 
             // btnAddNewWlasciwoscMaterialu
             // 
@@ -121,6 +122,7 @@ namespace KWZP2021
             this.btnAddNewWlasciwoscMaterialu.TabIndex = 80;
             this.btnAddNewWlasciwoscMaterialu.Text = "Dodaj";
             this.btnAddNewWlasciwoscMaterialu.UseVisualStyleBackColor = true;
+            this.btnAddNewWlasciwoscMaterialu.Click += new System.EventHandler(this.btnAddNewWlasciwoscMaterialu_Click);
             // 
             // cmbPracownik
             // 

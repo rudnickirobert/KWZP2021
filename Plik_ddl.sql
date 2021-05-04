@@ -237,6 +237,7 @@ CREATE TABLE DM_Wydanie_produktu (
 	Uwagi nvarchar (100)
 );
 CREATE TABLE DM_Szczegoly_wydania_produktu (
+	Id_szczegoly_wydania_produktu int identity(1,1) not null PRIMARY KEY,
 	Id_wydania int not null FOREIGN KEY REFERENCES DM_Wydanie_produktu (Id_wydania),
 	Id_produkt int not null FOREIGN KEY REFERENCES DP_Produkt (Id_Produkt),
 	Ilosc int not null

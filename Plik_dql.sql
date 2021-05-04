@@ -223,7 +223,7 @@ GO
 
 CREATE VIEW vDM_Szczegoly_wydania_produktu
 AS
-SELECT DM_Wydanie_produktu.Id_wydania AS [Identyfikator wydania], DP_Produkt.Nazwa_produktu AS [Nazwa produktu], DM_Szczegoly_wydania_produktu.Ilosc AS [Ilosc]
+SELECT Id_szczegoly_wydania_produktu AS [Identyfikator szczegolu], DM_Wydanie_produktu.Id_wydania AS [Identyfikator wydania], DP_Produkt.Nazwa_produktu AS [Nazwa produktu], DM_Szczegoly_wydania_produktu.Ilosc AS [Ilosc]
 FROM dbo.DM_Szczegoly_wydania_produktu INNER JOIN
 DM_Wydanie_produktu ON DM_Szczegoly_wydania_produktu.Id_wydania=DM_Wydanie_produktu.Id_wydania INNER JOIN
 DP_Produkt ON DM_Szczegoly_wydania_produktu.Id_produkt=DP_Produkt.Id_Produkt
@@ -244,7 +244,7 @@ DM_Narzedzie ON DM_Szczegoly_wypozyczenia_narzedzia.Id_narzedzia=DM_Narzedzie.Id
 GO
 CREATE VIEW vDM_Parametr_narzedzia
 AS
-SELECT Id_parametru, DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Wlasciwosc], DM_Parametr_narzedzia.Wartosc AS [Wartosc]
+SELECT Id_parametru, DM_Narzedzie.Nazwa AS [Nazwa narzedzia], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Wlasciwosc], DM_Parametr_narzedzia.Wartosc AS [Wartosc], DM_Wlasciwosc.Jednostka_pomiarowa AS [Jednostka pomiarowa]
 FROM dbo.DM_Parametr_narzedzia INNER JOIN
 DM_Narzedzie  ON DM_Parametr_narzedzia.Id_narzedzia=DM_Narzedzie.Id_narzedzia INNER JOiN
 DM_Wlasciwosc ON DM_Parametr_narzedzia.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
