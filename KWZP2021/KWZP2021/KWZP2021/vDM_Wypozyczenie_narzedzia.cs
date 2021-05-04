@@ -17,7 +17,7 @@ namespace KWZP2021
         public int Identyfikator_wypozyczenia { get; set; }
         public string Nazwisko_pracownika_wypozyczajacego { get; set; }
         public System.DateTime Data_i_godzina_wypozyczenia { get; set; }
-        public Nullable<System.DateTime> C_Data_i_godzina_zwrotu { get; set; }
-        public string C_Uwagi { get; set; }
+        public Nullable<System.DateTime> Data_i_godzina_zwrotu { get; set; }
+        public string Uwagi { get; set; }
     }
 }

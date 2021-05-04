@@ -37,10 +37,9 @@ namespace KWZP2021
             // 
             // btnPrzejdzmaterial
             // 
-            this.btnPrzejdzmaterial.Location = new System.Drawing.Point(26, 32);
-            this.btnPrzejdzmaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdzmaterial.Location = new System.Drawing.Point(20, 26);
             this.btnPrzejdzmaterial.Name = "btnPrzejdzmaterial";
-            this.btnPrzejdzmaterial.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdzmaterial.Size = new System.Drawing.Size(110, 50);
             this.btnPrzejdzmaterial.TabIndex = 5;
             this.btnPrzejdzmaterial.Text = "Materiał";
             this.btnPrzejdzmaterial.UseVisualStyleBackColor = true;
@@ -48,10 +47,9 @@ namespace KWZP2021
             // 
             // btnPrzejdzczesc
             // 
-            this.btnPrzejdzczesc.Location = new System.Drawing.Point(200, 32);
-            this.btnPrzejdzczesc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdzczesc.Location = new System.Drawing.Point(150, 26);
             this.btnPrzejdzczesc.Name = "btnPrzejdzczesc";
-            this.btnPrzejdzczesc.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdzczesc.Size = new System.Drawing.Size(110, 50);
             this.btnPrzejdzczesc.TabIndex = 6;
             this.btnPrzejdzczesc.Text = "Część";
             this.btnPrzejdzczesc.UseVisualStyleBackColor = true;
@@ -59,21 +57,19 @@ namespace KWZP2021
             // 
             // btnPrzejdzdostawa
             // 
-            this.btnPrzejdzdostawa.Location = new System.Drawing.Point(26, 115);
-            this.btnPrzejdzdostawa.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdzdostawa.Location = new System.Drawing.Point(20, 93);
             this.btnPrzejdzdostawa.Name = "btnPrzejdzdostawa";
-            this.btnPrzejdzdostawa.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdzdostawa.Size = new System.Drawing.Size(110, 50);
             this.btnPrzejdzdostawa.TabIndex = 7;
-            this.btnPrzejdzdostawa.Text = "Dostawa";
+            this.btnPrzejdzdostawa.Text = "Dostawy i wydania";
             this.btnPrzejdzdostawa.UseVisualStyleBackColor = true;
             this.btnPrzejdzdostawa.Click += new System.EventHandler(this.btnPrzejdzdostawa_Click);
             // 
             // btnPrzejdznarzedzie
             // 
-            this.btnPrzejdznarzedzie.Location = new System.Drawing.Point(200, 115);
-            this.btnPrzejdznarzedzie.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrzejdznarzedzie.Location = new System.Drawing.Point(150, 93);
             this.btnPrzejdznarzedzie.Name = "btnPrzejdznarzedzie";
-            this.btnPrzejdznarzedzie.Size = new System.Drawing.Size(147, 62);
+            this.btnPrzejdznarzedzie.Size = new System.Drawing.Size(110, 50);
             this.btnPrzejdznarzedzie.TabIndex = 8;
             this.btnPrzejdznarzedzie.Text = "Narzędzie";
             this.btnPrzejdznarzedzie.UseVisualStyleBackColor = true;
@@ -81,15 +77,14 @@ namespace KWZP2021
             // 
             // Dzial_magazynowy
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Highlight;
-            this.ClientSize = new System.Drawing.Size(391, 224);
+            this.ClientSize = new System.Drawing.Size(293, 182);
             this.Controls.Add(this.btnPrzejdznarzedzie);
             this.Controls.Add(this.btnPrzejdzdostawa);
             this.Controls.Add(this.btnPrzejdzczesc);
             this.Controls.Add(this.btnPrzejdzmaterial);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Dzial_magazynowy";
             this.Text = "Dzial_magazynowy";
             this.Load += new System.EventHandler(this.Dzial_magazynowy_Load);

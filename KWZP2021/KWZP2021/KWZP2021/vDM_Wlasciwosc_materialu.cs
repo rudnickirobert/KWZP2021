@@ -18,5 +18,6 @@ namespace KWZP2021
         public string Nazwa_materialu { get; set; }
         public string Nazwa_wlasciwosci { get; set; }
         public string Wartosc { get; set; }
+        public string Jednostka_pomiarowa { get; set; }
     }
 }

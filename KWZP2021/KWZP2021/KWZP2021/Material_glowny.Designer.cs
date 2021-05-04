@@ -32,14 +32,14 @@ namespace KWZP2021
             this.btnMaterial = new System.Windows.Forms.Button();
             this.btnWlasciwosc = new System.Windows.Forms.Button();
             this.btnRodzajMaterial = new System.Windows.Forms.Button();
+            this.btnWlasciwoscMaterialu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMaterial
             // 
-            this.btnMaterial.Location = new System.Drawing.Point(30, 26);
-            this.btnMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMaterial.Location = new System.Drawing.Point(22, 21);
             this.btnMaterial.Name = "btnMaterial";
-            this.btnMaterial.Size = new System.Drawing.Size(147, 62);
+            this.btnMaterial.Size = new System.Drawing.Size(110, 50);
             this.btnMaterial.TabIndex = 5;
             this.btnMaterial.Text = "Materiał";
             this.btnMaterial.UseVisualStyleBackColor = true;
@@ -47,10 +47,9 @@ namespace KWZP2021
             // 
             // btnWlasciwosc
             // 
-            this.btnWlasciwosc.Location = new System.Drawing.Point(30, 96);
-            this.btnWlasciwosc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnWlasciwosc.Location = new System.Drawing.Point(22, 78);
             this.btnWlasciwosc.Name = "btnWlasciwosc";
-            this.btnWlasciwosc.Size = new System.Drawing.Size(147, 62);
+            this.btnWlasciwosc.Size = new System.Drawing.Size(110, 50);
             this.btnWlasciwosc.TabIndex = 4;
             this.btnWlasciwosc.Text = "Wlasciwosc";
             this.btnWlasciwosc.UseVisualStyleBackColor = true;
@@ -58,23 +57,34 @@ namespace KWZP2021
             // 
             // btnRodzajMaterial
             // 
-            this.btnRodzajMaterial.Location = new System.Drawing.Point(185, 26);
-            this.btnRodzajMaterial.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRodzajMaterial.Location = new System.Drawing.Point(139, 21);
             this.btnRodzajMaterial.Name = "btnRodzajMaterial";
-            this.btnRodzajMaterial.Size = new System.Drawing.Size(147, 62);
+            this.btnRodzajMaterial.Size = new System.Drawing.Size(110, 50);
             this.btnRodzajMaterial.TabIndex = 3;
             this.btnRodzajMaterial.Text = "Rodzaj materialu";
             this.btnRodzajMaterial.UseVisualStyleBackColor = true;
             this.btnRodzajMaterial.Click += new System.EventHandler(this.btnRodzajMaterial_Click);
             // 
+            // btnWlasciwoscMaterialu
+            // 
+            this.btnWlasciwoscMaterialu.Location = new System.Drawing.Point(139, 78);
+            this.btnWlasciwoscMaterialu.Name = "btnWlasciwoscMaterialu";
+            this.btnWlasciwoscMaterialu.Size = new System.Drawing.Size(110, 50);
+            this.btnWlasciwoscMaterialu.TabIndex = 6;
+            this.btnWlasciwoscMaterialu.Text = "Wlasciwosc\r\nmateriału";
+            this.btnWlasciwoscMaterialu.UseVisualStyleBackColor = true;
+            this.btnWlasciwoscMaterialu.Click += new System.EventHandler(this.btnWlasciwoscMaterialu_Click);
+            // 
             // Material_glowny
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(293, 182);
+            this.Controls.Add(this.btnWlasciwoscMaterialu);
             this.Controls.Add(this.btnMaterial);
             this.Controls.Add(this.btnWlasciwosc);
             this.Controls.Add(this.btnRodzajMaterial);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Material_glowny";
             this.Text = "Material_glowny";
             this.ResumeLayout(false);
@@ -86,5 +96,6 @@ namespace KWZP2021
         private System.Windows.Forms.Button btnMaterial;
         private System.Windows.Forms.Button btnWlasciwosc;
         private System.Windows.Forms.Button btnRodzajMaterial;
+        private System.Windows.Forms.Button btnWlasciwoscMaterialu;
     }
 }

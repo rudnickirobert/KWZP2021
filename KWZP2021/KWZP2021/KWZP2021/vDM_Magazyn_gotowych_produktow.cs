@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public int Identyfikator_magazynu { get; set; }
         public int Numer_zamowienia { get; set; }
-        public System.DateTime C_Data_i_godzina_przyjecia { get; set; }
+        public System.DateTime Data_i_godzina_przyjecia { get; set; }
         public string Uwagi { get; set; }
     }
 }

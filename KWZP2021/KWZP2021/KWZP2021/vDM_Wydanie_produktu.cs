@@ -16,7 +16,7 @@ namespace KWZP2021
     {
         public int Identyfikator_wydania_produktu { get; set; }
         public int Numer_zamowienia { get; set; }
-        public string C_Nazwisko_pracownika_wydajacego { get; set; }
+        public string Nazwisko_pracownika_wydajacego { get; set; }
         public System.DateTime Data_i_godzina { get; set; }
         public string Uwagi { get; set; }
     }

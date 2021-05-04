@@ -208,14 +208,14 @@ GO
 
 CREATE VIEW vDM_Magazyn_gotowych_produktow
 AS
-SELECT Id_Magazynu_gotowych_produktow AS [Identyfikator magazynu], DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], Data_i_godzina_przyjecia AS [ Data i godzina przyjecia], Uwagi
+SELECT Id_Magazynu_gotowych_produktow AS [Identyfikator magazynu], DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], Data_i_godzina_przyjecia AS [Data i godzina przyjecia], Uwagi
 FROM dbo.DM_Magazyn_gotowych_produktow INNER JOIN
 DZ_Zamowienie_klienta ON DM_Magazyn_gotowych_produktow.Id_zamowienie=DZ_Zamowienie_klienta.Id_Zamowienia
 GO
 
 CREATE VIEW vDM_Wydanie_produktu
 AS
-SELECT Id_wydania AS [Identyfikator wydania produktu], DM_Magazyn_gotowych_produktow.Id_Magazynu_gotowych_produktow AS [Numer zamowienia], DZ_Pracownik.Nazwisko AS [ Nazwisko pracownika wydajacego], Data_i_godzina, DM_Wydanie_produktu.Uwagi AS [Uwagi]
+SELECT Id_wydania AS [Identyfikator wydania produktu], DM_Magazyn_gotowych_produktow.Id_Magazynu_gotowych_produktow AS [Numer zamowienia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wydajacego], Data_i_godzina, DM_Wydanie_produktu.Uwagi AS [Uwagi]
 FROM dbo.DM_Wydanie_produktu INNER JOIN
 DM_Magazyn_gotowych_produktow ON DM_Wydanie_produktu.Id_magazyn_gotowych_produktow=DM_Magazyn_gotowych_produktow.Id_magazynu_gotowych_produktow INNER JOIN
 DZ_Pracownik ON DM_Wydanie_produktu.Id_pracownika =DZ_Pracownik.Id_pracownika
@@ -231,7 +231,7 @@ GO
 
 CREATE VIEW vDM_Wypozyczenie_narzedzia
 AS
-SELECT Id_wypozyczenia_narzedzia AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego],Data_i_godzina_wypozyczenia AS [Data i godzina wypozyczenia], Data_i_godzina_zwrotu AS [ Data i godzina zwrotu], DM_Wypozyczenie_narzedzia.Uwagi AS [ Uwagi]
+SELECT Id_wypozyczenia_narzedzia AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego],Data_i_godzina_wypozyczenia AS [Data i godzina wypozyczenia], Data_i_godzina_zwrotu AS [Data i godzina zwrotu], DM_Wypozyczenie_narzedzia.Uwagi AS [Uwagi]
 FROM dbo.DM_Wypozyczenie_narzedzia INNER JOIN
 DZ_Pracownik  ON DM_Wypozyczenie_narzedzia.Id_pracownika_wypozyczajacego=DZ_Pracownik.Id_pracownika
 GO
@@ -774,7 +774,7 @@ GO
 
 CREATE VIEW vDM_Wlasciwosc_materialu
 AS
-SELECT id_wlasciwosc_materialu ,DM_Material.Nazwa AS [Nazwa materialu], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wlasciwosci],Wartosc AS [Wartosc]
+SELECT id_wlasciwosc_materialu ,DM_Material.Nazwa AS [Nazwa materialu], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wlasciwosci],Wartosc AS [Wartosc], DM_Wlasciwosc.Jednostka_pomiarowa AS [Jednostka pomiarowa]
 FROM dbo.DM_Wlasciwosc_materialu INNER JOIN
 DM_Material ON DM_Wlasciwosc_materialu.Id_materialu=DM_Material .Id_materialu INNER JOIN
 DM_Wlasciwosc ON DM_Wlasciwosc_materialu.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc

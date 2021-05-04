@@ -10,21 +10,22 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Dostawa_glowny : Form
+    public partial class Szczegoly_wydania_produktu : Form
     {
         DrukarniaEntities database;
-        public Dostawa_glowny(DrukarniaEntities database)
+        public Szczegoly_wydania_produktu(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
+
+          //  this.txtProdukt.DataSource = this.database.DP_Produkt.ToList();
+            this.txtProdukt.Text = "Nazwa_produktu";
+          //  this.txtProdukt.ValueMember = "Id_produkt";
         }
 
-        private void btnWydanieProd_Click(object sender, EventArgs e)
+        private void btnPreviousScreen_Click(object sender, EventArgs e)
         {
-            this.Hide();
             this.Close();
-            Wydanie_produktu wydanieProduktu = new Wydanie_produktu(this.database);
-            wydanieProduktu.ShowDialog();
         }
     }
 }

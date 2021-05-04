@@ -29,12 +29,33 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnWydanieProd = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnWydanieProd
+            // 
+            this.btnWydanieProd.Location = new System.Drawing.Point(21, 12);
+            this.btnWydanieProd.Name = "btnWydanieProd";
+            this.btnWydanieProd.Size = new System.Drawing.Size(110, 50);
+            this.btnWydanieProd.TabIndex = 8;
+            this.btnWydanieProd.Text = "Wydanie produktów";
+            this.btnWydanieProd.UseVisualStyleBackColor = true;
+            this.btnWydanieProd.Click += new System.EventHandler(this.btnWydanieProd_Click);
+            // 
+            // Dostawa_glowny
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(293, 182);
+            this.Controls.Add(this.btnWydanieProd);
+            this.Name = "Dostawa_glowny";
             this.Text = "Dostawa_glowny";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnWydanieProd;
     }
 }

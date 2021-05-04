@@ -990,12 +990,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Magazyn_gotowych_produktow' does
           <Key>
             <PropertyRef Name="Identyfikator magazynu" />
             <PropertyRef Name="Numer zamowienia" />
-            <PropertyRef Name=" Data i godzina przyjecia" />
+            <PropertyRef Name="Data i godzina przyjecia" />
             <PropertyRef Name="Uwagi" />
           </Key>
           <Property Name="Identyfikator magazynu" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
-          <Property Name=" Data i godzina przyjecia" Type="datetime" Nullable="false" />
+          <Property Name="Data i godzina przyjecia" Type="datetime" Nullable="false" />
           <Property Name="Uwagi" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1211,11 +1211,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wlasciwosc_materialu' does not h
             <PropertyRef Name="Nazwa materialu" />
             <PropertyRef Name="Nazwa wlasciwosci" />
             <PropertyRef Name="Wartosc" />
+            <PropertyRef Name="Jednostka pomiarowa" />
           </Key>
           <Property Name="id_wlasciwosc_materialu" Type="int" Nullable="false" />
           <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Nazwa wlasciwosci" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Wartosc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Jednostka pomiarowa" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Wybor_maszyny' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1281,12 +1283,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wydanie_produktu' does not have 
           <Key>
             <PropertyRef Name="Identyfikator wydania produktu" />
             <PropertyRef Name="Numer zamowienia" />
-            <PropertyRef Name=" Nazwisko pracownika wydajacego" />
+            <PropertyRef Name="Nazwisko pracownika wydajacego" />
             <PropertyRef Name="Data_i_godzina" />
           </Key>
           <Property Name="Identyfikator wydania produktu" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
-          <Property Name=" Nazwisko pracownika wydajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazwisko pracownika wydajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Data_i_godzina" Type="datetime" Nullable="false" />
           <Property Name="Uwagi" Type="nvarchar" MaxLength="100" />
         </EntityType>
@@ -1301,8 +1303,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wypozyczenie_narzedzia' does not
           <Property Name="Identyfikator wypozyczenia" Type="int" Nullable="false" />
           <Property Name="Nazwisko pracownika wypozyczajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Data i godzina wypozyczenia" Type="date" Nullable="false" />
-          <Property Name=" Data i godzina zwrotu" Type="date" />
-          <Property Name=" Uwagi" Type="nvarchar" MaxLength="100" />
+          <Property Name="Data i godzina zwrotu" Type="date" />
+          <Property Name="Uwagi" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Co_ile_obsluga' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -4213,7 +4215,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <DefiningQuery>SELECT 
     [vDM_Magazyn_gotowych_produktow].[Identyfikator magazynu] AS [Identyfikator magazynu], 
     [vDM_Magazyn_gotowych_produktow].[Numer zamowienia] AS [Numer zamowienia], 
-    [vDM_Magazyn_gotowych_produktow].[ Data i godzina przyjecia] AS [ Data i godzina przyjecia], 
+    [vDM_Magazyn_gotowych_produktow].[Data i godzina przyjecia] AS [Data i godzina przyjecia], 
     [vDM_Magazyn_gotowych_produktow].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDM_Magazyn_gotowych_produktow] AS [vDM_Magazyn_gotowych_produktow]</DefiningQuery>
           </EntitySet>
@@ -4340,7 +4342,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Wlasciwosc_materialu].[id_wlasciwosc_materialu] AS [id_wlasciwosc_materialu], 
     [vDM_Wlasciwosc_materialu].[Nazwa materialu] AS [Nazwa materialu], 
     [vDM_Wlasciwosc_materialu].[Nazwa wlasciwosci] AS [Nazwa wlasciwosci], 
-    [vDM_Wlasciwosc_materialu].[Wartosc] AS [Wartosc]
+    [vDM_Wlasciwosc_materialu].[Wartosc] AS [Wartosc], 
+    [vDM_Wlasciwosc_materialu].[Jednostka pomiarowa] AS [Jednostka pomiarowa]
     FROM [dbo].[vDM_Wlasciwosc_materialu] AS [vDM_Wlasciwosc_materialu]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Wybor_maszyny" EntityType="Self.vDM_Wybor_maszyny" store:Type="Views" store:Schema="dbo">
@@ -4380,7 +4383,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <DefiningQuery>SELECT 
     [vDM_Wydanie_produktu].[Identyfikator wydania produktu] AS [Identyfikator wydania produktu], 
     [vDM_Wydanie_produktu].[Numer zamowienia] AS [Numer zamowienia], 
-    [vDM_Wydanie_produktu].[ Nazwisko pracownika wydajacego] AS [ Nazwisko pracownika wydajacego], 
+    [vDM_Wydanie_produktu].[Nazwisko pracownika wydajacego] AS [Nazwisko pracownika wydajacego], 
     [vDM_Wydanie_produktu].[Data_i_godzina] AS [Data_i_godzina], 
     [vDM_Wydanie_produktu].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDM_Wydanie_produktu] AS [vDM_Wydanie_produktu]</DefiningQuery>
@@ -4390,8 +4393,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Wypozyczenie_narzedzia].[Identyfikator wypozyczenia] AS [Identyfikator wypozyczenia], 
     [vDM_Wypozyczenie_narzedzia].[Nazwisko pracownika wypozyczajacego] AS [Nazwisko pracownika wypozyczajacego], 
     [vDM_Wypozyczenie_narzedzia].[Data i godzina wypozyczenia] AS [Data i godzina wypozyczenia], 
-    [vDM_Wypozyczenie_narzedzia].[ Data i godzina zwrotu] AS [ Data i godzina zwrotu], 
-    [vDM_Wypozyczenie_narzedzia].[ Uwagi] AS [ Uwagi]
+    [vDM_Wypozyczenie_narzedzia].[Data i godzina zwrotu] AS [Data i godzina zwrotu], 
+    [vDM_Wypozyczenie_narzedzia].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDM_Wypozyczenie_narzedzia] AS [vDM_Wypozyczenie_narzedzia]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Co_ile_obsluga" EntityType="Self.vDP_Co_ile_obsluga" store:Type="Views" store:Schema="dbo">
@@ -7279,12 +7282,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Key>
             <PropertyRef Name="Identyfikator_magazynu" />
             <PropertyRef Name="Numer_zamowienia" />
-            <PropertyRef Name="C_Data_i_godzina_przyjecia" />
+            <PropertyRef Name="Data_i_godzina_przyjecia" />
             <PropertyRef Name="Uwagi" />
           </Key>
           <Property Name="Identyfikator_magazynu" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
-          <Property Name="C_Data_i_godzina_przyjecia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Data_i_godzina_przyjecia" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Uwagi" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDM_Material">
@@ -7468,11 +7471,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Nazwa_materialu" />
             <PropertyRef Name="Nazwa_wlasciwosci" />
             <PropertyRef Name="Wartosc" />
+            <PropertyRef Name="Jednostka_pomiarowa" />
           </Key>
           <Property Name="id_wlasciwosc_materialu" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Nazwa_wlasciwosci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Wartosc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Jednostka_pomiarowa" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDM_Wybor_maszyny">
           <Key>
@@ -7528,12 +7533,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Key>
             <PropertyRef Name="Identyfikator_wydania_produktu" />
             <PropertyRef Name="Numer_zamowienia" />
-            <PropertyRef Name="C_Nazwisko_pracownika_wydajacego" />
+            <PropertyRef Name="Nazwisko_pracownika_wydajacego" />
             <PropertyRef Name="Data_i_godzina" />
           </Key>
           <Property Name="Identyfikator_wydania_produktu" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
-          <Property Name="C_Nazwisko_pracownika_wydajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko_pracownika_wydajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Data_i_godzina" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
@@ -7546,8 +7551,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Identyfikator_wypozyczenia" Type="Int32" Nullable="false" />
           <Property Name="Nazwisko_pracownika_wypozyczajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Data_i_godzina_wypozyczenia" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="C_Data_i_godzina_zwrotu" Type="DateTime" Precision="0" />
-          <Property Name="C_Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Data_i_godzina_zwrotu" Type="DateTime" Precision="0" />
+          <Property Name="Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDP_Co_ile_obsluga">
           <Key>
@@ -10662,7 +10667,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Magazyn_gotowych_produktow">
               <MappingFragment StoreEntitySet="vDM_Magazyn_gotowych_produktow">
                 <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
-                <ScalarProperty Name="C_Data_i_godzina_przyjecia" ColumnName=" Data i godzina przyjecia" />
+                <ScalarProperty Name="Data_i_godzina_przyjecia" ColumnName="Data i godzina przyjecia" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Identyfikator_magazynu" ColumnName="Identyfikator magazynu" />
               </MappingFragment>
@@ -10819,6 +10824,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Wlasciwosc_materialu">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Wlasciwosc_materialu">
               <MappingFragment StoreEntitySet="vDM_Wlasciwosc_materialu">
+                <ScalarProperty Name="Jednostka_pomiarowa" ColumnName="Jednostka pomiarowa" />
                 <ScalarProperty Name="Wartosc" ColumnName="Wartosc" />
                 <ScalarProperty Name="Nazwa_wlasciwosci" ColumnName="Nazwa wlasciwosci" />
                 <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
@@ -10872,7 +10878,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               <MappingFragment StoreEntitySet="vDM_Wydanie_produktu">
                 <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
                 <ScalarProperty Name="Data_i_godzina" ColumnName="Data_i_godzina" />
-                <ScalarProperty Name="C_Nazwisko_pracownika_wydajacego" ColumnName=" Nazwisko pracownika wydajacego" />
+                <ScalarProperty Name="Nazwisko_pracownika_wydajacego" ColumnName="Nazwisko pracownika wydajacego" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Identyfikator_wydania_produktu" ColumnName="Identyfikator wydania produktu" />
               </MappingFragment>
@@ -10881,8 +10887,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Wypozyczenie_narzedzia">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Wypozyczenie_narzedzia">
               <MappingFragment StoreEntitySet="vDM_Wypozyczenie_narzedzia">
-                <ScalarProperty Name="C_Uwagi" ColumnName=" Uwagi" />
-                <ScalarProperty Name="C_Data_i_godzina_zwrotu" ColumnName=" Data i godzina zwrotu" />
+                <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
+                <ScalarProperty Name="Data_i_godzina_zwrotu" ColumnName="Data i godzina zwrotu" />
                 <ScalarProperty Name="Data_i_godzina_wypozyczenia" ColumnName="Data i godzina wypozyczenia" />
                 <ScalarProperty Name="Nazwisko_pracownika_wypozyczajacego" ColumnName="Nazwisko pracownika wypozyczajacego" />
                 <ScalarProperty Name="Identyfikator_wypozyczenia" ColumnName="Identyfikator wypozyczenia" />
