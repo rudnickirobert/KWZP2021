@@ -19,10 +19,13 @@ namespace KWZP2021
             this.database = database;
             dataZwolnienia.CustomFormat = " ";
             dataZwolnienia.Format = DateTimePickerFormat.Custom;
+            
+
 
             this.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
             this.cmbPracownik.DisplayMember = "Nazwisko";
             this.cmbPracownik.ValueMember = "Id_pracownika";
+            
 
             this.cmbStanowisko.DataSource = this.database.DZ_Stanowisko.ToList();
             this.cmbStanowisko.DisplayMember = "Stanowisko";
@@ -40,6 +43,7 @@ namespace KWZP2021
             this.cmbRodzaj_umowy.DisplayMember = "Rodzaj_umowy";
             this.cmbRodzaj_umowy.ValueMember = "Id_rodzaj_umowy";
 
+            
             
 
 
@@ -97,7 +101,7 @@ namespace KWZP2021
 
         private void buttonWyczyscPola_Click(object sender, EventArgs e)
         {
-            cmbPracownik.Text = "";
+            //cmbPracownik.Text = "";
             cmbStanowisko.Text = "";
             cmbDzial.Text = "";
             cmbEtat.Text = "";

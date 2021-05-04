@@ -152,7 +152,7 @@ namespace KWZP2021
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Szcz_zatrudnienia_2";
-            this.Text = "`";
+            this.Text = "Szczegóły zatrudnienia danego pracownika";
             this.Load += new System.EventHandler(this.Szcz_zatrudnienia_2_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
