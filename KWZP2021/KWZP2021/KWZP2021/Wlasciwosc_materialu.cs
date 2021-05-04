@@ -50,7 +50,6 @@ namespace KWZP2021
             if (dialogResult == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(this.dgvWlasciwoscMaterialu.CurrentRow.Cells[0].Value);
-
                 DM_Wlasciwosc_materialu toRemove = this.database.DM_Wlasciwosc_materialu.Where(id_materialu => id_materialu.id_wlasciwosc_materialu == id).First();
 
                 this.database.DM_Wlasciwosc_materialu.Remove(toRemove); // DELETE

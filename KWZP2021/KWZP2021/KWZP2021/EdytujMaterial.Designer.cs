@@ -36,8 +36,6 @@ namespace KWZP2021
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.cmbEdytujRodzajMaterialu = new System.Windows.Forms.ComboBox();
             this.txtEdytujMaterial = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -70,7 +68,7 @@ namespace KWZP2021
             // 
             // btnCancelOperation
             // 
-            this.btnCancelOperation.Location = new System.Drawing.Point(158, 238);
+            this.btnCancelOperation.Location = new System.Drawing.Point(160, 172);
             this.btnCancelOperation.Name = "btnCancelOperation";
             this.btnCancelOperation.Size = new System.Drawing.Size(75, 25);
             this.btnCancelOperation.TabIndex = 14;
@@ -80,13 +78,13 @@ namespace KWZP2021
             // 
             // btnSaveChanges
             // 
-            this.btnSaveChanges.Location = new System.Drawing.Point(28, 238);
+            this.btnSaveChanges.Location = new System.Drawing.Point(37, 172);
             this.btnSaveChanges.Name = "btnSaveChanges";
             this.btnSaveChanges.Size = new System.Drawing.Size(75, 25);
             this.btnSaveChanges.TabIndex = 13;
             this.btnSaveChanges.Text = "Zapisz";
             this.btnSaveChanges.UseVisualStyleBackColor = true;
-
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // cmbEdytujRodzajMaterialu
             // 
@@ -103,20 +101,11 @@ namespace KWZP2021
             this.txtEdytujMaterial.Size = new System.Drawing.Size(121, 20);
             this.txtEdytujMaterial.TabIndex = 11;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(276, 45);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 75);
-            this.dataGridView1.TabIndex = 18;
-            // 
             // EdytujMaterial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 397);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(264, 221);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -126,7 +115,6 @@ namespace KWZP2021
             this.Controls.Add(this.txtEdytujMaterial);
             this.Name = "EdytujMaterial";
             this.Text = "EdytujMaterial";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,6 +129,5 @@ namespace KWZP2021
         private System.Windows.Forms.Button btnSaveChanges;
         public System.Windows.Forms.TextBox txtEdytujMaterial;
         public System.Windows.Forms.ComboBox cmbEdytujRodzajMaterialu;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
