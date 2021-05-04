@@ -711,7 +711,7 @@ warning 6002: The table/view 'Drukarnia.dbo.DP_prod_material' does not have a pr
           </Key>
           <Property Name="Id_pliku" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa_pliku" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Zalacznik" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Rozszerzenie" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.DZ_Po_szczegoly_zam_produkt' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2269,11 +2269,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Plik' does not have a primary ke
           <Key>
             <PropertyRef Name="Numer pliku" />
             <PropertyRef Name="Nazwa pliku" />
-            <PropertyRef Name="zalacznik" />
+            <PropertyRef Name="Rozszerzenie" />
           </Key>
           <Property Name="Numer pliku" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa pliku" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="zalacznik" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Rozszerzenie" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Po_szczegoly_zam_produkt' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2394,6 +2394,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Stanowisko' does not have a prim
           </Key>
           <Property Name="Identyfikator stanowiska" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa stanowiska" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDZ_Status_zamowienia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDZ_Status_zamowienia">
+          <Key>
+            <PropertyRef Name="Identyfikator statusu zamowienia" />
+            <PropertyRef Name="Identyfikator zamowienia klienta" />
+            <PropertyRef Name="Rodzaj statusu zamowienia" />
+          </Key>
+          <Property Name="Identyfikator statusu zamowienia" Type="int" Nullable="false" />
+          <Property Name="Identyfikator zamowienia klienta" Type="int" Nullable="false" />
+          <Property Name="Rodzaj statusu zamowienia" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_czesci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -5311,7 +5323,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <DefiningQuery>SELECT 
     [vDZ_Plik].[Numer pliku] AS [Numer pliku], 
     [vDZ_Plik].[Nazwa pliku] AS [Nazwa pliku], 
-    [vDZ_Plik].[zalacznik] AS [zalacznik]
+    [vDZ_Plik].[Rozszerzenie] AS [Rozszerzenie]
     FROM [dbo].[vDZ_Plik] AS [vDZ_Plik]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Po_szczegoly_zam_produkt" EntityType="Self.vDZ_Po_szczegoly_zam_produkt" store:Type="Views" store:Schema="dbo">
@@ -5383,6 +5395,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Stanowisko].[Identyfikator stanowiska] AS [Identyfikator stanowiska], 
     [vDZ_Stanowisko].[Nazwa stanowiska] AS [Nazwa stanowiska]
     FROM [dbo].[vDZ_Stanowisko] AS [vDZ_Stanowisko]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDZ_Status_zamowienia" EntityType="Self.vDZ_Status_zamowienia" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDZ_Status_zamowienia].[Identyfikator statusu zamowienia] AS [Identyfikator statusu zamowienia], 
+    [vDZ_Status_zamowienia].[Identyfikator zamowienia klienta] AS [Identyfikator zamowienia klienta], 
+    [vDZ_Status_zamowienia].[Rodzaj statusu zamowienia] AS [Rodzaj statusu zamowienia]
+    FROM [dbo].[vDZ_Status_zamowienia] AS [vDZ_Status_zamowienia]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Szczegoly_zam_czesci" EntityType="Self.vDZ_Szczegoly_zam_czesci" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -6263,6 +6282,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDZ_Rodzaj_statusu_zamowienia" EntityType="DrukarniaModel.vDZ_Rodzaj_statusu_zamowienia" />
           <EntitySet Name="vDZ_Rodzaj_umowy" EntityType="DrukarniaModel.vDZ_Rodzaj_umowy" />
           <EntitySet Name="vDZ_Stanowisko" EntityType="DrukarniaModel.vDZ_Stanowisko" />
+          <EntitySet Name="vDZ_Status_zamowienia" EntityType="DrukarniaModel.vDZ_Status_zamowienia" />
           <EntitySet Name="vDZ_Szczegoly_zam_czesci" EntityType="DrukarniaModel.vDZ_Szczegoly_zam_czesci" />
           <EntitySet Name="vDZ_Szczegoly_zam_maszyn" EntityType="DrukarniaModel.vDZ_Szczegoly_zam_maszyn" />
           <EntitySet Name="vDZ_Szczegoly_zam_materialu" EntityType="DrukarniaModel.vDZ_Szczegoly_zam_materialu" />
@@ -7406,7 +7426,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </Key>
           <Property Name="Id_pliku" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_pliku" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Zalacznik" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Rozszerzenie" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DP_Wydruk" Relationship="DrukarniaModel.FK__DP_Wydruk__Id_pl__607251E5" FromRole="DZ_Plik" ToRole="DP_Wydruk" />
           <NavigationProperty Name="DZ_Szczegoly_zamowienia_klienta" Relationship="DrukarniaModel.FK__DZ_Szczeg__Id_pl__693CA210" FromRole="DZ_Plik" ToRole="DZ_Szczegoly_zamowienia_klienta" />
           <NavigationProperty Name="DZ_Wycena_sz_zamowienia" Relationship="DrukarniaModel.FK__DZ_Wycena__Id_pl__6E01572D" FromRole="DZ_Plik" ToRole="DZ_Wycena_sz_zamowienia" />
@@ -8975,11 +8995,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Key>
             <PropertyRef Name="Numer_pliku" />
             <PropertyRef Name="Nazwa_pliku" />
-            <PropertyRef Name="zalacznik" />
+            <PropertyRef Name="Rozszerzenie" />
           </Key>
           <Property Name="Numer_pliku" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_pliku" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="zalacznik" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Rozszerzenie" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDZ_Po_szczegoly_zam_produkt">
           <Key>
@@ -9082,6 +9102,16 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </Key>
           <Property Name="Identyfikator_stanowiska" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_stanowiska" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vDZ_Status_zamowienia">
+          <Key>
+            <PropertyRef Name="Identyfikator_statusu_zamowienia" />
+            <PropertyRef Name="Identyfikator_zamowienia_klienta" />
+            <PropertyRef Name="Rodzaj_statusu_zamowienia" />
+          </Key>
+          <Property Name="Identyfikator_statusu_zamowienia" Type="Int32" Nullable="false" />
+          <Property Name="Identyfikator_zamowienia_klienta" Type="Int32" Nullable="false" />
+          <Property Name="Rodzaj_statusu_zamowienia" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDZ_Szczegoly_zam_czesci">
           <Key>
@@ -11247,7 +11277,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="DZ_Plik">
             <EntityTypeMapping TypeName="DrukarniaModel.DZ_Plik">
               <MappingFragment StoreEntitySet="DZ_Plik">
-                <ScalarProperty Name="Zalacznik" ColumnName="Zalacznik" />
+                <ScalarProperty Name="Rozszerzenie" ColumnName="Rozszerzenie" />
                 <ScalarProperty Name="Nazwa_pliku" ColumnName="Nazwa_pliku" />
                 <ScalarProperty Name="Id_pliku" ColumnName="Id_pliku" />
               </MappingFragment>
@@ -12546,7 +12576,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Plik">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Plik">
               <MappingFragment StoreEntitySet="vDZ_Plik">
-                <ScalarProperty Name="zalacznik" ColumnName="zalacznik" />
+                <ScalarProperty Name="Rozszerzenie" ColumnName="Rozszerzenie" />
                 <ScalarProperty Name="Nazwa_pliku" ColumnName="Nazwa pliku" />
                 <ScalarProperty Name="Numer_pliku" ColumnName="Numer pliku" />
               </MappingFragment>
@@ -12637,6 +12667,15 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               <MappingFragment StoreEntitySet="vDZ_Stanowisko">
                 <ScalarProperty Name="Nazwa_stanowiska" ColumnName="Nazwa stanowiska" />
                 <ScalarProperty Name="Identyfikator_stanowiska" ColumnName="Identyfikator stanowiska" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDZ_Status_zamowienia">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Status_zamowienia">
+              <MappingFragment StoreEntitySet="vDZ_Status_zamowienia">
+                <ScalarProperty Name="Rodzaj_statusu_zamowienia" ColumnName="Rodzaj statusu zamowienia" />
+                <ScalarProperty Name="Identyfikator_zamowienia_klienta" ColumnName="Identyfikator zamowienia klienta" />
+                <ScalarProperty Name="Identyfikator_statusu_zamowienia" ColumnName="Identyfikator statusu zamowienia" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

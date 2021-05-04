@@ -49,17 +49,19 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button1.Location = new System.Drawing.Point(540, 383);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
             this.button1.Text = "Zamknij";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label3.Location = new System.Drawing.Point(21, 380);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(407, 13);
@@ -70,7 +72,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 121);
+            this.label2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(15, 125);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 13);
             this.label2.TabIndex = 11;
@@ -79,6 +82,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label1.Location = new System.Drawing.Point(311, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(177, 13);
@@ -96,57 +100,63 @@
             // 
             // button2_Usun_zamowienie
             // 
+            this.button2_Usun_zamowienie.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button2_Usun_zamowienie.Location = new System.Drawing.Point(311, 120);
             this.button2_Usun_zamowienie.Name = "button2_Usun_zamowienie";
             this.button2_Usun_zamowienie.Size = new System.Drawing.Size(177, 23);
             this.button2_Usun_zamowienie.TabIndex = 8;
             this.button2_Usun_zamowienie.Text = "Usuń wybrane zamówienie";
-            this.button2_Usun_zamowienie.UseVisualStyleBackColor = true;
+            this.button2_Usun_zamowienie.UseVisualStyleBackColor = false;
             this.button2_Usun_zamowienie.Click += new System.EventHandler(this.button2_Usun_zamowienie_Click);
             // 
             // button1_nowe_zamowienie
             // 
+            this.button1_nowe_zamowienie.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button1_nowe_zamowienie.Location = new System.Drawing.Point(168, 121);
             this.button1_nowe_zamowienie.Name = "button1_nowe_zamowienie";
             this.button1_nowe_zamowienie.Size = new System.Drawing.Size(71, 23);
             this.button1_nowe_zamowienie.TabIndex = 7;
             this.button1_nowe_zamowienie.Text = "Dodaj";
-            this.button1_nowe_zamowienie.UseVisualStyleBackColor = true;
+            this.button1_nowe_zamowienie.UseVisualStyleBackColor = false;
             this.button1_nowe_zamowienie.Click += new System.EventHandler(this.button1_nowe_zamowienie_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button2.Location = new System.Drawing.Point(552, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 14;
             this.button2.Text = "Materiałów";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button3.Location = new System.Drawing.Point(552, 41);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 15;
             this.button3.Text = "Narzędzi";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button4.Location = new System.Drawing.Point(552, 70);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 16;
             this.button4.Text = "Maszyn";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label4.Location = new System.Drawing.Point(362, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(184, 13);
@@ -155,18 +165,20 @@
             // 
             // button5
             // 
+            this.button5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button5.Location = new System.Drawing.Point(552, 99);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 18;
             this.button5.Text = "Części";
-            this.button5.UseVisualStyleBackColor = true;
+            this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 70);
+            this.label5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label5.Location = new System.Drawing.Point(15, 70);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 19;
@@ -175,7 +187,8 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 97);
+            this.label6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label6.Location = new System.Drawing.Point(15, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 20;

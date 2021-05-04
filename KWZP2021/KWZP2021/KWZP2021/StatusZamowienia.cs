@@ -18,7 +18,7 @@ namespace KWZP2021
             InitializeComponent();
             this.database = database;
 
-            this.dataGridView1.DataSource = this.database.DZ_Status_zamowienia.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Status_zamowienia.ToList();
 
 
             this.comboBox1.DataSource = this.database.DZ_Status_zamowienia.ToList();
@@ -37,7 +37,7 @@ namespace KWZP2021
 
         private void initdvg()
         {
-            this.dataGridView1.DataSource = this.database.DZ_Status_zamowienia.ToList();
+            this.dataGridView1.DataSource = this.database.vDZ_Status_zamowienia.ToList();
 
         }
 
