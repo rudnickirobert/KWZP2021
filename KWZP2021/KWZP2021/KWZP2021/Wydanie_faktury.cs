@@ -77,8 +77,8 @@ namespace KWZP2021
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Nowy_klient nowy_klient = new Nowy_klient(this.database);
-            nowy_klient.ShowDialog();
+            Klienci klienci = new Klienci(this.database);
+            klienci.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)
