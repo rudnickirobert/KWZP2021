@@ -26,7 +26,7 @@ namespace KWZP2021
         public int Id_po_proc_czynnosci { get; set; }
         public int Id_rodzaj_czynnosci { get; set; }
         public int Id_proces_technologiczny { get; set; }
-        public System.DateTime Czas_zamierzony { get; set; }
+        public int Czas_zamierzony { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Po_material_czynnosc> DP_Po_material_czynnosc { get; set; }

@@ -17,6 +17,7 @@ namespace KWZP2021
         public Nullable<System.DateTime> Data { get; set; }
         public decimal Cena_jednostkowa { get; set; }
         public int Ilosc { get; set; }
+        public string Nazwa { get; set; }
         public Nullable<decimal> Koszt { get; set; }
     }
 }
