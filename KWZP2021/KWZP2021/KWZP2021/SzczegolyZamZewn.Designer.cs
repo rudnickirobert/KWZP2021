@@ -73,6 +73,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label5.Location = new System.Drawing.Point(20, 36);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 13);
@@ -82,6 +83,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label1.Location = new System.Drawing.Point(20, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(157, 13);
@@ -91,6 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label2.Location = new System.Drawing.Point(20, 312);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 13);
@@ -100,6 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label3.Location = new System.Drawing.Point(20, 458);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 13);
@@ -117,7 +121,7 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(176, 12);
+            this.comboBox1.Location = new System.Drawing.Point(188, 12);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(45, 21);
             this.comboBox1.TabIndex = 25;
@@ -125,7 +129,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 15);
+            this.label4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.label4.Location = new System.Drawing.Point(22, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(160, 13);
             this.label4.TabIndex = 26;
@@ -142,12 +147,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(227, 12);
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(239, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 21);
             this.button1.TabIndex = 28;
             this.button1.Text = "Wyszukaj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // SzczegolyZamZewn

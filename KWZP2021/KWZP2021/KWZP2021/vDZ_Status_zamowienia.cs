@@ -12,10 +12,10 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDZ_Plik
+    public partial class vDZ_Status_zamowienia
     {
-        public int Numer_pliku { get; set; }
-        public string Nazwa_pliku { get; set; }
-        public string Rozszerzenie { get; set; }
+        public int Identyfikator_statusu_zamowienia { get; set; }
+        public int Identyfikator_zamowienia_klienta { get; set; }
+        public int Rodzaj_statusu_zamowienia { get; set; }
     }
 }

@@ -213,6 +213,7 @@ namespace KWZP2021
         public virtual DbSet<vDZ_Rodzaj_statusu_zamowienia> vDZ_Rodzaj_statusu_zamowienia { get; set; }
         public virtual DbSet<vDZ_Rodzaj_umowy> vDZ_Rodzaj_umowy { get; set; }
         public virtual DbSet<vDZ_Stanowisko> vDZ_Stanowisko { get; set; }
+        public virtual DbSet<vDZ_Status_zamowienia> vDZ_Status_zamowienia { get; set; }
         public virtual DbSet<vDZ_Szczegoly_zam_czesci> vDZ_Szczegoly_zam_czesci { get; set; }
         public virtual DbSet<vDZ_Szczegoly_zam_maszyn> vDZ_Szczegoly_zam_maszyn { get; set; }
         public virtual DbSet<vDZ_Szczegoly_zam_materialu> vDZ_Szczegoly_zam_materialu { get; set; }

@@ -1200,6 +1200,9 @@
     <Compile Include="vDZ_Stanowisko.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDZ_Status_zamowienia.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDZ_Szczegoly_zamowienia_klienta.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>

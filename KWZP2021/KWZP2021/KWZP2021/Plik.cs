@@ -79,10 +79,15 @@ namespace KWZP2021
         {
             DZ_Plik plik = new DZ_Plik();
             plik.Nazwa_pliku = textBox1.Text;
-            plik.Zalacznik = textBox2.Text;
+            plik.Rozszerzenie = textBox2.Text;
             database.DZ_Plik.Add(plik);
             database.SaveChanges();
             initdvgplik();
+        }
+
+        private void Plik_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
