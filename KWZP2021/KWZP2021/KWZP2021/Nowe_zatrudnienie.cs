@@ -19,13 +19,13 @@ namespace KWZP2021
             this.database = database;
             dataZwolnienia.CustomFormat = " ";
             dataZwolnienia.Format = DateTimePickerFormat.Custom;
-            
 
 
+           
             this.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
             this.cmbPracownik.DisplayMember = "Nazwisko";
             this.cmbPracownik.ValueMember = "Id_pracownika";
-            
+            this.cmbPracownik.SelectedIndex = this.cmbPracownik.Items.Count - 1;
 
             this.cmbStanowisko.DataSource = this.database.DZ_Stanowisko.ToList();
             this.cmbStanowisko.DisplayMember = "Stanowisko";
@@ -90,7 +90,7 @@ namespace KWZP2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Nowy_pracownik pracownik = new Nowy_pracownik(this.database);
+            NowyPracownik2 pracownik = new NowyPracownik2(this.database);
             pracownik.ShowDialog();
                     }
 
