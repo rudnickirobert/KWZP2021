@@ -77,5 +77,34 @@ namespace KWZP2021
             archiwum.ShowDialog();
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button10_zamowienia_klienta_Click(object sender, EventArgs e)
+        {
+            Zamowienie_klienta zamowienie_klienta = new Zamowienie_klienta(this.database);
+            zamowienie_klienta.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Plik plik = new Plik(this.database);
+            plik.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            StatusZamowienia status = new StatusZamowienia(this.database);
+            status.ShowDialog();
+        }
+
+        private void button10_zamowienia_wewnetrzne_Click(object sender, EventArgs e)
+        {
+            ZamowienieZewn ZamZewn = new ZamowienieZewn(this.database);
+            ZamZewn.ShowDialog();
+        }
     }
 }

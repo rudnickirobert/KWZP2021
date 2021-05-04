@@ -175,7 +175,7 @@ DP_Maszyna ON DZ_Szczegoly_zam_maszyn.Id_maszyny=DP_Maszyna.Id_maszyny
 GO
 CREATE VIEW vDZ_Szczegoly_zam_materialu
 AS
-SELECT Id_szczegoly_zam_materialu AS [Identyfikator szczegolow zamowienia materialu], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Material.Nazwa AS [Nazwa materiału], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wlasciwosci], ilosc AS [Ilosc]
+SELECT Id_szczegoly_zam_materialu AS [Identyfikator szczegolow zamowienia materialu], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Material.Nazwa AS [Nazwa materiału], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Jednostka_pomiarowa AS [Jednostka pomiarowa], ilosc AS [Ilosc]
 FROM dbo.DZ_Szczegoly_zam_materialu INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_materialu.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DM_Material ON DZ_Szczegoly_zam_materialu.Id_materialu=DM_Material.Id_materialu INNER JOIN
@@ -183,7 +183,7 @@ DM_Wlasciwosc ON DZ_Szczegoly_zam_materialu.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasc
 GO
 CREATE VIEW vDZ_Szczegoly_zam_czesci
 AS
-SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesc.Nazwa AS [Nazwa], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa wlasciwosci], ilosc AS [Ilosc]
+SELECT Id_szczegoly_zam_czesci AS [Identyfikator szczegolow zamowienia czesci], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Czesc.Nazwa AS [Nazwa], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Jednostka_pomiarowa AS [Jednostka pomiarowa], ilosc AS [Ilosc]
 FROM dbo.DZ_Szczegoly_zam_czesci INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_czesci.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DM_Czesc ON DZ_Szczegoly_zam_czesci.Id_czesci=DM_Czesc.Id_czesci INNER JOIN
@@ -191,7 +191,7 @@ DM_Wlasciwosc ON DZ_Szczegoly_zam_czesci.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwo
 GO
 CREATE VIEW vDZ_Szczegoly_zam_narzedzi
 AS
-SELECT Id_szczegoly_zam_narzedzi AS [Identyfikator szczegolow zamowienia narzedzi], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Narzedzie.Nazwa AS [Nazwa narzedzia], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Nazwa_wlasciwosci AS [Nazwa  wlasciwosci], ilosc AS [Ilosc]
+SELECT Id_szczegoly_zam_narzedzi AS [Identyfikator szczegolow zamowienia narzedzi], DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia], DM_Narzedzie.Nazwa AS [Nazwa narzedzia], koszt_jednostkowy_oferta AS [Koszt jednostkowy oferty], DM_Wlasciwosc.Jednostka_pomiarowa AS [Jednostka pomiarowa], ilosc AS [Ilosc]
 FROM dbo.DZ_Szczegoly_zam_narzedzi INNER JOIN
 DZ_Zamowienie_zewn ON DZ_Szczegoly_zam_narzedzi.Id_zamowienia_zewn=DZ_Zamowienie_zewn.Id_zamowienia_zewn INNER JOIN
 DM_Narzedzie ON DZ_Szczegoly_zam_narzedzi.Id_narzedzia=DM_Narzedzie.Id_narzedzia INNER JOIN
