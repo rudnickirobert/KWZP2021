@@ -721,8 +721,7 @@ VALUES
 	(6,14),
 	(5,15),
 	(5,16),
-	(7,17),
-	(7,18)
+	(7,17)
 	;
 INSERT INTO DP_Po_material_czynnosc(Id_po_proc_czynnosci, Id_materialu, Ilosc)
 VALUES
