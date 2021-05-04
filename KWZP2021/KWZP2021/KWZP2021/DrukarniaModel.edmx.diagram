@@ -193,7 +193,7 @@
         <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_statusu_zamowienia" Width="1.5" PointX="26.75" PointY="12.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDZ_Rodzaj_umowy" Width="1.5" PointX="26.75" PointY="15.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDZ_Stanowisko" Width="1.5" PointX="26.75" PointY="18.75" />
-        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Status_zamowienia" Width="1.5" PointX="26.75" PointY="21.75" />
+        <EntityTypeShape EntityType="DrukarniaModel.vDZ_Status_zamowienia" Width="2" PointX="26.625" PointY="21.375" />
         <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_czesci" Width="1.5" PointX="22.75" PointY="26.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_maszyn" Width="1.5" PointX="26.75" PointY="24.75" />
         <EntityTypeShape EntityType="DrukarniaModel.vDZ_Szczegoly_zam_materialu" Width="1.5" PointX="27.75" PointY="0.75" />
