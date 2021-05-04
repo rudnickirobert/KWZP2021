@@ -12,14 +12,15 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class DP_Po_material_wydruk
+    public partial class vDP_CzynnoscProces
     {
-        public int Id_po_material_wydruk { get; set; }
-        public int Id_materialu { get; set; }
-        public int Id_po_wydr_proc { get; set; }
-        public double Ilosc { get; set; }
-    
-        public virtual DM_Material DM_Material { get; set; }
-        public virtual DP_Po_wydr_proc DP_Po_wydr_proc { get; set; }
+        public int ID_CZYNNOSCI { get; set; }
+        public string NAZWA_CZYNNOSCI { get; set; }
+        public string NARZEDZIE { get; set; }
+        public string MASZYNA { get; set; }
+        public string MATERIAL { get; set; }
+        public int ILOSC_MATERIALU { get; set; }
+        public string PRACOWNIK { get; set; }
+        public string Nazwa { get; set; }
     }
 }

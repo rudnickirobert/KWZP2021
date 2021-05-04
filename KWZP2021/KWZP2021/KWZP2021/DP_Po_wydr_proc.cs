@@ -17,8 +17,8 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DP_Po_wydr_proc()
         {
+            this.DP_Po_maszyna_wydruk = new HashSet<DP_Po_maszyna_wydruk>();
             this.DP_Po_material_wydruk = new HashSet<DP_Po_material_wydruk>();
-            this.DP_Maszyna = new HashSet<DP_Maszyna>();
         }
     
         public int Id_po_wydr_proces { get; set; }
@@ -27,10 +27,10 @@ namespace KWZP2021
         public int Czas_zamierzony { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DP_Po_maszyna_wydruk> DP_Po_maszyna_wydruk { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
         public virtual DP_Proces_technologiczny DP_Proces_technologiczny { get; set; }
         public virtual DP_Wydruk DP_Wydruk { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DP_Maszyna> DP_Maszyna { get; set; }
     }
 }

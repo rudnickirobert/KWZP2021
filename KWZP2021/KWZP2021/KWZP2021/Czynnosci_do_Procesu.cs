@@ -82,5 +82,10 @@ namespace KWZP2021
             Czynnosci_do_Procesu czynnosci_Do_Procesu = new Czynnosci_do_Procesu(this.database);
             czynnosci_Do_Procesu.ShowDialog();
         }
+
+        private void Czynnosci_do_Procesu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

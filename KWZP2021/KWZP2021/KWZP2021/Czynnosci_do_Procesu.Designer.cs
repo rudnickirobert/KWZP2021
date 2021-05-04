@@ -137,6 +137,7 @@ namespace KWZP2021
             this.Controls.Add(this.comboBox1);
             this.Name = "Czynnosci_do_Procesu";
             this.Text = "Rodzaj_czynnosci";
+            this.Load += new System.EventHandler(this.Czynnosci_do_Procesu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GDV_czynnosci)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

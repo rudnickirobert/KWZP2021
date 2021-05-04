@@ -35,19 +35,19 @@ namespace KWZP2021
             // 
             // btnRodzajCzynnosci
             // 
-            this.btnRodzajCzynnosci.Location = new System.Drawing.Point(332, 46);
+            this.btnRodzajCzynnosci.Location = new System.Drawing.Point(436, 167);
             this.btnRodzajCzynnosci.Name = "btnRodzajCzynnosci";
-            this.btnRodzajCzynnosci.Size = new System.Drawing.Size(237, 74);
+            this.btnRodzajCzynnosci.Size = new System.Drawing.Size(127, 53);
             this.btnRodzajCzynnosci.TabIndex = 0;
-            this.btnRodzajCzynnosci.Text = "Rodzaj Czynności";
+            this.btnRodzajCzynnosci.Text = "Proces Technologiczny";
             this.btnRodzajCzynnosci.UseVisualStyleBackColor = true;
             this.btnRodzajCzynnosci.Click += new System.EventHandler(this.btnRodzajCzynnosci_Click);
             // 
             // btnMaszyna
             // 
-            this.btnMaszyna.Location = new System.Drawing.Point(137, 169);
+            this.btnMaszyna.Location = new System.Drawing.Point(221, 167);
             this.btnMaszyna.Name = "btnMaszyna";
-            this.btnMaszyna.Size = new System.Drawing.Size(120, 51);
+            this.btnMaszyna.Size = new System.Drawing.Size(127, 53);
             this.btnMaszyna.TabIndex = 1;
             this.btnMaszyna.Text = "Utrzymanie ruchu";
             this.btnMaszyna.UseVisualStyleBackColor = true;

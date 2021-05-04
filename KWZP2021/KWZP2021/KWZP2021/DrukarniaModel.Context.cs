@@ -54,6 +54,8 @@ namespace KWZP2021
         public virtual DbSet<DP_Model_maszyny> DP_Model_maszyny { get; set; }
         public virtual DbSet<DP_Nazwa_obslugi> DP_Nazwa_obslugi { get; set; }
         public virtual DbSet<DP_Obsluga> DP_Obsluga { get; set; }
+        public virtual DbSet<DP_Po_maszyna_wydruk> DP_Po_maszyna_wydruk { get; set; }
+        public virtual DbSet<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
         public virtual DbSet<DP_Po_proc_czynnosc> DP_Po_proc_czynnosc { get; set; }
         public virtual DbSet<DP_Po_wydr_proc> DP_Po_wydr_proc { get; set; }
         public virtual DbSet<DP_Proces_produkcyjny> DP_Proces_produkcyjny { get; set; }
@@ -102,7 +104,6 @@ namespace KWZP2021
         public virtual DbSet<DM_Szczegoly_wydania_materialu> DM_Szczegoly_wydania_materialu { get; set; }
         public virtual DbSet<DM_Szczegoly_wydania_produktu> DM_Szczegoly_wydania_produktu { get; set; }
         public virtual DbSet<DP_Po_material_czynnosc> DP_Po_material_czynnosc { get; set; }
-        public virtual DbSet<DP_Po_material_wydruk> DP_Po_material_wydruk { get; set; }
         public virtual DbSet<DP_prod_material> DP_prod_material { get; set; }
         public virtual DbSet<vDM_Czesc> vDM_Czesc { get; set; }
         public virtual DbSet<vDM_Dostawa_czesci> vDM_Dostawa_czesci { get; set; }
@@ -137,9 +138,16 @@ namespace KWZP2021
         public virtual DbSet<vDP_Czesc_wykorzystana> vDP_Czesc_wykorzystana { get; set; }
         public virtual DbSet<vDP_Czynnosc> vDP_Czynnosc { get; set; }
         public virtual DbSet<vDP_Czynnosc_w_ramach_obslugi_serw_wew> vDP_Czynnosc_w_ramach_obslugi_serw_wew { get; set; }
+        public virtual DbSet<vDP_CzynnoscProces> vDP_CzynnoscProces { get; set; }
         public virtual DbSet<vDP_Firma_serwisowa> vDP_Firma_serwisowa { get; set; }
         public virtual DbSet<vDP_Maszyna> vDP_Maszyna { get; set; }
+        public virtual DbSet<vDP_Maszyna_drukarki> vDP_Maszyna_drukarki { get; set; }
+        public virtual DbSet<vDP_Maszyna_Proces> vDP_Maszyna_Proces { get; set; }
+        public virtual DbSet<vDP_MaszynaWydruk_Proces> vDP_MaszynaWydruk_Proces { get; set; }
+        public virtual DbSet<vDP_Material_Proces> vDP_Material_Proces { get; set; }
+        public virtual DbSet<vDP_MaterialWydruk_Proces> vDP_MaterialWydruk_Proces { get; set; }
         public virtual DbSet<vDP_Model_maszyny> vDP_Model_maszyny { get; set; }
+        public virtual DbSet<vDP_Narzedzia_Proces> vDP_Narzedzia_Proces { get; set; }
         public virtual DbSet<vDP_Narzedzie_uzyte_naprawa> vDP_Narzedzie_uzyte_naprawa { get; set; }
         public virtual DbSet<vDP_Narzedzie_uzyte_obsluga> vDP_Narzedzie_uzyte_obsluga { get; set; }
         public virtual DbSet<vDP_Nazwa_obslugi> vDP_Nazwa_obslugi { get; set; }
@@ -154,8 +162,10 @@ namespace KWZP2021
         public virtual DbSet<vDP_po_prod_czyn_dod_maszyna> vDP_po_prod_czyn_dod_maszyna { get; set; }
         public virtual DbSet<vDP_po_prod_czyn_dod_pracownik> vDP_po_prod_czyn_dod_pracownik { get; set; }
         public virtual DbSet<vDP_Po_wydr_proc> vDP_Po_wydr_proc { get; set; }
+        public virtual DbSet<vDP_Pracownik_Proces> vDP_Pracownik_Proces { get; set; }
         public virtual DbSet<vDP_Proces_produkcyjny> vDP_Proces_produkcyjny { get; set; }
         public virtual DbSet<vDP_Proces_produkt> vDP_Proces_produkt { get; set; }
+        public virtual DbSet<vDP_Proces_Techno1> vDP_Proces_Techno1 { get; set; }
         public virtual DbSet<vDP_Proces_technologiczny> vDP_Proces_technologiczny { get; set; }
         public virtual DbSet<vDP_prod_czynnosc_dodatkowa> vDP_prod_czynnosc_dodatkowa { get; set; }
         public virtual DbSet<vDP_prod_material> vDP_prod_material { get; set; }
@@ -168,6 +178,8 @@ namespace KWZP2021
         public virtual DbSet<vDP_Serwis_zewnetrzny> vDP_Serwis_zewnetrzny { get; set; }
         public virtual DbSet<vDP_Usluga_serwisu_zewnetrznego> vDP_Usluga_serwisu_zewnetrznego { get; set; }
         public virtual DbSet<vDP_Wydruk> vDP_Wydruk { get; set; }
+        public virtual DbSet<vDP_Wydruk_Proces1> vDP_Wydruk_Proces1 { get; set; }
+        public virtual DbSet<vDP_WydrukProces> vDP_WydrukProces { get; set; }
         public virtual DbSet<vDP_Zuzyta_maszyna> vDP_Zuzyta_maszyna { get; set; }
         public virtual DbSet<vDZ_Archiwum_Koszty_zewnetrzne> vDZ_Archiwum_Koszty_zewnetrzne { get; set; }
         public virtual DbSet<vDZ_Dzial> vDZ_Dzial { get; set; }

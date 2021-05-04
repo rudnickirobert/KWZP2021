@@ -277,6 +277,9 @@
     <Compile Include="DP_Obsluga.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_Po_maszyna_wydruk.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DP_Po_material_czynnosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -529,6 +532,12 @@
     <Compile Include="Koszty_zewnetrzne.Designer.cs">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
     </Compile>
+    <Compile Include="KreatorWydruk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KreatorWydruk.Designer.cs">
+      <DependentUpon>KreatorWydruk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maszyna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -601,6 +610,12 @@
     <Compile Include="Nowe_zatrudnienie.Designer.cs">
       <DependentUpon>Nowe_zatrudnienie.cs</DependentUpon>
     </Compile>
+    <Compile Include="NowyWydruk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NowyWydruk.Designer.cs">
+      <DependentUpon>NowyWydruk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nowy_klient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -642,6 +657,24 @@
     </Compile>
     <Compile Include="Pracownicy.Designer.cs">
       <DependentUpon>Pracownicy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesDrukowania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesDrukowania.Designer.cs">
+      <DependentUpon>ProcesDrukowania.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProcesTechnologiczny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcesTechnologiczny.Designer.cs">
+      <DependentUpon>ProcesTechnologiczny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrzypiszMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrzypiszMaterial.Designer.cs">
+      <DependentUpon>PrzypiszMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="Rodzaj_czynnosci.cs">
       <SubType>Form</SubType>
@@ -795,6 +828,9 @@
     <Compile Include="vDP_Czynnosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDP_CzynnoscProces.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDP_Czynnosc_w_ramach_obslugi_serw_wew.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -804,7 +840,25 @@
     <Compile Include="vDP_Maszyna.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDP_MaszynaWydruk_Proces.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Maszyna_drukarki.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Maszyna_Proces.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_MaterialWydruk_Proces.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Material_Proces.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDP_Model_maszyny.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Narzedzia_Proces.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Narzedzie_uzyte_naprawa.cs">
@@ -849,10 +903,16 @@
     <Compile Include="vDP_Po_wydr_proc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="vDP_Pracownik_Proces.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="vDP_Proces_produkcyjny.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Proces_produkt.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Proces_Techno1.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Proces_technologiczny.cs">
@@ -889,6 +949,12 @@
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Wydruk.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_WydrukProces.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Wydruk_Proces1.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Zuzyta_maszyna.cs">
@@ -1164,6 +1230,9 @@
     <EmbeddedResource Include="Koszty_zewnetrzne.resx">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="KreatorWydruk.resx">
+      <DependentUpon>KreatorWydruk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maszyna.resx">
       <DependentUpon>Maszyna.cs</DependentUpon>
     </EmbeddedResource>
@@ -1200,6 +1269,9 @@
     <EmbeddedResource Include="Nowe_zatrudnienie.resx">
       <DependentUpon>Nowe_zatrudnienie.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NowyWydruk.resx">
+      <DependentUpon>NowyWydruk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Nowy_klient.resx">
       <DependentUpon>Nowy_klient.cs</DependentUpon>
     </EmbeddedResource>
@@ -1221,6 +1293,12 @@
     <EmbeddedResource Include="Pracownicy.resx">
       <DependentUpon>Pracownicy.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProcesDrukowania.resx">
+      <DependentUpon>ProcesDrukowania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProcesTechnologiczny.resx">
+      <DependentUpon>ProcesTechnologiczny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -1230,6 +1308,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PrzypiszMaterial.resx">
+      <DependentUpon>PrzypiszMaterial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rodzaj_czynnosci.resx">
       <DependentUpon>Rodzaj_czynnosci.cs</DependentUpon>
     </EmbeddedResource>
