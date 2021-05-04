@@ -145,6 +145,12 @@ namespace KWZP2021
         public virtual DbSet<vDP_Czynnosc_w_ramach_obslugi_serw_wew> vDP_Czynnosc_w_ramach_obslugi_serw_wew { get; set; }
         public virtual DbSet<vDP_CzynnoscProces> vDP_CzynnoscProces { get; set; }
         public virtual DbSet<vDP_Firma_serwisowa> vDP_Firma_serwisowa { get; set; }
+        public virtual DbSet<vDP_Koszt_material_magazyn> vDP_Koszt_material_magazyn { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_dodatkowe_przed> vDP_Koszt_materialu_dodatkowe_przed { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_przed> vDP_Koszt_materialu_przed { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_wydruk_przed> vDP_Koszt_materialu_wydruk_przed { get; set; }
+        public virtual DbSet<vDP_Koszt_pracownik_po> vDP_Koszt_pracownik_po { get; set; }
+        public virtual DbSet<vDP_Koszt_pracownik_przed> vDP_Koszt_pracownik_przed { get; set; }
         public virtual DbSet<vDP_Maszyna> vDP_Maszyna { get; set; }
         public virtual DbSet<vDP_Maszyna_drukarki> vDP_Maszyna_drukarki { get; set; }
         public virtual DbSet<vDP_Maszyna_Proces> vDP_Maszyna_Proces { get; set; }
@@ -176,6 +182,7 @@ namespace KWZP2021
         public virtual DbSet<vDP_prod_material> vDP_prod_material { get; set; }
         public virtual DbSet<vDP_prod_wydruk> vDP_prod_wydruk { get; set; }
         public virtual DbSet<vDP_Produkt> vDP_Produkt { get; set; }
+        public virtual DbSet<vDP_RH_pracownik> vDP_RH_pracownik { get; set; }
         public virtual DbSet<vDP_Rodzaj_czynnosci> vDP_Rodzaj_czynnosci { get; set; }
         public virtual DbSet<vDP_Rodzaj_maszyny> vDP_Rodzaj_maszyny { get; set; }
         public virtual DbSet<vDP_Serwis_wewnetrzny_naprawa> vDP_Serwis_wewnetrzny_naprawa { get; set; }
