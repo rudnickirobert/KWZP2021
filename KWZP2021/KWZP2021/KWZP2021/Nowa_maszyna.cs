@@ -15,18 +15,22 @@ namespace KWZP2021
         DrukarniaEntities database;
         public Nowa_maszyna(DrukarniaEntities database)
         {
-            InitializeComponent();
             this.database = database;
+            InitializeComponent();
+            this.comboBox1.DataSource = this.database.DP_Rodzaj_maszyny.ToList();
+            this.comboBox2.DataSource = this.database.DP_Model_maszyny.ToList();
+            this.comboBox1.DisplayMember = "Rodzaj maszyny";
+            this.comboBox1.ValueMember = "Rodzaj_maszyny";
+            this.comboBox2.DisplayMember = "Nazwa modelu";
+            this.comboBox2.ValueMember = "Nazwa_modelu_maszyny";
+
         }
 
         private void buttonWyczyscPola_Click(object sender, EventArgs e)
         {
 
             
-                txtRodzaj_maszyny.Text = "";
-                txtNazwa_modelu.Text = "";
                 txtNumer_seryjny.Text = "";
-                txtData_wprowadzenia.Text = "";
                 txtKoszt_1rh.Text = "";
                
 
@@ -36,18 +40,21 @@ namespace KWZP2021
         private void buttonZapiszNowaMaszyna_Click(object sender, EventArgs e)
         {
             DP_Maszyna maszyna = new DP_Maszyna();
-            DP_Rodzaj_maszyny rodzajMaszyny = new DP_Rodzaj_maszyny();
-            DP_Model_maszyny modelMaszyny = new DP_Model_maszyny();
-            rodzajMaszyny.Rodzaj_maszyny = txtRodzaj_maszyny.Text;
-            modelMaszyny.Nazwa_modelu_maszyny = txtNazwa_modelu.Text;
+            
+            maszyna.Id_rodzaj_maszyny = Convert.ToInt32(comboBox1.SelectedValue);
+            maszyna.Id_model_maszyny = Convert.ToInt32(comboBox2.SelectedValue);
             maszyna.Nr_seryjny = txtNumer_seryjny.Text;
-            maszyna.Data_wprowadzenia = Convert.ToDateTime(txtData_wprowadzenia.Text);
+            maszyna.Data_wprowadzenia = Convert.ToDateTime(dateTimePicker1.Value); 
             maszyna.Koszt_1rh = Convert.ToInt32(txtKoszt_1rh.Text);
 
-            database.DP_Maszyna.Add(maszyna);
-            database.DP_Rodzaj_maszyny.Add(rodzajMaszyny);
-            database.DP_Model_maszyny.Add(modelMaszyny);
+            this.database.DP_Maszyna.Add(maszyna);
+         
             database.SaveChanges();
+            this.Close();
+        }
+
+        private void buttonPowrot_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

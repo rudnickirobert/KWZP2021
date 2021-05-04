@@ -580,6 +580,12 @@
     <Compile Include="Narzedzie_glowny.Designer.cs">
       <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
     </Compile>
+    <Compile Include="NowaFirmaSerwisowa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NowaFirmaSerwisowa.Designer.cs">
+      <DependentUpon>NowaFirmaSerwisowa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nowa_maszyna.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1253,6 +1259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Narzedzie_glowny.resx">
       <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NowaFirmaSerwisowa.resx">
+      <DependentUpon>NowaFirmaSerwisowa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nowa_maszyna.resx">
       <DependentUpon>Nowa_maszyna.cs</DependentUpon>

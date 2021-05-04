@@ -34,6 +34,8 @@ namespace KWZP2021
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnUsunFirma = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnAddMaszyna = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirma)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,19 +77,40 @@ namespace KWZP2021
             // 
             // btnUsunFirma
             // 
-            this.btnUsunFirma.Location = new System.Drawing.Point(578, 55);
+            this.btnUsunFirma.Location = new System.Drawing.Point(542, 47);
             this.btnUsunFirma.Name = "btnUsunFirma";
-            this.btnUsunFirma.Size = new System.Drawing.Size(88, 30);
+            this.btnUsunFirma.Size = new System.Drawing.Size(96, 43);
             this.btnUsunFirma.TabIndex = 28;
             this.btnUsunFirma.Text = "Usuń";
             this.btnUsunFirma.UseVisualStyleBackColor = true;
             this.btnUsunFirma.Click += new System.EventHandler(this.btnUsunFirma_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(275, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(203, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Przejdź do formularza dodania nowej firmy";
+            // 
+            // btnAddMaszyna
+            // 
+            this.btnAddMaszyna.Location = new System.Drawing.Point(336, 47);
+            this.btnAddMaszyna.Name = "btnAddMaszyna";
+            this.btnAddMaszyna.Size = new System.Drawing.Size(95, 45);
+            this.btnAddMaszyna.TabIndex = 29;
+            this.btnAddMaszyna.Text = "Dodaj";
+            this.btnAddMaszyna.UseVisualStyleBackColor = true;
+            this.btnAddMaszyna.Click += new System.EventHandler(this.btnAddMaszyna_Click);
             // 
             // FirmaSerwisowa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnAddMaszyna);
             this.Controls.Add(this.btnUsunFirma);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -108,5 +131,7 @@ namespace KWZP2021
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUsunFirma;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAddMaszyna;
     }
 }

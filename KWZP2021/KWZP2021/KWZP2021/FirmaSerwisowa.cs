@@ -62,5 +62,12 @@ namespace KWZP2021
             this.dgvFirma.DataSource = this.database.vDP_Firma_serwisowa.ToList();
 
         }
+
+        private void btnAddMaszyna_Click(object sender, EventArgs e)
+        {
+            NowaFirmaSerwisowa nowa_firma_serwisowa = new NowaFirmaSerwisowa(this.database);
+            nowa_firma_serwisowa.ShowDialog();
+            initdgvFirma();
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace KWZP2021
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             Rodzaj_maszyny frm = (Rodzaj_maszyny)Application.OpenForms["Rodzaj_maszyny"];
-            int row = (frm.dgvRodzajMaszyny.CurrentRow.Index) + 1;
+            int row = Convert.ToInt32(frm.dgvRodzajMaszyny.CurrentRow.Index) + 1;
             DP_Rodzaj_maszyny toUpdate = this.database.DP_Rodzaj_maszyny.Where(maszyna => maszyna.Id_rodzaj_maszyny == row).First();
             toUpdate.Rodzaj_maszyny = txtRodzaj.Text;
             database.SaveChanges();

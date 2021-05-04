@@ -35,14 +35,14 @@ namespace KWZP2021
             this.lblNowaMaszyna = new System.Windows.Forms.Label();
             this.txtKoszt_1rh = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtData_wprowadzenia = new System.Windows.Forms.TextBox();
             this.txtNumer_seryjny = new System.Windows.Forms.TextBox();
-            this.txtNazwa_modelu = new System.Windows.Forms.TextBox();
-            this.txtRodzaj_maszyny = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonPowrot
@@ -53,6 +53,7 @@ namespace KWZP2021
             this.buttonPowrot.TabIndex = 72;
             this.buttonPowrot.Text = "Powrót";
             this.buttonPowrot.UseVisualStyleBackColor = true;
+            this.buttonPowrot.Click += new System.EventHandler(this.buttonPowrot_Click);
             // 
             // buttonWyczyscPola
             // 
@@ -99,33 +100,12 @@ namespace KWZP2021
             this.label5.TabIndex = 57;
             this.label5.Text = "Koszt 1 roboczogodziny";
             // 
-            // txtData_wprowadzenia
-            // 
-            this.txtData_wprowadzenia.Location = new System.Drawing.Point(295, 158);
-            this.txtData_wprowadzenia.Name = "txtData_wprowadzenia";
-            this.txtData_wprowadzenia.Size = new System.Drawing.Size(151, 20);
-            this.txtData_wprowadzenia.TabIndex = 56;
-            // 
             // txtNumer_seryjny
             // 
             this.txtNumer_seryjny.Location = new System.Drawing.Point(295, 135);
             this.txtNumer_seryjny.Name = "txtNumer_seryjny";
             this.txtNumer_seryjny.Size = new System.Drawing.Size(151, 20);
             this.txtNumer_seryjny.TabIndex = 55;
-            // 
-            // txtNazwa_modelu
-            // 
-            this.txtNazwa_modelu.Location = new System.Drawing.Point(295, 109);
-            this.txtNazwa_modelu.Name = "txtNazwa_modelu";
-            this.txtNazwa_modelu.Size = new System.Drawing.Size(151, 20);
-            this.txtNazwa_modelu.TabIndex = 54;
-            // 
-            // txtRodzaj_maszyny
-            // 
-            this.txtRodzaj_maszyny.Location = new System.Drawing.Point(295, 78);
-            this.txtRodzaj_maszyny.Name = "txtRodzaj_maszyny";
-            this.txtRodzaj_maszyny.Size = new System.Drawing.Size(151, 20);
-            this.txtRodzaj_maszyny.TabIndex = 53;
             // 
             // label4
             // 
@@ -163,21 +143,47 @@ namespace KWZP2021
             this.label1.TabIndex = 49;
             this.label1.Text = "Rodzaj maszyny";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(295, 78);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(151, 21);
+            this.comboBox1.TabIndex = 73;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(295, 106);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(151, 21);
+            this.comboBox2.TabIndex = 74;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(295, 160);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(151, 20);
+            this.dateTimePicker1.TabIndex = 75;
+            // 
             // Nowa_maszyna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(621, 450);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.buttonPowrot);
             this.Controls.Add(this.buttonWyczyscPola);
             this.Controls.Add(this.buttonZapiszNowaMaszyna);
             this.Controls.Add(this.lblNowaMaszyna);
             this.Controls.Add(this.txtKoszt_1rh);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtData_wprowadzenia);
             this.Controls.Add(this.txtNumer_seryjny);
-            this.Controls.Add(this.txtNazwa_modelu);
-            this.Controls.Add(this.txtRodzaj_maszyny);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -197,13 +203,13 @@ namespace KWZP2021
         private System.Windows.Forms.Label lblNowaMaszyna;
         public System.Windows.Forms.TextBox txtKoszt_1rh;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtData_wprowadzenia;
         public System.Windows.Forms.TextBox txtNumer_seryjny;
-        public System.Windows.Forms.TextBox txtNazwa_modelu;
-        public System.Windows.Forms.TextBox txtRodzaj_maszyny;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
