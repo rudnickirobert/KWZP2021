@@ -31,5 +31,10 @@ namespace KWZP2021
             MachineTypeForm.initDataGridView();
             this.Close();
         }
+
+        private void btnCancelOperation_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

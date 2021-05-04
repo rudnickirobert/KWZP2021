@@ -63,6 +63,7 @@ namespace KWZP2021
             this.btnCancelOperation.TabIndex = 27;
             this.btnCancelOperation.Text = "Anuluj";
             this.btnCancelOperation.UseVisualStyleBackColor = true;
+            this.btnCancelOperation.Click += new System.EventHandler(this.btnCancelOperation_Click);
             // 
             // btnAdd
             // 

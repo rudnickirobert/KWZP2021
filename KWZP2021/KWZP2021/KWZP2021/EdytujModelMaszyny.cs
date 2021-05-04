@@ -34,5 +34,10 @@ namespace KWZP2021
             frm.dgvModelMaszyny.DataSource = this.database.vDP_Model_maszyny.ToList();
             this.Close();
         }
+
+        private void btnCancelOperation_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

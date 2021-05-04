@@ -32,7 +32,6 @@ namespace KWZP2021
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvModelMaszyny = new System.Windows.Forms.DataGridView();
             this.txtFind = new System.Windows.Forms.TextBox();
@@ -67,15 +66,6 @@ namespace KWZP2021
             this.btnDelete.Text = "Usuń";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(617, 64);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 38;
-            this.btnUpdate.Text = "Edytuj";
-            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
@@ -113,7 +103,6 @@ namespace KWZP2021
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvModelMaszyny);
             this.Controls.Add(this.txtFind);
@@ -130,7 +119,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.DataGridView dgvModelMaszyny;
         private System.Windows.Forms.TextBox txtFind;

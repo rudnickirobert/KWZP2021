@@ -15,14 +15,15 @@ namespace KWZP2021
         DrukarniaEntities database;
         public Nowa_maszyna(DrukarniaEntities database)
         {
-            this.database = database;
+           this.database = database;
             InitializeComponent();
+             
             this.comboBox1.DataSource = this.database.DP_Rodzaj_maszyny.ToList();
             this.comboBox2.DataSource = this.database.DP_Model_maszyny.ToList();
             this.comboBox1.DisplayMember = "Rodzaj maszyny";
-            this.comboBox1.ValueMember = "Rodzaj_maszyny";
+            this.comboBox1.ValueMember = "Id_rodzaj_maszyny";
             this.comboBox2.DisplayMember = "Nazwa modelu";
-            this.comboBox2.ValueMember = "Nazwa_modelu_maszyny";
+            this.comboBox2.ValueMember = "Id_model_maszyny";
 
         }
 
