@@ -42,10 +42,6 @@ namespace KWZP2021
             frm.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
             frm.cmbPracownik.SelectedIndex = frm.cmbPracownik.Items.Count - 1;
 
-            // Nowe_zatrudnienie frm = (Nowe_zatrudnienie)Application.OpenForms["Nowe_zatrudnienie"];
-            //frm.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
-
-            //frm.textBox1.Text = pracownik.Nazwisko.ToString();
 
             this.Close();
 
