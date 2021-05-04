@@ -113,7 +113,7 @@ CREATE VIEW vDZ_Zatrudnienie
 AS
 SELECT Id_zatrudnienia AS [Identyfikator zatrudnienia], DZ_Pracownik.Nazwisko AS [Nazwisko], DZ_Stanowisko.Stanowisko AS [Stanowisko],DZ_Dzial.Dzial AS [Dział], DZ_Etat.Etat AS [Etat], DZ_Rodzaj_umowy.Rodzaj_umowy AS[Rodzaj umowy],DZ_Zatrudnienie.Data_zatrudnienia AS[Data zatrudnienia], DZ_Zatrudnienie.Data_zwolnienia AS [Data zwolnienia],
 (DATEDIFF(YEAR,Data_zatrudnienia,GETDATE())- CASE WHEN DATEPART(DAYOFYEAR, GETDATE())<DATEPART(DAYOFYEAR, Data_zatrudnienia) THEN 1 ELSE 0 END ) AS Staz,
-Case when Data_zwolnienia>(TRY_CAST(('1900-01-01')as date)) then 'zwolniono'end  AS Zwolnienie
+CASE WHEN Data_zwolnienia>(TRY_CAST(('1900-01-01')AS date)) THEN 'zwolniono' END AS Zwolnienie
 FROM     dbo.DZ_Zatrudnienie INNER JOIN
 DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
 DZ_Stanowisko ON DZ_Zatrudnienie.Id_stanowiska=DZ_Stanowisko.Id_stanowiska INNER JOIN
@@ -589,7 +589,7 @@ GO
 CREATE VIEW vDZ_Wydanie_faktury
 AS
 SELECT DZ_Status_zamowienia.Id_zamowienia AS [Numer faktury], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilość sztuk], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamówienia], DZ_Klient.Nip AS [NIP],DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Klient.Imie AS [Imię], DZ_Klient.Nazwisko, DZ_Klient.Adres, DZ_Klient.Kod_pocztowy AS [Kod pocztowy], DZ_Klient.Miasto, DZ_Klient.Numer_rachunku AS [Numer rachunku],
-CASE WHEN (DZ_Rodzaj_statusu_zamowienia.Status_zam='zrealizowane') OR (DZ_Rodzaj_statusu_zamowienia.Status_zam='opłacone') THEN 'Wystawiono fakture' 
+CASE WHEN (DZ_Rodzaj_statusu_zamowienia.Status_zam='zrealizowane') THEN 'Wystawiono fakture' 
 	 ELSE 'Nie wystawiono faktury' END AS 'Wydanie faktury'
 FROM DZ_Status_zamowienia INNER JOIN
 DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
@@ -610,7 +610,7 @@ GO
 CREATE VIEW vDZ_Wplyw
 AS
 SELECT vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamówienia], vDZ_Wydanie_faktury.NIP, vDZ_Wydanie_faktury.Imię, vDZ_Wydanie_faktury.Nazwisko,
-CASE WHEN vDZ_Wydanie_faktury.[Status zamówienia]='opłacone' THEN 'OPŁACONE'
+CASE WHEN vDZ_Wydanie_faktury.[Status zamówienia]= 'zrealizowane' THEN 'OPŁACONO'
 	 ELSE 'NIE OPŁACONO' END AS 'Status wpływu'
 FROM vDZ_Wydanie_faktury CROSS JOIN DZ_Szczegoly_zatrudnienia  INNER JOIN
 DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
@@ -668,7 +668,8 @@ GO
 CREATE VIEW vDZ_Premia
 AS
 SELECT DZ_Pracownik.Id_pracownika AS [Identyfikator pracownika], DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia AS [Podstawa wynagrodzenia], DZ_Zatrudnienie.Data_zatrudnienia AS [Data zatrudnienia], vDZ_Zatrudnienie.Staz, 
-CASE WHEN Staz>=1 AND Staz<2 THEN ((Podstawa_wynagrodzenia*0.01))
+CASE WHEN Staz>=0 AND Staz<1 THEN (Podstawa_wynagrodzenia*0)
+	 WHEN Staz>=1 AND Staz<2 THEN ((Podstawa_wynagrodzenia*0.01))
 	 WHEN Staz>=2 AND Staz<3 THEN ((Podstawa_wynagrodzenia*0.02))
 	 WHEN Staz>=3 AND Staz<4 THEN ((Podstawa_wynagrodzenia*0.03))
 	 WHEN Staz>=4 AND Staz<5 THEN ((Podstawa_wynagrodzenia*0.04))
