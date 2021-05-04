@@ -979,3 +979,97 @@ vDM_Zliczanieilosciwdostawie ON DM_Material.Nazwa=vDM_Zliczanieilosciwdostawie.[
 vDM_Zliczaniematerialudowydruku ON DM_Material.Nazwa=vDM_Zliczaniematerialudowydruku.Nazwa INNER JOIN
 vDM_Zliczaniematerialudoczynnosci ON DM_Material.Nazwa=vDM_Zliczaniematerialudoczynnosci.Nazwa
 GO
+
+CREATE VIEW vDP_RH_pracownik
+AS
+SELECT DZ_Pracownik.Id_pracownika, DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko,
+	(DZ_Szczegoly_zatrudnienia.Podstawa_wynagrodzenia/176) AS [Koszt RH pracownika],
+	DZ_Stanowisko.Stanowisko
+FROM DZ_Pracownik INNER JOIN
+	DZ_Zatrudnienie ON DZ_Pracownik.Id_pracownika=DZ_Zatrudnienie.Id_pracownika
+INNER JOIN DZ_Szczegoly_zatrudnienia ON DZ_Zatrudnienie.Id_zatrudnienia=DZ_Szczegoly_zatrudnienia.Id_zatrudnienia
+INNER JOIN DZ_Stanowisko ON DZ_Zatrudnienie.Id_stanowiska=DZ_Stanowisko.Id_stanowiska
+GO
+
+CREATE VIEW vDP_Koszt_material_magazyn
+AS
+SELECT DM_Sklad_dostawy_materialu.Id_materialu, DM_Material.Nazwa, DM_Rodzaj_materialu.Rodzaj_materialu,
+	(DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu/DM_Sklad_dostawy_materialu.Ilosc) AS [Koszt jednostkowy za material]
+FROM DM_Material INNER JOIN
+	DM_Sklad_dostawy_materialu ON DM_Material.Id_materialu=DM_Sklad_dostawy_materialu.Id_materialu
+	INNER JOIN DM_Rodzaj_materialu ON DM_Material.Id_rodzaj_materialu=DM_Rodzaj_materialu.Id_rodzaj_materialu
+GO
+
+CREATE VIEW vDP_Koszt_pracownik_przed
+AS
+SELECT DP_Proces_technologiczny.Id_proces_technologiczny, DP_Po_proc_czynnosc.Id_po_proc_czynnosci,
+	 DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DP_Po_prac_czynnosc.Id_pracownika, 
+	 DP_Po_proc_czynnosc.Czas_zamierzony,
+	 (DP_Po_proc_czynnosc.Czas_zamierzony * vDP_RH_pracownik.[Koszt RH pracownika]) AS [Koszt pracownika przed]
+FROM DP_Po_proc_czynnosc INNER JOIN
+	DP_Proces_technologiczny ON DP_Po_proc_czynnosc.Id_proces_technologiczny=DP_Proces_technologiczny.Id_proces_technologiczny
+INNER JOIN DP_Po_prac_czynnosc ON DP_Po_proc_czynnosc.Id_po_proc_czynnosci=DP_Po_prac_czynnosc.Id_po_proc_czynnosci
+INNER JOIN DZ_Pracownik ON DP_Po_prac_czynnosc.Id_pracownika=DZ_Pracownik.Id_pracownika	
+INNER JOIN vDP_RH_pracownik ON DZ_Pracownik.Id_pracownika=vDP_RH_pracownik.Id_pracownika
+GO
+
+CREATE VIEW vDP_Koszt_pracownik_po
+AS
+SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny, DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe,
+	DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DP_po_prod_czyn_dod_pracownik.Id_pracownika,
+	DP_prod_czynnosc_dodatkowa.Czas_pracy, 
+	(DP_prod_czynnosc_dodatkowa.Czas_pracy * vDP_RH_pracownik.[Koszt RH pracownika]) AS [Koszt pracownika]
+FROM DP_prod_czynnosc_dodatkowa INNER JOIN
+	DP_Proces_produkcyjny ON DP_prod_czynnosc_dodatkowa.Id_proces_produkcyjny=DP_Proces_produkcyjny.Id_proces_produkcyjny
+INNER JOIN DP_po_prod_czyn_dod_pracownik ON DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe=DP_po_prod_czyn_dod_pracownik.Id_prod_czynnosci_dodatkowe
+INNER JOIN DZ_Pracownik ON DP_po_prod_czyn_dod_pracownik.Id_pracownika=DZ_Pracownik.Id_pracownika
+INNER JOIN vDP_RH_pracownik ON DZ_Pracownik.Id_pracownika=vDP_RH_pracownik.Id_pracownika
+GO
+
+CREATE VIEW vDP_Koszt_materialu_przed
+AS
+SELECT DP_Proces_technologiczny.Id_proces_technologiczny,DP_Po_wydr_proc.Id_po_wydr_proces,
+	DP_Po_proc_czynnosc.Id_po_proc_czynnosci,
+	DM_Material.Nazwa, DM_Rodzaj_materialu.Rodzaj_materialu,
+	DP_Po_material_wydruk.Id_materialu AS [Material wydruk],
+	DP_Po_material_czynnosc.Id_materialu AS [Material dodatkowe],
+	DP_Po_material_wydruk.Ilosc AS [Ilosc wydruk], DP_Po_material_czynnosc.Ilosc AS [Ilosc dodatkowe],
+	(DP_Po_material_wydruk.Ilosc * vDP_Koszt_material_magazyn.[Koszt jednostkowy za material]) AS [Koszt m_wydruk],
+	(DP_Po_material_czynnosc.Ilosc * vDP_Koszt_material_magazyn.[Koszt jednostkowy za material]) AS [Koszt m_dodatkowe]
+FROM DP_Po_wydr_proc INNER JOIN
+	DP_Proces_technologiczny ON DP_Po_wydr_proc.Id_proces_technologiczny=DP_Proces_technologiczny.Id_proces_technologiczny
+INNER JOIN DP_Po_proc_czynnosc ON DP_Po_wydr_proc.Id_proces_technologiczny=DP_Po_proc_czynnosc.Id_proces_technologiczny
+INNER JOIN DP_Po_material_wydruk ON DP_Po_wydr_proc.Id_po_wydr_proces=DP_Po_material_wydruk.Id_po_wydr_proc
+INNER JOIN DP_Po_material_czynnosc ON DP_Po_proc_czynnosc.Id_po_proc_czynnosci=DP_Po_material_czynnosc.Id_po_proc_czynnosci
+INNER JOIN DM_Material ON DP_Po_material_czynnosc.Id_materialu=DM_Material.Id_materialu
+INNER JOIN DM_Rodzaj_materialu ON DM_Material.Id_rodzaj_materialu=DM_Rodzaj_materialu.Id_rodzaj_materialu
+INNER JOIN vDP_Koszt_material_magazyn ON DM_Material.Id_materialu=vDP_Koszt_material_magazyn.Id_materialu
+GO
+
+CREATE VIEW vDP_Koszt_materialu_wydruk_przed
+AS
+SELECT DP_Proces_technologiczny.Id_proces_technologiczny, DP_Po_material_wydruk.Id_materialu AS [Material wydruk],
+	DM_Material.Nazwa, DM_Rodzaj_materialu.Rodzaj_materialu,
+	DP_Po_material_wydruk.Ilosc, DP_Po_wydr_proc.Id_po_wydr_proces, 
+	(DP_Po_material_wydruk.Ilosc * vDP_Koszt_material_magazyn.[Koszt jednostkowy za material]) AS [Koszt materialu wydruk]
+FROM DP_Proces_technologiczny INNER JOIN
+	DP_Po_wydr_proc ON DP_Proces_technologiczny.Id_proces_technologiczny=DP_Po_wydr_proc.Id_proces_technologiczny
+INNER JOIN DP_Po_material_wydruk ON DP_Po_wydr_proc.Id_po_wydr_proces=DP_Po_material_wydruk.Id_po_wydr_proc
+INNER JOIN DM_Material ON DP_Po_material_wydruk.Id_materialu=DM_Material.Id_materialu
+INNER JOIN DM_Rodzaj_materialu ON DM_Material.Id_materialu=DM_Rodzaj_materialu.Id_rodzaj_materialu
+INNER JOIN vDP_Koszt_material_magazyn ON DM_Material.Id_materialu=vDP_Koszt_material_magazyn.Id_materialu
+GO
+
+CREATE VIEW vDP_Koszt_materialu_dodatkowe_przed
+AS
+SELECT DP_Proces_technologiczny.Id_proces_technologiczny, DP_Po_proc_czynnosc.Id_po_proc_czynnosci,
+	DP_Po_material_czynnosc.Id_materialu, DP_Po_material_czynnosc.Ilosc, 
+	DM_Material.Nazwa, DM_Rodzaj_materialu.Rodzaj_materialu, 
+	(DP_Po_material_czynnosc.Ilosc * vDP_Koszt_material_magazyn.[Koszt jednostkowy za material]) AS [Koszt material dodatkowe]
+FROM DP_Proces_technologiczny INNER JOIN 
+	DP_Po_proc_czynnosc ON DP_Proces_technologiczny.Id_proces_technologiczny=DP_Po_proc_czynnosc.Id_proces_technologiczny
+INNER JOIN DP_Po_material_czynnosc ON DP_Po_proc_czynnosc.Id_po_proc_czynnosci=DP_Po_material_czynnosc.Id_po_proc_czynnosci
+INNER JOIN DM_Material ON DP_Po_material_czynnosc.Id_materialu=DM_Material.Id_materialu
+INNER JOIN DM_Rodzaj_materialu ON DM_Material.Id_rodzaj_materialu=DM_Rodzaj_materialu.Id_rodzaj_materialu
+INNER JOIN vDP_Koszt_material_magazyn ON DM_Material.Id_materialu=vDP_Koszt_material_magazyn.Id_materialu
+GO
