@@ -47,9 +47,8 @@ namespace KWZP2021
             this.dataZatrudnienia = new System.Windows.Forms.DateTimePicker();
             this.dataZwolnienia = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.cmbPracownik = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonPowrot
@@ -201,49 +200,41 @@ namespace KWZP2021
             this.dataZwolnienia.Name = "dataZwolnienia";
             this.dataZwolnienia.Size = new System.Drawing.Size(175, 20);
             this.dataZwolnienia.TabIndex = 55;
-            this.dataZwolnienia.Value = new System.DateTime(2021, 5, 3, 18, 37, 41, 0);
+            this.dataZwolnienia.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(154, 34);
+            this.button1.Location = new System.Drawing.Point(154, 43);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 29);
+            this.button1.Size = new System.Drawing.Size(178, 29);
             this.button1.TabIndex = 56;
             this.button1.Text = "Dodaj pracownika";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(156, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 20);
-            this.textBox1.TabIndex = 57;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(156, 95);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 20);
-            this.textBox2.TabIndex = 58;
-            // 
             // cmbPracownik
             // 
             this.cmbPracownik.FormattingEnabled = true;
-            this.cmbPracownik.Location = new System.Drawing.Point(368, 45);
+            this.cmbPracownik.Location = new System.Drawing.Point(154, 297);
             this.cmbPracownik.Name = "cmbPracownik";
-            this.cmbPracownik.Size = new System.Drawing.Size(206, 21);
+            this.cmbPracownik.Size = new System.Drawing.Size(176, 21);
             this.cmbPracownik.TabIndex = 59;
+            this.cmbPracownik.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(154, 87);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(178, 20);
+            this.textBox1.TabIndex = 60;
             // 
             // Nowe_zatrudnienie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cmbPracownik);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(362, 450);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cmbPracownik);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataZwolnienia);
             this.Controls.Add(this.dataZatrudnienia);
@@ -290,8 +281,7 @@ namespace KWZP2021
         public System.Windows.Forms.ComboBox cmbEtat;
         public System.Windows.Forms.ComboBox cmbRodzaj_umowy;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.ComboBox cmbPracownik;
+        public System.Windows.Forms.TextBox textBox1;
     }
 }
