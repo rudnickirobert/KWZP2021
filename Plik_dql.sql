@@ -779,3 +779,151 @@ FROM dbo.DM_Wlasciwosc_materialu INNER JOIN
 DM_Material ON DM_Wlasciwosc_materialu.Id_materialu=DM_Material .Id_materialu INNER JOIN
 DM_Wlasciwosc ON DM_Wlasciwosc_materialu.Id_wlasciwosc=DM_Wlasciwosc.Id_wlasciwosc
 GO
+
+/*NARZEDZIE WYKORZYSTANE W PROCESIE_CZYNNOSC Z NAZWA I RODZAJEM */
+CREATE VIEW vDP_Narzedzia_Proces
+AS
+SELECT PN.Id_po_proc_czynnosci, PN.Nazwa, PN.Rodzaj_narzedzia FROM (
+SELECT DP_Po_narzedzia_czynnosc.Id_po_proc_czynnosci, DM_Narzedzie.Nazwa, DM_Rodzaj_narzedzia.Nazwa AS Rodzaj_narzedzia  
+FROM DP_Po_narzedzia_czynnosc
+INNER JOIN DM_Narzedzie ON DM_Narzedzie.Id_narzedzia = DP_Po_narzedzia_czynnosc.Id_narzedzia
+INNER JOIN DM_Rodzaj_narzedzia ON DM_Narzedzie.Id_rodzaj_narzedzia = DM_Rodzaj_narzedzia.Id_rodzaj_narzedzia) AS PN
+INNER JOIN DP_Po_proc_czynnosc ON PN.Id_po_proc_czynnosci = DP_Po_proc_czynnosc.Id_po_proc_czynnosci;
+GO
+
+/*MASYZNA WYKORZYSTANE W PROCESIE_CZYNNOSC Z NR SERYJNY NAZWA */
+CREATE VIEW vDP_Maszyna_Proces
+AS
+SELECT PM.Id_po_proc_czynnosci, PM.Id_maszyny, PM.Nr_seryjny, PM.Rodzaj_maszyny FROM(
+SELECT DP_Po_maszyna_czynnosc.Id_po_proc_czynnosci, DP_Po_maszyna_czynnosc.Id_maszyny,
+DP_Maszyna.Nr_seryjny, DP_Rodzaj_maszyny.Rodzaj_maszyny FROM DP_Po_maszyna_czynnosc
+INNER JOIN DP_Maszyna ON DP_Po_maszyna_czynnosc.Id_maszyny = DP_Maszyna.Id_maszyny
+INNER JOIN DP_Rodzaj_maszyny ON DP_Maszyna.Id_rodzaj_maszyny = DP_Rodzaj_maszyny.Id_rodzaj_maszyny) AS PM
+INNER JOIN DP_Po_proc_czynnosc ON PM.Id_po_proc_czynnosci = DP_Po_proc_czynnosc.Id_po_proc_czynnosci;
+GO
+
+/*PRACOWNIK WYKORZYSTANE W PROCESIE_CZYNNOSC Z NAZWA */
+CREATE VIEW vDP_Pracownik_Proces
+AS
+SELECT PP.Id_po_proc_czynnosci, PP.Id_pracownika, PP.Pracownik FROM(
+SELECT DP_Po_prac_czynnosc.Id_po_proc_czynnosci, DP_Po_prac_czynnosc.Id_pracownika, 
+(DZ_Pracownik.Imie +' '+ DZ_Pracownik.Nazwisko) AS Pracownik FROM DP_Po_prac_czynnosc
+INNER JOIN DZ_Pracownik ON DP_Po_prac_czynnosc.Id_pracownika = DZ_Pracownik.Id_pracownika) AS PP
+INNER JOIN DP_Po_proc_czynnosc ON PP.Id_po_proc_czynnosci = DP_Po_proc_czynnosc.Id_po_proc_czynnosci;
+GO
+
+/*MATERIAL WYKORZYSTANE W PROCESIE_CZYNNOSC Z NAZWA */
+CREATE VIEW vDP_Material_Proces
+AS
+SELECT PMA.Id_po_proc_czynnosci, PMA.Id_materialu, PMA.Ilosc, PMA.Nazwa, PMA.Rodzaj_materialu FROM(
+SELECT DP_Po_material_czynnosc.Id_po_proc_czynnosci, DP_Po_material_czynnosc.Id_materialu, 
+DP_Po_material_czynnosc.Ilosc, DM_Material.Nazwa, DM_Rodzaj_materialu.Rodzaj_materialu FROM DP_Po_material_czynnosc
+INNER JOIN DM_Material ON DP_Po_material_czynnosc.Id_materialu = DM_Material.Id_materialu
+INNER JOIN DM_Rodzaj_materialu ON DM_Material.Id_materialu = DM_Rodzaj_materialu.Id_rodzaj_materialu) AS PMA
+INNER JOIN DP_Po_proc_czynnosc ON PMA.Id_po_proc_czynnosci = DP_Po_proc_czynnosc.Id_po_proc_czynnosci;
+GO
+
+/*WYDRUK*/
+
+/*WYDRUK W PROCESIE z nazwa elementu*/
+CREATE VIEW vDP_Wydruk_Proces1
+AS
+SELECT WP.Id_po_wydr_proces, WP.Id_wydruk, WP.Wypelnienie, WP.Estymowana_masa, WP.Nazwa_elementu,DP_Po_wydr_proc.Czas_zamierzony FROM(
+SELECT DP_Po_wydr_proc.Id_po_wydr_proces, DP_Po_wydr_proc.Id_wydruk, DP_Wydruk.Wypelnienie, DP_Wydruk.Estymowana_masa,
+DZ_Plik.Nazwa_pliku AS Nazwa_elementu FROM DP_Po_wydr_proc
+INNER JOIN DP_Wydruk ON DP_Po_wydr_proc.Id_wydruk = DP_Wydruk.Id_wydruk
+INNER JOIN DZ_Plik ON DP_Wydruk.Id_pliku = DZ_Plik.Id_pliku) AS WP
+INNER JOIN DP_Po_wydr_proc ON WP.Id_po_wydr_proces = DP_Po_wydr_proc.Id_po_wydr_proces
+GO
+
+/*MASZYNA Z WYDRUKIEM nazwa maszyny*/
+CREATE VIEW vDP_MaszynaWydruk_Proces
+AS
+SELECT MW.Id_po_wydr_proces, MW.Id_maszyny, MW.Nr_seryjny, MW.RODZAJ FROM(
+SELECT DP_Po_maszyna_wydruk.Id_po_wydr_proces, DP_Po_maszyna_wydruk.Id_maszyny,
+DP_Maszyna.Nr_seryjny, DP_Rodzaj_maszyny.Rodzaj_maszyny AS RODZAJ FROM DP_Po_maszyna_wydruk
+INNER JOIN DP_Maszyna ON DP_Po_maszyna_wydruk.Id_maszyny = DP_Maszyna.Id_maszyny
+INNER JOIN DP_Rodzaj_maszyny ON DP_Maszyna.Id_rodzaj_maszyny = DP_Rodzaj_maszyny.Id_rodzaj_maszyny) AS MW
+INNER JOIN DP_Po_wydr_proc ON MW.Id_po_wydr_proces = DP_Po_wydr_proc.Id_po_wydr_proces;
+GO
+
+/*MATERIAL DO WYDRUKU Z NAZWA*/
+CREATE VIEW vDP_MaterialWydruk_Proces
+AS
+SELECT MAW.Id_po_wydr_proc, MAW.Id_materialu, MAW.Ilosc, MAW.Nazwa, MAW.Rodzaj_materialu FROM(
+SELECT DP_Po_material_wydruk.Id_po_wydr_proc, DP_Po_material_wydruk.Id_materialu, 
+DP_Po_material_wydruk.Ilosc, DM_Material.Nazwa, DM_Rodzaj_materialu.Rodzaj_materialu FROM DP_Po_material_wydruk
+INNER JOIN DM_Material ON DP_Po_material_wydruk.Id_materialu = DM_Material.Id_materialu
+INNER JOIN DM_Rodzaj_materialu ON DM_Material.Id_materialu = DM_Rodzaj_materialu.Id_rodzaj_materialu) AS MAW
+INNER JOIN DP_Po_proc_czynnosc ON MAW.Id_po_wydr_proc = DP_Po_proc_czynnosc.Id_po_proc_czynnosci;
+GO
+
+/*POŁĄCZENIE WYDRUKU Z PROCESEM*/
+CREATE VIEW vDP_WydrukProces
+AS
+SELECT VW.ID_WYDRUKU [Numer wydruku], 
+VW.NAZWA_ELEMENTU [Nazwa elementu], 
+VW.WYPEŁNIENIE [Wypełnienie], 
+VW.ESTYMOWANA_MASA [masa w g], 
+VW.NR_SERYJNY_MASZYNY[nr seryjny drukarki], 
+VW.RODZAJ_MASZYNY [rodzaj maszyny], 
+VW.MATERIAL [rodzaj materialu],
+VW.ILOSC_MATERIALU_W_G [Material dodatkowy w g],  
+DP_Proces_technologiczny.Nazwa [nazwa procesu] FROM
+
+(SELECT vDP_Wydruk_Proces1.Id_po_wydr_proces AS ID_WYDRUKU,
+vDP_Wydruk_Proces1.Nazwa_elementu AS NAZWA_ELEMENTU, 
+vDP_Wydruk_Proces1.Wypelnienie AS WYPEŁNIENIE,
+vDP_Wydruk_Proces1.Estymowana_masa AS ESTYMOWANA_MASA, 
+vDP_MaszynaWydruk_Proces.Nr_seryjny AS NR_SERYJNY_MASZYNY, 
+vDP_MaszynaWydruk_Proces.RODZAJ AS RODZAJ_MASZYNY,
+vDP_MaterialWydruk_Proces.Nazwa AS MATERIAL, 
+vDP_MaterialWydruk_Proces.Ilosc AS ILOSC_MATERIALU_W_G,
+vDP_Wydruk_Proces1.Id_po_wydr_proces AS ID_PO_PROCES
+FROM vDP_Wydruk_Proces1
+INNER JOIN vDP_MaszynaWydruk_Proces ON vDP_Wydruk_Proces1.Id_po_wydr_proces = vDP_MaszynaWydruk_Proces.Id_po_wydr_proces
+INNER JOIN vDP_MaterialWydruk_Proces ON vDP_MaszynaWydruk_Proces.Id_po_wydr_proces = vDP_MaterialWydruk_Proces.Id_po_wydr_proc) AS VW
+INNER JOIN DP_Po_wydr_proc ON VW.ID_PO_PROCES = DP_Po_wydr_proc.Id_po_wydr_proces
+INNER JOIN DP_Proces_technologiczny ON DP_Po_wydr_proc.Id_proces_technologiczny = DP_Proces_technologiczny.Id_proces_technologiczny
+WHERE RODZAJ_MASZYNY LIKE ('D%');
+GO
+/*POŁĄCZENIE CZYNNOŚCI Z PROCESEM*/
+CREATE VIEW vDP_CzynnoscProces
+AS
+SELECT VC.ID_CZYNNOSCI, VC.NAZWA_CZYNNOSCI, VC.NARZEDZIE, VC.MASZYNA, VC.MATERIAL, VC.ILOSC_MATERIALU, VC.PRACOWNIK, DP_Proces_technologiczny.Nazwa FROM
+
+(SELECT DP_Po_proc_czynnosc.Id_rodzaj_czynnosci AS ID_CZYNNOSCI, 
+DP_Rodzaj_czynnosci.Nazwa AS NAZWA_CZYNNOSCI,
+vDP_Narzedzia_Proces.Rodzaj_narzedzia AS NARZEDZIE,
+vDP_Maszyna_Proces.Rodzaj_maszyny AS MASZYNA,
+vDP_Material_Proces.Nazwa AS MATERIAL,
+vDP_Material_Proces.Ilosc AS ILOSC_MATERIALU,
+vDP_Pracownik_Proces.Pracownik AS PRACOWNIK FROM DP_Rodzaj_czynnosci
+INNER JOIN DP_Po_proc_czynnosc ON DP_Rodzaj_czynnosci.Id_rodzaj_czynnosci = DP_Po_proc_czynnosc.Id_rodzaj_czynnosci
+INNER JOIN vDP_Narzedzia_Proces ON DP_Po_proc_czynnosc.Id_po_proc_czynnosci = vDP_Narzedzia_Proces.Id_po_proc_czynnosci
+INNER JOIN vDP_Maszyna_Proces ON vDP_Narzedzia_Proces.Id_po_proc_czynnosci = vDP_Maszyna_Proces.Id_po_proc_czynnosci
+INNER JOIN vDP_Material_Proces ON vDP_Maszyna_Proces.Id_po_proc_czynnosci = vDP_Material_Proces.Id_po_proc_czynnosci
+INNER JOIN vDP_Pracownik_Proces ON vDP_Material_Proces.Id_po_proc_czynnosci = vDP_Pracownik_Proces.Id_po_proc_czynnosci) AS VC
+INNER JOIN DP_Proces_technologiczny ON VC.ID_CZYNNOSCI = DP_Proces_technologiczny.Id_proces_technologiczny;
+GO
+
+CREATE VIEW vDP_Maszyna_drukarki
+AS
+SELECT DP_Maszyna.Id_maszyny, DP_Maszyna.Nr_seryjny, DP_Model_maszyny.Nazwa_modelu_maszyny FROM DP_Maszyna
+INNER JOIN DP_Rodzaj_maszyny ON DP_Maszyna.Id_rodzaj_maszyny = DP_Rodzaj_maszyny.Id_rodzaj_maszyny
+INNER JOIN DP_Model_maszyny ON DP_Maszyna.Id_model_maszyny = DP_Model_maszyny.Id_model_maszyny
+where DP_Rodzaj_maszyny.Rodzaj_maszyny like ('D%');
+GO
+
+CREATE VIEW vDP_Proces_Techno1
+AS
+SELECT A.Id_proces_technologiczny AS [Identyfikator procesu technologicznego], 
+A.Nazwa, 
+COUNT(A.Id_po_proc_czynnosci) AS [Liczba czynnosci dodatkowych], 
+COUNT(DP_Po_wydr_proc.Id_po_wydr_proces) AS [Liczba wydrukow],
+SUM(DP_Po_wydr_proc.Czas_zamierzony) AS [Sumaryczny czas wydruku]
+FROM (SELECT DP_Proces_technologiczny.Id_proces_technologiczny, DP_Proces_technologiczny.Nazwa,DP_Po_proc_czynnosc.Id_po_proc_czynnosci
+FROM DP_Proces_technologiczny
+LEFT OUTER JOIN DP_Po_proc_czynnosc ON DP_Proces_technologiczny.Id_proces_technologiczny = DP_Po_proc_czynnosc.Id_proces_technologiczny) AS A
+LEFT OUTER JOIN DP_Po_wydr_proc ON A.Id_proces_technologiczny = DP_Po_wydr_proc.Id_proces_technologiczny
+GROUP BY A.Id_proces_technologiczny, A.Nazwa;

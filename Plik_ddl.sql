@@ -396,6 +396,7 @@ CREATE TABLE DP_Po_wydr_proc(
 );
 
 CREATE TABLE DP_Po_material_wydruk(
+	Id_po_material_wydruk int IDENTITY(1,1) PRIMARY KEY NOT NULL,
 	Id_materialu int NOT NULL FOREIGN KEY REFERENCES DM_Material(Id_materialu), 
 	Id_po_wydr_proc int NOT NULL FOREIGN KEY REFERENCES DP_po_wydr_proc(Id_po_wydr_proces), 
 	Ilosc float NOT NULL,
@@ -435,6 +436,7 @@ CREATE TABLE DP_Po_material_czynnosc(
 );
 
 CREATE TABLE DP_Po_maszyna_wydruk(
+    Id_maszyna_wydruk int IDENTITY(1,1) PRIMARY KEY NOT NULL, 
 	Id_po_wydr_proces int NOT NULL FOREIGN KEY REFERENCES DP_Po_wydr_proc(Id_po_wydr_proces), 
 	Id_maszyny int NOT NULL FOREIGN KEY REFERENCES DP_Maszyna(Id_maszyny),
 );
