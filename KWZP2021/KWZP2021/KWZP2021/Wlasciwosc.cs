@@ -13,19 +13,11 @@ namespace KWZP2021
             InitializeComponent();
             this.database = database;
 
-            this.cmbWlasciwosc.DataSource = this.database.DM_Wlasciwosc.ToList();
-            this.cmbWlasciwosc.DisplayMember = "Nazwa_wlasciwosci";
-            this.cmbWlasciwosc.ValueMember = "Id_wlasciwosc";
-
             this.dgvWlasciwosc.DataSource = this.database.vDM_Wlasciwosc.ToList();
-            InitCombobox();
+
             initDataGridView();
         }
-        private void InitCombobox()
-        {
-            this.cmbWlasciwosc.DataSource = this.database.vDM_Wlasciwosc.ToList();
-            this.cmbWlasciwosc.DisplayMember = "Nazwa";
-        }
+
 
         private void initDataGridView()
         {
@@ -33,20 +25,7 @@ namespace KWZP2021
 
         }
 
-        private void btnAddMaterial_Click(object sender, EventArgs e)
-        {
-
-            DM_Wlasciwosc newWlasciwosc = new DM_Wlasciwosc();
-            newWlasciwosc.Nazwa_wlasciwosci = this.textBox3.Text;
-            newWlasciwosc.Jednostka_pomiarowa = this.textBox2.Text;
-            this.database.DM_Wlasciwosc.Add(newWlasciwosc);
-            this.database.SaveChanges();
-
-            initDataGridView();
-            InitCombobox();
-        }
-
-        private void btnDeleteRodzajMaterialu_Click(object sender, EventArgs e)
+        private void btnDeletenarzedzie_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć rodzaj materiału?", "Usuwanie rodzaju materiału", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
@@ -59,7 +38,7 @@ namespace KWZP2021
 
                 this.database.SaveChanges();
                 initDataGridView();
-                InitCombobox();
+
             }
             else
             {
@@ -67,27 +46,31 @@ namespace KWZP2021
             }
         }
 
-        private void dgvWlasciwosc_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void btnAddnarzedzie_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Czy chcesz zaktualizować rodzaj materiału?", "Aktualizacja rodzaju materiału", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                int id = Convert.ToInt32(this.dgvWlasciwosc.CurrentRow.Cells[0].Value);
+            NowaWlasciwosc nowa = new NowaWlasciwosc(this.database);
+            nowa.ShowDialog();
+        }
 
-                DM_Wlasciwosc toRemove = this.database.DM_Wlasciwosc.Where(Wlasciwosc => Wlasciwosc.Id_wlasciwosc == id).First();
+        private void btnNarzedziePowrot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
-                toRemove.Nazwa_wlasciwosci = txtAktualizuj.Text; // UPDATE
-                toRemove.Jednostka_pomiarowa = textBox1.Text;
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dgvWlasciwosc.DataSource = database.vDM_Wlasciwosc.Where(x => x.Nazwa.Contains(textBox1.Text)).ToList();
 
-                this.database.SaveChanges();
-                initDataGridView();
-                InitCombobox();
-            }
-            else
-            {
-                DialogResult dialog1Result = MessageBox.Show("Czy chcesz zaktualizować rodzaj materiału?");
-            }
+        }
+
+        private void dgvWlasciwosc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EdytujWlasciwosc edycja = new EdytujWlasciwosc(this.database);
+            edycja.txtNew.Text = dgvWlasciwosc.CurrentRow.Cells[1].Value.ToString();
+            edycja.txtNIP.Text = dgvWlasciwosc.CurrentRow.Cells[2].Value.ToString();
+            edycja.ShowDialog();
         }
     }
-}
+        }
+
 

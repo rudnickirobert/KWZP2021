@@ -540,10 +540,11 @@ VALUES
 	;
 INSERT INTO DM_Sklad_dostawy_materialu(Id_dostawy, Id_dostawcy, Id_materialu, Id_zamowienie_zewn, Ilosc, Cena_jednostkowa_materialu)
 VALUES
-	(1, 3, 1, 3, 1, 256),
-	(2, 7, 2, 3, 3, 459),
+	(1, 3, 1, 3, 20, 256),
+	(2, 7, 2, 3, 20, 459),
 	(2, 7, 3, 2, 3, 380),
 	(3, 6, 4, 1, 3, 499),
+    (3, 6, 5, 1, 3, 35),
 	(4, 2, 6, 4, 2, 500)
 	;
 INSERT INTO DM_Wydanie_czesci(Id_pracownik_pobierajacy, Id_pracownik_wydajacy, Data_i_godzina, Uwagi)
@@ -590,11 +591,12 @@ VALUES
 	;
 INSERT INTO DM_Szczegoly_wydania_materialu(Id_wydanie_materialu_dla_produkcji, Id_materialu, Ilosc)
 VALUES
-	(1, 2, 2),
+    (1, 2, 2),
 	(2, 4, 8),
 	(3, 3, 4),
 	(4, 1, 2),
-	(5, 2, 5)
+	(5, 5, 32),
+	(4, 6, 24)
 	;
 INSERT INTO DM_Szczegoly_magazynu_gotowych_produktow(Id_magazynu_gotowych_produktow, Id_produktu, Ilosc)
 VALUES	
@@ -649,7 +651,7 @@ VALUES
 	;
 INSERT INTO DP_Po_material_wydruk(Id_materialu, Id_po_wydr_proc, Ilosc)
 VALUES
-	(1,1,1000),
+    (1,1,1000),
 	(2,2,2000),
 	(3,3,1800),
 	(4,4,2200),
@@ -725,12 +727,14 @@ VALUES
 	;
 INSERT INTO DP_Po_material_czynnosc(Id_po_proc_czynnosci, Id_materialu, Ilosc)
 VALUES
-	(3,3,200),
-	(4,3,300),
+	(3,1,200),
+	(4,2,300),
 	(5,4,200),
 	(3,4,220),
 	(4,3,300),
-	(5,4,240)
+	(5,4,240),
+	(4, 5, 2),
+	(5, 6, 5)
 	;
 INSERT INTO DP_Po_maszyna_wydruk(Id_po_wydr_proces, Id_maszyny)
 VALUES

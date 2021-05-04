@@ -18,12 +18,12 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
-            this.cmb1.DataSource = this.database.DM_Narzedzie.ToList();
-            this.cmb1.DisplayMember = "Nazwa";
-            this.cmb1.ValueMember = "Id_narzedzia";
-            this.cmb2.DataSource = this.database.DM_Wypozyczenie_narzedzia.ToList();
-            this.cmb2.DisplayMember = "Id_wypozyczenia_narzedzia";
-            this.cmb2.ValueMember = "Id_wypozyczenia_narzedzia";
+            this.CmbNazwa.DataSource = this.database.DM_Narzedzie.ToList();
+            this.CmbNazwa.DisplayMember = "Nazwa";
+            this.CmbNazwa.ValueMember = "Id_narzedzia";
+            this.cmbNumer.DataSource = this.database.DM_Wypozyczenie_narzedzia.ToList();
+            this.cmbNumer.DisplayMember = "Id_wypozyczenia_narzedzia";
+            this.cmbNumer.ValueMember = "Id_wypozyczenia_narzedzia";
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -34,9 +34,10 @@ namespace KWZP2021
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
             DM_Szczegoly_wypozyczenia_narzedzia narzedzie = new DM_Szczegoly_wypozyczenia_narzedzia();
-            narzedzie.Id_wypozyczenia_narzedzia = Convert.ToInt32(cmb2.SelectedValue);
-            narzedzie.Id_narzedzia = Convert.ToInt32(cmb1.SelectedValue);
+            narzedzie.Id_wypozyczenia_narzedzia = Convert.ToInt32(cmbNumer.SelectedValue);
+            narzedzie.Id_narzedzia = Convert.ToInt32(CmbNazwa.SelectedValue);
             narzedzie.Ilosc = Convert.ToInt32(textBox1.Text);
             this.database.DM_Szczegoly_wypozyczenia_narzedzia.Add(narzedzie);
             this.database.SaveChanges();

@@ -46,7 +46,7 @@ namespace KWZP2021
 
         private void btnDeletenarzedzie_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć materiał?", "Usuwanie materiał", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć narzędzie?", "Usuwanie narzędzia", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(this.dgvNarzedzie.CurrentRow.Cells[0].Value);
@@ -60,15 +60,9 @@ namespace KWZP2021
             }
             else
             {
-                DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć materiału?");
+                DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć narzędzia!");
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            initDataGridView();
-        }
-
         private void dgvNarzedzie_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             EdytujNarzedzie edytujnarzedzie = new EdytujNarzedzie(this.database);

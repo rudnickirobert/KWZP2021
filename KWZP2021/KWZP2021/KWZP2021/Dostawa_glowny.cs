@@ -26,5 +26,11 @@ namespace KWZP2021
             Wydanie_produktu wydanieProduktu = new Wydanie_produktu(this.database);
             wydanieProduktu.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Dostawcy wydanieProduktu = new Dostawcy(this.database);
+            wydanieProduktu.ShowDialog();
+        }
     }
 }

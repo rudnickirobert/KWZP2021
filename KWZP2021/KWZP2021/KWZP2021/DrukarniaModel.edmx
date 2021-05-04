@@ -1303,6 +1303,57 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wypozyczenie_narzedzia' does not
           <Property Name="Uwagi" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Zapotrzebowanie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Zapotrzebowanie">
+          <Key>
+            <PropertyRef Name="Nazwa materialu" />
+            <PropertyRef Name="Stan materiału" />
+          </Key>
+          <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilosc_potrzebna" Type="int" />
+          <Property Name="Ilosc1" Type="int" />
+          <Property Name="Ilosc4" Type="float" />
+          <Property Name="Ilosc3" Type="int" />
+          <Property Name="Stan materiału" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="Brakujaca ilosc" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczanieilosciwdostawie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Zliczanieilosciwdostawie">
+          <Key>
+            <PropertyRef Name="Nazwa materialu" />
+          </Key>
+          <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilosc1" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczanieilosciwydanej' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Zliczanieilosciwydanej">
+          <Key>
+            <PropertyRef Name="Nazwa materialu" />
+          </Key>
+          <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilosc2" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczaniematerialudoczynnosci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Zliczaniematerialudoczynnosci">
+          <Key>
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilosc3" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczaniematerialudowydruku' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Zliczaniematerialudowydruku">
+          <Key>
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilosc4" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Co_ile_obsluga' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDP_Co_ile_obsluga">
           <Key>
@@ -4553,6 +4604,41 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Wypozyczenie_narzedzia].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDM_Wypozyczenie_narzedzia] AS [vDM_Wypozyczenie_narzedzia]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vDM_Zapotrzebowanie" EntityType="Self.vDM_Zapotrzebowanie" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDM_Zapotrzebowanie].[Nazwa materialu] AS [Nazwa materialu], 
+    [vDM_Zapotrzebowanie].[Ilosc_potrzebna] AS [Ilosc_potrzebna], 
+    [vDM_Zapotrzebowanie].[Ilosc1] AS [Ilosc1], 
+    [vDM_Zapotrzebowanie].[Ilosc4] AS [Ilosc4], 
+    [vDM_Zapotrzebowanie].[Ilosc3] AS [Ilosc3], 
+    [vDM_Zapotrzebowanie].[Stan materiału] AS [Stan materiału], 
+    [vDM_Zapotrzebowanie].[Brakujaca ilosc] AS [Brakujaca ilosc]
+    FROM [dbo].[vDM_Zapotrzebowanie] AS [vDM_Zapotrzebowanie]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDM_Zliczanieilosciwdostawie" EntityType="Self.vDM_Zliczanieilosciwdostawie" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDM_Zliczanieilosciwdostawie].[Nazwa materialu] AS [Nazwa materialu], 
+    [vDM_Zliczanieilosciwdostawie].[Ilosc1] AS [Ilosc1]
+    FROM [dbo].[vDM_Zliczanieilosciwdostawie] AS [vDM_Zliczanieilosciwdostawie]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDM_Zliczanieilosciwydanej" EntityType="Self.vDM_Zliczanieilosciwydanej" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDM_Zliczanieilosciwydanej].[Nazwa materialu] AS [Nazwa materialu], 
+    [vDM_Zliczanieilosciwydanej].[Ilosc2] AS [Ilosc2]
+    FROM [dbo].[vDM_Zliczanieilosciwydanej] AS [vDM_Zliczanieilosciwydanej]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDM_Zliczaniematerialudoczynnosci" EntityType="Self.vDM_Zliczaniematerialudoczynnosci" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDM_Zliczaniematerialudoczynnosci].[Nazwa] AS [Nazwa], 
+    [vDM_Zliczaniematerialudoczynnosci].[Ilosc3] AS [Ilosc3]
+    FROM [dbo].[vDM_Zliczaniematerialudoczynnosci] AS [vDM_Zliczaniematerialudoczynnosci]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDM_Zliczaniematerialudowydruku" EntityType="Self.vDM_Zliczaniematerialudowydruku" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDM_Zliczaniematerialudowydruku].[Nazwa] AS [Nazwa], 
+    [vDM_Zliczaniematerialudowydruku].[Ilosc4] AS [Ilosc4]
+    FROM [dbo].[vDM_Zliczaniematerialudowydruku] AS [vDM_Zliczaniematerialudowydruku]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vDP_Co_ile_obsluga" EntityType="Self.vDP_Co_ile_obsluga" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDP_Co_ile_obsluga].[Identyfikator] AS [Identyfikator], 
@@ -5886,6 +5972,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDM_Wydanie_materialu_dla_produkcji" EntityType="DrukarniaModel.vDM_Wydanie_materialu_dla_produkcji" />
           <EntitySet Name="vDM_Wydanie_produktu" EntityType="DrukarniaModel.vDM_Wydanie_produktu" />
           <EntitySet Name="vDM_Wypozyczenie_narzedzia" EntityType="DrukarniaModel.vDM_Wypozyczenie_narzedzia" />
+          <EntitySet Name="vDM_Zapotrzebowanie" EntityType="DrukarniaModel.vDM_Zapotrzebowanie" />
+          <EntitySet Name="vDM_Zliczanieilosciwdostawie" EntityType="DrukarniaModel.vDM_Zliczanieilosciwdostawie" />
+          <EntitySet Name="vDM_Zliczanieilosciwydanej" EntityType="DrukarniaModel.vDM_Zliczanieilosciwydanej" />
+          <EntitySet Name="vDM_Zliczaniematerialudoczynnosci" EntityType="DrukarniaModel.vDM_Zliczaniematerialudoczynnosci" />
+          <EntitySet Name="vDM_Zliczaniematerialudowydruku" EntityType="DrukarniaModel.vDM_Zliczaniematerialudowydruku" />
           <EntitySet Name="vDP_Co_ile_obsluga" EntityType="DrukarniaModel.vDP_Co_ile_obsluga" />
           <EntitySet Name="vDP_Czesc_wykorzystana" EntityType="DrukarniaModel.vDP_Czesc_wykorzystana" />
           <EntitySet Name="vDP_Czynnosc" EntityType="DrukarniaModel.vDP_Czynnosc" />
@@ -7837,6 +7928,47 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_i_godzina_wypozyczenia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_i_godzina_zwrotu" Type="DateTime" Precision="0" />
           <Property Name="Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vDM_Zapotrzebowanie">
+          <Key>
+            <PropertyRef Name="Nazwa_materialu" />
+            <PropertyRef Name="Stan_materiału" />
+          </Key>
+          <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilosc_potrzebna" Type="Int32" />
+          <Property Name="Ilosc1" Type="Int32" />
+          <Property Name="Ilosc4" Type="Double" />
+          <Property Name="Ilosc3" Type="Int32" />
+          <Property Name="Stan_materiału" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Brakujaca_ilosc" Type="Double" />
+        </EntityType>
+        <EntityType Name="vDM_Zliczanieilosciwdostawie">
+          <Key>
+            <PropertyRef Name="Nazwa_materialu" />
+          </Key>
+          <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilosc1" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vDM_Zliczanieilosciwydanej">
+          <Key>
+            <PropertyRef Name="Nazwa_materialu" />
+          </Key>
+          <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilosc2" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vDM_Zliczaniematerialudoczynnosci">
+          <Key>
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilosc3" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vDM_Zliczaniematerialudowydruku">
+          <Key>
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilosc4" Type="Double" />
         </EntityType>
         <EntityType Name="vDP_Co_ile_obsluga">
           <Key>
@@ -11362,6 +11494,51 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Data_i_godzina_wypozyczenia" ColumnName="Data i godzina wypozyczenia" />
                 <ScalarProperty Name="Nazwisko_pracownika_wypozyczajacego" ColumnName="Nazwisko pracownika wypozyczajacego" />
                 <ScalarProperty Name="Identyfikator_wypozyczenia" ColumnName="Identyfikator wypozyczenia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDM_Zapotrzebowanie">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zapotrzebowanie">
+              <MappingFragment StoreEntitySet="vDM_Zapotrzebowanie">
+                <ScalarProperty Name="Brakujaca_ilosc" ColumnName="Brakujaca ilosc" />
+                <ScalarProperty Name="Stan_materiału" ColumnName="Stan materiału" />
+                <ScalarProperty Name="Ilosc3" ColumnName="Ilosc3" />
+                <ScalarProperty Name="Ilosc4" ColumnName="Ilosc4" />
+                <ScalarProperty Name="Ilosc1" ColumnName="Ilosc1" />
+                <ScalarProperty Name="Ilosc_potrzebna" ColumnName="Ilosc_potrzebna" />
+                <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDM_Zliczanieilosciwdostawie">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczanieilosciwdostawie">
+              <MappingFragment StoreEntitySet="vDM_Zliczanieilosciwdostawie">
+                <ScalarProperty Name="Ilosc1" ColumnName="Ilosc1" />
+                <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDM_Zliczanieilosciwydanej">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczanieilosciwydanej">
+              <MappingFragment StoreEntitySet="vDM_Zliczanieilosciwydanej">
+                <ScalarProperty Name="Ilosc2" ColumnName="Ilosc2" />
+                <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDM_Zliczaniematerialudoczynnosci">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczaniematerialudoczynnosci">
+              <MappingFragment StoreEntitySet="vDM_Zliczaniematerialudoczynnosci">
+                <ScalarProperty Name="Ilosc3" ColumnName="Ilosc3" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDM_Zliczaniematerialudowydruku">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczaniematerialudowydruku">
+              <MappingFragment StoreEntitySet="vDM_Zliczaniematerialudowydruku">
+                <ScalarProperty Name="Ilosc4" ColumnName="Ilosc4" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

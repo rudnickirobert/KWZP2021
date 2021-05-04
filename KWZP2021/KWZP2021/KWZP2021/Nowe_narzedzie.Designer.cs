@@ -166,6 +166,6 @@ namespace KWZP2021
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buttonPowrot;
         private System.Windows.Forms.Button btnZapisz;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        public System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

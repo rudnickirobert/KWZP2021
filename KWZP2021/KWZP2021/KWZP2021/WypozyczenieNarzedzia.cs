@@ -44,6 +44,9 @@ namespace KWZP2021
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            /*int id = Convert.ToInt32(dgvWypozyczenie.CurrentRow.Cells[0].Value);
+            UsunNarzedzieZeSzczegolow usun = new UsunNarzedzieZeSzczegolow(this.database, Decimal.ToInt32(id));
+            usun.ShowDialog();*/
             DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć materiał?", "Usuwanie materiał", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
