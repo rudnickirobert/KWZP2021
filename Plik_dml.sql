@@ -257,7 +257,7 @@ VALUES
 	(2,2,'2021-04-25','2021-07-19'),
 	(4,8,'2021-04-25','2021-06-30')
 	;
-INSERT INTO DZ_Plik(Nazwa_pliku, Zalacznik)
+INSERT INTO DZ_Plik(Nazwa_pliku, Rozszerzenie)
 VALUES
 	('zabawka','pdf'),
 	('obudowa elektroniki','stl'),
@@ -310,7 +310,7 @@ VALUES
 	('zrealizowane'),
 	('przyjete do realizacji'),
 	('oczekuje na zatwierdzenie'),
-	('w realizacji'),
+	('op³acone'),
 	('nie przyjete do realizacji')
 	;
 INSERT INTO DZ_Status_zamowienia(Id_zamowienia, Id_rodzaj_statusu_zam)

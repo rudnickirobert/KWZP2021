@@ -157,7 +157,7 @@ CREATE TABLE DZ_Zamowienie_klienta(
 CREATE TABLE DZ_Plik(
 	Id_pliku int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
 	Nazwa_pliku nvarchar(50) NOT NULL,
-	Zalacznik nvarchar(30) NOT NULL
+	Rozszerzenie nvarchar(30) NOT NULL
 	);
 CREATE TABLE DZ_Szczegoly_zamowienia_klienta(
 	Id_szczegoly_zam_klienta int IDENTITY (1,1) NOT NULL PRIMARY KEY, 
