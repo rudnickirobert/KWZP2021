@@ -79,6 +79,8 @@ namespace KWZP2021
             zatrudnienie.Id_rodzaj_umowy = Convert.ToInt32(cmbRodzaj_umowy.SelectedValue);
             database.DZ_Zatrudnienie.Add(zatrudnienie);
             database.SaveChanges();
+            Zatrudnienie frm = (Zatrudnienie)Application.OpenForms["Zatrudnienie"];
+            frm.dgvZatrudnienie.DataSource = this.database.vDZ_Zatrudnienie.ToList();
             this.Close();
         }
 

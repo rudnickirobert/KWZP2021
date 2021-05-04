@@ -38,6 +38,8 @@ namespace KWZP2021
             pracownik.Data_urodzenia = dateTimePicker1.Value;
             database.DZ_Pracownik.Add(pracownik);
             database.SaveChanges();
+            Nowe_zatrudnienie frm = (Nowe_zatrudnienie)Application.OpenForms["Nowe_zatrudnienie"];
+            frm.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
             this.Close();
             
         }

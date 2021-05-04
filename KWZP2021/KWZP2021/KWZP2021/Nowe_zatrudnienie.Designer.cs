@@ -292,6 +292,6 @@ namespace KWZP2021
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox cmbPracownik;
+        public System.Windows.Forms.ComboBox cmbPracownik;
     }
 }
