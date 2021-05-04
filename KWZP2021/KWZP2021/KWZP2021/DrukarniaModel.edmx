@@ -2403,14 +2403,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_czesci' does not h
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Koszt jednostkowy oferty" />
-            <PropertyRef Name="Nazwa wlasciwosci" />
+            <PropertyRef Name="Jednostka pomiarowa" />
             <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator szczegolow zamowienia czesci" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Nazwa" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Koszt jednostkowy oferty" Type="float" Nullable="false" />
-          <Property Name="Nazwa wlasciwosci" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Jednostka pomiarowa" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -2437,14 +2437,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_materialu' does no
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Nazwa materiału" />
             <PropertyRef Name="Koszt jednostkowy oferty" />
-            <PropertyRef Name="Nazwa wlasciwosci" />
+            <PropertyRef Name="Jednostka pomiarowa" />
             <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator szczegolow zamowienia materialu" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Nazwa materiału" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Koszt jednostkowy oferty" Type="float" Nullable="false" />
-          <Property Name="Nazwa wlasciwosci" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Jednostka pomiarowa" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -2455,14 +2455,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_narzedzi' does not
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Nazwa narzedzia" />
             <PropertyRef Name="Koszt jednostkowy oferty" />
-            <PropertyRef Name="Nazwa  wlasciwosci" />
+            <PropertyRef Name="Jednostka pomiarowa" />
             <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator szczegolow zamowienia narzedzi" Type="int" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Nazwa narzedzia" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Koszt jednostkowy oferty" Type="float" Nullable="false" />
-          <Property Name="Nazwa  wlasciwosci" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Jednostka pomiarowa" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -5390,7 +5390,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Szczegoly_zam_czesci].[Numer zamowienia] AS [Numer zamowienia], 
     [vDZ_Szczegoly_zam_czesci].[Nazwa] AS [Nazwa], 
     [vDZ_Szczegoly_zam_czesci].[Koszt jednostkowy oferty] AS [Koszt jednostkowy oferty], 
-    [vDZ_Szczegoly_zam_czesci].[Nazwa wlasciwosci] AS [Nazwa wlasciwosci], 
+    [vDZ_Szczegoly_zam_czesci].[Jednostka pomiarowa] AS [Jednostka pomiarowa], 
     [vDZ_Szczegoly_zam_czesci].[Ilosc] AS [Ilosc]
     FROM [dbo].[vDZ_Szczegoly_zam_czesci] AS [vDZ_Szczegoly_zam_czesci]</DefiningQuery>
           </EntitySet>
@@ -5409,7 +5409,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Szczegoly_zam_materialu].[Numer zamowienia] AS [Numer zamowienia], 
     [vDZ_Szczegoly_zam_materialu].[Nazwa materiału] AS [Nazwa materiału], 
     [vDZ_Szczegoly_zam_materialu].[Koszt jednostkowy oferty] AS [Koszt jednostkowy oferty], 
-    [vDZ_Szczegoly_zam_materialu].[Nazwa wlasciwosci] AS [Nazwa wlasciwosci], 
+    [vDZ_Szczegoly_zam_materialu].[Jednostka pomiarowa] AS [Jednostka pomiarowa], 
     [vDZ_Szczegoly_zam_materialu].[Ilosc] AS [Ilosc]
     FROM [dbo].[vDZ_Szczegoly_zam_materialu] AS [vDZ_Szczegoly_zam_materialu]</DefiningQuery>
           </EntitySet>
@@ -5419,7 +5419,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Szczegoly_zam_narzedzi].[Numer zamowienia] AS [Numer zamowienia], 
     [vDZ_Szczegoly_zam_narzedzi].[Nazwa narzedzia] AS [Nazwa narzedzia], 
     [vDZ_Szczegoly_zam_narzedzi].[Koszt jednostkowy oferty] AS [Koszt jednostkowy oferty], 
-    [vDZ_Szczegoly_zam_narzedzi].[Nazwa  wlasciwosci] AS [Nazwa  wlasciwosci], 
+    [vDZ_Szczegoly_zam_narzedzi].[Jednostka pomiarowa] AS [Jednostka pomiarowa], 
     [vDZ_Szczegoly_zam_narzedzi].[Ilosc] AS [Ilosc]
     FROM [dbo].[vDZ_Szczegoly_zam_narzedzi] AS [vDZ_Szczegoly_zam_narzedzi]</DefiningQuery>
           </EntitySet>
@@ -9089,14 +9089,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Nazwa" />
             <PropertyRef Name="Koszt_jednostkowy_oferty" />
-            <PropertyRef Name="Nazwa_wlasciwosci" />
+            <PropertyRef Name="Jednostka_pomiarowa" />
             <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator_szczegolow_zamowienia_czesci" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Koszt_jednostkowy_oferty" Type="Double" Nullable="false" />
-          <Property Name="Nazwa_wlasciwosci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Jednostka_pomiarowa" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDZ_Szczegoly_zam_maszyn">
@@ -9119,14 +9119,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Nazwa_materiału" />
             <PropertyRef Name="Koszt_jednostkowy_oferty" />
-            <PropertyRef Name="Nazwa_wlasciwosci" />
+            <PropertyRef Name="Jednostka_pomiarowa" />
             <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator_szczegolow_zamowienia_materialu" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_materiału" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Koszt_jednostkowy_oferty" Type="Double" Nullable="false" />
-          <Property Name="Nazwa_wlasciwosci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Jednostka_pomiarowa" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDZ_Szczegoly_zam_narzedzi">
@@ -9135,14 +9135,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Nazwa_narzedzia" />
             <PropertyRef Name="Koszt_jednostkowy_oferty" />
-            <PropertyRef Name="Nazwa__wlasciwosci" />
+            <PropertyRef Name="Jednostka_pomiarowa" />
             <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator_szczegolow_zamowienia_narzedzi" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_narzedzia" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Koszt_jednostkowy_oferty" Type="Double" Nullable="false" />
-          <Property Name="Nazwa__wlasciwosci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Jednostka_pomiarowa" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDZ_Szczegoly_zamowienia_klienta">
@@ -12644,7 +12644,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Szczegoly_zam_czesci">
               <MappingFragment StoreEntitySet="vDZ_Szczegoly_zam_czesci">
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
-                <ScalarProperty Name="Nazwa_wlasciwosci" ColumnName="Nazwa wlasciwosci" />
+                <ScalarProperty Name="Jednostka_pomiarowa" ColumnName="Jednostka pomiarowa" />
                 <ScalarProperty Name="Koszt_jednostkowy_oferty" ColumnName="Koszt jednostkowy oferty" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
@@ -12667,7 +12667,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Szczegoly_zam_materialu">
               <MappingFragment StoreEntitySet="vDZ_Szczegoly_zam_materialu">
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
-                <ScalarProperty Name="Nazwa_wlasciwosci" ColumnName="Nazwa wlasciwosci" />
+                <ScalarProperty Name="Jednostka_pomiarowa" ColumnName="Jednostka pomiarowa" />
                 <ScalarProperty Name="Koszt_jednostkowy_oferty" ColumnName="Koszt jednostkowy oferty" />
                 <ScalarProperty Name="Nazwa_materiału" ColumnName="Nazwa materiału" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
@@ -12679,7 +12679,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Szczegoly_zam_narzedzi">
               <MappingFragment StoreEntitySet="vDZ_Szczegoly_zam_narzedzi">
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
-                <ScalarProperty Name="Nazwa__wlasciwosci" ColumnName="Nazwa  wlasciwosci" />
+                <ScalarProperty Name="Jednostka_pomiarowa" ColumnName="Jednostka pomiarowa" />
                 <ScalarProperty Name="Koszt_jednostkowy_oferty" ColumnName="Koszt jednostkowy oferty" />
                 <ScalarProperty Name="Nazwa_narzedzia" ColumnName="Nazwa narzedzia" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />

@@ -34,6 +34,8 @@ namespace KWZP2021
 
         }
 
+    
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             dgvMaszyna.DataSource = database.vDP_Maszyna.Where(x => x.Rodzaj_maszyny.Contains(textBox1.Text)).ToList();
@@ -75,6 +77,24 @@ namespace KWZP2021
             Nowa_maszyna nowa_Maszyna = new Nowa_maszyna(this.database);
             nowa_Maszyna.ShowDialog();
             initdgvMaszyna();
+        }
+
+        private void dgvMaszyna_DoubleClick(object sender, EventArgs e)
+        {
+            EdytujMaszyne edytujMaszyne = new EdytujMaszyne(this.database);
+            edytujMaszyne.comboBox1.Text = dgvMaszyna.CurrentRow.Cells[1].Value.ToString();
+            edytujMaszyne.comboBox2.Text = dgvMaszyna.CurrentRow.Cells[2].Value.ToString();
+            edytujMaszyne.txtNumer_seryjny.Text = dgvMaszyna.CurrentRow.Cells[3].Value.ToString();
+            edytujMaszyne.dateTimePicker1.Text = dgvMaszyna.CurrentRow.Cells[4].Value.ToString();
+            edytujMaszyne.txtKoszt_1rh.Text = dgvMaszyna.CurrentRow.Cells[5].Value.ToString();
+
+            edytujMaszyne.ShowDialog();
+            initDataGridView();
+        }
+
+        public void initDataGridView()
+        {
+            this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
         }
     }
 }

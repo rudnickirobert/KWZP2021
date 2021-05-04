@@ -46,6 +46,7 @@ namespace KWZP2021
             this.dgvMaszyna.Name = "dgvMaszyna";
             this.dgvMaszyna.Size = new System.Drawing.Size(660, 215);
             this.dgvMaszyna.TabIndex = 0;
+            this.dgvMaszyna.DoubleClick += new System.EventHandler(this.dgvMaszyna_DoubleClick);
             // 
             // label1
             // 

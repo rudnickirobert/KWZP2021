@@ -56,12 +56,10 @@ namespace KWZP2021
             {
                 DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć rodzaju maszyny.");
             }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
 
         }
+
+  
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

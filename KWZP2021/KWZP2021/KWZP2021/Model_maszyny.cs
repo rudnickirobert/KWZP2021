@@ -23,6 +23,7 @@ namespace KWZP2021
 
         public void initDataGridView()
         {
+            //dgvModelMaszyny.Columns[0].Visible = false;
             this.dgvModelMaszyny.DataSource = this.database.vDP_Model_maszyny.ToList();
         }
 
