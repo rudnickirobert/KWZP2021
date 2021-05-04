@@ -682,6 +682,12 @@
     <Compile Include="NowyDostawca.Designer.cs">
       <DependentUpon>NowyDostawca.cs</DependentUpon>
     </Compile>
+    <Compile Include="NowyPracownik2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NowyPracownik2.Designer.cs">
+      <DependentUpon>NowyPracownik2.cs</DependentUpon>
+    </Compile>
     <Compile Include="NowyWydruk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1490,6 +1496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NowyDostawca.resx">
       <DependentUpon>NowyDostawca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NowyPracownik2.resx">
+      <DependentUpon>NowyPracownik2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NowyWydruk.resx">
       <DependentUpon>NowyWydruk.cs</DependentUpon>

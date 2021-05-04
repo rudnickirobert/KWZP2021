@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace KWZP2021
 {
-    public partial class Nowy_pracownik : Form
+    public partial class NowyPracownik2 : Form
     {
         DrukarniaEntities database;
-        public Nowy_pracownik(DrukarniaEntities database)
+        public NowyPracownik2(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
-            
         }
 
-        private void lblNowyKlient_Click(object sender, EventArgs e)
+        private void NowyPracownik2_Load(object sender, EventArgs e)
         {
 
         }
 
-        public void buttonZapiszKonkretnegoKlienta_Click(object sender, EventArgs e)
+        private void buttonZapiszKonkretnegoKlienta_Click(object sender, EventArgs e)
         {
             DZ_Pracownik pracownik = new DZ_Pracownik();
             pracownik.Imie = txtImie2.Text;
@@ -39,21 +38,23 @@ namespace KWZP2021
             pracownik.Data_urodzenia = dateTimePicker1.Value;
             database.DZ_Pracownik.Add(pracownik);
             database.SaveChanges();
-            
-        
+            Nowe_zatrudnienie frm = (Nowe_zatrudnienie)Application.OpenForms["Nowe_zatrudnienie"];
+            frm.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
+            frm.cmbPracownik.SelectedIndex = frm.cmbPracownik.Items.Count - 1;
+
+            // Nowe_zatrudnienie frm = (Nowe_zatrudnienie)Application.OpenForms["Nowe_zatrudnienie"];
+            //frm.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
+
+            //frm.textBox1.Text = pracownik.Nazwisko.ToString();
 
             this.Close();
 
+            
         }
 
-        private void Nowy_pracownik_Load(object sender, EventArgs e)
+        private void buttonPowrot_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
 
         private void buttonWyczyscPola_Click(object sender, EventArgs e)
@@ -67,11 +68,5 @@ namespace KWZP2021
             txtTelefon2.Text = "";
             txtNumer_Rachunku2.Text = "";
         }
-
-        private void buttonPowrot_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
-    
 }

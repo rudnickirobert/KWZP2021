@@ -48,7 +48,6 @@ namespace KWZP2021
             this.dataZwolnienia = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.cmbPracownik = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonPowrot
@@ -215,25 +214,16 @@ namespace KWZP2021
             // cmbPracownik
             // 
             this.cmbPracownik.FormattingEnabled = true;
-            this.cmbPracownik.Location = new System.Drawing.Point(154, 297);
+            this.cmbPracownik.Location = new System.Drawing.Point(156, 84);
             this.cmbPracownik.Name = "cmbPracownik";
             this.cmbPracownik.Size = new System.Drawing.Size(176, 21);
             this.cmbPracownik.TabIndex = 59;
-            this.cmbPracownik.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(154, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 60;
             // 
             // Nowe_zatrudnienie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 450);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.cmbPracownik);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataZwolnienia);
@@ -282,6 +272,5 @@ namespace KWZP2021
         public System.Windows.Forms.ComboBox cmbRodzaj_umowy;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.ComboBox cmbPracownik;
-        public System.Windows.Forms.TextBox textBox1;
     }
 }
