@@ -36,6 +36,8 @@ namespace KWZP2021
             this.txtDodajCzescIlosc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtModelMaszyny = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnDodajCzesc
@@ -76,7 +78,7 @@ namespace KWZP2021
             // 
             // txtDodajCzescIlosc
             // 
-            this.txtDodajCzescIlosc.Location = new System.Drawing.Point(227, 162);
+            this.txtDodajCzescIlosc.Location = new System.Drawing.Point(227, 128);
             this.txtDodajCzescIlosc.Name = "txtDodajCzescIlosc";
             this.txtDodajCzescIlosc.Size = new System.Drawing.Size(100, 22);
             this.txtDodajCzescIlosc.TabIndex = 4;
@@ -84,7 +86,7 @@ namespace KWZP2021
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 165);
+            this.label2.Location = new System.Drawing.Point(37, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(156, 17);
             this.label2.TabIndex = 5;
@@ -99,11 +101,29 @@ namespace KWZP2021
             this.label3.TabIndex = 6;
             this.label3.Text = "Dodawanie nowej części";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 167);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 17);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Wpisz model maszyny";
+            // 
+            // txtModelMaszyny
+            // 
+            this.txtModelMaszyny.Location = new System.Drawing.Point(227, 164);
+            this.txtModelMaszyny.Name = "txtModelMaszyny";
+            this.txtModelMaszyny.Size = new System.Drawing.Size(100, 22);
+            this.txtModelMaszyny.TabIndex = 8;
+            // 
             // DodajCzesc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 302);
+            this.Controls.Add(this.txtModelMaszyny);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtDodajCzescIlosc);
@@ -127,5 +147,7 @@ namespace KWZP2021
         private System.Windows.Forms.TextBox txtDodajCzescIlosc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtModelMaszyny;
     }
 }

@@ -22,6 +22,8 @@ namespace KWZP2021
 
         private void btnAnulujDodanieCzesci_Click(object sender, EventArgs e)
         {
+            this.Close();
+            this.Hide();
             Czesc czesc = new Czesc(this.database);
             czesc.ShowDialog();
         }
@@ -29,21 +31,14 @@ namespace KWZP2021
         private void btnDodajCzesc_Click(object sender, EventArgs e)
         {
             DM_Czesc newCzesc = new DM_Czesc();
-            newCzesc.Nazwa = this.txtDodajCzescNazwa.Text;
+            newCzesc.Nazwa = txtDodajCzescNazwa.Text;
             newCzesc.Ilosc_poczatkowa = Convert.ToInt32(txtDodajCzescIlosc.Text);
-            /*DM_Material newMaterial = new DM_Material();
-            newMaterial.Id_rodzaj_materialu = Convert.ToInt32(cmbRodzajMaterialu.SelectedValue);
-            newMaterial.Nazwa = this.txtNewMaterial.Text;*/
+            newCzesc.Id_model_maszyny = Convert.ToInt32(txtModelMaszyny.Text);
 
             this.database.DM_Czesc.Add(newCzesc);
-            this.database.SaveChanges();
-            this.txtDodajCzescNazwa.Text = "";
-            /*this.database.DM_Material.Add(newMaterial);
-            this.database.SaveChanges();
-            this.txtNewMaterial.Text = "";*/
-
-            //var Czesc = Application.OpenForms.OfType<Czesc>().Single();
-            //Czesc.initDataGridView();
+            database.SaveChanges();
+            Czesc czesc = new Czesc(this.database);
+            czesc.ShowDialog();
             this.Close();
         }
     }
