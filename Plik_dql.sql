@@ -1177,13 +1177,14 @@ vDP_Kosztorys_powykonawczy ON DZ_Zamowienie_klienta.Id_zamowienia=vDP_Kosztorys_
 GO
 CREATE VIEW vDZ_Oferta_dla_klienta
 AS
-SELECT DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamowienia], DZ_Klient.Nip, DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilosc sztuk], vDP_Kosztorys_ofertowy.[Koszt ofertowy], ([Koszt ofertowy]*0.25) AS 'Współczynnik bezpieczeństwa', (TRY_CAST(('Współczynnik bezpieczeństwa') AS decimal)+[Koszt ofertowy]) AS [Kwota oferty]
+SELECT DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamowienia], DZ_Klient.Nip, DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilosc sztuk], vDP_Kosztorys_ofertowy.[Koszt ofertowy], ([Koszt ofertowy]*0.25) AS 'Współczynnik bezpieczeństwa', (([Koszt ofertowy]*0.25)+vDP_Kosztorys_ofertowy.[Koszt ofertowy]) AS 'Kwota oferty'
 FROM DZ_Zamowienie_klienta INNER JOIN
 DZ_Status_zamowienia ON DZ_Zamowienie_klienta.Id_zamowienia=DZ_Status_zamowienia.Id_zamowienia INNER JOIN
 DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
 DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta INNER JOIN
 DZ_Szczegoly_zamowienia_klienta ON DZ_Zamowienie_klienta.Id_zamowienia=DZ_Szczegoly_zamowienia_klienta.Id_zamowienia INNER JOIN
 vDP_Kosztorys_ofertowy ON DZ_Zamowienie_klienta.Id_zamowienia=vDP_Kosztorys_ofertowy.Id_proces_technologiczny
+GROUP BY DZ_Zamowienie_klienta.Id_zamowienia,DZ_Rodzaj_statusu_zamowienia.Status_zam,DZ_Klient.Nip,DZ_Klient.Nazwa_firmy,DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk, vDP_Kosztorys_ofertowy.[Koszt ofertowy]
 GO
 CREATE VIEW vDZ_Wplyw
 AS
@@ -1204,4 +1205,16 @@ CREATE VIEW vDZ_Przychod
 AS
 SELECT SUM(vDZ_Wplyw.[Kwota wpływu]) AS 'Przychód'
 FROM vDZ_Wplyw
+GO
+CREATE VIEW vDZ_Rozchod
+AS 
+SELECT SUM(vDZ_Wyplata.Wypłata) AS 'Suma wypłat', SUM(vDZ_Koszty_zewnetrzne.Koszt) AS 'Suma kosztów zewnętrznych', SUM(vDZ_Oplaty_stale.Koszt) AS 'Suma opłat stałych', (SUM(vDZ_Wyplata.Wypłata)+SUM(vDZ_Koszty_zewnetrzne.Koszt)+SUM(vDZ_Oplaty_stale.Koszt)) AS 'Rozchód'
+FROM vDZ_Wyplata, vDZ_Koszty_zewnetrzne, vDZ_Oplaty_stale
+GO
+CREATE VIEW vDZ_Bilans
+AS
+SELECT vDZ_Przychod.Przychód, vDZ_Rozchod.Rozchód, (vDZ_Przychod.Przychód-vDZ_Rozchod.Rozchód) AS 'Zysk/Strata',
+CASE WHEN (vDZ_Przychod.Przychód-vDZ_Rozchod.Rozchód) <0 THEN 'STRATA'
+	 ELSE 'ZYSK' END AS 'Wynik bilansu'
+FROM vDZ_Przychod, vDZ_Rozchod
 GO
