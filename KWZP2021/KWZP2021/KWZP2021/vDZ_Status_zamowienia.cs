@@ -16,6 +16,6 @@ namespace KWZP2021
     {
         public int Identyfikator_statusu_zamowienia { get; set; }
         public int Identyfikator_zamowienia_klienta { get; set; }
-        public int Rodzaj_statusu_zamowienia { get; set; }
+        public string Rodzaj_statusu_zamowienia { get; set; }
     }
 }

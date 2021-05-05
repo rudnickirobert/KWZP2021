@@ -91,6 +91,7 @@ namespace KWZP2021
             this.buttonNowyPracownik.TabIndex = 56;
             this.buttonNowyPracownik.Text = "Nowe szczegóły";
             this.buttonNowyPracownik.UseVisualStyleBackColor = false;
+            this.buttonNowyPracownik.Click += new System.EventHandler(this.buttonNowyPracownik_Click);
             // 
             // textBox1
             // 

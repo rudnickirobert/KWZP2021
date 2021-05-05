@@ -77,5 +77,11 @@ namespace KWZP2021
         {
             dataSzczegoly.DataSource = database.vDZ_Szczegoly_zatrudnienia.Where(x => x.Nazwisko_pracownika.Contains(textBox1.Text)).ToList();
         }
+
+        private void buttonNowyPracownik_Click(object sender, EventArgs e)
+        {
+            NoweSzczegolyZatrudnienia szcz = new NoweSzczegolyZatrudnienia(this.database);
+            szcz.ShowDialog();
+        }
     }
 }

@@ -745,6 +745,12 @@
     <Compile Include="NoweSzczegolyWypozyczeniaNarzedzia.Designer.cs">
       <DependentUpon>NoweSzczegolyWypozyczeniaNarzedzia.cs</DependentUpon>
     </Compile>
+    <Compile Include="NoweSzczegolyZatrudnienia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoweSzczegolyZatrudnienia.Designer.cs">
+      <DependentUpon>NoweSzczegolyZatrudnienia.cs</DependentUpon>
+    </Compile>
     <Compile Include="NoweWypozyczenie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1676,6 +1682,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NoweSzczegolyWypozyczeniaNarzedzia.resx">
       <DependentUpon>NoweSzczegolyWypozyczeniaNarzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoweSzczegolyZatrudnienia.resx">
+      <DependentUpon>NoweSzczegolyZatrudnienia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoweWypozyczenie.resx">
       <DependentUpon>NoweWypozyczenie.cs</DependentUpon>
