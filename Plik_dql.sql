@@ -1233,3 +1233,51 @@ CASE WHEN (vDZ_Przychod.Przychód-vDZ_Rozchod.Rozchód) <0 THEN 'STRATA'
 	 ELSE 'ZYSK' END AS 'Wynik bilansu'
 FROM vDZ_Przychod, vDZ_Rozchod
 GO
+
+CREATE VIEW vDP_Ostatnia_obsluga_biezaca
+AS
+SELECT DP_Maszyna.Id_maszyny, DP_Maszyna.Nr_seryjny, DP_Maszyna.Data_wprowadzenia, CONVERT (date, CURRENT_TIMESTAMP) AS [Dzisiejsza data], DP_Co_ile_obsluga.Co_ile_obsluga, 
+DP_Nazwa_obslugi.Nazwa_obslugi AS [Nazwa obsługi], 
+DP_Serwis_wewnetrzny_obsluga.Data_zakonczenia, 
+abs(DATEDIFF(day,CONVERT (date, CURRENT_TIMESTAMP) , DP_Serwis_wewnetrzny_obsluga.Data_zakonczenia)) AS DateDiff 
+FROM DP_Obsluga
+FULL OUTER JOIN DP_Rodzaj_maszyny ON DP_Obsluga.Id_rodzaj_maszyny = DP_Obsluga.Id_rodzaj_maszyny
+INNER JOIN DP_Maszyna ON DP_Rodzaj_maszyny.Id_rodzaj_maszyny= DP_Maszyna.Id_rodzaj_maszyny
+INNER JOIN DP_Co_ile_obsluga ON DP_Obsluga.Id_co_ile_obsluga = DP_Co_ile_obsluga.Id_co_ile_obsluga
+FULL OUTER JOIN DP_Nazwa_obslugi ON DP_Obsluga.Id_nazwa_obslugi = DP_Nazwa_obslugi.Id_nazwa_obslugi
+FULL OUTER JOIN DP_Czynnosc_w_ramach_obslugi_serw_wew ON DP_Nazwa_obslugi.Id_nazwa_obslugi = DP_Czynnosc_w_ramach_obslugi_serw_wew.Id_nazwa_obslugi
+FULL OUTER JOIN DP_Serwis_wewnetrzny_obsluga ON DP_Czynnosc_w_ramach_obslugi_serw_wew.Id_czynnosc_w_ramach_obslugi_serw_wew = DP_Serwis_wewnetrzny_obsluga.Id_czynnosc_w_ramach_obslugi_serw_wew
+WHERE DP_Nazwa_obslugi.Nazwa_obslugi like('biezaca') and DP_Serwis_wewnetrzny_obsluga.Data_zakonczenia is not null;
+GO
+
+CREATE VIEW vDP_Ostatnia_obsluga_okresowa
+AS
+SELECT DP_Maszyna.Id_maszyny, DP_Maszyna.Nr_seryjny, DP_Maszyna.Data_wprowadzenia, CONVERT (date, CURRENT_TIMESTAMP) AS [Dzisiejsza data], DP_Co_ile_obsluga.Co_ile_obsluga, 
+DP_Nazwa_obslugi.Nazwa_obslugi AS [Nazwa obsługi], 
+DP_Serwis_wewnetrzny_obsluga.Data_zakonczenia, 
+abs(DATEDIFF(day,CONVERT (date, CURRENT_TIMESTAMP) , DP_Serwis_wewnetrzny_obsluga.Data_zakonczenia)) AS DateDiff 
+FROM DP_Obsluga
+FULL OUTER JOIN DP_Rodzaj_maszyny ON DP_Obsluga.Id_rodzaj_maszyny = DP_Obsluga.Id_rodzaj_maszyny
+INNER JOIN DP_Maszyna ON DP_Rodzaj_maszyny.Id_rodzaj_maszyny= DP_Maszyna.Id_rodzaj_maszyny
+INNER JOIN DP_Co_ile_obsluga ON DP_Obsluga.Id_co_ile_obsluga = DP_Co_ile_obsluga.Id_co_ile_obsluga
+FULL OUTER JOIN DP_Nazwa_obslugi ON DP_Obsluga.Id_nazwa_obslugi = DP_Nazwa_obslugi.Id_nazwa_obslugi
+FULL OUTER JOIN DP_Czynnosc_w_ramach_obslugi_serw_wew ON DP_Nazwa_obslugi.Id_nazwa_obslugi = DP_Czynnosc_w_ramach_obslugi_serw_wew.Id_nazwa_obslugi
+FULL OUTER JOIN DP_Serwis_wewnetrzny_obsluga ON DP_Czynnosc_w_ramach_obslugi_serw_wew.Id_czynnosc_w_ramach_obslugi_serw_wew = DP_Serwis_wewnetrzny_obsluga.Id_czynnosc_w_ramach_obslugi_serw_wew
+WHERE DP_Nazwa_obslugi.Nazwa_obslugi like('okresowa');
+go
+
+CREATE VIEW vDP_Ostatnia_obsluga_profilaktyczny
+AS
+SELECT DP_Maszyna.Id_maszyny, DP_Maszyna.Nr_seryjny, DP_Maszyna.Data_wprowadzenia, CONVERT (date, CURRENT_TIMESTAMP) AS [Dzisiejsza data], DP_Co_ile_obsluga.Co_ile_obsluga, 
+DP_Nazwa_obslugi.Nazwa_obslugi AS [Nazwa obsługi], 
+DP_Serwis_wewnetrzny_obsluga.Data_zakonczenia, 
+abs(DATEDIFF(day,CONVERT (date, CURRENT_TIMESTAMP) , DP_Serwis_wewnetrzny_obsluga.Data_zakonczenia)) AS DateDiff 
+FROM DP_Obsluga
+FULL OUTER JOIN DP_Rodzaj_maszyny ON DP_Obsluga.Id_rodzaj_maszyny = DP_Obsluga.Id_rodzaj_maszyny
+INNER JOIN DP_Maszyna ON DP_Rodzaj_maszyny.Id_rodzaj_maszyny= DP_Maszyna.Id_rodzaj_maszyny
+INNER JOIN DP_Co_ile_obsluga ON DP_Obsluga.Id_co_ile_obsluga = DP_Co_ile_obsluga.Id_co_ile_obsluga
+FULL OUTER JOIN DP_Nazwa_obslugi ON DP_Obsluga.Id_nazwa_obslugi = DP_Nazwa_obslugi.Id_nazwa_obslugi
+FULL OUTER JOIN DP_Czynnosc_w_ramach_obslugi_serw_wew ON DP_Nazwa_obslugi.Id_nazwa_obslugi = DP_Czynnosc_w_ramach_obslugi_serw_wew.Id_nazwa_obslugi
+FULL OUTER JOIN DP_Serwis_wewnetrzny_obsluga ON DP_Czynnosc_w_ramach_obslugi_serw_wew.Id_czynnosc_w_ramach_obslugi_serw_wew = DP_Serwis_wewnetrzny_obsluga.Id_czynnosc_w_ramach_obslugi_serw_wew
+WHERE DP_Nazwa_obslugi.Nazwa_obslugi like('profilaktyczny');
+go
