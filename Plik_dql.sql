@@ -913,7 +913,7 @@ LEFT OUTER JOIN DP_Po_wydr_proc ON A.Id_proces_technologiczny = DP_Po_wydr_proc.
 GROUP BY A.Id_proces_technologiczny, A.Nazwa;
 GO
 
-CREATE VIEW vDM_Zliczanieilosciwydanej1
+CREATE VIEW vDM_Zliczanieilosciwydanej
 AS
 SELECT DM_Material.Nazwa AS 'Nazwa materialu', SUM(DM_Szczegoly_wydania_materialu.Ilosc) AS [Ilosc1],SUM(DM_Sklad_dostawy_materialu.Ilosc) AS [Ilosc2],SUM(DP_Po_material_wydruk.Ilosc) AS [Ilosc3],SUM(DP_Po_material_czynnosc.Ilosc) AS [Ilosc4]
 FROM dbo.DM_Material INNER JOIN
@@ -1199,4 +1199,9 @@ DZ_Nieobecnosc ON DZ_Pracownik.Id_pracownika=DZ_Nieobecnosc.Id_pracownika INNER 
 DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci INNER JOIN
 vDP_Kosztorys_powykonawczy ON vDZ_Wydanie_faktury.[Numer faktury]=vDP_Kosztorys_powykonawczy.Id_proces_produkcyjny
 GROUP BY vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamówienia], vDZ_Wydanie_faktury.NIP, vDZ_Wydanie_faktury.Imię, vDZ_Wydanie_faktury.Nazwisko, vDP_Kosztorys_powykonawczy.[Koszt powykonawczy]
+GO
+CREATE VIEW vDZ_Przychod
+AS
+SELECT SUM(vDZ_Wplyw.[Kwota wpływu]) AS 'Przychód'
+FROM vDZ_Wplyw
 GO
