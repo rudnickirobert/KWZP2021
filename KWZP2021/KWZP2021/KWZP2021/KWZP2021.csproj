@@ -1751,6 +1751,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="PrzypiszMaterial.resx">
       <DependentUpon>PrzypiszMaterial.cs</DependentUpon>
@@ -1899,6 +1900,10 @@
       <DependentUpon>DrukarniaModel.edmx</DependentUpon>
       <LastGenOutput>DrukarniaModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\MicrosoftTeams-image %285%29.png" />
+    <None Include="Resources\MicrosoftTeams-image %284%29.png" />
+    <None Include="Resources\MicrosoftTeams-image %286%29.png" />
+    <None Include="Resources\MicrosoftTeams-image %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
