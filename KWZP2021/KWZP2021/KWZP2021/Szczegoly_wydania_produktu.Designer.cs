@@ -92,6 +92,7 @@ namespace KWZP2021
             this.Controls.Add(this.label3);
             this.Name = "Szczegoly_wydania_produktu";
             this.Text = "Szczegoly_wydania_produktu";
+            this.Load += new System.EventHandler(this.Szczegoly_wydania_produktu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSzczegoly)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

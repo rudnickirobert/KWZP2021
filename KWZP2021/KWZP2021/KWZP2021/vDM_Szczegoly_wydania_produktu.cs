@@ -14,7 +14,7 @@ namespace KWZP2021
     
     public partial class vDM_Szczegoly_wydania_produktu
     {
-        public int Identyfikator_szczegolu { get; set; }
+        public int Id_szczegoly_wydania_produktu { get; set; }
         public int Identyfikator_wydania { get; set; }
         public string Nazwa_produktu { get; set; }
         public int Ilosc { get; set; }

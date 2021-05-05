@@ -1175,12 +1175,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Szczegoly_wydania_materialu' doe
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Szczegoly_wydania_produktu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDM_Szczegoly_wydania_produktu">
           <Key>
-            <PropertyRef Name="Identyfikator szczegolu" />
+            <PropertyRef Name="Id_szczegoly_wydania_produktu" />
             <PropertyRef Name="Identyfikator wydania" />
             <PropertyRef Name="Nazwa produktu" />
             <PropertyRef Name="Ilosc" />
           </Key>
-          <Property Name="Identyfikator szczegolu" Type="int" Nullable="false" />
+          <Property Name="Id_szczegoly_wydania_produktu" Type="int" Nullable="false" />
           <Property Name="Identyfikator wydania" Type="int" Nullable="false" />
           <Property Name="Nazwa produktu" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
@@ -4805,7 +4805,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </EntitySet>
           <EntitySet Name="vDM_Szczegoly_wydania_produktu" EntityType="Self.vDM_Szczegoly_wydania_produktu" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDM_Szczegoly_wydania_produktu].[Identyfikator szczegolu] AS [Identyfikator szczegolu], 
+    [vDM_Szczegoly_wydania_produktu].[Id_szczegoly_wydania_produktu] AS [Id_szczegoly_wydania_produktu], 
     [vDM_Szczegoly_wydania_produktu].[Identyfikator wydania] AS [Identyfikator wydania], 
     [vDM_Szczegoly_wydania_produktu].[Nazwa produktu] AS [Nazwa produktu], 
     [vDM_Szczegoly_wydania_produktu].[Ilosc] AS [Ilosc]
@@ -8274,12 +8274,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         </EntityType>
         <EntityType Name="vDM_Szczegoly_wydania_produktu">
           <Key>
-            <PropertyRef Name="Identyfikator_szczegolu" />
+            <PropertyRef Name="Id_szczegoly_wydania_produktu" />
             <PropertyRef Name="Identyfikator_wydania" />
             <PropertyRef Name="Nazwa_produktu" />
             <PropertyRef Name="Ilosc" />
           </Key>
-          <Property Name="Identyfikator_szczegolu" Type="Int32" Nullable="false" />
+          <Property Name="Id_szczegoly_wydania_produktu" Type="Int32" Nullable="false" />
           <Property Name="Identyfikator_wydania" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_produktu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
@@ -12110,7 +12110,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Nazwa_produktu" ColumnName="Nazwa produktu" />
                 <ScalarProperty Name="Identyfikator_wydania" ColumnName="Identyfikator wydania" />
-                <ScalarProperty Name="Identyfikator_szczegolu" ColumnName="Identyfikator szczegolu" />
+                <ScalarProperty Name="Id_szczegoly_wydania_produktu" ColumnName="Id_szczegoly_wydania_produktu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

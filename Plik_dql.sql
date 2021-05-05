@@ -230,7 +230,7 @@ GO
 
 CREATE VIEW vDM_Szczegoly_wydania_produktu
 AS
-SELECT Id_szczegoly_wydania_produktu AS [Identyfikator szczegolu], DM_Wydanie_produktu.Id_wydania AS [Identyfikator wydania], DP_Produkt.Nazwa_produktu AS [Nazwa produktu], DM_Szczegoly_wydania_produktu.Ilosc AS [Ilosc]
+SELECT DM_Szczegoly_wydania_produktu.Id_szczegoly_wydania_produktu, DM_Wydanie_produktu.Id_wydania AS [Identyfikator wydania], DP_Produkt.Nazwa_produktu AS [Nazwa produktu], DM_Szczegoly_wydania_produktu.Ilosc AS [Ilosc]
 FROM dbo.DM_Szczegoly_wydania_produktu INNER JOIN
 DM_Wydanie_produktu ON DM_Szczegoly_wydania_produktu.Id_wydania=DM_Wydanie_produktu.Id_wydania INNER JOIN
 DP_Produkt ON DM_Szczegoly_wydania_produktu.Id_produkt=DP_Produkt.Id_Produkt

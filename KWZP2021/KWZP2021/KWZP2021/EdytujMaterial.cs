@@ -32,17 +32,20 @@ namespace KWZP2021
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             Material frm = (Material)Application.OpenForms["Material"];
-            int row = (frm.dgvMaterial.CurrentRow.Index)+1;
-            DM_Material toUpdate = this.database.DM_Material.Where(id_materialu => id_materialu.Id_materialu == row).First();
+            //  int row = (frm.dgvMaterial.CurrentRow.Index)+1;
+            //   DM_Material toUpdate = this.database.DM_Material.Where(id_materialu => id_materialu.Id_materialu == row).First();
+
+            int row = Convert.ToInt32(frm.dgvMaterial.CurrentRow.Cells[0].Value); ;
+            DM_Material toUpdate = this.database.DM_Material.Where(narzedzie => narzedzie.Id_materialu == row).First();
+
 
             toUpdate.Id_rodzaj_materialu = Convert.ToInt32(cmbEdytujRodzajMaterialu.SelectedValue); // UPDATE
             toUpdate.Nazwa = txtEdytujMaterial.Text; // UPDATE
 
-            frm.dgvMaterial.DataSource = this.database.vDM_Material.ToList();
             this.database.SaveChanges();
-
-           // var MaterialForm = Application.OpenForms.OfType<Material>().Single();
-           // MaterialForm.initDataGridView();
+            frm.dgvMaterial.DataSource = this.database.vDM_Material.ToList();
+            // var MaterialForm = Application.OpenForms.OfType<Material>().Single();
+            // MaterialForm.initDataGridView();
 
             this.Close();
         }

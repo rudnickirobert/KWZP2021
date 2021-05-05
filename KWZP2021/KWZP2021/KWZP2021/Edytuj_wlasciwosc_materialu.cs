@@ -29,19 +29,15 @@ namespace KWZP2021
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
             Wlasciwosc_materialu frm = (Wlasciwosc_materialu)Application.OpenForms["Wlasciwosc_materialu"];
-            int row = (frm.dgvWlasciwoscMaterialu.CurrentRow.Index) + 1;
-            DM_Wlasciwosc_materialu toUpdate = this.database.DM_Wlasciwosc_materialu.Where(id_materialu => id_materialu.Id_materialu == row).First();
-
-            toUpdate.Id_materialu = Convert.ToInt32(cmbMaterial.SelectedValue); // UPDATE
-            toUpdate.Id_wlasciwosc = Convert.ToInt32(cmbMaterial.SelectedValue); // UPDATE
-            toUpdate.Wartosc = txtValue.Text; // UPDATE
-
-            frm.dgvWlasciwoscMaterialu.DataSource = this.database.vDM_Wlasciwosc_materialu.ToList();
+            int row = Convert.ToInt32(frm.dgvWlasciwoscMaterialu.CurrentRow.Cells[0].Value); ;
+            DM_Wlasciwosc_materialu toUpdate = this.database.DM_Wlasciwosc_materialu.Where(id_materialu => id_materialu.id_wlasciwosc_materialu == row).First();
+            toUpdate.Id_materialu = Convert.ToInt32(cmbMaterial.SelectedValue);
+            toUpdate.Id_wlasciwosc = Convert.ToInt32(cmbWlasciwosc.SelectedValue);
+            toUpdate.Wartosc = txtValue.Text;
             this.database.SaveChanges();
 
             var WlasciwoscMaterialuForm = Application.OpenForms.OfType<Wlasciwosc_materialu>().Single();
             WlasciwoscMaterialuForm.initDataGridView();
-
             this.Close();
         }
 

@@ -49,17 +49,22 @@ namespace KWZP2021
             if (dialogResult == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(this.dgvSzczegoly.CurrentRow.Cells[0].Value);
-
-                DM_Szczegoly_wydania_produktu toRemove = this.database.DM_Szczegoly_wydania_produktu.Where(id_wyd => id_wyd.Id_wydania == id).First();
-
+                DM_Szczegoly_wydania_produktu toRemove = this.database.DM_Szczegoly_wydania_produktu.Where(id_narz => id_narz.Id_szczegoly_wydania_produktu == id).First();
                 this.database.DM_Szczegoly_wydania_produktu.Remove(toRemove); // DELETE
 
                 this.database.SaveChanges();
+                initDataGridView(1);
+
             }
             else
             {
                 DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć szczegółu wydania produktu");
             }
+        }
+
+        private void Szczegoly_wydania_produktu_Load(object sender, EventArgs e)
+        {
+            dgvSzczegoly.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }

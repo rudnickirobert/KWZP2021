@@ -28,20 +28,8 @@ namespace KWZP2021
             this.cmbIdWydania.ValueMember = "Id_magazynu_gotowych_produktow";
 
             this.cmbPracownik.DataSource = this.database.DZ_Pracownik.ToList();
-            this.cmbPracownik.DisplayMember = "Imie";
+            this.cmbPracownik.DisplayMember = "Nazwisko";
             this.cmbPracownik.ValueMember = "Id_pracownika";
-
-        /*    con = new SqlConnection("Data source=STYPA-ABI-PL\\KWZP2021;initial catalog=Drukarnia;integrated security=True");
-            cmd = new SqlCommand("select * from [dbo].[DZ_Pracownik]", con);
-            da = new SqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-
-            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-            {
-                cmbPracownik.Items.Add(ds.Tables[0].Rows[i][1] + " " + ds.Tables[0].Rows[i][2]);
-            }*/
-
         }
 
         private void btnCancelOperation_Click(object sender, EventArgs e)
@@ -65,5 +53,6 @@ namespace KWZP2021
             WydanieProduktuForm.initDataGridView();
             this.Close();
         }
+
     }
 }

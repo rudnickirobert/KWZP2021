@@ -73,6 +73,8 @@ namespace KWZP2021
             this.txtFindWydanieProduktu.Size = new System.Drawing.Size(120, 20);
             this.txtFindWydanieProduktu.TabIndex = 27;
             this.txtFindWydanieProduktu.TextChanged += new System.EventHandler(this.txtFindWydanieProduktu_TextChanged);
+            this.txtFindWydanieProduktu.Enter += new System.EventHandler(this.txtFindWydanieProduktu_Enter);
+            this.txtFindWydanieProduktu.Leave += new System.EventHandler(this.txtFindWydanieProduktu_Leave);
             // 
             // Wydanie_produktu
             // 
@@ -85,6 +87,7 @@ namespace KWZP2021
             this.Controls.Add(this.txtFindWydanieProduktu);
             this.Name = "Wydanie_produktu";
             this.Text = "Wydanie_produktu";
+            this.Load += new System.EventHandler(this.Wydanie_produktu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWydanieProduktu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

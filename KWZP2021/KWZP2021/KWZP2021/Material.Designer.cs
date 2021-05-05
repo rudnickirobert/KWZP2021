@@ -112,6 +112,7 @@ namespace KWZP2021
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Material";
             this.Text = "Material";
+            this.Load += new System.EventHandler(this.Material_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

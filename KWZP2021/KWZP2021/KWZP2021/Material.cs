@@ -90,5 +90,10 @@ namespace KWZP2021
                 initDataGridView();
             }
         }
+
+        private void Material_Load(object sender, EventArgs e)
+        {
+            dgvMaterial.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
     }
 }
