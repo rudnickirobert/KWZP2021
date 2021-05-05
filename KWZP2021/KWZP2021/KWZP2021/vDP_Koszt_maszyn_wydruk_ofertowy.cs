@@ -12,18 +12,12 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDP_Koszt_materialu_przed
+    public partial class vDP_Koszt_maszyn_wydruk_ofertowy
     {
         public int Id_proces_technologiczny { get; set; }
-        public int Id_po_wydr_proces { get; set; }
-        public int Id_po_proc_czynnosci { get; set; }
-        public string Nazwa { get; set; }
-        public string Rodzaj_materialu { get; set; }
-        public int Material_wydruk { get; set; }
-        public int Material_dodatkowe { get; set; }
-        public double Ilosc_wydruk { get; set; }
-        public int Ilosc_dodatkowe { get; set; }
-        public Nullable<double> Koszt_m_wydruk { get; set; }
-        public Nullable<int> Koszt_m_dodatkowe { get; set; }
+        public int Id_maszyny { get; set; }
+        public int Czas_zamierzony { get; set; }
+        public decimal Koszt_1rh { get; set; }
+        public Nullable<decimal> Koszt_maszyn_wydruk_przed { get; set; }
     }
 }

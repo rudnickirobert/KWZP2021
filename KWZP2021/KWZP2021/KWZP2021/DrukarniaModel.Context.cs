@@ -104,6 +104,7 @@ namespace KWZP2021
         public virtual DbSet<DM_Szczegoly_wydania_czesci> DM_Szczegoly_wydania_czesci { get; set; }
         public virtual DbSet<DM_Szczegoly_wydania_materialu> DM_Szczegoly_wydania_materialu { get; set; }
         public virtual DbSet<DP_Po_material_czynnosc> DP_Po_material_czynnosc { get; set; }
+        public virtual DbSet<DP_po_prod_czyn_dod_material> DP_po_prod_czyn_dod_material { get; set; }
         public virtual DbSet<DP_prod_material> DP_prod_material { get; set; }
         public virtual DbSet<vDM_Czesc> vDM_Czesc { get; set; }
         public virtual DbSet<vDM_Dostawa_czesci> vDM_Dostawa_czesci { get; set; }
@@ -145,12 +146,19 @@ namespace KWZP2021
         public virtual DbSet<vDP_Czynnosc_w_ramach_obslugi_serw_wew> vDP_Czynnosc_w_ramach_obslugi_serw_wew { get; set; }
         public virtual DbSet<vDP_CzynnoscProces> vDP_CzynnoscProces { get; set; }
         public virtual DbSet<vDP_Firma_serwisowa> vDP_Firma_serwisowa { get; set; }
-        public virtual DbSet<vDP_Koszt_material_magazyn> vDP_Koszt_material_magazyn { get; set; }
-        public virtual DbSet<vDP_Koszt_materialu_dodatkowe_przed> vDP_Koszt_materialu_dodatkowe_przed { get; set; }
-        public virtual DbSet<vDP_Koszt_materialu_przed> vDP_Koszt_materialu_przed { get; set; }
-        public virtual DbSet<vDP_Koszt_materialu_wydruk_przed> vDP_Koszt_materialu_wydruk_przed { get; set; }
-        public virtual DbSet<vDP_Koszt_pracownik_po> vDP_Koszt_pracownik_po { get; set; }
-        public virtual DbSet<vDP_Koszt_pracownik_przed> vDP_Koszt_pracownik_przed { get; set; }
+        public virtual DbSet<vDP_Koszt_jednostkowy_material> vDP_Koszt_jednostkowy_material { get; set; }
+        public virtual DbSet<vDP_Koszt_maszyn_dodatkowe_ofertowy> vDP_Koszt_maszyn_dodatkowe_ofertowy { get; set; }
+        public virtual DbSet<vDP_Koszt_maszyn_dodatkowe_powykonawczy> vDP_Koszt_maszyn_dodatkowe_powykonawczy { get; set; }
+        public virtual DbSet<vDP_Koszt_maszyn_wydruk_ofertowy> vDP_Koszt_maszyn_wydruk_ofertowy { get; set; }
+        public virtual DbSet<vDP_Koszt_maszyn_wydruk_powykonawczy> vDP_Koszt_maszyn_wydruk_powykonawczy { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_dodatkowe_ofertowy> vDP_Koszt_materialu_dodatkowe_ofertowy { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_dodatkowe_powykonawczy> vDP_Koszt_materialu_dodatkowe_powykonawczy { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_ofertowy> vDP_Koszt_materialu_ofertowy { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_wydruk_ofertowy> vDP_Koszt_materialu_wydruk_ofertowy { get; set; }
+        public virtual DbSet<vDP_Koszt_materialu_wydruk_powykonawczy> vDP_Koszt_materialu_wydruk_powykonawczy { get; set; }
+        public virtual DbSet<vDP_Koszt_pracownika_ofertowy> vDP_Koszt_pracownika_ofertowy { get; set; }
+        public virtual DbSet<vDP_Koszt_pracownika_powykonawczy> vDP_Koszt_pracownika_powykonawczy { get; set; }
+        public virtual DbSet<vDP_Koszt_RH_pracownika> vDP_Koszt_RH_pracownika { get; set; }
         public virtual DbSet<vDP_Maszyna> vDP_Maszyna { get; set; }
         public virtual DbSet<vDP_Maszyna_drukarki> vDP_Maszyna_drukarki { get; set; }
         public virtual DbSet<vDP_Maszyna_Proces> vDP_Maszyna_Proces { get; set; }
@@ -182,7 +190,6 @@ namespace KWZP2021
         public virtual DbSet<vDP_prod_material> vDP_prod_material { get; set; }
         public virtual DbSet<vDP_prod_wydruk> vDP_prod_wydruk { get; set; }
         public virtual DbSet<vDP_Produkt> vDP_Produkt { get; set; }
-        public virtual DbSet<vDP_RH_pracownik> vDP_RH_pracownik { get; set; }
         public virtual DbSet<vDP_Rodzaj_czynnosci> vDP_Rodzaj_czynnosci { get; set; }
         public virtual DbSet<vDP_Rodzaj_maszyny> vDP_Rodzaj_maszyny { get; set; }
         public virtual DbSet<vDP_Serwis_wewnetrzny_naprawa> vDP_Serwis_wewnetrzny_naprawa { get; set; }

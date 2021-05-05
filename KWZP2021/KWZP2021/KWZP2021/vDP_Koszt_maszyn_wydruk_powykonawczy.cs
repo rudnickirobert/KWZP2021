@@ -12,12 +12,12 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDP_RH_pracownik
+    public partial class vDP_Koszt_maszyn_wydruk_powykonawczy
     {
-        public int Id_pracownika { get; set; }
-        public string Imie { get; set; }
-        public string Nazwisko { get; set; }
-        public double Koszt_RH_pracownika { get; set; }
-        public string Stanowisko { get; set; }
+        public int Id_proces_produkcyjny { get; set; }
+        public int Czas_wydruku { get; set; }
+        public decimal Koszt_1rh { get; set; }
+        public int Id_maszyny { get; set; }
+        public Nullable<decimal> Koszt_maszyn_wydruk_powykonawczy { get; set; }
     }
 }

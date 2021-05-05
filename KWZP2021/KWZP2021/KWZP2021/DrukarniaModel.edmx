@@ -508,6 +508,18 @@ warning 6002: The table/view 'Drukarnia.dbo.DP_po_prod_czyn_dod_maszyna' does no
           <Property Name="Id_maszyna" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.DP_po_prod_czyn_dod_material' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="DP_po_prod_czyn_dod_material">
+          <Key>
+            <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            <PropertyRef Name="Id_materialu" />
+            <PropertyRef Name="Ilosc" />
+          </Key>
+          <Property Name="Id_prod_czynnosci_dodatkowe" Type="int" Nullable="false" />
+          <Property Name="Id_materialu" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.DP_po_prod_czyn_dod_pracownik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="DP_po_prod_czyn_dod_pracownik">
           <Key>
@@ -1438,8 +1450,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Firma_serwisowa' does not have a
           <Property Name="E-mail" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_material_magazyn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Koszt_material_magazyn">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_jednostkowy_material' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_jednostkowy_material">
           <Key>
             <PropertyRef Name="Id_materialu" />
             <PropertyRef Name="Nazwa" />
@@ -1451,8 +1463,68 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_material_magazyn' does not
           <Property Name="Koszt jednostkowy za material" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_dodatkowe_przed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Koszt_materialu_dodatkowe_przed">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_maszyn_dodatkowe_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_maszyn_dodatkowe_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+            <PropertyRef Name="Id_maszyny" />
+            <PropertyRef Name="Czas_zamierzony" />
+            <PropertyRef Name="Koszt_1rh" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="int" Nullable="false" />
+          <Property Name="Id_maszyny" Type="int" Nullable="false" />
+          <Property Name="Czas_zamierzony" Type="int" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="money" Nullable="false" />
+          <Property Name="Koszt maszyn dodatkowe ofertowy" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_maszyn_dodatkowe_powykonawczy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_maszyn_dodatkowe_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Id_maszyna" />
+            <PropertyRef Name="Czas_pracy" />
+            <PropertyRef Name="Koszt_1rh" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="int" Nullable="false" />
+          <Property Name="Id_maszyna" Type="int" Nullable="false" />
+          <Property Name="Czas_pracy" Type="int" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="money" Nullable="false" />
+          <Property Name="Koszt maszyn czyn_dodatkowe powykonawczy" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_maszyn_wydruk_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_maszyn_wydruk_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+            <PropertyRef Name="Id_maszyny" />
+            <PropertyRef Name="Czas_zamierzony" />
+            <PropertyRef Name="Koszt_1rh" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="int" Nullable="false" />
+          <Property Name="Id_maszyny" Type="int" Nullable="false" />
+          <Property Name="Czas_zamierzony" Type="int" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="money" Nullable="false" />
+          <Property Name="Koszt maszyn wydruk przed" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_maszyn_wydruk_powykonawczy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_maszyn_wydruk_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Czas_wydruku" />
+            <PropertyRef Name="Koszt_1rh" />
+            <PropertyRef Name="Id_maszyny" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="int" Nullable="false" />
+          <Property Name="Czas_wydruku" Type="int" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="money" Nullable="false" />
+          <Property Name="Id_maszyny" Type="int" Nullable="false" />
+          <Property Name="Koszt maszyn wydruk powykonawczy" Type="money" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_dodatkowe_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_materialu_dodatkowe_ofertowy">
           <Key>
             <PropertyRef Name="Id_proces_technologiczny" />
             <PropertyRef Name="Id_po_proc_czynnosci" />
@@ -1470,8 +1542,25 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_dodatkowe_przed'
           <Property Name="Koszt material dodatkowe" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_przed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Koszt_materialu_przed">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_dodatkowe_powykonawczy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_materialu_dodatkowe_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            <PropertyRef Name="Id_materialu" />
+            <PropertyRef Name="Ilosc" />
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="int" Nullable="false" />
+          <Property Name="Id_prod_czynnosci_dodatkowe" Type="int" Nullable="false" />
+          <Property Name="Id_materialu" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Koszt material cz_dodatkowe powykonawczy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_materialu_ofertowy">
           <Key>
             <PropertyRef Name="Id_proces_technologiczny" />
             <PropertyRef Name="Id_po_wydr_proces" />
@@ -1496,8 +1585,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_przed' does not 
           <Property Name="Koszt m_dodatkowe" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_wydruk_przed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Koszt_materialu_wydruk_przed">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_wydruk_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_materialu_wydruk_ofertowy">
           <Key>
             <PropertyRef Name="Id_proces_technologiczny" />
             <PropertyRef Name="Material wydruk" />
@@ -1515,8 +1604,43 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_wydruk_przed' do
           <Property Name="Koszt materialu wydruk" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_pracownik_po' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Koszt_pracownik_po">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_materialu_wydruk_powykonawczy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_materialu_wydruk_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Id_materialu" />
+            <PropertyRef Name="Ilosc_zuzytego_materialu" />
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="int" Nullable="false" />
+          <Property Name="Id_materialu" Type="int" Nullable="false" />
+          <Property Name="Ilosc_zuzytego_materialu" Type="float" Nullable="false" />
+          <Property Name="Nazwa" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Koszt materialu powykonawczy" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_pracownika_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_pracownika_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+            <PropertyRef Name="Id_po_proc_czynnosci" />
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+            <PropertyRef Name="Id_pracownika" />
+            <PropertyRef Name="Czas_zamierzony" />
+            <PropertyRef Name="Koszt pracownika przed" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="int" Nullable="false" />
+          <Property Name="Id_po_proc_czynnosci" Type="int" Nullable="false" />
+          <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Id_pracownika" Type="int" Nullable="false" />
+          <Property Name="Czas_zamierzony" Type="int" Nullable="false" />
+          <Property Name="Koszt pracownika przed" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_pracownika_powykonawczy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_pracownika_powykonawczy">
           <Key>
             <PropertyRef Name="Id_proces_produkcyjny" />
             <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
@@ -1535,24 +1659,20 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_pracownik_po' does not hav
           <Property Name="Koszt pracownika" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_pracownik_przed' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_Koszt_pracownik_przed">
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_RH_pracownika' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Koszt_RH_pracownika">
           <Key>
-            <PropertyRef Name="Id_proces_technologiczny" />
-            <PropertyRef Name="Id_po_proc_czynnosci" />
+            <PropertyRef Name="Id_pracownika" />
             <PropertyRef Name="Imie" />
             <PropertyRef Name="Nazwisko" />
-            <PropertyRef Name="Id_pracownika" />
-            <PropertyRef Name="Czas_zamierzony" />
-            <PropertyRef Name="Koszt pracownika przed" />
+            <PropertyRef Name="Koszt RH pracownika" />
+            <PropertyRef Name="Stanowisko" />
           </Key>
-          <Property Name="Id_proces_technologiczny" Type="int" Nullable="false" />
-          <Property Name="Id_po_proc_czynnosci" Type="int" Nullable="false" />
+          <Property Name="Id_pracownika" Type="int" Nullable="false" />
           <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Id_pracownika" Type="int" Nullable="false" />
-          <Property Name="Czas_zamierzony" Type="int" Nullable="false" />
-          <Property Name="Koszt pracownika przed" Type="float" Nullable="false" />
+          <Property Name="Koszt RH pracownika" Type="float" Nullable="false" />
+          <Property Name="Stanowisko" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyna' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1924,22 +2044,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Produkt' does not have a primary
           <Property Name="Numer produktu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nazwa produktu" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Uwagi" Type="nvarchar" MaxLength="55" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDP_RH_pracownik' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDP_RH_pracownik">
-          <Key>
-            <PropertyRef Name="Id_pracownika" />
-            <PropertyRef Name="Imie" />
-            <PropertyRef Name="Nazwisko" />
-            <PropertyRef Name="Koszt RH pracownika" />
-            <PropertyRef Name="Stanowisko" />
-          </Key>
-          <Property Name="Id_pracownika" Type="int" Nullable="false" />
-          <Property Name="Imie" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Nazwisko" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="Koszt RH pracownika" Type="float" Nullable="false" />
-          <Property Name="Stanowisko" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Rodzaj_czynnosci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -3289,7 +3393,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Czesc___Id_cz__3EDC53F0">
+        <Association Name="FK__DP_Czesc___Id_cz__41B8C09B">
           <End Role="DM_Czesc" Type="Self.DM_Czesc" Multiplicity="1" />
           <End Role="DP_Czesc_wykorzystana" Type="Self.DP_Czesc_wykorzystana" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3301,7 +3405,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Czesc___Id_se__3FD07829">
+        <Association Name="FK__DP_Czesc___Id_se__42ACE4D4">
           <End Role="DP_Serwis_wewnetrzny_naprawa" Type="Self.DP_Serwis_wewnetrzny_naprawa" Multiplicity="1" />
           <End Role="DP_Czesc_wykorzystana" Type="Self.DP_Czesc_wykorzystana" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3313,7 +3417,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Czynno__Id_cz__1F63A897">
+        <Association Name="FK__DP_Czynno__Id_cz__22401542">
           <End Role="DP_Czynnosc" Type="Self.DP_Czynnosc" Multiplicity="1" />
           <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" Type="Self.DP_Czynnosc_w_ramach_obslugi_serw_wew" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3325,7 +3429,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Czynno__Id_na__1E6F845E">
+        <Association Name="FK__DP_Czynno__Id_na__214BF109">
           <End Role="DP_Nazwa_obslugi" Type="Self.DP_Nazwa_obslugi" Multiplicity="1" />
           <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" Type="Self.DP_Czynnosc_w_ramach_obslugi_serw_wew" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3361,7 +3465,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Narzed__Id_na__39237A9A">
+        <Association Name="FK__DP_Narzed__Id_na__3BFFE745">
           <End Role="DM_Narzedzie" Type="Self.DM_Narzedzie" Multiplicity="1" />
           <End Role="DP_Narzedzie_uzyte_obsluga" Type="Self.DP_Narzedzie_uzyte_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3373,7 +3477,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Narzed__Id_na__3BFFE745">
+        <Association Name="FK__DP_Narzed__Id_na__3EDC53F0">
           <End Role="DM_Narzedzie" Type="Self.DM_Narzedzie" Multiplicity="1" />
           <End Role="DP_Narzedzie_uzyte_naprawa" Type="Self.DP_Narzedzie_uzyte_naprawa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3385,7 +3489,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Narzed__Id_se__3A179ED3">
+        <Association Name="FK__DP_Narzed__Id_se__3CF40B7E">
           <End Role="DP_Serwis_wewnetrzny_obsluga" Type="Self.DP_Serwis_wewnetrzny_obsluga" Multiplicity="1" />
           <End Role="DP_Narzedzie_uzyte_obsluga" Type="Self.DP_Narzedzie_uzyte_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3397,7 +3501,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Narzed__Id_se__3CF40B7E">
+        <Association Name="FK__DP_Narzed__Id_se__3FD07829">
           <End Role="DP_Serwis_wewnetrzny_naprawa" Type="Self.DP_Serwis_wewnetrzny_naprawa" Multiplicity="1" />
           <End Role="DP_Narzedzie_uzyte_naprawa" Type="Self.DP_Narzedzie_uzyte_naprawa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3409,7 +3513,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Obslug__Id_co__2610A626">
+        <Association Name="FK__DP_Obslug__Id_co__28ED12D1">
           <End Role="DP_Co_ile_obsluga" Type="Self.DP_Co_ile_obsluga" Multiplicity="1" />
           <End Role="DP_Obsluga" Type="Self.DP_Obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3421,7 +3525,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Obslug__Id_na__24285DB4">
+        <Association Name="FK__DP_Obslug__Id_na__2704CA5F">
           <End Role="DP_Nazwa_obslugi" Type="Self.DP_Nazwa_obslugi" Multiplicity="1" />
           <End Role="DP_Obsluga" Type="Self.DP_Obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3433,7 +3537,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Obslug__Id_ro__251C81ED">
+        <Association Name="FK__DP_Obslug__Id_ro__27F8EE98">
           <End Role="DP_Rodzaj_maszyny" Type="Self.DP_Rodzaj_maszyny" Multiplicity="1" />
           <End Role="DP_Obsluga" Type="Self.DP_Obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3590,6 +3694,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__DP_po_pro__Id_ma__1209AD79">
+          <End Role="DM_Material" Type="Self.DM_Material" Multiplicity="1" />
+          <End Role="DP_po_prod_czyn_dod_material" Type="Self.DP_po_prod_czyn_dod_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_Material">
+              <PropertyRef Name="Id_materialu" />
+            </Principal>
+            <Dependent Role="DP_po_prod_czyn_dod_material">
+              <PropertyRef Name="Id_materialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DP_po_pro__Id_ma__14E61A24">
           <End Role="DP_Maszyna" Type="Self.DP_Maszyna" Multiplicity="1" />
           <End Role="DP_po_prod_czyn_dod_maszyna" Type="Self.DP_po_prod_czyn_dod_maszyna" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3603,6 +3719,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         </Association>
         <Association Name="FK__DP_po_pro__Id_pr__11158940">
           <End Role="DP_prod_czynnosc_dodatkowa" Type="Self.DP_prod_czynnosc_dodatkowa" Multiplicity="1" />
+          <End Role="DP_po_prod_czyn_dod_material" Type="Self.DP_po_prod_czyn_dod_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DP_prod_czynnosc_dodatkowa">
+              <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            </Principal>
+            <Dependent Role="DP_po_prod_czyn_dod_material">
+              <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DP_po_pro__Id_pr__13F1F5EB">
+          <End Role="DP_prod_czynnosc_dodatkowa" Type="Self.DP_prod_czynnosc_dodatkowa" Multiplicity="1" />
           <End Role="DP_po_prod_czyn_dod_maszyna" Type="Self.DP_po_prod_czyn_dod_maszyna" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="DP_prod_czynnosc_dodatkowa">
@@ -3613,7 +3741,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_po_pro__Id_pr__13F1F5EB">
+        <Association Name="FK__DP_po_pro__Id_pr__16CE6296">
           <End Role="DP_prod_czynnosc_dodatkowa" Type="Self.DP_prod_czynnosc_dodatkowa" Multiplicity="1" />
           <End Role="DP_po_prod_czyn_dod_pracownik" Type="Self.DP_po_prod_czyn_dod_pracownik" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3625,7 +3753,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_po_pro__Id_pr__14E61A24">
+        <Association Name="FK__DP_po_pro__Id_pr__17C286CF">
           <End Role="DZ_Pracownik" Type="Self.DZ_Pracownik" Multiplicity="1" />
           <End Role="DP_po_prod_czyn_dod_pracownik" Type="Self.DP_po_prod_czyn_dod_pracownik" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3793,7 +3921,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_cz__373B3228">
+        <Association Name="FK__DP_Serwis__Id_cz__3A179ED3">
           <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" Type="Self.DP_Czynnosc_w_ramach_obslugi_serw_wew" Multiplicity="1" />
           <End Role="DP_Serwis_wewnetrzny_obsluga" Type="Self.DP_Serwis_wewnetrzny_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3805,7 +3933,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_fi__2CBDA3B5">
+        <Association Name="FK__DP_Serwis__Id_fi__2F9A1060">
           <End Role="DP_Firma_serwisowa" Type="Self.DP_Firma_serwisowa" Multiplicity="1" />
           <End Role="DP_Serwis_zewnetrzny" Type="Self.DP_Serwis_zewnetrzny" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3817,7 +3945,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_ma__2DB1C7EE">
+        <Association Name="FK__DP_Serwis__Id_ma__308E3499">
           <End Role="DP_Maszyna" Type="Self.DP_Maszyna" Multiplicity="1" />
           <End Role="DP_Serwis_zewnetrzny" Type="Self.DP_Serwis_zewnetrzny" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3829,7 +3957,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_ma__318258D2">
+        <Association Name="FK__DP_Serwis__Id_ma__345EC57D">
           <End Role="DP_Maszyna" Type="Self.DP_Maszyna" Multiplicity="1" />
           <End Role="DP_Serwis_wewnetrzny_naprawa" Type="Self.DP_Serwis_wewnetrzny_naprawa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3841,7 +3969,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_ma__3552E9B6">
+        <Association Name="FK__DP_Serwis__Id_ma__382F5661">
           <End Role="DP_Maszyna" Type="Self.DP_Maszyna" Multiplicity="1" />
           <End Role="DP_Serwis_wewnetrzny_obsluga" Type="Self.DP_Serwis_wewnetrzny_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3853,7 +3981,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_pr__32767D0B">
+        <Association Name="FK__DP_Serwis__Id_pr__3552E9B6">
           <End Role="DZ_Pracownik" Type="Self.DZ_Pracownik" Multiplicity="1" />
           <End Role="DP_Serwis_wewnetrzny_naprawa" Type="Self.DP_Serwis_wewnetrzny_naprawa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3865,7 +3993,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_pr__36470DEF">
+        <Association Name="FK__DP_Serwis__Id_pr__39237A9A">
           <End Role="DZ_Pracownik" Type="Self.DZ_Pracownik" Multiplicity="1" />
           <End Role="DP_Serwis_wewnetrzny_obsluga" Type="Self.DP_Serwis_wewnetrzny_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3877,7 +4005,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_us__2EA5EC27">
+        <Association Name="FK__DP_Serwis__Id_us__318258D2">
           <End Role="DP_Usluga_serwisu_zewnetrznego" Type="Self.DP_Usluga_serwisu_zewnetrznego" Multiplicity="1" />
           <End Role="DP_Serwis_zewnetrzny" Type="Self.DP_Serwis_zewnetrzny" Multiplicity="*" />
           <ReferentialConstraint>
@@ -3901,7 +4029,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Zuzyta__Id_ma__17C286CF">
+        <Association Name="FK__DP_Zuzyta__Id_ma__1A9EF37A">
           <End Role="DP_Maszyna" Type="Self.DP_Maszyna" Multiplicity="1" />
           <End Role="DP_Zuzyta_maszyna" Type="Self.DP_Zuzyta_maszyna" Multiplicity="*" />
           <ReferentialConstraint>
@@ -4491,6 +4619,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [DP_po_prod_czyn_dod_maszyna].[Id_maszyna] AS [Id_maszyna]
     FROM [dbo].[DP_po_prod_czyn_dod_maszyna] AS [DP_po_prod_czyn_dod_maszyna]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="DP_po_prod_czyn_dod_material" EntityType="Self.DP_po_prod_czyn_dod_material" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DP_po_prod_czyn_dod_material].[Id_prod_czynnosci_dodatkowe] AS [Id_prod_czynnosci_dodatkowe], 
+    [DP_po_prod_czyn_dod_material].[Id_materialu] AS [Id_materialu], 
+    [DP_po_prod_czyn_dod_material].[Ilosc] AS [Ilosc]
+    FROM [dbo].[DP_po_prod_czyn_dod_material] AS [DP_po_prod_czyn_dod_material]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="DP_po_prod_czyn_dod_pracownik" EntityType="Self.DP_po_prod_czyn_dod_pracownik" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [DP_po_prod_czyn_dod_pracownik].[Id_prod_czynnosci_dodatkowe] AS [Id_prod_czynnosci_dodatkowe], 
@@ -4834,72 +4969,136 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDP_Firma_serwisowa].[E-mail] AS [E-mail]
     FROM [dbo].[vDP_Firma_serwisowa] AS [vDP_Firma_serwisowa]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Koszt_material_magazyn" EntityType="Self.vDP_Koszt_material_magazyn" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Koszt_jednostkowy_material" EntityType="Self.vDP_Koszt_jednostkowy_material" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Koszt_material_magazyn].[Id_materialu] AS [Id_materialu], 
-    [vDP_Koszt_material_magazyn].[Nazwa] AS [Nazwa], 
-    [vDP_Koszt_material_magazyn].[Rodzaj_materialu] AS [Rodzaj_materialu], 
-    [vDP_Koszt_material_magazyn].[Koszt jednostkowy za material] AS [Koszt jednostkowy za material]
-    FROM [dbo].[vDP_Koszt_material_magazyn] AS [vDP_Koszt_material_magazyn]</DefiningQuery>
+    [vDP_Koszt_jednostkowy_material].[Id_materialu] AS [Id_materialu], 
+    [vDP_Koszt_jednostkowy_material].[Nazwa] AS [Nazwa], 
+    [vDP_Koszt_jednostkowy_material].[Rodzaj_materialu] AS [Rodzaj_materialu], 
+    [vDP_Koszt_jednostkowy_material].[Koszt jednostkowy za material] AS [Koszt jednostkowy za material]
+    FROM [dbo].[vDP_Koszt_jednostkowy_material] AS [vDP_Koszt_jednostkowy_material]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Koszt_materialu_dodatkowe_przed" EntityType="Self.vDP_Koszt_materialu_dodatkowe_przed" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Koszt_maszyn_dodatkowe_ofertowy" EntityType="Self.vDP_Koszt_maszyn_dodatkowe_ofertowy" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Koszt_materialu_dodatkowe_przed].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
-    [vDP_Koszt_materialu_dodatkowe_przed].[Id_po_proc_czynnosci] AS [Id_po_proc_czynnosci], 
-    [vDP_Koszt_materialu_dodatkowe_przed].[Id_materialu] AS [Id_materialu], 
-    [vDP_Koszt_materialu_dodatkowe_przed].[Ilosc] AS [Ilosc], 
-    [vDP_Koszt_materialu_dodatkowe_przed].[Nazwa] AS [Nazwa], 
-    [vDP_Koszt_materialu_dodatkowe_przed].[Rodzaj_materialu] AS [Rodzaj_materialu], 
-    [vDP_Koszt_materialu_dodatkowe_przed].[Koszt material dodatkowe] AS [Koszt material dodatkowe]
-    FROM [dbo].[vDP_Koszt_materialu_dodatkowe_przed] AS [vDP_Koszt_materialu_dodatkowe_przed]</DefiningQuery>
+    [vDP_Koszt_maszyn_dodatkowe_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_Koszt_maszyn_dodatkowe_ofertowy].[Id_maszyny] AS [Id_maszyny], 
+    [vDP_Koszt_maszyn_dodatkowe_ofertowy].[Czas_zamierzony] AS [Czas_zamierzony], 
+    [vDP_Koszt_maszyn_dodatkowe_ofertowy].[Koszt_1rh] AS [Koszt_1rh], 
+    [vDP_Koszt_maszyn_dodatkowe_ofertowy].[Koszt maszyn dodatkowe ofertowy] AS [Koszt maszyn dodatkowe ofertowy]
+    FROM [dbo].[vDP_Koszt_maszyn_dodatkowe_ofertowy] AS [vDP_Koszt_maszyn_dodatkowe_ofertowy]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Koszt_materialu_przed" EntityType="Self.vDP_Koszt_materialu_przed" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Koszt_maszyn_dodatkowe_powykonawczy" EntityType="Self.vDP_Koszt_maszyn_dodatkowe_powykonawczy" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Koszt_materialu_przed].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
-    [vDP_Koszt_materialu_przed].[Id_po_wydr_proces] AS [Id_po_wydr_proces], 
-    [vDP_Koszt_materialu_przed].[Id_po_proc_czynnosci] AS [Id_po_proc_czynnosci], 
-    [vDP_Koszt_materialu_przed].[Nazwa] AS [Nazwa], 
-    [vDP_Koszt_materialu_przed].[Rodzaj_materialu] AS [Rodzaj_materialu], 
-    [vDP_Koszt_materialu_przed].[Material wydruk] AS [Material wydruk], 
-    [vDP_Koszt_materialu_przed].[Material dodatkowe] AS [Material dodatkowe], 
-    [vDP_Koszt_materialu_przed].[Ilosc wydruk] AS [Ilosc wydruk], 
-    [vDP_Koszt_materialu_przed].[Ilosc dodatkowe] AS [Ilosc dodatkowe], 
-    [vDP_Koszt_materialu_przed].[Koszt m_wydruk] AS [Koszt m_wydruk], 
-    [vDP_Koszt_materialu_przed].[Koszt m_dodatkowe] AS [Koszt m_dodatkowe]
-    FROM [dbo].[vDP_Koszt_materialu_przed] AS [vDP_Koszt_materialu_przed]</DefiningQuery>
+    [vDP_Koszt_maszyn_dodatkowe_powykonawczy].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
+    [vDP_Koszt_maszyn_dodatkowe_powykonawczy].[Id_maszyna] AS [Id_maszyna], 
+    [vDP_Koszt_maszyn_dodatkowe_powykonawczy].[Czas_pracy] AS [Czas_pracy], 
+    [vDP_Koszt_maszyn_dodatkowe_powykonawczy].[Koszt_1rh] AS [Koszt_1rh], 
+    [vDP_Koszt_maszyn_dodatkowe_powykonawczy].[Koszt maszyn czyn_dodatkowe powykonawczy] AS [Koszt maszyn czyn_dodatkowe powykonawczy]
+    FROM [dbo].[vDP_Koszt_maszyn_dodatkowe_powykonawczy] AS [vDP_Koszt_maszyn_dodatkowe_powykonawczy]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Koszt_materialu_wydruk_przed" EntityType="Self.vDP_Koszt_materialu_wydruk_przed" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Koszt_maszyn_wydruk_ofertowy" EntityType="Self.vDP_Koszt_maszyn_wydruk_ofertowy" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Koszt_materialu_wydruk_przed].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
-    [vDP_Koszt_materialu_wydruk_przed].[Material wydruk] AS [Material wydruk], 
-    [vDP_Koszt_materialu_wydruk_przed].[Nazwa] AS [Nazwa], 
-    [vDP_Koszt_materialu_wydruk_przed].[Rodzaj_materialu] AS [Rodzaj_materialu], 
-    [vDP_Koszt_materialu_wydruk_przed].[Ilosc] AS [Ilosc], 
-    [vDP_Koszt_materialu_wydruk_przed].[Id_po_wydr_proces] AS [Id_po_wydr_proces], 
-    [vDP_Koszt_materialu_wydruk_przed].[Koszt materialu wydruk] AS [Koszt materialu wydruk]
-    FROM [dbo].[vDP_Koszt_materialu_wydruk_przed] AS [vDP_Koszt_materialu_wydruk_przed]</DefiningQuery>
+    [vDP_Koszt_maszyn_wydruk_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_Koszt_maszyn_wydruk_ofertowy].[Id_maszyny] AS [Id_maszyny], 
+    [vDP_Koszt_maszyn_wydruk_ofertowy].[Czas_zamierzony] AS [Czas_zamierzony], 
+    [vDP_Koszt_maszyn_wydruk_ofertowy].[Koszt_1rh] AS [Koszt_1rh], 
+    [vDP_Koszt_maszyn_wydruk_ofertowy].[Koszt maszyn wydruk przed] AS [Koszt maszyn wydruk przed]
+    FROM [dbo].[vDP_Koszt_maszyn_wydruk_ofertowy] AS [vDP_Koszt_maszyn_wydruk_ofertowy]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Koszt_pracownik_po" EntityType="Self.vDP_Koszt_pracownik_po" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Koszt_maszyn_wydruk_powykonawczy" EntityType="Self.vDP_Koszt_maszyn_wydruk_powykonawczy" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Koszt_pracownik_po].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
-    [vDP_Koszt_pracownik_po].[Id_prod_czynnosci_dodatkowe] AS [Id_prod_czynnosci_dodatkowe], 
-    [vDP_Koszt_pracownik_po].[Imie] AS [Imie], 
-    [vDP_Koszt_pracownik_po].[Nazwisko] AS [Nazwisko], 
-    [vDP_Koszt_pracownik_po].[Id_pracownika] AS [Id_pracownika], 
-    [vDP_Koszt_pracownik_po].[Czas_pracy] AS [Czas_pracy], 
-    [vDP_Koszt_pracownik_po].[Koszt pracownika] AS [Koszt pracownika]
-    FROM [dbo].[vDP_Koszt_pracownik_po] AS [vDP_Koszt_pracownik_po]</DefiningQuery>
+    [vDP_Koszt_maszyn_wydruk_powykonawczy].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
+    [vDP_Koszt_maszyn_wydruk_powykonawczy].[Czas_wydruku] AS [Czas_wydruku], 
+    [vDP_Koszt_maszyn_wydruk_powykonawczy].[Koszt_1rh] AS [Koszt_1rh], 
+    [vDP_Koszt_maszyn_wydruk_powykonawczy].[Id_maszyny] AS [Id_maszyny], 
+    [vDP_Koszt_maszyn_wydruk_powykonawczy].[Koszt maszyn wydruk powykonawczy] AS [Koszt maszyn wydruk powykonawczy]
+    FROM [dbo].[vDP_Koszt_maszyn_wydruk_powykonawczy] AS [vDP_Koszt_maszyn_wydruk_powykonawczy]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDP_Koszt_pracownik_przed" EntityType="Self.vDP_Koszt_pracownik_przed" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDP_Koszt_materialu_dodatkowe_ofertowy" EntityType="Self.vDP_Koszt_materialu_dodatkowe_ofertowy" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDP_Koszt_pracownik_przed].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
-    [vDP_Koszt_pracownik_przed].[Id_po_proc_czynnosci] AS [Id_po_proc_czynnosci], 
-    [vDP_Koszt_pracownik_przed].[Imie] AS [Imie], 
-    [vDP_Koszt_pracownik_przed].[Nazwisko] AS [Nazwisko], 
-    [vDP_Koszt_pracownik_przed].[Id_pracownika] AS [Id_pracownika], 
-    [vDP_Koszt_pracownik_przed].[Czas_zamierzony] AS [Czas_zamierzony], 
-    [vDP_Koszt_pracownik_przed].[Koszt pracownika przed] AS [Koszt pracownika przed]
-    FROM [dbo].[vDP_Koszt_pracownik_przed] AS [vDP_Koszt_pracownik_przed]</DefiningQuery>
+    [vDP_Koszt_materialu_dodatkowe_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_Koszt_materialu_dodatkowe_ofertowy].[Id_po_proc_czynnosci] AS [Id_po_proc_czynnosci], 
+    [vDP_Koszt_materialu_dodatkowe_ofertowy].[Id_materialu] AS [Id_materialu], 
+    [vDP_Koszt_materialu_dodatkowe_ofertowy].[Ilosc] AS [Ilosc], 
+    [vDP_Koszt_materialu_dodatkowe_ofertowy].[Nazwa] AS [Nazwa], 
+    [vDP_Koszt_materialu_dodatkowe_ofertowy].[Rodzaj_materialu] AS [Rodzaj_materialu], 
+    [vDP_Koszt_materialu_dodatkowe_ofertowy].[Koszt material dodatkowe] AS [Koszt material dodatkowe]
+    FROM [dbo].[vDP_Koszt_materialu_dodatkowe_ofertowy] AS [vDP_Koszt_materialu_dodatkowe_ofertowy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Koszt_materialu_dodatkowe_powykonawczy" EntityType="Self.vDP_Koszt_materialu_dodatkowe_powykonawczy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Koszt_materialu_dodatkowe_powykonawczy].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
+    [vDP_Koszt_materialu_dodatkowe_powykonawczy].[Id_prod_czynnosci_dodatkowe] AS [Id_prod_czynnosci_dodatkowe], 
+    [vDP_Koszt_materialu_dodatkowe_powykonawczy].[Id_materialu] AS [Id_materialu], 
+    [vDP_Koszt_materialu_dodatkowe_powykonawczy].[Ilosc] AS [Ilosc], 
+    [vDP_Koszt_materialu_dodatkowe_powykonawczy].[Nazwa] AS [Nazwa], 
+    [vDP_Koszt_materialu_dodatkowe_powykonawczy].[Koszt material cz_dodatkowe powykonawczy] AS [Koszt material cz_dodatkowe powykonawczy]
+    FROM [dbo].[vDP_Koszt_materialu_dodatkowe_powykonawczy] AS [vDP_Koszt_materialu_dodatkowe_powykonawczy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Koszt_materialu_ofertowy" EntityType="Self.vDP_Koszt_materialu_ofertowy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Koszt_materialu_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_Koszt_materialu_ofertowy].[Id_po_wydr_proces] AS [Id_po_wydr_proces], 
+    [vDP_Koszt_materialu_ofertowy].[Id_po_proc_czynnosci] AS [Id_po_proc_czynnosci], 
+    [vDP_Koszt_materialu_ofertowy].[Nazwa] AS [Nazwa], 
+    [vDP_Koszt_materialu_ofertowy].[Rodzaj_materialu] AS [Rodzaj_materialu], 
+    [vDP_Koszt_materialu_ofertowy].[Material wydruk] AS [Material wydruk], 
+    [vDP_Koszt_materialu_ofertowy].[Material dodatkowe] AS [Material dodatkowe], 
+    [vDP_Koszt_materialu_ofertowy].[Ilosc wydruk] AS [Ilosc wydruk], 
+    [vDP_Koszt_materialu_ofertowy].[Ilosc dodatkowe] AS [Ilosc dodatkowe], 
+    [vDP_Koszt_materialu_ofertowy].[Koszt m_wydruk] AS [Koszt m_wydruk], 
+    [vDP_Koszt_materialu_ofertowy].[Koszt m_dodatkowe] AS [Koszt m_dodatkowe]
+    FROM [dbo].[vDP_Koszt_materialu_ofertowy] AS [vDP_Koszt_materialu_ofertowy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Koszt_materialu_wydruk_ofertowy" EntityType="Self.vDP_Koszt_materialu_wydruk_ofertowy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Koszt_materialu_wydruk_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_Koszt_materialu_wydruk_ofertowy].[Material wydruk] AS [Material wydruk], 
+    [vDP_Koszt_materialu_wydruk_ofertowy].[Nazwa] AS [Nazwa], 
+    [vDP_Koszt_materialu_wydruk_ofertowy].[Rodzaj_materialu] AS [Rodzaj_materialu], 
+    [vDP_Koszt_materialu_wydruk_ofertowy].[Ilosc] AS [Ilosc], 
+    [vDP_Koszt_materialu_wydruk_ofertowy].[Id_po_wydr_proces] AS [Id_po_wydr_proces], 
+    [vDP_Koszt_materialu_wydruk_ofertowy].[Koszt materialu wydruk] AS [Koszt materialu wydruk]
+    FROM [dbo].[vDP_Koszt_materialu_wydruk_ofertowy] AS [vDP_Koszt_materialu_wydruk_ofertowy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Koszt_materialu_wydruk_powykonawczy" EntityType="Self.vDP_Koszt_materialu_wydruk_powykonawczy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Koszt_materialu_wydruk_powykonawczy].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
+    [vDP_Koszt_materialu_wydruk_powykonawczy].[Id_materialu] AS [Id_materialu], 
+    [vDP_Koszt_materialu_wydruk_powykonawczy].[Ilosc_zuzytego_materialu] AS [Ilosc_zuzytego_materialu], 
+    [vDP_Koszt_materialu_wydruk_powykonawczy].[Nazwa] AS [Nazwa], 
+    [vDP_Koszt_materialu_wydruk_powykonawczy].[Koszt materialu powykonawczy] AS [Koszt materialu powykonawczy]
+    FROM [dbo].[vDP_Koszt_materialu_wydruk_powykonawczy] AS [vDP_Koszt_materialu_wydruk_powykonawczy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Koszt_pracownika_ofertowy" EntityType="Self.vDP_Koszt_pracownika_ofertowy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Koszt_pracownika_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_Koszt_pracownika_ofertowy].[Id_po_proc_czynnosci] AS [Id_po_proc_czynnosci], 
+    [vDP_Koszt_pracownika_ofertowy].[Imie] AS [Imie], 
+    [vDP_Koszt_pracownika_ofertowy].[Nazwisko] AS [Nazwisko], 
+    [vDP_Koszt_pracownika_ofertowy].[Id_pracownika] AS [Id_pracownika], 
+    [vDP_Koszt_pracownika_ofertowy].[Czas_zamierzony] AS [Czas_zamierzony], 
+    [vDP_Koszt_pracownika_ofertowy].[Koszt pracownika przed] AS [Koszt pracownika przed]
+    FROM [dbo].[vDP_Koszt_pracownika_ofertowy] AS [vDP_Koszt_pracownika_ofertowy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Koszt_pracownika_powykonawczy" EntityType="Self.vDP_Koszt_pracownika_powykonawczy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Koszt_pracownika_powykonawczy].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
+    [vDP_Koszt_pracownika_powykonawczy].[Id_prod_czynnosci_dodatkowe] AS [Id_prod_czynnosci_dodatkowe], 
+    [vDP_Koszt_pracownika_powykonawczy].[Imie] AS [Imie], 
+    [vDP_Koszt_pracownika_powykonawczy].[Nazwisko] AS [Nazwisko], 
+    [vDP_Koszt_pracownika_powykonawczy].[Id_pracownika] AS [Id_pracownika], 
+    [vDP_Koszt_pracownika_powykonawczy].[Czas_pracy] AS [Czas_pracy], 
+    [vDP_Koszt_pracownika_powykonawczy].[Koszt pracownika] AS [Koszt pracownika]
+    FROM [dbo].[vDP_Koszt_pracownika_powykonawczy] AS [vDP_Koszt_pracownika_powykonawczy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Koszt_RH_pracownika" EntityType="Self.vDP_Koszt_RH_pracownika" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Koszt_RH_pracownika].[Id_pracownika] AS [Id_pracownika], 
+    [vDP_Koszt_RH_pracownika].[Imie] AS [Imie], 
+    [vDP_Koszt_RH_pracownika].[Nazwisko] AS [Nazwisko], 
+    [vDP_Koszt_RH_pracownika].[Koszt RH pracownika] AS [Koszt RH pracownika], 
+    [vDP_Koszt_RH_pracownika].[Stanowisko] AS [Stanowisko]
+    FROM [dbo].[vDP_Koszt_RH_pracownika] AS [vDP_Koszt_RH_pracownika]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Maszyna" EntityType="Self.vDP_Maszyna" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -5119,15 +5318,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDP_Produkt].[Nazwa produktu] AS [Nazwa produktu], 
     [vDP_Produkt].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDP_Produkt] AS [vDP_Produkt]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vDP_RH_pracownik" EntityType="Self.vDP_RH_pracownik" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vDP_RH_pracownik].[Id_pracownika] AS [Id_pracownika], 
-    [vDP_RH_pracownik].[Imie] AS [Imie], 
-    [vDP_RH_pracownik].[Nazwisko] AS [Nazwisko], 
-    [vDP_RH_pracownik].[Koszt RH pracownika] AS [Koszt RH pracownika], 
-    [vDP_RH_pracownik].[Stanowisko] AS [Stanowisko]
-    FROM [dbo].[vDP_RH_pracownik] AS [vDP_RH_pracownik]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Rodzaj_czynnosci" EntityType="Self.vDP_Rodzaj_czynnosci" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -5752,19 +5942,19 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
             <End Role="DM_Zuzyte_narzedzie" EntitySet="DM_Zuzyte_narzedzie" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Czesc___Id_cz__3EDC53F0" Association="Self.FK__DP_Czesc___Id_cz__3EDC53F0">
+          <AssociationSet Name="FK__DP_Czesc___Id_cz__41B8C09B" Association="Self.FK__DP_Czesc___Id_cz__41B8C09B">
             <End Role="DM_Czesc" EntitySet="DM_Czesc" />
             <End Role="DP_Czesc_wykorzystana" EntitySet="DP_Czesc_wykorzystana" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Czesc___Id_se__3FD07829" Association="Self.FK__DP_Czesc___Id_se__3FD07829">
+          <AssociationSet Name="FK__DP_Czesc___Id_se__42ACE4D4" Association="Self.FK__DP_Czesc___Id_se__42ACE4D4">
             <End Role="DP_Serwis_wewnetrzny_naprawa" EntitySet="DP_Serwis_wewnetrzny_naprawa" />
             <End Role="DP_Czesc_wykorzystana" EntitySet="DP_Czesc_wykorzystana" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Czynno__Id_cz__1F63A897" Association="Self.FK__DP_Czynno__Id_cz__1F63A897">
+          <AssociationSet Name="FK__DP_Czynno__Id_cz__22401542" Association="Self.FK__DP_Czynno__Id_cz__22401542">
             <End Role="DP_Czynnosc" EntitySet="DP_Czynnosc" />
             <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" EntitySet="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Czynno__Id_na__1E6F845E" Association="Self.FK__DP_Czynno__Id_na__1E6F845E">
+          <AssociationSet Name="FK__DP_Czynno__Id_na__214BF109" Association="Self.FK__DP_Czynno__Id_na__214BF109">
             <End Role="DP_Nazwa_obslugi" EntitySet="DP_Nazwa_obslugi" />
             <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" EntitySet="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
           </AssociationSet>
@@ -5776,31 +5966,31 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DP_Rodzaj_maszyny" EntitySet="DP_Rodzaj_maszyny" />
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Narzed__Id_na__39237A9A" Association="Self.FK__DP_Narzed__Id_na__39237A9A">
+          <AssociationSet Name="FK__DP_Narzed__Id_na__3BFFE745" Association="Self.FK__DP_Narzed__Id_na__3BFFE745">
             <End Role="DM_Narzedzie" EntitySet="DM_Narzedzie" />
             <End Role="DP_Narzedzie_uzyte_obsluga" EntitySet="DP_Narzedzie_uzyte_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Narzed__Id_na__3BFFE745" Association="Self.FK__DP_Narzed__Id_na__3BFFE745">
+          <AssociationSet Name="FK__DP_Narzed__Id_na__3EDC53F0" Association="Self.FK__DP_Narzed__Id_na__3EDC53F0">
             <End Role="DM_Narzedzie" EntitySet="DM_Narzedzie" />
             <End Role="DP_Narzedzie_uzyte_naprawa" EntitySet="DP_Narzedzie_uzyte_naprawa" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Narzed__Id_se__3A179ED3" Association="Self.FK__DP_Narzed__Id_se__3A179ED3">
+          <AssociationSet Name="FK__DP_Narzed__Id_se__3CF40B7E" Association="Self.FK__DP_Narzed__Id_se__3CF40B7E">
             <End Role="DP_Serwis_wewnetrzny_obsluga" EntitySet="DP_Serwis_wewnetrzny_obsluga" />
             <End Role="DP_Narzedzie_uzyte_obsluga" EntitySet="DP_Narzedzie_uzyte_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Narzed__Id_se__3CF40B7E" Association="Self.FK__DP_Narzed__Id_se__3CF40B7E">
+          <AssociationSet Name="FK__DP_Narzed__Id_se__3FD07829" Association="Self.FK__DP_Narzed__Id_se__3FD07829">
             <End Role="DP_Serwis_wewnetrzny_naprawa" EntitySet="DP_Serwis_wewnetrzny_naprawa" />
             <End Role="DP_Narzedzie_uzyte_naprawa" EntitySet="DP_Narzedzie_uzyte_naprawa" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Obslug__Id_co__2610A626" Association="Self.FK__DP_Obslug__Id_co__2610A626">
+          <AssociationSet Name="FK__DP_Obslug__Id_co__28ED12D1" Association="Self.FK__DP_Obslug__Id_co__28ED12D1">
             <End Role="DP_Co_ile_obsluga" EntitySet="DP_Co_ile_obsluga" />
             <End Role="DP_Obsluga" EntitySet="DP_Obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Obslug__Id_na__24285DB4" Association="Self.FK__DP_Obslug__Id_na__24285DB4">
+          <AssociationSet Name="FK__DP_Obslug__Id_na__2704CA5F" Association="Self.FK__DP_Obslug__Id_na__2704CA5F">
             <End Role="DP_Nazwa_obslugi" EntitySet="DP_Nazwa_obslugi" />
             <End Role="DP_Obsluga" EntitySet="DP_Obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Obslug__Id_ro__251C81ED" Association="Self.FK__DP_Obslug__Id_ro__251C81ED">
+          <AssociationSet Name="FK__DP_Obslug__Id_ro__27F8EE98" Association="Self.FK__DP_Obslug__Id_ro__27F8EE98">
             <End Role="DP_Rodzaj_maszyny" EntitySet="DP_Rodzaj_maszyny" />
             <End Role="DP_Obsluga" EntitySet="DP_Obsluga" />
           </AssociationSet>
@@ -5853,18 +6043,26 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DP_Po_prac_czynnosc" EntitySet="DP_Po_prac_czynnosc" />
           </AssociationSet>
           <AssociationSet Name="FK__DP_po_pro__Id_ma__1209AD79" Association="Self.FK__DP_po_pro__Id_ma__1209AD79">
+            <End Role="DM_Material" EntitySet="DM_Material" />
+            <End Role="DP_po_prod_czyn_dod_material" EntitySet="DP_po_prod_czyn_dod_material" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DP_po_pro__Id_ma__14E61A24" Association="Self.FK__DP_po_pro__Id_ma__14E61A24">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_po_prod_czyn_dod_maszyna" EntitySet="DP_po_prod_czyn_dod_maszyna" />
           </AssociationSet>
           <AssociationSet Name="FK__DP_po_pro__Id_pr__11158940" Association="Self.FK__DP_po_pro__Id_pr__11158940">
             <End Role="DP_prod_czynnosc_dodatkowa" EntitySet="DP_prod_czynnosc_dodatkowa" />
-            <End Role="DP_po_prod_czyn_dod_maszyna" EntitySet="DP_po_prod_czyn_dod_maszyna" />
+            <End Role="DP_po_prod_czyn_dod_material" EntitySet="DP_po_prod_czyn_dod_material" />
           </AssociationSet>
           <AssociationSet Name="FK__DP_po_pro__Id_pr__13F1F5EB" Association="Self.FK__DP_po_pro__Id_pr__13F1F5EB">
             <End Role="DP_prod_czynnosc_dodatkowa" EntitySet="DP_prod_czynnosc_dodatkowa" />
+            <End Role="DP_po_prod_czyn_dod_maszyna" EntitySet="DP_po_prod_czyn_dod_maszyna" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DP_po_pro__Id_pr__16CE6296" Association="Self.FK__DP_po_pro__Id_pr__16CE6296">
+            <End Role="DP_prod_czynnosc_dodatkowa" EntitySet="DP_prod_czynnosc_dodatkowa" />
             <End Role="DP_po_prod_czyn_dod_pracownik" EntitySet="DP_po_prod_czyn_dod_pracownik" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_po_pro__Id_pr__14E61A24" Association="Self.FK__DP_po_pro__Id_pr__14E61A24">
+          <AssociationSet Name="FK__DP_po_pro__Id_pr__17C286CF" Association="Self.FK__DP_po_pro__Id_pr__17C286CF">
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DP_po_prod_czyn_dod_pracownik" EntitySet="DP_po_prod_czyn_dod_pracownik" />
           </AssociationSet>
@@ -5920,35 +6118,35 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DP_Proces_produkcyjny" EntitySet="DP_Proces_produkcyjny" />
             <End Role="DP_prod_wydruk" EntitySet="DP_prod_wydruk" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_cz__373B3228" Association="Self.FK__DP_Serwis__Id_cz__373B3228">
+          <AssociationSet Name="FK__DP_Serwis__Id_cz__3A179ED3" Association="Self.FK__DP_Serwis__Id_cz__3A179ED3">
             <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" EntitySet="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
             <End Role="DP_Serwis_wewnetrzny_obsluga" EntitySet="DP_Serwis_wewnetrzny_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_fi__2CBDA3B5" Association="Self.FK__DP_Serwis__Id_fi__2CBDA3B5">
+          <AssociationSet Name="FK__DP_Serwis__Id_fi__2F9A1060" Association="Self.FK__DP_Serwis__Id_fi__2F9A1060">
             <End Role="DP_Firma_serwisowa" EntitySet="DP_Firma_serwisowa" />
             <End Role="DP_Serwis_zewnetrzny" EntitySet="DP_Serwis_zewnetrzny" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_ma__2DB1C7EE" Association="Self.FK__DP_Serwis__Id_ma__2DB1C7EE">
+          <AssociationSet Name="FK__DP_Serwis__Id_ma__308E3499" Association="Self.FK__DP_Serwis__Id_ma__308E3499">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Serwis_zewnetrzny" EntitySet="DP_Serwis_zewnetrzny" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_ma__318258D2" Association="Self.FK__DP_Serwis__Id_ma__318258D2">
+          <AssociationSet Name="FK__DP_Serwis__Id_ma__345EC57D" Association="Self.FK__DP_Serwis__Id_ma__345EC57D">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Serwis_wewnetrzny_naprawa" EntitySet="DP_Serwis_wewnetrzny_naprawa" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_ma__3552E9B6" Association="Self.FK__DP_Serwis__Id_ma__3552E9B6">
+          <AssociationSet Name="FK__DP_Serwis__Id_ma__382F5661" Association="Self.FK__DP_Serwis__Id_ma__382F5661">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Serwis_wewnetrzny_obsluga" EntitySet="DP_Serwis_wewnetrzny_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_pr__32767D0B" Association="Self.FK__DP_Serwis__Id_pr__32767D0B">
+          <AssociationSet Name="FK__DP_Serwis__Id_pr__3552E9B6" Association="Self.FK__DP_Serwis__Id_pr__3552E9B6">
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DP_Serwis_wewnetrzny_naprawa" EntitySet="DP_Serwis_wewnetrzny_naprawa" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_pr__36470DEF" Association="Self.FK__DP_Serwis__Id_pr__36470DEF">
+          <AssociationSet Name="FK__DP_Serwis__Id_pr__39237A9A" Association="Self.FK__DP_Serwis__Id_pr__39237A9A">
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DP_Serwis_wewnetrzny_obsluga" EntitySet="DP_Serwis_wewnetrzny_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_us__2EA5EC27" Association="Self.FK__DP_Serwis__Id_us__2EA5EC27">
+          <AssociationSet Name="FK__DP_Serwis__Id_us__318258D2" Association="Self.FK__DP_Serwis__Id_us__318258D2">
             <End Role="DP_Usluga_serwisu_zewnetrznego" EntitySet="DP_Usluga_serwisu_zewnetrznego" />
             <End Role="DP_Serwis_zewnetrzny" EntitySet="DP_Serwis_zewnetrzny" />
           </AssociationSet>
@@ -5956,7 +6154,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DZ_Plik" EntitySet="DZ_Plik" />
             <End Role="DP_Wydruk" EntitySet="DP_Wydruk" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Zuzyta__Id_ma__17C286CF" Association="Self.FK__DP_Zuzyta__Id_ma__17C286CF">
+          <AssociationSet Name="FK__DP_Zuzyta__Id_ma__1A9EF37A" Association="Self.FK__DP_Zuzyta__Id_ma__1A9EF37A">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Zuzyta_maszyna" EntitySet="DP_Zuzyta_maszyna" />
           </AssociationSet>
@@ -6173,6 +6371,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="DM_Szczegoly_wydania_czesci" EntityType="DrukarniaModel.DM_Szczegoly_wydania_czesci" />
           <EntitySet Name="DM_Szczegoly_wydania_materialu" EntityType="DrukarniaModel.DM_Szczegoly_wydania_materialu" />
           <EntitySet Name="DP_Po_material_czynnosc" EntityType="DrukarniaModel.DP_Po_material_czynnosc" />
+          <EntitySet Name="DP_po_prod_czyn_dod_material" EntityType="DrukarniaModel.DP_po_prod_czyn_dod_material" />
           <EntitySet Name="DP_prod_material" EntityType="DrukarniaModel.DP_prod_material" />
           <EntitySet Name="vDM_Czesc" EntityType="DrukarniaModel.vDM_Czesc" />
           <EntitySet Name="vDM_Dostawa_czesci" EntityType="DrukarniaModel.vDM_Dostawa_czesci" />
@@ -6214,12 +6413,19 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDP_Czynnosc_w_ramach_obslugi_serw_wew" EntityType="DrukarniaModel.vDP_Czynnosc_w_ramach_obslugi_serw_wew" />
           <EntitySet Name="vDP_CzynnoscProces" EntityType="DrukarniaModel.vDP_CzynnoscProces" />
           <EntitySet Name="vDP_Firma_serwisowa" EntityType="DrukarniaModel.vDP_Firma_serwisowa" />
-          <EntitySet Name="vDP_Koszt_material_magazyn" EntityType="DrukarniaModel.vDP_Koszt_material_magazyn" />
-          <EntitySet Name="vDP_Koszt_materialu_dodatkowe_przed" EntityType="DrukarniaModel.vDP_Koszt_materialu_dodatkowe_przed" />
-          <EntitySet Name="vDP_Koszt_materialu_przed" EntityType="DrukarniaModel.vDP_Koszt_materialu_przed" />
-          <EntitySet Name="vDP_Koszt_materialu_wydruk_przed" EntityType="DrukarniaModel.vDP_Koszt_materialu_wydruk_przed" />
-          <EntitySet Name="vDP_Koszt_pracownik_po" EntityType="DrukarniaModel.vDP_Koszt_pracownik_po" />
-          <EntitySet Name="vDP_Koszt_pracownik_przed" EntityType="DrukarniaModel.vDP_Koszt_pracownik_przed" />
+          <EntitySet Name="vDP_Koszt_jednostkowy_material" EntityType="DrukarniaModel.vDP_Koszt_jednostkowy_material" />
+          <EntitySet Name="vDP_Koszt_maszyn_dodatkowe_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_maszyn_dodatkowe_ofertowy" />
+          <EntitySet Name="vDP_Koszt_maszyn_dodatkowe_powykonawczy" EntityType="DrukarniaModel.vDP_Koszt_maszyn_dodatkowe_powykonawczy" />
+          <EntitySet Name="vDP_Koszt_maszyn_wydruk_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_maszyn_wydruk_ofertowy" />
+          <EntitySet Name="vDP_Koszt_maszyn_wydruk_powykonawczy" EntityType="DrukarniaModel.vDP_Koszt_maszyn_wydruk_powykonawczy" />
+          <EntitySet Name="vDP_Koszt_materialu_dodatkowe_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_materialu_dodatkowe_ofertowy" />
+          <EntitySet Name="vDP_Koszt_materialu_dodatkowe_powykonawczy" EntityType="DrukarniaModel.vDP_Koszt_materialu_dodatkowe_powykonawczy" />
+          <EntitySet Name="vDP_Koszt_materialu_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_materialu_ofertowy" />
+          <EntitySet Name="vDP_Koszt_materialu_wydruk_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_materialu_wydruk_ofertowy" />
+          <EntitySet Name="vDP_Koszt_materialu_wydruk_powykonawczy" EntityType="DrukarniaModel.vDP_Koszt_materialu_wydruk_powykonawczy" />
+          <EntitySet Name="vDP_Koszt_pracownika_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_pracownika_ofertowy" />
+          <EntitySet Name="vDP_Koszt_pracownika_powykonawczy" EntityType="DrukarniaModel.vDP_Koszt_pracownika_powykonawczy" />
+          <EntitySet Name="vDP_Koszt_RH_pracownika" EntityType="DrukarniaModel.vDP_Koszt_RH_pracownika" />
           <EntitySet Name="vDP_Maszyna" EntityType="DrukarniaModel.vDP_Maszyna" />
           <EntitySet Name="vDP_Maszyna_drukarki" EntityType="DrukarniaModel.vDP_Maszyna_drukarki" />
           <EntitySet Name="vDP_Maszyna_Proces" EntityType="DrukarniaModel.vDP_Maszyna_Proces" />
@@ -6251,7 +6457,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDP_prod_material" EntityType="DrukarniaModel.vDP_prod_material" />
           <EntitySet Name="vDP_prod_wydruk" EntityType="DrukarniaModel.vDP_prod_wydruk" />
           <EntitySet Name="vDP_Produkt" EntityType="DrukarniaModel.vDP_Produkt" />
-          <EntitySet Name="vDP_RH_pracownik" EntityType="DrukarniaModel.vDP_RH_pracownik" />
           <EntitySet Name="vDP_Rodzaj_czynnosci" EntityType="DrukarniaModel.vDP_Rodzaj_czynnosci" />
           <EntitySet Name="vDP_Rodzaj_maszyny" EntityType="DrukarniaModel.vDP_Rodzaj_maszyny" />
           <EntitySet Name="vDP_Serwis_wewnetrzny_naprawa" EntityType="DrukarniaModel.vDP_Serwis_wewnetrzny_naprawa" />
@@ -6400,6 +6605,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DM_Material" EntitySet="DM_Material" />
             <End Role="DP_Po_material_czynnosc" EntitySet="DP_Po_material_czynnosc" />
           </AssociationSet>
+          <AssociationSet Name="FK__DP_po_pro__Id_ma__1209AD79" Association="DrukarniaModel.FK__DP_po_pro__Id_ma__1209AD79">
+            <End Role="DM_Material" EntitySet="DM_Material" />
+            <End Role="DP_po_prod_czyn_dod_material" EntitySet="DP_po_prod_czyn_dod_material" />
+          </AssociationSet>
           <AssociationSet Name="FK__DP_prod_m__Id_ma__078C1F06" Association="DrukarniaModel.FK__DP_prod_m__Id_ma__078C1F06">
             <End Role="DM_Material" EntitySet="DM_Material" />
             <End Role="DP_prod_material" EntitySet="DP_prod_material" />
@@ -6520,23 +6729,23 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DM_Wypozyczenie_narzedzia" EntitySet="DM_Wypozyczenie_narzedzia" />
             <End Role="DM_Zuzyte_narzedzie" EntitySet="DM_Zuzyte_narzedzie" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Obslug__Id_co__2610A626" Association="DrukarniaModel.FK__DP_Obslug__Id_co__2610A626">
+          <AssociationSet Name="FK__DP_Obslug__Id_co__28ED12D1" Association="DrukarniaModel.FK__DP_Obslug__Id_co__28ED12D1">
             <End Role="DP_Co_ile_obsluga" EntitySet="DP_Co_ile_obsluga" />
             <End Role="DP_Obsluga" EntitySet="DP_Obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Czynno__Id_cz__1F63A897" Association="DrukarniaModel.FK__DP_Czynno__Id_cz__1F63A897">
+          <AssociationSet Name="FK__DP_Czynno__Id_cz__22401542" Association="DrukarniaModel.FK__DP_Czynno__Id_cz__22401542">
             <End Role="DP_Czynnosc" EntitySet="DP_Czynnosc" />
             <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" EntitySet="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Czynno__Id_na__1E6F845E" Association="DrukarniaModel.FK__DP_Czynno__Id_na__1E6F845E">
+          <AssociationSet Name="FK__DP_Czynno__Id_na__214BF109" Association="DrukarniaModel.FK__DP_Czynno__Id_na__214BF109">
             <End Role="DP_Nazwa_obslugi" EntitySet="DP_Nazwa_obslugi" />
             <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" EntitySet="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_cz__373B3228" Association="DrukarniaModel.FK__DP_Serwis__Id_cz__373B3228">
+          <AssociationSet Name="FK__DP_Serwis__Id_cz__3A179ED3" Association="DrukarniaModel.FK__DP_Serwis__Id_cz__3A179ED3">
             <End Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" EntitySet="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
             <End Role="DP_Serwis_wewnetrzny_obsluga" EntitySet="DP_Serwis_wewnetrzny_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_fi__2CBDA3B5" Association="DrukarniaModel.FK__DP_Serwis__Id_fi__2CBDA3B5">
+          <AssociationSet Name="FK__DP_Serwis__Id_fi__2F9A1060" Association="DrukarniaModel.FK__DP_Serwis__Id_fi__2F9A1060">
             <End Role="DP_Firma_serwisowa" EntitySet="DP_Firma_serwisowa" />
             <End Role="DP_Serwis_zewnetrzny" EntitySet="DP_Serwis_zewnetrzny" />
           </AssociationSet>
@@ -6560,19 +6769,19 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_prod_wydruk" EntitySet="DP_prod_wydruk" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_ma__2DB1C7EE" Association="DrukarniaModel.FK__DP_Serwis__Id_ma__2DB1C7EE">
+          <AssociationSet Name="FK__DP_Serwis__Id_ma__308E3499" Association="DrukarniaModel.FK__DP_Serwis__Id_ma__308E3499">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Serwis_zewnetrzny" EntitySet="DP_Serwis_zewnetrzny" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_ma__318258D2" Association="DrukarniaModel.FK__DP_Serwis__Id_ma__318258D2">
+          <AssociationSet Name="FK__DP_Serwis__Id_ma__345EC57D" Association="DrukarniaModel.FK__DP_Serwis__Id_ma__345EC57D">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Serwis_wewnetrzny_naprawa" EntitySet="DP_Serwis_wewnetrzny_naprawa" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_ma__3552E9B6" Association="DrukarniaModel.FK__DP_Serwis__Id_ma__3552E9B6">
+          <AssociationSet Name="FK__DP_Serwis__Id_ma__382F5661" Association="DrukarniaModel.FK__DP_Serwis__Id_ma__382F5661">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Serwis_wewnetrzny_obsluga" EntitySet="DP_Serwis_wewnetrzny_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Zuzyta__Id_ma__17C286CF" Association="DrukarniaModel.FK__DP_Zuzyta__Id_ma__17C286CF">
+          <AssociationSet Name="FK__DP_Zuzyta__Id_ma__1A9EF37A" Association="DrukarniaModel.FK__DP_Zuzyta__Id_ma__1A9EF37A">
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DP_Zuzyta_maszyna" EntitySet="DP_Zuzyta_maszyna" />
           </AssociationSet>
@@ -6580,11 +6789,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DP_Maszyna" EntitySet="DP_Maszyna" />
             <End Role="DZ_Szczegoly_zam_maszyn" EntitySet="DZ_Szczegoly_zam_maszyn" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Obslug__Id_na__24285DB4" Association="DrukarniaModel.FK__DP_Obslug__Id_na__24285DB4">
+          <AssociationSet Name="FK__DP_Obslug__Id_na__2704CA5F" Association="DrukarniaModel.FK__DP_Obslug__Id_na__2704CA5F">
             <End Role="DP_Nazwa_obslugi" EntitySet="DP_Nazwa_obslugi" />
             <End Role="DP_Obsluga" EntitySet="DP_Obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Obslug__Id_ro__251C81ED" Association="DrukarniaModel.FK__DP_Obslug__Id_ro__251C81ED">
+          <AssociationSet Name="FK__DP_Obslug__Id_ro__27F8EE98" Association="DrukarniaModel.FK__DP_Obslug__Id_ro__27F8EE98">
             <End Role="DP_Rodzaj_maszyny" EntitySet="DP_Rodzaj_maszyny" />
             <End Role="DP_Obsluga" EntitySet="DP_Obsluga" />
           </AssociationSet>
@@ -6632,6 +6841,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DP_Proces_produkcyjny" EntitySet="DP_Proces_produkcyjny" />
             <End Role="DP_prod_wydruk" EntitySet="DP_prod_wydruk" />
           </AssociationSet>
+          <AssociationSet Name="FK__DP_po_pro__Id_pr__11158940" Association="DrukarniaModel.FK__DP_po_pro__Id_pr__11158940">
+            <End Role="DP_prod_czynnosc_dodatkowa" EntitySet="DP_prod_czynnosc_dodatkowa" />
+            <End Role="DP_po_prod_czyn_dod_material" EntitySet="DP_po_prod_czyn_dod_material" />
+          </AssociationSet>
           <AssociationSet Name="FK__DP_prod_c__Id_ro__0F2D40CE" Association="DrukarniaModel.FK__DP_prod_c__Id_ro__0F2D40CE">
             <End Role="DP_Rodzaj_czynnosci" EntitySet="DP_Rodzaj_czynnosci" />
             <End Role="DP_prod_czynnosc_dodatkowa" EntitySet="DP_prod_czynnosc_dodatkowa" />
@@ -6640,15 +6853,15 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <End Role="DP_Produkt" EntitySet="DP_Produkt" />
             <End Role="DM_Szczegoly_magazynu_gotowych_produktow" EntitySet="DM_Szczegoly_magazynu_gotowych_produktow" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_pr__32767D0B" Association="DrukarniaModel.FK__DP_Serwis__Id_pr__32767D0B">
+          <AssociationSet Name="FK__DP_Serwis__Id_pr__3552E9B6" Association="DrukarniaModel.FK__DP_Serwis__Id_pr__3552E9B6">
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DP_Serwis_wewnetrzny_naprawa" EntitySet="DP_Serwis_wewnetrzny_naprawa" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_pr__36470DEF" Association="DrukarniaModel.FK__DP_Serwis__Id_pr__36470DEF">
+          <AssociationSet Name="FK__DP_Serwis__Id_pr__39237A9A" Association="DrukarniaModel.FK__DP_Serwis__Id_pr__39237A9A">
             <End Role="DZ_Pracownik" EntitySet="DZ_Pracownik" />
             <End Role="DP_Serwis_wewnetrzny_obsluga" EntitySet="DP_Serwis_wewnetrzny_obsluga" />
           </AssociationSet>
-          <AssociationSet Name="FK__DP_Serwis__Id_us__2EA5EC27" Association="DrukarniaModel.FK__DP_Serwis__Id_us__2EA5EC27">
+          <AssociationSet Name="FK__DP_Serwis__Id_us__318258D2" Association="DrukarniaModel.FK__DP_Serwis__Id_us__318258D2">
             <End Role="DP_Usluga_serwisu_zewnetrznego" EntitySet="DP_Usluga_serwisu_zewnetrznego" />
             <End Role="DP_Serwis_zewnetrzny" EntitySet="DP_Serwis_zewnetrzny" />
           </AssociationSet>
@@ -6902,6 +7115,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <NavigationProperty Name="DM_Wlasciwosc_materialu" Relationship="DrukarniaModel.FK__DM_Wlasci__Id_ma__2B3F6F97" FromRole="DM_Material" ToRole="DM_Wlasciwosc_materialu" />
           <NavigationProperty Name="DP_Po_material_wydruk" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_ma__690797E6" FromRole="DM_Material" ToRole="DP_Po_material_wydruk" />
           <NavigationProperty Name="DP_Po_material_czynnosc" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_ma__7B264821" FromRole="DM_Material" ToRole="DP_Po_material_czynnosc" />
+          <NavigationProperty Name="DP_po_prod_czyn_dod_material" Relationship="DrukarniaModel.FK__DP_po_pro__Id_ma__1209AD79" FromRole="DM_Material" ToRole="DP_po_prod_czyn_dod_material" />
           <NavigationProperty Name="DP_prod_material" Relationship="DrukarniaModel.FK__DP_prod_m__Id_ma__078C1F06" FromRole="DM_Material" ToRole="DP_prod_material" />
           <NavigationProperty Name="DZ_Szczegoly_zamowienia_klienta" Relationship="DrukarniaModel.FK__DZ_Szczeg__Id_ma__6A30C649" FromRole="DM_Material" ToRole="DZ_Szczegoly_zamowienia_klienta" />
           <NavigationProperty Name="DZ_Szczegoly_zam_materialu" Relationship="DrukarniaModel.FK__DZ_Szczeg__Id_ma__7E37BEF6" FromRole="DM_Material" ToRole="DZ_Szczegoly_zam_materialu" />
@@ -7083,7 +7297,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </Key>
           <Property Name="Id_co_ile_obsluga" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Co_ile_obsluga" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DP_Obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_co__2610A626" FromRole="DP_Co_ile_obsluga" ToRole="DP_Obsluga" />
+          <NavigationProperty Name="DP_Obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_co__28ED12D1" FromRole="DP_Co_ile_obsluga" ToRole="DP_Obsluga" />
         </EntityType>
         <EntityType Name="DP_Czynnosc">
           <Key>
@@ -7091,7 +7305,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </Key>
           <Property Name="Id_czynnosc" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_czynnosci" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DP_Czynnosc_w_ramach_obslugi_serw_wew" Relationship="DrukarniaModel.FK__DP_Czynno__Id_cz__1F63A897" FromRole="DP_Czynnosc" ToRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
+          <NavigationProperty Name="DP_Czynnosc_w_ramach_obslugi_serw_wew" Relationship="DrukarniaModel.FK__DP_Czynno__Id_cz__22401542" FromRole="DP_Czynnosc" ToRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
         </EntityType>
         <EntityType Name="DP_Czynnosc_w_ramach_obslugi_serw_wew">
           <Key>
@@ -7100,9 +7314,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_czynnosc_w_ramach_obslugi_serw_wew" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_nazwa_obslugi" Type="Int32" Nullable="false" />
           <Property Name="Id_czynnosc" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DP_Czynnosc" Relationship="DrukarniaModel.FK__DP_Czynno__Id_cz__1F63A897" FromRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" ToRole="DP_Czynnosc" />
-          <NavigationProperty Name="DP_Nazwa_obslugi" Relationship="DrukarniaModel.FK__DP_Czynno__Id_na__1E6F845E" FromRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" ToRole="DP_Nazwa_obslugi" />
-          <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.FK__DP_Serwis__Id_cz__373B3228" FromRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" ToRole="DP_Serwis_wewnetrzny_obsluga" />
+          <NavigationProperty Name="DP_Czynnosc" Relationship="DrukarniaModel.FK__DP_Czynno__Id_cz__22401542" FromRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" ToRole="DP_Czynnosc" />
+          <NavigationProperty Name="DP_Nazwa_obslugi" Relationship="DrukarniaModel.FK__DP_Czynno__Id_na__214BF109" FromRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" ToRole="DP_Nazwa_obslugi" />
+          <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.FK__DP_Serwis__Id_cz__3A179ED3" FromRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" ToRole="DP_Serwis_wewnetrzny_obsluga" />
         </EntityType>
         <EntityType Name="DP_Firma_serwisowa">
           <Key>
@@ -7115,7 +7329,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Nr_tel" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="E_mail" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DP_Serwis_zewnetrzny" Relationship="DrukarniaModel.FK__DP_Serwis__Id_fi__2CBDA3B5" FromRole="DP_Firma_serwisowa" ToRole="DP_Serwis_zewnetrzny" />
+          <NavigationProperty Name="DP_Serwis_zewnetrzny" Relationship="DrukarniaModel.FK__DP_Serwis__Id_fi__2F9A1060" FromRole="DP_Firma_serwisowa" ToRole="DP_Serwis_zewnetrzny" />
         </EntityType>
         <EntityType Name="DP_Maszyna">
           <Key>
@@ -7132,10 +7346,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <NavigationProperty Name="DP_Rodzaj_maszyny" Relationship="DrukarniaModel.FK__DP_Maszyn__Id_ro__3C69FB99" FromRole="DP_Maszyna" ToRole="DP_Rodzaj_maszyny" />
           <NavigationProperty Name="DP_Po_maszyna_wydruk" Relationship="DrukarniaModel.FK__DP_Po_mas__Id_ma__7EF6D905" FromRole="DP_Maszyna" ToRole="DP_Po_maszyna_wydruk" />
           <NavigationProperty Name="DP_prod_wydruk" Relationship="DrukarniaModel.FK__DP_prod_w__Id_ma__0B5CAFEA" FromRole="DP_Maszyna" ToRole="DP_prod_wydruk" />
-          <NavigationProperty Name="DP_Serwis_zewnetrzny" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__2DB1C7EE" FromRole="DP_Maszyna" ToRole="DP_Serwis_zewnetrzny" />
-          <NavigationProperty Name="DP_Serwis_wewnetrzny_naprawa" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__318258D2" FromRole="DP_Maszyna" ToRole="DP_Serwis_wewnetrzny_naprawa" />
-          <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__3552E9B6" FromRole="DP_Maszyna" ToRole="DP_Serwis_wewnetrzny_obsluga" />
-          <NavigationProperty Name="DP_Zuzyta_maszyna" Relationship="DrukarniaModel.FK__DP_Zuzyta__Id_ma__17C286CF" FromRole="DP_Maszyna" ToRole="DP_Zuzyta_maszyna" />
+          <NavigationProperty Name="DP_Serwis_zewnetrzny" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__308E3499" FromRole="DP_Maszyna" ToRole="DP_Serwis_zewnetrzny" />
+          <NavigationProperty Name="DP_Serwis_wewnetrzny_naprawa" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__345EC57D" FromRole="DP_Maszyna" ToRole="DP_Serwis_wewnetrzny_naprawa" />
+          <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__382F5661" FromRole="DP_Maszyna" ToRole="DP_Serwis_wewnetrzny_obsluga" />
+          <NavigationProperty Name="DP_Zuzyta_maszyna" Relationship="DrukarniaModel.FK__DP_Zuzyta__Id_ma__1A9EF37A" FromRole="DP_Maszyna" ToRole="DP_Zuzyta_maszyna" />
           <NavigationProperty Name="DZ_Szczegoly_zam_maszyn" Relationship="DrukarniaModel.FK__DZ_Szczeg__Id_ma__7A672E12" FromRole="DP_Maszyna" ToRole="DZ_Szczegoly_zam_maszyn" />
           <NavigationProperty Name="DP_Model_maszyny1" Relationship="DrukarniaModel.DM_Wybor_maszyny" FromRole="DP_Maszyna" ToRole="DP_Model_maszyny" />
           <NavigationProperty Name="DP_Po_proc_czynnosc" Relationship="DrukarniaModel.DP_Po_maszyna_czynnosc" FromRole="DP_Maszyna" ToRole="DP_Po_proc_czynnosc" />
@@ -7157,8 +7371,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </Key>
           <Property Name="Id_nazwa_obslugi" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_obslugi" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DP_Czynnosc_w_ramach_obslugi_serw_wew" Relationship="DrukarniaModel.FK__DP_Czynno__Id_na__1E6F845E" FromRole="DP_Nazwa_obslugi" ToRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
-          <NavigationProperty Name="DP_Obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_na__24285DB4" FromRole="DP_Nazwa_obslugi" ToRole="DP_Obsluga" />
+          <NavigationProperty Name="DP_Czynnosc_w_ramach_obslugi_serw_wew" Relationship="DrukarniaModel.FK__DP_Czynno__Id_na__214BF109" FromRole="DP_Nazwa_obslugi" ToRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
+          <NavigationProperty Name="DP_Obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_na__2704CA5F" FromRole="DP_Nazwa_obslugi" ToRole="DP_Obsluga" />
         </EntityType>
         <EntityType Name="DP_Obsluga">
           <Key>
@@ -7168,9 +7382,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_nazwa_obslugi" Type="Int32" Nullable="false" />
           <Property Name="Id_rodzaj_maszyny" Type="Int32" Nullable="false" />
           <Property Name="Id_co_ile_obsluga" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DP_Co_ile_obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_co__2610A626" FromRole="DP_Obsluga" ToRole="DP_Co_ile_obsluga" />
-          <NavigationProperty Name="DP_Nazwa_obslugi" Relationship="DrukarniaModel.FK__DP_Obslug__Id_na__24285DB4" FromRole="DP_Obsluga" ToRole="DP_Nazwa_obslugi" />
-          <NavigationProperty Name="DP_Rodzaj_maszyny" Relationship="DrukarniaModel.FK__DP_Obslug__Id_ro__251C81ED" FromRole="DP_Obsluga" ToRole="DP_Rodzaj_maszyny" />
+          <NavigationProperty Name="DP_Co_ile_obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_co__28ED12D1" FromRole="DP_Obsluga" ToRole="DP_Co_ile_obsluga" />
+          <NavigationProperty Name="DP_Nazwa_obslugi" Relationship="DrukarniaModel.FK__DP_Obslug__Id_na__2704CA5F" FromRole="DP_Obsluga" ToRole="DP_Nazwa_obslugi" />
+          <NavigationProperty Name="DP_Rodzaj_maszyny" Relationship="DrukarniaModel.FK__DP_Obslug__Id_ro__27F8EE98" FromRole="DP_Obsluga" ToRole="DP_Rodzaj_maszyny" />
         </EntityType>
         <EntityType Name="DP_Po_maszyna_wydruk">
           <Key>
@@ -7253,6 +7467,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_rodzaj_czynnosci" Type="Int32" Nullable="false" />
           <Property Name="Czas_pracy" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DP_Proces_produkcyjny" Relationship="DrukarniaModel.FK__DP_prod_c__Id_pr__0E391C95" FromRole="DP_prod_czynnosc_dodatkowa" ToRole="DP_Proces_produkcyjny" />
+          <NavigationProperty Name="DP_po_prod_czyn_dod_material" Relationship="DrukarniaModel.FK__DP_po_pro__Id_pr__11158940" FromRole="DP_prod_czynnosc_dodatkowa" ToRole="DP_po_prod_czyn_dod_material" />
           <NavigationProperty Name="DP_Rodzaj_czynnosci" Relationship="DrukarniaModel.FK__DP_prod_c__Id_ro__0F2D40CE" FromRole="DP_prod_czynnosc_dodatkowa" ToRole="DP_Rodzaj_czynnosci" />
           <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.DP_po_prod_czyn_dod_maszyna" FromRole="DP_prod_czynnosc_dodatkowa" ToRole="DP_Maszyna" />
           <NavigationProperty Name="DZ_Pracownik" Relationship="DrukarniaModel.DP_po_prod_czyn_dod_pracownik" FromRole="DP_prod_czynnosc_dodatkowa" ToRole="DZ_Pracownik" />
@@ -7296,7 +7511,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_rodzaj_maszyny" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Rodzaj_maszyny" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Maszyn__Id_ro__3C69FB99" FromRole="DP_Rodzaj_maszyny" ToRole="DP_Maszyna" />
-          <NavigationProperty Name="DP_Obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_ro__251C81ED" FromRole="DP_Rodzaj_maszyny" ToRole="DP_Obsluga" />
+          <NavigationProperty Name="DP_Obsluga" Relationship="DrukarniaModel.FK__DP_Obslug__Id_ro__27F8EE98" FromRole="DP_Rodzaj_maszyny" ToRole="DP_Obsluga" />
         </EntityType>
         <EntityType Name="DP_Serwis_wewnetrzny_naprawa">
           <Key>
@@ -7308,8 +7523,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_rozpoczecia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_zakonczenia" Type="DateTime" Precision="0" />
           <Property Name="Uwagi" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__318258D2" FromRole="DP_Serwis_wewnetrzny_naprawa" ToRole="DP_Maszyna" />
-          <NavigationProperty Name="DZ_Pracownik" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__32767D0B" FromRole="DP_Serwis_wewnetrzny_naprawa" ToRole="DZ_Pracownik" />
+          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__345EC57D" FromRole="DP_Serwis_wewnetrzny_naprawa" ToRole="DP_Maszyna" />
+          <NavigationProperty Name="DZ_Pracownik" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__3552E9B6" FromRole="DP_Serwis_wewnetrzny_naprawa" ToRole="DZ_Pracownik" />
           <NavigationProperty Name="DM_Czesc" Relationship="DrukarniaModel.DP_Czesc_wykorzystana" FromRole="DP_Serwis_wewnetrzny_naprawa" ToRole="DM_Czesc" />
           <NavigationProperty Name="DM_Narzedzie" Relationship="DrukarniaModel.DP_Narzedzie_uzyte_naprawa" FromRole="DP_Serwis_wewnetrzny_naprawa" ToRole="DM_Narzedzie" />
         </EntityType>
@@ -7323,9 +7538,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_czynnosc_w_ramach_obslugi_serw_wew" Type="Int32" Nullable="false" />
           <Property Name="Data_rozpoczecia" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Data_zakonczenia" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="DP_Czynnosc_w_ramach_obslugi_serw_wew" Relationship="DrukarniaModel.FK__DP_Serwis__Id_cz__373B3228" FromRole="DP_Serwis_wewnetrzny_obsluga" ToRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
-          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__3552E9B6" FromRole="DP_Serwis_wewnetrzny_obsluga" ToRole="DP_Maszyna" />
-          <NavigationProperty Name="DZ_Pracownik" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__36470DEF" FromRole="DP_Serwis_wewnetrzny_obsluga" ToRole="DZ_Pracownik" />
+          <NavigationProperty Name="DP_Czynnosc_w_ramach_obslugi_serw_wew" Relationship="DrukarniaModel.FK__DP_Serwis__Id_cz__3A179ED3" FromRole="DP_Serwis_wewnetrzny_obsluga" ToRole="DP_Czynnosc_w_ramach_obslugi_serw_wew" />
+          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__382F5661" FromRole="DP_Serwis_wewnetrzny_obsluga" ToRole="DP_Maszyna" />
+          <NavigationProperty Name="DZ_Pracownik" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__39237A9A" FromRole="DP_Serwis_wewnetrzny_obsluga" ToRole="DZ_Pracownik" />
           <NavigationProperty Name="DM_Narzedzie" Relationship="DrukarniaModel.DP_Narzedzie_uzyte_obsluga" FromRole="DP_Serwis_wewnetrzny_obsluga" ToRole="DM_Narzedzie" />
         </EntityType>
         <EntityType Name="DP_Serwis_zewnetrzny">
@@ -7341,9 +7556,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_zakonczenia" Type="DateTime" Precision="0" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
           <Property Name="Uwagi" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DP_Firma_serwisowa" Relationship="DrukarniaModel.FK__DP_Serwis__Id_fi__2CBDA3B5" FromRole="DP_Serwis_zewnetrzny" ToRole="DP_Firma_serwisowa" />
-          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__2DB1C7EE" FromRole="DP_Serwis_zewnetrzny" ToRole="DP_Maszyna" />
-          <NavigationProperty Name="DP_Usluga_serwisu_zewnetrznego" Relationship="DrukarniaModel.FK__DP_Serwis__Id_us__2EA5EC27" FromRole="DP_Serwis_zewnetrzny" ToRole="DP_Usluga_serwisu_zewnetrznego" />
+          <NavigationProperty Name="DP_Firma_serwisowa" Relationship="DrukarniaModel.FK__DP_Serwis__Id_fi__2F9A1060" FromRole="DP_Serwis_zewnetrzny" ToRole="DP_Firma_serwisowa" />
+          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Serwis__Id_ma__308E3499" FromRole="DP_Serwis_zewnetrzny" ToRole="DP_Maszyna" />
+          <NavigationProperty Name="DP_Usluga_serwisu_zewnetrznego" Relationship="DrukarniaModel.FK__DP_Serwis__Id_us__318258D2" FromRole="DP_Serwis_zewnetrzny" ToRole="DP_Usluga_serwisu_zewnetrznego" />
         </EntityType>
         <EntityType Name="DP_Usluga_serwisu_zewnetrznego">
           <Key>
@@ -7351,7 +7566,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           </Key>
           <Property Name="Id_usluga_serwisu_zewnetrznego" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_uslugi_serwisu_zewnetrznego" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DP_Serwis_zewnetrzny" Relationship="DrukarniaModel.FK__DP_Serwis__Id_us__2EA5EC27" FromRole="DP_Usluga_serwisu_zewnetrznego" ToRole="DP_Serwis_zewnetrzny" />
+          <NavigationProperty Name="DP_Serwis_zewnetrzny" Relationship="DrukarniaModel.FK__DP_Serwis__Id_us__318258D2" FromRole="DP_Usluga_serwisu_zewnetrznego" ToRole="DP_Serwis_zewnetrzny" />
         </EntityType>
         <EntityType Name="DP_Wydruk">
           <Key>
@@ -7373,7 +7588,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_maszyny" Type="Int32" Nullable="false" />
           <Property Name="Data_zuzycia_maszyny" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Uwagi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Zuzyta__Id_ma__17C286CF" FromRole="DP_Zuzyta_maszyna" ToRole="DP_Maszyna" />
+          <NavigationProperty Name="DP_Maszyna" Relationship="DrukarniaModel.FK__DP_Zuzyta__Id_ma__1A9EF37A" FromRole="DP_Zuzyta_maszyna" ToRole="DP_Maszyna" />
         </EntityType>
         <EntityType Name="DZ_Dzial">
           <Key>
@@ -7457,8 +7672,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <NavigationProperty Name="DM_Wydanie_materialu_dla_produkcji1" Relationship="DrukarniaModel.FK__DM_Wydani__Id_pr__540C7B00" FromRole="DZ_Pracownik" ToRole="DM_Wydanie_materialu_dla_produkcji" />
           <NavigationProperty Name="DM_Wydanie_produktu" Relationship="DrukarniaModel.FK__DM_Wydani__Id_pr__123EB7A3" FromRole="DZ_Pracownik" ToRole="DM_Wydanie_produktu" />
           <NavigationProperty Name="DM_Wypozyczenie_narzedzia" Relationship="DrukarniaModel.FK__DM_Wypozy__Id_pr__18EBB532" FromRole="DZ_Pracownik" ToRole="DM_Wypozyczenie_narzedzia" />
-          <NavigationProperty Name="DP_Serwis_wewnetrzny_naprawa" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__32767D0B" FromRole="DZ_Pracownik" ToRole="DP_Serwis_wewnetrzny_naprawa" />
-          <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__36470DEF" FromRole="DZ_Pracownik" ToRole="DP_Serwis_wewnetrzny_obsluga" />
+          <NavigationProperty Name="DP_Serwis_wewnetrzny_naprawa" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__3552E9B6" FromRole="DZ_Pracownik" ToRole="DP_Serwis_wewnetrzny_naprawa" />
+          <NavigationProperty Name="DP_Serwis_wewnetrzny_obsluga" Relationship="DrukarniaModel.FK__DP_Serwis__Id_pr__39237A9A" FromRole="DZ_Pracownik" ToRole="DP_Serwis_wewnetrzny_obsluga" />
           <NavigationProperty Name="DZ_Nieobecnosc" Relationship="DrukarniaModel.FK__DZ_Nieobe__Id_pr__4D94879B" FromRole="DZ_Pracownik" ToRole="DZ_Nieobecnosc" />
           <NavigationProperty Name="DZ_Zamowienie_klienta" Relationship="DrukarniaModel.FK__DZ_Zamowi__Id_pr__6383C8BA" FromRole="DZ_Pracownik" ToRole="DZ_Zamowienie_klienta" />
           <NavigationProperty Name="DZ_Zamowienie_zewn" Relationship="DrukarniaModel.FK__DZ_Zamowi__Id_pr__76969D2E" FromRole="DZ_Pracownik" ToRole="DZ_Zamowienie_zewn" />
@@ -7805,6 +8020,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DM_Material" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_ma__7B264821" FromRole="DP_Po_material_czynnosc" ToRole="DM_Material" />
           <NavigationProperty Name="DP_Po_proc_czynnosc" Relationship="DrukarniaModel.FK__DP_Po_mat__Id_po__7A3223E8" FromRole="DP_Po_material_czynnosc" ToRole="DP_Po_proc_czynnosc" />
+        </EntityType>
+        <EntityType Name="DP_po_prod_czyn_dod_material">
+          <Key>
+            <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            <PropertyRef Name="Id_materialu" />
+            <PropertyRef Name="Ilosc" />
+          </Key>
+          <Property Name="Id_prod_czynnosci_dodatkowe" Type="Int32" Nullable="false" />
+          <Property Name="Id_materialu" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="DM_Material" Relationship="DrukarniaModel.FK__DP_po_pro__Id_ma__1209AD79" FromRole="DP_po_prod_czyn_dod_material" ToRole="DM_Material" />
+          <NavigationProperty Name="DP_prod_czynnosc_dodatkowa" Relationship="DrukarniaModel.FK__DP_po_pro__Id_pr__11158940" FromRole="DP_po_prod_czyn_dod_material" ToRole="DP_prod_czynnosc_dodatkowa" />
         </EntityType>
         <EntityType Name="DP_prod_material">
           <Key>
@@ -8281,7 +8508,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Numer_telefonu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="E_mail" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vDP_Koszt_material_magazyn">
+        <EntityType Name="vDP_Koszt_jednostkowy_material">
           <Key>
             <PropertyRef Name="Id_materialu" />
             <PropertyRef Name="Nazwa" />
@@ -8292,7 +8519,59 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Rodzaj_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Koszt_jednostkowy_za_material" Type="Int32" />
         </EntityType>
-        <EntityType Name="vDP_Koszt_materialu_dodatkowe_przed">
+        <EntityType Name="vDP_Koszt_maszyn_dodatkowe_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+            <PropertyRef Name="Id_maszyny" />
+            <PropertyRef Name="Czas_zamierzony" />
+            <PropertyRef Name="Koszt_1rh" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="Int32" Nullable="false" />
+          <Property Name="Id_maszyny" Type="Int32" Nullable="false" />
+          <Property Name="Czas_zamierzony" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Koszt_maszyn_dodatkowe_ofertowy" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vDP_Koszt_maszyn_dodatkowe_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Id_maszyna" />
+            <PropertyRef Name="Czas_pracy" />
+            <PropertyRef Name="Koszt_1rh" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="Int32" Nullable="false" />
+          <Property Name="Id_maszyna" Type="Int32" Nullable="false" />
+          <Property Name="Czas_pracy" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Koszt_maszyn_czyn_dodatkowe_powykonawczy" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vDP_Koszt_maszyn_wydruk_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+            <PropertyRef Name="Id_maszyny" />
+            <PropertyRef Name="Czas_zamierzony" />
+            <PropertyRef Name="Koszt_1rh" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="Int32" Nullable="false" />
+          <Property Name="Id_maszyny" Type="Int32" Nullable="false" />
+          <Property Name="Czas_zamierzony" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Koszt_maszyn_wydruk_przed" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vDP_Koszt_maszyn_wydruk_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Czas_wydruku" />
+            <PropertyRef Name="Koszt_1rh" />
+            <PropertyRef Name="Id_maszyny" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="Int32" Nullable="false" />
+          <Property Name="Czas_wydruku" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_1rh" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Id_maszyny" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_maszyn_wydruk_powykonawczy" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="vDP_Koszt_materialu_dodatkowe_ofertowy">
           <Key>
             <PropertyRef Name="Id_proces_technologiczny" />
             <PropertyRef Name="Id_po_proc_czynnosci" />
@@ -8309,7 +8588,22 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Rodzaj_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Koszt_material_dodatkowe" Type="Int32" />
         </EntityType>
-        <EntityType Name="vDP_Koszt_materialu_przed">
+        <EntityType Name="vDP_Koszt_materialu_dodatkowe_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            <PropertyRef Name="Id_materialu" />
+            <PropertyRef Name="Ilosc" />
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="Int32" Nullable="false" />
+          <Property Name="Id_prod_czynnosci_dodatkowe" Type="Int32" Nullable="false" />
+          <Property Name="Id_materialu" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Koszt_material_cz_dodatkowe_powykonawczy" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vDP_Koszt_materialu_ofertowy">
           <Key>
             <PropertyRef Name="Id_proces_technologiczny" />
             <PropertyRef Name="Id_po_wydr_proces" />
@@ -8333,7 +8627,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Koszt_m_wydruk" Type="Double" />
           <Property Name="Koszt_m_dodatkowe" Type="Int32" />
         </EntityType>
-        <EntityType Name="vDP_Koszt_materialu_wydruk_przed">
+        <EntityType Name="vDP_Koszt_materialu_wydruk_ofertowy">
           <Key>
             <PropertyRef Name="Id_proces_technologiczny" />
             <PropertyRef Name="Material_wydruk" />
@@ -8350,7 +8644,38 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Id_po_wydr_proces" Type="Int32" Nullable="false" />
           <Property Name="Koszt_materialu_wydruk" Type="Double" />
         </EntityType>
-        <EntityType Name="vDP_Koszt_pracownik_po">
+        <EntityType Name="vDP_Koszt_materialu_wydruk_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+            <PropertyRef Name="Id_materialu" />
+            <PropertyRef Name="Ilosc_zuzytego_materialu" />
+            <PropertyRef Name="Nazwa" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="Int32" Nullable="false" />
+          <Property Name="Id_materialu" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc_zuzytego_materialu" Type="Double" Nullable="false" />
+          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Koszt_materialu_powykonawczy" Type="Double" />
+        </EntityType>
+        <EntityType Name="vDP_Koszt_pracownika_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+            <PropertyRef Name="Id_po_proc_czynnosci" />
+            <PropertyRef Name="Imie" />
+            <PropertyRef Name="Nazwisko" />
+            <PropertyRef Name="Id_pracownika" />
+            <PropertyRef Name="Czas_zamierzony" />
+            <PropertyRef Name="Koszt_pracownika_przed" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="Int32" Nullable="false" />
+          <Property Name="Id_po_proc_czynnosci" Type="Int32" Nullable="false" />
+          <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
+          <Property Name="Czas_zamierzony" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_pracownika_przed" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vDP_Koszt_pracownika_powykonawczy">
           <Key>
             <PropertyRef Name="Id_proces_produkcyjny" />
             <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
@@ -8368,23 +8693,19 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Czas_pracy" Type="Int32" Nullable="false" />
           <Property Name="Koszt_pracownika" Type="Double" Nullable="false" />
         </EntityType>
-        <EntityType Name="vDP_Koszt_pracownik_przed">
+        <EntityType Name="vDP_Koszt_RH_pracownika">
           <Key>
-            <PropertyRef Name="Id_proces_technologiczny" />
-            <PropertyRef Name="Id_po_proc_czynnosci" />
+            <PropertyRef Name="Id_pracownika" />
             <PropertyRef Name="Imie" />
             <PropertyRef Name="Nazwisko" />
-            <PropertyRef Name="Id_pracownika" />
-            <PropertyRef Name="Czas_zamierzony" />
-            <PropertyRef Name="Koszt_pracownika_przed" />
+            <PropertyRef Name="Koszt_RH_pracownika" />
+            <PropertyRef Name="Stanowisko" />
           </Key>
-          <Property Name="Id_proces_technologiczny" Type="Int32" Nullable="false" />
-          <Property Name="Id_po_proc_czynnosci" Type="Int32" Nullable="false" />
+          <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
           <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
-          <Property Name="Czas_zamierzony" Type="Int32" Nullable="false" />
-          <Property Name="Koszt_pracownika_przed" Type="Double" Nullable="false" />
+          <Property Name="Koszt_RH_pracownika" Type="Double" Nullable="false" />
+          <Property Name="Stanowisko" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDP_Maszyna">
           <Key>
@@ -8694,20 +9015,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Numer_produktu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nazwa_produktu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Uwagi" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="vDP_RH_pracownik">
-          <Key>
-            <PropertyRef Name="Id_pracownika" />
-            <PropertyRef Name="Imie" />
-            <PropertyRef Name="Nazwisko" />
-            <PropertyRef Name="Koszt_RH_pracownika" />
-            <PropertyRef Name="Stanowisko" />
-          </Key>
-          <Property Name="Id_pracownika" Type="Int32" Nullable="false" />
-          <Property Name="Imie" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Koszt_RH_pracownika" Type="Double" Nullable="false" />
-          <Property Name="Stanowisko" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDP_Rodzaj_czynnosci">
           <Key>
@@ -9633,6 +9940,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__DP_po_pro__Id_ma__1209AD79">
+          <End Type="DrukarniaModel.DM_Material" Role="DM_Material" Multiplicity="1" />
+          <End Type="DrukarniaModel.DP_po_prod_czyn_dod_material" Role="DP_po_prod_czyn_dod_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DM_Material">
+              <PropertyRef Name="Id_materialu" />
+            </Principal>
+            <Dependent Role="DP_po_prod_czyn_dod_material">
+              <PropertyRef Name="Id_materialu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__DP_prod_m__Id_ma__078C1F06">
           <End Type="DrukarniaModel.DM_Material" Role="DM_Material" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_prod_material" Role="DP_prod_material" Multiplicity="*" />
@@ -9993,7 +10312,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Obslug__Id_co__2610A626">
+        <Association Name="FK__DP_Obslug__Id_co__28ED12D1">
           <End Type="DrukarniaModel.DP_Co_ile_obsluga" Role="DP_Co_ile_obsluga" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Obsluga" Role="DP_Obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10005,7 +10324,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Czynno__Id_cz__1F63A897">
+        <Association Name="FK__DP_Czynno__Id_cz__22401542">
           <End Type="DrukarniaModel.DP_Czynnosc" Role="DP_Czynnosc" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew" Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10017,7 +10336,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Czynno__Id_na__1E6F845E">
+        <Association Name="FK__DP_Czynno__Id_na__214BF109">
           <End Type="DrukarniaModel.DP_Nazwa_obslugi" Role="DP_Nazwa_obslugi" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew" Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10029,7 +10348,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_cz__373B3228">
+        <Association Name="FK__DP_Serwis__Id_cz__3A179ED3">
           <End Type="DrukarniaModel.DP_Czynnosc_w_ramach_obslugi_serw_wew" Role="DP_Czynnosc_w_ramach_obslugi_serw_wew" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga" Role="DP_Serwis_wewnetrzny_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10041,7 +10360,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_fi__2CBDA3B5">
+        <Association Name="FK__DP_Serwis__Id_fi__2F9A1060">
           <End Type="DrukarniaModel.DP_Firma_serwisowa" Role="DP_Firma_serwisowa" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_zewnetrzny" Role="DP_Serwis_zewnetrzny" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10113,7 +10432,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_ma__2DB1C7EE">
+        <Association Name="FK__DP_Serwis__Id_ma__308E3499">
           <End Type="DrukarniaModel.DP_Maszyna" Role="DP_Maszyna" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_zewnetrzny" Role="DP_Serwis_zewnetrzny" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10125,7 +10444,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_ma__318258D2">
+        <Association Name="FK__DP_Serwis__Id_ma__345EC57D">
           <End Type="DrukarniaModel.DP_Maszyna" Role="DP_Maszyna" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_wewnetrzny_naprawa" Role="DP_Serwis_wewnetrzny_naprawa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10137,7 +10456,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_ma__3552E9B6">
+        <Association Name="FK__DP_Serwis__Id_ma__382F5661">
           <End Type="DrukarniaModel.DP_Maszyna" Role="DP_Maszyna" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga" Role="DP_Serwis_wewnetrzny_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10149,7 +10468,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Zuzyta__Id_ma__17C286CF">
+        <Association Name="FK__DP_Zuzyta__Id_ma__1A9EF37A">
           <End Type="DrukarniaModel.DP_Maszyna" Role="DP_Maszyna" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Zuzyta_maszyna" Role="DP_Zuzyta_maszyna" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10173,7 +10492,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Obslug__Id_na__24285DB4">
+        <Association Name="FK__DP_Obslug__Id_na__2704CA5F">
           <End Type="DrukarniaModel.DP_Nazwa_obslugi" Role="DP_Nazwa_obslugi" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Obsluga" Role="DP_Obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10185,7 +10504,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Obslug__Id_ro__251C81ED">
+        <Association Name="FK__DP_Obslug__Id_ro__27F8EE98">
           <End Type="DrukarniaModel.DP_Rodzaj_maszyny" Role="DP_Rodzaj_maszyny" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Obsluga" Role="DP_Obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10329,6 +10648,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__DP_po_pro__Id_pr__11158940">
+          <End Type="DrukarniaModel.DP_prod_czynnosc_dodatkowa" Role="DP_prod_czynnosc_dodatkowa" Multiplicity="1" />
+          <End Type="DrukarniaModel.DP_po_prod_czyn_dod_material" Role="DP_po_prod_czyn_dod_material" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DP_prod_czynnosc_dodatkowa">
+              <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            </Principal>
+            <Dependent Role="DP_po_prod_czyn_dod_material">
+              <PropertyRef Name="Id_prod_czynnosci_dodatkowe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__DP_prod_c__Id_ro__0F2D40CE">
           <End Type="DrukarniaModel.DP_Rodzaj_czynnosci" Role="DP_Rodzaj_czynnosci" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_prod_czynnosc_dodatkowa" Role="DP_prod_czynnosc_dodatkowa" Multiplicity="*" />
@@ -10353,7 +10684,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_pr__32767D0B">
+        <Association Name="FK__DP_Serwis__Id_pr__3552E9B6">
           <End Type="DrukarniaModel.DZ_Pracownik" Role="DZ_Pracownik" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_wewnetrzny_naprawa" Role="DP_Serwis_wewnetrzny_naprawa" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10365,7 +10696,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_pr__36470DEF">
+        <Association Name="FK__DP_Serwis__Id_pr__39237A9A">
           <End Type="DrukarniaModel.DZ_Pracownik" Role="DZ_Pracownik" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_wewnetrzny_obsluga" Role="DP_Serwis_wewnetrzny_obsluga" Multiplicity="*" />
           <ReferentialConstraint>
@@ -10377,7 +10708,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DP_Serwis__Id_us__2EA5EC27">
+        <Association Name="FK__DP_Serwis__Id_us__318258D2">
           <End Type="DrukarniaModel.DP_Usluga_serwisu_zewnetrznego" Role="DP_Usluga_serwisu_zewnetrznego" Multiplicity="1" />
           <End Type="DrukarniaModel.DP_Serwis_zewnetrzny" Role="DP_Serwis_zewnetrzny" Multiplicity="*" />
           <ReferentialConstraint>
@@ -11565,6 +11896,15 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="DP_po_prod_czyn_dod_material">
+            <EntityTypeMapping TypeName="DrukarniaModel.DP_po_prod_czyn_dod_material">
+              <MappingFragment StoreEntitySet="DP_po_prod_czyn_dod_material">
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+                <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+                <ScalarProperty Name="Id_prod_czynnosci_dodatkowe" ColumnName="Id_prod_czynnosci_dodatkowe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DP_prod_material">
             <EntityTypeMapping TypeName="DrukarniaModel.DP_prod_material">
               <MappingFragment StoreEntitySet="DP_prod_material">
@@ -11972,9 +12312,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Koszt_material_magazyn">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_material_magazyn">
-              <MappingFragment StoreEntitySet="vDP_Koszt_material_magazyn">
+          <EntitySetMapping Name="vDP_Koszt_jednostkowy_material">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_jednostkowy_material">
+              <MappingFragment StoreEntitySet="vDP_Koszt_jednostkowy_material">
                 <ScalarProperty Name="Koszt_jednostkowy_za_material" ColumnName="Koszt jednostkowy za material" />
                 <ScalarProperty Name="Rodzaj_materialu" ColumnName="Rodzaj_materialu" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
@@ -11982,9 +12322,53 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Koszt_materialu_dodatkowe_przed">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_dodatkowe_przed">
-              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_dodatkowe_przed">
+          <EntitySetMapping Name="vDP_Koszt_maszyn_dodatkowe_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_maszyn_dodatkowe_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_maszyn_dodatkowe_ofertowy">
+                <ScalarProperty Name="Koszt_maszyn_dodatkowe_ofertowy" ColumnName="Koszt maszyn dodatkowe ofertowy" />
+                <ScalarProperty Name="Koszt_1rh" ColumnName="Koszt_1rh" />
+                <ScalarProperty Name="Czas_zamierzony" ColumnName="Czas_zamierzony" />
+                <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+                <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Koszt_maszyn_dodatkowe_powykonawczy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_maszyn_dodatkowe_powykonawczy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_maszyn_dodatkowe_powykonawczy">
+                <ScalarProperty Name="Koszt_maszyn_czyn_dodatkowe_powykonawczy" ColumnName="Koszt maszyn czyn_dodatkowe powykonawczy" />
+                <ScalarProperty Name="Koszt_1rh" ColumnName="Koszt_1rh" />
+                <ScalarProperty Name="Czas_pracy" ColumnName="Czas_pracy" />
+                <ScalarProperty Name="Id_maszyna" ColumnName="Id_maszyna" />
+                <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Koszt_maszyn_wydruk_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_maszyn_wydruk_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_maszyn_wydruk_ofertowy">
+                <ScalarProperty Name="Koszt_maszyn_wydruk_przed" ColumnName="Koszt maszyn wydruk przed" />
+                <ScalarProperty Name="Koszt_1rh" ColumnName="Koszt_1rh" />
+                <ScalarProperty Name="Czas_zamierzony" ColumnName="Czas_zamierzony" />
+                <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+                <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Koszt_maszyn_wydruk_powykonawczy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_maszyn_wydruk_powykonawczy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_maszyn_wydruk_powykonawczy">
+                <ScalarProperty Name="Koszt_maszyn_wydruk_powykonawczy" ColumnName="Koszt maszyn wydruk powykonawczy" />
+                <ScalarProperty Name="Id_maszyny" ColumnName="Id_maszyny" />
+                <ScalarProperty Name="Koszt_1rh" ColumnName="Koszt_1rh" />
+                <ScalarProperty Name="Czas_wydruku" ColumnName="Czas_wydruku" />
+                <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Koszt_materialu_dodatkowe_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_dodatkowe_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_dodatkowe_ofertowy">
                 <ScalarProperty Name="Koszt_material_dodatkowe" ColumnName="Koszt material dodatkowe" />
                 <ScalarProperty Name="Rodzaj_materialu" ColumnName="Rodzaj_materialu" />
                 <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
@@ -11995,9 +12379,21 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Koszt_materialu_przed">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_przed">
-              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_przed">
+          <EntitySetMapping Name="vDP_Koszt_materialu_dodatkowe_powykonawczy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_dodatkowe_powykonawczy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_dodatkowe_powykonawczy">
+                <ScalarProperty Name="Koszt_material_cz_dodatkowe_powykonawczy" ColumnName="Koszt material cz_dodatkowe powykonawczy" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
+                <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+                <ScalarProperty Name="Id_prod_czynnosci_dodatkowe" ColumnName="Id_prod_czynnosci_dodatkowe" />
+                <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Koszt_materialu_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_ofertowy">
                 <ScalarProperty Name="Koszt_m_dodatkowe" ColumnName="Koszt m_dodatkowe" />
                 <ScalarProperty Name="Koszt_m_wydruk" ColumnName="Koszt m_wydruk" />
                 <ScalarProperty Name="Ilosc_dodatkowe" ColumnName="Ilosc dodatkowe" />
@@ -12012,9 +12408,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Koszt_materialu_wydruk_przed">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_wydruk_przed">
-              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_wydruk_przed">
+          <EntitySetMapping Name="vDP_Koszt_materialu_wydruk_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_wydruk_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_wydruk_ofertowy">
                 <ScalarProperty Name="Koszt_materialu_wydruk" ColumnName="Koszt materialu wydruk" />
                 <ScalarProperty Name="Id_po_wydr_proces" ColumnName="Id_po_wydr_proces" />
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
@@ -12025,9 +12421,33 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Koszt_pracownik_po">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_pracownik_po">
-              <MappingFragment StoreEntitySet="vDP_Koszt_pracownik_po">
+          <EntitySetMapping Name="vDP_Koszt_materialu_wydruk_powykonawczy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_materialu_wydruk_powykonawczy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_materialu_wydruk_powykonawczy">
+                <ScalarProperty Name="Koszt_materialu_powykonawczy" ColumnName="Koszt materialu powykonawczy" />
+                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Ilosc_zuzytego_materialu" ColumnName="Ilosc_zuzytego_materialu" />
+                <ScalarProperty Name="Id_materialu" ColumnName="Id_materialu" />
+                <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Koszt_pracownika_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_pracownika_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_pracownika_ofertowy">
+                <ScalarProperty Name="Koszt_pracownika_przed" ColumnName="Koszt pracownika przed" />
+                <ScalarProperty Name="Czas_zamierzony" ColumnName="Czas_zamierzony" />
+                <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
+                <ScalarProperty Name="Imie" ColumnName="Imie" />
+                <ScalarProperty Name="Id_po_proc_czynnosci" ColumnName="Id_po_proc_czynnosci" />
+                <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Koszt_pracownika_powykonawczy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_pracownika_powykonawczy">
+              <MappingFragment StoreEntitySet="vDP_Koszt_pracownika_powykonawczy">
                 <ScalarProperty Name="Koszt_pracownika" ColumnName="Koszt pracownika" />
                 <ScalarProperty Name="Czas_pracy" ColumnName="Czas_pracy" />
                 <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
@@ -12038,16 +12458,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDP_Koszt_pracownik_przed">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_pracownik_przed">
-              <MappingFragment StoreEntitySet="vDP_Koszt_pracownik_przed">
-                <ScalarProperty Name="Koszt_pracownika_przed" ColumnName="Koszt pracownika przed" />
-                <ScalarProperty Name="Czas_zamierzony" ColumnName="Czas_zamierzony" />
-                <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
+          <EntitySetMapping Name="vDP_Koszt_RH_pracownika">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Koszt_RH_pracownika">
+              <MappingFragment StoreEntitySet="vDP_Koszt_RH_pracownika">
+                <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
+                <ScalarProperty Name="Koszt_RH_pracownika" ColumnName="Koszt RH pracownika" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Imie" ColumnName="Imie" />
-                <ScalarProperty Name="Id_po_proc_czynnosci" ColumnName="Id_po_proc_czynnosci" />
-                <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+                <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -12329,17 +12747,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
                 <ScalarProperty Name="Nazwa_produktu" ColumnName="Nazwa produktu" />
                 <ScalarProperty Name="Numer_produktu" ColumnName="Numer produktu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vDP_RH_pracownik">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDP_RH_pracownik">
-              <MappingFragment StoreEntitySet="vDP_RH_pracownik">
-                <ScalarProperty Name="Stanowisko" ColumnName="Stanowisko" />
-                <ScalarProperty Name="Koszt_RH_pracownika" ColumnName="Koszt RH pracownika" />
-                <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
-                <ScalarProperty Name="Imie" ColumnName="Imie" />
-                <ScalarProperty Name="Id_pracownika" ColumnName="Id_pracownika" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

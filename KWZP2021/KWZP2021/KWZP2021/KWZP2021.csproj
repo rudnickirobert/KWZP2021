@@ -313,6 +313,9 @@
     <Compile Include="DP_Po_proc_czynnosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_po_prod_czyn_dod_material.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DP_Po_wydr_proc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -996,22 +999,43 @@
     <Compile Include="vDP_Firma_serwisowa.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Koszt_materialu_dodatkowe_przed.cs">
+    <Compile Include="vDP_Koszt_jednostkowy_material.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Koszt_materialu_przed.cs">
+    <Compile Include="vDP_Koszt_maszyn_dodatkowe_ofertowy.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Koszt_materialu_wydruk_przed.cs">
+    <Compile Include="vDP_Koszt_maszyn_dodatkowe_powykonawczy.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Koszt_material_magazyn.cs">
+    <Compile Include="vDP_Koszt_maszyn_wydruk_ofertowy.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Koszt_pracownik_po.cs">
+    <Compile Include="vDP_Koszt_maszyn_wydruk_powykonawczy.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDP_Koszt_pracownik_przed.cs">
+    <Compile Include="vDP_Koszt_materialu_dodatkowe_ofertowy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Koszt_materialu_dodatkowe_powykonawczy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Koszt_materialu_ofertowy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Koszt_materialu_wydruk_ofertowy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Koszt_materialu_wydruk_powykonawczy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Koszt_pracownika_ofertowy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Koszt_pracownika_powykonawczy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Koszt_RH_pracownika.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Maszyna.cs">
@@ -1105,9 +1129,6 @@
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_prod_wydruk.cs">
-      <DependentUpon>DrukarniaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vDP_RH_pracownik.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Rodzaj_czynnosci.cs">
