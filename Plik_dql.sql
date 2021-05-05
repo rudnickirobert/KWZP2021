@@ -1122,26 +1122,38 @@ INNER JOIN DM_Material ON DP_prod_material.Id_materialu=DM_Material.Id_materialu
 INNER JOIN vDP_Koszt_jednostkowy_material ON DM_Material.Id_materialu=vDP_Koszt_jednostkowy_material.Id_materialu
 GO
 
-CREATE VIEW vDP_Kosztorys_ofertowy
+CREATE VIEW vDP_K_ofertowy
 AS
 SELECT DP_Proces_technologiczny.Id_proces_technologiczny,
-	vDP_Koszt_maszyn_dodatkowe_ofertowy.[Koszt maszyn dodatkowe ofertowy],
-	vDP_Koszt_maszyn_wydruk_ofertowy.[Koszt maszyn wydruk przed],
-	vDP_Koszt_materialu_dodatkowe_ofertowy.[Koszt material dodatkowe],
-	vDP_Koszt_materialu_wydruk_ofertowy.[Koszt materialu wydruk],
-	vDP_Koszt_pracownika_ofertowy.[Koszt pracownika przed],
-	(vDP_Koszt_maszyn_dodatkowe_ofertowy.[Koszt maszyn dodatkowe ofertowy] +
+	sum(vDP_Koszt_maszyn_dodatkowe_ofertowy.[Koszt maszyn dodatkowe ofertowy]) AS [Koszt maszyn1 ofertowy],
+	sum(vDP_Koszt_maszyn_wydruk_ofertowy.[Koszt maszyn wydruk przed]) AS [Koszt maszyn2 ofertowy],
+	sum(vDP_Koszt_materialu_dodatkowe_ofertowy.[Koszt material dodatkowe]) AS [Koszt materialu1 ofertowy],
+	sum(vDP_Koszt_materialu_wydruk_ofertowy.[Koszt materialu wydruk])AS [Koszt materialu2 ofertowy],
+	sum(vDP_Koszt_pracownika_ofertowy.[Koszt pracownika przed]) AS [Koszt pracownik ofertowy] 
+	/*(vDP_Koszt_maszyn_dodatkowe_ofertowy.[Koszt maszyn dodatkowe ofertowy] +
 	vDP_Koszt_maszyn_wydruk_ofertowy.[Koszt maszyn wydruk przed] +
 	vDP_Koszt_materialu_dodatkowe_ofertowy.[Koszt material dodatkowe]+
 	vDP_Koszt_materialu_wydruk_ofertowy.[Koszt materialu wydruk] +
-	vDP_Koszt_pracownika_ofertowy.[Koszt pracownika przed]) AS [Koszt ofertowy]
+	vDP_Koszt_pracownika_ofertowy.[Koszt pracownika przed]) AS [Koszt ofertowy]*/
 FROM DP_Proces_technologiczny INNER JOIN
 	vDP_Koszt_maszyn_dodatkowe_ofertowy ON DP_Proces_technologiczny.Id_proces_technologiczny=vDP_Koszt_maszyn_dodatkowe_ofertowy.Id_proces_technologiczny
 INNER JOIN vDP_Koszt_maszyn_wydruk_ofertowy ON DP_Proces_technologiczny.Id_proces_technologiczny=vDP_Koszt_maszyn_wydruk_ofertowy.Id_proces_technologiczny
 INNER JOIN vDP_Koszt_materialu_dodatkowe_ofertowy ON DP_Proces_technologiczny.Id_proces_technologiczny=vDP_Koszt_maszyn_dodatkowe_ofertowy.Id_proces_technologiczny
 INNER JOIN vDP_Koszt_materialu_wydruk_ofertowy ON DP_Proces_technologiczny.Id_proces_technologiczny=vDP_Koszt_materialu_wydruk_ofertowy.Id_proces_technologiczny
 INNER JOIN vDP_Koszt_pracownika_ofertowy ON DP_Proces_technologiczny.Id_proces_technologiczny=vDP_Koszt_pracownika_ofertowy.Id_proces_technologiczny
+GROUP BY DP_Proces_technologiczny.Id_proces_technologiczny
 GO
+
+CREATE VIEW vDP_Kosztorys_ofertowy
+AS
+SELECT DP_Proces_technologiczny.Id_proces_technologiczny,
+	(vDP_K_ofertowy.[Koszt maszyn1 ofertowy] + vDP_K_ofertowy.[Koszt maszyn2 ofertowy] + 
+	vDP_K_ofertowy.[Koszt materialu1 ofertowy] + vDP_K_ofertowy.[Koszt materialu2 ofertowy] +
+	vDP_K_ofertowy.[Koszt pracownik ofertowy]) AS [Koszt ofertowy]
+FROM DP_Proces_technologiczny INNER JOIN 
+	vDP_K_ofertowy ON DP_Proces_technologiczny.Id_proces_technologiczny=vDP_K_ofertowy.Id_proces_technologiczny
+GO
+
 
 CREATE VIEW vDP_Kosztorys_powykonawczy
 AS
