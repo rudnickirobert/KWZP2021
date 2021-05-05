@@ -1128,26 +1128,38 @@ FROM DP_Proces_technologiczny INNER JOIN
 GO
 
 
-CREATE VIEW vDP_Kosztorys_powykonawczy
+CREATE VIEW vDP_K_powykonawczy
 AS
 SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny,
-	vDP_Koszt_maszyn_dodatkowe_powykonawczy.[Koszt maszyn czyn_dodatkowe powykonawczy],
-	vDP_Koszt_maszyn_wydruk_powykonawczy.[Koszt maszyn wydruk powykonawczy],
-	vDP_Koszt_materialu_dodatkowe_powykonawczy.[Koszt material cz_dodatkowe powykonawczy], 
-	vDP_Koszt_materialu_wydruk_powykonawczy.[Koszt materialu powykonawczy],
-	vDP_Koszt_pracownika_powykonawczy.[Koszt pracownika],
-	(vDP_Koszt_maszyn_dodatkowe_powykonawczy.[Koszt maszyn czyn_dodatkowe powykonawczy]+
+	sum(vDP_Koszt_maszyn_dodatkowe_powykonawczy.[Koszt maszyn czyn_dodatkowe powykonawczy]) AS [Koszt maszyn1 powykonawczy],
+	sum(vDP_Koszt_maszyn_wydruk_powykonawczy.[Koszt maszyn wydruk powykonawczy])AS [Koszt maszyn2 powykonawczy],
+	sum(vDP_Koszt_materialu_dodatkowe_powykonawczy.[Koszt material cz_dodatkowe powykonawczy]) AS [Koszt materialu1 powykonawczy], 
+	sum(vDP_Koszt_materialu_wydruk_powykonawczy.[Koszt materialu powykonawczy]) AS [Koszt materialu2 powykonawczy],
+	sum(vDP_Koszt_pracownika_powykonawczy.[Koszt pracownika]) AS [Koszt pracownik powykonawczy]
+	/*(vDP_Koszt_maszyn_dodatkowe_powykonawczy.[Koszt maszyn czyn_dodatkowe powykonawczy]+
 	vDP_Koszt_maszyn_wydruk_powykonawczy.[Koszt maszyn wydruk powykonawczy]+
 	vDP_Koszt_materialu_dodatkowe_powykonawczy.[Koszt material cz_dodatkowe powykonawczy]+ 
 	vDP_Koszt_materialu_wydruk_powykonawczy.[Koszt materialu powykonawczy]+
-	vDP_Koszt_pracownika_powykonawczy.[Koszt pracownika]) AS [Koszt powykonawczy]
+	vDP_Koszt_pracownika_powykonawczy.[Koszt pracownika]) AS [Koszt powykonawczy]*/
 FROM DP_Proces_produkcyjny INNER JOIN
 	vDP_Koszt_maszyn_dodatkowe_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_maszyn_dodatkowe_powykonawczy.Id_proces_produkcyjny
 INNER JOIN vDP_Koszt_maszyn_wydruk_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_maszyn_wydruk_powykonawczy.Id_proces_produkcyjny
 INNER JOIN vDP_Koszt_materialu_dodatkowe_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_materialu_dodatkowe_powykonawczy.Id_proces_produkcyjny
 INNER JOIN vDP_Koszt_materialu_wydruk_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_materialu_wydruk_powykonawczy.Id_proces_produkcyjny
 INNER JOIN vDP_Koszt_pracownika_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_pracownika_powykonawczy.Id_proces_produkcyjny
+GROUP BY DP_Proces_produkcyjny.Id_proces_produkcyjny 
 GO
+
+CREATE VIEW vDP_Kosztorys_powykonawczy
+AS
+SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny,
+	(vDP_K_powykonawczy.[Koszt maszyn1 powykonawczy] + vDP_K_powykonawczy.[Koszt maszyn2 powykonawczy] +
+	vDP_K_powykonawczy.[Koszt materialu1 powykonawczy] + vDP_K_powykonawczy.[Koszt materialu2 powykonawczy] +
+	vDP_K_powykonawczy.[Koszt pracownik powykonawczy]) AS [Koszt powykonawczy]
+FROM DP_Proces_produkcyjny INNER JOIN
+	vDP_K_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_K_powykonawczy.Id_proces_produkcyjny
+GO
+
 CREATE VIEW vDZ_Wydanie_faktury
 AS
 SELECT DZ_Status_zamowienia.Id_zamowienia AS [Numer faktury], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilość sztuk], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamówienia], DZ_Klient.Nip AS [NIP],DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Klient.Imie AS [Imię], DZ_Klient.Nazwisko, DZ_Klient.Adres, DZ_Klient.Kod_pocztowy AS [Kod pocztowy], DZ_Klient.Miasto, DZ_Klient.Numer_rachunku AS [Numer rachunku],vDP_Kosztorys_powykonawczy.[Koszt powykonawczy],
