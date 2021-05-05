@@ -313,6 +313,7 @@ CREATE TABLE DM_Sklad_dostawy_narzedzi(
 	Cena_jednostkowa_narzedzi int NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_czesci(
+	Id_dostawy_czesci int identity(1,1) NOT NULL PRIMARY KEY, 
 	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_czesci( Id_dostawy) , 
     Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawca(Id_dostawcy),
 	Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesc(Id_czesci), 

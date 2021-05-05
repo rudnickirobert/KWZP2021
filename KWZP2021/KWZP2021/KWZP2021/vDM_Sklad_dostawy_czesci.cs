@@ -14,6 +14,7 @@ namespace KWZP2021
     
     public partial class vDM_Sklad_dostawy_czesci
     {
+        public int Id_dostawy_czesci { get; set; }
         public int Identyfikator_dostawy { get; set; }
         public string Nazwa_dostawcy { get; set; }
         public string Nazwa_czesci { get; set; }

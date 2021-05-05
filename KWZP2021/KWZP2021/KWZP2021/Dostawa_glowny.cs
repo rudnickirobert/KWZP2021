@@ -38,5 +38,11 @@ namespace KWZP2021
             DostawaMaterialu nowa = new DostawaMaterialu(this.database);
             nowa.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dostawa_czesci dostawaCzesci = new Dostawa_czesci(this.database);
+            dostawaCzesci.ShowDialog();
+        }
     }
 }

@@ -301,7 +301,7 @@ DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_narzedzi.Id_zamowienie_zewn=DZ_Zamowieni
 GO
 CREATE VIEW vDM_Sklad_dostawy_czesci
 AS
-SELECT DM_Sklad_dostawy_czesci.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Czesc.Nazwa AS [Nazwa czesci],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_czesci.Ilosc AS [Ilosc], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa czesci]
+SELECT DM_Sklad_dostawy_czesci.Id_dostawy_czesci, DM_Sklad_dostawy_czesci.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Czesc.Nazwa AS [Nazwa czesci],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_czesci.Ilosc AS [Ilosc], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa czesci]
 FROM dbo.DM_Sklad_dostawy_czesci INNER JOIN
 DM_Dostawa_maszyn  ON DM_Sklad_dostawy_czesci.Id_dostawy=DM_Dostawa_maszyn.Id_dostawy INNER JOIN
 DM_Dostawca ON DM_Sklad_dostawy_czesci.Id_dostawcy=DM_Dostawca.Id_dostawcy INNER JOIN

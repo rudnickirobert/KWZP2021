@@ -17,6 +17,7 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DZ_Zamowienie_zewn()
         {
+            this.DM_Sklad_dostawy_czesci = new HashSet<DM_Sklad_dostawy_czesci>();
             this.DM_Sklad_dostawy_materialu = new HashSet<DM_Sklad_dostawy_materialu>();
             this.DZ_Szczegoly_zam_czesci = new HashSet<DZ_Szczegoly_zam_czesci>();
             this.DZ_Szczegoly_zam_maszyn = new HashSet<DZ_Szczegoly_zam_maszyn>();
@@ -24,13 +25,14 @@ namespace KWZP2021
             this.DZ_Szczegoly_zam_narzedzi = new HashSet<DZ_Szczegoly_zam_narzedzi>();
             this.DM_Sklad_dostawy_maszyn = new HashSet<DM_Sklad_dostawy_maszyn>();
             this.DM_Sklad_dostawy_narzedzi = new HashSet<DM_Sklad_dostawy_narzedzi>();
-            this.DM_Sklad_dostawy_czesci = new HashSet<DM_Sklad_dostawy_czesci>();
         }
     
         public int Id_zamowienia_zewn { get; set; }
         public int Id_pracownika { get; set; }
         public System.DateTime Data_zamowienia_zewn { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DM_Sklad_dostawy_czesci> DM_Sklad_dostawy_czesci { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Sklad_dostawy_materialu> DM_Sklad_dostawy_materialu { get; set; }
         public virtual DZ_Pracownik DZ_Pracownik { get; set; }
@@ -46,7 +48,5 @@ namespace KWZP2021
         public virtual ICollection<DM_Sklad_dostawy_maszyn> DM_Sklad_dostawy_maszyn { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Sklad_dostawy_narzedzi> DM_Sklad_dostawy_narzedzi { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Sklad_dostawy_czesci> DM_Sklad_dostawy_czesci { get; set; }
     }
 }
