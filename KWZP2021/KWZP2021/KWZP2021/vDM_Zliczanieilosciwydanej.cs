@@ -15,6 +15,9 @@ namespace KWZP2021
     public partial class vDM_Zliczanieilosciwydanej
     {
         public string Nazwa_materialu { get; set; }
+        public Nullable<int> Ilosc1 { get; set; }
         public Nullable<int> Ilosc2 { get; set; }
+        public Nullable<double> Ilosc3 { get; set; }
+        public Nullable<int> Ilosc4 { get; set; }
     }
 }

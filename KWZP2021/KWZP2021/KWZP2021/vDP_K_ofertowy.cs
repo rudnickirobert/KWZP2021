@@ -12,9 +12,13 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Zliczaniematerialudowydruku
+    public partial class vDP_K_ofertowy
     {
-        public string Nazwa { get; set; }
-        public Nullable<double> Ilosc4 { get; set; }
+        public int Id_proces_technologiczny { get; set; }
+        public Nullable<decimal> Koszt_maszyn1_ofertowy { get; set; }
+        public Nullable<decimal> Koszt_maszyn2_ofertowy { get; set; }
+        public Nullable<int> Koszt_materialu1_ofertowy { get; set; }
+        public Nullable<double> Koszt_materialu2_ofertowy { get; set; }
+        public Nullable<double> Koszt_pracownik_ofertowy { get; set; }
     }
 }

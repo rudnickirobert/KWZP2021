@@ -19,5 +19,8 @@ namespace KWZP2021
         public string Nip { get; set; }
         public string Nazwa_firmy { get; set; }
         public int Ilosc_sztuk { get; set; }
+        public Nullable<double> Koszt_ofertowy { get; set; }
+        public Nullable<double> Współczynnik_bezpieczeństwa { get; set; }
+        public Nullable<double> Kwota_oferty { get; set; }
     }
 }

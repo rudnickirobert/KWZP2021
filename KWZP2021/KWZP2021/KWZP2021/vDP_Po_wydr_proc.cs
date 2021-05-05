@@ -15,7 +15,7 @@ namespace KWZP2021
     public partial class vDP_Po_wydr_proc
     {
         public int Identyfikator { get; set; }
-        public int C_Identyfikator_wydruku { get; set; }
-        public string C_Nazwa_procesu_technologicznego { get; set; }
+        public int Identyfikator_wydruku { get; set; }
+        public string Nazwa_procesu_technologicznego { get; set; }
     }
 }

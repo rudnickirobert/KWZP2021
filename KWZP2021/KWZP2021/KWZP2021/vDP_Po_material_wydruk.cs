@@ -15,7 +15,7 @@ namespace KWZP2021
     public partial class vDP_Po_material_wydruk
     {
         public string Nazwa_materialu { get; set; }
-        public int C_Identyfikator_wydruku { get; set; }
+        public int Identyfikator_wydruku { get; set; }
         public double Ilosc_materialu { get; set; }
     }
 }

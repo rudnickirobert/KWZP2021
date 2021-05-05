@@ -19,6 +19,6 @@ namespace KWZP2021
         public string Nazwa_modelu { get; set; }
         public string Numer_seryjny { get; set; }
         public System.DateTime Data_wprowadzenia_maszyny { get; set; }
-        public decimal C_Koszt_1_roboczo_godziny { get; set; }
+        public decimal Koszt_1_roboczo_godziny { get; set; }
     }
 }

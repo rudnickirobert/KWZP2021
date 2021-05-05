@@ -18,6 +18,6 @@ namespace KWZP2021
         public string Nazwisko_pracownika_wypozyczajacego { get; set; }
         public string Nazwisko_pracownika_wydajacego { get; set; }
         public System.DateTime Data_i_godzina_wydania { get; set; }
-        public string C_Uwagi { get; set; }
+        public string Uwagi { get; set; }
     }
 }

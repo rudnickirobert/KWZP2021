@@ -19,6 +19,8 @@ namespace KWZP2021
         public string NIP { get; set; }
         public string Imię { get; set; }
         public string Nazwisko { get; set; }
+        public Nullable<double> Koszt_powykonawczy { get; set; }
         public string Status_wpływu { get; set; }
+        public Nullable<double> Kwota_wpływu { get; set; }
     }
 }

@@ -79,6 +79,12 @@
     <Compile Include="Archiwum_oplaty.Designer.cs">
       <DependentUpon>Archiwum_oplaty.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bilans.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilans.Designer.cs">
+      <DependentUpon>Bilans.cs</DependentUpon>
+    </Compile>
     <Compile Include="Czesc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -966,19 +972,10 @@
     <Compile Include="vDM_Wypozyczenie_narzedzia.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="vDM_Zapotrzebowanie.cs">
-      <DependentUpon>DrukarniaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vDM_Zliczanieilosciwdostawie.cs">
+    <Compile Include="vDM_Zapotrzebowanie1.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDM_Zliczanieilosciwydanej.cs">
-      <DependentUpon>DrukarniaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vDM_Zliczaniematerialudoczynnosci.cs">
-      <DependentUpon>DrukarniaModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="vDM_Zliczaniematerialudowydruku.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Co_ile_obsluga.cs">
@@ -997,6 +994,12 @@
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Firma_serwisowa.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Kosztorys_ofertowy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_Kosztorys_powykonawczy.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Koszt_jednostkowy_material.cs">
@@ -1036,6 +1039,12 @@
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Koszt_RH_pracownika.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_K_ofertowy.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDP_K_powykonawczy.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDP_Maszyna.cs">
@@ -1162,6 +1171,9 @@
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Archiwum_Koszty_zewnetrzne.cs">
+      <DependentUpon>DrukarniaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vDZ_Bilans.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="vDZ_Dzial.cs">
@@ -1352,6 +1364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Archiwum_oplaty.resx">
       <DependentUpon>Archiwum_oplaty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilans.resx">
+      <DependentUpon>Bilans.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Czesc.resx">
       <DependentUpon>Czesc.cs</DependentUpon>

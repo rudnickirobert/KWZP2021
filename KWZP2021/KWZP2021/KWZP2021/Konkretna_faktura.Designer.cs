@@ -180,6 +180,7 @@ namespace KWZP2021
             // 
             this.txt1.Location = new System.Drawing.Point(186, 125);
             this.txt1.Name = "txt1";
+            this.txt1.ReadOnly = true;
             this.txt1.Size = new System.Drawing.Size(379, 22);
             this.txt1.TabIndex = 15;
             // 
@@ -187,6 +188,7 @@ namespace KWZP2021
             // 
             this.txt2.Location = new System.Drawing.Point(186, 153);
             this.txt2.Name = "txt2";
+            this.txt2.ReadOnly = true;
             this.txt2.Size = new System.Drawing.Size(379, 22);
             this.txt2.TabIndex = 16;
             // 
@@ -194,6 +196,7 @@ namespace KWZP2021
             // 
             this.txt3.Location = new System.Drawing.Point(186, 181);
             this.txt3.Name = "txt3";
+            this.txt3.ReadOnly = true;
             this.txt3.Size = new System.Drawing.Size(379, 22);
             this.txt3.TabIndex = 17;
             // 
@@ -201,6 +204,7 @@ namespace KWZP2021
             // 
             this.txt6.Location = new System.Drawing.Point(186, 265);
             this.txt6.Name = "txt6";
+            this.txt6.ReadOnly = true;
             this.txt6.Size = new System.Drawing.Size(379, 22);
             this.txt6.TabIndex = 18;
             // 
@@ -208,6 +212,7 @@ namespace KWZP2021
             // 
             this.txt7.Location = new System.Drawing.Point(186, 293);
             this.txt7.Name = "txt7";
+            this.txt7.ReadOnly = true;
             this.txt7.Size = new System.Drawing.Size(379, 22);
             this.txt7.TabIndex = 19;
             // 
@@ -215,6 +220,7 @@ namespace KWZP2021
             // 
             this.txt8.Location = new System.Drawing.Point(186, 321);
             this.txt8.Name = "txt8";
+            this.txt8.ReadOnly = true;
             this.txt8.Size = new System.Drawing.Size(379, 22);
             this.txt8.TabIndex = 20;
             // 
@@ -222,6 +228,7 @@ namespace KWZP2021
             // 
             this.txt9.Location = new System.Drawing.Point(186, 349);
             this.txt9.Name = "txt9";
+            this.txt9.ReadOnly = true;
             this.txt9.Size = new System.Drawing.Size(379, 22);
             this.txt9.TabIndex = 21;
             // 
@@ -229,6 +236,7 @@ namespace KWZP2021
             // 
             this.txt10.Location = new System.Drawing.Point(186, 377);
             this.txt10.Name = "txt10";
+            this.txt10.ReadOnly = true;
             this.txt10.Size = new System.Drawing.Size(379, 22);
             this.txt10.TabIndex = 22;
             // 
@@ -236,6 +244,7 @@ namespace KWZP2021
             // 
             this.txt11.Location = new System.Drawing.Point(186, 404);
             this.txt11.Name = "txt11";
+            this.txt11.ReadOnly = true;
             this.txt11.Size = new System.Drawing.Size(379, 22);
             this.txt11.TabIndex = 23;
             // 
@@ -243,6 +252,7 @@ namespace KWZP2021
             // 
             this.txt12.Location = new System.Drawing.Point(186, 432);
             this.txt12.Name = "txt12";
+            this.txt12.ReadOnly = true;
             this.txt12.Size = new System.Drawing.Size(379, 22);
             this.txt12.TabIndex = 24;
             // 
@@ -250,6 +260,7 @@ namespace KWZP2021
             // 
             this.txt13.Location = new System.Drawing.Point(186, 460);
             this.txt13.Name = "txt13";
+            this.txt13.ReadOnly = true;
             this.txt13.Size = new System.Drawing.Size(379, 22);
             this.txt13.TabIndex = 25;
             // 
@@ -257,6 +268,7 @@ namespace KWZP2021
             // 
             this.txt5.Location = new System.Drawing.Point(186, 237);
             this.txt5.Name = "txt5";
+            this.txt5.ReadOnly = true;
             this.txt5.Size = new System.Drawing.Size(379, 22);
             this.txt5.TabIndex = 26;
             // 
@@ -264,6 +276,7 @@ namespace KWZP2021
             // 
             this.txt4.Location = new System.Drawing.Point(186, 209);
             this.txt4.Name = "txt4";
+            this.txt4.ReadOnly = true;
             this.txt4.Size = new System.Drawing.Size(379, 22);
             this.txt4.TabIndex = 27;
             // 

@@ -1074,14 +1074,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Sklad_dostawy_czesci' does not h
             <PropertyRef Name="Nazwa czesci" />
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name=" Cena jednostkowa czesci" />
+            <PropertyRef Name="Cena jednostkowa czesci" />
           </Key>
           <Property Name="Identyfikator dostawy" Type="int" Nullable="false" />
           <Property Name="Nazwa dostawcy" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Nazwa czesci" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
-          <Property Name=" Cena jednostkowa czesci" Type="int" Nullable="false" />
+          <Property Name="Cena jednostkowa czesci" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Sklad_dostawy_maszyn' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1092,14 +1092,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Sklad_dostawy_maszyn' does not h
             <PropertyRef Name="Numer seryjny maszyny" />
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name=" Cena jednostkowa maszyny" />
+            <PropertyRef Name="Cena jednostkowa maszyny" />
           </Key>
           <Property Name="Identyfikator dostawy" Type="int" Nullable="false" />
           <Property Name="Nazwa dostawcy" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Numer seryjny maszyny" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
-          <Property Name=" Cena jednostkowa maszyny" Type="int" Nullable="false" />
+          <Property Name="Cena jednostkowa maszyny" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Sklad_dostawy_materialu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1110,14 +1110,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Sklad_dostawy_materialu' does no
             <PropertyRef Name="Nazwa materialu" />
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name=" Cena jednostkowa materialu" />
+            <PropertyRef Name="Cena jednostkowa materialu" />
           </Key>
           <Property Name="Identyfikator dostawy" Type="int" Nullable="false" />
           <Property Name="Nazwa dostawcy" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
-          <Property Name=" Cena jednostkowa materialu" Type="int" Nullable="false" />
+          <Property Name="Cena jednostkowa materialu" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Sklad_dostawy_narzedzi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1128,14 +1128,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Sklad_dostawy_narzedzi' does not
             <PropertyRef Name="Nazwa narzedzia" />
             <PropertyRef Name="Numer zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name=" Cena jednostkowa narzedzia" />
+            <PropertyRef Name="Cena jednostkowa narzedzia" />
           </Key>
           <Property Name="Identyfikator dostawy" Type="int" Nullable="false" />
           <Property Name="Nazwa dostawcy" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Nazwa narzedzia" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Numer zamowienia" Type="int" Nullable="false" />
           <Property Name="Ilosc" Type="int" Nullable="false" />
-          <Property Name=" Cena jednostkowa narzedzia" Type="int" Nullable="false" />
+          <Property Name="Cena jednostkowa narzedzia" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Szczegoly_magazynu_gotowych_produktow' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1143,11 +1143,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Szczegoly_magazynu_gotowych_prod
           <Key>
             <PropertyRef Name="Identyfikator magazynu" />
             <PropertyRef Name="Nazwa produktu" />
-            <PropertyRef Name=" Ilosc" />
+            <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator magazynu" Type="int" Nullable="false" />
           <Property Name="Nazwa produktu" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name=" Ilosc" Type="int" Nullable="false" />
+          <Property Name="Ilosc" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Szczegoly_wydania_czesci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1245,13 +1245,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wydanie_czesci' does not have a 
             <PropertyRef Name="Nazwisko pracownika wypozyczajacego" />
             <PropertyRef Name="Nazwisko pracownika wydajacego" />
             <PropertyRef Name="Data i godzina wydania" />
-            <PropertyRef Name=" Uwagi" />
+            <PropertyRef Name="Uwagi" />
           </Key>
           <Property Name="Identyfikator wypozyczenia" Type="int" Nullable="false" />
           <Property Name="Nazwisko pracownika wypozyczajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Nazwisko pracownika wydajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Data i godzina wydania" Type="datetime" Nullable="false" />
-          <Property Name=" Uwagi" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="Uwagi" Type="nvarchar" MaxLength="200" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Wydanie_czesci_dla_produkcji' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1275,15 +1275,15 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wydanie_materialu_dla_produkcji'
           <Key>
             <PropertyRef Name="Identyfikator wydania materialu" />
             <PropertyRef Name="Numer zamówienia" />
-            <PropertyRef Name=" Nazwisko pracownika pobierajacego" />
-            <PropertyRef Name=" Nazwisko pracownika wydajacego" />
-            <PropertyRef Name=" Data i godzina" />
+            <PropertyRef Name="Nazwisko pracownika pobierajacego" />
+            <PropertyRef Name="Nazwisko pracownika wydajacego" />
+            <PropertyRef Name="Data i godzina" />
           </Key>
           <Property Name="Identyfikator wydania materialu" Type="int" Nullable="false" />
           <Property Name="Numer zamówienia" Type="int" Nullable="false" />
-          <Property Name=" Nazwisko pracownika pobierajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name=" Nazwisko pracownika wydajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name=" Data i godzina" Type="datetime" Nullable="false" />
+          <Property Name="Nazwisko pracownika pobierajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nazwisko pracownika wydajacego" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Data i godzina" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Wydanie_produktu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1315,28 +1315,19 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Wypozyczenie_narzedzia' does not
           <Property Name="Uwagi" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Zapotrzebowanie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Zapotrzebowanie">
+warning 6002: The table/view 'Drukarnia.dbo.vDM_Zapotrzebowanie1' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDM_Zapotrzebowanie1">
           <Key>
             <PropertyRef Name="Nazwa materialu" />
             <PropertyRef Name="Stan materiału" />
           </Key>
           <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Ilosc_potrzebna" Type="int" />
           <Property Name="Ilosc1" Type="int" />
-          <Property Name="Ilosc4" Type="float" />
-          <Property Name="Ilosc3" Type="int" />
+          <Property Name="Ilosc2" Type="int" />
+          <Property Name="Ilosc3" Type="float" />
+          <Property Name="Ilosc4" Type="int" />
           <Property Name="Stan materiału" Type="varchar" MaxLength="14" Nullable="false" />
           <Property Name="Brakujaca ilosc" Type="float" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczanieilosciwdostawie' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Zliczanieilosciwdostawie">
-          <Key>
-            <PropertyRef Name="Nazwa materialu" />
-          </Key>
-          <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Ilosc1" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczanieilosciwydanej' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1345,25 +1336,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczanieilosciwydanej' does not
             <PropertyRef Name="Nazwa materialu" />
           </Key>
           <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Ilosc1" Type="int" />
           <Property Name="Ilosc2" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczaniematerialudoczynnosci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Zliczaniematerialudoczynnosci">
-          <Key>
-            <PropertyRef Name="Nazwa" />
-          </Key>
-          <Property Name="Nazwa" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Ilosc3" Type="int" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Drukarnia.dbo.vDM_Zliczaniematerialudowydruku' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="vDM_Zliczaniematerialudowydruku">
-          <Key>
-            <PropertyRef Name="Nazwa" />
-          </Key>
-          <Property Name="Nazwa" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="Ilosc4" Type="float" />
+          <Property Name="Ilosc3" Type="float" />
+          <Property Name="Ilosc4" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Co_ile_obsluga' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1448,6 +1424,32 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Firma_serwisowa' does not have a
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Numer telefonu" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="E-mail" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_K_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_K_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="int" Nullable="false" />
+          <Property Name="Koszt maszyn1 ofertowy" Type="money" />
+          <Property Name="Koszt maszyn2 ofertowy" Type="money" />
+          <Property Name="Koszt materialu1 ofertowy" Type="int" />
+          <Property Name="Koszt materialu2 ofertowy" Type="float" />
+          <Property Name="Koszt pracownik ofertowy" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_K_powykonawczy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_K_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="int" Nullable="false" />
+          <Property Name="Koszt maszyn1 powykonawczy" Type="money" />
+          <Property Name="Koszt maszyn2 powykonawczy" Type="money" />
+          <Property Name="Koszt materialu1 powykonawczy" Type="int" />
+          <Property Name="Koszt materialu2 powykonawczy" Type="float" />
+          <Property Name="Koszt pracownik powykonawczy" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_jednostkowy_material' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1675,6 +1677,24 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Koszt_RH_pracownika' does not ha
           <Property Name="Stanowisko" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Kosztorys_ofertowy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Kosztorys_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="int" Nullable="false" />
+          <Property Name="Koszt ofertowy" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDP_Kosztorys_powykonawczy' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDP_Kosztorys_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="int" Nullable="false" />
+          <Property Name="Koszt powykonawczy" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyna' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDP_Maszyna">
           <Key>
@@ -1683,14 +1703,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyna' does not have a primary
             <PropertyRef Name="Nazwa modelu" />
             <PropertyRef Name="Numer seryjny" />
             <PropertyRef Name="Data wprowadzenia maszyny" />
-            <PropertyRef Name=" Koszt 1 roboczo-godziny" />
+            <PropertyRef Name="Koszt 1 roboczo-godziny" />
           </Key>
           <Property Name="Numer maszyny" Type="int" Nullable="false" />
           <Property Name="Rodzaj maszyny" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Nazwa modelu" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Numer seryjny" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Data wprowadzenia maszyny" Type="date" Nullable="false" />
-          <Property Name=" Koszt 1 roboczo-godziny" Type="money" Nullable="false" />
+          <Property Name="Koszt 1 roboczo-godziny" Type="money" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Maszyna_drukarki' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -1867,11 +1887,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Po_material_wydruk' does not hav
         <EntityType Name="vDP_Po_material_wydruk">
           <Key>
             <PropertyRef Name="Nazwa materialu" />
-            <PropertyRef Name=" Identyfikator wydruku" />
+            <PropertyRef Name="Identyfikator wydruku" />
             <PropertyRef Name="Ilosc materialu" />
           </Key>
           <Property Name="Nazwa materialu" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name=" Identyfikator wydruku" Type="int" Nullable="false" />
+          <Property Name="Identyfikator wydruku" Type="int" Nullable="false" />
           <Property Name="Ilosc materialu" Type="float" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
@@ -1933,12 +1953,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Po_wydr_proc' does not have a pr
         <EntityType Name="vDP_Po_wydr_proc">
           <Key>
             <PropertyRef Name="Identyfikator" />
-            <PropertyRef Name=" Identyfikator wydruku" />
-            <PropertyRef Name=" Nazwa procesu technologicznego" />
+            <PropertyRef Name="Identyfikator wydruku" />
+            <PropertyRef Name="Nazwa procesu technologicznego" />
           </Key>
           <Property Name="Identyfikator" Type="int" Nullable="false" />
-          <Property Name=" Identyfikator wydruku" Type="int" Nullable="false" />
-          <Property Name=" Nazwa procesu technologicznego" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Identyfikator wydruku" Type="int" Nullable="false" />
+          <Property Name="Nazwa procesu technologicznego" Type="nvarchar" MaxLength="150" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Pracownik_Proces' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2215,6 +2235,17 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Archiwum_Koszty_zewnetrzne' does
           <Property Name="Koszt" Type="decimal" Precision="38" Scale="0" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'Drukarnia.dbo.vDZ_Bilans' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vDZ_Bilans">
+          <Key>
+            <PropertyRef Name="Wynik bilansu" />
+          </Key>
+          <Property Name="Przychód" Type="float" />
+          <Property Name="Rozchód" Type="float" />
+          <Property Name="Zysk/Strata" Type="float" />
+          <Property Name="Wynik bilansu" Type="varchar" MaxLength="6" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Dzial' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Dzial">
           <Key>
@@ -2352,6 +2383,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Oferta_dla_klienta' does not hav
           <Property Name="Nip" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Nazwa firmy" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Ilosc sztuk" Type="int" Nullable="false" />
+          <Property Name="Koszt ofertowy" Type="float" />
+          <Property Name="Współczynnik bezpieczeństwa" Type="float" />
+          <Property Name="Kwota oferty" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Oplaty_stale' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2434,6 +2468,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Premia' does not have a primary 
           <Property Name="Premia" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6013: The table/view 'Drukarnia.dbo.vDZ_Przychod' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vDZ_Przychod">
+          <Property Name="Przychód" Type="float" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rachunek' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Rachunek">
           <Key>
@@ -2489,6 +2528,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rodzaj_umowy' does not have a pr
           <Property Name="Identyfikator umowy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Rodzaj umowy" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Drukarnia.dbo.vDZ_Rozchod' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vDZ_Rozchod">
+          <Property Name="Suma wypłat" Type="float" />
+          <Property Name="Suma kosztów zewnętrznych" Type="decimal" Precision="38" Scale="0" />
+          <Property Name="Suma opłat stałych" Type="float" />
+          <Property Name="Rozchód" Type="float" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Stanowisko' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Stanowisko">
@@ -2627,7 +2674,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Wplyw' does not have a primary k
           <Property Name="NIP" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="Imię" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Nazwisko" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Koszt powykonawczy" Type="float" />
           <Property Name="Status wpływu" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="Kwota wpływu" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Wycena_sz_zamowienia' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -2675,7 +2724,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Wydanie_faktury' does not have a
           <Property Name="Kod pocztowy" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="Miasto" Type="nvarchar" MaxLength="40" Nullable="false" />
           <Property Name="Numer rachunku" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Koszt powykonawczy" Type="float" />
           <Property Name="Wydanie faktury" Type="varchar" MaxLength="22" Nullable="false" />
+          <Property Name="Kwota na fakturze" Type="float" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Wyplata' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -4750,7 +4801,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Sklad_dostawy_czesci].[Nazwa czesci] AS [Nazwa czesci], 
     [vDM_Sklad_dostawy_czesci].[Numer zamowienia] AS [Numer zamowienia], 
     [vDM_Sklad_dostawy_czesci].[Ilosc] AS [Ilosc], 
-    [vDM_Sklad_dostawy_czesci].[ Cena jednostkowa czesci] AS [ Cena jednostkowa czesci]
+    [vDM_Sklad_dostawy_czesci].[Cena jednostkowa czesci] AS [Cena jednostkowa czesci]
     FROM [dbo].[vDM_Sklad_dostawy_czesci] AS [vDM_Sklad_dostawy_czesci]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Sklad_dostawy_maszyn" EntityType="Self.vDM_Sklad_dostawy_maszyn" store:Type="Views" store:Schema="dbo">
@@ -4760,7 +4811,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Sklad_dostawy_maszyn].[Numer seryjny maszyny] AS [Numer seryjny maszyny], 
     [vDM_Sklad_dostawy_maszyn].[Numer zamowienia] AS [Numer zamowienia], 
     [vDM_Sklad_dostawy_maszyn].[Ilosc] AS [Ilosc], 
-    [vDM_Sklad_dostawy_maszyn].[ Cena jednostkowa maszyny] AS [ Cena jednostkowa maszyny]
+    [vDM_Sklad_dostawy_maszyn].[Cena jednostkowa maszyny] AS [Cena jednostkowa maszyny]
     FROM [dbo].[vDM_Sklad_dostawy_maszyn] AS [vDM_Sklad_dostawy_maszyn]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Sklad_dostawy_materialu" EntityType="Self.vDM_Sklad_dostawy_materialu" store:Type="Views" store:Schema="dbo">
@@ -4770,7 +4821,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Sklad_dostawy_materialu].[Nazwa materialu] AS [Nazwa materialu], 
     [vDM_Sklad_dostawy_materialu].[Numer zamowienia] AS [Numer zamowienia], 
     [vDM_Sklad_dostawy_materialu].[Ilosc] AS [Ilosc], 
-    [vDM_Sklad_dostawy_materialu].[ Cena jednostkowa materialu] AS [ Cena jednostkowa materialu]
+    [vDM_Sklad_dostawy_materialu].[Cena jednostkowa materialu] AS [Cena jednostkowa materialu]
     FROM [dbo].[vDM_Sklad_dostawy_materialu] AS [vDM_Sklad_dostawy_materialu]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Sklad_dostawy_narzedzi" EntityType="Self.vDM_Sklad_dostawy_narzedzi" store:Type="Views" store:Schema="dbo">
@@ -4780,14 +4831,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Sklad_dostawy_narzedzi].[Nazwa narzedzia] AS [Nazwa narzedzia], 
     [vDM_Sklad_dostawy_narzedzi].[Numer zamowienia] AS [Numer zamowienia], 
     [vDM_Sklad_dostawy_narzedzi].[Ilosc] AS [Ilosc], 
-    [vDM_Sklad_dostawy_narzedzi].[ Cena jednostkowa narzedzia] AS [ Cena jednostkowa narzedzia]
+    [vDM_Sklad_dostawy_narzedzi].[Cena jednostkowa narzedzia] AS [Cena jednostkowa narzedzia]
     FROM [dbo].[vDM_Sklad_dostawy_narzedzi] AS [vDM_Sklad_dostawy_narzedzi]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Szczegoly_magazynu_gotowych_produktow" EntityType="Self.vDM_Szczegoly_magazynu_gotowych_produktow" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDM_Szczegoly_magazynu_gotowych_produktow].[Identyfikator magazynu] AS [Identyfikator magazynu], 
     [vDM_Szczegoly_magazynu_gotowych_produktow].[Nazwa produktu] AS [Nazwa produktu], 
-    [vDM_Szczegoly_magazynu_gotowych_produktow].[ Ilosc] AS [ Ilosc]
+    [vDM_Szczegoly_magazynu_gotowych_produktow].[Ilosc] AS [Ilosc]
     FROM [dbo].[vDM_Szczegoly_magazynu_gotowych_produktow] AS [vDM_Szczegoly_magazynu_gotowych_produktow]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Szczegoly_wydania_czesci" EntityType="Self.vDM_Szczegoly_wydania_czesci" store:Type="Views" store:Schema="dbo">
@@ -4847,7 +4898,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Wydanie_czesci].[Nazwisko pracownika wypozyczajacego] AS [Nazwisko pracownika wypozyczajacego], 
     [vDM_Wydanie_czesci].[Nazwisko pracownika wydajacego] AS [Nazwisko pracownika wydajacego], 
     [vDM_Wydanie_czesci].[Data i godzina wydania] AS [Data i godzina wydania], 
-    [vDM_Wydanie_czesci].[ Uwagi] AS [ Uwagi]
+    [vDM_Wydanie_czesci].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDM_Wydanie_czesci] AS [vDM_Wydanie_czesci]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Wydanie_czesci_dla_produkcji" EntityType="Self.vDM_Wydanie_czesci_dla_produkcji" store:Type="Views" store:Schema="dbo">
@@ -4863,9 +4914,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <DefiningQuery>SELECT 
     [vDM_Wydanie_materialu_dla_produkcji].[Identyfikator wydania materialu] AS [Identyfikator wydania materialu], 
     [vDM_Wydanie_materialu_dla_produkcji].[Numer zamówienia] AS [Numer zamówienia], 
-    [vDM_Wydanie_materialu_dla_produkcji].[ Nazwisko pracownika pobierajacego] AS [ Nazwisko pracownika pobierajacego], 
-    [vDM_Wydanie_materialu_dla_produkcji].[ Nazwisko pracownika wydajacego] AS [ Nazwisko pracownika wydajacego], 
-    [vDM_Wydanie_materialu_dla_produkcji].[ Data i godzina] AS [ Data i godzina]
+    [vDM_Wydanie_materialu_dla_produkcji].[Nazwisko pracownika pobierajacego] AS [Nazwisko pracownika pobierajacego], 
+    [vDM_Wydanie_materialu_dla_produkcji].[Nazwisko pracownika wydajacego] AS [Nazwisko pracownika wydajacego], 
+    [vDM_Wydanie_materialu_dla_produkcji].[Data i godzina] AS [Data i godzina]
     FROM [dbo].[vDM_Wydanie_materialu_dla_produkcji] AS [vDM_Wydanie_materialu_dla_produkcji]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Wydanie_produktu" EntityType="Self.vDM_Wydanie_produktu" store:Type="Views" store:Schema="dbo">
@@ -4886,40 +4937,25 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDM_Wypozyczenie_narzedzia].[Uwagi] AS [Uwagi]
     FROM [dbo].[vDM_Wypozyczenie_narzedzia] AS [vDM_Wypozyczenie_narzedzia]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="vDM_Zapotrzebowanie" EntityType="Self.vDM_Zapotrzebowanie" store:Type="Views" store:Schema="dbo">
+          <EntitySet Name="vDM_Zapotrzebowanie1" EntityType="Self.vDM_Zapotrzebowanie1" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [vDM_Zapotrzebowanie].[Nazwa materialu] AS [Nazwa materialu], 
-    [vDM_Zapotrzebowanie].[Ilosc_potrzebna] AS [Ilosc_potrzebna], 
-    [vDM_Zapotrzebowanie].[Ilosc1] AS [Ilosc1], 
-    [vDM_Zapotrzebowanie].[Ilosc4] AS [Ilosc4], 
-    [vDM_Zapotrzebowanie].[Ilosc3] AS [Ilosc3], 
-    [vDM_Zapotrzebowanie].[Stan materiału] AS [Stan materiału], 
-    [vDM_Zapotrzebowanie].[Brakujaca ilosc] AS [Brakujaca ilosc]
-    FROM [dbo].[vDM_Zapotrzebowanie] AS [vDM_Zapotrzebowanie]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vDM_Zliczanieilosciwdostawie" EntityType="Self.vDM_Zliczanieilosciwdostawie" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vDM_Zliczanieilosciwdostawie].[Nazwa materialu] AS [Nazwa materialu], 
-    [vDM_Zliczanieilosciwdostawie].[Ilosc1] AS [Ilosc1]
-    FROM [dbo].[vDM_Zliczanieilosciwdostawie] AS [vDM_Zliczanieilosciwdostawie]</DefiningQuery>
+    [vDM_Zapotrzebowanie1].[Nazwa materialu] AS [Nazwa materialu], 
+    [vDM_Zapotrzebowanie1].[Ilosc1] AS [Ilosc1], 
+    [vDM_Zapotrzebowanie1].[Ilosc2] AS [Ilosc2], 
+    [vDM_Zapotrzebowanie1].[Ilosc3] AS [Ilosc3], 
+    [vDM_Zapotrzebowanie1].[Ilosc4] AS [Ilosc4], 
+    [vDM_Zapotrzebowanie1].[Stan materiału] AS [Stan materiału], 
+    [vDM_Zapotrzebowanie1].[Brakujaca ilosc] AS [Brakujaca ilosc]
+    FROM [dbo].[vDM_Zapotrzebowanie1] AS [vDM_Zapotrzebowanie1]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDM_Zliczanieilosciwydanej" EntityType="Self.vDM_Zliczanieilosciwydanej" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDM_Zliczanieilosciwydanej].[Nazwa materialu] AS [Nazwa materialu], 
-    [vDM_Zliczanieilosciwydanej].[Ilosc2] AS [Ilosc2]
+    [vDM_Zliczanieilosciwydanej].[Ilosc1] AS [Ilosc1], 
+    [vDM_Zliczanieilosciwydanej].[Ilosc2] AS [Ilosc2], 
+    [vDM_Zliczanieilosciwydanej].[Ilosc3] AS [Ilosc3], 
+    [vDM_Zliczanieilosciwydanej].[Ilosc4] AS [Ilosc4]
     FROM [dbo].[vDM_Zliczanieilosciwydanej] AS [vDM_Zliczanieilosciwydanej]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vDM_Zliczaniematerialudoczynnosci" EntityType="Self.vDM_Zliczaniematerialudoczynnosci" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vDM_Zliczaniematerialudoczynnosci].[Nazwa] AS [Nazwa], 
-    [vDM_Zliczaniematerialudoczynnosci].[Ilosc3] AS [Ilosc3]
-    FROM [dbo].[vDM_Zliczaniematerialudoczynnosci] AS [vDM_Zliczaniematerialudoczynnosci]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vDM_Zliczaniematerialudowydruku" EntityType="Self.vDM_Zliczaniematerialudowydruku" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [vDM_Zliczaniematerialudowydruku].[Nazwa] AS [Nazwa], 
-    [vDM_Zliczaniematerialudowydruku].[Ilosc4] AS [Ilosc4]
-    FROM [dbo].[vDM_Zliczaniematerialudowydruku] AS [vDM_Zliczaniematerialudowydruku]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Co_ile_obsluga" EntityType="Self.vDP_Co_ile_obsluga" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -4968,6 +5004,26 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDP_Firma_serwisowa].[Numer telefonu] AS [Numer telefonu], 
     [vDP_Firma_serwisowa].[E-mail] AS [E-mail]
     FROM [dbo].[vDP_Firma_serwisowa] AS [vDP_Firma_serwisowa]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_K_ofertowy" EntityType="Self.vDP_K_ofertowy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_K_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_K_ofertowy].[Koszt maszyn1 ofertowy] AS [Koszt maszyn1 ofertowy], 
+    [vDP_K_ofertowy].[Koszt maszyn2 ofertowy] AS [Koszt maszyn2 ofertowy], 
+    [vDP_K_ofertowy].[Koszt materialu1 ofertowy] AS [Koszt materialu1 ofertowy], 
+    [vDP_K_ofertowy].[Koszt materialu2 ofertowy] AS [Koszt materialu2 ofertowy], 
+    [vDP_K_ofertowy].[Koszt pracownik ofertowy] AS [Koszt pracownik ofertowy]
+    FROM [dbo].[vDP_K_ofertowy] AS [vDP_K_ofertowy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_K_powykonawczy" EntityType="Self.vDP_K_powykonawczy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_K_powykonawczy].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
+    [vDP_K_powykonawczy].[Koszt maszyn1 powykonawczy] AS [Koszt maszyn1 powykonawczy], 
+    [vDP_K_powykonawczy].[Koszt maszyn2 powykonawczy] AS [Koszt maszyn2 powykonawczy], 
+    [vDP_K_powykonawczy].[Koszt materialu1 powykonawczy] AS [Koszt materialu1 powykonawczy], 
+    [vDP_K_powykonawczy].[Koszt materialu2 powykonawczy] AS [Koszt materialu2 powykonawczy], 
+    [vDP_K_powykonawczy].[Koszt pracownik powykonawczy] AS [Koszt pracownik powykonawczy]
+    FROM [dbo].[vDP_K_powykonawczy] AS [vDP_K_powykonawczy]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Koszt_jednostkowy_material" EntityType="Self.vDP_Koszt_jednostkowy_material" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -5100,6 +5156,18 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDP_Koszt_RH_pracownika].[Stanowisko] AS [Stanowisko]
     FROM [dbo].[vDP_Koszt_RH_pracownika] AS [vDP_Koszt_RH_pracownika]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vDP_Kosztorys_ofertowy" EntityType="Self.vDP_Kosztorys_ofertowy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Kosztorys_ofertowy].[Id_proces_technologiczny] AS [Id_proces_technologiczny], 
+    [vDP_Kosztorys_ofertowy].[Koszt ofertowy] AS [Koszt ofertowy]
+    FROM [dbo].[vDP_Kosztorys_ofertowy] AS [vDP_Kosztorys_ofertowy]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vDP_Kosztorys_powykonawczy" EntityType="Self.vDP_Kosztorys_powykonawczy" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDP_Kosztorys_powykonawczy].[Id_proces_produkcyjny] AS [Id_proces_produkcyjny], 
+    [vDP_Kosztorys_powykonawczy].[Koszt powykonawczy] AS [Koszt powykonawczy]
+    FROM [dbo].[vDP_Kosztorys_powykonawczy] AS [vDP_Kosztorys_powykonawczy]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vDP_Maszyna" EntityType="Self.vDP_Maszyna" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDP_Maszyna].[Numer maszyny] AS [Numer maszyny], 
@@ -5107,7 +5175,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDP_Maszyna].[Nazwa modelu] AS [Nazwa modelu], 
     [vDP_Maszyna].[Numer seryjny] AS [Numer seryjny], 
     [vDP_Maszyna].[Data wprowadzenia maszyny] AS [Data wprowadzenia maszyny], 
-    [vDP_Maszyna].[ Koszt 1 roboczo-godziny] AS [ Koszt 1 roboczo-godziny]
+    [vDP_Maszyna].[Koszt 1 roboczo-godziny] AS [Koszt 1 roboczo-godziny]
     FROM [dbo].[vDP_Maszyna] AS [vDP_Maszyna]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Maszyna_drukarki" EntityType="Self.vDP_Maszyna_drukarki" store:Type="Views" store:Schema="dbo">
@@ -5212,7 +5280,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDP_Po_material_wydruk" EntityType="Self.vDP_Po_material_wydruk" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDP_Po_material_wydruk].[Nazwa materialu] AS [Nazwa materialu], 
-    [vDP_Po_material_wydruk].[ Identyfikator wydruku] AS [ Identyfikator wydruku], 
+    [vDP_Po_material_wydruk].[Identyfikator wydruku] AS [Identyfikator wydruku], 
     [vDP_Po_material_wydruk].[Ilosc materialu] AS [Ilosc materialu]
     FROM [dbo].[vDP_Po_material_wydruk] AS [vDP_Po_material_wydruk]</DefiningQuery>
           </EntitySet>
@@ -5251,8 +5319,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDP_Po_wydr_proc" EntityType="Self.vDP_Po_wydr_proc" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDP_Po_wydr_proc].[Identyfikator] AS [Identyfikator], 
-    [vDP_Po_wydr_proc].[ Identyfikator wydruku] AS [ Identyfikator wydruku], 
-    [vDP_Po_wydr_proc].[ Nazwa procesu technologicznego] AS [ Nazwa procesu technologicznego]
+    [vDP_Po_wydr_proc].[Identyfikator wydruku] AS [Identyfikator wydruku], 
+    [vDP_Po_wydr_proc].[Nazwa procesu technologicznego] AS [Nazwa procesu technologicznego]
     FROM [dbo].[vDP_Po_wydr_proc] AS [vDP_Po_wydr_proc]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Pracownik_Proces" EntityType="Self.vDP_Pracownik_Proces" store:Type="Views" store:Schema="dbo">
@@ -5418,6 +5486,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Archiwum_Koszty_zewnetrzne].[Koszt] AS [Koszt]
     FROM [dbo].[vDZ_Archiwum_Koszty_zewnetrzne] AS [vDZ_Archiwum_Koszty_zewnetrzne]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vDZ_Bilans" EntityType="Self.vDZ_Bilans" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vDZ_Bilans].[Przychód] AS [Przychód], 
+    [vDZ_Bilans].[Rozchód] AS [Rozchód], 
+    [vDZ_Bilans].[Zysk/Strata] AS [Zysk/Strata], 
+    [vDZ_Bilans].[Wynik bilansu] AS [Wynik bilansu]
+    FROM [dbo].[vDZ_Bilans] AS [vDZ_Bilans]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vDZ_Dzial" EntityType="Self.vDZ_Dzial" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vDZ_Dzial].[Identyfikator dzialu] AS [Identyfikator dzialu], 
@@ -5498,7 +5574,10 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Oferta_dla_klienta].[Status zamowienia] AS [Status zamowienia], 
     [vDZ_Oferta_dla_klienta].[Nip] AS [Nip], 
     [vDZ_Oferta_dla_klienta].[Nazwa firmy] AS [Nazwa firmy], 
-    [vDZ_Oferta_dla_klienta].[Ilosc sztuk] AS [Ilosc sztuk]
+    [vDZ_Oferta_dla_klienta].[Ilosc sztuk] AS [Ilosc sztuk], 
+    [vDZ_Oferta_dla_klienta].[Koszt ofertowy] AS [Koszt ofertowy], 
+    [vDZ_Oferta_dla_klienta].[Współczynnik bezpieczeństwa] AS [Współczynnik bezpieczeństwa], 
+    [vDZ_Oferta_dla_klienta].[Kwota oferty] AS [Kwota oferty]
     FROM [dbo].[vDZ_Oferta_dla_klienta] AS [vDZ_Oferta_dla_klienta]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Oplaty_stale" EntityType="Self.vDZ_Oplaty_stale" store:Type="Views" store:Schema="dbo">
@@ -5656,7 +5735,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Wplyw].[NIP] AS [NIP], 
     [vDZ_Wplyw].[Imię] AS [Imię], 
     [vDZ_Wplyw].[Nazwisko] AS [Nazwisko], 
-    [vDZ_Wplyw].[Status wpływu] AS [Status wpływu]
+    [vDZ_Wplyw].[Koszt powykonawczy] AS [Koszt powykonawczy], 
+    [vDZ_Wplyw].[Status wpływu] AS [Status wpływu], 
+    [vDZ_Wplyw].[Kwota wpływu] AS [Kwota wpływu]
     FROM [dbo].[vDZ_Wplyw] AS [vDZ_Wplyw]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Wycena_sz_zamowienia" EntityType="Self.vDZ_Wycena_sz_zamowienia" store:Type="Views" store:Schema="dbo">
@@ -5682,7 +5763,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
     [vDZ_Wydanie_faktury].[Kod pocztowy] AS [Kod pocztowy], 
     [vDZ_Wydanie_faktury].[Miasto] AS [Miasto], 
     [vDZ_Wydanie_faktury].[Numer rachunku] AS [Numer rachunku], 
-    [vDZ_Wydanie_faktury].[Wydanie faktury] AS [Wydanie faktury]
+    [vDZ_Wydanie_faktury].[Koszt powykonawczy] AS [Koszt powykonawczy], 
+    [vDZ_Wydanie_faktury].[Wydanie faktury] AS [Wydanie faktury], 
+    [vDZ_Wydanie_faktury].[Kwota na fakturze] AS [Kwota na fakturze]
     FROM [dbo].[vDZ_Wydanie_faktury] AS [vDZ_Wydanie_faktury]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDZ_Wyplata" EntityType="Self.vDZ_Wyplata" store:Type="Views" store:Schema="dbo">
@@ -6402,17 +6485,16 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDM_Wydanie_materialu_dla_produkcji" EntityType="DrukarniaModel.vDM_Wydanie_materialu_dla_produkcji" />
           <EntitySet Name="vDM_Wydanie_produktu" EntityType="DrukarniaModel.vDM_Wydanie_produktu" />
           <EntitySet Name="vDM_Wypozyczenie_narzedzia" EntityType="DrukarniaModel.vDM_Wypozyczenie_narzedzia" />
-          <EntitySet Name="vDM_Zapotrzebowanie" EntityType="DrukarniaModel.vDM_Zapotrzebowanie" />
-          <EntitySet Name="vDM_Zliczanieilosciwdostawie" EntityType="DrukarniaModel.vDM_Zliczanieilosciwdostawie" />
+          <EntitySet Name="vDM_Zapotrzebowanie1" EntityType="DrukarniaModel.vDM_Zapotrzebowanie1" />
           <EntitySet Name="vDM_Zliczanieilosciwydanej" EntityType="DrukarniaModel.vDM_Zliczanieilosciwydanej" />
-          <EntitySet Name="vDM_Zliczaniematerialudoczynnosci" EntityType="DrukarniaModel.vDM_Zliczaniematerialudoczynnosci" />
-          <EntitySet Name="vDM_Zliczaniematerialudowydruku" EntityType="DrukarniaModel.vDM_Zliczaniematerialudowydruku" />
           <EntitySet Name="vDP_Co_ile_obsluga" EntityType="DrukarniaModel.vDP_Co_ile_obsluga" />
           <EntitySet Name="vDP_Czesc_wykorzystana" EntityType="DrukarniaModel.vDP_Czesc_wykorzystana" />
           <EntitySet Name="vDP_Czynnosc" EntityType="DrukarniaModel.vDP_Czynnosc" />
           <EntitySet Name="vDP_Czynnosc_w_ramach_obslugi_serw_wew" EntityType="DrukarniaModel.vDP_Czynnosc_w_ramach_obslugi_serw_wew" />
           <EntitySet Name="vDP_CzynnoscProces" EntityType="DrukarniaModel.vDP_CzynnoscProces" />
           <EntitySet Name="vDP_Firma_serwisowa" EntityType="DrukarniaModel.vDP_Firma_serwisowa" />
+          <EntitySet Name="vDP_K_ofertowy" EntityType="DrukarniaModel.vDP_K_ofertowy" />
+          <EntitySet Name="vDP_K_powykonawczy" EntityType="DrukarniaModel.vDP_K_powykonawczy" />
           <EntitySet Name="vDP_Koszt_jednostkowy_material" EntityType="DrukarniaModel.vDP_Koszt_jednostkowy_material" />
           <EntitySet Name="vDP_Koszt_maszyn_dodatkowe_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_maszyn_dodatkowe_ofertowy" />
           <EntitySet Name="vDP_Koszt_maszyn_dodatkowe_powykonawczy" EntityType="DrukarniaModel.vDP_Koszt_maszyn_dodatkowe_powykonawczy" />
@@ -6426,6 +6508,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDP_Koszt_pracownika_ofertowy" EntityType="DrukarniaModel.vDP_Koszt_pracownika_ofertowy" />
           <EntitySet Name="vDP_Koszt_pracownika_powykonawczy" EntityType="DrukarniaModel.vDP_Koszt_pracownika_powykonawczy" />
           <EntitySet Name="vDP_Koszt_RH_pracownika" EntityType="DrukarniaModel.vDP_Koszt_RH_pracownika" />
+          <EntitySet Name="vDP_Kosztorys_ofertowy" EntityType="DrukarniaModel.vDP_Kosztorys_ofertowy" />
+          <EntitySet Name="vDP_Kosztorys_powykonawczy" EntityType="DrukarniaModel.vDP_Kosztorys_powykonawczy" />
           <EntitySet Name="vDP_Maszyna" EntityType="DrukarniaModel.vDP_Maszyna" />
           <EntitySet Name="vDP_Maszyna_drukarki" EntityType="DrukarniaModel.vDP_Maszyna_drukarki" />
           <EntitySet Name="vDP_Maszyna_Proces" EntityType="DrukarniaModel.vDP_Maszyna_Proces" />
@@ -6468,6 +6552,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySet Name="vDP_WydrukProces" EntityType="DrukarniaModel.vDP_WydrukProces" />
           <EntitySet Name="vDP_Zuzyta_maszyna" EntityType="DrukarniaModel.vDP_Zuzyta_maszyna" />
           <EntitySet Name="vDZ_Archiwum_Koszty_zewnetrzne" EntityType="DrukarniaModel.vDZ_Archiwum_Koszty_zewnetrzne" />
+          <EntitySet Name="vDZ_Bilans" EntityType="DrukarniaModel.vDZ_Bilans" />
           <EntitySet Name="vDZ_Dzial" EntityType="DrukarniaModel.vDZ_Dzial" />
           <EntitySet Name="vDZ_Etat" EntityType="DrukarniaModel.vDZ_Etat" />
           <EntitySet Name="vDZ_Klient" EntityType="DrukarniaModel.vDZ_Klient" />
@@ -8187,14 +8272,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Nazwa_czesci" />
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name="C_Cena_jednostkowa_czesci" />
+            <PropertyRef Name="Cena_jednostkowa_czesci" />
           </Key>
           <Property Name="Identyfikator_dostawy" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_dostawcy" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Nazwa_czesci" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
-          <Property Name="C_Cena_jednostkowa_czesci" Type="Int32" Nullable="false" />
+          <Property Name="Cena_jednostkowa_czesci" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDM_Sklad_dostawy_maszyn">
           <Key>
@@ -8203,14 +8288,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Numer_seryjny_maszyny" />
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name="C_Cena_jednostkowa_maszyny" />
+            <PropertyRef Name="Cena_jednostkowa_maszyny" />
           </Key>
           <Property Name="Identyfikator_dostawy" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_dostawcy" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Numer_seryjny_maszyny" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
-          <Property Name="C_Cena_jednostkowa_maszyny" Type="Int32" Nullable="false" />
+          <Property Name="Cena_jednostkowa_maszyny" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDM_Sklad_dostawy_materialu">
           <Key>
@@ -8219,14 +8304,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Nazwa_materialu" />
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name="C_Cena_jednostkowa_materialu" />
+            <PropertyRef Name="Cena_jednostkowa_materialu" />
           </Key>
           <Property Name="Identyfikator_dostawy" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_dostawcy" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
-          <Property Name="C_Cena_jednostkowa_materialu" Type="Int32" Nullable="false" />
+          <Property Name="Cena_jednostkowa_materialu" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDM_Sklad_dostawy_narzedzi">
           <Key>
@@ -8235,24 +8320,24 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Nazwa_narzedzia" />
             <PropertyRef Name="Numer_zamowienia" />
             <PropertyRef Name="Ilosc" />
-            <PropertyRef Name="C_Cena_jednostkowa_narzedzia" />
+            <PropertyRef Name="Cena_jednostkowa_narzedzia" />
           </Key>
           <Property Name="Identyfikator_dostawy" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_dostawcy" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Nazwa_narzedzia" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Numer_zamowienia" Type="Int32" Nullable="false" />
           <Property Name="Ilosc" Type="Int32" Nullable="false" />
-          <Property Name="C_Cena_jednostkowa_narzedzia" Type="Int32" Nullable="false" />
+          <Property Name="Cena_jednostkowa_narzedzia" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDM_Szczegoly_magazynu_gotowych_produktow">
           <Key>
             <PropertyRef Name="Identyfikator_magazynu" />
             <PropertyRef Name="Nazwa_produktu" />
-            <PropertyRef Name="C_Ilosc" />
+            <PropertyRef Name="Ilosc" />
           </Key>
           <Property Name="Identyfikator_magazynu" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_produktu" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="C_Ilosc" Type="Int32" Nullable="false" />
+          <Property Name="Ilosc" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDM_Szczegoly_wydania_czesci">
           <Key>
@@ -8334,13 +8419,13 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Nazwisko_pracownika_wypozyczajacego" />
             <PropertyRef Name="Nazwisko_pracownika_wydajacego" />
             <PropertyRef Name="Data_i_godzina_wydania" />
-            <PropertyRef Name="C_Uwagi" />
+            <PropertyRef Name="Uwagi" />
           </Key>
           <Property Name="Identyfikator_wypozyczenia" Type="Int32" Nullable="false" />
           <Property Name="Nazwisko_pracownika_wypozyczajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko_pracownika_wydajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Data_i_godzina_wydania" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="C_Uwagi" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Uwagi" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDM_Wydanie_czesci_dla_produkcji">
           <Key>
@@ -8360,15 +8445,15 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Key>
             <PropertyRef Name="Identyfikator_wydania_materialu" />
             <PropertyRef Name="Numer_zamówienia" />
-            <PropertyRef Name="C_Nazwisko_pracownika_pobierajacego" />
-            <PropertyRef Name="C_Nazwisko_pracownika_wydajacego" />
-            <PropertyRef Name="C_Data_i_godzina" />
+            <PropertyRef Name="Nazwisko_pracownika_pobierajacego" />
+            <PropertyRef Name="Nazwisko_pracownika_wydajacego" />
+            <PropertyRef Name="Data_i_godzina" />
           </Key>
           <Property Name="Identyfikator_wydania_materialu" Type="Int32" Nullable="false" />
           <Property Name="Numer_zamówienia" Type="Int32" Nullable="false" />
-          <Property Name="C_Nazwisko_pracownika_pobierajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="C_Nazwisko_pracownika_wydajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="C_Data_i_godzina" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nazwisko_pracownika_pobierajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Nazwisko_pracownika_wydajacego" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Data_i_godzina" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="vDM_Wydanie_produktu">
           <Key>
@@ -8395,46 +8480,28 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Data_i_godzina_zwrotu" Type="DateTime" Precision="0" />
           <Property Name="Uwagi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="vDM_Zapotrzebowanie">
+        <EntityType Name="vDM_Zapotrzebowanie1">
           <Key>
             <PropertyRef Name="Nazwa_materialu" />
             <PropertyRef Name="Stan_materiału" />
           </Key>
           <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Ilosc_potrzebna" Type="Int32" />
           <Property Name="Ilosc1" Type="Int32" />
-          <Property Name="Ilosc4" Type="Double" />
-          <Property Name="Ilosc3" Type="Int32" />
+          <Property Name="Ilosc2" Type="Int32" />
+          <Property Name="Ilosc3" Type="Double" />
+          <Property Name="Ilosc4" Type="Int32" />
           <Property Name="Stan_materiału" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="false" />
           <Property Name="Brakujaca_ilosc" Type="Double" />
-        </EntityType>
-        <EntityType Name="vDM_Zliczanieilosciwdostawie">
-          <Key>
-            <PropertyRef Name="Nazwa_materialu" />
-          </Key>
-          <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Ilosc1" Type="Int32" />
         </EntityType>
         <EntityType Name="vDM_Zliczanieilosciwydanej">
           <Key>
             <PropertyRef Name="Nazwa_materialu" />
           </Key>
           <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Ilosc1" Type="Int32" />
           <Property Name="Ilosc2" Type="Int32" />
-        </EntityType>
-        <EntityType Name="vDM_Zliczaniematerialudoczynnosci">
-          <Key>
-            <PropertyRef Name="Nazwa" />
-          </Key>
-          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Ilosc3" Type="Int32" />
-        </EntityType>
-        <EntityType Name="vDM_Zliczaniematerialudowydruku">
-          <Key>
-            <PropertyRef Name="Nazwa" />
-          </Key>
-          <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Ilosc4" Type="Double" />
+          <Property Name="Ilosc3" Type="Double" />
+          <Property Name="Ilosc4" Type="Int32" />
         </EntityType>
         <EntityType Name="vDP_Co_ile_obsluga">
           <Key>
@@ -8507,6 +8574,28 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Numer_telefonu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="E_mail" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vDP_K_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_maszyn1_ofertowy" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Koszt_maszyn2_ofertowy" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Koszt_materialu1_ofertowy" Type="Int32" />
+          <Property Name="Koszt_materialu2_ofertowy" Type="Double" />
+          <Property Name="Koszt_pracownik_ofertowy" Type="Double" />
+        </EntityType>
+        <EntityType Name="vDP_K_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_maszyn1_powykonawczy" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Koszt_maszyn2_powykonawczy" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Koszt_materialu1_powykonawczy" Type="Int32" />
+          <Property Name="Koszt_materialu2_powykonawczy" Type="Double" />
+          <Property Name="Koszt_pracownik_powykonawczy" Type="Double" />
         </EntityType>
         <EntityType Name="vDP_Koszt_jednostkowy_material">
           <Key>
@@ -8707,6 +8796,20 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Koszt_RH_pracownika" Type="Double" Nullable="false" />
           <Property Name="Stanowisko" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="vDP_Kosztorys_ofertowy">
+          <Key>
+            <PropertyRef Name="Id_proces_technologiczny" />
+          </Key>
+          <Property Name="Id_proces_technologiczny" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_ofertowy" Type="Double" />
+        </EntityType>
+        <EntityType Name="vDP_Kosztorys_powykonawczy">
+          <Key>
+            <PropertyRef Name="Id_proces_produkcyjny" />
+          </Key>
+          <Property Name="Id_proces_produkcyjny" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_powykonawczy" Type="Double" />
+        </EntityType>
         <EntityType Name="vDP_Maszyna">
           <Key>
             <PropertyRef Name="Numer_maszyny" />
@@ -8714,14 +8817,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Nazwa_modelu" />
             <PropertyRef Name="Numer_seryjny" />
             <PropertyRef Name="Data_wprowadzenia_maszyny" />
-            <PropertyRef Name="C_Koszt_1_roboczo_godziny" />
+            <PropertyRef Name="Koszt_1_roboczo_godziny" />
           </Key>
           <Property Name="Numer_maszyny" Type="Int32" Nullable="false" />
           <Property Name="Rodzaj_maszyny" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Nazwa_modelu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Numer_seryjny" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Data_wprowadzenia_maszyny" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="C_Koszt_1_roboczo_godziny" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Koszt_1_roboczo_godziny" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="vDP_Maszyna_drukarki">
           <Key>
@@ -8868,11 +8971,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         <EntityType Name="vDP_Po_material_wydruk">
           <Key>
             <PropertyRef Name="Nazwa_materialu" />
-            <PropertyRef Name="C_Identyfikator_wydruku" />
+            <PropertyRef Name="Identyfikator_wydruku" />
             <PropertyRef Name="Ilosc_materialu" />
           </Key>
           <Property Name="Nazwa_materialu" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="C_Identyfikator_wydruku" Type="Int32" Nullable="false" />
+          <Property Name="Identyfikator_wydruku" Type="Int32" Nullable="false" />
           <Property Name="Ilosc_materialu" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="vDP_Po_narzedzia_czynnosc">
@@ -8922,12 +9025,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
         <EntityType Name="vDP_Po_wydr_proc">
           <Key>
             <PropertyRef Name="Identyfikator" />
-            <PropertyRef Name="C_Identyfikator_wydruku" />
-            <PropertyRef Name="C_Nazwa_procesu_technologicznego" />
+            <PropertyRef Name="Identyfikator_wydruku" />
+            <PropertyRef Name="Nazwa_procesu_technologicznego" />
           </Key>
           <Property Name="Identyfikator" Type="Int32" Nullable="false" />
-          <Property Name="C_Identyfikator_wydruku" Type="Int32" Nullable="false" />
-          <Property Name="C_Nazwa_procesu_technologicznego" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Identyfikator_wydruku" Type="Int32" Nullable="false" />
+          <Property Name="Nazwa_procesu_technologicznego" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="vDP_Pracownik_Proces">
           <Key>
@@ -9163,6 +9266,15 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Nazwa" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Koszt" Type="Decimal" Precision="38" Scale="0" />
         </EntityType>
+        <EntityType Name="vDZ_Bilans">
+          <Key>
+            <PropertyRef Name="Wynik_bilansu" />
+          </Key>
+          <Property Name="Przychód" Type="Double" />
+          <Property Name="Rozchód" Type="Double" />
+          <Property Name="Zysk_Strata" Type="Double" />
+          <Property Name="Wynik_bilansu" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="false" />
+        </EntityType>
         <EntityType Name="vDZ_Dzial">
           <Key>
             <PropertyRef Name="Identyfikator_dzialu" />
@@ -9285,6 +9397,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Nip" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Nazwa_firmy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Ilosc_sztuk" Type="Int32" Nullable="false" />
+          <Property Name="Koszt_ofertowy" Type="Double" />
+          <Property Name="Współczynnik_bezpieczeństwa" Type="Double" />
+          <Property Name="Kwota_oferty" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Oplaty_stale">
           <Key>
@@ -9522,7 +9637,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="NIP" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="Imię" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Nazwisko" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Koszt_powykonawczy" Type="Double" />
           <Property Name="Status_wpływu" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Kwota_wpływu" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Wycena_sz_zamowienia">
           <Key>
@@ -9566,7 +9683,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <Property Name="Kod_pocztowy" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Miasto" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Name="Numer_rachunku" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Koszt_powykonawczy" Type="Double" />
           <Property Name="Wydanie_faktury" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="Kwota_na_fakturze" Type="Double" />
         </EntityType>
         <EntityType Name="vDZ_Wyplata">
           <Key>
@@ -12033,7 +12152,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Sklad_dostawy_czesci">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Sklad_dostawy_czesci">
               <MappingFragment StoreEntitySet="vDM_Sklad_dostawy_czesci">
-                <ScalarProperty Name="C_Cena_jednostkowa_czesci" ColumnName=" Cena jednostkowa czesci" />
+                <ScalarProperty Name="Cena_jednostkowa_czesci" ColumnName="Cena jednostkowa czesci" />
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Nazwa_czesci" ColumnName="Nazwa czesci" />
@@ -12045,7 +12164,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Sklad_dostawy_maszyn">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Sklad_dostawy_maszyn">
               <MappingFragment StoreEntitySet="vDM_Sklad_dostawy_maszyn">
-                <ScalarProperty Name="C_Cena_jednostkowa_maszyny" ColumnName=" Cena jednostkowa maszyny" />
+                <ScalarProperty Name="Cena_jednostkowa_maszyny" ColumnName="Cena jednostkowa maszyny" />
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Numer_seryjny_maszyny" ColumnName="Numer seryjny maszyny" />
@@ -12057,7 +12176,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Sklad_dostawy_materialu">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Sklad_dostawy_materialu">
               <MappingFragment StoreEntitySet="vDM_Sklad_dostawy_materialu">
-                <ScalarProperty Name="C_Cena_jednostkowa_materialu" ColumnName=" Cena jednostkowa materialu" />
+                <ScalarProperty Name="Cena_jednostkowa_materialu" ColumnName="Cena jednostkowa materialu" />
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
@@ -12069,7 +12188,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Sklad_dostawy_narzedzi">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Sklad_dostawy_narzedzi">
               <MappingFragment StoreEntitySet="vDM_Sklad_dostawy_narzedzi">
-                <ScalarProperty Name="C_Cena_jednostkowa_narzedzia" ColumnName=" Cena jednostkowa narzedzia" />
+                <ScalarProperty Name="Cena_jednostkowa_narzedzia" ColumnName="Cena jednostkowa narzedzia" />
                 <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Numer_zamowienia" ColumnName="Numer zamowienia" />
                 <ScalarProperty Name="Nazwa_narzedzia" ColumnName="Nazwa narzedzia" />
@@ -12081,7 +12200,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Szczegoly_magazynu_gotowych_produktow">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Szczegoly_magazynu_gotowych_produktow">
               <MappingFragment StoreEntitySet="vDM_Szczegoly_magazynu_gotowych_produktow">
-                <ScalarProperty Name="C_Ilosc" ColumnName=" Ilosc" />
+                <ScalarProperty Name="Ilosc" ColumnName="Ilosc" />
                 <ScalarProperty Name="Nazwa_produktu" ColumnName="Nazwa produktu" />
                 <ScalarProperty Name="Identyfikator_magazynu" ColumnName="Identyfikator magazynu" />
               </MappingFragment>
@@ -12155,7 +12274,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Wydanie_czesci">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Wydanie_czesci">
               <MappingFragment StoreEntitySet="vDM_Wydanie_czesci">
-                <ScalarProperty Name="C_Uwagi" ColumnName=" Uwagi" />
+                <ScalarProperty Name="Uwagi" ColumnName="Uwagi" />
                 <ScalarProperty Name="Data_i_godzina_wydania" ColumnName="Data i godzina wydania" />
                 <ScalarProperty Name="Nazwisko_pracownika_wydajacego" ColumnName="Nazwisko pracownika wydajacego" />
                 <ScalarProperty Name="Nazwisko_pracownika_wypozyczajacego" ColumnName="Nazwisko pracownika wypozyczajacego" />
@@ -12177,9 +12296,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Wydanie_materialu_dla_produkcji">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Wydanie_materialu_dla_produkcji">
               <MappingFragment StoreEntitySet="vDM_Wydanie_materialu_dla_produkcji">
-                <ScalarProperty Name="C_Data_i_godzina" ColumnName=" Data i godzina" />
-                <ScalarProperty Name="C_Nazwisko_pracownika_wydajacego" ColumnName=" Nazwisko pracownika wydajacego" />
-                <ScalarProperty Name="C_Nazwisko_pracownika_pobierajacego" ColumnName=" Nazwisko pracownika pobierajacego" />
+                <ScalarProperty Name="Data_i_godzina" ColumnName="Data i godzina" />
+                <ScalarProperty Name="Nazwisko_pracownika_wydajacego" ColumnName="Nazwisko pracownika wydajacego" />
+                <ScalarProperty Name="Nazwisko_pracownika_pobierajacego" ColumnName="Nazwisko pracownika pobierajacego" />
                 <ScalarProperty Name="Numer_zamówienia" ColumnName="Numer zamówienia" />
                 <ScalarProperty Name="Identyfikator_wydania_materialu" ColumnName="Identyfikator wydania materialu" />
               </MappingFragment>
@@ -12207,22 +12326,14 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Zapotrzebowanie">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zapotrzebowanie">
-              <MappingFragment StoreEntitySet="vDM_Zapotrzebowanie">
+          <EntitySetMapping Name="vDM_Zapotrzebowanie1">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zapotrzebowanie1">
+              <MappingFragment StoreEntitySet="vDM_Zapotrzebowanie1">
                 <ScalarProperty Name="Brakujaca_ilosc" ColumnName="Brakujaca ilosc" />
                 <ScalarProperty Name="Stan_materiału" ColumnName="Stan materiału" />
-                <ScalarProperty Name="Ilosc3" ColumnName="Ilosc3" />
                 <ScalarProperty Name="Ilosc4" ColumnName="Ilosc4" />
-                <ScalarProperty Name="Ilosc1" ColumnName="Ilosc1" />
-                <ScalarProperty Name="Ilosc_potrzebna" ColumnName="Ilosc_potrzebna" />
-                <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Zliczanieilosciwdostawie">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczanieilosciwdostawie">
-              <MappingFragment StoreEntitySet="vDM_Zliczanieilosciwdostawie">
+                <ScalarProperty Name="Ilosc3" ColumnName="Ilosc3" />
+                <ScalarProperty Name="Ilosc2" ColumnName="Ilosc2" />
                 <ScalarProperty Name="Ilosc1" ColumnName="Ilosc1" />
                 <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
               </MappingFragment>
@@ -12231,24 +12342,11 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDM_Zliczanieilosciwydanej">
             <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczanieilosciwydanej">
               <MappingFragment StoreEntitySet="vDM_Zliczanieilosciwydanej">
-                <ScalarProperty Name="Ilosc2" ColumnName="Ilosc2" />
-                <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Zliczaniematerialudoczynnosci">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczaniematerialudoczynnosci">
-              <MappingFragment StoreEntitySet="vDM_Zliczaniematerialudoczynnosci">
-                <ScalarProperty Name="Ilosc3" ColumnName="Ilosc3" />
-                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="vDM_Zliczaniematerialudowydruku">
-            <EntityTypeMapping TypeName="DrukarniaModel.vDM_Zliczaniematerialudowydruku">
-              <MappingFragment StoreEntitySet="vDM_Zliczaniematerialudowydruku">
                 <ScalarProperty Name="Ilosc4" ColumnName="Ilosc4" />
-                <ScalarProperty Name="Nazwa" ColumnName="Nazwa" />
+                <ScalarProperty Name="Ilosc3" ColumnName="Ilosc3" />
+                <ScalarProperty Name="Ilosc2" ColumnName="Ilosc2" />
+                <ScalarProperty Name="Ilosc1" ColumnName="Ilosc1" />
+                <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -12309,6 +12407,30 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
                 <ScalarProperty Name="Adres" ColumnName="Adres" />
                 <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa firmy" />
                 <ScalarProperty Name="Identyfikator_firmy" ColumnName="Identyfikator firmy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_K_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_K_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_K_ofertowy">
+                <ScalarProperty Name="Koszt_pracownik_ofertowy" ColumnName="Koszt pracownik ofertowy" />
+                <ScalarProperty Name="Koszt_materialu2_ofertowy" ColumnName="Koszt materialu2 ofertowy" />
+                <ScalarProperty Name="Koszt_materialu1_ofertowy" ColumnName="Koszt materialu1 ofertowy" />
+                <ScalarProperty Name="Koszt_maszyn2_ofertowy" ColumnName="Koszt maszyn2 ofertowy" />
+                <ScalarProperty Name="Koszt_maszyn1_ofertowy" ColumnName="Koszt maszyn1 ofertowy" />
+                <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_K_powykonawczy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_K_powykonawczy">
+              <MappingFragment StoreEntitySet="vDP_K_powykonawczy">
+                <ScalarProperty Name="Koszt_pracownik_powykonawczy" ColumnName="Koszt pracownik powykonawczy" />
+                <ScalarProperty Name="Koszt_materialu2_powykonawczy" ColumnName="Koszt materialu2 powykonawczy" />
+                <ScalarProperty Name="Koszt_materialu1_powykonawczy" ColumnName="Koszt materialu1 powykonawczy" />
+                <ScalarProperty Name="Koszt_maszyn2_powykonawczy" ColumnName="Koszt maszyn2 powykonawczy" />
+                <ScalarProperty Name="Koszt_maszyn1_powykonawczy" ColumnName="Koszt maszyn1 powykonawczy" />
+                <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -12469,10 +12591,26 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Kosztorys_ofertowy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Kosztorys_ofertowy">
+              <MappingFragment StoreEntitySet="vDP_Kosztorys_ofertowy">
+                <ScalarProperty Name="Koszt_ofertowy" ColumnName="Koszt ofertowy" />
+                <ScalarProperty Name="Id_proces_technologiczny" ColumnName="Id_proces_technologiczny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vDP_Kosztorys_powykonawczy">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDP_Kosztorys_powykonawczy">
+              <MappingFragment StoreEntitySet="vDP_Kosztorys_powykonawczy">
+                <ScalarProperty Name="Koszt_powykonawczy" ColumnName="Koszt powykonawczy" />
+                <ScalarProperty Name="Id_proces_produkcyjny" ColumnName="Id_proces_produkcyjny" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vDP_Maszyna">
             <EntityTypeMapping TypeName="DrukarniaModel.vDP_Maszyna">
               <MappingFragment StoreEntitySet="vDP_Maszyna">
-                <ScalarProperty Name="C_Koszt_1_roboczo_godziny" ColumnName=" Koszt 1 roboczo-godziny" />
+                <ScalarProperty Name="Koszt_1_roboczo_godziny" ColumnName="Koszt 1 roboczo-godziny" />
                 <ScalarProperty Name="Data_wprowadzenia_maszyny" ColumnName="Data wprowadzenia maszyny" />
                 <ScalarProperty Name="Numer_seryjny" ColumnName="Numer seryjny" />
                 <ScalarProperty Name="Nazwa_modelu" ColumnName="Nazwa modelu" />
@@ -12612,7 +12750,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <EntityTypeMapping TypeName="DrukarniaModel.vDP_Po_material_wydruk">
               <MappingFragment StoreEntitySet="vDP_Po_material_wydruk">
                 <ScalarProperty Name="Ilosc_materialu" ColumnName="Ilosc materialu" />
-                <ScalarProperty Name="C_Identyfikator_wydruku" ColumnName=" Identyfikator wydruku" />
+                <ScalarProperty Name="Identyfikator_wydruku" ColumnName="Identyfikator wydruku" />
                 <ScalarProperty Name="Nazwa_materialu" ColumnName="Nazwa materialu" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -12662,8 +12800,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDP_Po_wydr_proc">
             <EntityTypeMapping TypeName="DrukarniaModel.vDP_Po_wydr_proc">
               <MappingFragment StoreEntitySet="vDP_Po_wydr_proc">
-                <ScalarProperty Name="C_Nazwa_procesu_technologicznego" ColumnName=" Nazwa procesu technologicznego" />
-                <ScalarProperty Name="C_Identyfikator_wydruku" ColumnName=" Identyfikator wydruku" />
+                <ScalarProperty Name="Nazwa_procesu_technologicznego" ColumnName="Nazwa procesu technologicznego" />
+                <ScalarProperty Name="Identyfikator_wydruku" ColumnName="Identyfikator wydruku" />
                 <ScalarProperty Name="Identyfikator" ColumnName="Identyfikator" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -12871,6 +13009,16 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="vDZ_Bilans">
+            <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Bilans">
+              <MappingFragment StoreEntitySet="vDZ_Bilans">
+                <ScalarProperty Name="Wynik_bilansu" ColumnName="Wynik bilansu" />
+                <ScalarProperty Name="Zysk_Strata" ColumnName="Zysk/Strata" />
+                <ScalarProperty Name="Rozchód" ColumnName="Rozchód" />
+                <ScalarProperty Name="Przychód" ColumnName="Przychód" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="vDZ_Dzial">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Dzial">
               <MappingFragment StoreEntitySet="vDZ_Dzial">
@@ -12962,6 +13110,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Oferta_dla_klienta">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Oferta_dla_klienta">
               <MappingFragment StoreEntitySet="vDZ_Oferta_dla_klienta">
+                <ScalarProperty Name="Kwota_oferty" ColumnName="Kwota oferty" />
+                <ScalarProperty Name="Współczynnik_bezpieczeństwa" ColumnName="Współczynnik bezpieczeństwa" />
+                <ScalarProperty Name="Koszt_ofertowy" ColumnName="Koszt ofertowy" />
                 <ScalarProperty Name="Ilosc_sztuk" ColumnName="Ilosc sztuk" />
                 <ScalarProperty Name="Nazwa_firmy" ColumnName="Nazwa firmy" />
                 <ScalarProperty Name="Nip" ColumnName="Nip" />
@@ -13157,7 +13308,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Wplyw">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Wplyw">
               <MappingFragment StoreEntitySet="vDZ_Wplyw">
+                <ScalarProperty Name="Kwota_wpływu" ColumnName="Kwota wpływu" />
                 <ScalarProperty Name="Status_wpływu" ColumnName="Status wpływu" />
+                <ScalarProperty Name="Koszt_powykonawczy" ColumnName="Koszt powykonawczy" />
                 <ScalarProperty Name="Nazwisko" ColumnName="Nazwisko" />
                 <ScalarProperty Name="Imię" ColumnName="Imię" />
                 <ScalarProperty Name="NIP" ColumnName="NIP" />
@@ -13180,7 +13333,9 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDZ_Wydanie_faktury">
             <EntityTypeMapping TypeName="DrukarniaModel.vDZ_Wydanie_faktury">
               <MappingFragment StoreEntitySet="vDZ_Wydanie_faktury">
+                <ScalarProperty Name="Kwota_na_fakturze" ColumnName="Kwota na fakturze" />
                 <ScalarProperty Name="Wydanie_faktury" ColumnName="Wydanie faktury" />
+                <ScalarProperty Name="Koszt_powykonawczy" ColumnName="Koszt powykonawczy" />
                 <ScalarProperty Name="Numer_rachunku" ColumnName="Numer rachunku" />
                 <ScalarProperty Name="Miasto" ColumnName="Miasto" />
                 <ScalarProperty Name="Kod_pocztowy" ColumnName="Kod pocztowy" />

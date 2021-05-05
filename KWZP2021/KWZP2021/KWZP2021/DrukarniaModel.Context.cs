@@ -135,17 +135,16 @@ namespace KWZP2021
         public virtual DbSet<vDM_Wydanie_materialu_dla_produkcji> vDM_Wydanie_materialu_dla_produkcji { get; set; }
         public virtual DbSet<vDM_Wydanie_produktu> vDM_Wydanie_produktu { get; set; }
         public virtual DbSet<vDM_Wypozyczenie_narzedzia> vDM_Wypozyczenie_narzedzia { get; set; }
-        public virtual DbSet<vDM_Zapotrzebowanie> vDM_Zapotrzebowanie { get; set; }
-        public virtual DbSet<vDM_Zliczanieilosciwdostawie> vDM_Zliczanieilosciwdostawie { get; set; }
+        public virtual DbSet<vDM_Zapotrzebowanie1> vDM_Zapotrzebowanie1 { get; set; }
         public virtual DbSet<vDM_Zliczanieilosciwydanej> vDM_Zliczanieilosciwydanej { get; set; }
-        public virtual DbSet<vDM_Zliczaniematerialudoczynnosci> vDM_Zliczaniematerialudoczynnosci { get; set; }
-        public virtual DbSet<vDM_Zliczaniematerialudowydruku> vDM_Zliczaniematerialudowydruku { get; set; }
         public virtual DbSet<vDP_Co_ile_obsluga> vDP_Co_ile_obsluga { get; set; }
         public virtual DbSet<vDP_Czesc_wykorzystana> vDP_Czesc_wykorzystana { get; set; }
         public virtual DbSet<vDP_Czynnosc> vDP_Czynnosc { get; set; }
         public virtual DbSet<vDP_Czynnosc_w_ramach_obslugi_serw_wew> vDP_Czynnosc_w_ramach_obslugi_serw_wew { get; set; }
         public virtual DbSet<vDP_CzynnoscProces> vDP_CzynnoscProces { get; set; }
         public virtual DbSet<vDP_Firma_serwisowa> vDP_Firma_serwisowa { get; set; }
+        public virtual DbSet<vDP_K_ofertowy> vDP_K_ofertowy { get; set; }
+        public virtual DbSet<vDP_K_powykonawczy> vDP_K_powykonawczy { get; set; }
         public virtual DbSet<vDP_Koszt_jednostkowy_material> vDP_Koszt_jednostkowy_material { get; set; }
         public virtual DbSet<vDP_Koszt_maszyn_dodatkowe_ofertowy> vDP_Koszt_maszyn_dodatkowe_ofertowy { get; set; }
         public virtual DbSet<vDP_Koszt_maszyn_dodatkowe_powykonawczy> vDP_Koszt_maszyn_dodatkowe_powykonawczy { get; set; }
@@ -159,6 +158,8 @@ namespace KWZP2021
         public virtual DbSet<vDP_Koszt_pracownika_ofertowy> vDP_Koszt_pracownika_ofertowy { get; set; }
         public virtual DbSet<vDP_Koszt_pracownika_powykonawczy> vDP_Koszt_pracownika_powykonawczy { get; set; }
         public virtual DbSet<vDP_Koszt_RH_pracownika> vDP_Koszt_RH_pracownika { get; set; }
+        public virtual DbSet<vDP_Kosztorys_ofertowy> vDP_Kosztorys_ofertowy { get; set; }
+        public virtual DbSet<vDP_Kosztorys_powykonawczy> vDP_Kosztorys_powykonawczy { get; set; }
         public virtual DbSet<vDP_Maszyna> vDP_Maszyna { get; set; }
         public virtual DbSet<vDP_Maszyna_drukarki> vDP_Maszyna_drukarki { get; set; }
         public virtual DbSet<vDP_Maszyna_Proces> vDP_Maszyna_Proces { get; set; }
@@ -201,6 +202,7 @@ namespace KWZP2021
         public virtual DbSet<vDP_WydrukProces> vDP_WydrukProces { get; set; }
         public virtual DbSet<vDP_Zuzyta_maszyna> vDP_Zuzyta_maszyna { get; set; }
         public virtual DbSet<vDZ_Archiwum_Koszty_zewnetrzne> vDZ_Archiwum_Koszty_zewnetrzne { get; set; }
+        public virtual DbSet<vDZ_Bilans> vDZ_Bilans { get; set; }
         public virtual DbSet<vDZ_Dzial> vDZ_Dzial { get; set; }
         public virtual DbSet<vDZ_Etat> vDZ_Etat { get; set; }
         public virtual DbSet<vDZ_Klient> vDZ_Klient { get; set; }

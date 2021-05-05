@@ -16,6 +16,6 @@ namespace KWZP2021
     {
         public int Identyfikator_magazynu { get; set; }
         public string Nazwa_produktu { get; set; }
-        public int C_Ilosc { get; set; }
+        public int Ilosc { get; set; }
     }
 }

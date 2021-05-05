@@ -12,12 +12,11 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Wydanie_materialu_dla_produkcji
+    public partial class vDZ_Bilans
     {
-        public int Identyfikator_wydania_materialu { get; set; }
-        public int Numer_zamówienia { get; set; }
-        public string Nazwisko_pracownika_pobierajacego { get; set; }
-        public string Nazwisko_pracownika_wydajacego { get; set; }
-        public System.DateTime Data_i_godzina { get; set; }
+        public Nullable<double> Przychód { get; set; }
+        public Nullable<double> Rozchód { get; set; }
+        public Nullable<double> Zysk_Strata { get; set; }
+        public string Wynik_bilansu { get; set; }
     }
 }

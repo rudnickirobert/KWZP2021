@@ -12,9 +12,9 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Zliczanieilosciwdostawie
+    public partial class vDP_Kosztorys_ofertowy
     {
-        public string Nazwa_materialu { get; set; }
-        public Nullable<int> Ilosc1 { get; set; }
+        public int Id_proces_technologiczny { get; set; }
+        public Nullable<double> Koszt_ofertowy { get; set; }
     }
 }

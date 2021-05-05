@@ -68,7 +68,9 @@ namespace KWZP2021
 
         private void button8_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Brak bilansu do wyświetlenia", "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Bilans bilans = new Bilans(this.database);
+            bilans.ShowDialog();
+
         }
 
         private void button9_Click(object sender, EventArgs e)

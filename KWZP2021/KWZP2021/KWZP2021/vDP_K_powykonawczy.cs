@@ -12,9 +12,13 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Zliczaniematerialudoczynnosci
+    public partial class vDP_K_powykonawczy
     {
-        public string Nazwa { get; set; }
-        public Nullable<int> Ilosc3 { get; set; }
+        public int Id_proces_produkcyjny { get; set; }
+        public Nullable<decimal> Koszt_maszyn1_powykonawczy { get; set; }
+        public Nullable<decimal> Koszt_maszyn2_powykonawczy { get; set; }
+        public Nullable<int> Koszt_materialu1_powykonawczy { get; set; }
+        public Nullable<double> Koszt_materialu2_powykonawczy { get; set; }
+        public Nullable<double> Koszt_pracownik_powykonawczy { get; set; }
     }
 }

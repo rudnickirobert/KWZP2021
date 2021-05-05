@@ -124,6 +124,7 @@ namespace KWZP2021
             // 
             this.textBox1.Location = new System.Drawing.Point(225, 114);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(342, 22);
             this.textBox1.TabIndex = 8;
             // 
@@ -131,6 +132,7 @@ namespace KWZP2021
             // 
             this.textBox2.Location = new System.Drawing.Point(225, 154);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(342, 22);
             this.textBox2.TabIndex = 9;
             // 
@@ -138,6 +140,7 @@ namespace KWZP2021
             // 
             this.textBox3.Location = new System.Drawing.Point(225, 197);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(342, 22);
             this.textBox3.TabIndex = 10;
             // 
@@ -145,6 +148,7 @@ namespace KWZP2021
             // 
             this.textBox4.Location = new System.Drawing.Point(225, 245);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(342, 22);
             this.textBox4.TabIndex = 11;
             // 
@@ -152,6 +156,7 @@ namespace KWZP2021
             // 
             this.textBox5.Location = new System.Drawing.Point(225, 297);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(342, 22);
             this.textBox5.TabIndex = 12;
             // 
@@ -159,6 +164,7 @@ namespace KWZP2021
             // 
             this.textBox6.Location = new System.Drawing.Point(225, 348);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(342, 22);
             this.textBox6.TabIndex = 13;
             // 
@@ -166,6 +172,7 @@ namespace KWZP2021
             // 
             this.textBox7.Location = new System.Drawing.Point(225, 404);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(342, 22);
             this.textBox7.TabIndex = 14;
             // 

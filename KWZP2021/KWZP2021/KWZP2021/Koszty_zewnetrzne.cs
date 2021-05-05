@@ -33,6 +33,7 @@ namespace KWZP2021
             {
                 label1.Text = Convert.ToString(double.Parse(label1.Text) + double.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString()));
             }
+            label1.Text = label1.Text + " " + "zł";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

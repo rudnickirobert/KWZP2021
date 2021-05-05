@@ -12,13 +12,13 @@ namespace KWZP2021
     using System;
     using System.Collections.Generic;
     
-    public partial class vDM_Zapotrzebowanie
+    public partial class vDM_Zapotrzebowanie1
     {
         public string Nazwa_materialu { get; set; }
-        public Nullable<int> Ilosc_potrzebna { get; set; }
         public Nullable<int> Ilosc1 { get; set; }
-        public Nullable<double> Ilosc4 { get; set; }
-        public Nullable<int> Ilosc3 { get; set; }
+        public Nullable<int> Ilosc2 { get; set; }
+        public Nullable<double> Ilosc3 { get; set; }
+        public Nullable<int> Ilosc4 { get; set; }
         public string Stan_materiału { get; set; }
         public Nullable<double> Brakujaca_ilosc { get; set; }
     }

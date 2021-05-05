@@ -39,6 +39,8 @@ namespace KWZP2021
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.vDZWplywBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button3 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDZWplywBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -111,11 +113,31 @@ namespace KWZP2021
             // 
             this.vDZWplywBindingSource.DataSource = typeof(KWZP2021.vDZ_Wplyw);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(563, 481);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(113, 43);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Sumuj wpływy";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(728, 494);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 17);
+            this.label2.TabIndex = 6;
+            // 
             // Wplywy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(930, 472);
+            this.ClientSize = new System.Drawing.Size(927, 536);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
@@ -140,5 +162,7 @@ namespace KWZP2021
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.BindingSource vDZWplywBindingSource;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label2;
     }
 }

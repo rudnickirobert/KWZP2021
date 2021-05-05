@@ -19,6 +19,6 @@ namespace KWZP2021
         public string Nazwa_czesci { get; set; }
         public int Numer_zamowienia { get; set; }
         public int Ilosc { get; set; }
-        public int C_Cena_jednostkowa_czesci { get; set; }
+        public int Cena_jednostkowa_czesci { get; set; }
     }
 }

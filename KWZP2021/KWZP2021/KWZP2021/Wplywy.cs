@@ -69,5 +69,15 @@ namespace KWZP2021
         {
             e.Graphics.DrawImage(bmp, 0, 0);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            label2.Text = "0";
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                label2.Text = Convert.ToString(double.Parse(label2.Text) + double.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString()));
+            }
+            label2.Text = label2.Text + " " + "zł";
+        }
     }
 }
