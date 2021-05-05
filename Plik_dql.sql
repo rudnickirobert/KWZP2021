@@ -593,39 +593,6 @@ WHERE (MONTH(Data_zaplaty)=MONTH(GETDATE()))
 AND (YEAR(Data_zaplaty)=YEAR(GETDATE()))
 GROUP BY DZ_Rachunek.Id_rachunki, DZ_Rodzaj_rachunku.Rodzaj_rachunku, DZ_Rachunek.Koszt, DZ_Rachunek.Data_zaplaty
 GO
-CREATE VIEW vDZ_Wydanie_faktury
-AS
-SELECT DZ_Status_zamowienia.Id_zamowienia AS [Numer faktury], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilość sztuk], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamówienia], DZ_Klient.Nip AS [NIP],DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Klient.Imie AS [Imię], DZ_Klient.Nazwisko, DZ_Klient.Adres, DZ_Klient.Kod_pocztowy AS [Kod pocztowy], DZ_Klient.Miasto, DZ_Klient.Numer_rachunku AS [Numer rachunku],
-CASE WHEN (DZ_Rodzaj_statusu_zamowienia.Status_zam='zrealizowane') THEN 'Wystawiono fakture' 
-	 ELSE 'Nie wystawiono faktury' END AS 'Wydanie faktury'
-FROM DZ_Status_zamowienia INNER JOIN
-DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
-DZ_Szczegoly_zamowienia_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Szczegoly_zamowienia_klienta.Id_zamowienia INNER JOIN
-DZ_Zamowienie_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Zamowienie_klienta.Id_zamowienia INNER JOIN
-DZ_Plik ON DZ_Szczegoly_zamowienia_klienta.Id_pliku=DZ_Plik.Id_pliku INNER JOIN
-DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta 
-GO
-CREATE VIEW vDZ_Oferta_dla_klienta
-AS
-SELECT DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamowienia], DZ_Klient.Nip, DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilosc sztuk]
-FROM DZ_Zamowienie_klienta INNER JOIN
-DZ_Status_zamowienia ON DZ_Zamowienie_klienta.Id_zamowienia=DZ_Status_zamowienia.Id_zamowienia INNER JOIN
-DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
-DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta INNER JOIN
-DZ_Szczegoly_zamowienia_klienta ON DZ_Zamowienie_klienta.Id_zamowienia=DZ_Szczegoly_zamowienia_klienta.Id_zamowienia
-GO
-CREATE VIEW vDZ_Wplyw
-AS
-SELECT vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamówienia], vDZ_Wydanie_faktury.NIP, vDZ_Wydanie_faktury.Imię, vDZ_Wydanie_faktury.Nazwisko,
-CASE WHEN vDZ_Wydanie_faktury.[Status zamówienia]='zrealizowane' THEN 'OPŁACONE'
-	 ELSE 'NIE OPŁACONO' END AS 'Status wpływu'
-FROM vDZ_Wydanie_faktury CROSS JOIN DZ_Szczegoly_zatrudnienia  INNER JOIN
-DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
-DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
-DZ_Nieobecnosc ON DZ_Pracownik.Id_pracownika=DZ_Nieobecnosc.Id_pracownika INNER JOIN
-DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci
-GROUP BY vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamówienia], vDZ_Wydanie_faktury.NIP, vDZ_Wydanie_faktury.Imię, vDZ_Wydanie_faktury.Nazwisko
-GO
 CREATE VIEW vDZ_Koszty_zewnetrzne
 AS
 SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa AS [Nazwa],
@@ -1019,7 +986,7 @@ AS
 SELECT DP_Proces_technologiczny.Id_proces_technologiczny, DP_Po_proc_czynnosc.Id_po_proc_czynnosci,
 	 DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DP_Po_prac_czynnosc.Id_pracownika, 
 	 DP_Po_proc_czynnosc.Czas_zamierzony,
-	 (DP_Po_proc_czynnosc.Czas_zamierzony * vDP_Koszt_RH_pracownika.[Koszt RH pracownika]) AS [Koszt pracownika przed]
+	 ROUND((DP_Po_proc_czynnosc.Czas_zamierzony * vDP_Koszt_RH_pracownika.[Koszt RH pracownika]),2) AS [Koszt pracownika przed]
 FROM DP_Po_proc_czynnosc INNER JOIN
 	DP_Proces_technologiczny ON DP_Po_proc_czynnosc.Id_proces_technologiczny=DP_Proces_technologiczny.Id_proces_technologiczny
 INNER JOIN DP_Po_prac_czynnosc ON DP_Po_proc_czynnosc.Id_po_proc_czynnosci=DP_Po_prac_czynnosc.Id_po_proc_czynnosci
@@ -1032,7 +999,7 @@ AS
 SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny, DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe,
 	DZ_Pracownik.Imie, DZ_Pracownik.Nazwisko, DP_po_prod_czyn_dod_pracownik.Id_pracownika,
 	DP_prod_czynnosc_dodatkowa.Czas_pracy, 
-	(DP_prod_czynnosc_dodatkowa.Czas_pracy * vDP_Koszt_RH_pracownika.[Koszt RH pracownika]) AS [Koszt pracownika]
+	ROUND((DP_prod_czynnosc_dodatkowa.Czas_pracy * vDP_Koszt_RH_pracownika.[Koszt RH pracownika]),2) AS [Koszt pracownika]
 FROM DP_prod_czynnosc_dodatkowa INNER JOIN
 	DP_Proces_produkcyjny ON DP_prod_czynnosc_dodatkowa.Id_proces_produkcyjny=DP_Proces_produkcyjny.Id_proces_produkcyjny
 INNER JOIN DP_po_prod_czyn_dod_pracownik ON DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe=DP_po_prod_czyn_dod_pracownik.Id_prod_czynnosci_dodatkowe
@@ -1195,4 +1162,44 @@ INNER JOIN vDP_Koszt_maszyn_wydruk_powykonawczy ON DP_Proces_produkcyjny.Id_proc
 INNER JOIN vDP_Koszt_materialu_dodatkowe_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_materialu_dodatkowe_powykonawczy.Id_proces_produkcyjny
 INNER JOIN vDP_Koszt_materialu_wydruk_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_materialu_wydruk_powykonawczy.Id_proces_produkcyjny
 INNER JOIN vDP_Koszt_pracownika_powykonawczy ON DP_Proces_produkcyjny.Id_proces_produkcyjny=vDP_Koszt_pracownika_powykonawczy.Id_proces_produkcyjny
+GO
+CREATE VIEW vDZ_Wydanie_faktury
+AS
+SELECT DZ_Status_zamowienia.Id_zamowienia AS [Numer faktury], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilość sztuk], DZ_Plik.Nazwa_pliku AS [Nazwa pliku], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamówienia], DZ_Klient.Nip AS [NIP],DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Klient.Imie AS [Imię], DZ_Klient.Nazwisko, DZ_Klient.Adres, DZ_Klient.Kod_pocztowy AS [Kod pocztowy], DZ_Klient.Miasto, DZ_Klient.Numer_rachunku AS [Numer rachunku],vDP_Kosztorys_powykonawczy.[Koszt powykonawczy],
+CASE WHEN (DZ_Rodzaj_statusu_zamowienia.Status_zam='zrealizowane') THEN 'Wystawiono fakture' 
+	 ELSE 'Nie wystawiono faktury' END AS 'Wydanie faktury',
+CASE WHEN (DZ_Rodzaj_statusu_zamowienia.Status_zam='zrealizowane') THEN [Koszt powykonawczy]
+	 ELSE 0 END AS [Kwota na fakturze]
+FROM DZ_Status_zamowienia INNER JOIN
+DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
+DZ_Szczegoly_zamowienia_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Szczegoly_zamowienia_klienta.Id_zamowienia INNER JOIN
+DZ_Zamowienie_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Zamowienie_klienta.Id_zamowienia INNER JOIN
+DZ_Plik ON DZ_Szczegoly_zamowienia_klienta.Id_pliku=DZ_Plik.Id_pliku INNER JOIN
+DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta INNER JOIN
+vDP_Kosztorys_powykonawczy ON DZ_Zamowienie_klienta.Id_zamowienia=vDP_Kosztorys_powykonawczy.Id_proces_produkcyjny
+GO
+CREATE VIEW vDZ_Oferta_dla_klienta
+AS
+SELECT DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamowienia], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Status zamowienia], DZ_Klient.Nip, DZ_Klient.Nazwa_firmy AS [Nazwa firmy], DZ_Szczegoly_zamowienia_klienta.Ilosc_sztuk AS [Ilosc sztuk], vDP_Kosztorys_ofertowy.[Koszt ofertowy], ([Koszt ofertowy]*0.25) AS 'Współczynnik bezpieczeństwa', (TRY_CAST(('Współczynnik bezpieczeństwa') AS decimal)+[Koszt ofertowy]) AS [Kwota oferty]
+FROM DZ_Zamowienie_klienta INNER JOIN
+DZ_Status_zamowienia ON DZ_Zamowienie_klienta.Id_zamowienia=DZ_Status_zamowienia.Id_zamowienia INNER JOIN
+DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam INNER JOIN
+DZ_Klient ON DZ_Zamowienie_klienta.Id_klienta=DZ_Klient.Id_klienta INNER JOIN
+DZ_Szczegoly_zamowienia_klienta ON DZ_Zamowienie_klienta.Id_zamowienia=DZ_Szczegoly_zamowienia_klienta.Id_zamowienia INNER JOIN
+vDP_Kosztorys_ofertowy ON DZ_Zamowienie_klienta.Id_zamowienia=vDP_Kosztorys_ofertowy.Id_proces_technologiczny
+GO
+CREATE VIEW vDZ_Wplyw
+AS
+SELECT vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamówienia], vDZ_Wydanie_faktury.NIP, vDZ_Wydanie_faktury.Imię, vDZ_Wydanie_faktury.Nazwisko, vDP_Kosztorys_powykonawczy.[Koszt powykonawczy],
+CASE WHEN vDZ_Wydanie_faktury.[Status zamówienia]='zrealizowane' THEN 'OPŁACONE'
+	 ELSE 'NIE OPŁACONO' END AS 'Status wpływu',
+CASE WHEN (vDZ_Wydanie_faktury.[Status zamówienia]='zrealizowane') THEN vDP_Kosztorys_powykonawczy.[Koszt powykonawczy]
+	 ELSE 0 END AS [Kwota wpływu]
+FROM vDZ_Wydanie_faktury CROSS JOIN DZ_Szczegoly_zatrudnienia  INNER JOIN
+DZ_Zatrudnienie ON DZ_Szczegoly_zatrudnienia.Id_zatrudnienia=DZ_Zatrudnienie.Id_zatrudnienia INNER JOIN
+DZ_Pracownik ON DZ_Zatrudnienie.Id_pracownika=DZ_Pracownik.Id_pracownika INNER JOIN
+DZ_Nieobecnosc ON DZ_Pracownik.Id_pracownika=DZ_Nieobecnosc.Id_pracownika INNER JOIN
+DZ_Rodzaj_nieobecnosci ON DZ_Nieobecnosc.Id_rodzaj_nieobecnosci=DZ_Rodzaj_nieobecnosci.Id_rodzaj_nieobecnosci INNER JOIN
+vDP_Kosztorys_powykonawczy ON vDZ_Wydanie_faktury.[Numer faktury]=vDP_Kosztorys_powykonawczy.Id_proces_produkcyjny
+GROUP BY vDZ_Wydanie_faktury.[Numer faktury], vDZ_Wydanie_faktury.[Status zamówienia], vDZ_Wydanie_faktury.NIP, vDZ_Wydanie_faktury.Imię, vDZ_Wydanie_faktury.Nazwisko, vDP_Kosztorys_powykonawczy.[Koszt powykonawczy]
 GO

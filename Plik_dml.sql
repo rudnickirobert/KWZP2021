@@ -310,7 +310,7 @@ VALUES
 	('zrealizowane'),
 	('przyjete do realizacji'),
 	('oczekuje na zatwierdzenie'),
-	('op³acone'),
+	('w realizacji'),
 	('nie przyjete do realizacji')
 	;
 INSERT INTO DZ_Status_zamowienia(Id_zamowienia, Id_rodzaj_statusu_zam)
