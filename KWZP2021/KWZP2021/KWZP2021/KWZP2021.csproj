@@ -61,6 +61,18 @@
     <Compile Include="AddFirmaSerwisowa.Designer.cs">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPo_proc_wydr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPo_proc_wydr.Designer.cs">
+      <DependentUpon>AddPo_proc_wydr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProcesTechnologiczny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProcesTechnologiczny.Designer.cs">
+      <DependentUpon>AddProcesTechnologiczny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Archiwum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +264,12 @@
     </Compile>
     <Compile Include="Dodaj_szczegol_wydania_produktu.Designer.cs">
       <DependentUpon>Dodaj_szczegol_wydania_produktu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dodaj_usluge_serwisu_zewnetrznego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodaj_usluge_serwisu_zewnetrznego.Designer.cs">
+      <DependentUpon>Dodaj_usluge_serwisu_zewnetrznego.cs</DependentUpon>
     </Compile>
     <Compile Include="Dodaj_wlasciwosc.cs">
       <SubType>Form</SubType>
@@ -541,6 +559,24 @@
     <Compile Include="EdytujWlasciwoscNarzedzia.Designer.cs">
       <DependentUpon>EdytujWlasciwoscNarzedzia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Edytuj_firma_serwisowa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edytuj_firma_serwisowa.Designer.cs">
+      <DependentUpon>Edytuj_firma_serwisowa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edytuj_serwis_zewnetrzny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edytuj_serwis_zewnetrzny.Designer.cs">
+      <DependentUpon>Edytuj_serwis_zewnetrzny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edytuj_usluge_serwisu_zewnetrznego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edytuj_usluge_serwisu_zewnetrznego.Designer.cs">
+      <DependentUpon>Edytuj_usluge_serwisu_zewnetrznego.cs</DependentUpon>
+    </Compile>
     <Compile Include="Edytuj_wlasciwosc_materialu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -606,6 +642,12 @@
     </Compile>
     <Compile Include="Koszty_zewnetrzne.Designer.cs">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KreatorCzynnosci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KreatorCzynnosci.Designer.cs">
+      <DependentUpon>KreatorCzynnosci.cs</DependentUpon>
     </Compile>
     <Compile Include="KreatorWydruk.cs">
       <SubType>Form</SubType>
@@ -757,6 +799,12 @@
     <Compile Include="Nowy_pracownik.Designer.cs">
       <DependentUpon>Nowy_pracownik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Nowy_serwis_zewnetrzny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nowy_serwis_zewnetrzny.Designer.cs">
+      <DependentUpon>Nowy_serwis_zewnetrzny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obsluga_klienta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -840,6 +888,12 @@
     </Compile>
     <Compile Include="Rodzaj_narzedzia.Designer.cs">
       <DependentUpon>Rodzaj_narzedzia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Serwis_zewnetrzny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Serwis_zewnetrzny.Designer.cs">
+      <DependentUpon>Serwis_zewnetrzny.cs</DependentUpon>
     </Compile>
     <Compile Include="Stanowiska.cs">
       <SubType>Form</SubType>
@@ -926,6 +980,12 @@
     </Compile>
     <Compile Include="Szcz_zatrudnienia_2.Designer.cs">
       <DependentUpon>Szcz_zatrudnienia_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uslugi_serwisu_zewnetrznego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uslugi_serwisu_zewnetrznego.Designer.cs">
+      <DependentUpon>Uslugi_serwisu_zewnetrznego.cs</DependentUpon>
     </Compile>
     <Compile Include="UsunNarzedzieZeSzczegolow.cs">
       <SubType>Form</SubType>
@@ -1404,6 +1464,12 @@
     <EmbeddedResource Include="AddFirmaSerwisowa.resx">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPo_proc_wydr.resx">
+      <DependentUpon>AddPo_proc_wydr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProcesTechnologiczny.resx">
+      <DependentUpon>AddProcesTechnologiczny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Archiwum.resx">
       <DependentUpon>Archiwum.cs</DependentUpon>
     </EmbeddedResource>
@@ -1454,6 +1520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dodaj_szczegol_wydania_produktu.resx">
       <DependentUpon>Dodaj_szczegol_wydania_produktu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dodaj_usluge_serwisu_zewnetrznego.resx">
+      <DependentUpon>Dodaj_usluge_serwisu_zewnetrznego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dodaj_wlasciwosc.resx">
       <DependentUpon>Dodaj_wlasciwosc.cs</DependentUpon>
@@ -1515,6 +1584,15 @@
     <EmbeddedResource Include="EdytujWlasciwoscNarzedzia.resx">
       <DependentUpon>EdytujWlasciwoscNarzedzia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Edytuj_firma_serwisowa.resx">
+      <DependentUpon>Edytuj_firma_serwisowa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edytuj_serwis_zewnetrzny.resx">
+      <DependentUpon>Edytuj_serwis_zewnetrzny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edytuj_usluge_serwisu_zewnetrznego.resx">
+      <DependentUpon>Edytuj_usluge_serwisu_zewnetrznego.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edytuj_wlasciwosc_materialu.resx">
       <DependentUpon>Edytuj_wlasciwosc_materialu.cs</DependentUpon>
     </EmbeddedResource>
@@ -1547,6 +1625,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Koszty_zewnetrzne.resx">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KreatorCzynnosci.resx">
+      <DependentUpon>KreatorCzynnosci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KreatorWydruk.resx">
       <DependentUpon>KreatorWydruk.cs</DependentUpon>
@@ -1623,6 +1704,9 @@
     <EmbeddedResource Include="Nowy_pracownik.resx">
       <DependentUpon>Nowy_pracownik.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Nowy_serwis_zewnetrzny.resx">
+      <DependentUpon>Nowy_serwis_zewnetrzny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obsluga_klienta.resx">
       <DependentUpon>Obsluga_klienta.cs</DependentUpon>
     </EmbeddedResource>
@@ -1674,6 +1758,9 @@
     <EmbeddedResource Include="Rodzaj_narzedzia.resx">
       <DependentUpon>Rodzaj_narzedzia.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Serwis_zewnetrzny.resx">
+      <DependentUpon>Serwis_zewnetrzny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stanowiska.resx">
       <DependentUpon>Stanowiska.cs</DependentUpon>
     </EmbeddedResource>
@@ -1715,6 +1802,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Szcz_zatrudnienia_2.resx">
       <DependentUpon>Szcz_zatrudnienia_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uslugi_serwisu_zewnetrznego.resx">
+      <DependentUpon>Uslugi_serwisu_zewnetrznego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsunNarzedzieZeSzczegolow.resx">
       <DependentUpon>UsunNarzedzieZeSzczegolow.cs</DependentUpon>

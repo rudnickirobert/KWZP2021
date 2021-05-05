@@ -30,27 +30,22 @@ namespace KWZP2021
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnCzynnosci = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProcesTechnologiczny));
             this.dgv_proces_wydruk = new System.Windows.Forms.DataGridView();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnWydruk = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_proces_wydruk)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnCzynnosci
-            // 
-            this.btnCzynnosci.Location = new System.Drawing.Point(1311, 126);
-            this.btnCzynnosci.Name = "btnCzynnosci";
-            this.btnCzynnosci.Size = new System.Drawing.Size(89, 27);
-            this.btnCzynnosci.TabIndex = 0;
-            this.btnCzynnosci.Text = "Czynności";
-            this.btnCzynnosci.UseVisualStyleBackColor = true;
-            this.btnCzynnosci.Click += new System.EventHandler(this.btnCzynnosci_Click);
             // 
             // dgv_proces_wydruk
             // 
             this.dgv_proces_wydruk.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgv_proces_wydruk.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dgv_proces_wydruk.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -81,35 +76,72 @@ namespace KWZP2021
             // 
             // btnWydruk
             // 
-            this.btnWydruk.Location = new System.Drawing.Point(1247, 68);
+            this.btnWydruk.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnWydruk.Location = new System.Drawing.Point(1062, 159);
             this.btnWydruk.Name = "btnWydruk";
             this.btnWydruk.Size = new System.Drawing.Size(156, 52);
             this.btnWydruk.TabIndex = 3;
             this.btnWydruk.Text = "Kreator Wydruku";
-            this.btnWydruk.UseVisualStyleBackColor = true;
+            this.btnWydruk.UseVisualStyleBackColor = false;
             this.btnWydruk.Click += new System.EventHandler(this.btnWydruk_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button1.Location = new System.Drawing.Point(1247, 159);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 52);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Kreator Czynności";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(1061, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(339, 33);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Proces Technologiczny";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1417, 574);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // ProcesTechnologiczny
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1415, 575);
+            this.ClientSize = new System.Drawing.Size(1415, 555);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnWydruk);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dgv_proces_wydruk);
-            this.Controls.Add(this.btnCzynnosci);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "ProcesTechnologiczny";
-            this.Text = "ProcesTechnologiczny";
+            this.Text = "P";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_proces_wydruk)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnCzynnosci;
         private System.Windows.Forms.DataGridView dgv_proces_wydruk;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnWydruk;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

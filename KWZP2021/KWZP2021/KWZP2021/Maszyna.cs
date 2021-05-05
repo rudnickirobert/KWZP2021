@@ -19,7 +19,7 @@ namespace KWZP2021
             InitializeComponent();
             this.database = database;
             this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
-            dataGridView1_CellContentClick();
+            initDataGridView();
         }
 
     
@@ -28,7 +28,7 @@ namespace KWZP2021
         //    this.dgv_Maszyna.DataSource = this.database.vDP_Maszyna.ToList();
         //}
 
-        private void dataGridView1_CellContentClick()
+        private void initDataGridView()
         {
             this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
 
@@ -92,9 +92,10 @@ namespace KWZP2021
             initDataGridView();
         }
 
-        public void initDataGridView()
-        {
-            this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
-        }
+        
+        //public void initDataGridView()
+        //{
+        //    this.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
+        //}
     }
 }

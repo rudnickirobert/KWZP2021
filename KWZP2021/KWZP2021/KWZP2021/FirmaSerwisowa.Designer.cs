@@ -35,7 +35,7 @@ namespace KWZP2021
             this.button1 = new System.Windows.Forms.Button();
             this.btnUsunFirma = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnAddMaszyna = new System.Windows.Forms.Button();
+            this.btnAddFirma = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFirma)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,6 +46,7 @@ namespace KWZP2021
             this.dgvFirma.Name = "dgvFirma";
             this.dgvFirma.Size = new System.Drawing.Size(660, 215);
             this.dgvFirma.TabIndex = 1;
+            this.dgvFirma.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFirma_CellDoubleClick);
             // 
             // label1
             // 
@@ -94,15 +95,15 @@ namespace KWZP2021
             this.label2.TabIndex = 30;
             this.label2.Text = "Przejdź do formularza dodania nowej firmy";
             // 
-            // btnAddMaszyna
+            // btnAddFirma
             // 
-            this.btnAddMaszyna.Location = new System.Drawing.Point(336, 47);
-            this.btnAddMaszyna.Name = "btnAddMaszyna";
-            this.btnAddMaszyna.Size = new System.Drawing.Size(95, 45);
-            this.btnAddMaszyna.TabIndex = 29;
-            this.btnAddMaszyna.Text = "Dodaj";
-            this.btnAddMaszyna.UseVisualStyleBackColor = true;
-            this.btnAddMaszyna.Click += new System.EventHandler(this.btnAddMaszyna_Click);
+            this.btnAddFirma.Location = new System.Drawing.Point(336, 47);
+            this.btnAddFirma.Name = "btnAddFirma";
+            this.btnAddFirma.Size = new System.Drawing.Size(95, 45);
+            this.btnAddFirma.TabIndex = 29;
+            this.btnAddFirma.Text = "Dodaj";
+            this.btnAddFirma.UseVisualStyleBackColor = true;
+            this.btnAddFirma.Click += new System.EventHandler(this.btnAddFirma_Click_1);
             // 
             // FirmaSerwisowa
             // 
@@ -110,7 +111,7 @@ namespace KWZP2021
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnAddMaszyna);
+            this.Controls.Add(this.btnAddFirma);
             this.Controls.Add(this.btnUsunFirma);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
@@ -132,6 +133,6 @@ namespace KWZP2021
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnUsunFirma;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAddMaszyna;
+        private System.Windows.Forms.Button btnAddFirma;
     }
 }

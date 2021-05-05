@@ -48,7 +48,7 @@ namespace KWZP2021
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 278);
+            this.dataGridView1.Size = new System.Drawing.Size(601, 138);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -56,7 +56,7 @@ namespace KWZP2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(267, 0);
+            this.label1.Location = new System.Drawing.Point(174, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(259, 32);
             this.label1.TabIndex = 1;
@@ -65,7 +65,7 @@ namespace KWZP2021
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(653, 44);
+            this.button1.Location = new System.Drawing.Point(478, 53);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 37);
             this.button1.TabIndex = 2;
@@ -96,7 +96,7 @@ namespace KWZP2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 383);
+            this.ClientSize = new System.Drawing.Size(624, 247);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);

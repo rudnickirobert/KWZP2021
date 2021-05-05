@@ -21,8 +21,8 @@ namespace KWZP2021
 
         private void btn2maszyna_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Close();
+           // this.Hide();
+           // this.Close();
             Maszyna maszyna = new Maszyna(this.database);
             maszyna.ShowDialog();
             
@@ -30,8 +30,8 @@ namespace KWZP2021
 
         private void btnFirma_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.Close();
+           // this.Hide();
+           // this.Close();
             FirmaSerwisowa firma = new FirmaSerwisowa(this.database);
             firma.ShowDialog();
         }
@@ -46,6 +46,18 @@ namespace KWZP2021
         {
             Model_maszyny model = new Model_maszyny(this.database);
             model.ShowDialog();
+        }
+
+        private void btnUslugiSerwZew_Click(object sender, EventArgs e)
+        {
+            Uslugi_serwisu_zewnetrznego  uslugiserwew = new Uslugi_serwisu_zewnetrznego(this.database);
+            uslugiserwew.ShowDialog();
+        }
+
+        private void btnSerwisZew_Click(object sender, EventArgs e)
+        {
+            Serwis_zewnetrzny serwis_zewnetrzny = new Serwis_zewnetrzny(this.database);
+            serwis_zewnetrzny.ShowDialog();
         }
     }
 }

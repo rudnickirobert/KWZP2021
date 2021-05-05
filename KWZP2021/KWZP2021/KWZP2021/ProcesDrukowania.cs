@@ -11,8 +11,17 @@ using System.Windows.Forms;
 namespace KWZP2021
 {
     public partial class ProcesDrukowania : Form
+
     {
+        private string myVal;
+
+        public string MyVal
+        {
+            get { return myVal; }
+            set { myVal = value; }
+        }
         DrukarniaEntities database;
+        public static string SelectedItem;
         public ProcesDrukowania(DrukarniaEntities database)
         {
             InitializeComponent();
@@ -21,6 +30,7 @@ namespace KWZP2021
             this.cmbProcesTechno.DataSource = this.database.DP_Proces_technologiczny.ToList();
             this.cmbProcesTechno.DisplayMember = "Nazwa";
             this.cmbProcesTechno.ValueMember = "Id_proces_technologiczny";
+
 
             this.cmbWydruk.DataSource = this.database.DP_Wydruk.ToList();
             this.cmbWydruk.DisplayMember = "Id_wydruk";
@@ -31,6 +41,11 @@ namespace KWZP2021
             this.cmbDelete.DisplayMember = "Id_po_wydr_proces";
             this.cmbDelete.ValueMember = "Id_po_wydr_proces";
 
+
+
+           
+
+            dgvProcesDrukowania.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvProcesDrukowania.DataSource = this.database.vDP_Po_wydr_proc.ToList();
         }
         public void initcmb()
@@ -42,10 +57,11 @@ namespace KWZP2021
 
         public void initDataGridView()
         {
+            dgvProcesDrukowania.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvProcesDrukowania.DataSource = this.database.vDP_Po_wydr_proc.ToList();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        public void btnSave_Click(object sender, EventArgs e)
         {
             DP_Po_wydr_proc proc_wydruk = new DP_Po_wydr_proc();
 
@@ -56,9 +72,16 @@ namespace KWZP2021
 
             database.DP_Po_wydr_proc.Add(proc_wydruk);
             database.SaveChanges();
+
+
             this.txtCzas.Text = "";
+
+
+
             initDataGridView();
             initcmb();
+
+
 
         }
         private void btnDelete_Click(object sender, EventArgs e)
@@ -87,7 +110,7 @@ namespace KWZP2021
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            KreatorWydruk kw = new KreatorWydruk(this.database);
+            ProcesTechnologiczny kw = new ProcesTechnologiczny(this.database);
             kw.ShowDialog();
         }
 
@@ -115,5 +138,35 @@ namespace KWZP2021
                 d.Hide();
             }
         }
+
+        private void btnWydruk_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            NowyWydruk kw = new NowyWydruk(this.database);
+            kw.ShowDialog();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AddProcesTechnologiczny kw = new AddProcesTechnologiczny(this.database);
+            kw.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            KreatorWydruk kw = new KreatorWydruk(this.database);
+            kw.ShowDialog();
+        }
+
+
+        //       this.Hide();
+        //       KreatorWydruk kw = new KreatorWydruk(this.database);
+        //      kw.ShowDialog();
+
+        // }
+
     }
 }

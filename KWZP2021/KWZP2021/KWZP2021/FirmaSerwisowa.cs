@@ -63,7 +63,32 @@ namespace KWZP2021
 
         }
 
-        private void btnAddMaszyna_Click(object sender, EventArgs e)
+       // private void btnAddFirma_Click(object sender, EventArgs e)
+       // {
+        //    NowaFirmaSerwisowa nowa_firma_serwisowa = new NowaFirmaSerwisowa(this.database);
+        //    nowa_firma_serwisowa.ShowDialog();
+        //    initdgvFirma();
+        //}
+
+        private void dgvFirma_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Edytuj_firma_serwisowa edytuj_firma_serwisowa = new Edytuj_firma_serwisowa(this.database);
+            edytuj_firma_serwisowa.txtNazwa_Firmy.Text = dgvFirma.CurrentRow.Cells[1].Value.ToString();
+            edytuj_firma_serwisowa.tAdres.Text = dgvFirma.CurrentRow.Cells[2].Value.ToString();
+            edytuj_firma_serwisowa.tMiasto.Text = dgvFirma.CurrentRow.Cells[3].Value.ToString();
+            edytuj_firma_serwisowa.tKodpocztowy.Text = dgvFirma.CurrentRow.Cells[4].Value.ToString();
+            edytuj_firma_serwisowa.tNumertel.Text = dgvFirma.CurrentRow.Cells[5].Value.ToString();
+            edytuj_firma_serwisowa.tEmail.Text = dgvFirma.CurrentRow.Cells[6].Value.ToString();
+
+
+            //database.DP_Firma_serwisowa.Add(edytuj_firma_serwisowa);
+            database.SaveChanges();
+            //this.Close();
+            edytuj_firma_serwisowa.ShowDialog();
+            initdgvFirma();
+        }
+
+        private void btnAddFirma_Click_1(object sender, EventArgs e)
         {
             NowaFirmaSerwisowa nowa_firma_serwisowa = new NowaFirmaSerwisowa(this.database);
             nowa_firma_serwisowa.ShowDialog();

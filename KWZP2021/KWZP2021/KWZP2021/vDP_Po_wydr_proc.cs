@@ -17,5 +17,6 @@ namespace KWZP2021
         public int Identyfikator { get; set; }
         public int Identyfikator_wydruku { get; set; }
         public string Nazwa_procesu_technologicznego { get; set; }
+        public int Czas_zamierzony { get; set; }
     }
 }

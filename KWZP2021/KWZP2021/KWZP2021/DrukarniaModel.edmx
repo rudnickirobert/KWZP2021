@@ -1949,10 +1949,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDP_Po_wydr_proc' does not have a pr
             <PropertyRef Name="Identyfikator" />
             <PropertyRef Name="Identyfikator wydruku" />
             <PropertyRef Name="Nazwa procesu technologicznego" />
+            <PropertyRef Name="Czas_zamierzony" />
           </Key>
           <Property Name="Identyfikator" Type="int" Nullable="false" />
           <Property Name="Identyfikator wydruku" Type="int" Nullable="false" />
           <Property Name="Nazwa procesu technologicznego" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Czas_zamierzony" Type="int" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDP_Pracownik_Proces' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -5310,7 +5312,8 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <DefiningQuery>SELECT 
     [vDP_Po_wydr_proc].[Identyfikator] AS [Identyfikator], 
     [vDP_Po_wydr_proc].[Identyfikator wydruku] AS [Identyfikator wydruku], 
-    [vDP_Po_wydr_proc].[Nazwa procesu technologicznego] AS [Nazwa procesu technologicznego]
+    [vDP_Po_wydr_proc].[Nazwa procesu technologicznego] AS [Nazwa procesu technologicznego], 
+    [vDP_Po_wydr_proc].[Czas_zamierzony] AS [Czas_zamierzony]
     FROM [dbo].[vDP_Po_wydr_proc] AS [vDP_Po_wydr_proc]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vDP_Pracownik_Proces" EntityType="Self.vDP_Pracownik_Proces" store:Type="Views" store:Schema="dbo">
@@ -9015,10 +9018,12 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
             <PropertyRef Name="Identyfikator" />
             <PropertyRef Name="Identyfikator_wydruku" />
             <PropertyRef Name="Nazwa_procesu_technologicznego" />
+            <PropertyRef Name="Czas_zamierzony" />
           </Key>
           <Property Name="Identyfikator" Type="Int32" Nullable="false" />
           <Property Name="Identyfikator_wydruku" Type="Int32" Nullable="false" />
           <Property Name="Nazwa_procesu_technologicznego" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Czas_zamierzony" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="vDP_Pracownik_Proces">
           <Key>
@@ -12792,6 +12797,7 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Zatrudnienie' does not have a pr
           <EntitySetMapping Name="vDP_Po_wydr_proc">
             <EntityTypeMapping TypeName="DrukarniaModel.vDP_Po_wydr_proc">
               <MappingFragment StoreEntitySet="vDP_Po_wydr_proc">
+                <ScalarProperty Name="Czas_zamierzony" ColumnName="Czas_zamierzony" />
                 <ScalarProperty Name="Nazwa_procesu_technologicznego" ColumnName="Nazwa procesu technologicznego" />
                 <ScalarProperty Name="Identyfikator_wydruku" ColumnName="Identyfikator wydruku" />
                 <ScalarProperty Name="Identyfikator" ColumnName="Identyfikator" />
