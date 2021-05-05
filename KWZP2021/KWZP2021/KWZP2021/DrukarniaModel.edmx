@@ -2528,9 +2528,6 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Rodzaj_umowy' does not have a pr
         <!--Errors Found During Generation:
 warning 6013: The table/view 'Drukarnia.dbo.vDZ_Rozchod' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="vDZ_Rozchod">
-          <Property Name="Suma wypłat" Type="float" />
-          <Property Name="Suma kosztów zewnętrznych" Type="decimal" Precision="38" Scale="0" />
-          <Property Name="Suma opłat stałych" Type="float" />
           <Property Name="Rozchód" Type="float" />
         </EntityType>-->
         <!--Errors Found During Generation:
@@ -2555,6 +2552,21 @@ warning 6002: The table/view 'Drukarnia.dbo.vDZ_Status_zamowienia' does not have
           <Property Name="Identyfikator zamowienia klienta" Type="int" Nullable="false" />
           <Property Name="Rodzaj statusu zamowienia" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Drukarnia.dbo.vDZ_Suma_kosztow' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vDZ_Suma_kosztow">
+          <Property Name="Suma Kosztów" Type="decimal" Precision="38" Scale="0" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Drukarnia.dbo.vDZ_Suma_oplat' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vDZ_Suma_oplat">
+          <Property Name="Suma Opłat" Type="float" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Drukarnia.dbo.vDZ_Suma_wyplat' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="vDZ_Suma_wyplat">
+          <Property Name="Suma Wypłat" Type="float" />
+        </EntityType>-->
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Drukarnia.dbo.vDZ_Szczegoly_zam_czesci' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vDZ_Szczegoly_zam_czesci">
