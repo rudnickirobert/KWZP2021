@@ -913,52 +913,25 @@ LEFT OUTER JOIN DP_Po_wydr_proc ON A.Id_proces_technologiczny = DP_Po_wydr_proc.
 GROUP BY A.Id_proces_technologiczny, A.Nazwa;
 GO
 
-CREATE VIEW vDM_Zliczanieilosciwdostawie
+CREATE VIEW vDM_Zliczanieilosciwydanej1
 AS
-SELECT DM_Material.Nazwa AS 'Nazwa materialu', SUM(DM_Sklad_dostawy_materialu.Ilosc) AS [Ilosc1]
+SELECT DM_Material.Nazwa AS 'Nazwa materialu', SUM(DM_Szczegoly_wydania_materialu.Ilosc) AS [Ilosc1],SUM(DM_Sklad_dostawy_materialu.Ilosc) AS [Ilosc2],SUM(DP_Po_material_wydruk.Ilosc) AS [Ilosc3],SUM(DP_Po_material_czynnosc.Ilosc) AS [Ilosc4]
 FROM dbo.DM_Material INNER JOIN
 DM_Szczegoly_wydania_materialu ON DM_Material.Id_materialu=DM_Szczegoly_wydania_materialu.Id_materialu INNER JOIN
-DM_Sklad_dostawy_materialu ON DM_Material.Id_materialu=DM_Sklad_dostawy_materialu.Id_materialu
-GROUP BY  DM_Material.Nazwa
+DM_Sklad_dostawy_materialu ON DM_Material.Id_materialu=DM_Sklad_dostawy_materialu.Id_materialu INNER JOIN
+DP_Po_material_wydruk ON DM_Material.Id_materialu=DP_Po_material_wydruk.Id_materialu INNER JOIN
+DP_Po_material_czynnosc ON DM_Material.Id_materialu=DP_Po_material_czynnosc.Id_materialu
+GROUP BY  DM_Material.Nazwa,DM_Szczegoly_wydania_materialu.Ilosc,DM_Sklad_dostawy_materialu.Ilosc,DP_Po_material_wydruk.Ilosc,DP_Po_material_czynnosc.Id_materialu
 GO
-
-CREATE VIEW vDM_Zliczanieilosciwydanej
+CREATE VIEW vDM_Zapotrzebowanie1
 AS
-SELECT DM_Material.Nazwa AS 'Nazwa materialu', SUM(DM_Szczegoly_wydania_materialu.Ilosc) AS [Ilosc2]
-FROM dbo.DM_Material INNER JOIN
-DM_Szczegoly_wydania_materialu ON DM_Material.Id_materialu=DM_Szczegoly_wydania_materialu.Id_materialu INNER JOIN
-DM_Sklad_dostawy_materialu ON DM_Material.Id_materialu=DM_Sklad_dostawy_materialu.Id_materialu
-GROUP BY  DM_Material.Nazwa
-GO
-
-CREATE VIEW vDM_Zliczaniematerialudowydruku
-AS
-SELECT  DM_Material.Nazwa AS[Nazwa], SUM(DP_Po_material_wydruk.Ilosc) AS [Ilosc4]
-FROM dbo.DP_Po_material_wydruk INNER JOIN
-DM_Material ON DP_Po_material_wydruk.Id_materialu=DM_Material.Id_materialu
-GROUP BY DM_Material.Nazwa
-GO
-CREATE VIEW vDM_Zliczaniematerialudoczynnosci
-AS
-SELECT  DM_Material.Nazwa AS[Nazwa], SUM(DP_Po_material_czynnosc.Ilosc) AS [Ilosc3]
-FROM dbo.DP_Po_material_czynnosc INNER JOIN
-DM_Material ON DP_Po_material_czynnosc.Id_materialu=DM_Material.Id_materialu
-GROUP BY DM_Material.Nazwa
-GO
-
-CREATE VIEW vDM_Zapotrzebowanie
-AS
-SELECT DM_Material.Nazwa AS 'Nazwa materialu', dbo.vDM_Zliczanieilosciwydanej.Ilosc2 AS [Ilosc_potrzebna], dbo.vDM_Zliczanieilosciwdostawie.Ilosc1, vDM_Zliczaniematerialudowydruku.Ilosc4, vDM_Zliczaniematerialudoczynnosci.Ilosc3,
-CASE WHEN (vDM_Zliczanieilosciwdostawie.Ilosc1 - vDM_Zliczanieilosciwydanej.Ilosc2-vDM_Zliczaniematerialudowydruku.Ilosc4-vDM_Zliczaniematerialudoczynnosci.Ilosc3) <= 1 THEN 'Brak materialu'
+SELECT DM_Material.Nazwa AS 'Nazwa materialu', vDM_Zliczanieilosciwydanej.Ilosc1 AS [Ilosc1], dbo.vDM_Zliczanieilosciwydanej.Ilosc2, dbo.vDM_Zliczanieilosciwydanej.Ilosc3 AS [Ilosc3], dbo.vDM_Zliczanieilosciwydanej.Ilosc4 AS [Ilosc4],
+CASE WHEN (vDM_Zliczanieilosciwydanej.Ilosc1 - dbo.vDM_Zliczanieilosciwydanej.Ilosc2-vDM_Zliczanieilosciwydanej.Ilosc3-dbo.vDM_Zliczanieilosciwydanej.Ilosc4) <= 100 THEN 'Brak materialu'
 ELSE 'Wystarczająca' END AS 'Stan materiału',
-CASE WHEN ((vDM_Zliczanieilosciwdostawie.Ilosc1 - vDM_Zliczanieilosciwydanej.Ilosc2-vDM_Zliczaniematerialudowydruku.Ilosc4-vDM_Zliczaniematerialudoczynnosci.Ilosc3) !=0) THEN (vDM_Zliczanieilosciwdostawie.Ilosc1 - vDM_Zliczanieilosciwydanej.Ilosc2-vDM_Zliczaniematerialudowydruku.Ilosc4-vDM_Zliczaniematerialudoczynnosci.Ilosc3) END AS 'Brakujaca ilosc'
+CASE WHEN ((vDM_Zliczanieilosciwydanej.Ilosc1 - vDM_Zliczanieilosciwydanej.Ilosc2-vDM_Zliczanieilosciwydanej.Ilosc3-dbo.vDM_Zliczanieilosciwydanej.Ilosc4) !=0) THEN ((vDM_Zliczanieilosciwydanej.Ilosc1 - dbo.vDM_Zliczanieilosciwydanej.Ilosc2-vDM_Zliczanieilosciwydanej.Ilosc3-dbo.vDM_Zliczanieilosciwydanej.Ilosc4)* -1) END AS 'Brakujaca ilosc'
 FROM dbo.DM_Material INNER JOIN
-vDM_Zliczanieilosciwydanej ON DM_Material.Nazwa=vDM_Zliczanieilosciwydanej.[Nazwa materialu] INNER JOIN
-vDM_Zliczanieilosciwdostawie ON DM_Material.Nazwa=vDM_Zliczanieilosciwdostawie.[Nazwa materialu] INNER JOIN
-vDM_Zliczaniematerialudowydruku ON DM_Material.Nazwa=vDM_Zliczaniematerialudowydruku.Nazwa INNER JOIN
-vDM_Zliczaniematerialudoczynnosci ON DM_Material.Nazwa=vDM_Zliczaniematerialudoczynnosci.Nazwa
+vDM_Zliczanieilosciwydanej ON DM_Material.Nazwa=vDM_Zliczanieilosciwydanej.[Nazwa materialu]
 GO
-
 
 
 CREATE VIEW vDP_Koszt_jednostkowy_material
