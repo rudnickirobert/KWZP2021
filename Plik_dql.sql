@@ -1201,3 +1201,24 @@ FROM DP_Proces_technologiczny INNER JOIN
 INNER JOIN DP_Po_maszyna_czynnosc ON DP_Po_proc_czynnosc.Id_po_proc_czynnosci=DP_Po_maszyna_czynnosc.Id_po_proc_czynnosci
 INNER JOIN DP_Maszyna ON DP_Po_maszyna_czynnosc.Id_maszyny=DP_Maszyna.Id_maszyny
 GO
+
+CREATE VIEW vDP_Koszt_maszyn_wydruk_powykonawczy
+AS
+SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny, DP_prod_wydruk.Czas_wydruku,
+	DP_Maszyna.Koszt_1rh, DP_prod_wydruk.Id_maszyny,
+	(DP_prod_wydruk.Czas_wydruku * DP_Maszyna.Koszt_1rh) AS [Koszt maszyn wydruk powykonawczy]
+FROM DP_Proces_produkcyjny INNER JOIN
+	DP_prod_wydruk ON DP_Proces_produkcyjny.Id_proces_produkcyjny=DP_prod_wydruk.Id_proces_produkcyjny
+INNER JOIN DP_Maszyna ON DP_prod_wydruk.Id_maszyny=DP_Maszyna.Id_maszyny
+GO
+
+CREATE VIEW vDP_Koszt_maszyn_dodatkowe_powykonawczy
+AS
+SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny, DP_po_prod_czyn_dod_maszyna.Id_maszyna,
+	DP_prod_czynnosc_dodatkowa.Czas_pracy, DP_Maszyna.Koszt_1rh,
+	(DP_prod_czynnosc_dodatkowa.Czas_pracy * DP_Maszyna.Koszt_1rh) AS [Koszt maszyn czyn_dodatkowe powykonawczy]
+FROM DP_Proces_produkcyjny INNER JOIN 
+	DP_prod_czynnosc_dodatkowa ON DP_Proces_produkcyjny.Id_proces_produkcyjny=DP_prod_czynnosc_dodatkowa.Id_proces_produkcyjny
+INNER JOIN DP_po_prod_czyn_dod_maszyna ON DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe=DP_po_prod_czyn_dod_maszyna.Id_prod_czynnosci_dodatkowe
+INNER JOIN DP_Maszyna ON DP_po_prod_czyn_dod_maszyna.Id_maszyna=DP_Maszyna.Id_maszyny
+GO
