@@ -47,7 +47,7 @@ namespace KWZP2021
             /*int id = Convert.ToInt32(dgvWypozyczenie.CurrentRow.Cells[0].Value);
             UsunNarzedzieZeSzczegolow usun = new UsunNarzedzieZeSzczegolow(this.database, Decimal.ToInt32(id));
             usun.ShowDialog();*/
-            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć materiał?", "Usuwanie materiał", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć narzędzie?", "Usuwanie narzędzia", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
                 int id = Convert.ToInt32(this.dgvWypozyczenie.CurrentRow.Cells[0].Value);
@@ -61,7 +61,7 @@ namespace KWZP2021
             }
             else
             {
-                DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć materiału?");
+                DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć narzędzia!");
             }
         }
 
@@ -82,6 +82,12 @@ namespace KWZP2021
         {
             NoweSzczegolyWypozyczeniaNarzedzia news = new NoweSzczegolyWypozyczeniaNarzedzia(this.database);
             news.ShowDialog();
+        }
+
+        private void WypozyczenieNarzedzia_Load(object sender, EventArgs e)
+        {
+            dgvWypozyczenie.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvWypozyczenie.DataSource = this.database.vDM_Wypozyczenie_narzedzia.ToList();
         }
     }
 }

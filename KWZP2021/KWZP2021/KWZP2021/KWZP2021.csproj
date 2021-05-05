@@ -271,6 +271,12 @@
     <Compile Include="Dodaj_wydanie_produktu.Designer.cs">
       <DependentUpon>Dodaj_wydanie_produktu.cs</DependentUpon>
     </Compile>
+    <Compile Include="DostawaMaterialu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DostawaMaterialu.Designer.cs">
+      <DependentUpon>DostawaMaterialu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dostawa_glowny.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -649,6 +655,12 @@
     <Compile Include="Narzedzie_glowny.Designer.cs">
       <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
     </Compile>
+    <Compile Include="NowaDostawaMaterialu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NowaDostawaMaterialu.Designer.cs">
+      <DependentUpon>NowaDostawaMaterialu.cs</DependentUpon>
+    </Compile>
     <Compile Include="NowaFirmaSerwisowa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -666,6 +678,12 @@
     </Compile>
     <Compile Include="Nowa_maszyna.Designer.cs">
       <DependentUpon>Nowa_maszyna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoweSzczegolyDostawyMaterialu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoweSzczegolyDostawyMaterialu.Designer.cs">
+      <DependentUpon>NoweSzczegolyDostawyMaterialu.cs</DependentUpon>
     </Compile>
     <Compile Include="NoweSzczegolyWypozyczeniaNarzedzia.cs">
       <SubType>Form</SubType>
@@ -818,6 +836,12 @@
     </Compile>
     <Compile Include="StatusZamowienia.Designer.cs">
       <DependentUpon>StatusZamowienia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SzczegolyDostawy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SzczegolyDostawy.Designer.cs">
+      <DependentUpon>SzczegolyDostawy.cs</DependentUpon>
     </Compile>
     <Compile Include="SzczegolyWypozyczenia.cs">
       <SubType>Form</SubType>
@@ -1416,6 +1440,9 @@
     <EmbeddedResource Include="Dodaj_wydanie_produktu.resx">
       <DependentUpon>Dodaj_wydanie_produktu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DostawaMaterialu.resx">
+      <DependentUpon>DostawaMaterialu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dostawa_glowny.resx">
       <DependentUpon>Dostawa_glowny.cs</DependentUpon>
     </EmbeddedResource>
@@ -1521,6 +1548,9 @@
     <EmbeddedResource Include="Narzedzie_glowny.resx">
       <DependentUpon>Narzedzie_glowny.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NowaDostawaMaterialu.resx">
+      <DependentUpon>NowaDostawaMaterialu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NowaFirmaSerwisowa.resx">
       <DependentUpon>NowaFirmaSerwisowa.cs</DependentUpon>
     </EmbeddedResource>
@@ -1529,6 +1559,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nowa_maszyna.resx">
       <DependentUpon>Nowa_maszyna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoweSzczegolyDostawyMaterialu.resx">
+      <DependentUpon>NoweSzczegolyDostawyMaterialu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NoweSzczegolyWypozyczeniaNarzedzia.resx">
       <DependentUpon>NoweSzczegolyWypozyczeniaNarzedzia.cs</DependentUpon>
@@ -1613,6 +1646,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatusZamowienia.resx">
       <DependentUpon>StatusZamowienia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SzczegolyDostawy.resx">
+      <DependentUpon>SzczegolyDostawy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SzczegolyWypozyczenia.resx">
       <DependentUpon>SzczegolyWypozyczenia.cs</DependentUpon>

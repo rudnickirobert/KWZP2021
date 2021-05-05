@@ -31,13 +31,15 @@ namespace KWZP2021
         {
             this.btnPowrot = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvWypozyczenie = new System.Windows.Forms.DataGridView();
             this.txtFind = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWypozyczenie)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,23 +58,11 @@ namespace KWZP2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(440, 40);
+            this.label1.Location = new System.Drawing.Point(506, 71);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 20);
+            this.label1.Size = new System.Drawing.Size(0, 20);
             this.label1.TabIndex = 41;
-            this.label1.Text = "Wyszukaj po nazwisku";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(677, 61);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 20);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "Wypozyczenie narzędzia";
             // 
             // btnDelete
             // 
@@ -100,7 +90,7 @@ namespace KWZP2021
             // dgvWypozyczenie
             // 
             this.dgvWypozyczenie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWypozyczenie.Location = new System.Drawing.Point(13, 153);
+            this.dgvWypozyczenie.Location = new System.Drawing.Point(16, 170);
             this.dgvWypozyczenie.Margin = new System.Windows.Forms.Padding(4);
             this.dgvWypozyczenie.Name = "dgvWypozyczenie";
             this.dgvWypozyczenie.RowHeadersWidth = 51;
@@ -110,10 +100,10 @@ namespace KWZP2021
             // 
             // txtFind
             // 
-            this.txtFind.Location = new System.Drawing.Point(435, 64);
+            this.txtFind.Location = new System.Drawing.Point(487, 100);
             this.txtFind.Margin = new System.Windows.Forms.Padding(4);
             this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(193, 22);
+            this.txtFind.Size = new System.Drawing.Size(330, 22);
             this.txtFind.TabIndex = 36;
             this.txtFind.TextChanged += new System.EventHandler(this.txtFind_TextChanged);
             // 
@@ -141,22 +131,60 @@ namespace KWZP2021
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(13, 146);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(757, 18);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "W celu otworzenia szczegółów wypożyczenia narzędzi kliknij dwukrotnie na wybrane " +
+    "wypożyczenie";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(507, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(290, 18);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Wyszukaj wypożyczenie po nazwisku";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(482, 14);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(317, 29);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "Wypożyczenie narzędzia";
+            // 
             // WypozyczenieNarzedzia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(907, 489);
+            this.ClientSize = new System.Drawing.Size(886, 506);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnPowrot);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dgvWypozyczenie);
             this.Controls.Add(this.txtFind);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WypozyczenieNarzedzia";
             this.Text = "WypozyczenieNarzedzia";
+            this.Load += new System.EventHandler(this.WypozyczenieNarzedzia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWypozyczenie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -167,12 +195,14 @@ namespace KWZP2021
 
         private System.Windows.Forms.Button btnPowrot;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.DataGridView dgvWypozyczenie;
         private System.Windows.Forms.TextBox txtFind;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -73,5 +73,11 @@ namespace KWZP2021
             EdytujWlasciwoscNarzedzia rodzaj1 = new EdytujWlasciwoscNarzedzia(this.database);
             rodzaj1.ShowDialog();
         }
+
+        private void WlasciwoscNarzedzia_Load(object sender, EventArgs e)
+        {
+            dgvWlasciwosc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvWlasciwosc.DataSource = this.database.vDM_Parametr_narzedzia.ToList();
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace KWZP2021
     
     public partial class DM_Sklad_dostawy_materialu
     {
+        public int Id_dostawy_mate { get; set; }
         public int Id_dostawy { get; set; }
         public Nullable<int> Id_dostawcy { get; set; }
         public int Id_materialu { get; set; }

@@ -32,5 +32,11 @@ namespace KWZP2021
             Dostawcy wydanieProduktu = new Dostawcy(this.database);
             wydanieProduktu.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DostawaMaterialu nowa = new DostawaMaterialu(this.database);
+            nowa.ShowDialog();
+        }
     }
 }

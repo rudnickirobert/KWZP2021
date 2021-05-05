@@ -34,16 +34,6 @@ namespace KWZP2021
         {
             this.Close();
         }
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            NoweSzczegolyWypozyczeniaNarzedzia narzedzia = new NoweSzczegolyWypozyczeniaNarzedzia(this.database);
-            narzedzia.ShowDialog();
-        }
-        private void initdata()
-        {
-            this.dgv.DataSource = this.database.vDM_Szczegoly_wypozyczenia_narzedzia.ToList();
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -64,17 +54,6 @@ namespace KWZP2021
             {
                 DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć narzędzia");
             }
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            NoweSzczegolyWypozyczeniaNarzedzia nowe = new NoweSzczegolyWypozyczeniaNarzedzia(this.database);
-            nowe.ShowDialog();
-        }
-
-        private void dgv_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
     }
