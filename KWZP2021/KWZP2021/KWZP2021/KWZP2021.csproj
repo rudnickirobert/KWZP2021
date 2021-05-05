@@ -61,6 +61,18 @@
     <Compile Include="AddFirmaSerwisowa.Designer.cs">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddPo_proc_wydr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPo_proc_wydr.Designer.cs">
+      <DependentUpon>AddPo_proc_wydr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddProcesTechnologiczny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddProcesTechnologiczny.Designer.cs">
+      <DependentUpon>AddProcesTechnologiczny.cs</DependentUpon>
+    </Compile>
     <Compile Include="Archiwum.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +642,12 @@
     </Compile>
     <Compile Include="Koszty_zewnetrzne.Designer.cs">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KreatorCzynnosci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KreatorCzynnosci.Designer.cs">
+      <DependentUpon>KreatorCzynnosci.cs</DependentUpon>
     </Compile>
     <Compile Include="KreatorWydruk.cs">
       <SubType>Form</SubType>
@@ -1446,6 +1464,12 @@
     <EmbeddedResource Include="AddFirmaSerwisowa.resx">
       <DependentUpon>AddFirmaSerwisowa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddPo_proc_wydr.resx">
+      <DependentUpon>AddPo_proc_wydr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddProcesTechnologiczny.resx">
+      <DependentUpon>AddProcesTechnologiczny.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Archiwum.resx">
       <DependentUpon>Archiwum.cs</DependentUpon>
     </EmbeddedResource>
@@ -1601,6 +1625,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Koszty_zewnetrzne.resx">
       <DependentUpon>Koszty_zewnetrzne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KreatorCzynnosci.resx">
+      <DependentUpon>KreatorCzynnosci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KreatorWydruk.resx">
       <DependentUpon>KreatorWydruk.cs</DependentUpon>

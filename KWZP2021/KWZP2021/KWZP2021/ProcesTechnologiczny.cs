@@ -40,8 +40,15 @@ namespace KWZP2021
 
         private void btnWydruk_Click(object sender, EventArgs e)
         {
-            KreatorWydruk kw = new KreatorWydruk(this.database);
-            kw.ShowDialog();
+            this.Hide();
+            ProcesDrukowania procesDrukowania = new ProcesDrukowania(this.database);
+            procesDrukowania.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            KreatorCzynnosci kreatorCzynnosci = new KreatorCzynnosci(this.database);
+            kreatorCzynnosci.ShowDialog();
         }
     }
 }
