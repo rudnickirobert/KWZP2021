@@ -38,9 +38,9 @@ namespace KWZP2021
             this.button2 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.vDZWplywBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.vDZWplywBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vDZWplywBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -52,7 +52,7 @@ namespace KWZP2021
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(906, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(1102, 321);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -79,7 +79,7 @@ namespace KWZP2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(326, 9);
+            this.label1.Location = new System.Drawing.Point(410, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(327, 32);
             this.label1.TabIndex = 3;
@@ -88,7 +88,7 @@ namespace KWZP2021
             // button2
             // 
             this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.Location = new System.Drawing.Point(775, 73);
+            this.button2.Location = new System.Drawing.Point(971, 73);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(143, 46);
             this.button2.TabIndex = 4;
@@ -111,14 +111,10 @@ namespace KWZP2021
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // vDZWplywBindingSource
-            // 
-            this.vDZWplywBindingSource.DataSource = typeof(KWZP2021.vDZ_Wplyw);
-            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(563, 481);
+            this.button3.Location = new System.Drawing.Point(833, 481);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 43);
             this.button3.TabIndex = 5;
@@ -129,16 +125,20 @@ namespace KWZP2021
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(728, 494);
+            this.label2.Location = new System.Drawing.Point(998, 494);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 6;
+            // 
+            // vDZWplywBindingSource
+            // 
+            this.vDZWplywBindingSource.DataSource = typeof(KWZP2021.vDZ_Wplyw);
             // 
             // Wplywy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 536);
+            this.ClientSize = new System.Drawing.Size(1126, 536);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);

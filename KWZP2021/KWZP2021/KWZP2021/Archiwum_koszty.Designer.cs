@@ -52,14 +52,14 @@ namespace KWZP2021
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(859, 339);
+            this.dataGridView1.Size = new System.Drawing.Size(772, 339);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button1.Location = new System.Drawing.Point(502, 507);
+            this.button1.Location = new System.Drawing.Point(505, 507);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(126, 41);
             this.button1.TabIndex = 1;
@@ -70,7 +70,7 @@ namespace KWZP2021
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(679, 519);
+            this.label1.Location = new System.Drawing.Point(682, 519);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 17);
             this.label1.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace KWZP2021
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(211, 9);
+            this.label2.Location = new System.Drawing.Point(181, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(465, 32);
             this.label2.TabIndex = 3;
@@ -107,7 +107,7 @@ namespace KWZP2021
             // button3
             // 
             this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button3.Location = new System.Drawing.Point(750, 95);
+            this.button3.Location = new System.Drawing.Point(663, 95);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(122, 31);
             this.button3.TabIndex = 6;
@@ -139,7 +139,7 @@ namespace KWZP2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 560);
+            this.ClientSize = new System.Drawing.Size(799, 560);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
