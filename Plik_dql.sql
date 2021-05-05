@@ -310,7 +310,7 @@ DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_czesci.Id_zamowienie_zewn=DZ_Zamowienie_
 GO
 CREATE VIEW vDM_Sklad_dostawy_materialu
 AS
-SELECT DM_Sklad_dostawy_materialu.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Material.Nazwa AS [Nazwa materialu],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_materialu.Ilosc AS [Ilosc], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa materialu]
+SELECT  DM_Sklad_dostawy_materialu.Id_dostawy_mate, DM_Sklad_dostawy_materialu.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Material.Nazwa AS [Nazwa materialu],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_materialu.Ilosc AS [Ilosc], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa materialu]
 FROM dbo.DM_Sklad_dostawy_materialu INNER JOIN
 DM_Dostawa_maszyn  ON DM_Sklad_dostawy_materialu.Id_dostawy=DM_Dostawa_maszyn.Id_dostawy INNER JOIN
 DM_Dostawca ON DM_Sklad_dostawy_materialu.Id_dostawcy=DM_Dostawca.Id_dostawcy INNER JOIN

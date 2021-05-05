@@ -321,6 +321,7 @@ CREATE TABLE DM_Sklad_dostawy_czesci(
 	Cena_jednostkowa_czesci int NOT NULL
 );
 CREATE TABLE DM_Sklad_dostawy_materialu(
+    Id_dostawy_mate int identity(1,1) NOT NULL PRIMARY KEY, 
 	Id_dostawy int NOT NULL FOREIGN KEY REFERENCES DM_Dostawa_materialu( Id_dostawy) , 
     Id_dostawcy int FOREIGN KEY REFERENCES DM_Dostawca(Id_dostawcy),
 	Id_materialu int NOT NULL FOREIGN KEY REFERENCES DM_Material(Id_materialu), 
