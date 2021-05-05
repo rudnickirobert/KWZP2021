@@ -595,7 +595,7 @@ GROUP BY DZ_Rachunek.Id_rachunki, DZ_Rodzaj_rachunku.Rodzaj_rachunku, DZ_Rachune
 GO
 CREATE VIEW vDZ_Koszty_zewnetrzne
 AS
-SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci),2) AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_czesci * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_czesci INNER JOIN
 DM_Sklad_dostawy_czesci ON DM_Dostawa_czesci.Id_dostawy=DM_Sklad_dostawy_czesci.Id_dostawy INNER JOIN
@@ -604,7 +604,7 @@ WHERE (MONTH(Data_dostawy)=MONTH(GETDATE()))
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_czesci.Data_dostawy,DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci, DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa 
 UNION ALL
-SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny),2) AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_maszyny * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_maszyn INNER JOIN
 DM_Sklad_dostawy_maszyn ON DM_Dostawa_maszyn.Id_dostawy=DM_Sklad_dostawy_maszyn.Id_dostawy INNER JOIN
@@ -613,7 +613,7 @@ WHERE (MONTH(Data_dostawy)=MONTH(GETDATE()))
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_maszyn.Data_dostawy,DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny,DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu]
 UNION ALL
-SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu] AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu),2) AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_materialu * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_materialu INNER JOIN
 DM_Sklad_dostawy_materialu ON DM_Dostawa_materialu.Id_dostawy=DM_Sklad_dostawy_materialu.Id_dostawy INNER JOIN
@@ -622,7 +622,7 @@ WHERE (MONTH(Data_dostawy)=MONTH(GETDATE()))
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_materialu.Data_dostawy,DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu, DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu]
 UNION ALL
-SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi),2) AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_narzedzi * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_narzedzi INNER JOIN
 DM_Sklad_dostawy_narzedzi ON DM_Dostawa_narzedzi.Id_dostawy=DM_Sklad_dostawy_narzedzi.Id_dostawy INNER JOIN
@@ -631,7 +631,7 @@ WHERE (MONTH(Data_dostawy)=MONTH(GETDATE()))
 AND (YEAR(Data_dostawy)=YEAR(GETDATE()))
 GROUP BY DM_Dostawa_narzedzi.Data_dostawy, DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi,DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa
 UNION ALL
-SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], DP_Serwis_zewnetrzny.Koszt AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
+SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], ROUND((DP_Serwis_zewnetrzny.Koszt),2) AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Koszt * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DP_Serwis_zewnetrzny INNER JOIN
 vDP_Maszyna ON DP_Serwis_zewnetrzny.Id_maszyny=vDP_Maszyna.[Numer maszyny]
@@ -720,35 +720,35 @@ GROUP BY vDZ_Obecnosc_pensja.Id_pracownika, vDZ_Obecnosc_pensja.Imie, vDZ_Obecno
 GO
 CREATE VIEW vDZ_Archiwum_Koszty_zewnetrzne
 AS
-SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_czesci.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci),2) AS [Cena jednostkowa], DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_czesci * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_czesci INNER JOIN
 DM_Sklad_dostawy_czesci ON DM_Dostawa_czesci.Id_dostawy=DM_Sklad_dostawy_czesci.Id_dostawy INNER JOIN
 vDM_Czesc ON DM_Sklad_dostawy_czesci.Id_czesci=vDM_Czesc.[Numer czesci]
 GROUP BY DM_Dostawa_czesci.Data_dostawy,DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci, DM_Sklad_dostawy_czesci.Ilosc, vDM_Czesc.Nazwa 
 UNION ALL
-SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_maszyn.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny),2) AS [Cena jednostkowa], DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_maszyny * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_maszyn INNER JOIN
 DM_Sklad_dostawy_maszyn ON DM_Dostawa_maszyn.Id_dostawy=DM_Sklad_dostawy_maszyn.Id_dostawy INNER JOIN
 vDP_Maszyna ON DM_Sklad_dostawy_maszyn.Id_maszyn=vDP_Maszyna.[Numer maszyny]
 GROUP BY DM_Dostawa_maszyn.Data_dostawy,DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny,DM_Sklad_dostawy_maszyn.Ilosc, vDP_Maszyna.[Nazwa modelu]
 UNION ALL
-SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu] AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_materialu.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu),2) AS [Cena jednostkowa], DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_materialu * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_materialu INNER JOIN
 DM_Sklad_dostawy_materialu ON DM_Dostawa_materialu.Id_dostawy=DM_Sklad_dostawy_materialu.Id_dostawy INNER JOIN
 vDM_Material ON DM_Sklad_dostawy_materialu.Id_materialu=vDM_Material.[Numer materialu]
 GROUP BY DM_Dostawa_materialu.Data_dostawy,DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu, DM_Sklad_dostawy_materialu.Ilosc, vDM_Material.[Nazwa materialu]
 UNION ALL
-SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa AS [Nazwa],
+SELECT DISTINCT DM_Dostawa_narzedzi.Data_dostawy AS [Data], ROUND((DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi),2) AS [Cena jednostkowa], DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 then TRY_CAST((Cena_jednostkowa_narzedzi * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DM_Dostawa_narzedzi INNER JOIN
 DM_Sklad_dostawy_narzedzi ON DM_Dostawa_narzedzi.Id_dostawy=DM_Sklad_dostawy_narzedzi.Id_dostawy INNER JOIN
 vDM_Narzedzie ON DM_Sklad_dostawy_narzedzi.Id_narzedzia=vDM_Narzedzie.[Numer narzedzia]
 GROUP BY DM_Dostawa_narzedzi.Data_dostawy, DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi,DM_Sklad_dostawy_narzedzi.Ilosc, vDM_Narzedzie.Nazwa
 UNION ALL
-SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], DP_Serwis_zewnetrzny.Koszt AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
+SELECT DISTINCT DP_Serwis_zewnetrzny.Data_zakonczenia AS [Data], ROUND((DP_Serwis_zewnetrzny.Koszt),2) AS [Cena jednostkowa], DP_Serwis_zewnetrzny.Ilosc, vDP_Maszyna.[Nazwa modelu] AS [Nazwa],
 SUM(CASE WHEN Ilosc>=1 THEN TRY_CAST((Koszt * Ilosc) AS DECIMAL) END) AS Koszt
 FROM DP_Serwis_zewnetrzny INNER JOIN
 vDP_Maszyna ON DP_Serwis_zewnetrzny.Id_maszyny=vDP_Maszyna.[Numer maszyny]
