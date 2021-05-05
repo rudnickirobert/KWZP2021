@@ -651,12 +651,12 @@ VALUES
 	;
 INSERT INTO DP_Po_material_wydruk(Id_materialu, Id_po_wydr_proc, Ilosc)
 VALUES
-    (1,1,1000),
-	(2,2,2000),
-	(3,3,1800),
-	(4,4,2200),
-	(5,5,3000),
-	(6,6,1200)
+    (1,1,100),
+	(2,2,20),
+	(3,3,180),
+	(4,4,22),
+	(5,5,30),
+	(6,6,120)
 	;
 INSERT INTO DP_Rodzaj_czynnosci(Nazwa)
 VALUES
@@ -725,14 +725,14 @@ VALUES
 	;
 INSERT INTO DP_Po_material_czynnosc(Id_po_proc_czynnosci, Id_materialu, Ilosc)
 VALUES
-	(3,1,200),
-	(4,2,300),
-	(5,4,200),
-	(3,4,220),
-	(4,3,300),
-	(5,4,240),
-	(4, 5, 2),
-	(5, 6, 5)
+	(3,1,20),
+	(4,2,30),
+	(5,4,20),
+	(3,4,22),
+	(4,3,30),
+	(5,4,24),
+	(4, 5, 20),
+	(5, 6, 50)
 	;
 INSERT INTO DP_Po_maszyna_wydruk(Id_po_wydr_proces, Id_maszyny)
 VALUES
@@ -789,12 +789,12 @@ VALUES
 	;
 INSERT INTO DP_po_prod_czyn_dod_material(Id_prod_czynnosci_dodatkowe, Id_materialu, Ilosc)
 VALUES
-	(1,2,300),
-	(2,3,1000),
-	(3,4,260),
-	(4,1,350),
-	(5,2,180),
-	(6,3,290)
+	(1,2,30),
+	(2,3,10),
+	(3,4,26),
+	(4,1,35),
+	(5,2,18),
+	(6,3,29)
 	;
 INSERT INTO DP_po_prod_czyn_dod_maszyna(Id_prod_czynnosci_dodatkowe, Id_maszyna)
 VALUES 
