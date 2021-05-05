@@ -12,7 +12,7 @@ namespace KWZP2021
 {
     public partial class EdytujMaszyne : Form
     {
-        internal object textBox1;
+       // internal object textBox1;
         DrukarniaEntities database;
 
         public EdytujMaszyne(DrukarniaEntities database)
@@ -49,6 +49,11 @@ namespace KWZP2021
             toUpdate.Koszt_1rh = Convert.ToInt32(txtKoszt_1rh.Text);
             database.SaveChanges();
             frm.dgvMaszyna.DataSource = this.database.vDP_Maszyna.ToList();
+            this.Close();
+        }
+
+        private void buttonPowrot_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

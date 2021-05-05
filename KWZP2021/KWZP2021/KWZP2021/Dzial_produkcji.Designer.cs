@@ -29,13 +29,14 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dzial_produkcji));
             this.btnRodzajCzynnosci = new System.Windows.Forms.Button();
             this.btnMaszyna = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRodzajCzynnosci
             // 
-            this.btnRodzajCzynnosci.Location = new System.Drawing.Point(436, 167);
+            this.btnRodzajCzynnosci.Location = new System.Drawing.Point(442, 53);
             this.btnRodzajCzynnosci.Name = "btnRodzajCzynnosci";
             this.btnRodzajCzynnosci.Size = new System.Drawing.Size(127, 53);
             this.btnRodzajCzynnosci.TabIndex = 0;
@@ -45,7 +46,7 @@ namespace KWZP2021
             // 
             // btnMaszyna
             // 
-            this.btnMaszyna.Location = new System.Drawing.Point(221, 167);
+            this.btnMaszyna.Location = new System.Drawing.Point(227, 53);
             this.btnMaszyna.Name = "btnMaszyna";
             this.btnMaszyna.Size = new System.Drawing.Size(127, 53);
             this.btnMaszyna.TabIndex = 1;
@@ -57,6 +58,8 @@ namespace KWZP2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnMaszyna);
             this.Controls.Add(this.btnRodzajCzynnosci);

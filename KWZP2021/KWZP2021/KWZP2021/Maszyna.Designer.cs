@@ -119,6 +119,7 @@ namespace KWZP2021
             this.Controls.Add(this.dgvMaszyna);
             this.Name = "Maszyna";
             this.Text = "Maszyna";
+           // this.Load += new System.EventHandler(this.Maszyna_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaszyna)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
