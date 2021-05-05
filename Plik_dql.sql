@@ -387,7 +387,7 @@ FROM dbo.DP_Proces_technologiczny
 GO
 CREATE VIEW vDP_Po_wydr_proc
 AS
-SELECT Id_po_wydr_proces AS [Identyfikator], DP_Wydruk.Id_wydruk AS [Identyfikator wydruku], DP_Proces_technologiczny.Nazwa AS [Nazwa procesu technologicznego]
+SELECT Id_po_wydr_proces AS [Identyfikator], DP_Wydruk.Id_wydruk AS [Identyfikator wydruku], DP_Proces_technologiczny.Nazwa AS [Nazwa procesu technologicznego], DP_Po_wydr_proc.Czas_zamierzony
 FROM dbo.DP_Po_wydr_proc INNER JOIN
 DP_Wydruk ON DP_Po_wydr_proc.Id_wydruk=DP_Wydruk.Id_wydruk INNER JOIN
 DP_Proces_technologiczny ON DP_Po_wydr_proc.Id_proces_technologiczny=DP_Proces_technologiczny.Id_proces_technologiczny
