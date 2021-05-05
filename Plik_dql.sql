@@ -50,7 +50,7 @@ FROM     dbo.DP_Rodzaj_maszyny
 GO
 CREATE VIEW vDP_Maszyna
 AS
-SELECT Id_maszyny AS [Numer maszyny], DP_Rodzaj_maszyny.Rodzaj_maszyny AS [Rodzaj maszyny], DP_Model_maszyny.Nazwa_modelu_maszyny AS [Nazwa modelu],nr_seryjny AS [Numer seryjny], data_wprowadzenia AS [Data wprowadzenia maszyny], koszt_1rh AS [ Koszt 1 roboczo-godziny]
+SELECT Id_maszyny AS [Numer maszyny], DP_Rodzaj_maszyny.Rodzaj_maszyny AS [Rodzaj maszyny], DP_Model_maszyny.Nazwa_modelu_maszyny AS [Nazwa modelu],nr_seryjny AS [Numer seryjny], data_wprowadzenia AS [Data wprowadzenia maszyny], koszt_1rh AS [Koszt 1 roboczo-godziny]
 FROM     dbo.DP_Maszyna INNER JOIN
 DP_Rodzaj_maszyny ON DP_Maszyna.Id_rodzaj_maszyny=DP_Rodzaj_maszyny.Id_rodzaj_maszyny INNER JOIN
 DP_Model_maszyny ON DP_Maszyna.Id_model_maszyny=DP_Model_maszyny.Id_model_maszyny
@@ -283,7 +283,7 @@ DZ_Pracownik  ON DM_Dostawa_maszyn.Id_pracownika=DZ_Pracownik.Id_pracownika
 GO
 CREATE VIEW vDM_Sklad_dostawy_maszyn
 AS
-SELECT DM_Dostawa_maszyn.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DP_Maszyna.Nr_seryjny AS [Numer seryjny maszyny],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_maszyn.Ilosc AS [Ilosc], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [ Cena jednostkowa maszyny]
+SELECT DM_Dostawa_maszyn.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DP_Maszyna.Nr_seryjny AS [Numer seryjny maszyny],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_maszyn.Ilosc AS [Ilosc], DM_Sklad_dostawy_maszyn.Cena_jednostkowa_maszyny AS [Cena jednostkowa maszyny]
 FROM dbo.DM_Sklad_dostawy_maszyn INNER JOIN
 DM_Dostawa_maszyn  ON DM_Sklad_dostawy_maszyn.Id_dostawy=DM_Dostawa_maszyn.Id_dostawy INNER JOIN
 DM_Dostawca ON DM_Sklad_dostawy_maszyn.Id_dostawcy=DM_Dostawca.Id_dostawcy INNER JOIN
@@ -292,7 +292,7 @@ DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_maszyn.Id_zamowienie_zewn=DZ_Zamowienie_
 GO
 CREATE VIEW vDM_Sklad_dostawy_narzedzi
 AS
-SELECT DM_Sklad_dostawy_narzedzi.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Narzedzie.Nazwa AS [Nazwa narzedzia],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_narzedzi.Ilosc AS [Ilosc], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [ Cena jednostkowa narzedzia]
+SELECT DM_Sklad_dostawy_narzedzi.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Narzedzie.Nazwa AS [Nazwa narzedzia],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_narzedzi.Ilosc AS [Ilosc], DM_Sklad_dostawy_narzedzi.Cena_jednostkowa_narzedzi AS [Cena jednostkowa narzedzia]
 FROM dbo.DM_Sklad_dostawy_narzedzi INNER JOIN
 DM_Dostawa_maszyn  ON DM_Sklad_dostawy_narzedzi.Id_dostawy=DM_Dostawa_maszyn.Id_dostawy INNER JOIN
 DM_Dostawca ON DM_Sklad_dostawy_narzedzi.Id_dostawcy=DM_Dostawca.Id_dostawcy INNER JOIN
@@ -301,7 +301,7 @@ DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_narzedzi.Id_zamowienie_zewn=DZ_Zamowieni
 GO
 CREATE VIEW vDM_Sklad_dostawy_czesci
 AS
-SELECT DM_Sklad_dostawy_czesci.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Czesc.Nazwa AS [Nazwa czesci],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_czesci.Ilosc AS [Ilosc], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [ Cena jednostkowa czesci]
+SELECT DM_Sklad_dostawy_czesci.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Czesc.Nazwa AS [Nazwa czesci],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_czesci.Ilosc AS [Ilosc], DM_Sklad_dostawy_czesci.Cena_jednostkowa_czesci AS [Cena jednostkowa czesci]
 FROM dbo.DM_Sklad_dostawy_czesci INNER JOIN
 DM_Dostawa_maszyn  ON DM_Sklad_dostawy_czesci.Id_dostawy=DM_Dostawa_maszyn.Id_dostawy INNER JOIN
 DM_Dostawca ON DM_Sklad_dostawy_czesci.Id_dostawcy=DM_Dostawca.Id_dostawcy INNER JOIN
@@ -310,7 +310,7 @@ DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_czesci.Id_zamowienie_zewn=DZ_Zamowienie_
 GO
 CREATE VIEW vDM_Sklad_dostawy_materialu
 AS
-SELECT DM_Sklad_dostawy_materialu.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Material.Nazwa AS [Nazwa materialu],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_materialu.Ilosc AS [Ilosc], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [ Cena jednostkowa materialu]
+SELECT DM_Sklad_dostawy_materialu.Id_dostawy AS [Identyfikator dostawy], DM_Dostawca.Nazwa AS [Nazwa dostawcy],DM_Material.Nazwa AS [Nazwa materialu],DZ_Zamowienie_zewn.Id_zamowienia_zewn AS [Numer zamowienia],DM_Sklad_dostawy_materialu.Ilosc AS [Ilosc], DM_Sklad_dostawy_materialu.Cena_jednostkowa_materialu AS [Cena jednostkowa materialu]
 FROM dbo.DM_Sklad_dostawy_materialu INNER JOIN
 DM_Dostawa_maszyn  ON DM_Sklad_dostawy_materialu.Id_dostawy=DM_Dostawa_maszyn.Id_dostawy INNER JOIN
 DM_Dostawca ON DM_Sklad_dostawy_materialu.Id_dostawcy=DM_Dostawca.Id_dostawcy INNER JOIN
@@ -319,7 +319,7 @@ DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_materialu.Id_zamowienie_zewn=DZ_Zamowien
 GO
 CREATE VIEW vDM_Wydanie_czesci
 AS
-SELECT Id_wydania_czesci AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wydajacego],DM_Wydanie_czesci.Data_i_godzina AS [Data i godzina wydania], DM_Wydanie_czesci.Uwagi AS [ Uwagi]
+SELECT Id_wydania_czesci AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wydajacego],DM_Wydanie_czesci.Data_i_godzina AS [Data i godzina wydania], DM_Wydanie_czesci.Uwagi AS [Uwagi]
 FROM dbo.DM_Wydanie_czesci INNER JOIN
 DZ_Pracownik  ON DM_Wydanie_czesci.Id_pracownik_pobierajacy&DM_Wydanie_czesci.Id_pracownik_wydajacy=DZ_Pracownik.Id_pracownika
 GO
@@ -349,7 +349,7 @@ DP_Maszyna ON DM_Wybor_maszyny. Id_maszyny=DP_Maszyna.Id_maszyny
 GO
 CREATE VIEW vDM_Wydanie_materialu_dla_produkcji
 AS
-SELECT Id_wydanie_materialu_dla_produkcji AS [Identyfikator wydania materialu], DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamówienia], DZ_Pracownik.Nazwisko AS [ Nazwisko pracownika pobierajacego],DZ_Pracownik.Nazwisko AS [ Nazwisko pracownika wydajacego],DM_Wydanie_materialu_dla_produkcji.Data_i_godzina AS [ Data i godzina]
+SELECT Id_wydanie_materialu_dla_produkcji AS [Identyfikator wydania materialu], DZ_Zamowienie_klienta.Id_zamowienia AS [Numer zamówienia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika pobierajacego],DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wydajacego],DM_Wydanie_materialu_dla_produkcji.Data_i_godzina AS [Data i godzina]
 FROM dbo.DM_Wydanie_materialu_dla_produkcji INNER JOIN
 DZ_Zamowienie_klienta  ON DM_Wydanie_materialu_dla_produkcji.Id_zamowienia=DZ_Zamowienie_klienta.Id_Zamowienia INNER JOIN
 DZ_Pracownik ON DM_Wydanie_materialu_dla_produkcji.Id_pracownik_pobierajacy&DM_Wydanie_materialu_dla_produkcji.Id_pracownik_wydajacy=DZ_Pracownik.Id_pracownika 
@@ -363,7 +363,7 @@ DM_Material ON DM_Szczegoly_wydania_materialu. Id_materialu=DM_Material.Id_mater
 GO
 CREATE VIEW vDM_Szczegoly_magazynu_gotowych_produktow
 AS
-SELECT DM_Magazyn_gotowych_produktow.Id_magazynu_gotowych_produktow AS [Identyfikator magazynu], DP_Produkt.Nazwa_produktu [Nazwa produktu],DM_Szczegoly_magazynu_gotowych_produktow.Ilosc AS [ Ilosc]
+SELECT DM_Magazyn_gotowych_produktow.Id_magazynu_gotowych_produktow AS [Identyfikator magazynu], DP_Produkt.Nazwa_produktu [Nazwa produktu],DM_Szczegoly_magazynu_gotowych_produktow.Ilosc AS [Ilosc]
 FROM dbo.DM_Szczegoly_magazynu_gotowych_produktow INNER JOIN
 DM_Magazyn_gotowych_produktow ON DM_Szczegoly_magazynu_gotowych_produktow.Id_magazynu_gotowych_produktow =DM_Magazyn_gotowych_produktow.Id_magazynu_gotowych_produktow INNER JOIN
 DP_Produkt ON DM_Szczegoly_magazynu_gotowych_produktow. Id_produktu=DP_Produkt.Id_produkt
@@ -387,14 +387,14 @@ FROM dbo.DP_Proces_technologiczny
 GO
 CREATE VIEW vDP_Po_wydr_proc
 AS
-SELECT Id_po_wydr_proces AS [Identyfikator], DP_Wydruk.Id_wydruk AS [ Identyfikator wydruku], DP_Proces_technologiczny.Nazwa AS [ Nazwa procesu technologicznego]
+SELECT Id_po_wydr_proces AS [Identyfikator], DP_Wydruk.Id_wydruk AS [Identyfikator wydruku], DP_Proces_technologiczny.Nazwa AS [Nazwa procesu technologicznego]
 FROM dbo.DP_Po_wydr_proc INNER JOIN
 DP_Wydruk ON DP_Po_wydr_proc.Id_wydruk=DP_Wydruk.Id_wydruk INNER JOIN
 DP_Proces_technologiczny ON DP_Po_wydr_proc.Id_proces_technologiczny=DP_Proces_technologiczny.Id_proces_technologiczny
 GO
 CREATE VIEW vDP_Po_material_wydruk
 AS
-SELECT DM_Material.Nazwa AS [Nazwa materialu], DP_po_wydr_proc.Id_wydruk [ Identyfikator wydruku],DP_Po_material_wydruk.Ilosc AS [Ilosc materialu]
+SELECT DM_Material.Nazwa AS [Nazwa materialu], DP_po_wydr_proc.Id_wydruk [Identyfikator wydruku],DP_Po_material_wydruk.Ilosc AS [Ilosc materialu]
 FROM dbo.DP_Po_material_wydruk INNER JOIN
 DM_Material ON DP_Po_material_wydruk.Id_materialu=DM_Material.Id_materialu INNER JOIN
 DP_po_wydr_proc ON DP_Po_material_wydruk.Id_po_wydr_proc=DP_po_wydr_proc.Id_po_wydr_proces
