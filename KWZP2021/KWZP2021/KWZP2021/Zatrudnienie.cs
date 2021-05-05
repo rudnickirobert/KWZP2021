@@ -81,5 +81,16 @@ namespace KWZP2021
                 initDataGridView();
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dgvZatrudnienie.DataSource = database.vDZ_Zatrudnienie.Where(x => x.Nazwisko.Contains(textBox1.Text) || x.Stanowisko.Contains(textBox1.Text)).ToList();
+        }
     }
 }

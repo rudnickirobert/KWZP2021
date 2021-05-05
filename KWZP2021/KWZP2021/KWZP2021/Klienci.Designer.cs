@@ -36,6 +36,8 @@ namespace KWZP2021
             this.buttonNowyKlient = new System.Windows.Forms.Button();
             this.buttonWyszukajKlienta = new System.Windows.Forms.Button();
             this.buttonUsunKlienta = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvgKlient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,39 +80,64 @@ namespace KWZP2021
             // 
             // buttonNowyKlient
             // 
+            this.buttonNowyKlient.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonNowyKlient.Location = new System.Drawing.Point(644, 35);
             this.buttonNowyKlient.Name = "buttonNowyKlient";
             this.buttonNowyKlient.Size = new System.Drawing.Size(144, 30);
             this.buttonNowyKlient.TabIndex = 5;
             this.buttonNowyKlient.Text = "Nowy klient";
-            this.buttonNowyKlient.UseVisualStyleBackColor = true;
+            this.buttonNowyKlient.UseVisualStyleBackColor = false;
             this.buttonNowyKlient.Click += new System.EventHandler(this.buttonNowyKlient_Click);
             // 
             // buttonWyszukajKlienta
             // 
+            this.buttonWyszukajKlienta.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonWyszukajKlienta.Location = new System.Drawing.Point(20, 35);
             this.buttonWyszukajKlienta.Name = "buttonWyszukajKlienta";
             this.buttonWyszukajKlienta.Size = new System.Drawing.Size(83, 30);
             this.buttonWyszukajKlienta.TabIndex = 6;
             this.buttonWyszukajKlienta.Text = "Wyszukaj";
-            this.buttonWyszukajKlienta.UseVisualStyleBackColor = true;
+            this.buttonWyszukajKlienta.UseVisualStyleBackColor = false;
             this.buttonWyszukajKlienta.Click += new System.EventHandler(this.buttonWyszukajKlienta_Click);
             // 
             // buttonUsunKlienta
             // 
+            this.buttonUsunKlienta.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonUsunKlienta.Location = new System.Drawing.Point(347, 35);
             this.buttonUsunKlienta.Name = "buttonUsunKlienta";
             this.buttonUsunKlienta.Size = new System.Drawing.Size(112, 29);
             this.buttonUsunKlienta.TabIndex = 7;
             this.buttonUsunKlienta.Text = "Usuń klienta";
-            this.buttonUsunKlienta.UseVisualStyleBackColor = true;
+            this.buttonUsunKlienta.UseVisualStyleBackColor = false;
             this.buttonUsunKlienta.Click += new System.EventHandler(this.buttonUsunKlienta_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Location = new System.Drawing.Point(882, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 29);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Powrót";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(275, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Kliknij dwa razy, aby edytować dane wskazanego klienta";
             // 
             // Klienci
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 525);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonUsunKlienta);
             this.Controls.Add(this.buttonWyszukajKlienta);
             this.Controls.Add(this.buttonNowyKlient);
@@ -135,5 +162,7 @@ namespace KWZP2021
         private System.Windows.Forms.Button buttonWyszukajKlienta;
         private System.Windows.Forms.Button buttonUsunKlienta;
         public System.Windows.Forms.DataGridView dvgKlient;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 }

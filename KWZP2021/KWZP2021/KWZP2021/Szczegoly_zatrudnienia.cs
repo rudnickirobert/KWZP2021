@@ -45,5 +45,37 @@ namespace KWZP2021
             szcz_zatrudnienia_2.txtWynagrodzenie.Text = dataSzczegoly.CurrentRow.Cells[3].Value.ToString();
             szcz_zatrudnienia_2.ShowDialog();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonUsunPracownika_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Czy chcesz usunąć pracownika", "Usuwanie pracowników", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                int id = Convert.ToInt32(this.dataSzczegoly.CurrentRow.Cells[0].Value);
+
+                DZ_Szczegoly_zatrudnienia toRemove = this.database.DZ_Szczegoly_zatrudnienia.Where(szczegoly => szczegoly.Id_szczegoly_zatrudnienia == id).First();
+
+
+                this.database.DZ_Szczegoly_zatrudnienia.Remove(toRemove); // DELETE
+
+                this.database.SaveChanges();
+                this.dataSzczegoly.DataSource = this.database.vDZ_Szczegoly_zatrudnienia.ToList();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataSzczegoly.DataSource = database.vDZ_Szczegoly_zatrudnienia.Where(x => x.Nazwisko_pracownika.Contains(textBox1.Text)).ToList();
+        }
     }
 }

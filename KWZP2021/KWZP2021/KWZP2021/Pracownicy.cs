@@ -114,5 +114,10 @@ namespace KWZP2021
             nowy_pracownik.ShowDialog();
             initdvgPracownik();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

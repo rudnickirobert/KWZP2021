@@ -36,37 +36,42 @@ namespace KWZP2021
             this.dvgPracownik = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dvgPracownik)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonUsunPracownika
             // 
+            this.buttonUsunPracownika.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonUsunPracownika.Location = new System.Drawing.Point(333, 30);
             this.buttonUsunPracownika.Name = "buttonUsunPracownika";
             this.buttonUsunPracownika.Size = new System.Drawing.Size(112, 29);
             this.buttonUsunPracownika.TabIndex = 14;
             this.buttonUsunPracownika.Text = "Usuń pracownika";
-            this.buttonUsunPracownika.UseVisualStyleBackColor = true;
+            this.buttonUsunPracownika.UseVisualStyleBackColor = false;
             this.buttonUsunPracownika.Click += new System.EventHandler(this.buttonUsunPracownika_Click);
             // 
             // buttonWyszukajPracownika
             // 
+            this.buttonWyszukajPracownika.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonWyszukajPracownika.Location = new System.Drawing.Point(6, 30);
             this.buttonWyszukajPracownika.Name = "buttonWyszukajPracownika";
             this.buttonWyszukajPracownika.Size = new System.Drawing.Size(83, 30);
             this.buttonWyszukajPracownika.TabIndex = 13;
             this.buttonWyszukajPracownika.Text = "Wyszukaj";
-            this.buttonWyszukajPracownika.UseVisualStyleBackColor = true;
+            this.buttonWyszukajPracownika.UseVisualStyleBackColor = false;
             this.buttonWyszukajPracownika.Click += new System.EventHandler(this.buttonWyszukajPracownika_Click);
             // 
             // buttonNowyPracownik
             // 
+            this.buttonNowyPracownik.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.buttonNowyPracownik.Location = new System.Drawing.Point(630, 30);
             this.buttonNowyPracownik.Name = "buttonNowyPracownik";
             this.buttonNowyPracownik.Size = new System.Drawing.Size(144, 30);
             this.buttonNowyPracownik.TabIndex = 12;
             this.buttonNowyPracownik.Text = "Nowy pracownik";
-            this.buttonNowyPracownik.UseVisualStyleBackColor = true;
+            this.buttonNowyPracownik.UseVisualStyleBackColor = false;
             this.buttonNowyPracownik.Click += new System.EventHandler(this.buttonNowyPracownik_Click);
             // 
             // label2
@@ -81,9 +86,9 @@ namespace KWZP2021
             // dvgPracownik
             // 
             this.dvgPracownik.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dvgPracownik.Location = new System.Drawing.Point(8, 85);
+            this.dvgPracownik.Location = new System.Drawing.Point(8, 98);
             this.dvgPracownik.Name = "dvgPracownik";
-            this.dvgPracownik.Size = new System.Drawing.Size(1224, 423);
+            this.dvgPracownik.Size = new System.Drawing.Size(1224, 410);
             this.dvgPracownik.TabIndex = 10;
             this.dvgPracownik.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dvgPracownik_CellDoubleClick);
             // 
@@ -105,11 +110,33 @@ namespace KWZP2021
             this.label1.Text = "Wyszukaj pracownika";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Location = new System.Drawing.Point(848, 31);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 29);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Powrót";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 82);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(299, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Kliknij dwa razy, aby edytować dane wskazanego pracownika";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // Pracownicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1243, 522);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonUsunPracownika);
             this.Controls.Add(this.buttonWyszukajPracownika);
             this.Controls.Add(this.buttonNowyPracownik);
@@ -135,5 +162,7 @@ namespace KWZP2021
         public System.Windows.Forms.DataGridView dvgPracownik;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 }

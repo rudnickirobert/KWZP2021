@@ -126,6 +126,11 @@ namespace KWZP2021
             konkretny_klient.ShowDialog();
             initdvgKlient();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
