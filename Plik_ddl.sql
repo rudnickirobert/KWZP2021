@@ -339,11 +339,13 @@ CREATE TABLE DM_Wydanie_czesci(
 );
 
 CREATE TABLE DM_Szczegoly_wydania_czesci(
+	Id_szczegolow_wydania_czesci int identity(1,1) NOT NULL PRIMARY KEY,
 	Id_wydania_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Wydanie_czesci(Id_wydania_czesci), 
     Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_Czesc(Id_czesci),
     Ilosc int NOT NULL, 
 );
 CREATE TABLE DM_Parametr_czesci(
+Id_parametr_czesci int identity(1,1) NOT NULL PRIMARY KEY,
     Id_czesci int NOT NULL FOREIGN KEY REFERENCES DM_czesc(id_czesci),
 	Id_wlasciwosc int NOT NULL FOREIGN KEY REFERENCES DM_wlasciwosc(id_wlasciwosc),
 	Wartosc varchar(60) NOT NULL

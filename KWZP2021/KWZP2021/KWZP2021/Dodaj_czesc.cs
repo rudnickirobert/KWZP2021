@@ -18,6 +18,9 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
+            this.comboBox1.DataSource = database.DP_Model_maszyny.ToList();
+            this.comboBox1.DisplayMember = "Nazwa_modelu_maszyny";
+            this.comboBox1.ValueMember = "Id_model_maszyny";
         }
 
         private void btnAnulujDodanieCzesci_Click(object sender, EventArgs e)
@@ -33,7 +36,7 @@ namespace KWZP2021
             DM_Czesc newCzesc = new DM_Czesc();
             newCzesc.Nazwa = txtDodajCzescNazwa.Text;
             newCzesc.Ilosc_poczatkowa = Convert.ToInt32(txtDodajCzescIlosc.Text);
-            newCzesc.Id_model_maszyny = Convert.ToInt32(txtModelMaszyny.Text);
+            newCzesc.Id_model_maszyny = Convert.ToInt32(comboBox1.SelectedValue);
 
             this.database.DM_Czesc.Add(newCzesc);
             database.SaveChanges();
@@ -41,5 +44,6 @@ namespace KWZP2021
             czesc.ShowDialog();
             this.Close();
         }
+
     }
 }

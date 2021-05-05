@@ -30,14 +30,13 @@ namespace KWZP2021
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DM_Parametr_czesci newParametr_czesci = new DM_Parametr_czesci();
-            newParametr_czesci.Id_czesci = Convert.ToInt32(comboBox1.SelectedValue);
-            newParametr_czesci.Id_wlasciwosc = Convert.ToInt32(comboBox2.SelectedValue);
-            newParametr_czesci.Wartosc = this.textBox1.Text;
+            DM_Parametr_czesci newi = new DM_Parametr_czesci();
+            newi.Id_czesci = Convert.ToInt32(comboBox1.SelectedValue);
+            newi.Id_wlasciwosc = Convert.ToInt32(comboBox2.SelectedValue);
+            newi.Wartosc = textBox1.Text;
 
-            this.database.DM_Parametr_czesci.Add(newParametr_czesci);
+            this.database.DM_Parametr_czesci.Add(newi);
             this.database.SaveChanges();
-            this.textBox1.Text = "";
             this.Close();
             this.Hide();
             Parametr_czesci parametrczesci = new Parametr_czesci(this.database);

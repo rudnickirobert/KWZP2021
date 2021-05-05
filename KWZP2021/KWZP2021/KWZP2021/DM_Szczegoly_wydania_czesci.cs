@@ -14,6 +14,7 @@ namespace KWZP2021
     
     public partial class DM_Szczegoly_wydania_czesci
     {
+        public int Id_szczegolow_wydania_czesci { get; set; }
         public int Id_wydania_czesci { get; set; }
         public int Id_czesci { get; set; }
         public int Ilosc { get; set; }

@@ -32,7 +32,6 @@ namespace KWZP2021
             this.dgvCzesc = new System.Windows.Forms.DataGridView();
             this.btnDodajCzesc = new System.Windows.Forms.Button();
             this.btnCzescPowrot = new System.Windows.Forms.Button();
-            this.btnEdycjaCzesc = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtWyszukajCzesc = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@ namespace KWZP2021
             this.dgvCzesc.RowTemplate.Height = 24;
             this.dgvCzesc.Size = new System.Drawing.Size(841, 258);
             this.dgvCzesc.TabIndex = 5;
+            this.dgvCzesc.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCzesc_CellDoubleClick);
             // 
             // btnDodajCzesc
             // 
@@ -68,15 +68,6 @@ namespace KWZP2021
             this.btnCzescPowrot.Text = "Powrót";
             this.btnCzescPowrot.UseVisualStyleBackColor = true;
             this.btnCzescPowrot.Click += new System.EventHandler(this.btnCzescPowrot_Click);
-            // 
-            // btnEdycjaCzesc
-            // 
-            this.btnEdycjaCzesc.Location = new System.Drawing.Point(400, 12);
-            this.btnEdycjaCzesc.Name = "btnEdycjaCzesc";
-            this.btnEdycjaCzesc.Size = new System.Drawing.Size(147, 62);
-            this.btnEdycjaCzesc.TabIndex = 11;
-            this.btnEdycjaCzesc.Text = "Edytuj";
-            this.btnEdycjaCzesc.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -113,7 +104,6 @@ namespace KWZP2021
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtWyszukajCzesc);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnEdycjaCzesc);
             this.Controls.Add(this.btnCzescPowrot);
             this.Controls.Add(this.btnDodajCzesc);
             this.Controls.Add(this.dgvCzesc);
@@ -128,7 +118,6 @@ namespace KWZP2021
         #endregion
         private System.Windows.Forms.Button btnDodajCzesc;
         private System.Windows.Forms.Button btnCzescPowrot;
-        private System.Windows.Forms.Button btnEdycjaCzesc;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtWyszukajCzesc;
         public System.Windows.Forms.DataGridView dgvCzesc;

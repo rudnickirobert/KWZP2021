@@ -37,7 +37,7 @@ namespace KWZP2021
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtModelMaszyny = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnDodajCzesc
@@ -110,19 +110,20 @@ namespace KWZP2021
             this.label4.TabIndex = 7;
             this.label4.Text = "Wpisz model maszyny";
             // 
-            // txtModelMaszyny
+            // comboBox1
             // 
-            this.txtModelMaszyny.Location = new System.Drawing.Point(227, 164);
-            this.txtModelMaszyny.Name = "txtModelMaszyny";
-            this.txtModelMaszyny.Size = new System.Drawing.Size(100, 22);
-            this.txtModelMaszyny.TabIndex = 8;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(227, 167);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(100, 24);
+            this.comboBox1.TabIndex = 8;
             // 
             // DodajCzesc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 302);
-            this.Controls.Add(this.txtModelMaszyny);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -148,6 +149,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtModelMaszyny;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

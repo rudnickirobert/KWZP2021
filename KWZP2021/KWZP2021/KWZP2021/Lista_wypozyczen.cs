@@ -18,16 +18,17 @@ namespace KWZP2021
         {
             InitializeComponent();
             this.database = database;
+            this.dgvWypozyczenia.DataSource = this.database.vDM_Wydanie_czesci.ToList();
             initDataGridView();
         }
         public void initDataGridView()
         {
-            dgvWypozyczenia.DataSource = this.database.vDM_Wydanie_czesci.ToList();
+            this.dgvWypozyczenia.DataSource = this.database.vDM_Wydanie_czesci.ToList();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-           // dgvWypozyczenia.DataSource = database.vDM_Wydanie_czesci.Where(x => x.Id_pracownika_pobierajacego.Contains(textBox1.Text)).ToList();
+           dgvWypozyczenia.DataSource = database.vDM_Wydanie_czesci.Where(x => x.Nazwisko_pracownika_wydajacego.Contains(textBox1.Text)|| x.Nazwisko_pracownika_wypozyczajacego.Contains(textBox1.Text)).ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,6 +58,20 @@ namespace KWZP2021
             {
                 DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć wypozyczenia?");
             }
+
+        }
+
+        private void dgvWypozyczenia_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int wypozyczenie = Convert.ToInt32(dgvWypozyczenia.CurrentRow.Cells[0].Value);
+            Szczegoly_wydania_czesci szcz = new Szczegoly_wydania_czesci(database, Decimal.ToInt32(wypozyczenie));
+            szcz.ShowDialog();
+        }
+
+        private void button3Dodanie_Click(object sender, EventArgs e)
+        {
+            Dodanie_czesci_do_wydaniacs doa = new Dodanie_czesci_do_wydaniacs(this.database);
+            doa.ShowDialog();
         }
     }
 }

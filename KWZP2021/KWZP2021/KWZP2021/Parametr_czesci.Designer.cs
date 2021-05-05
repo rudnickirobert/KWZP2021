@@ -33,7 +33,6 @@ namespace KWZP2021
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.dgvParametrCzesci = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnDodajParametr = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParametrCzesci)).BeginInit();
@@ -77,16 +76,6 @@ namespace KWZP2021
             this.dgvParametrCzesci.TabIndex = 6;
             this.dgvParametrCzesci.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParametrCzesci_CellDoubleClick);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(307, 10);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(147, 62);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Edytuj";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(460, 10);
@@ -114,7 +103,6 @@ namespace KWZP2021
             this.ClientSize = new System.Drawing.Size(769, 339);
             this.Controls.Add(this.btnDodajParametr);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.dgvParametrCzesci);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox1);
@@ -131,7 +119,6 @@ namespace KWZP2021
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnDodajParametr;
         public System.Windows.Forms.DataGridView dgvParametrCzesci;

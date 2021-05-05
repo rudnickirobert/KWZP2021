@@ -21,8 +21,6 @@ namespace KWZP2021
             this.dgvCzesc.DataSource = this.database.vDM_Czesc.ToList();
             initDataGridView();
         }
-        
-
         private void initDataGridView()
         {
             this.dgvCzesc.DataSource = this.database.vDM_Czesc.ToList();
@@ -56,7 +54,7 @@ namespace KWZP2021
             {
                 int id = Convert.ToInt32(this.dgvCzesc.CurrentRow.Cells[0].Value);
 
-                DM_Czesc toRemove = this.database.DM_Czesc.Where(czesc => czesc.Id_czesci == id).First();
+                DM_Czesc toRemove = this.database.DM_Czesc.Where(id_czesc => id_czesc.Id_czesci == id).First();
 
 
                 this.database.DM_Czesc.Remove(toRemove); // DELETE
@@ -68,6 +66,17 @@ namespace KWZP2021
             {
                 DialogResult dialog1Result = MessageBox.Show("Nie udało się usunąć części?");
             }
+
+        }
+
+        private void dgvCzesc_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Edytuj_czesc edytujczesc = new Edytuj_czesc(this.database);
+            edytujczesc.textBox1.Text = dgvCzesc.CurrentRow.Cells[1].Value.ToString();
+            //edytujczesc.comboBox1.Text = dgvCzesc.CurrentRow.Cells[2].Value.ToString();
+            edytujczesc.textBox2Ilosc.Text = dgvCzesc.CurrentRow.Cells[2].Value.ToString();
+            edytujczesc.ShowDialog();
+            initDataGridView();
         }
     }
 }

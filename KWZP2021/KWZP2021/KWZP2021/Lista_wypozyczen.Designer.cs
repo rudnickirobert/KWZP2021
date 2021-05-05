@@ -34,6 +34,7 @@ namespace KWZP2021
             this.button1 = new System.Windows.Forms.Button();
             this.dgvWypozyczenia = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3Dodanie = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWypozyczenia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +57,7 @@ namespace KWZP2021
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(442, 17);
+            this.button1.Location = new System.Drawing.Point(627, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 62);
             this.button1.TabIndex = 2;
@@ -71,12 +72,13 @@ namespace KWZP2021
             this.dgvWypozyczenia.Name = "dgvWypozyczenia";
             this.dgvWypozyczenia.RowHeadersWidth = 51;
             this.dgvWypozyczenia.RowTemplate.Height = 24;
-            this.dgvWypozyczenia.Size = new System.Drawing.Size(586, 274);
+            this.dgvWypozyczenia.Size = new System.Drawing.Size(762, 310);
             this.dgvWypozyczenia.TabIndex = 3;
+            this.dgvWypozyczenia.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvWypozyczenia_CellMouseDoubleClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(276, 17);
+            this.button2.Location = new System.Drawing.Point(276, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 62);
             this.button2.TabIndex = 4;
@@ -84,11 +86,22 @@ namespace KWZP2021
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3Dodanie
+            // 
+            this.button3Dodanie.Location = new System.Drawing.Point(455, 12);
+            this.button3Dodanie.Name = "button3Dodanie";
+            this.button3Dodanie.Size = new System.Drawing.Size(147, 62);
+            this.button3Dodanie.TabIndex = 5;
+            this.button3Dodanie.Text = "Dodaj część do wypożyczenia\r\n";
+            this.button3Dodanie.UseVisualStyleBackColor = true;
+            this.button3Dodanie.Click += new System.EventHandler(this.button3Dodanie_Click);
+            // 
             // Lista_wypozyczen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 383);
+            this.ClientSize = new System.Drawing.Size(786, 425);
+            this.Controls.Add(this.button3Dodanie);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dgvWypozyczenia);
             this.Controls.Add(this.button1);
@@ -109,5 +122,6 @@ namespace KWZP2021
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dgvWypozyczenia;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3Dodanie;
     }
 }

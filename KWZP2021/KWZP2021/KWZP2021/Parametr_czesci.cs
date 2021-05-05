@@ -13,11 +13,14 @@ namespace KWZP2021
     public partial class Parametr_czesci : Form
     {
         DrukarniaEntities database;
+        public DataGridView DataGridView;
         public Parametr_czesci(DrukarniaEntities database)
         {
             InitializeComponent();
             this.database = database;
             this.dgvParametrCzesci.DataSource = this.database.vDM_Parametr_czesci.ToList();
+            dgvParametrCzesci.Columns[0].Visible = false;
+            initDataGridView();
 
         }
         private void initDataGridView()
@@ -53,7 +56,7 @@ namespace KWZP2021
             {
                 int id = Convert.ToInt32(this.dgvParametrCzesci.CurrentRow.Cells[0].Value);
 
-                DM_Parametr_czesci toRemove = this.database.DM_Parametr_czesci.Where(czesc => czesc.Id_czesci == id).First();
+                DM_Parametr_czesci toRemove = this.database.DM_Parametr_czesci.Where(czesc => czesc.Id_parametr_czesci == id).First();
 
 
                 this.database.DM_Parametr_czesci.Remove(toRemove); // DELETE
@@ -68,18 +71,12 @@ namespace KWZP2021
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Edycja_parametru_czesci edycja_parametru_czesci = new Edycja_parametru_czesci(this.database);
-            edycja_parametru_czesci.textBox1.Text = dgvParametrCzesci.CurrentRow.Cells[3].Value.ToString();
-            edycja_parametru_czesci.ShowDialog();
-        }
-
         private void dgvParametrCzesci_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Edycja_parametru_czesci edycja_parametru_czesci = new Edycja_parametru_czesci(this.database);
             edycja_parametru_czesci.textBox1.Text = dgvParametrCzesci.CurrentRow.Cells[3].Value.ToString();
             edycja_parametru_czesci.ShowDialog();
+            initDataGridView();
         }
     }
 }

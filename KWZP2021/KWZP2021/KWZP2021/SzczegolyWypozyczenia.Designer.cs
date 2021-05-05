@@ -45,10 +45,11 @@ namespace KWZP2021
             this.dgv.RowTemplate.Height = 24;
             this.dgv.Size = new System.Drawing.Size(752, 353);
             this.dgv.TabIndex = 0;
+            this.dgv.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_CellDoubleClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(628, 23);
+            this.button2.Location = new System.Drawing.Point(628, 32);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 56);
             this.button2.TabIndex = 5;
@@ -58,7 +59,7 @@ namespace KWZP2021
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 23);
+            this.button1.Location = new System.Drawing.Point(23, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(147, 56);
             this.button1.TabIndex = 6;

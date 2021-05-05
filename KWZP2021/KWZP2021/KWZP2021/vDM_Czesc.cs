@@ -17,5 +17,6 @@ namespace KWZP2021
         public int Numer_czesci { get; set; }
         public string Nazwa { get; set; }
         public int Ilosc_poczatkowa { get; set; }
+        public string Model_maszyny { get; set; }
     }
 }

@@ -57,7 +57,7 @@ DP_Model_maszyny ON DP_Maszyna.Id_model_maszyny=DP_Model_maszyny.Id_model_maszyn
 GO
 CREATE VIEW vDM_Czesc
 AS
-SELECT Id_czesci AS [Numer czesci], DM_Czesc.nazwa AS [Nazwa], DM_Czesc.ilosc_poczatkowa AS [Ilosc poczatkowa]
+SELECT Id_czesci AS [Numer czesci], DM_Czesc.nazwa AS [Nazwa], DM_Czesc.ilosc_poczatkowa AS [Ilosc poczatkowa], DP_Model_maszyny.Nazwa_modelu_maszyny AS [Model maszyny]
 FROM     dbo.DM_Czesc INNER JOIN
 DP_Model_maszyny ON DM_Czesc.Id_model_maszyny=DP_Model_maszyny.id_model_maszyny
 GO
@@ -319,14 +319,14 @@ DZ_Zamowienie_zewn  ON DM_Sklad_dostawy_materialu.Id_zamowienie_zewn=DZ_Zamowien
 GO
 CREATE VIEW vDM_Wydanie_czesci
 AS
-SELECT Id_wydania_czesci AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wydajacego],DM_Wydanie_czesci.Data_i_godzina AS [Data i godzina wydania], DM_Wydanie_czesci.Uwagi AS [Uwagi]
+SELECT Id_wydania_czesci AS [Identyfikator wypozyczenia], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wypozyczajacego], DZ_Pracownik.Nazwisko AS [Nazwisko pracownika wydajacego],DM_Wydanie_czesci.Data_i_godzina AS [Data i godzina wydania], DM_Wydanie_czesci.Uwagi AS [ Uwagi]
 FROM dbo.DM_Wydanie_czesci INNER JOIN
 DZ_Pracownik  ON DM_Wydanie_czesci.Id_pracownik_pobierajacy&DM_Wydanie_czesci.Id_pracownik_wydajacy=DZ_Pracownik.Id_pracownika
 GO
 
 CREATE VIEW vDM_Szczegoly_wydania_czesci
 AS
-SELECT DM_Wydanie_czesci.Id_wydania_czesci AS [Identyfikator wydania], DM_Czesc.Nazwa AS [Nazwa czesci], DM_Szczegoly_wydania_czesci.Ilosc AS [Ilosc]
+SELECT Id_szczegolow_wydania_czesci, DM_Wydanie_czesci.Id_wydania_czesci AS [Identyfikator wydania], DM_Czesc.Nazwa AS [Nazwa czesci], DM_Szczegoly_wydania_czesci.Ilosc AS [Ilosc]
 FROM dbo.DM_Szczegoly_wydania_czesci INNER JOIN
 DM_Wydanie_czesci  ON DM_Szczegoly_wydania_czesci.Id_wydania_czesci=DM_Wydanie_czesci.Id_wydania_czesci INNER JOIN
 DM_Czesc ON DM_Szczegoly_wydania_czesci. Id_czesci=DM_Czesc.Id_czesci
@@ -334,7 +334,7 @@ GO
 
 CREATE VIEW vDM_Parametr_czesci
 AS
-SELECT DM_Czesc.Nazwa AS [Nazwa czesci], DM_wlasciwosc.Nazwa_wlasciwosci AS [Wlasciwosc]
+SELECT DM_Parametr_czesci.Id_parametr_czesci, DM_Czesc.Nazwa AS [Nazwa czesci], DM_wlasciwosc.Nazwa_wlasciwosci AS [Wlasciwosc], Wartosc
 FROM dbo.DM_Parametr_czesci INNER JOIN
 DM_czesc  ON DM_Parametr_czesci.Id_czesci=DM_czesc.Id_czesci INNER JOIN
 DM_wlasciwosc ON DM_Parametr_czesci. Id_wlasciwosc=DM_wlasciwosc.Id_wlasciwosc

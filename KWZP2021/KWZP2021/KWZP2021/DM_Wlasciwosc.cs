@@ -17,8 +17,8 @@ namespace KWZP2021
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DM_Wlasciwosc()
         {
-            this.DM_Parametr_narzedzia = new HashSet<DM_Parametr_narzedzia>();
             this.DM_Parametr_czesci = new HashSet<DM_Parametr_czesci>();
+            this.DM_Parametr_narzedzia = new HashSet<DM_Parametr_narzedzia>();
             this.DM_Wlasciwosc_materialu = new HashSet<DM_Wlasciwosc_materialu>();
             this.DZ_Szczegoly_zam_czesci = new HashSet<DZ_Szczegoly_zam_czesci>();
             this.DZ_Szczegoly_zam_narzedzi = new HashSet<DZ_Szczegoly_zam_narzedzi>();
@@ -30,9 +30,9 @@ namespace KWZP2021
         public string Jednostka_pomiarowa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DM_Parametr_narzedzia> DM_Parametr_narzedzia { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Parametr_czesci> DM_Parametr_czesci { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DM_Parametr_narzedzia> DM_Parametr_narzedzia { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DM_Wlasciwosc_materialu> DM_Wlasciwosc_materialu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

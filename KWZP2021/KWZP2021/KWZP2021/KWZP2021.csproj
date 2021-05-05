@@ -124,6 +124,7 @@
     <Compile Include="DM_Czesc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DM_Czesci.cs" />
     <Compile Include="DM_Dostawa_czesci.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -139,6 +140,7 @@
     <Compile Include="DM_Dostawca.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DM_Dostawcy.cs" />
     <Compile Include="DM_Magazyn_gotowych_produktow.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -148,6 +150,8 @@
     <Compile Include="DM_Narzedzie.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DM_Parametry_czesci.cs" />
+    <Compile Include="DM_Parametry_narzedzia.cs" />
     <Compile Include="DM_Parametr_czesci.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -190,6 +194,7 @@
     <Compile Include="DM_Wlasciwosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DM_Wlasciwosci_materialu.cs" />
     <Compile Include="DM_Wlasciwosc_materialu.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -202,12 +207,14 @@
     <Compile Include="DM_Wydanie_materialu_dla_produkcji.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DM_Wydanie_produktow.cs" />
     <Compile Include="DM_Wydanie_produktu.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DM_Wypozyczenie_narzedzia.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DM_Zuzyte_narzedzia.cs" />
     <Compile Include="DM_Zuzyte_narzedzie.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -289,6 +296,12 @@
     <Compile Include="Dodaj_wydanie_produktu.Designer.cs">
       <DependentUpon>Dodaj_wydanie_produktu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dodanie_czesci_do_wydaniacs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dodanie_czesci_do_wydaniacs.Designer.cs">
+      <DependentUpon>Dodanie_czesci_do_wydaniacs.cs</DependentUpon>
+    </Compile>
     <Compile Include="DostawaMaterialu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,12 +326,20 @@
     <Compile Include="Dostawcy.Designer.cs">
       <DependentUpon>Dostawcy.cs</DependentUpon>
     </Compile>
+    <Compile Include="DP1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DP1.Designer.cs">
+      <DependentUpon>DP1.cs</DependentUpon>
+    </Compile>
     <Compile Include="DP_Co_ile_obsluga.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DP_Czynnosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_Czynnosci.cs" />
+    <Compile Include="DP_Czynnosci_w_ramach_obslugi_serw_wew.cs" />
     <Compile Include="DP_Czynnosc_w_ramach_obslugi_serw_wew.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -328,6 +349,7 @@
     <Compile Include="DP_Maszyna.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_Maszyny.cs" />
     <Compile Include="DP_Model_maszyny.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -349,6 +371,7 @@
     <Compile Include="DP_Po_proc_czynnosc.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_Po_proc_czynnosci.cs" />
     <Compile Include="DP_po_prod_czyn_dod_material.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -364,6 +387,7 @@
     <Compile Include="DP_Produkt.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_prod_czynnosci_dodatkowe.cs" />
     <Compile Include="DP_prod_czynnosc_dodatkowa.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -394,6 +418,7 @@
     <Compile Include="DP_Wydruk.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DP_Zuzute_maszyny.cs" />
     <Compile Include="DP_Zuzyta_maszyna.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -451,6 +476,7 @@
     <Compile Include="DZ_Rachunek.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DZ_Rachunki.cs" />
     <Compile Include="DZ_Rodzaj_nieobecnosci.cs">
       <DependentUpon>DrukarniaModel.tt</DependentUpon>
     </Compile>
@@ -558,6 +584,12 @@
     </Compile>
     <Compile Include="EdytujWlasciwoscNarzedzia.Designer.cs">
       <DependentUpon>EdytujWlasciwoscNarzedzia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Edytuj_czesc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edytuj_czesc.Designer.cs">
+      <DependentUpon>Edytuj_czesc.cs</DependentUpon>
     </Compile>
     <Compile Include="Edytuj_firma_serwisowa.cs">
       <SubType>Form</SubType>
@@ -1539,6 +1571,9 @@
     <EmbeddedResource Include="Dodaj_wydanie_produktu.resx">
       <DependentUpon>Dodaj_wydanie_produktu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dodanie_czesci_do_wydaniacs.resx">
+      <DependentUpon>Dodanie_czesci_do_wydaniacs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DostawaMaterialu.resx">
       <DependentUpon>DostawaMaterialu.cs</DependentUpon>
     </EmbeddedResource>
@@ -1550,6 +1585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dostawcy.resx">
       <DependentUpon>Dostawcy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DP1.resx">
+      <DependentUpon>DP1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dzial_magazynowy.resx">
       <DependentUpon>Dzial_magazynowy.cs</DependentUpon>
@@ -1589,6 +1627,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EdytujWlasciwoscNarzedzia.resx">
       <DependentUpon>EdytujWlasciwoscNarzedzia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Edytuj_czesc.resx">
+      <DependentUpon>Edytuj_czesc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Edytuj_firma_serwisowa.resx">
       <DependentUpon>Edytuj_firma_serwisowa.cs</DependentUpon>
