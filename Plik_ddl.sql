@@ -473,6 +473,12 @@ CREATE TABLE DP_prod_czynnosc_dodatkowa(
 	Czas_pracy int NOT NULL
 );
 
+CREATE TABLE DP_po_prod_czyn_dod_material(
+	Id_prod_czynnosci_dodatkowe int NOT NULL FOREIGN KEY REFERENCES DP_prod_czynnosc_dodatkowa(Id_prod_czynnosci_dodatkowe),
+	Id_materialu int NOT NULL FOREIGN KEY REFERENCES DM_Material(Id_materialu),
+	Ilosc int NOT NULL
+);
+
 CREATE TABLE DP_po_prod_czyn_dod_maszyna(
 	Id_prod_czynnosci_dodatkowe int NOT NULL FOREIGN KEY REFERENCES DP_prod_czynnosc_dodatkowa(Id_prod_czynnosci_dodatkowe),
 	Id_maszyna int NOT NULL FOREIGN KEY REFERENCES DP_Maszyna(Id_maszyny),

@@ -787,6 +787,15 @@ VALUES
 	(5,2,1),
 	(6,3,2)
 	;
+INSERT INTO DP_po_prod_czyn_dod_material(Id_prod_czynnosci_dodatkowe, Id_materialu, Ilosc)
+VALUES
+	(1,2,300),
+	(2,3,1000),
+	(3,4,260),
+	(4,1,350),
+	(5,2,180),
+	(6,3,290)
+	;
 INSERT INTO DP_po_prod_czyn_dod_maszyna(Id_prod_czynnosci_dodatkowe, Id_maszyna)
 VALUES 
 	(1,2),

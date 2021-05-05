@@ -1222,3 +1222,27 @@ FROM DP_Proces_produkcyjny INNER JOIN
 INNER JOIN DP_po_prod_czyn_dod_maszyna ON DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe=DP_po_prod_czyn_dod_maszyna.Id_prod_czynnosci_dodatkowe
 INNER JOIN DP_Maszyna ON DP_po_prod_czyn_dod_maszyna.Id_maszyna=DP_Maszyna.Id_maszyny
 GO
+
+CREATE VIEW vDP_Koszt_materialu_dodatkowe_powykonawczy
+AS
+SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny, DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe,
+DP_po_prod_czyn_dod_material.Id_materialu,
+	DP_po_prod_czyn_dod_material.Ilosc, DM_Material.Nazwa,
+	(DP_po_prod_czyn_dod_material.Ilosc * vDP_Koszt_jednostkowy_material.[Koszt jednostkowy za material]) AS [Koszt material cz_dodatkowe powykonawczy]
+FROM DP_Proces_produkcyjny INNER JOIN
+	DP_prod_czynnosc_dodatkowa ON DP_Proces_produkcyjny.Id_proces_produkcyjny=DP_prod_czynnosc_dodatkowa.Id_proces_produkcyjny
+INNER JOIN DP_po_prod_czyn_dod_material ON DP_prod_czynnosc_dodatkowa.Id_prod_czynnosci_dodatkowe=DP_po_prod_czyn_dod_material.Id_prod_czynnosci_dodatkowe
+INNER JOIN DM_Material ON DP_po_prod_czyn_dod_material.Id_materialu=DM_Material.Id_materialu
+INNER JOIN vDP_Koszt_jednostkowy_material ON DM_Material.Id_materialu=vDP_Koszt_jednostkowy_material.Id_materialu
+GO
+
+CREATE VIEW vDP_Koszt_materialu_wydruk_powykonawczy
+AS
+SELECT DP_Proces_produkcyjny.Id_proces_produkcyjny, DP_prod_material.Id_materialu,
+	DP_prod_material.Ilosc_zuzytego_materialu, DM_Material.Nazwa,
+	(DP_prod_material.Ilosc_zuzytego_materialu * vDP_Koszt_jednostkowy_material.[Koszt jednostkowy za material]) AS [Koszt materialu powykonawczy]
+FROM DP_Proces_produkcyjny INNER JOIN
+	DP_prod_material ON DP_Proces_produkcyjny.Id_proces_produkcyjny=DP_prod_material.Id_proces_produkcyjny
+INNER JOIN DM_Material ON DP_prod_material.Id_materialu=DM_Material.Id_materialu
+INNER JOIN vDP_Koszt_jednostkowy_material ON DM_Material.Id_materialu=vDP_Koszt_jednostkowy_material.Id_materialu
+GO
