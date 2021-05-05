@@ -162,7 +162,7 @@ FROM dbo.DZ_Rodzaj_statusu_zamowienia
 GO
 CREATE VIEW vDZ_Status_zamowienia
 AS
-SELECT Id_status_zam AS [Identyfikator statusu zamowienia],  DZ_Zamowienie_klienta.Id_zamowienia AS [Identyfikator zamowienia klienta], DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam AS [Rodzaj statusu zamowienia]
+SELECT Id_status_zam AS [Identyfikator statusu zamowienia],  DZ_Zamowienie_klienta.Id_zamowienia AS [Identyfikator zamowienia klienta], DZ_Rodzaj_statusu_zamowienia.Status_zam AS [Rodzaj statusu zamowienia]
 FROM dbo.DZ_Status_zamowienia INNER JOIN
 DZ_Zamowienie_klienta ON DZ_Status_zamowienia.Id_zamowienia=DZ_Zamowienie_klienta.Id_zamowienia INNER JOIN 
 DZ_Rodzaj_statusu_zamowienia ON DZ_Status_zamowienia.Id_rodzaj_statusu_zam=DZ_Rodzaj_statusu_zamowienia.Id_rodzaj_statusu_zam
