@@ -79,6 +79,7 @@ namespace KWZP2021
             this.buttonPowrot.TabIndex = 86;
             this.buttonPowrot.Text = "Powrót";
             this.buttonPowrot.UseVisualStyleBackColor = true;
+            this.buttonPowrot.Click += new System.EventHandler(this.buttonPowrot_Click);
             // 
             // buttonWyczyscPola
             // 
