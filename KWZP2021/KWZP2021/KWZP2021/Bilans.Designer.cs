@@ -29,13 +29,16 @@ namespace KWZP2021
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bilans));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.vDZBilansBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDZBilansBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -52,21 +55,22 @@ namespace KWZP2021
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(267, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(221, 29);
+            this.label1.Size = new System.Drawing.Size(259, 32);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bilans miesięczny";
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(653, 44);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 37);
             this.button1.TabIndex = 2;
             this.button1.Text = "Generuj raport";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // printDocument1
@@ -84,6 +88,10 @@ namespace KWZP2021
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // vDZBilansBindingSource
+            // 
+            this.vDZBilansBindingSource.DataSource = typeof(KWZP2021.vDZ_Bilans);
+            // 
             // Bilans
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -95,6 +103,7 @@ namespace KWZP2021
             this.Name = "Bilans";
             this.Text = "Bilans";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vDZBilansBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,5 +116,6 @@ namespace KWZP2021
         private System.Windows.Forms.Button button1;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.BindingSource vDZBilansBindingSource;
     }
 }

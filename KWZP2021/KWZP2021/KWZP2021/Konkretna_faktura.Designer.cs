@@ -62,6 +62,7 @@ namespace KWZP2021
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(32, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 17);
@@ -178,6 +179,7 @@ namespace KWZP2021
             // 
             // txt1
             // 
+            this.txt1.BackColor = System.Drawing.SystemColors.Control;
             this.txt1.Location = new System.Drawing.Point(186, 125);
             this.txt1.Name = "txt1";
             this.txt1.ReadOnly = true;
@@ -282,12 +284,13 @@ namespace KWZP2021
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(389, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 43);
             this.button1.TabIndex = 28;
             this.button1.Text = "Powrót";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label14

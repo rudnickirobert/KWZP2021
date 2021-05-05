@@ -69,30 +69,32 @@ namespace KWZP2021
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(463, 478);
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button1.Location = new System.Drawing.Point(485, 489);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 40);
+            this.button1.Size = new System.Drawing.Size(124, 40);
             this.button1.TabIndex = 2;
             this.button1.Text = "Sumuj opłaty";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(596, 490);
+            this.label2.Location = new System.Drawing.Point(687, 501);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 17);
             this.label2.TabIndex = 3;
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button2.Location = new System.Drawing.Point(195, 102);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(117, 33);
             this.button2.TabIndex = 4;
             this.button2.Text = "Wyszukaj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
@@ -105,12 +107,13 @@ namespace KWZP2021
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button3.Location = new System.Drawing.Point(655, 102);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(133, 33);
             this.button3.TabIndex = 6;
             this.button3.Text = "Generuj raport";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // printDocument1
@@ -136,7 +139,7 @@ namespace KWZP2021
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 530);
+            this.ClientSize = new System.Drawing.Size(799, 545);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);

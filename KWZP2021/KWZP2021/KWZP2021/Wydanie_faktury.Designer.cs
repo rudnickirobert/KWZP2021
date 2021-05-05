@@ -51,12 +51,13 @@ namespace KWZP2021
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(224, 106);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 33);
             this.button1.TabIndex = 1;
             this.button1.Text = "Wyszukaj";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox1
@@ -80,12 +81,13 @@ namespace KWZP2021
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.Location = new System.Drawing.Point(1512, 94);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(213, 39);
             this.button2.TabIndex = 4;
             this.button2.Text = "Przejdź do listy klientów";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Wydanie_faktury

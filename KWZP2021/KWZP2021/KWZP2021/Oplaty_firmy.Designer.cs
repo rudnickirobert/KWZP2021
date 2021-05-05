@@ -36,32 +36,36 @@ namespace KWZP2021
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(47, 49);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 65);
             this.button1.TabIndex = 0;
             this.button1.Text = "Opłaty stałe";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button2.Location = new System.Drawing.Point(47, 148);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(187, 75);
             this.button2.TabIndex = 1;
             this.button2.Text = "Koszty zewnętrzne";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button3.Location = new System.Drawing.Point(47, 260);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(187, 69);
             this.button3.TabIndex = 2;
             this.button3.Text = "Wypłaty";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Oplaty_firmy

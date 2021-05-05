@@ -70,12 +70,13 @@ namespace KWZP2021
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.Location = new System.Drawing.Point(678, 398);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 40);
             this.button1.TabIndex = 2;
             this.button1.Text = "Sumuj wypłaty";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
@@ -88,12 +89,13 @@ namespace KWZP2021
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.Location = new System.Drawing.Point(272, 64);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 35);
             this.button2.TabIndex = 4;
             this.button2.Text = "Wyszukaj";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
@@ -106,12 +108,13 @@ namespace KWZP2021
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button3.Location = new System.Drawing.Point(902, 68);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(154, 43);
             this.button3.TabIndex = 6;
             this.button3.Text = "Generuj raport";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // printDocument1
