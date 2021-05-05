@@ -1001,6 +1001,12 @@
     <Compile Include="Szczegoly_dostawy_czesci.Designer.cs">
       <DependentUpon>Szczegoly_dostawy_czesci.cs</DependentUpon>
     </Compile>
+    <Compile Include="Szczegoly_wydania_czesci.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Szczegoly_wydania_czesci.Designer.cs">
+      <DependentUpon>Szczegoly_wydania_czesci.cs</DependentUpon>
+    </Compile>
     <Compile Include="Szczegoly_wydania_produktu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1844,6 +1850,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Szczegoly_dostawy_czesci.resx">
       <DependentUpon>Szczegoly_dostawy_czesci.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Szczegoly_wydania_czesci.resx">
+      <DependentUpon>Szczegoly_wydania_czesci.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Szczegoly_wydania_produktu.resx">
       <DependentUpon>Szczegoly_wydania_produktu.cs</DependentUpon>

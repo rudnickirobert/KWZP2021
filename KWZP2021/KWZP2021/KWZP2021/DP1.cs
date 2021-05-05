@@ -24,7 +24,7 @@ namespace KWZP2021
         private void btnAddFirmaSerwisowa_Click(object sender, EventArgs e)
         {
             DP_Firma_serwisowa newFirmaSerwisowa = new DP_Firma_serwisowa();
-            newFirmaSerwisowa.nazwa_firmy = this.txtNewFirmaSerwisowa.Text;
+            newFirmaSerwisowa.Nazwa_firmy = this.txtNewFirmaSerwisowa.Text;
 
             this.database.DP_Firma_serwisowa.Add(newFirmaSerwisowa);
             this.database.SaveChanges();
